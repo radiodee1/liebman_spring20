@@ -1,0 +1,27 @@
+\BOOKMARK [0][-]{chapter.1}{Background/History of the Study}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Background}{chapter.1}% 2
+\BOOKMARK [0][-]{chapter.2}{GPT2 and Transformers}{}% 3
+\BOOKMARK [0][-]{chapter.3}{Experiments}{}% 4
+\BOOKMARK [1][-]{section.3.1}{Approach to the Study}{chapter.3}% 5
+\BOOKMARK [1][-]{section.3.2}{Setup}{chapter.3}% 6
+\BOOKMARK [1][-]{section.3.3}{Experiments}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.4}{Chatbot - GRU Model}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.5}{Smart Speaker - GRU Model}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.6}{Chatbot - Transformer Model}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.7}{Smart Speaker - Transformer Model}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.8}{Chatbot - GPT2 Model}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.9}{Smart Speaker - GPT2 Model}{chapter.3}% 13
+\BOOKMARK [0][-]{appendix.A}{Terminology}{}% 14
+\BOOKMARK [1][-]{section.A.1}{Gated Recurrent Unit}{appendix.A}% 15
+\BOOKMARK [1][-]{section.A.2}{Sequence to Sequence - Training}{appendix.A}% 16
+\BOOKMARK [1][-]{section.A.3}{Sequence to Sequence - Architecture}{appendix.A}% 17
+\BOOKMARK [1][-]{section.A.4}{Corpus Considerations}{appendix.A}% 18
+\BOOKMARK [1][-]{section.A.5}{Word Embeddings}{appendix.A}% 19
+\BOOKMARK [1][-]{section.A.6}{WordPiece - BPE}{appendix.A}% 20
+\BOOKMARK [1][-]{section.A.7}{Transformer}{appendix.A}% 21
+\BOOKMARK [1][-]{section.A.8}{GPT2}{appendix.A}% 22
+\BOOKMARK [1][-]{section.A.9}{Raspberry Pi}{appendix.A}% 23
+\BOOKMARK [1][-]{section.A.10}{Speech}{appendix.A}% 24
+\BOOKMARK [0][-]{appendix.B}{Tables}{}% 25
+\BOOKMARK [1][-]{section.B.1}{Model Overview}{appendix.B}% 26
+\BOOKMARK [1][-]{section.B.2}{Question Answering \205 babi}{appendix.B}% 27

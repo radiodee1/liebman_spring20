@@ -1,0 +1,225 @@
+
+
+\documentclass[english]{report}
+%book
+%article
+%report
+\usepackage[margin=1.25in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{setspace}
+%\usepackage[unicode=true]
+% {hyperref}
+ 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{hyperref}
+
+\usepackage{url}
+%\usepackage{breakurl}
+%\usepackage{listings}
+%\usepackage{multicol}
+%\setlength{\columnsep}{1cm}
+\usepackage{courier}
+\usepackage{changepage}
+%\usepackage{table}
+
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother
+
+
+
+%\lstset{basicstyle=\ttfamily,breaklines=false}
+
+%\lstset{framextopmargin=50pt,frame=bottomline}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+\doublespacing
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\title{A Generative Chatbot with NLP}
+
+\author{\noindent David Liebman david.c.liebman@gmail.com}
+
+
+
+\date{\parbox{\linewidth}{\centering%
+		\today\endgraf\bigskip
+		Coordinator 1 \hspace*{3cm} Coordinator 2\endgraf\medskip
+		Department of Computer Science \endgraf
+		SUNY New Paltz}}
+
+%Professor Name Name, Department of Computer Science, SUNY-New Paltz name@newpaltz.edu
+
+\maketitle
+%\pagebreak{}
+
+
+
+\begin{center}
+	
+
+
+\section*{Abstract}
+\end{center}
+
+%\begin{adjustwidth}{1cm}{1cm}
+
+We experiment with the Transformer Neural Network model and we try to explain in this paper how 
+one works.
+
+We chronicle a few experiments in Natural Language Processing. We try a GRU based chatbot. We 
+try a transformer based chatbot. We also try a GPT2 based chatbot. 
+
+We are also interested in installing the chatbot code on a small computer like a Raspberry Pi with speech recognition and speech-to-text software. In this way we might be able to create a device which speaks and which you can speak to. For the GRU based model we can use a Raspberry Pi 3B. In the case of GPT2 the running chatbot model uses too much ram, so we may try to install it on a Raspberry Pi 4B. GPT2 does not fit on a Raspberry Pi 3B.
+
+
+%\end{adjustwidth}
+
+\vspace{5mm}
+%\section{Title of Project}
+%Two Experiments for a Neural Network Chatbot
+
+
+\newpage
+
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+%\setlength{\linewidth}{350}
+
+%\begin{multicols}{2}
+%\twocolumn[text]
+%\twocolumn
+
+\pagenumbering{arabic}
+
+	
+
+
+\chapter{Background/History of the Study}
+
+\include{chapters/chapter01}
+
+\chapter{GPT2 and Transformers}
+
+\include{chapters/chapter02}
+
+\chapter{Experiments}
+
+\include{chapters/chapter03}
+
+\appendix
+
+\include{chapters/appendixa}
+
+
+
+\newpage
+	
+\chapter{Tables}
+	
+\section{Model Overview}
+	
+\begin{center}
+
+
+\begin{tabular}{llllll}
+	Model Name    & File  & RAM  & RAM  & Pretrained  & Hand  \\
+	              &  Size & Train   & Interactive   & Weights & Coded   \\
+	\hline
+	\hline
+	Seq-2-Seq/GRU & 230 M     & 1.1 G & 324 M & NO                 & YES        \\
+	Transformer   & 25 M      & 556 M & 360 M & NO                 & NO         \\
+	GPT2 small*   & 523 M     & 5 G   & 1.5 G & YES                & NO        \\
+	\hline
+\end{tabular}
+
+* a large GPT2 model exists, but it has not been released to the public.
+\end{center}
+
+
+%\iffalse
+\section{Question Answering -- babi}
+
+\begin{center}
+
+
+\begin{tabular}{|l|c|c|c|}
+	\hline 
+	& {\small{}DMN plus} & {\small{}hand coded}  & {\small{}GPT2 - small}  \tabularnewline
+	\hline 
+	\hline 
+	{\small{}QA1: Single Supporting Fact} & {\small{}100} & {\small{}100} & {\small{}100}  \tabularnewline
+	\hline 
+	{\small{}QA2: Two Supporting Facts} & {\small{}99.7} & {\small{}xx}  & {\small{}96.0} \tabularnewline
+	\hline 
+	{\small{}QA3: Three Supporting Facts} & {\small{}98.2} & {\small{}xx} & {\small{}38.18}  \tabularnewline
+	\hline 
+	{\small{}QA4: Two Argument Relations} & {\small{}100} & {\small{}100}  & {\small{}100} \tabularnewline
+	\hline 
+	{\small{}QA5: Three Argument Relations} & {\small{}99.5} & {\small{}99.4}  & {\small{}97.8} \tabularnewline
+	\hline 
+	{\small{}QA6: Yes/No Questions} & {\small{}100} & {\small{}100}  & {\small{}98.4} \tabularnewline
+	\hline 
+	{\small{}QA7: Counting} & {\small{}97.6} & {\small{}97.8} & {\small{}98.6} \tabularnewline
+	\hline 
+	{\small{}QA8: Lists/Sets} & {\small{}100} & {\small{}99.4} & {\small{}98.8} \tabularnewline
+	\hline 
+	{\small{}QA9: Simple Negation} & {\small{}100} & {\small{}98.2}  & {\small{}97.0}  \tabularnewline
+	\hline 
+	{\small{}QA10: Indefinite Knowledge} & {\small{}100} & {\small{}99.4} & {\small{}96.6} \tabularnewline
+	\hline 
+	{\small{}QA11: Basic Coreference} & {\small{}100} & {\small{}100} & {\small{}97.6} \tabularnewline
+	\hline 
+	{\small{}QA12: Conjunction} & {\small{}100} & {\small{}100} & {\small{}99.4} \tabularnewline
+	\hline 
+	{\small{}QA13: Compound Coreference} & {\small{}100} & {\small{}99.8} & {\small{}95.8} \tabularnewline
+	\hline 
+	{\small{}QA14: Time Reasoning} & {\small{}99.8} & {\small{}97.2} & {\small{}87.0} \tabularnewline
+	\hline 
+	{\small{}QA15: Basic Deduction} & {\small{}100} & {\small{}100} & {\small{}64.4} \tabularnewline
+	\hline 
+	{\small{}QA16: Basic Induction} & {\small{}54.7} & {\small{}48.2} & {\small{}96.39} \tabularnewline
+	\hline 
+	{\small{}QA17: Positional Reasoning} & {\small{}95.8} & {\small{}59.2} & {\small{}99.0} \tabularnewline
+	\hline 
+	{\small{}QA18: Size Reasoning} & {\small{}97.9} & {\small{}91.6} & {\small{}100} \tabularnewline
+	\hline 
+	{\small{}QA19: Path Finding} & {\small{}100} & {\small{}xx} & {\small{}97.3} \tabularnewline
+	\hline 
+	{\small{}QA20: Agents Motivation} & {\small{}100} & {\small{}100} & {\small{}100} \tabularnewline
+	\hline 
+\end{tabular}{\tiny \par}
+	
+\end{center}
+%\fi
+
+%\end{thebibliography}
+\newpage
+
+\bibliographystyle{ieeetr}
+%\bibliographystyle{alphadin}
+\bibliography{proposal_doc}
+
+
+
+%\end{multicols}
+\end{document}
