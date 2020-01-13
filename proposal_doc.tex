@@ -28,6 +28,9 @@
 \usepackage{changepage}
 %\usepackage{table}
 
+%\usepackage[nottoc]{tocbibind}
+
+
 %\usepackage{etoolbox}
 %\makeatletter
 %\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
@@ -80,6 +83,7 @@
 \end{center}
 
 %\begin{adjustwidth}{1cm}{1cm}
+We are interested in making a chat-bot. We want a computer program that can answer questions that might come up in a simple conversation.
 
 We experiment with the Transformer Neural Network model and we try to explain in this paper how 
 one works.
@@ -104,11 +108,12 @@ We are also interested in installing the chatbot code on a small computer like a
 
 \newpage
 %\setlength{\linewidth}{350}
-
+\listoffigures
+\listoftables
 %\begin{multicols}{2}
 %\twocolumn[text]
 %\twocolumn
-
+\newpage
 \pagenumbering{arabic}
 
 	
@@ -140,8 +145,12 @@ We are also interested in installing the chatbot code on a small computer like a
 	
 \begin{center}
 
+\begin{table}[h!]
+	
+
 
 \begin{tabular}{llllll}
+
 	Model Name    & File  & RAM  & RAM  & Pretrained  & Hand  \\
 	              &  Size & Train   & Interactive   & Weights & Coded   \\
 	\hline
@@ -153,6 +162,10 @@ We are also interested in installing the chatbot code on a small computer like a
 \end{tabular}
 
 * a large GPT2 model exists, but it has not been released to the public.
+
+\label{fig:modeloverview}
+\addcontentsline{lot}{section}{Model Overview}
+\end{table}
 \end{center}
 
 
@@ -208,6 +221,8 @@ We are also interested in installing the chatbot code on a small computer like a
 	{\small{}QA20: Agents Motivation} & {\small{}100} & {\small{}100} & {\small{}100} \tabularnewline
 	\hline 
 \end{tabular}{\tiny \par}
+\label{fig:babiresults}
+\addcontentsline{lot}{section}{Question Answering -- babi}
 	
 \end{center}
 %\fi
