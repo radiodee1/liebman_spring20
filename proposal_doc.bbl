@@ -24,6 +24,12 @@ T.~Wolf, L.~Debut, V.~Sanh, J.~Chaumond, C.~Delangue, A.~Moi, P.~Cistac,
   State-of-the-art natural language processing,'' {\em ArXiv},
   vol.~abs/1910.03771, 2019.
 
+\bibitem{2015Britz}
+{Denny Britz}, ``Recurrent neural network tutorial, part 4 – implementing a
+  gru/lstm rnn with python and theano,'' 2015.
+\newblock
+  http://www.wildml.com/2015/10/recurrent-neural-network-tutorial-part-4-implementing-a-grulstm-rnn-with-python-and-theano/.
+
 \bibitem{Danescu-Niculescu-Mizil+Lee:11a}
 C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
   A new approach to understanding coordination of linguistic style in
