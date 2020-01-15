@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  15 JAN 2020 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  15 JAN 2020 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -561,18 +561,18 @@ Chapter 1.
  (./chapters/chapter01.tex [2
 
 ]
-<diagram-rnn.png, id=215, 321.2pt x 361.35pt>
+<diagram-rnn.png, id=226, 321.2pt x 361.35pt>
 File: diagram-rnn.png Graphic file (type png)
 <use diagram-rnn.png>
 Package pdftex.def Info: diagram-rnn.png  used on input line 35.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [3 <./diagram-rnn.png>] [4] [5]
-<diagram-nmt.png, id=238, 351.3125pt x 260.975pt>
+<diagram-nmt.png, id=249, 351.3125pt x 260.975pt>
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
 Package pdftex.def Info: diagram-nmt.png  used on input line 101.
 (pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
- [6 <./diagram-nmt.png>]) [7] [8]
+ [6 <./diagram-nmt.png>] [7]) [8]
 Chapter 2.
 [9
 
@@ -592,7 +592,7 @@ Chapter 3.
  (./chapters/chapter03.tex [11
 
 ]
-<Figure_1.png, id=267, 462.528pt x 346.896pt>
+<Figure_1.png, id=278, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 77.
@@ -613,7 +613,7 @@ File: diagram-nmt.png Graphic file (type png)
 Package pdftex.def Info: diagram-nmt.png  used on input line 45.
 (pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
  [18]
-<diagram-embedding.png, id=304, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=315, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 106.
@@ -641,14 +641,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 240.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 240.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 240.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 2871C6530A86D42AF79DAAC98FB12193;1922.
+(rerunfilecheck)             Checksum: 1BBED85F809375A85FCF68CC71C0B1C8;2063.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 240.
  ) 
 Here is how much of TeX's memory you used:
- 7102 strings out of 494477
- 103521 string characters out of 6175714
+ 7106 strings out of 494477
+ 103569 string characters out of 6175714
  205745 words of memory out of 5000000
- 10572 multiletter control sequences out of 15000+600000
+ 10574 multiletter control sequences out of 15000+600000
  16303 words of font info for 36 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  28i,7n,32p,935b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -667,10 +667,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on proposal_doc.pdf (33 pages, 260166 bytes).
+Output written on proposal_doc.pdf (33 pages, 261451 bytes).
 PDF statistics:
- 799 PDF objects out of 1000 (max. 8388607)
- 373 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 810 PDF objects out of 1000 (max. 8388607)
+ 384 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 277 words of extra memory for PDF output out of 10000 (max. 10000000)
 

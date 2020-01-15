@@ -108,18 +108,35 @@ The second GRU generates the second word and also its own hidden state. The seco
 
 Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the 'hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an 'arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
 
-\section{Loss and Accuracy}
+How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. The output is called a prediction. If the target and the prediction are not the same, the model must modify itself so that in the future they are.
 
-How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. At first this prediction is not very close to the desired output. The output is compared to the prediction and a 'loss' is generated. 'Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart.
+That ends our discussion of Sequence to Sequence Translation. This is how some computer models do language translation. 
 
-Another metric is Accuracy. 'Accuracy' is a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
-
-Training, then, is a mathematical process. Backpropagation identifies areas of the model that need to be modified in order to get the proper prediction in the future. This is done over and over with every source/target sentence pair. Slowly the model is changed and predictions start to match the target. That's training.
-
-This is how some computer models do language translation. There are some inherent problems. Because the output of a GRU is constantly being reused as the input, lots of data that might be useful to have is lost when the GRU churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
+There are some inherent problems. Because the output of a GRU is constantly being reused as the input, lots of data that might be useful to have is lost when the GRU churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
 
 Another problem is that all input to be translated to target output has to be boiled down and 
 passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the 'thought vector.' Somehow all necessary information must be there. This also limits the length of the input and output vectors. It does help, when setting
 up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
 
+\section{Loss and Accuracy}
+
+At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a 'loss' is generated. 'Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. The loss function must be chosen. 
+
+%A typical loss function is 'Mean Squared Error' or MSE.
+
+Another metric is Accuracy. 'Accuracy' is a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
+
+Getting a prediction, running input data through a neural network, is forward propagation.
+Training, then, is a mathematical process involving backpropagagtion. Backpropagation identifies areas of the model that need to be modified in order to get the proper prediction in the future.
+
+%\iffalse
+In practice we take the derivative of the loss function in order to backpropagate. The derivative is multiplied by the learning rate and subtracted from the original weight value. The result is a set of adjusted weight matrices. When these matrices are used later they allow for better predictions. 
+%\fi
+
+This is done over and over with every source/target sentence pair. Slowly the model is changed and predictions start to match the target. That's training. The loss should decrease over time and the accuracy should increase.
+
 There are several numerical metrics that we can record during training that tell us how our model is training. The loss, a mathematical calculation of the difference between the model's output and the predicted value, is mentioned above. Loss is an important number. Also accuracy is important. Accuracy is a mathematical calculation of the difference between the model's output and the value that output should be, but it focuses on the number of times the model comes out with a correct prediction verses how many output values there are in total.
+
+\section{Attention Mechanism}
+
+\section{Sequence to Sequence Chatbot}
