@@ -48,9 +48,9 @@ $$ h = tanh(x_t U^h + (s_{t-1} \circ r) W^h) $$
 $$ s_t = (1 - z) \circ h + z \circ s_{t-1} $$  
 
 
-The GRU has two inputs and two outputs. It also has two internal gates. One internal gate is the 'reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the GRU. It is denoted as 'r' above. Another internal gate is the 'update' gate. The update gate decides how much new information is to be included in gate computation.
+The GRU has two inputs and two outputs. It also has two internal gates. One internal gate is the 'reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the GRU. It is denoted as '$r$' above. Another internal gate is the 'update' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as '$z$'.
 
-Here '$ s_t $' is the symbol for the output. '$h$' is the symbol for the 'hidden output'. The two inputs are '$ x_t $' and '$ s_{t-1} $' . '$ x_t $' is the hidden state input. '$ s_{t-1} $' is the regular input from the previous RNN or GRU. Sigmoid activation is used on the two gates, while tanh activation is used to compute the hidden output.
+Here '$ s_t $' is the symbol for the output. '$h$' is the symbol for the 'hidden output'. The two inputs are '$ x_t $' and '$ s_{t-1} $' . '$ x_t $' is the hidden state input. '$ s_{t-1} $' is the regular input for the RNN or GRU. Sigmoid activation is used on the two gates, while tanh activation is used to compute the hidden output.
 
 In the last line, the regular output is determined using the 'dot' product which is denoted with a circle, along with an addition operation. In the two gate formulas (the first and second) the output is determined as the sum of two matrix multiplication operations passed through sigmoid activation. This produces values in the range of 0 to 1.
 
@@ -58,9 +58,9 @@ Under most programming circumstances the GRU is not implemented by the average p
 
 \section{Sequence to Sequence}
 
-Translating text from one language to another has become a common task for computers. 
+Translating text from one language to another has become a common task for computers. The Sequence to Sequence architecture is often used today  for this purpose.
 
-A naive approach involves using a dictionary. You would encode each key as a word from one language and the value for that key would be the translated word in the target language. Of course this doesn't work, because different languages not only have different words for the same thing, but they also have different sentence structures for what might be similar concepts.
+A naive approach to translation involves using a dictionary. You would encode each key as a word from one language and the value for that key would be the translated word in the target language. Of course this doesn't work, because different languages not only have different words for the same thing, but they also have different sentence structures for what might be similar concepts.
 
 A better approach is sequence to sequence translation. A description follows with a section at the end for how training works.
 
@@ -68,11 +68,11 @@ In this approach we use recurrent neural networks to obtain our translation. Two
 
 Also employed are two vocabulary sets. One vocabulary is for the source language and another is for the target language. A table of word vectors the size of the input vocabulary is created and a maximum sentence length is picked. There is also a 'hidden size', which is an important dimension in the model. In practice the hidden size could be between 300 and 550 for this kind of application.
 
-First text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all shorter sentences a special 'end-of-sequence' token is appended to all sentences. This is applied to both languages.
+First text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all shorter sentences a special 'end-of-sequence' token is appended to all sentences in both languages.
 
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
-The recurrent unit in this case is called a GRU. This stands for Gated Recurrent Unit. The GRU takes as input a single vector. It processes the vector and returns another vector. This could be
+The recurrent unit in this case is a GRU. This stands for Gated Recurrent Unit. The GRU takes as input a single vector. It processes the vector and returns another vector. This could be
 exactly the same as the input or somehow changed. The input vector and the output vector have the
 dimension of the 'hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same.
 
@@ -106,12 +106,20 @@ The second GRU generates the second word and also its own hidden state. The seco
 	\addcontentsline{lof}{section}{Sequnce to Sequnce}
 \end{figure}
 
-Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the 'hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an arg-max function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
+Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the 'hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an 'arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
 
-How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. At first this prediction is not very close to the desired output. The output is compared to the prediction and a 'loss' is generated. 'Loss' is a numerical representation of the difference between the desired output and the generated prediction. Then backpropagation identifies areas of the model that need to be modified in order to get the proper prediction in the future. This is done over and over with every source/target sentence pair. Slowly the predictions start to match the target.
+\section{Loss and Accuracy}
+
+How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. At first this prediction is not very close to the desired output. The output is compared to the prediction and a 'loss' is generated. 'Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart.
+
+Another metric is Accuracy. 'Accuracy' is a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
+
+Training, then, is a mathematical process. Backpropagation identifies areas of the model that need to be modified in order to get the proper prediction in the future. This is done over and over with every source/target sentence pair. Slowly the model is changed and predictions start to match the target. That's training.
 
 This is how some computer models do language translation. There are some inherent problems. Because the output of a GRU is constantly being reused as the input, lots of data that might be useful to have is lost when the GRU churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
 
 Another problem is that all input to be translated to target output has to be boiled down and 
 passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the 'thought vector.' Somehow all necessary information must be there. This also limits the length of the input and output vectors. It does help, when setting
 up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
+
+There are several numerical metrics that we can record during training that tell us how our model is training. The loss, a mathematical calculation of the difference between the model's output and the predicted value, is mentioned above. Loss is an important number. Also accuracy is important. Accuracy is a mathematical calculation of the difference between the model's output and the value that output should be, but it focuses on the number of times the model comes out with a correct prediction verses how many output values there are in total.
