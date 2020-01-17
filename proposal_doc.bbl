@@ -30,6 +30,10 @@ T.~Wolf, L.~Debut, V.~Sanh, J.~Chaumond, C.~Delangue, A.~Moi, P.~Cistac,
 \newblock
   http://www.wildml.com/2015/10/recurrent-neural-network-tutorial-part-4-implementing-a-grulstm-rnn-with-python-and-theano/.
 
+\bibitem{DBLP:journals/corr/LuongPM15}
+M.~Luong, H.~Pham, and C.~D. Manning, ``Effective approaches to attention-based
+  neural machine translation,'' {\em CoRR}, vol.~abs/1508.04025, 2015.
+
 \bibitem{Danescu-Niculescu-Mizil+Lee:11a}
 C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
   A new approach to understanding coordination of linguistic style in
