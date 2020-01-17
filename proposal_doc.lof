@@ -1,11 +1,10 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
-\contentsline {section}{Recurrent Neural Network}{3}{section.1.2}% 
-\contentsline {section}{Sequnce to Sequnce}{6}{section.1.3}% 
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Recurrent Neural Network}}{3}{figure.1.1}% 
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Sequence to Sequence}}{7}{figure.1.2}% 
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Loss and Accuracy}}{11}{figure.1.3}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {section}{Loss and Accuracy}{14}{section.3.3}% 
 \addvspace {10\p@ }
-\contentsline {section}{Sequnce to Sequnce}{19}{section.A.2}% 
-\contentsline {section}{Word Embeddings}{20}{section.A.4}% 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Word Embeddings}}{22}{figure.A.1}% 
 \addvspace {10\p@ }

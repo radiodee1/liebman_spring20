@@ -39,10 +39,10 @@ improvements are.
 
 We use a GRU arrangement for a Sequence to Sequence chatbot.
 
-
+\iffalse
 \begin{figure}[H]
 
-\includegraphics[scale=0.5]{diagram-nmt}
+\includegraphics[scale=1.0]{diagram-nmt}
 
 Seq2seq: A and B represent an input sequence and C and D represent
 the corresponding output.
@@ -50,6 +50,7 @@ the corresponding output.
 	\addcontentsline{lof}{section}{Sequnce to Sequnce}
 
 \end{figure}
+\fi
 
 \section{Sequence to Sequence - Architecture}
 
@@ -103,11 +104,11 @@ We record these values only and discard other labels.
 
 \begin{figure}[H]
 	
-	\includegraphics[scale=0.60]{diagram-embedding}
+	\includegraphics[scale=1.0]{diagram-embedding}
 	
-	Embeddings: Each word from a dictionary is converted to a vector of numbers.
+	\caption[Word Embeddings]{Embeddings: Each word from a dictionary is converted to a vector of numbers.}
 	
-		\addcontentsline{lof}{section}{Word Embeddings}
+%\addcontentsline{lof}{section}{Word Embeddings}
 \end{figure}
 
 \section{Word Embeddings}
