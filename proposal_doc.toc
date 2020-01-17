@@ -6,28 +6,28 @@
 \contentsline {section}{\numberline {1.4}Loss and Accuracy}{8}{section.1.4}% 
 \contentsline {section}{\numberline {1.5}Attention Mechanism}{9}{section.1.5}% 
 \contentsline {section}{\numberline {1.6}Sequence to Sequence Chatbot}{10}{section.1.6}% 
-\contentsline {chapter}{\numberline {2}GPT2 and Transformers}{12}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}Experiments}{13}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Approach to the Study}{14}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Setup}{14}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Experiments}{14}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}Chatbot - GRU Model}{15}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Smart Speaker - GRU Model}{16}{section.3.5}% 
-\contentsline {section}{\numberline {3.6}Chatbot - Transformer Model}{16}{section.3.6}% 
-\contentsline {section}{\numberline {3.7}Smart Speaker - Transformer Model}{17}{section.3.7}% 
-\contentsline {section}{\numberline {3.8}Chatbot - GPT2 Model}{17}{section.3.8}% 
-\contentsline {section}{\numberline {3.9}Smart Speaker - GPT2 Model}{19}{section.3.9}% 
-\contentsline {chapter}{\numberline {A}Terminology}{20}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{20}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Sequence to Sequence - Training}{20}{section.A.2}% 
-\contentsline {section}{\numberline {A.3}Sequence to Sequence - Architecture}{21}{section.A.3}% 
-\contentsline {section}{\numberline {A.4}Corpus Considerations}{21}{section.A.4}% 
-\contentsline {section}{\numberline {A.5}Word Embeddings}{23}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}WordPiece - BPE}{23}{section.A.6}% 
-\contentsline {section}{\numberline {A.7}Transformer}{24}{section.A.7}% 
-\contentsline {section}{\numberline {A.8}GPT2}{24}{section.A.8}% 
-\contentsline {section}{\numberline {A.9}Raspberry Pi}{25}{section.A.9}% 
-\contentsline {section}{\numberline {A.10}Speech}{26}{section.A.10}% 
-\contentsline {chapter}{\numberline {B}Tables}{27}{appendix.B}% 
-\contentsline {section}{\numberline {B.1}Model Overview}{27}{section.B.1}% 
-\contentsline {section}{\numberline {B.2}Question Answering -- babi}{28}{section.B.2}% 
+\contentsline {chapter}{\numberline {2}GPT2 and Transformers}{13}{chapter.2}% 
+\contentsline {chapter}{\numberline {3}Experiments}{14}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Approach to the Study}{15}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Setup}{15}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Experiments}{15}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Chatbot - GRU Model}{16}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Smart Speaker - GRU Model}{17}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Chatbot - Transformer Model}{17}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Smart Speaker - Transformer Model}{18}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Chatbot - GPT2 Model}{18}{section.3.8}% 
+\contentsline {section}{\numberline {3.9}Smart Speaker - GPT2 Model}{20}{section.3.9}% 
+\contentsline {chapter}{\numberline {A}Terminology}{21}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{21}{section.A.1}% 
+\contentsline {section}{\numberline {A.2}Sequence to Sequence - Training}{21}{section.A.2}% 
+\contentsline {section}{\numberline {A.3}Sequence to Sequence - Architecture}{22}{section.A.3}% 
+\contentsline {section}{\numberline {A.4}Corpus Considerations}{22}{section.A.4}% 
+\contentsline {section}{\numberline {A.5}Word Embeddings}{24}{section.A.5}% 
+\contentsline {section}{\numberline {A.6}WordPiece - BPE}{24}{section.A.6}% 
+\contentsline {section}{\numberline {A.7}Transformer}{25}{section.A.7}% 
+\contentsline {section}{\numberline {A.8}GPT2}{25}{section.A.8}% 
+\contentsline {section}{\numberline {A.9}Raspberry Pi}{26}{section.A.9}% 
+\contentsline {section}{\numberline {A.10}Speech}{27}{section.A.10}% 
+\contentsline {chapter}{\numberline {B}Tables}{28}{appendix.B}% 
+\contentsline {section}{\numberline {B.1}Model Overview}{28}{section.B.1}% 
+\contentsline {section}{\numberline {B.2}Question Answering -- babi}{29}{section.B.2}% 

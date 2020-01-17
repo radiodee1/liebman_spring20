@@ -68,31 +68,36 @@ In this approach we use recurrent neural networks to obtain our translation. Two
 
 Also employed are two vocabulary sets. One vocabulary is for the source language and another is for the target language. A table of word vectors the size of the input vocabulary is created and a maximum sentence length is picked. There is also a 'hidden size', which is an important dimension in the model. In practice the hidden size could be between 300 and 550 for this kind of application.
 
-First text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all shorter sentences a special 'end-of-sequence' token is appended to all sentences in both languages.
+First text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special 'end-of-sequence' token is appended to all sequences in both languages.
 
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
+\subsection*{Recurrent Elements}
 The recurrent unit in this case is a GRU. This stands for Gated Recurrent Unit. The GRU takes as input a single vector. It processes the vector and returns another vector. This could be
-exactly the same as the input or somehow changed. The input vector and the output vector have the
-dimension of the 'hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same.
+exactly the same as the input but is usually somehow changed. The input vector and the output vector have the
+dimension of the 'hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The GRU also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
 
-So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. Then it gives the entire vector to the GRU. The GRU takes the word and decides weather to return as output just the input or the input modified.
+So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the GRU does internally.
 
-The input segments composed of GRUs take two input vectors and return two output vectors. Later we will use GRUs to construct output segments. Here we want to stress that the inputs cascade from GRU to GRU in the input segment. 
+The input segments composed of GRUs take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input GRU. One output vector is like the word vector that's input to the GRU. One output vector is a hidden value.
 
-The first word in the input sentence is converted to a vector and passed to the first GRU. The GRU has two inputs and two outputs. One input is for new data and one is for the hidden state of the segment in question. The first GRU consumes the first word. The second GRU takes the hidden state from the first GRU along with the second word and consumes them.
+The first word in the input sentence is converted to a vector and passed to the first GRU. The GRU has two inputs and two outputs. One input is for new data and one is for the hidden state of the segment in question. 
 
-The third GRU takes the hidden output from the second GRU and the third word and consumes them. This pattern is repeated for the length of the input sentence. A complicating detail is that although many GRUs are called for in the input segment they all use the same set of weights and 
+The very first GRU in the input chain ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next GRU in the chain. This GRU uses the output of the previous GRU as the hidden value. It also uses the vector for the second word. It passes it's important information to the GRU to it's right. Then the last GRU in the chain passes it's hidden state to the output chain.
+
+Later we will use GRUs to construct output segments. Here we want to stress that the inputs cascade from GRU to GRU in the input segment. 
+
+The first GRU consumes the first word. The second GRU takes the hidden state from the first GRU along with the second word and consumes them. The third GRU takes the hidden output from the second GRU and the third word and consumes them. This pattern is repeated for the length of the input sentence. One at a time all the words from the input sentence are passed to the input GRU. The hidden state from the last GRU is passed to the output segment. The output segment is also GRU based.
+
+A complicating detail is that although many GRUs are called for in the input segment they all use the same set of weights and 
 biases. For this reason only a single input GRU is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the GRU. 
 
-One at a time all the words from the input sentence are passed to the input GRU. The hidden state
-from the last GRU is passed to the output segment. The output segment is also GRU based.
 
-The output is in charge of generating tokens that represent the input in the output language. The output uses GRU segments also. The first hidden input for the first output is taken from the 
+The output chain is in charge of generating tokens that represent the input in the output language. The output uses GRU segments also. The first hidden input for the first output is taken from the 
 last hidden output of the last recursive unit of the input chain. It is important because it is the spot where a great amount of data is passed from the input section to the output section. 
 The connection at this point is said to carry the 'thought vector'. Most of the information responsible for translating one language to another is passed at this point.
 
-The hidden values from the input section are passed to the first output GRU. It outputs the values that are converted to the first word of the output. The first output GRU also has a hidden state. It passes the first word and the hidden state on to the second GRU.
+The hidden values from the input section are passed to the first output GRU. It outputs the values that are later converted to the first word of the output. The first output GRU also has a hidden state. It passes the first word and the hidden state on to the second GRU.
 
 The second GRU generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on the the next GRU. This is repeated until a special 'end-of-sequence' token is found or until the number of tokens equals the maximum number allowed.
 
@@ -105,17 +110,19 @@ The second GRU generates the second word and also its own hidden state. The seco
 %\addcontentsline{lof}{section}{Sequnce to Sequnce}
 \end{figure}
 
+\subsection*{Output Tokens}
 Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the 'hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an 'arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
 
 How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. The output is called a prediction. If the target and the prediction are not the same, the model must modify itself so that in the future they are.
-
-That ends our discussion of Sequence to Sequence Translation. This is how some computer models do language translation. Using arg-max is an example of a greedy approach. Another approach might use something called Beam Selection but we're not going to get into that here.
 
 There are some inherent problems. Because the output of a GRU is constantly being reused as the input, lots of data that might be useful to have is lost when the GRU churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
 
 Another problem is that all input to be translated to target output has to be boiled down and 
 passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the 'thought vector.' Somehow all necessary information must be there. This also limits the length of the input and output vectors. It does help, when setting
 up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
+
+That ends our discussion of Sequence to Sequence Translation. This is how some computer models do language translation. Using arg-max is an example of a greedy approach. Another approach might use something like 'Beam Selection' but we're not going to get into that here.
+
 
 \section{Loss and Accuracy}
 
