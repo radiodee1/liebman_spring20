@@ -26,7 +26,14 @@ can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://git
 
 As a coding experiment we rewrite the code for the sequence-to-sequence model. We have varying amounts of success with these experiments. We do not rewrite the GPT2 code from the Tensorflow or Pytorch repository.
 
+\section{ARMv7 Build/Compile}
 
+\subsection*{Pytorch 'torch' Library 1.1.0 For ARMv7}
+It also allowed us to compile the Pytorch library for Raspberry Pi.
+
+\subsection*{Docker Container 'tensorflow-model-server' For ARMv7}
+
+Explanation here.
 
 \section{Experiments}
 
@@ -105,7 +112,10 @@ very infrequently and it is not clear why the model chooses to reply this way.
 \section{Smart Speaker - GRU Model}
 
 The GRU model was installed on a Raspberry Pi. This allowed us to test out speech-to-text and 
-text-to-speech libraries. It also allowed us to compile the Pytorch library for Raspberry Pi.
+text-to-speech libraries. 
+
+%\subsection*{Pytorch 'torch' Library 1.1.0 For ARMv7}
+It also allowed us to compile the Pytorch library for Raspberry Pi.
 
 
 
@@ -137,6 +147,7 @@ four sentences. When it comes upon a question that it doesn't expect it defaults
 Later we look to install the transformer model on the Raspberry Pi. This model is more dynamic than the sequence-to-sequence model. 
 
 The transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. The time between the first two or three responses is uncomfortably slow. After those first responses the time between answers gets to be more natural.
+
 
 
 \section{Chatbot - GPT2 Model}
