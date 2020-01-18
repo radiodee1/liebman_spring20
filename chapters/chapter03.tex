@@ -29,9 +29,14 @@ As a coding experiment we rewrite the code for the sequence-to-sequence model. W
 \section{ARMv7 Build/Compile}
 
 \subsection*{Pytorch 'torch' Library 1.1.0 For ARMv7}
-It also allowed us to compile the Pytorch library for Raspberry Pi.
+We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
+
+Explanation here.
 
 \subsection*{Docker Container 'tensorflow-model-server' For ARMv7}
+Docker has to be installed on the Raspberry Pi and on the development laptop computer.
+
+Then we use someone's pre-compiled Docker Container for ARMv7. We write our own Docker script to interact with the pre-compiled container.
 
 Explanation here.
 

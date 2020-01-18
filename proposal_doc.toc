@@ -13,22 +13,22 @@
 \contentsline {section}{\numberline {3.3}ARMv7 Build/Compile}{15}{section.3.3}% 
 \contentsline {section}{\numberline {3.4}Experiments}{16}{section.3.4}% 
 \contentsline {section}{\numberline {3.5}Chatbot - GRU Model}{17}{section.3.5}% 
-\contentsline {section}{\numberline {3.6}Smart Speaker - GRU Model}{17}{section.3.6}% 
-\contentsline {section}{\numberline {3.7}Chatbot - Transformer Model}{17}{section.3.7}% 
-\contentsline {section}{\numberline {3.8}Smart Speaker - Transformer Model}{18}{section.3.8}% 
+\contentsline {section}{\numberline {3.6}Smart Speaker - GRU Model}{18}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Chatbot - Transformer Model}{18}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Smart Speaker - Transformer Model}{19}{section.3.8}% 
 \contentsline {section}{\numberline {3.9}Chatbot - GPT2 Model}{19}{section.3.9}% 
 \contentsline {section}{\numberline {3.10}Smart Speaker - GPT2 Model}{20}{section.3.10}% 
-\contentsline {chapter}{\numberline {A}Terminology}{21}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{21}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Sequence to Sequence - Chatbot}{21}{section.A.2}% 
-\contentsline {section}{\numberline {A.3}Sequence to Sequence - Architecture}{22}{section.A.3}% 
-\contentsline {section}{\numberline {A.4}Corpus Considerations}{23}{section.A.4}% 
-\contentsline {section}{\numberline {A.5}Word Embeddings}{23}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}WordPiece - BPE}{26}{section.A.6}% 
-\contentsline {section}{\numberline {A.7}Transformer}{26}{section.A.7}% 
-\contentsline {section}{\numberline {A.8}GPT2}{26}{section.A.8}% 
-\contentsline {section}{\numberline {A.9}Raspberry Pi}{27}{section.A.9}% 
-\contentsline {section}{\numberline {A.10}Speech}{28}{section.A.10}% 
-\contentsline {chapter}{\numberline {B}Tables}{29}{appendix.B}% 
-\contentsline {section}{\numberline {B.1}Model Overview}{29}{section.B.1}% 
-\contentsline {section}{\numberline {B.2}Question Answering -- babi}{30}{section.B.2}% 
+\contentsline {chapter}{\numberline {A}Terminology}{22}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{22}{section.A.1}% 
+\contentsline {section}{\numberline {A.2}Sequence to Sequence - Chatbot}{22}{section.A.2}% 
+\contentsline {section}{\numberline {A.3}Sequence to Sequence - Architecture}{23}{section.A.3}% 
+\contentsline {section}{\numberline {A.4}Corpus Considerations}{24}{section.A.4}% 
+\contentsline {section}{\numberline {A.5}Word Embeddings}{24}{section.A.5}% 
+\contentsline {section}{\numberline {A.6}WordPiece - BPE}{27}{section.A.6}% 
+\contentsline {section}{\numberline {A.7}Transformer}{27}{section.A.7}% 
+\contentsline {section}{\numberline {A.8}GPT2}{27}{section.A.8}% 
+\contentsline {section}{\numberline {A.9}Raspberry Pi}{28}{section.A.9}% 
+\contentsline {section}{\numberline {A.10}Speech}{29}{section.A.10}% 
+\contentsline {chapter}{\numberline {B}Tables}{30}{appendix.B}% 
+\contentsline {section}{\numberline {B.1}Model Overview}{30}{section.B.1}% 
+\contentsline {section}{\numberline {B.2}Question Answering -- babi}{31}{section.B.2}% 
