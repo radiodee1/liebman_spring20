@@ -11,7 +11,7 @@ way it remembers previous inputs. Several inputs in a series are fed to a GRU in
 GRU elements, like all recurrent network components, suffer from information loss when the
 input segments are very long.
 
-\section{Sequence to Sequence - Training}
+\section{Sequence to Sequence - Chatbot}
 
 The sequence to sequence model we use is based on the \textquoteleft Neural
 Machine Translation\textquoteright{} model, or NMT. Originally designed
@@ -39,22 +39,21 @@ improvements are.
 
 We use a GRU arrangement for a Sequence to Sequence chatbot.
 
-\iffalse
+
 \begin{figure}[H]
 
 \includegraphics[scale=1.0]{diagram-nmt}
 
-Seq2seq: A and B represent an input sequence and C and D represent
-the corresponding output.
 
-	\addcontentsline{lof}{section}{Sequnce to Sequnce}
+
+\caption[Sequnce to Sequence]{Seq2seq: A and B represent an input sequence and C and D represent the corresponding output.}
 
 \end{figure}
-\fi
+
 
 \section{Sequence to Sequence - Architecture}
 
-In Fig. 1 we generalize a sequence to sequence model. The idea is
+In Fig. A.1 we generalize a sequence to sequence model. The idea is
 that A and B, on the left side of the diagram, deal with the encoding
 of sentences. A and B would be consecutive words in a sentence, and
 the round blue nodes below A and B are RNN units. They are Recurrent
@@ -102,14 +101,7 @@ organized in this kind of pattern. When we take apart the Persona corpus
 we find that the sentences labeled with the 'history' tag are most suited to our task.
 We record these values only and discard other labels.
 
-\begin{figure}[H]
-	
-	\includegraphics[scale=1.0]{diagram-embedding}
-	
-	\caption[Word Embeddings]{Embeddings: Each word from a dictionary is converted to a vector of numbers.}
-	
-%\addcontentsline{lof}{section}{Word Embeddings}
-\end{figure}
+
 
 \section{Word Embeddings}
 
@@ -139,6 +131,15 @@ The contents of the embedding unit is a table of numbers, all of the
 size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t
 have to be, unique values. There is one complete hidden dimension
 sized vector for each word in the vocabulary. 
+
+\begin{figure}[H]
+	
+	\includegraphics[scale=1.0]{diagram-embedding}
+	
+	\caption[Word Embeddings]{Embeddings: Each word from a dictionary is converted to a vector of numbers.}
+	
+	%\addcontentsline{lof}{section}{Word Embeddings}
+\end{figure}
 
 The vectors can be initialized randomly or they can be filled with
 predetermined values. As the network trains the embedding values can

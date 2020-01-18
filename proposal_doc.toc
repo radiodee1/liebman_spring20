@@ -19,15 +19,15 @@
 \contentsline {section}{\numberline {3.9}Smart Speaker - GPT2 Model}{20}{section.3.9}% 
 \contentsline {chapter}{\numberline {A}Terminology}{21}{appendix.A}% 
 \contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{21}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Sequence to Sequence - Training}{21}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Sequence to Sequence - Chatbot}{21}{section.A.2}% 
 \contentsline {section}{\numberline {A.3}Sequence to Sequence - Architecture}{22}{section.A.3}% 
-\contentsline {section}{\numberline {A.4}Corpus Considerations}{22}{section.A.4}% 
-\contentsline {section}{\numberline {A.5}Word Embeddings}{24}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}WordPiece - BPE}{24}{section.A.6}% 
-\contentsline {section}{\numberline {A.7}Transformer}{25}{section.A.7}% 
-\contentsline {section}{\numberline {A.8}GPT2}{25}{section.A.8}% 
-\contentsline {section}{\numberline {A.9}Raspberry Pi}{26}{section.A.9}% 
-\contentsline {section}{\numberline {A.10}Speech}{27}{section.A.10}% 
-\contentsline {chapter}{\numberline {B}Tables}{28}{appendix.B}% 
-\contentsline {section}{\numberline {B.1}Model Overview}{28}{section.B.1}% 
-\contentsline {section}{\numberline {B.2}Question Answering -- babi}{29}{section.B.2}% 
+\contentsline {section}{\numberline {A.4}Corpus Considerations}{23}{section.A.4}% 
+\contentsline {section}{\numberline {A.5}Word Embeddings}{23}{section.A.5}% 
+\contentsline {section}{\numberline {A.6}WordPiece - BPE}{26}{section.A.6}% 
+\contentsline {section}{\numberline {A.7}Transformer}{26}{section.A.7}% 
+\contentsline {section}{\numberline {A.8}GPT2}{26}{section.A.8}% 
+\contentsline {section}{\numberline {A.9}Raspberry Pi}{27}{section.A.9}% 
+\contentsline {section}{\numberline {A.10}Speech}{28}{section.A.10}% 
+\contentsline {chapter}{\numberline {B}Tables}{29}{appendix.B}% 
+\contentsline {section}{\numberline {B.1}Model Overview}{29}{section.B.1}% 
+\contentsline {section}{\numberline {B.2}Question Answering -- babi}{30}{section.B.2}% 
