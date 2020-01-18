@@ -20,15 +20,12 @@ It is worth noting that with the appearance of the Transformer architecture and 
 
 \section{Recurrent Neural Network Components}
 
+\subsection*{Overview (RNN)}
 The goal behind RNN components is to detect patterns. Here we explore a simple RNN.
 
 The simplest RNN has two inputs and two outputs. They can be arranged in chains. In our example the input will be a sequence of data and the RNN chain will be a line of components of the same length.
 
 One input from each component is the hidden state output from the RNN to the left. Another input is the current input from the sequence that the chain is monitoring. One output is the generated hidden state, meant for the component to the right. The last output is the value that the RNN surmises. 
-
-In our diagram the two inputs are labeled on the left side, and the single output does double duty as both the hidden state output and the value that the RNN surmises.
-
-There are several designs for an RNN component. The inner workings of these components are what makes them different. In the example in the diagram the inner workings are very simple. Two paths, labeled as inputs, take data into the RNN. Their data is combined in the green circle. This combination is done with concatination and simple feed forward neural network components. The output from the concatination is passed through the red circle. This is a tanh activation operation that limits the output to values from -1 through 1. This tanh activation keeps the output within reasonable values. Finally the output is delivered outside the component to the program employing the RNN. In this diagram there is only one output. The single output would serve as both the hidden state output for that position in the chain, and also the data output component for that position in the chain.
 
 \begin{figure}[H]
 	
@@ -36,9 +33,16 @@ There are several designs for an RNN component. The inner workings of these comp
 	
 	\caption[Recurrent Neural Network]{RNN - 1 and 2 are inputs, 3 is the output.}
 	
-%\addcontentsline{lof}{section}{Recurrent Neural Network}
+	%\addcontentsline{lof}{section}{Recurrent Neural Network}
 \end{figure}
 
+In our diagram the two inputs are labeled on the left side, and the single output does double duty as both the hidden state output and the value that the RNN surmises.
+
+There are several designs for an RNN component. The inner workings of these components are what makes them different. In the example in the diagram the inner workings are very simple. Two paths, labeled as inputs, take data into the RNN. Their data is combined in the green circle. This combination is done with concatination and simple feed forward neural network components. The output from the concatination is passed through the red circle. This is a tanh activation operation that limits the output to values from -1 through 1. This tanh activation keeps the output within reasonable values. Finally the output is delivered outside the component to the program employing the RNN. In this diagram there is only one output. The single output would serve as both the hidden state output for that position in the chain, and also the data output component for that position in the chain.
+
+
+
+\subsection*{Specific (GRU)}
 A second type of RNN is the GRU. GRU stands for 'Gated Recurrent Unit'. A GRU has two inputs and two outputs. The formulas for a GRU, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
 
 

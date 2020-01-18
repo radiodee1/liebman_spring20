@@ -2,8 +2,8 @@
 \contentsline {chapter}{\numberline {1}Background/History of the Study}{1}{chapter.1}% 
 \contentsline {section}{\numberline {1.1}Background}{2}{section.1.1}% 
 \contentsline {section}{\numberline {1.2}Recurrent Neural Network Components}{2}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Sequence to Sequence}{4}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Loss and Accuracy}{8}{section.1.4}% 
+\contentsline {section}{\numberline {1.3}Sequence to Sequence}{5}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Loss and Accuracy}{9}{section.1.4}% 
 \contentsline {section}{\numberline {1.5}Attention Mechanism}{9}{section.1.5}% 
 \contentsline {section}{\numberline {1.6}Sequence to Sequence Chatbot}{10}{section.1.6}% 
 \contentsline {chapter}{\numberline {2}GPT2 and Transformers}{13}{chapter.2}% 
