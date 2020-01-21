@@ -21,7 +21,7 @@ It is worth noting that with the appearance of the Transformer architecture and 
 \section{Recurrent Neural Network Components}
 
 \subsection*{Overview (RNN)}
-The goal behind RNN components is to detect patterns. Here we explore a simple RNN.
+The goal behind RNN components is to detect patterns. Here we explore a simple \ac{RNN}.
 
 The simplest RNN has two inputs and two outputs. They can be arranged in chains. In our example the input will be a sequence of data and the RNN chain will be a line of components of the same length.
 
@@ -140,7 +140,7 @@ Getting a prediction, running input data through a neural network, is forward pr
 Training, then, is a mathematical process involving backpropagagtion. Backpropagation identifies areas of the model weights that need to be modified in order to get the proper prediction in the future.
 
 %\iffalse
-In practice we take the derivative of the loss function in order to backpropagate. The derivative is multiplied by the learning rate and subtracted from the original weight value. The result is a set of adjusted weight matrices. When these matrices are used later they allow for better predictions. 
+In practice we take the derivative of the loss function in order to backpropagate. The derivative is manipulated with the learning rate and the original weight value is changed. The result is a set of adjusted weight matrices. When these matrices are used later they allow for better predictions. 
 %\fi
 
 This is done over and over with every source/target sentence pair. Slowly the model is changed and predictions start to match the target. That's training. The loss should decrease over time and the accuracy should increase.
