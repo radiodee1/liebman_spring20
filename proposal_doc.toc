@@ -8,6 +8,7 @@
 \contentsline {section}{\numberline {1.6}Sequence to Sequence Chatbot}{10}{section.1.6}% 
 \contentsline {chapter}{\numberline {2}GPT2 and Transformers}{12}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Transformer and Attention}{13}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}GPT2}{17}{section.2.2}% 
 \contentsline {chapter}{\numberline {3}Experiments}{18}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Approach to the Study}{19}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Setup}{19}{section.3.2}% 
@@ -25,11 +26,11 @@
 \contentsline {section}{\numberline {A.3}Sequence to Sequence - Architecture}{27}{section.A.3}% 
 \contentsline {section}{\numberline {A.4}Corpus Considerations}{28}{section.A.4}% 
 \contentsline {section}{\numberline {A.5}Word Embeddings}{28}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}WordPiece - BPE}{31}{section.A.6}% 
-\contentsline {section}{\numberline {A.7}Transformer}{31}{section.A.7}% 
-\contentsline {section}{\numberline {A.8}GPT2}{31}{section.A.8}% 
-\contentsline {section}{\numberline {A.9}Raspberry Pi}{32}{section.A.9}% 
-\contentsline {section}{\numberline {A.10}Speech}{33}{section.A.10}% 
-\contentsline {chapter}{\numberline {B}Tables}{34}{appendix.B}% 
-\contentsline {section}{\numberline {B.1}Model Overview}{34}{section.B.1}% 
-\contentsline {chapter}{\numberline {C}Abbreviations}{35}{appendix.C}% 
+\contentsline {section}{\numberline {A.6}WordPiece - BPE}{29}{section.A.6}% 
+\contentsline {section}{\numberline {A.7}Transformer}{30}{section.A.7}% 
+\contentsline {section}{\numberline {A.8}GPT2}{30}{section.A.8}% 
+\contentsline {section}{\numberline {A.9}Raspberry Pi}{31}{section.A.9}% 
+\contentsline {section}{\numberline {A.10}Speech}{32}{section.A.10}% 
+\contentsline {chapter}{\numberline {B}Tables}{33}{appendix.B}% 
+\contentsline {section}{\numberline {B.1}Model Overview}{33}{section.B.1}% 
+\contentsline {chapter}{\numberline {C}Abbreviations}{34}{appendix.C}% 

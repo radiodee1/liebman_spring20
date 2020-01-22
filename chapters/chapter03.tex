@@ -28,12 +28,12 @@ As a coding experiment we rewrite the code for the sequence-to-sequence model. W
 
 \section{ARMv7 Build/Compile}
 
-\subsection*{Pytorch 'torch' Library 1.1.0 For ARMv7}
+\subsection*{Pytorch `torch' Library 1.1.0 For ARMv7}
 We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
 
 Explanation here.
 
-\subsection*{Docker Container 'tensorflow-model-server' For ARMv7}
+\subsection*{Docker Container `tensorflow-model-server' For ARMv7}
 Docker has to be installed on the Raspberry Pi and on the development laptop computer.
 
 Then we use someone's pre-compiled Docker Container for ARMv7. We write our own Docker script to interact with the pre-compiled container.
@@ -54,7 +54,7 @@ When we talk about the chatbot problem on GPT2 we are talking about a PyTorch ve
 GPT2 code. 
 
 We found that the chatbot with the hand coded Neural Machine Translation did not work 
-very well. We found that the GPT2 chatbot worked well enough with the 'zero-shot' setup so that
+very well. We found that the GPT2 chatbot worked well enough with the `zero-shot' setup so that
 fine-tuning was not necessary. 
 
 Fine tuning on the GPT2 problem actually had a negative effect. To fine-tune GPT2 also involved
@@ -109,7 +109,7 @@ Subjectively the GRU chatbot is unusable.
 For example our chatbot frequently replies to input with the phrase "I don't know". This is the most common output from our model. In this respect our original chatbot responds poorly.
 
 A large portion of the time the bot's 
-response to a question is "I don't know". This is interesting in that the chatbot has identified that this phrase is a suitable answer to many questions, but it is disappointing that there isn't more variety to the output.  
+response to a question is "I don't know". This is interesting in that the chatbot has identified that this phrase is a suitable answer to many questions, but it is disappointing that there is not more variety to the output.  
 
 Occasionally the sequence-to-sequence model will reply with the phrase "I'm sorry." This happens
 very infrequently and it is not clear why the model chooses to reply this way. 
@@ -129,7 +129,7 @@ Using the Persona corpus we trained a transformer model to use as a chatbot. Thi
 
 Subjectively this model did not perform as well as the GPT2 model, but it did perform better than the GRU model.
 
-The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board but it requires a python package called 'tensorflow-model-server' and this package would have to be built from source for the Raspberry Pi. 
+The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board but it requires a python package called `tensorflow-model-server' and this package would have to be built from source for the Raspberry Pi. 
 
 Training of the model followed a certain pattern. First the model was trained on the persona corpus until a familiar pattern emerged. When the model began to answer all questions with the 
 phrase "I don't know" training was stopped. 
@@ -145,7 +145,7 @@ thought of as helpful. Loss stopped improving at some point in this process, and
 improvement was taken as a sign that progress was not likely.
 
 Subjectively the transformer model is better than the GRU model. It can respond to something like
-four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like 'hi', 'How are you?' and 'What do you do?'. If you tell it your name it will tell you that its name is 'Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It cannot tell you the time. The default reply sentence for unknown prompts is 'Hi, how are you today?'
+four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It cannot tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 \section{Smart Speaker - Transformer Model}
 
@@ -156,9 +156,9 @@ The transformer model takes about two minutes to boot on the Raspberry Pi. After
 
 
 \section{Chatbot - GPT2 Model}
-We used a pre-trained GPT2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well. The corpus is called 'WebText'.
+We used a pre-trained GPT2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well. The corpus is called `WebText'.
 
-For our experiments GPT2 was used for the chatbot model in 'zero-shot' mode. This means we did no
+For our experiments GPT2 was used for the chatbot model in `zero-shot' mode. This means we did no
 special fine-tuning of the GPT2 model in the application.
 
 We did do some special coding for the input and output of the GPT2 code in order to operate it as
@@ -171,7 +171,7 @@ exposed to the "Question/Answer" paradigm in written passages during its trainin
 Output from the GPT2 model was 
 usually larger in size than we needed. Also, output had the character of having some sensible utterance followed by some output that was only a partial sentence.
 
-It was necessary to 'scrape' the output. First the output was checked for the "A:" character string at the start. If it was there it was removed. Then the first complete sentence was used as output, while words and phrases after that were discarded.
+It was necessary to `scrape' the output. First the output was checked for the "A:" character string at the start. If it was there it was removed. Then the first complete sentence was used as output, while words and phrases after that were discarded.
 
 Lastly we decided that we would attempt to give the model some details that it could draw on 
 during normal execution. We had two choices here. One choice was to train the model using fine-tuning and transfer learning to recognize certain questions and to supply answers. The other
@@ -192,7 +192,7 @@ where the model replied with gibberish.
 The subject matter of the prompts did not need to be the
 same as the simple introductory conversation of the transformer model. In fact any subject matter
 could be chosen and the model would answer. The model did not remember its own answers but it
-was consistent. Questions it answered include 'What is your favorite color?' and 'Do you like lollipops?'. 
+was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
 
 \section{Smart Speaker - GPT2 Model}
 Tests showed that the GPT2 chatbot worked well. We wanted to continue and allow the chatbot to

@@ -11,7 +11,7 @@ spectacular. As our hand coded model does not run sufficiently well, we use code
 In their paper Vaswani et al (2017)\cite{Vaswani2017AttentionIA} discuss using the Transformer architecture for solving machine learning tasks. We train a transformer model as a chatbot.
 
 
-Also Radford et al (2019)\cite{radford2019language} discuss the GPT2 neural network for NLP tasks. The GPT2 model is based largely on the Transformer architecture. GPT2 stands for 'Generative Pre-training Transformer 2'. 
+Also Radford et al (2019)\cite{radford2019language} discuss the GPT2 neural network for NLP tasks. The GPT2 model is based largely on the Transformer architecture. GPT2 stands for `Generative Pre-training Transformer 2'. 
 
 We implement a chatbot with a GPT2 model. We use a program library from Wolf et al (2019)\cite{Wolf2019HuggingFacesTS} to run our model.
 
@@ -43,7 +43,7 @@ There are several designs for an RNN component. The inner workings of these comp
 
 
 \subsection*{Specific (GRU)}
-A second type of RNN is the \ac{GRU}. GRU stands for 'Gated Recurrent Unit'. A GRU has two inputs and two outputs. The formulas for a GRU, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
+A second type of RNN is the \ac{GRU}. GRU stands for `Gated Recurrent Unit'. A GRU has two inputs and two outputs. The formulas for a GRU, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
 
 
 $$ z =\sigma(x_tU^z + s_{t-1} W^z) $$  
@@ -52,11 +52,11 @@ $$ h = tanh(x_t U^h + (s_{t-1} \circ r) W^h) $$
 $$ s_t = (1 - z) \circ h + z \circ s_{t-1} $$  
 
 
-The GRU has two inputs and two outputs. It also has two internal gates. One internal gate is the 'reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the GRU. It is denoted as '$r$' above. Another internal gate is the 'update' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as '$z$'.
+The GRU has two inputs and two outputs. It also has two internal gates. One internal gate is the `reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the GRU. It is denoted as `$r$' above. Another internal gate is the `update' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as `$z$'.
 
-Here '$ s_t $' is the symbol for the output. '$h$' is the symbol for the 'hidden output'. The two inputs are '$ x_t $' and '$ s_{t-1} $' . '$ x_t $' is the hidden state input. '$ s_{t-1} $' is the regular input for the RNN or GRU. Sigmoid activation is used on the two gates, while tanh activation is used to compute the hidden output.
+Here `$ s_t $' is the symbol for the output. `$h$' is the symbol for the `hidden output'. The two inputs are `$ x_t $' and `$ s_{t-1} $' . `$ x_t $' is the hidden state input. `$ s_{t-1} $' is the regular input for the RNN or GRU. Sigmoid activation is used on the two gates, while tanh activation is used to compute the hidden output.
 
-In the last line, the regular output is determined using the 'dot' product which is denoted with a circle, along with an addition operation. In the two gate formulas (the first and second) the output is determined as the sum of two matrix multiplication operations passed through sigmoid activation. This produces values in the range of 0 to 1.
+In the last line, the regular output is determined using the `dot' product which is denoted with a circle, along with an addition operation. In the two gate formulas (the first and second) the output is determined as the sum of two matrix multiplication operations passed through sigmoid activation. This produces values in the range of 0 to 1.
 
 Under most programming circumstances the GRU is not implemented by the average programmer. The programmer employs a language like python and a programming library like Pytorch or Tensorflow. The library then implements the GRU and makes it easy for the programmer to use that implementation.
 
@@ -70,16 +70,16 @@ A better approach is sequence to sequence translation. A description follows wit
 
 In this approach we use recurrent neural networks to obtain our translation. Two recurrent neural network components are employed. One is responsible for the input language and the other for the output. Recurrent elements can remember sequences. 
 
-Also employed are two vocabulary sets. One vocabulary is for the source language and another is for the target language. A table of word vectors the size of the input vocabulary is created and a maximum sentence length is picked. There is also a 'hidden size', which is an important dimension in the model. In practice the hidden size could be 300 units and more for this kind of application.
+Also employed are two vocabulary sets. One vocabulary is for the source language and another is for the target language. A table of word vectors the size of the input vocabulary is created and a maximum sentence length is picked. There is also a `hidden size', which is an important dimension in the model. In practice the hidden size could be 300 units and more for this kind of application.
 
-First text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special 'end-of-sequence' token is appended to all sequences in both languages.
+First text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences in both languages.
 
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
 \subsection*{Recurrent Elements}
 The recurrent unit in this case is a GRU. This stands for Gated Recurrent Unit. The GRU takes as input a single vector. It processes the vector and returns another vector. This could be
 exactly the same as the input but is usually somehow changed. The input vector and the output vector have the
-dimension of the 'hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The GRU also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
+dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The GRU also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
 
 So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the GRU does internally.
 
@@ -99,11 +99,11 @@ biases. For this reason only a single input GRU is used for all of the words in 
 
 The output chain is in charge of generating tokens that represent, in this case, the translation of the input in the output language. The output uses GRU segments also. The first hidden input for the first output cell is taken from the 
 last hidden output of the last recursive unit of the input chain. It is important because it is the spot where a great amount of data is passed from the input chain to the output chain. 
-The connection at this point is said to carry the 'thought vector'. Most of the information responsible for translating one language to another is passed at this point.
+The connection at this point is said to carry the `thought vector'. Most of the information responsible for translating one language to another is passed at this point.
 
 The hidden values from the input section are passed to the first output GRU. It outputs the values that are later converted to the first word of the output. The first output GRU also has a hidden state. It passes the first word and the hidden state on to the second GRU.
 
-The second GRU generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on the the next GRU. This is repeated until a special 'end-of-sequence' token is found or until the number of tokens equals the maximum number allowed.
+The second GRU generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on the the next GRU. This is repeated until a special `end-of-sequence' token is found or until the number of tokens equals the maximum number allowed.
 
 \begin{figure}[H]
 	
@@ -115,26 +115,26 @@ The second GRU generates the second word and also its own hidden state. The seco
 \end{figure}
 
 \subsection*{Output Tokens}
-Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the 'hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an 'arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
+Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an `arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
 
 How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. The output is called a prediction. If the target and the prediction are not the same, the model must modify itself so that in the future they are.
 
 There are some inherent problems. Because the output of a GRU is constantly being reused as the input, lots of data that might be useful to have is lost when the GRU churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
 
 Another problem is that all input to be translated to target output has to be boiled down and 
-passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the 'thought vector.' Somehow all necessary information must be there. This also limits the length of the input and output vectors. It does help, when setting
+passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the `thought vector.' Somehow all necessary information must be there. This also limits the length of the input and output vectors. It does help, when setting
 up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
 
-That ends our discussion of Sequence to Sequence Translation. This is how some computer models do language translation. Using arg-max is an example of a greedy approach. Another approach might use something like 'Beam Selection' but we're not going to get into that here.
+That ends our discussion of Sequence to Sequence Translation. This is how some computer models do language translation. Using arg-max is an example of a greedy approach. Another approach might use something like `Beam Selection' but we're not going to get into that here.
 
 
 \section{Loss and Accuracy}
 
-At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a 'loss' is generated. 'Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. The loss function must be chosen. 
+At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. The loss function must be chosen. 
 
 %A typical loss function is 'Mean Squared Error' or MSE.
 
-Another metric is Accuracy. 'Accuracy' is a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
+Another metric is Accuracy. `Accuracy' is a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
 
 Getting a prediction, running input data through a neural network, is forward propagation.
 Training, then, is a mathematical process involving backpropagagtion. Backpropagation identifies areas of the model weights that need to be modified in order to get the proper prediction in the future.
@@ -164,7 +164,7 @@ score(h_t^ \text{,} \bar{h}_s) =
 \unboldmath
 $$
 
-Here $h_t$ is the symbol for the output of the current decoder and $\bar{h}_s $ is the symbol for another output taken from the input encoder. This one is the entire set of encoder states. Inkawhich (2018)\cite{2018Inkawhich} uses the 'dot' variety.
+Here $h_t$ is the symbol for the output of the current decoder and $\bar{h}_s $ is the symbol for another output taken from the input encoder. This one is the entire set of encoder states. Inkawhich (2018)\cite{2018Inkawhich} uses the `dot' variety.
 
 The formula is used after the decoder GRU calculates it's hidden state. It is below.
 

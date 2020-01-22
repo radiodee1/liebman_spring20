@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  22 JAN 2020 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  22 JAN 2020 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,7 +892,7 @@ Chapter 1.
 \openout2 = `chapters/chapter01.aux'.
 
  (./chapters/chapter01.tex
-<diagram-rnn.png, id=239, 321.2pt x 361.35pt>
+<diagram-rnn.png, id=244, 321.2pt x 361.35pt>
 File: diagram-rnn.png Graphic file (type png)
 <use diagram-rnn.png>
 Package pdftex.def Info: diagram-rnn.png  used on input line 32.
@@ -900,7 +900,7 @@ Package pdftex.def Info: diagram-rnn.png  used on input line 32.
  [2
 
 ] [3 <./diagram-rnn.png>] [4] [5] [6]
-<diagram-nmt.png, id=279, 351.3125pt x 260.975pt>
+<diagram-nmt.png, id=284, 351.3125pt x 260.975pt>
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
 Package pdftex.def Info: diagram-nmt.png  used on input line 110.
@@ -938,7 +938,7 @@ LaTeX Font Warning: Command \mathversion invalid in math mode on input line 174
 .
 
 [10]
-<Figure_1.png, id=312, 462.528pt x 346.896pt>
+<Figure_1.png, id=317, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 195.
@@ -959,24 +959,24 @@ Chapter 2.
  (./chapters/chapter02.tex [13
 
 ]
-<diagram-mat01.png, id=330, 321.2pt x 361.35pt>
+<diagram-mat01.png, id=335, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 35.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [14 <./diagram-mat01.png>]
-<diagram-mat03-64.png, id=337, 321.2pt x 361.35pt>
+<diagram-mat03-64.png, id=342, 321.2pt x 361.35pt>
 File: diagram-mat03-64.png Graphic file (type png)
 <use diagram-mat03-64.png>
 Package pdftex.def Info: diagram-mat03-64.png  used on input line 70.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-mat02.png, id=338, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=343, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 88.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [15 <./diagram-mat03-64.png>]
-<diagram-mat04.png, id=344, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=349, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 109.
@@ -1004,22 +1004,22 @@ Appendix A.
 ]
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
-Package pdftex.def Info: diagram-nmt.png  used on input line 45.
-(pdftex.def)             Requested size: 351.31163pt x 260.97437pt.
+Package pdftex.def Info: diagram-nmt.png  used on input line 47.
+(pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
  [27] [28]
-<diagram-embedding.png, id=413, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=418, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
-Package pdftex.def Info: diagram-embedding.png  used on input line 137.
-(pdftex.def)             Requested size: 351.31163pt x 351.31163pt.
- [29] [30 <./diagram-embedding.png>] [31] [32]) [33]
+Package pdftex.def Info: diagram-embedding.png  used on input line 140.
+(pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
+ [29 <./diagram-embedding.png>] [30] [31]) [32]
 Appendix B.
-[34
+[33
 
 
 ]
 Appendix C.
-[35
+[34
 
 ] (./proposal_doc.bbl
 Underfull \hbox (badness 7869) in paragraph at lines 8--11
@@ -1027,11 +1027,11 @@ Underfull \hbox (badness 7869) in paragraph at lines 8--11
 com/pytorch/tutorials
  []
 
-[36
+[35
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 248.
- [37]
+ [36]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 248.
  (./proposal_doc.aux (./chapters/chapter01.aux)
 (./chapters/chapter02.aux) (./chapters/chapter03.aux) (./chapters/appendixa.aux
@@ -1039,17 +1039,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 248.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 248.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 248.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 0437EA8FE3311B12E14E9FA064A31BA9;2175.
+(rerunfilecheck)             Checksum: 7D20DFCA0A52F44E208820D5E48A6D1B;2226.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 248.
  ) 
 Here is how much of TeX's memory you used:
- 21702 strings out of 494477
- 404058 string characters out of 6175714
- 473165 words of memory out of 5000000
- 25025 multiletter control sequences out of 15000+600000
+ 21746 strings out of 494477
+ 405376 string characters out of 6175714
+ 473491 words of memory out of 5000000
+ 25069 multiletter control sequences out of 15000+600000
  552145 words of font info for 73 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 41i,9n,63p,935b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,63p,935b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
 k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600p
 k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600p
@@ -1071,10 +1071,10 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam7.pfb>
-Output written on proposal_doc.pdf (43 pages, 573474 bytes).
+Output written on proposal_doc.pdf (42 pages, 573368 bytes).
 PDF statistics:
  932 PDF objects out of 1000 (max. 8388607)
- 484 compressed objects within 5 object streams
+ 485 compressed objects within 5 object streams
  113 named destinations out of 1000 (max. 500000)
- 313 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 321 words of extra memory for PDF output out of 10000 (max. 10000000)
 

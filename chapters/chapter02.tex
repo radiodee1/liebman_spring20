@@ -46,7 +46,7 @@ In this self-attention scheme three vectors are actually required. All three vec
 
 The smaller vectors individually are called q,k, and v. They can also be referred to as larger matrices. The new vector matrices are denoted as Q, K, and V. Q stands for Query. K stands for Key. V stands for Value. 
 
-The Query value is multiplied by the Key values from all vectors in the input. This multiplication is 'dot-product' multiplication. When it is done all keys will have low output except those that are closest to the Query. Then the results are passed through a softmax function. When this is complete there will be a single vector that is close to 1 and another group of vectors that are all close to 0.
+The Query value is multiplied by the Key values from all vectors in the input. This multiplication is `dot-product' multiplication. When it is done all keys will have low output except those that are closest to the Query. Then the results are passed through a softmax function. When this is complete there will be a single vector that is close to 1 and another group of vectors that are all close to 0.
 
 The vector produced by multiplying the softmax with the V values of every word produces a single word vector that is close to its original value, and many others that are near zero.
 
@@ -114,3 +114,7 @@ During inference it produces a token and then it adds to that token, one at a ti
 \end{figure}
 
 The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not usable for many projects.
+
+\section{GPT2}
+
+\ac{GPT2} is a large model.

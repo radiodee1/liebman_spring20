@@ -42,9 +42,12 @@ We use a GRU arrangement for a Sequence to Sequence chatbot.
 
 \begin{figure}[H]
 
-\includegraphics[scale=1.0]{diagram-nmt}
+\begin{center}
 
+\includegraphics[scale=0.5]{diagram-nmt}
 
+	
+\end{center}
 
 \caption[Sequnce to Sequence]{Seq2seq: A and B represent an input sequence and C and D represent the corresponding output.}
 
@@ -79,12 +82,12 @@ sequence to sequence model.
 
 \section{Corpus Considerations}
 We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles.
-Secondly we have the 'JSON' dump from Reddit that is downloadable. Finally
+Secondly we have the `JSON' dump from Reddit that is downloadable. Finally
 we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}.
 This final corpus is designed for training the chatbot task specifically. This is 
 referred to as the Persona corpus.
 
-The movie corpus is medium sized and the Reddit 'JSON' download is large
+The movie corpus is medium sized and the Reddit `JSON' download is large
 and filled with hyperlinks and sentence fragments. 
 
 At the time of
@@ -95,10 +98,10 @@ one is perfect for the training. The movie corpus is easier to deal
 with if we are training on a single processor. In the future if we
 can train in a faster environment the Reddit corpus might be superior.
 
-For the Persona corpus the text is organized into 'JSON' objects. There
+For the Persona corpus the text is organized into `JSON' objects. There
 are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not
 organized in this kind of pattern. When we take apart the Persona corpus
-we find that the sentences labeled with the 'history' tag are most suited to our task.
+we find that the sentences labeled with the `history' tag are most suited to our task.
 We record these values only and discard other labels.
 
 
@@ -133,9 +136,11 @@ have to be, unique values. There is one complete hidden dimension
 sized vector for each word in the vocabulary. 
 
 \begin{figure}[H]
+	\begin{center}
+	\includegraphics[scale=0.5]{diagram-embedding}
 	
-	\includegraphics[scale=1.0]{diagram-embedding}
 	
+\end{center}
 	\caption[Word Embeddings]{Embeddings: Each word from a dictionary is converted to a vector of numbers.}
 	
 	%\addcontentsline{lof}{section}{Word Embeddings}
@@ -159,7 +164,7 @@ Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glov
 
 \section{WordPiece - BPE}
 
-BPE stands for 'Byte Pair Encoding.' WordPiece is a particular implementation of Bite Pair Encoding.
+BPE stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Bite Pair Encoding.
 
 WordPiece is used by the BERT system to encode words much the way that Word2Vec does.
 Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one
@@ -172,7 +177,7 @@ these parts can easily be recombined in order to create the input word again.
 
 \section{Transformer}
 
-In this section we discuss the 'Transformer' model. In their paper, Vaswani et al (2018)\cite{tensor2tensor} describe use of the python project Tensorflow and the Transformer model which is part of it.
+In this section we discuss the `Transformer' model. In their paper, Vaswani et al (2018)\cite{tensor2tensor} describe use of the python project Tensorflow and the Transformer model which is part of it.
 
 The Transformer uses no recurrent elements. It is in a sense a group of attention mechanisms. The Transformer in this case is a single structure that can be used to solve many machine learning problems. It is used for Neural Machine Translation, Sentiment Analysis, and others. It is a single model capable of solving many machine learning questions.
 
@@ -183,7 +188,7 @@ classifier. Full sentence-length output is not supported.
 
 \section{GPT2}
 
-Another pre-trained model that uses the Transformer is GPT2. GPT2 stands for 'Generative Pre-training Transformer 2.'
+Another pre-trained model that uses the Transformer is GPT2. GPT2 stands for `Generative Pre-training Transformer 2.'
 
 GPT2 is a model that takes as input a seed sentence or topic and returns as output text in the same language that is auto-generated. GPT2 also is very capable at summarizing the input or seed statement. We use both of these capabilities in our experiments.
 
@@ -198,10 +203,10 @@ It is pre-trained on a corpus that is developed from Reddit posts called WebText
 40 Gigabyte corpus that takes high powered computers to train.
 
 The version of GPT2 which has been released is similar in size to the largest currently released 
-BERT transformer model. GPT2 has been released in Tensorflow format, and more recently in a converted PyTorch format. It is possible to download the trained model and then fine-tune the model for your own task. This kind of fine-tuning is called 'transfer learning'. 
+BERT transformer model. GPT2 has been released in Tensorflow format, and more recently in a converted PyTorch format. It is possible to download the trained model and then fine-tune the model for your own task. This kind of fine-tuning is called `transfer learning'. 
 
 GPT2 works so well in certain conditions that it is appropriate to use without fine tuning. This 
-type of implementation is called 'zero-shot' implementation. We use GPT2 in a zero-shot implementation with the chatbot problem.
+type of implementation is called `zero-shot' implementation. We use GPT2 in a zero-shot implementation with the chatbot problem.
 
 \iffalse
 \section{Question Answering -- GPT2}
@@ -216,7 +221,7 @@ and show the flexibility of the GPT2 model.
 
 \section{Raspberry Pi}
 
-A Raspberry Pi is a small single board computer with an 'arm' processor. There are 
+A Raspberry Pi is a small single board computer with an `arm' processor. There are 
 several versions on the market, the most recent of which sports built-in wifi and
 on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently
 available, the Raspberry Pi 4B computer can sport 4Gig of RAM.
@@ -259,7 +264,7 @@ only inference.
 \section{Speech}
 
 Google has python packages that translate text to speech and speech to text. In the case of text
-to speech the library is called 'gTTS'. In the case of speech to text the library is called 'google-cloud-speech'. 
+to speech the library is called `gTTS'. In the case of speech to text the library is called `google-cloud-speech'. 
 
 The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and 
 return text. For this reason it requires an internet connection and an account with Google that
