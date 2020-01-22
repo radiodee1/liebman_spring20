@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  21 JAN 2020 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  22 JAN 2020 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,94 +903,95 @@ Package pdftex.def Info: diagram-rnn.png  used on input line 32.
 <diagram-nmt.png, id=277, 351.3125pt x 260.975pt>
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
-Package pdftex.def Info: diagram-nmt.png  used on input line 110.
+Package pdftex.def Info: diagram-nmt.png  used on input line 116.
 (pdftex.def)             Requested size: 351.31163pt x 260.97437pt.
- [7 <./diagram-nmt.png>] [8] [9]
+ [7 <./diagram-nmt.png>] [8]
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 157.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 163.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 157
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 163
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 164.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 170.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 164
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 170
+.
+
+[9]
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 178.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 178
 .
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 172.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 172
-.
-
-
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 174.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 180.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 174
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 180
 .
 
 [10]
 <Figure_1.png, id=310, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 195.
+Package pdftex.def Info: Figure_1.png  used on input line 201.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-Overfull \hbox (28.90685pt too wide) in paragraph at lines 195--196
+Overfull \hbox (28.90685pt too wide) in paragraph at lines 201--202
 [][] 
  []
 
-[11]) [12 <./Figure_1.png>]
+) [11 <./Figure_1.png>]
 Chapter 2.
-[13
+[12
 
 
 ]
 \openout2 = `chapters/chapter02.aux'.
 
  (./chapters/chapter02.tex
-<diagram-mat01.png, id=326, 321.2pt x 361.35pt>
+<diagram-mat01.png, id=320, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 30.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [14
+ [13
 
 ]
-<diagram-mat02.png, id=333, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=329, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 41.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-mat03.png, id=334, 321.2pt x 361.35pt>
+<diagram-mat03.png, id=330, 321.2pt x 361.35pt>
 File: diagram-mat03.png Graphic file (type png)
 <use diagram-mat03.png>
 Package pdftex.def Info: diagram-mat03.png  used on input line 52.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-) [15 <./diagram-mat01.png> <./diagram-mat02.png>] [16 <./diagram-mat03.png>]
+) [14 <./diagram-mat01.png> <./diagram-mat02.png>] [15 <./diagram-mat03.png>]
 Chapter 3.
-[17
+[16
 
 
 ]
 \openout2 = `chapters/chapter03.aux'.
 
- (./chapters/chapter03.tex [18
+ (./chapters/chapter03.tex [17
 
-] [19] [20] [21] [22] [23]) [24]
+] [18] [19] [20] [21] [22]) [23]
 \openout2 = `chapters/appendixa.aux'.
 
 
 (./chapters/appendixa.tex
 Appendix A.
-[25
+[24
 
 
 
@@ -999,20 +1000,20 @@ File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
 Package pdftex.def Info: diagram-nmt.png  used on input line 45.
 (pdftex.def)             Requested size: 351.31163pt x 260.97437pt.
- [26] [27]
-<diagram-embedding.png, id=402, 351.3125pt x 351.3125pt>
+ [25] [26]
+<diagram-embedding.png, id=398, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 137.
 (pdftex.def)             Requested size: 351.31163pt x 351.31163pt.
- [28] [29 <./diagram-embedding.png>] [30] [31]) [32]
+ [27] [28 <./diagram-embedding.png>] [29] [30]) [31]
 Appendix B.
-[33
+[32
 
 
 ]
 Appendix C.
-[34
+[33
 
 ] (./proposal_doc.bbl
 Underfull \hbox (badness 7869) in paragraph at lines 8--11
@@ -1020,11 +1021,11 @@ Underfull \hbox (badness 7869) in paragraph at lines 8--11
 com/pytorch/tutorials
  []
 
-[35
+[34
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 248.
- [36]
+ [35]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 248.
  (./proposal_doc.aux (./chapters/chapter01.aux)
 (./chapters/chapter02.aux) (./chapters/chapter03.aux) (./chapters/appendixa.aux
@@ -1036,10 +1037,10 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 248.
  ) 
 Here is how much of TeX's memory you used:
- 21652 strings out of 494477
- 402664 string characters out of 6175714
- 472916 words of memory out of 5000000
- 24978 multiletter control sequences out of 15000+600000
+ 21694 strings out of 494477
+ 403915 string characters out of 6175714
+ 473165 words of memory out of 5000000
+ 25021 multiletter control sequences out of 15000+600000
  552145 words of font info for 73 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,9n,63p,935b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1064,10 +1065,10 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam7.pfb>
-Output written on proposal_doc.pdf (42 pages, 331060 bytes).
+Output written on proposal_doc.pdf (41 pages, 330426 bytes).
 PDF statistics:
- 918 PDF objects out of 1000 (max. 8388607)
- 475 compressed objects within 5 object streams
- 111 named destinations out of 1000 (max. 500000)
+ 914 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
+ 110 named destinations out of 1000 (max. 500000)
  308 words of extra memory for PDF output out of 10000 (max. 10000000)
 

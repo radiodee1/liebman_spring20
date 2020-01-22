@@ -43,7 +43,7 @@ There are several designs for an RNN component. The inner workings of these comp
 
 
 \subsection*{Specific (GRU)}
-A second type of RNN is the GRU. GRU stands for 'Gated Recurrent Unit'. A GRU has two inputs and two outputs. The formulas for a GRU, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
+A second type of RNN is the \ac{GRU}. GRU stands for 'Gated Recurrent Unit'. A GRU has two inputs and two outputs. The formulas for a GRU, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
 
 
 $$ z =\sigma(x_tU^z + s_{t-1} W^z) $$  
@@ -83,22 +83,22 @@ dimension of the 'hidden size' mentioned above. Throughout the discussion of thi
 
 So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the GRU does internally.
 
-The input segments composed of GRUs take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input GRU. One output vector is like the word vector that's input to the GRU. One output vector is a hidden value.
+We will use the metaphor of a chain when we describe input and output segments that are composed of GRU's. 
 
-The first word in the input sentence is converted to a vector and passed to the first GRU. The GRU has two inputs and two outputs. One input is for new data and one is for the hidden state of the segment in question. 
+The input segments, composed of GRUs, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input GRU. One output vector is like the word vector that's input to the GRU. One output vector is a hidden value.
+
+
 
 The very first GRU in the input chain ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next GRU in the chain. This GRU uses the output of the previous GRU as the hidden value. It also uses the vector for the second word. It passes it's important information to the GRU to it's right. Then the last GRU in the chain passes it's hidden state to the output chain.
 
-Later we will use GRUs to construct output segments. Here we want to stress that the inputs cascade from GRU to GRU in the input segment. 
 
-The first GRU consumes the first word. The second GRU takes the hidden state from the first GRU along with the second word and consumes them. The third GRU takes the hidden output from the second GRU and the third word and consumes them. This pattern is repeated for the length of the input sentence. One at a time all the words from the input sentence are passed to the input GRU. The hidden state from the last GRU is passed to the output segment. The output segment is also GRU based.
 
-A complicating detail is that although many GRUs are called for in the input segment they all use the same set of weights and 
+A complicating detail is that although many GRUs are called for in the input chain they all use the same set of weights and 
 biases. For this reason only a single input GRU is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the GRU. 
 
 
-The output chain is in charge of generating tokens that represent the input in the output language. The output uses GRU segments also. The first hidden input for the first output is taken from the 
-last hidden output of the last recursive unit of the input chain. It is important because it is the spot where a great amount of data is passed from the input section to the output section. 
+The output chain is in charge of generating tokens that represent, in this case, the translation of the input in the output language. The output uses GRU segments also. The first hidden input for the first output cell is taken from the 
+last hidden output of the last recursive unit of the input chain. It is important because it is the spot where a great amount of data is passed from the input chain to the output chain. 
 The connection at this point is said to carry the 'thought vector'. Most of the information responsible for translating one language to another is passed at this point.
 
 The hidden values from the input section are passed to the first output GRU. It outputs the values that are later converted to the first word of the output. The first output GRU also has a hidden state. It passes the first word and the hidden state on to the second GRU.
