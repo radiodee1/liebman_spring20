@@ -7,9 +7,10 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Lowering Dimensionality}}{14}{figure.2.1}% 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Attention Output}}{15}{figure.2.2}% 
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Matching Input and Output}}{16}{figure.2.3}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Transformer Encoder and Decoder}}{17}{figure.2.4}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Sequnce to Sequence}}{26}{figure.A.1}% 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Word Embeddings}}{29}{figure.A.2}% 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Sequnce to Sequence}}{27}{figure.A.1}% 
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Word Embeddings}}{30}{figure.A.2}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
