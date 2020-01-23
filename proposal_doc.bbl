@@ -34,6 +34,17 @@ T.~Wolf, L.~Debut, V.~Sanh, J.~Chaumond, C.~Delangue, A.~Moi, P.~Cistac,
 M.~Luong, H.~Pham, and C.~D. Manning, ``Effective approaches to attention-based
   neural machine translation,'' {\em CoRR}, vol.~abs/1508.04025, 2015.
 
+\bibitem{radford2018improving}
+A.~Radford, K.~Narasimhan, T.~Salimans, and I.~Sutskever, ``Improving language
+  understanding by generative pre-training,'' {\em URL https://s3-us-west-2.
+  amazonaws. com/openai-assets/researchcovers/languageunsupervised/language
+  understanding paper. pdf}, 2018.
+
+\bibitem{2019NVIDIAadlr}
+{NVIDIA Applied Deep Learning Research}, ``Megatronlm: Training billion+
+  parameter language models using gpu model parallelism,'' 2019.
+\newblock https://nv-adlr.github.io/MegatronLM.
+
 \bibitem{Danescu-Niculescu-Mizil+Lee:11a}
 C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
   A new approach to understanding coordination of linguistic style in
