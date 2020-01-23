@@ -83,7 +83,7 @@ dimension of the `hidden size' mentioned above. Throughout the discussion of thi
 
 So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the GRU does internally.
 
-We will use the metaphor of a chain when we describe input and output segments that are composed of GRU's. 
+We will use the metaphor of a chain when we describe input and output segments that are composed of GRU's. The input chain is sometimes referred to as the Encoder, and the output chain is sometimes referred to as the Decoder.
 
 The input segments, composed of GRUs, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input GRU. One output vector is like the word vector that's input to the GRU. One output vector is a hidden value.
 
@@ -106,9 +106,11 @@ The hidden values from the input section are passed to the first output GRU. It 
 The second GRU generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on the the next GRU. This is repeated until a special `end-of-sequence' token is found or until the number of tokens equals the maximum number allowed.
 
 \begin{figure}[H]
+	\begin{center}
 	
-	\includegraphics[scale=1.0]{diagram-nmt}
-	
+	\includegraphics[scale=0.5]{diagram-nmt}
+		
+\end{center}
 	\caption[Sequence to Sequence]{Seq2seq: A and B represent an input sequence and C and D represent the corresponding output.}
 	
 %\addcontentsline{lof}{section}{Sequnce to Sequnce}
@@ -180,7 +182,7 @@ Basically the output of the current decoder is transposed. Then it is multiplied
 
 Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} make an interesting proposition. They say that it's possible to make what they call a Neural Conversational Model by constructing a Sequence to Sequence model, but instead of using two corpus from different languages a single language is used for both source and target.
 
-Chatbots have for a long time been constructed using AIML. AIML, (Artificial Intelligence Markup Language) requires hand coding individual rules for every input and response. A Neural Conversational Model would not use those sorts of rules.
+Chatbots have for a long time been constructed using \ac{AIML}. AIML, (Artificial Intelligence Markup Language) requires hand coding individual rules for every input and response. A Neural Conversational Model would not use those sorts of rules.
 
 To create a model like this more is required than just a single input and output language. There must be a relationship between the source and the target. We want there to be a question-and-answer-like relation. Finding a corpus like this can be difficult.
 
@@ -191,9 +193,11 @@ What would be a good candidate for this kind of verbal play? Vinyals et al (2015
 Training for this model is relatively straight forward. There is a problem though. We can follow the loss and make sure it is decreasing, but the accuracy tells us nothing and in this case does not increase as we would like it to. The loss goes down but the accuracy does not go up.
 
 \begin{figure}[H]
+	\begin{center}
 	
-	\includegraphics[scale=1.0]{Figure_1}
-	
+	\includegraphics[scale=0.5]{Figure_1}
+		
+\end{center}
 	\caption[Loss and Accuracy]{Loss and Accuracy: Red is accuracy and blue is loss.}
 	
 	%\addcontentsline{lof}{section}{Loss and Accuracy}
