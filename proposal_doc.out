@@ -21,7 +21,7 @@
 \BOOKMARK [1][-]{section.3.10}{Smart Speaker - GPT2 Model}{chapter.3}% 21
 \BOOKMARK [0][-]{appendix.A}{Terminology}{}% 22
 \BOOKMARK [1][-]{section.A.1}{Gated Recurrent Unit}{appendix.A}% 23
-\BOOKMARK [1][-]{section.A.2}{Sequence to Sequence - Chatbot}{appendix.A}% 24
+\BOOKMARK [1][-]{section.A.2}{Neural Machine Translation - Chatbot}{appendix.A}% 24
 \BOOKMARK [1][-]{section.A.3}{Sequence to Sequence - Architecture}{appendix.A}% 25
 \BOOKMARK [1][-]{section.A.4}{Corpus Considerations}{appendix.A}% 26
 \BOOKMARK [1][-]{section.A.5}{Word Embeddings}{appendix.A}% 27

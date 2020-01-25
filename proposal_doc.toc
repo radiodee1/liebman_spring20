@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {3.10}Smart Speaker - GPT2 Model}{29}{section.3.10}% 
 \contentsline {chapter}{\numberline {A}Terminology}{30}{appendix.A}% 
 \contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{30}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Sequence to Sequence - Chatbot}{30}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Neural Machine Translation - Chatbot}{30}{section.A.2}% 
 \contentsline {section}{\numberline {A.3}Sequence to Sequence - Architecture}{31}{section.A.3}% 
 \contentsline {section}{\numberline {A.4}Corpus Considerations}{32}{section.A.4}% 
 \contentsline {section}{\numberline {A.5}Word Embeddings}{32}{section.A.5}% 

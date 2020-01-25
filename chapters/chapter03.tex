@@ -12,7 +12,7 @@ Unfortunately the speech to text resources supplied by Google cost money. To use
 
 The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence, and this has a time overhead. 
 
-Also, we have several models that we want to test. To test them all would require several servers. Also we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for sesrving models, but Pytorch has no equivalent.
+Also, we have several models that we want to test. To test them all would require several servers. Also we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
 It is important to note that the large GPT2 model could be served from a remote computer and it would operate faster. Even so, we prefer to install our trained models on the Raspberry Pi directly.
 
@@ -123,10 +123,12 @@ stop training as the model is probably overfitting.
 \fi
 
 \section{Chatbot - GRU Model}
-We trained the sequence to sequence model on a large english
+We have two models based on the sequnce to sequence model proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by Matthew Inkawhich (2018)\cite{2018Inkawhich}.
+
+We trained the first sequence to sequence model on a large english
 corpus in an attempt to produce a chatbot. 
 
-For the sequence to sequence model we want to use text found in a movie dialog corpus (Danescu-Niculescu-Mizil et al, 2011)\cite{Danescu-Niculescu-Mizil+Lee:11a}. 
+For this sequence to sequence model we want to use text found in a movie dialog corpus (Danescu-Niculescu-Mizil et al, 2011)\cite{Danescu-Niculescu-Mizil+Lee:11a}. 
 
 In our experience with coding our own chatbot 
 we find that the model learns a single english sentence that can be used for most replies. 
@@ -140,6 +142,8 @@ response to a question is "I don't know". This is interesting in that the chatbo
 
 Occasionally the sequence-to-sequence model will reply with the phrase "I'm sorry." This happens
 very infrequently and it is not clear why the model chooses to reply this way. 
+
+The second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original answers. The answers made sense in the English language.
 
 \section{Smart Speaker - GRU Model}
 

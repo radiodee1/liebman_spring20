@@ -3,18 +3,17 @@
 \section{Gated Recurrent Unit}
 
 A Gated Recurrent Unit is a relatively simple recurrent network component. It is a component 
-where the output of the model is fed, after some modification, to the input of the model. 
+where the output of the model is often fed, after some modification, to the input of the model. 
 
 At each time step the model sees the new input and a version of previous inputs. In this
 way it remembers previous inputs. Several inputs in a series are fed to a GRU in sequence and the GRU is responsible for deciding which of the inputs is most important.
 
-GRU elements, like all recurrent network components, suffer from information loss when the
-input segments are very long.
+GRU elements, like all recurrent network components, suffer from information loss when the input segments are very long.
 
-\section{Sequence to Sequence - Chatbot}
+\section{Neural Machine Translation - Chatbot}
 
 The sequence to sequence model we use is based on the \textquoteleft Neural
-Machine Translation\textquoteright{} model, or NMT. Originally designed
+Machine Translation\textquoteright{} model, or \ac{NMT}. Originally designed
 for translating one language to another, NMT can be used to create
 a chatbot.
 
@@ -54,7 +53,7 @@ We use a GRU arrangement for a Sequence to Sequence chatbot.
 \end{figure}
 
 
-\section{Sequence to Sequence - Architecture}
+\section{Sequence to Sequence Architecture}
 
 In Fig. A.1 we generalize a sequence to sequence model. The idea is
 that A and B, on the left side of the diagram, deal with the encoding
@@ -164,7 +163,7 @@ Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glov
 
 \section{WordPiece - BPE}
 
-\ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Bite Pair Encoding.
+\ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
 
 WordPiece is used by the BERT system to encode words much the way that Word2Vec does.
 Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one
