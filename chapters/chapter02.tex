@@ -147,7 +147,7 @@ It still uses Scaled Dot-Product Attention. A model diagram is taken from Radfor
 	%\addcontentsline{lof}{section}{Loss and Accuracy}
 \end{figure}
 
-There are several sizes of pre-trained GPT2 model. They are all rather large. The smallest GPT2 model matches the size of the largest BERT model. The GPT2 models input and output text sequences. In this way they are preferred over the BERT models. 
+There are several sizes of pre-trained GPT2 model. They are all rather large. The smallest GPT2 model matches the size of the largest BERT model. The GPT2 models input and output text sequences. In this way they are preferred for our application over the BERT models. 
 
 
 The GPT2 models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `carma' rating of 3 or better. `Carma' is a rating system used internally on Reddit. 
@@ -170,7 +170,7 @@ In their paper Radford et al (2019)\cite{radford2019language} show that their mo
 \end{center}
 \addcontentsline{lot}{section}{GPT2 Size Overview}
 
-At the time that the first GPT2 model was released the size of the models was mis-stated, but the documentation was not updated immediately. Values in the table show sizes that were actually released. The final xx-large model was trained by NVIDIA Applied Deep Learning Research (2019)\cite{2019NVIDIAadlr} and was not released to the public.
+At the time that the first GPT2 model was released the size of the models was mis-stated, but the documentation was not updated immediately. Most values in the table above show sizes that were actually released. The final xx-large model was trained by NVIDIA Applied Deep Learning Research (2019)\cite{2019NVIDIAadlr} and was not released to the public.
 
 The GPT2 models also work in many circumstances in `zero-shot' mode. This is when you use the model pre-trained but without transfer learning. There is no extra training that goes on to make the model suit the task. It is used `as is'.
 

@@ -8,36 +8,36 @@ A level-1 auxiliary file: chapters/appendixa.aux
 The style file: ieeetr.bst
 Database file #1: proposal_doc.bib
 Warning--empty journal in radford2019language
-You've used 15 entries,
+You've used 16 entries,
             1876 wiz_defined-function locations,
-            561 strings with 7018 characters,
-and the built_in function-call counts, 3052 in all, are:
-= -- 219
-> -- 228
+            566 strings with 7241 characters,
+and the built_in function-call counts, 3184 in all, are:
+= -- 232
+> -- 232
 < -- 0
-+ -- 82
-- -- 67
-* -- 245
-:= -- 516
-add.period$ -- 18
-call.type$ -- 15
-change.case$ -- 15
++ -- 84
+- -- 68
+* -- 249
+:= -- 535
+add.period$ -- 20
+call.type$ -- 16
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 142
-empty$ -- 296
-format.name$ -- 67
-if$ -- 687
+cite$ -- 17
+duplicate$ -- 146
+empty$ -- 314
+format.name$ -- 68
+if$ -- 721
 int.to.chr$ -- 0
-int.to.str$ -- 15
+int.to.str$ -- 16
 missing$ -- 12
-newline$ -- 51
-num.names$ -- 15
-pop$ -- 74
+newline$ -- 55
+num.names$ -- 16
+pop$ -- 81
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 41
+skip$ -- 44
 stack$ -- 0
 substring$ -- 40
 swap$ -- 21
@@ -46,7 +46,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 18
-width$ -- 17
-write$ -- 133
+while$ -- 19
+width$ -- 18
+write$ -- 142
 (There was 1 warning)

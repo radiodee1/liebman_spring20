@@ -45,6 +45,12 @@ A.~Radford, K.~Narasimhan, T.~Salimans, and I.~Sutskever, ``Improving language
   parameter language models using gpu model parallelism,'' 2019.
 \newblock https://nv-adlr.github.io/MegatronLM.
 
+\bibitem{2018Milosevic}
+{Nemanja Milosevic}, ``Compling arm stuff without an arm board / build pytorch
+  for the raspberry pi,'' 2019.
+\newblock
+  https://nmilosev.svbtle.com/compling-arm-stuff-without-an-arm-board-build-pytorch-for-the-raspberry-pi.
+
 \bibitem{Danescu-Niculescu-Mizil+Lee:11a}
 C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
   A new approach to understanding coordination of linguistic style in

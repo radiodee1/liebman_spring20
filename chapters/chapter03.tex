@@ -6,15 +6,15 @@ and the other the transformer model for a generative chatbot and finally the GPT
 
 We will not try to rewrite the transformer or GPT2 model ourselves.
 
-In this project we attempt to load as much of out chatbot code onto a raspberry pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in english sentences and producing english output. There is another part of the typical raspberry pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the raspberry pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
+In this project we attempt to load as much of out chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in english sentences and producing english output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
-The speech to text service used on the project and the memory limitations on the raspberry pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the raspberry pi for every sentence, and this has a time overhead. 
+The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence, and this has a time overhead. 
 
 Also, we have several models that we want to test. To test them all would require several servers. Also we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for sesrving models, but Pytorch has no equivalent.
 
-It is important to note that the large GPT2 model could be served from a remote computer and it would operate faster. Even so, we prefer to install our trained models on the raspberry pi directly.
+It is important to note that the large GPT2 model could be served from a remote computer and it would operate faster. Even so, we prefer to install our trained models on the Raspberry Pi directly.
 
 \section{Setup}
 
@@ -41,7 +41,22 @@ As a coding experiment we rewrite the code for the sequence-to-sequence model. W
 \subsection*{Pytorch `torch' Library 1.1.0 For ARMv7}
 We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
 
-Explanation here.
+On their web site Milosevic et al (2019)\cite{2018Milosevic} compile pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
+
+The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used in the change-root environment to compile the Pytorch library for the 1.1.0 version.
+
+The production laptop used for development ran Ubuntu linux. For this reason a Virtualbox emulation was set up with Fedora Core 30 on it. Inside that emulator the change-root environment was set up. The library was compiled there successfully. 
+
+There are two problems with the resulting built python package. Firstly there is an error in python when importing the torch library. The error reads `ImportError: No module named \_C'. 
+
+After some research it is clear that the build process for ARMv7 creates some shared object files that are misnamed. A hackey fix is to find the misnamed files and make copies of them with a suitable name. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
+
+There are three files misnamed. They can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}'. They are named with the same convention. They all have the ending `.cpython-37m-arm7hf-linux-gnu.so'. We want to rename them with the much shorter `.so'. The files are then named `\textbf{\_C.so}', `\textbf{\_dl.so}', and `\textbf{\_thnn.so}'.
+
+This takes care of the `ImportError'. The second problem is that the version of GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: `\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version `GLIBCXX\_3.4.26' not found}'.
+
+This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
+ 
 
 \subsection*{Docker Container `tensorflow-model-server' For ARMv7}
 Docker has to be installed on the Raspberry Pi and on the development laptop computer.
