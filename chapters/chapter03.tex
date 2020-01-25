@@ -59,11 +59,13 @@ This is solved by rebuilding the package with Fedora Core 29 instead of 30.
  
 
 \subsection*{Docker Container `tensorflow-model-server' For ARMv7}
-Docker has to be installed on the Raspberry Pi and on the development laptop computer.
+The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been oficcialy compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
 
-Then we use someone's pre-compiled Docker Container for ARMv7. We write our own Docker script to interact with the pre-compiled container.
+The original idea was to follow someone else's instructions and compile the Docker Container for the ARMv7. Then the executable would be removed from the container and used natively in the Raspberry Pi.
 
-Explanation here.
+It was found that there existed a version of the Docker Container Deamon that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski (2020)\cite{2020Maciejewski}.
+
+
 
 \section{Experiments}
 

@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {3.7}Chatbot - Transformer Model}{26}{section.3.7}% 
 \contentsline {section}{\numberline {3.8}Smart Speaker - Transformer Model}{27}{section.3.8}% 
 \contentsline {section}{\numberline {3.9}Chatbot - GPT2 Model}{27}{section.3.9}% 
-\contentsline {section}{\numberline {3.10}Smart Speaker - GPT2 Model}{28}{section.3.10}% 
+\contentsline {section}{\numberline {3.10}Smart Speaker - GPT2 Model}{29}{section.3.10}% 
 \contentsline {chapter}{\numberline {A}Terminology}{30}{appendix.A}% 
 \contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{30}{section.A.1}% 
 \contentsline {section}{\numberline {A.2}Sequence to Sequence - Chatbot}{30}{section.A.2}% 
