@@ -6,6 +6,16 @@ and the other the transformer model for a generative chatbot and finally the GPT
 
 We will not try to rewrite the transformer or GPT2 model ourselves.
 
+In this project we attempt to load as much of out chatbot code onto a raspberry pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in english sentences and producing english output. There is another part of the typical raspberry pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the raspberry pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
+
+Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
+
+The speech to text service used on the project and the memory limitations on the raspberry pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the raspberry pi for every sentence, and this has a time overhead. 
+
+Also, we have several models that we want to test. To test them all would require several servers. Also we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for sesrving models, but Pytorch has no equivalent.
+
+It is important to note that the large GPT2 model could be served from a remote computer and it would operate faster. Even so, we prefer to install our trained models on the raspberry pi directly.
+
 \section{Setup}
 
 We use linux computers, sometimes with gpu hardware for parallel processing.
