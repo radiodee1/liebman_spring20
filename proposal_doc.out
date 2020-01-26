@@ -13,16 +13,16 @@
 \BOOKMARK [1][-]{section.3.2}{Setup}{chapter.3}% 13
 \BOOKMARK [1][-]{section.3.3}{ARMv7 Build/Compile}{chapter.3}% 14
 \BOOKMARK [1][-]{section.3.4}{Experiments}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.5}{Chatbot - GRU Model}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.6}{Smart Speaker - GRU Model}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.7}{Chatbot - Transformer Model}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.8}{Smart Speaker - Transformer Model}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.9}{Chatbot - GPT2 Model}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.10}{Smart Speaker - GPT2 Model}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.4.1}{Chatbot - GRU Model}{section.3.4}% 16
+\BOOKMARK [2][-]{subsection.3.4.2}{Smart Speaker - GRU Model}{section.3.4}% 17
+\BOOKMARK [2][-]{subsection.3.4.3}{Chatbot - Transformer Model}{section.3.4}% 18
+\BOOKMARK [2][-]{subsection.3.4.4}{Smart Speaker - Transformer Model}{section.3.4}% 19
+\BOOKMARK [2][-]{subsection.3.4.5}{Chatbot - GPT2 Model}{section.3.4}% 20
+\BOOKMARK [2][-]{subsection.3.4.6}{Smart Speaker - GPT2 Model}{section.3.4}% 21
 \BOOKMARK [0][-]{appendix.A}{Terminology}{}% 22
 \BOOKMARK [1][-]{section.A.1}{Gated Recurrent Unit}{appendix.A}% 23
 \BOOKMARK [1][-]{section.A.2}{Neural Machine Translation - Chatbot}{appendix.A}% 24
-\BOOKMARK [1][-]{section.A.3}{Sequence to Sequence - Architecture}{appendix.A}% 25
+\BOOKMARK [1][-]{section.A.3}{Sequence to Sequence Architecture}{appendix.A}% 25
 \BOOKMARK [1][-]{section.A.4}{Corpus Considerations}{appendix.A}% 26
 \BOOKMARK [1][-]{section.A.5}{Word Embeddings}{appendix.A}% 27
 \BOOKMARK [1][-]{section.A.6}{WordPiece - BPE}{appendix.A}% 28

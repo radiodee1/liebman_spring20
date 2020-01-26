@@ -10,11 +10,11 @@ In this project we attempt to load as much of out chatbot code onto a Raspberry 
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
-The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence, and this has a time overhead. 
+The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
 
 Also, we have several models that we want to test. To test them all would require several servers. Also we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
-It is important to note that the large GPT2 model could be served from a remote computer and it would operate faster. Even so, we prefer to install our trained models on the Raspberry Pi directly.
+It is important to note that the large GPT2 model specifically could be served from a remote computer and it would operate faster. Currently on the Raspberry Pi decoding a single sentence takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
 
 \section{Setup}
 
@@ -27,14 +27,13 @@ Tensorflow as a backend. Keras was later discarded in favor of Pytorch.
 Pytorch as a library is still under development at the time of this
 writing.
 
-Some of the GPT2 code uses Pytorch. Some of the Transformer and GPT2 code uses Tensorflow. There
-is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
+Some of the GPT2 code uses Pytorch. Some of the Transformer and GPT2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
 
 We use github as a code repository. Code corresponding with this paper
 can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot}
 . 
 
-As a coding experiment we rewrite the code for the sequence-to-sequence model. We have varying amounts of success with these experiments. We do not rewrite the GPT2 code from the Tensorflow or Pytorch repository.
+As a coding experiment we rewrite the code for the sequence-to-sequence GRU model. We have varying amounts of success with these experiments. We do not rewrite the GPT2 code from the Tensorflow or Pytorch repository.
 
 \section{ARMv7 Build/Compile}
 
@@ -59,57 +58,40 @@ This is solved by rebuilding the package with Fedora Core 29 instead of 30.
  
 
 \subsection*{Docker Container `tensorflow-model-server' For ARMv7}
-The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been oficcialy compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
+The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
 
 The original idea was to follow someone else's instructions and compile the Docker Container for the ARMv7. Then the executable would be removed from the container and used natively in the Raspberry Pi.
 
-It was found that there existed a version of the Docker Container Deamon that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski (2020)\cite{2020Maciejewski}.
+It was found that there existed a version of the Docker Container Daemon that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski (2020)\cite{2020Maciejewski}.
 
 
 
 \section{Experiments}
+In the section above we describe the workings of a transformer and the workings of GPT2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
-We have several basic neural network models. One is the basic sequence
-to sequence model typically used for neural machine translation. We also have the transformer and
-the GPT2.
+We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have the transformer and the GPT2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us six sections.
 
-The GPT2 code is versatile. We use it for the chatbot problem. The GPT2 model
-is pretrained. We experiment with transfer learning and further training of the GPT2 model, but
-in our case it does not improve the model's performance. 
+The GPT2 code is versatile. We use it for the chatbot problem. The GPT2 model is pretrained. We experiment with transfer learning and further training of the GPT2 model, but in our case it does not improve the model's performance. 
 
-When we talk about the chatbot problem on GPT2 we are talking about a PyTorch version of the 
-GPT2 code. 
+When we talk about the chatbot problem on GPT2 we are talking about a PyTorch version of the GPT2 code. 
 
-We found that the chatbot with the hand coded Neural Machine Translation did not work 
-very well. We found that the GPT2 chatbot worked well enough with the `zero-shot' setup so that
-fine-tuning was not necessary. 
+We found that the chatbot with the hand coded sequence to sequence NMT did not work very well. There is a tensorflow transformer-based model that worked marginally well. We found that the GPT2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. 
 
-Fine tuning on the GPT2 problem actually had a negative effect. To fine-tune GPT2 also involved
-training the model on Tensorflow and then translating the model to PyTorch when that was done. 
+Fine tuning on the GPT2 problem actually had a negative effect. To fine-tune GPT2 also involved training the model on Tensorflow and then translating the model to PyTorch when that was done. 
 
-We use speech recognition and speech to text libraries to allow a user to give the chatbot model 
-auditory input.
+We use speech recognition and speech to text libraries to allow a user to give the chatbot model auditory input.
 
-We also train the transformer to do the chatbot task. This works better than the sequence to 
-sequence but not as well as the GPT2.
+We also train the transformer to do the chatbot task. This works better than the the hand coded sequence to sequence model but not as well as the GPT2.
 
-Finally we describe installing the chatbot in small computing platforms, the Raspberry Pi and the O-Droid, in an attempt to create a smart speaker.
+Finally we describe installing the chatbot in small computing platforms, the Raspberry Pi 3B and 4B, in an attempt to create a smart speaker.
 
-All of the three mentioned models work on a laptop computer.
+All of the three mentioned models work on a laptop computer. For the laptop we experimented with a setup where the model would launch applications for the user when the user asked the model to. These audio cues were interesting but were in no way the focus of our experiments.
 
-It should be noted that at some point we would like to describe some of our subjective
-results with the different models. It is difficult to measure our results objectively because we
-are using code most closely associated with a translation task. 
+It should be noted that at some point we would like to describe some of our subjective results with the different models. It is difficult to measure our results objectively because we are using code most closely associated with a translation task. 
 
-If we were measuring progress with an actual translation task accuracy could be measured as a score that improves when the output matches the meaning of the input, albeit in a different language. We don't use an actual translation
-task, we use something close to one. The problem is that though the input 
-and the output are in the same language, the input and output have different meanings. We
-do not dictate what the correct output would be for a given input. The output just has to make sense as a reply in the English language. We would actually prefer that the output not have the
-same meaning as the input. This makes it difficult to calculate an objective accuracy score. This
-is touched on in the paper from Vinyals et al(2015)\cite{DBLP:journals/corr/VinyalsL15}.
+If we were measuring progress with an actual translation task accuracy could be measured as a score that improves when the output matches the meaning of the input, albeit in a different language. We don't use an actual translation task, we use something close to one. The problem is that though the input and the output are in the same language, the input and output have different meanings. We do not dictate what the correct output would be for a given input. The output just has to make sense as a reply in the English language. We would actually prefer that the output not have the same meaning as the input. This makes it difficult to calculate an objective accuracy score. This is touched on in the paper from Vinyals et al(2015)\cite{DBLP:journals/corr/VinyalsL15}.
 
-Loss can still be monitored during training. When the loss stops decreasing you know you should 
-stop training as the model is probably overfitting.
+Loss can still be monitored during training. When the loss stops decreasing you know you should stop training as the model is probably overfitting.
 
 \iffalse
 \begin{figure}[H]
@@ -122,7 +104,7 @@ stop training as the model is probably overfitting.
 \end{figure}
 \fi
 
-\section{Chatbot - GRU Model}
+\subsection{Chatbot - GRU Model}
 We have two models based on the sequnce to sequence model proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by Matthew Inkawhich (2018)\cite{2018Inkawhich}.
 
 We trained the first sequence to sequence model on a large english
@@ -135,17 +117,17 @@ we find that the model learns a single english sentence that can be used for mos
 
 Subjectively the GRU chatbot is unusable.
 
-For example our chatbot frequently replies to input with the phrase "I don't know". This is the most common output from our model. In this respect our original chatbot responds poorly.
+For example our chatbot frequently replies to input with the phrase `I don't know'. This is the most common output from our model. In this respect our original chatbot responds poorly.
 
 A large portion of the time the bot's 
-response to a question is "I don't know". This is interesting in that the chatbot has identified that this phrase is a suitable answer to many questions, but it is disappointing that there is not more variety to the output.  
+response to a question is the same. This is interesting in that the chatbot has identified that this phrase is a suitable answer to many questions, but it is disappointing that there is not more variety to the output.  
 
 Occasionally the sequence-to-sequence model will reply with the phrase "I'm sorry." This happens
 very infrequently and it is not clear why the model chooses to reply this way. 
 
 The second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original answers. The answers made sense in the English language.
 
-\section{Smart Speaker - GRU Model}
+\subsection{Smart Speaker - GRU Model}
 
 The GRU model was installed on a Raspberry Pi. This allowed us to test out speech-to-text and 
 text-to-speech libraries. 
@@ -155,7 +137,7 @@ It also allowed us to compile the Pytorch library for Raspberry Pi.
 
 
 
-\section{Chatbot - Transformer Model}
+\subsection{Chatbot - Transformer Model}
 Using the Persona corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. 
 
 Subjectively this model did not perform as well as the GPT2 model, but it did perform better than the GRU model.
@@ -178,7 +160,7 @@ improvement was taken as a sign that progress was not likely.
 Subjectively the transformer model is better than the GRU model. It can respond to something like
 four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It cannot tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
-\section{Smart Speaker - Transformer Model}
+\subsection{Smart Speaker - Transformer Model}
 
 Later we look to install the transformer model on the Raspberry Pi. This model is more dynamic than the sequence-to-sequence model. 
 
@@ -186,7 +168,7 @@ The transformer model takes about two minutes to boot on the Raspberry Pi. After
 
 
 
-\section{Chatbot - GPT2 Model}
+\subsection{Chatbot - GPT2 Model}
 We used a pre-trained GPT2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well. The corpus is called `WebText'.
 
 For our experiments GPT2 was used for the chatbot model in `zero-shot' mode. This means we did no
@@ -225,7 +207,7 @@ same as the simple introductory conversation of the transformer model. In fact a
 could be chosen and the model would answer. The model did not remember its own answers but it
 was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
 
-\section{Smart Speaker - GPT2 Model}
+\subsection{Smart Speaker - GPT2 Model}
 Tests showed that the GPT2 chatbot worked well. We wanted to continue and allow the chatbot to
 have more of the abilities of a smart speaker. We constructed a simple corpus that contained
 key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning
