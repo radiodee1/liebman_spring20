@@ -13,24 +13,24 @@
 \contentsline {section}{\numberline {3.1}Approach to the Study}{22}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Setup}{23}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}ARMv7 Build/Compile}{23}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}Experiments}{24}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Chatbot - GRU Model}{26}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Smart Speaker - GRU Model}{26}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.4}Experiments}{25}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Chatbot - GRU Model}{27}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Smart Speaker - GRU Model}{27}{subsection.3.4.2}% 
 \contentsline {subsection}{\numberline {3.4.3}Chatbot - Transformer Model}{27}{subsection.3.4.3}% 
-\contentsline {subsection}{\numberline {3.4.4}Smart Speaker - Transformer Model}{27}{subsection.3.4.4}% 
-\contentsline {subsection}{\numberline {3.4.5}Chatbot - GPT2 Model}{28}{subsection.3.4.5}% 
-\contentsline {subsection}{\numberline {3.4.6}Smart Speaker - GPT2 Model}{29}{subsection.3.4.6}% 
-\contentsline {chapter}{\numberline {A}Terminology}{30}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{30}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Neural Machine Translation - Chatbot}{30}{section.A.2}% 
-\contentsline {section}{\numberline {A.3}Sequence to Sequence Architecture}{31}{section.A.3}% 
-\contentsline {section}{\numberline {A.4}Corpus Considerations}{32}{section.A.4}% 
-\contentsline {section}{\numberline {A.5}Word Embeddings}{32}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}WordPiece - BPE}{33}{section.A.6}% 
-\contentsline {section}{\numberline {A.7}Transformer}{34}{section.A.7}% 
-\contentsline {section}{\numberline {A.8}GPT2}{34}{section.A.8}% 
-\contentsline {section}{\numberline {A.9}Raspberry Pi}{35}{section.A.9}% 
-\contentsline {section}{\numberline {A.10}Speech}{36}{section.A.10}% 
-\contentsline {chapter}{\numberline {B}Tables}{37}{appendix.B}% 
-\contentsline {section}{\numberline {B.1}Model Overview}{37}{section.B.1}% 
-\contentsline {chapter}{\numberline {C}Abbreviations}{38}{appendix.C}% 
+\contentsline {subsection}{\numberline {3.4.4}Smart Speaker - Transformer Model}{28}{subsection.3.4.4}% 
+\contentsline {subsection}{\numberline {3.4.5}Chatbot - GPT2 Model}{29}{subsection.3.4.5}% 
+\contentsline {subsection}{\numberline {3.4.6}Smart Speaker - GPT2 Model}{30}{subsection.3.4.6}% 
+\contentsline {chapter}{\numberline {A}Terminology}{31}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{31}{section.A.1}% 
+\contentsline {section}{\numberline {A.2}Neural Machine Translation - Chatbot}{31}{section.A.2}% 
+\contentsline {section}{\numberline {A.3}Sequence to Sequence Architecture}{32}{section.A.3}% 
+\contentsline {section}{\numberline {A.4}Corpus Considerations}{33}{section.A.4}% 
+\contentsline {section}{\numberline {A.5}Word Embeddings}{33}{section.A.5}% 
+\contentsline {section}{\numberline {A.6}WordPiece - BPE}{34}{section.A.6}% 
+\contentsline {section}{\numberline {A.7}Transformer}{35}{section.A.7}% 
+\contentsline {section}{\numberline {A.8}GPT2}{35}{section.A.8}% 
+\contentsline {section}{\numberline {A.9}Raspberry Pi}{36}{section.A.9}% 
+\contentsline {section}{\numberline {A.10}Speech}{37}{section.A.10}% 
+\contentsline {chapter}{\numberline {B}Tables}{38}{appendix.B}% 
+\contentsline {section}{\numberline {B.1}Model Overview}{38}{section.B.1}% 
+\contentsline {chapter}{\numberline {C}Abbreviations}{39}{appendix.C}% 

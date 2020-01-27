@@ -56,6 +56,22 @@ This takes care of the `ImportError'. The second problem is that the version of 
 
 This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
  
+\subsection*{Pytorch `torch' Library 1.4.0 For ARMv7}
+We recompile the Pytorch library for the Raspberry Pi. We use debian virtualization techniques for the compilation. Because ubuntu is a debian derivative it is not necessary to run the process in a Virtualbox container. 
+
+In addition to this, the files created by the compilation are properly named. There is no need to go to the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}' to change anything. 
+
+The time spent compiling the software is approximately 5 hours. Time spent with the Virtualbox container was easily twice that. The time spent on the Raspberry Pi executing a single GPT2 question and answer remains about 13 seconds, so there was no gain in that respect.
+
+There were several small hurdles to completing the compilation. Firstly the `debootstrap' command needed to be employed at the start. Debian Stretch was used as the host operating system. It was felt that if it was used that the GLIBC compatibility problem would not be faced. This turned out to be the case.
+
+There are some dependencies that need to be installed on the `chroot' environment for Pytorch to compile. One of these is that is important is `libblas3.'
+
+Then Python 3.7 needed to be built on Stretch. The Stretch program repositories use Python 2.7 and 3.5 . The Rapbian operating system on the Raspberry Pi 4B is based on Debian Buster. After compiling Python 3.7 the Git program needed to be compiled from scratch. Git on Stretch has a issue that is fixed upstream, but we want to use Stretch because of the GLIBC issue.
+
+It is conceivable that the GLIBC issue would not be important if the `chroot' environment used Debian Buster, since that is the basis for the Raspbian operating system. The Stretch operating system solution works though.
+
+Finally the Pytorch program needed to be built. We disable CUDA and distributed computing as neither exists on the Raspberry Pi.
 
 \subsection*{Docker Container `tensorflow-model-server' For ARMv7}
 The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
