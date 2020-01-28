@@ -112,20 +112,29 @@ Loss can still be monitored during training. When the loss stops decreasing you 
 
 Below is a list of questions asked of all models.
 
-\begin{lstlisting}[language=bash]
+%\begin{lstlisting}[language=bash]
 
-Hello.
-What is your name?
-What time is it?
-What do you do?
-What is your favorite color?
-Do you like red?
-Do you like blue?
-What is your favorite candy?
-Do you like ice cream?
-Good bye.
+\texttt{Hello.}
 
-\end{lstlisting}
+\texttt{What is your name?}
+
+\texttt{What time is it?}
+
+\texttt{What do you do?}
+
+\texttt{What is your favorite color?}
+
+\texttt{Do you like red?}
+
+\texttt{Do you like blue?}
+
+\texttt{What is your favorite candy?}
+
+\texttt{Do you like ice cream?}
+
+\texttt{Good bye.}
+
+%\end{lstlisting}
 
 \subsection{Chatbot - GRU Model}
 We have two models based on the sequnce to sequence model proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by Matthew Inkawhich (2018)\cite{2018Inkawhich}.
@@ -150,6 +159,45 @@ very infrequently and it is not clear why the model chooses to reply this way.
 
 The second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original answers. The answers made sense in the English language.
 
+\texttt{> hello .} 
+
+\texttt{you re a good man .}
+
+\texttt{> what is your name ?} 
+
+\texttt{smith .}
+
+\texttt{> what time is it ?} 
+
+\texttt{i don t know .}
+
+\texttt{> what do you do ?} 
+
+\texttt{i m a comedian .}
+
+\texttt{> what is your favorite color ?} 
+
+\texttt{i don t know .}
+
+\texttt{> do you like red ?} 
+
+\texttt{no .}
+
+\texttt{> do you like blue ?} 
+
+\texttt{no .}
+
+\texttt{> what is your favorite candy ?} 
+
+\texttt{it s a big one .}
+
+\texttt{> do you like ice cream ?} 
+
+\texttt{no .}
+
+\texttt{> good bye .} 
+
+\texttt{good bye .}
 
 
 \subsection{Smart Speaker - GRU Model}
@@ -184,6 +232,54 @@ improvement was taken as a sign that progress was not likely.
 
 Subjectively the transformer model is better than the GRU model. It can respond to something like
 four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It cannot tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
+
+
+%\begin{lstlisting}[language=bash]
+
+
+\texttt{> hello}
+
+\texttt{hi , how are you today ?}
+
+ \texttt{> what is your name?}
+
+\texttt{hi , how are you today ?}
+
+\texttt{> what time is it ?}
+
+\texttt{I like to read a lot}
+
+ \texttt{> what do you do ?}
+
+\texttt{i'm a student} 
+
+ \texttt{> what is your favorite color ?}
+
+\texttt{hi , how are you today ?}
+
+ \texttt{> do you like red ?}
+
+\texttt{hi , how are you today ?}
+
+ \texttt{> do you like blue ?}
+
+\texttt{hi , how are you today ?}
+
+ \texttt{> what is your favorite candy ?}
+
+\texttt{hi , how are you today ?}
+
+ \texttt{> do you like ice cream ?}
+
+\texttt{yes , i do }
+
+ \texttt{> good bye}
+
+\texttt{hi , how are you today ?}
+
+
+
+%\end{lstlisting}
 
 \subsection{Smart Speaker - Transformer Model}
 
@@ -224,13 +320,52 @@ Subjectively the model was the best of the three tested. The model would answer 
 of the time. Interestingly there where times when it did not do so. Some times it used 
 alternative answers. For example, it would answer with the time but not the correct time. This was odd.
 
-Under almost all circumstances the output was sensible English. There were few if any times 
-where the model replied with gibberish. 
+Under almost all circumstances the output was sensible English. There were few if any times where the model replied with gibberish. 
 
-The subject matter of the prompts did not need to be the
-same as the simple introductory conversation of the transformer model. In fact any subject matter
-could be chosen and the model would answer. The model did not remember its own answers but it
-was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
+The subject matter of the prompts did not need to be the same as the simple introductory conversation of the transformer model. In fact any subject matter could be chosen and the model would answer. The model did not remember its own answers but it was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
+
+
+\texttt{> hello}
+
+\texttt{Hello.}
+
+\texttt{> what is your name ?}
+
+\texttt{My name is Jane.}
+
+\texttt{> what time is it ?}
+
+\texttt{02:59 PM January 28, 2020.}
+
+\texttt{> what do you do ?}
+
+\texttt{I am a student.} 
+
+\texttt{> what is your favorite color ?}
+
+\texttt{I love the color of the rainbow.}
+
+\texttt{> do you like red ?}
+
+\texttt{Yes.}
+
+\texttt{> do you like blue ?}
+
+\texttt{I do.}
+
+\texttt{> what is your favorite candy ?}
+
+\texttt{I love candy.}
+
+\texttt{> do you like ice cream ?}
+
+\texttt{I do. }
+
+\texttt{> good bye}
+
+\texttt{Good bye.}
+
+
 
 \subsection{Smart Speaker - GPT2 Model}
 Tests showed that the GPT2 chatbot worked well. We wanted to continue and allow the chatbot to

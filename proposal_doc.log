@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  28 JAN 2020 08:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  28 JAN 2020 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1030,18 +1030,17 @@ Overfull \hbox (28.67174pt too wide) in paragraph at lines 55--56
 portError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6:
  []
 
-[24] [25] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-) [26] [27]
-[28] [29] [30]) [31]
+[24] [25]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 117.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [26]
+[27] [28] [29] [30] [31]) [32]
 \openout2 = `chapters/appendixa.aux'.
 
  (./chapters/appendixa.tex
 Appendix A.
-[32
+[33
 
 
 
@@ -1050,26 +1049,26 @@ File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
 Package pdftex.def Info: diagram-nmt.png  used on input line 46.
 (pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
- [33] [34]
-<diagram-embedding.png, id=476, 351.3125pt x 351.3125pt>
+ [34] [35]
+<diagram-embedding.png, id=469, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 139.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
- [35 <./diagram-embedding.png>] [36] [37]) [38]
+ [36 <./diagram-embedding.png>] [37] [38]) [39]
 Appendix B.
-[39
+[40
 
 
 ]
 Appendix C.
-[40
+[41
 
-] (./proposal_doc.bbl [41
+] (./proposal_doc.bbl [42
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
- [42]
+ [43]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
  (./proposal_doc.aux
 (./chapters/chapter01.aux) (./chapters/chapter02.aux) (./chapters/chapter03.aux
@@ -1081,38 +1080,39 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 23665 strings out of 494477
- 433393 string characters out of 6175714
- 683174 words of memory out of 5000000
- 26943 multiletter control sequences out of 15000+600000
- 552145 words of font info for 73 fonts, out of 8000000 for 9000
+ 23299 strings out of 494477
+ 430224 string characters out of 6175714
+ 495023 words of memory out of 5000000
+ 26589 multiletter control sequences out of 15000+600000
+ 552766 words of font info for 75 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 41i,9n,63p,935b,1929s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,63p,935b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
-k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600p
-k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msam7.pfb>
-Output written on proposal_doc.pdf (48 pages, 613236 bytes).
+k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dave/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on proposal_doc.pdf (49 pages, 626594 bytes).
 PDF statistics:
- 1021 PDF objects out of 1200 (max. 8388607)
- 540 compressed objects within 6 object streams
- 139 named destinations out of 1000 (max. 500000)
+ 1016 PDF objects out of 1200 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 128 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
