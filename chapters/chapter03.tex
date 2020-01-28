@@ -109,16 +109,23 @@ If we were measuring progress with an actual translation task accuracy could be 
 
 Loss can still be monitored during training. When the loss stops decreasing you know you should stop training as the model is probably overfitting.
 
-\iffalse
-\begin{figure}[H]
-	
-	\includegraphics[scale=1.0]{Figure_1}
-	
-	\caption[Loss and Accuracy]{Loss and Accuracy: Red is accuracy and blue is loss.}
-	
-%\addcontentsline{lof}{section}{Loss and Accuracy}
-\end{figure}
-\fi
+
+Below is a list of questions asked of all models.
+
+\begin{lstlisting}[language=bash]
+
+Hello.
+What is your name?
+What time is it?
+What do you do?
+What is your favorite color?
+Do you like red?
+Do you like blue?
+What is your favorite candy?
+Do you like ice cream?
+Good bye.
+
+\end{lstlisting}
 
 \subsection{Chatbot - GRU Model}
 We have two models based on the sequnce to sequence model proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by Matthew Inkawhich (2018)\cite{2018Inkawhich}.
@@ -142,6 +149,8 @@ Occasionally the sequence-to-sequence model will reply with the phrase "I'm sorr
 very infrequently and it is not clear why the model chooses to reply this way. 
 
 The second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original answers. The answers made sense in the English language.
+
+
 
 \subsection{Smart Speaker - GRU Model}
 
