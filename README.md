@@ -1,5 +1,5 @@
 # liebman_spring20
-Latex files for an independent study
+Latex files for an independent study. See file named `proposaal_doc.pdf`.
 
 ## Notes and Progress
 01-11-2020 Initial commit.
