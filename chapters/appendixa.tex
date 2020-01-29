@@ -38,6 +38,15 @@ improvements are.
 
 We use a GRU arrangement for a Sequence to Sequence chatbot.
 
+Below is an insert that shows a function for the product of conditional probabilities. It says that the $s_n$ term relies on the sequence of terms that starts with $s_1$ and continues to $s_{n-1}$.
+
+\[
+\mathlarger{ \mathlarger{p(x) = \prod_{i=1}^{n} p(s_n|s_1,..., s_{n-1}) } }
+\]
+
+Every prediction relies on all the previous predictions up until that point. This is exactly what happens in sequence to sequence and transformer architectures when the model is producing output. This function can be found in Radford et al (2019)\cite{radford2019language}.
+
+Below is a diagram of the sequence to sequence architecture.
 
 \begin{figure}[H]
 
