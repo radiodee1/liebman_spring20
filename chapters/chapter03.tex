@@ -79,9 +79,9 @@ There were several small hurdles to completing the compilation. Firstly the `deb
 
 There are some dependencies that need to be installed on the `chroot' environment for Pytorch to compile. One of these is that is important is `libblas3.'
 
-Then Python 3.7 needed to be built on Stretch. The Stretch program repositories use Python 2.7 and 3.5 . The Rapbian operating system on the Raspberry Pi 4B is based on Debian Buster. After compiling Python 3.7 the Git program needed to be compiled from scratch. Git on Stretch has a issue that is fixed upstream, but we want to use Stretch because of the GLIBC issue.
+Then Python 3.7 needed to be built on Stretch. The Stretch program repositories use Python 2.7 and 3.5 . The Rapbian operating system on the Raspberry Pi 4B is based on Debian Buster and uses Python 3.7. After compiling Python 3.7 the Git program needed to be compiled from scratch. Git on Stretch has a issue that is fixed upstream, but we want to use Stretch because of the GLIBC issue. Instead of using the upstream fix, we compile Git ourselves.
 
-It is conceivable that the GLIBC issue would not be important if the `chroot' environment used Debian Buster, since that is the basis for the Raspbian operating system. The Stretch operating system solution works though.
+It is conceivable that the GLIBC issue would not be important if the `chroot' environment used Debian Buster, since that is the basis for the current Raspbian operating system. The Stretch operating system solution works though.
 
 Finally the Pytorch program needed to be built. We disable CUDA and distributed computing as neither exists on the Raspberry Pi.
 
@@ -92,7 +92,7 @@ The original idea was to follow someone else's instructions and compile the Dock
 
 It was found that there existed a version of the Docker Container Daemon that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski (2020)\cite{2020Maciejewski}.
 
-
+`Tensorflow-model-server' is used on the localhost internet address, 127.0.0.1, with a port of 8500. tensorflow-model-server is meant for serving neural network resources on the internet, but with careful planning it works on the Raspberry Pi.
 
 \section{Experiments}
 In the section above we describe the workings of a transformer and the workings of GPT2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
@@ -126,7 +126,6 @@ Loss can still be monitored during training. When the loss stops decreasing you 
 \subsubsection*{Questions}
 Below is a list of questions asked of all models.
 
-%\begin{lstlisting}[language=bash]
 
 \texttt{Hello.}
 
