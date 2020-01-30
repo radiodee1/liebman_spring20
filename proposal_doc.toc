@@ -20,17 +20,17 @@
 \contentsline {subsection}{\numberline {3.5.3}Chatbot - Transformer Model}{30}{subsection.3.5.3}% 
 \contentsline {subsection}{\numberline {3.5.4}Smart Speaker - Transformer Model}{32}{subsection.3.5.4}% 
 \contentsline {subsection}{\numberline {3.5.5}Chatbot - GPT2 Model}{32}{subsection.3.5.5}% 
-\contentsline {subsection}{\numberline {3.5.6}Smart Speaker - GPT2 Model}{34}{subsection.3.5.6}% 
-\contentsline {chapter}{\numberline {A}Terminology}{35}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{35}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Neural Machine Translation - Chatbot}{35}{section.A.2}% 
-\contentsline {section}{\numberline {A.3}Sequence to Sequence Architecture}{36}{section.A.3}% 
-\contentsline {section}{\numberline {A.4}Corpus Considerations}{37}{section.A.4}% 
-\contentsline {section}{\numberline {A.5}Word Embeddings}{38}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}WordPiece - BPE}{39}{section.A.6}% 
-\contentsline {section}{\numberline {A.7}Transformer}{39}{section.A.7}% 
-\contentsline {section}{\numberline {A.8}GPT2}{40}{section.A.8}% 
-\contentsline {section}{\numberline {A.9}Raspberry Pi}{40}{section.A.9}% 
-\contentsline {chapter}{\numberline {B}Tables}{42}{appendix.B}% 
-\contentsline {section}{\numberline {B.1}Model Overview}{42}{section.B.1}% 
-\contentsline {chapter}{\numberline {C}Abbreviations}{43}{appendix.C}% 
+\contentsline {subsection}{\numberline {3.5.6}Smart Speaker - GPT2 Model}{35}{subsection.3.5.6}% 
+\contentsline {chapter}{\numberline {A}Terminology}{37}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{37}{section.A.1}% 
+\contentsline {section}{\numberline {A.2}Neural Machine Translation - Chatbot}{37}{section.A.2}% 
+\contentsline {section}{\numberline {A.3}Sequence to Sequence Architecture}{38}{section.A.3}% 
+\contentsline {section}{\numberline {A.4}Corpus Considerations}{39}{section.A.4}% 
+\contentsline {section}{\numberline {A.5}Word Embeddings}{40}{section.A.5}% 
+\contentsline {section}{\numberline {A.6}WordPiece - BPE}{41}{section.A.6}% 
+\contentsline {section}{\numberline {A.7}Transformer}{41}{section.A.7}% 
+\contentsline {section}{\numberline {A.8}GPT2}{42}{section.A.8}% 
+\contentsline {section}{\numberline {A.9}Raspberry Pi}{42}{section.A.9}% 
+\contentsline {chapter}{\numberline {B}Tables}{44}{appendix.B}% 
+\contentsline {section}{\numberline {B.1}Model Overview}{44}{section.B.1}% 
+\contentsline {chapter}{\numberline {C}Abbreviations}{45}{appendix.C}% 

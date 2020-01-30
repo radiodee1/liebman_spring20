@@ -41,7 +41,9 @@ We use a GRU arrangement for a Sequence to Sequence chatbot.
 Below is text that shows a formula for the product of conditional probabilities. It says that the $s_n$ term relies on the sequence of terms that starts with $s_1$ and continues to $s_{n-1}$.
 
 \[
-\mathlarger{ \mathlarger{p(x) = \prod_{i=1}^{n} p(s_n|s_1,..., s_{n-1}) } }
+\mathlarger{ \mathlarger{ \mathlarger{
+		p(x) = \prod_{i=1}^{n} p(s_n|s_1,..., s_{n-1}) 
+} } }
 \]
 
 Every prediction relies on all the previous predictions up until that point. This is exactly what happens in sequence to sequence and transformer architectures when the model is producing output. This function can be found in Radford et al (2019)\cite{radford2019language}.
@@ -89,11 +91,7 @@ sequence to sequence model.
 
 
 \section{Corpus Considerations}
-We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles.
-Secondly we have the `JSON' dump from Reddit that is downloadable. Finally
-we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}.
-This final corpus is designed for training the chatbot task specifically. This is 
-referred to as the Persona corpus.
+We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have the `JSON' dump from Reddit that is downloadable. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
 The movie corpus is medium sized and the Reddit `JSON' download is large
 and filled with hyperlinks and sentence fragments. 
