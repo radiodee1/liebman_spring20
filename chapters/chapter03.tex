@@ -126,26 +126,18 @@ Loss can still be monitored during training. When the loss stops decreasing you 
 \subsubsection*{Questions}
 Below is a list of questions asked of all models.
 
-
-\texttt{Hello.}
-
-\texttt{What is your name?}
-
-\texttt{What time is it?}
-
-\texttt{What do you do?}
-
-\texttt{What is your favorite color?}
-
-\texttt{Do you like red?}
-
-\texttt{Do you like blue?}
-
-\texttt{What is your favorite candy?}
-
-\texttt{Do you like ice cream?}
-
-\texttt{Good bye.}
+\begin{verbatim}
+Hello.
+What is your name? 
+What time is it?
+What do you do?
+What is your favorite color?
+Do you like red?
+Do you like blue?
+What is your favorite candy?
+Do you like ice cream?
+Good bye.
+\end{verbatim}
 
 Subjectively the transformer model did not perform as well as the GPT2 model, but it did perform better than our hand coded GRU model. The model from the GRU tutorial performed better than the Transformer model but not as good as GPT2.
 
@@ -173,45 +165,28 @@ The second sequence to sequence model performed exactly as expected. It answered
 \subsubsection*{Questions}
 This is the sample question list as it was answered by the second model.
 
-\texttt{> hello .} 
-
-\texttt{you re a good man .}
-
-\texttt{> what is your name ?} 
-
-\texttt{smith .}
-
-\texttt{> what time is it ?} 
-
-\texttt{i don t know .}
-
-\texttt{> what do you do ?} 
-
-\texttt{i m a comedian .}
-
-\texttt{> what is your favorite color ?} 
-
-\texttt{i don t know .}
-
-\texttt{> do you like red ?} 
-
-\texttt{no .}
-
-\texttt{> do you like blue ?} 
-
-\texttt{no .}
-
-\texttt{> what is your favorite candy ?} 
-
-\texttt{it s a big one .}
-
-\texttt{> do you like ice cream ?} 
-
-\texttt{no .}
-
-\texttt{> good bye .} 
-
-\texttt{good bye .}
+\begin{verbatim}
+> hello .
+you re a good man .
+> what is your name ?
+smith .
+> what time is it ?
+i don t know .
+> what do you do ?
+i m a comedian .
+> what is your favorite color ?
+i don t know .
+> do you like red ?
+no .
+> do you like blue ?
+no .
+> what is your favorite candy ?
+it s a big one .
+> do you like ice cream ?
+no .
+> good bye .
+good bye .
+\end{verbatim}
  
 All the responses are in plain English. There is no gibberish. There is a variety of answers. Not all answers are the same. It is debatable weather or not the answers to the questions about `favorite color' and `favorite candy' are good. The model could have a set of answers that it can use for this kind of question. `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. This model uses that answer at times.
 
@@ -256,46 +231,28 @@ Subjectively the transformer model is better than the GRU model. It can respond 
 \subsubsection*{Questions}
 This is the sample question list as it was answered by the model.
 
-\texttt{> hello}
-
-\texttt{hi , how are you today ?}
-
- \texttt{> what is your name?}
-
-\texttt{hi , how are you today ?}
-
-\texttt{> what time is it ?}
-
-\texttt{I like to read a lot}
-
- \texttt{> what do you do ?}
-
-\texttt{i'm a student} 
-
- \texttt{> what is your favorite color ?}
-
-\texttt{hi , how are you today ?}
-
- \texttt{> do you like red ?}
-
-\texttt{hi , how are you today ?}
-
- \texttt{> do you like blue ?}
-
-\texttt{hi , how are you today ?}
-
- \texttt{> what is your favorite candy ?}
-
-\texttt{hi , how are you today ?}
-
- \texttt{> do you like ice cream ?}
-
-\texttt{yes , i do }
-
- \texttt{> good bye}
-
-\texttt{hi , how are you today ?}
-
+\begin{verbatim}
+> hello
+hi , how are you today ?
+> what is your name?
+hi , how are you today ?
+> what time is it ?
+I like to read a lot
+> what do you do ?
+i'm a student
+> what is your favorite color ?
+hi , how are you today ?
+> do you like red ?
+hi , how are you today ?
+> do you like blue ?
+hi , how are you today ?
+> what is your favorite candy ?
+hi , how are you today ?
+> do you like ice cream ?
+yes , i do 
+> good bye
+hi , how are you today ?
+\end{verbatim}
 
 All the responses are in plain English. There is no gibberish. There is a variety of answers. Not all answers are the same. Some of the answers are re-used and do not follow logically from the questions. The `favorite color' and `favorite candy' questions are nearly ignored. For those questions the model answers with `Hi, how are you today?'. This seems to be the model's default answer. The model does not use `No' or `I don't know'. The model does not have an answer for `Good bye'.
 
@@ -335,45 +292,28 @@ The subject matter of the prompts did not need to be the same as the simple intr
 \subsubsection*{Questions}
 This is the sample question list as it was answered by the model. Note that the information mentioned in the answer about the time was accurate when the test was run.
 
-\texttt{> hello}
-
-\texttt{Hello.}
-
-\texttt{> what is your name ?}
-
-\texttt{My name is Jane.}
-
-\texttt{> what time is it ?}
-
-\texttt{02:59 PM January 28, 2020.}
-
-\texttt{> what do you do ?}
-
-\texttt{I am a student.} 
-
-\texttt{> what is your favorite color ?}
-
-\texttt{I love the color of the rainbow.}
-
-\texttt{> do you like red ?}
-
-\texttt{Yes.}
-
-\texttt{> do you like blue ?}
-
-\texttt{I do.}
-
-\texttt{> what is your favorite candy ?}
-
-\texttt{I love candy.}
-
-\texttt{> do you like ice cream ?}
-
-\texttt{I do. }
-
-\texttt{> good bye}
-
-\texttt{Good bye.}
+\begin{verbatim}
+> hello
+Hello.
+> what is your name ?
+My name is Jane.
+> what time is it ?
+02:59 PM January 28, 2020.
+> what do you do ?
+I am a student.
+> what is your favorite color ?
+I love the color of the rainbow.
+> do you like red ?
+Yes.
+> do you like blue ?
+I do.
+> what is your favorite candy ?
+I love candy.
+> do you like ice cream ?
+I do. 
+> good bye
+Good bye.
+\end{verbatim}
 
 All the responses are in plain English. There is no gibberish. There is a variety of answers. Not all answers are the same. 
 
