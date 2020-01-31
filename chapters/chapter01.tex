@@ -136,7 +136,7 @@ That ends our discussion of Sequence to Sequence Translation. This is how some c
 
 \section{Loss and Accuracy}
 
-At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. The loss function must be chosen. 
+At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. 
 
 %A typical loss function is 'Mean Squared Error' or MSE.
 
@@ -146,7 +146,7 @@ Getting a prediction, running input data through a neural network, is forward pr
 Training, then, is a mathematical process involving backpropagagtion. Backpropagation identifies areas of the model weights that need to be modified in order to get the proper prediction in the future.
 
 %\iffalse
-In practice we take the derivative of the loss function in order to backpropagate. The derivative is manipulated with the learning rate and the original weight value is changed. The result is a set of adjusted weight matrices. When these matrices are used later they allow for better predictions. 
+We take the derivative of the loss function in order to backpropagate. The derivative is manipulated with the learning rate and the original weight value is changed. The result is a set of adjusted weight matrices and a new loss. When these matrices are used later they allow for better predictions. 
 %\fi
 
 This is done over and over with every source/target sentence pair. Slowly the model is changed and predictions start to match the target. That's training. The loss should decrease over time and the accuracy should increase.
