@@ -87,6 +87,8 @@ So far the model takes a word, translates it to an integer, and finds the vector
 
 We will use the metaphor of a chain when we describe input and output segments that are composed of GRU's. The input chain is sometimes referred to as the Encoder, and the output chain is sometimes referred to as the Decoder.
 
+\subsection*{Encoder}
+
 The input segments, composed of GRUs, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input GRU. One output vector is like the word vector that's input to the GRU. One output vector is a hidden value.
 
 
@@ -98,7 +100,7 @@ The very first GRU in the input chain ignores the fact that the first word has n
 A complicating detail is that although many GRUs are called for in the input chain they all use the same set of weights and 
 biases. For this reason only a single input GRU is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the GRU. 
 
-
+\subsection*{Decoder}
 The output chain is in charge of generating tokens that represent, in this case, the translation of the input in the output language. The output uses GRU segments also. The first hidden input for the first output cell is taken from the 
 last hidden output of the last recursive unit of the input chain. It is important because it is the spot where a great amount of data is passed from the input chain to the output chain. 
 The connection at this point is said to carry the `thought vector'. Most of the information responsible for translating one language to another is passed at this point.

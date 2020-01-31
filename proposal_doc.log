@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  31 JAN 2020 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  31 JAN 2020 14:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -928,48 +928,48 @@ Package pdftex.def Info: diagram-rnn.png  used on input line 33.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [2
 
-] [3 <./diagram-rnn.png>] [4] [5]
-<diagram-nmt.png, id=283, 351.3125pt x 260.975pt>
+] [3 <./diagram-rnn.png>] [4] [5] [6]
+<diagram-nmt.png, id=289, 351.3125pt x 260.975pt>
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
-Package pdftex.def Info: diagram-nmt.png  used on input line 113.
+Package pdftex.def Info: diagram-nmt.png  used on input line 115.
 (pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
- [6] [7 <./diagram-nmt.png>] [8]
+ [7 <./diagram-nmt.png>] [8]
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 161.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 163.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 161
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 163
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 168.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 170.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 168
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 170
 .
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 176.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 178.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 176
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 178
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 180.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 182.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 180
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 182
 .
 
 [9]
-<Figure_1.png, id=318, 462.528pt x 346.896pt>
+<Figure_1.png, id=320, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 202.
+Package pdftex.def Info: Figure_1.png  used on input line 204.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
  [10]) [11 <./Figure_1.png>]
 Chapter 2.
@@ -982,30 +982,30 @@ Chapter 2.
  (./chapters/chapter02.tex [13
 
 ]
-<diagram-mat01.png, id=340, 321.2pt x 361.35pt>
+<diagram-mat01.png, id=342, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 35.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [14 <./diagram-mat01.png>]
-<diagram-mat03-64.png, id=347, 321.2pt x 361.35pt>
+<diagram-mat03-64.png, id=349, 321.2pt x 361.35pt>
 File: diagram-mat03-64.png Graphic file (type png)
 <use diagram-mat03-64.png>
 Package pdftex.def Info: diagram-mat03-64.png  used on input line 70.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-mat02.png, id=348, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=350, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 88.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [15 <./diagram-mat03-64.png>]
-<diagram-mat04.png, id=354, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=356, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 109.
 (pdftex.def)             Requested size: 323.7688pt x 441.3277pt.
  [16 <./diagram-mat02.png>] [17 <./diagram-mat04.png>]
-<diagram-mat05.png, id=370, 46.0119pt x 89.133pt>
+<diagram-mat05.png, id=372, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 143.
@@ -1053,7 +1053,7 @@ File: diagram-nmt.png Graphic file (type png)
 Package pdftex.def Info: diagram-nmt.png  used on input line 59.
 (pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
  [39] [40]
-<diagram-embedding.png, id=505, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=507, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 148.
@@ -1083,8 +1083,8 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 23404 strings out of 494477
- 431603 string characters out of 6175714
+ 23406 strings out of 494477
+ 431625 string characters out of 6175714
  501988 words of memory out of 5000000
  26670 multiletter control sequences out of 15000+600000
  559546 words of font info for 99 fonts, out of 8000000 for 9000
@@ -1118,10 +1118,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (55 pages, 683753 bytes).
+Output written on proposal_doc.pdf (55 pages, 683875 bytes).
 PDF statistics:
- 1075 PDF objects out of 1200 (max. 8388607)
- 582 compressed objects within 6 object streams
- 140 named destinations out of 1000 (max. 500000)
+ 1077 PDF objects out of 1200 (max. 8388607)
+ 584 compressed objects within 6 object streams
+ 142 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
