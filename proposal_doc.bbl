@@ -66,6 +66,10 @@ C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
 P.~Mazar{\'{e}}, S.~Humeau, M.~Raison, and A.~Bordes, ``Training millions of
   personalized dialogue agents,'' {\em CoRR}, vol.~abs/1809.01984, 2018.
 
+\bibitem{DBLP:journals/corr/SutskeverVL14}
+I.~Sutskever, O.~Vinyals, and Q.~V. Le, ``Sequence to sequence learning with
+  neural networks,'' {\em CoRR}, vol.~abs/1409.3215, 2014.
+
 \bibitem{mikolov2013efficient}
 T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean, ``Efficient estimation of word
   representations in vector space,'' {\em arXiv preprint arXiv:1301.3781},

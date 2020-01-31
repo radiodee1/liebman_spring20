@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  30 JAN 2020 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  31 JAN 2020 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,28 +1050,28 @@ Appendix A.
 ]
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
-Package pdftex.def Info: diagram-nmt.png  used on input line 57.
+Package pdftex.def Info: diagram-nmt.png  used on input line 59.
 (pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
  [39] [40]
-<diagram-embedding.png, id=503, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=505, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
-Package pdftex.def Info: diagram-embedding.png  used on input line 146.
+Package pdftex.def Info: diagram-embedding.png  used on input line 148.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
- [41 <./diagram-embedding.png>] [42] [43]) [44]
+ [41] [42 <./diagram-embedding.png>] [43]) [44] [45]
 Appendix B.
-[45
+[46
 
 
 ]
 Appendix C.
-[46
+[47
 
-] (./proposal_doc.bbl [47
+] (./proposal_doc.bbl [48
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
- [48]
+ [49]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
  (./proposal_doc.aux
 (./chapters/chapter01.aux) (./chapters/chapter02.aux) (./chapters/chapter03.aux
@@ -1083,10 +1083,10 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 23401 strings out of 494477
- 431525 string characters out of 6175714
- 496933 words of memory out of 5000000
- 26669 multiletter control sequences out of 15000+600000
+ 23404 strings out of 494477
+ 431603 string characters out of 6175714
+ 501988 words of memory out of 5000000
+ 26670 multiletter control sequences out of 15000+600000
  559546 words of font info for 99 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,14n,63p,935b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1113,14 +1113,15 @@ mextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (54 pages, 674730 bytes).
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/courier/ucrr8a.pfb>
+Output written on proposal_doc.pdf (55 pages, 683753 bytes).
 PDF statistics:
- 1065 PDF objects out of 1200 (max. 8388607)
- 573 compressed objects within 6 object streams
- 138 named destinations out of 1000 (max. 500000)
+ 1075 PDF objects out of 1200 (max. 8388607)
+ 582 compressed objects within 6 object streams
+ 140 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 

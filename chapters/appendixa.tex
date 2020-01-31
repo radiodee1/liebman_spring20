@@ -38,15 +38,17 @@ improvements are.
 
 We use a GRU arrangement for a Sequence to Sequence chatbot.
 
-Below is text that shows a formula for the product of conditional probabilities. It says that the $s_n$ term relies on the sequence of terms that starts with $s_1$ and continues to $s_{n-1}$.
+Below is text that shows a formula for a product of conditional probabilities. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder GRU and helps formulate $y_t$.
+
+On the left side of the formula we have $x_1,...x_T$ which represents the input sequence for the encoder. Also we have $y_1,...,y_{T'}$ which represents the entire output. $T$ is the length of the input while $T'$ is the length of the output. Those two $T$ terms do not need to be the same, and often are not. Again, $v$ is the hidden state passed from the encoder to the decoder as a 'thought vector'.
 
 \[
 \mathlarger{ \mathlarger{ \mathlarger{
-		p(x) = \prod_{i=1}^{n} p(s_n|s_1,..., s_{n-1}) 
+		p(y_1,...,y_{T'}|x_1,...,x_T) = \prod_{t=1}^{T'} p(y_t|v,y_1,..., y_{t-1}) 
 } } }
 \]
 
-Every prediction relies on all the previous predictions up until that point. This is exactly what happens in sequence to sequence and transformer architectures when the model is producing output. This function can be found in Radford et al (2019)\cite{radford2019language}.
+Every prediction relies on all the previous predictions up until that point. This is exactly what happens in sequence to sequence and transformer architectures when the model is producing output. This function can be found in Sutskever et al (2014)\cite{DBLP:journals/corr/SutskeverVL14}.
 
 Below is a diagram of the sequence to sequence architecture.
 
