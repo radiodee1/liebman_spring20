@@ -31,6 +31,7 @@
 \contentsline {section}{\numberline {A.7}Transformer}{43}{section.A.7}% 
 \contentsline {section}{\numberline {A.8}GPT2}{43}{section.A.8}% 
 \contentsline {section}{\numberline {A.9}Raspberry Pi}{44}{section.A.9}% 
+\contentsline {section}{\numberline {A.10}Tensorflow vs. Pytorch}{45}{section.A.10}% 
 \contentsline {chapter}{\numberline {B}Tables}{46}{appendix.B}% 
 \contentsline {section}{\numberline {B.1}Model Overview}{46}{section.B.1}% 
 \contentsline {chapter}{\numberline {C}Abbreviations}{47}{appendix.C}% 

@@ -240,7 +240,7 @@ operated on a Raspberry Pi computer. If more than one model is available
 then possibly several models could be installed on Pi computers.
 
 For this to work several resources need to be made available. Pytorch
-needs to be compiled for the Pi. Speech Recognition (SR) and Text
+needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text
 To Speech (TTS) need to work on the Pi.
 
 For the transformer model to work Tensorflow needs to work on the Pi.
@@ -268,15 +268,13 @@ to the Raspberry Pi platform. The Pi will not need to do any training,
 only inference. 
 
 
-\iffalse
-\section{Speech}
 
-Google has python packages that translate text to speech and speech to text. In the case of text
-to speech the library is called `gTTS'. In the case of speech to text the library is called `google-cloud-speech'. 
+\section{Tensorflow vs. Pytorch}
 
-The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and 
-return text. For this reason it requires an internet connection and an account with Google that
-enables google cloud api use. Google charges the user a small amount for every word that they
-translate into text. 
+Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. The learning curve for Tensorflow is steeper than for Pytorch. Pytorch offers the programmer python objects that can be combined to create a neural network. Tensorflow has different pieces that can be combined, but they cannot be examined as easily at run time.
 
-\fi
+Tensorflow has a placeholder concept for inputting data and getting back results. You set up these placeholders at design time. They are the only way of accessing your data at run time.
+
+Pytorch objects interact with Python more naturally. You can use print statements in your code to show data streaming from one object to another. This is possible at run time.
+
+In favor of Tensorflow, it has a good tool for visualization which can print out all kinds of graphs of your data while your model trains. It is called Tensorboard.
