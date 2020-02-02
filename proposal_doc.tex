@@ -176,10 +176,10 @@ We are also interested in installing the chatbot code on a small computer like a
 %\end{center}
 
 \begin{itemize}
-	\item Sequence to Sequence - Tutorial.
-	\item Transformer - Persona.
-	\item Transformer - Movie.
-	\item GPT2 small.
+	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the GRU component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al (2018)\cite{2018Inkawhich}. It actually uses the Movie Dialog corpus.
+	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus.
+	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus.
+	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option.
 \end{itemize}
 
 \iffalse

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  2 FEB 2020 08:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  2 FEB 2020 11:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1063,15 +1063,15 @@ Appendix B.
 [46
 
 
-]
+] [47]
 Appendix C.
-[47
+[48
 
-] (./proposal_doc.bbl [48
+] (./proposal_doc.bbl [49
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 259.
- [49]
+ [50]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 259.
  (./proposal_doc.aux
 (./chapters/chapter01.aux) (./chapters/chapter02.aux) (./chapters/chapter03.aux
@@ -1083,8 +1083,8 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 259.
  ) 
 Here is how much of TeX's memory you used:
- 23454 strings out of 494477
- 432901 string characters out of 6175714
+ 23455 strings out of 494477
+ 432908 string characters out of 6175714
  502205 words of memory out of 5000000
  26716 multiletter control sequences out of 15000+600000
  559881 words of font info for 100 fonts, out of 8000000 for 9000
@@ -1119,10 +1119,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (55 pages, 685615 bytes).
+Output written on proposal_doc.pdf (56 pages, 687095 bytes).
 PDF statistics:
- 1088 PDF objects out of 1200 (max. 8388607)
- 593 compressed objects within 6 object streams
- 143 named destinations out of 1000 (max. 500000)
+ 1094 PDF objects out of 1200 (max. 8388607)
+ 597 compressed objects within 6 object streams
+ 144 named destinations out of 1000 (max. 500000)
  334 words of extra memory for PDF output out of 10000 (max. 10000000)
 
