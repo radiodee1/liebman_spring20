@@ -2,39 +2,23 @@
 
 \section{Gated Recurrent Unit}
 
-A Gated Recurrent Unit is a relatively simple recurrent network component. It is a component 
-where the output of the model is often fed, after some modification, to the input of the model. 
+A Gated Recurrent Unit is a relatively simple recurrent network component. It is a component where the output of the model is often fed, after some modification, to the input of the model. 
 
-At each time step the model sees the new input and a version of previous inputs. In this
-way it remembers previous inputs. Several inputs in a series are fed to a GRU in sequence and the GRU is responsible for deciding which of the inputs is most important.
+At each time step the model sees the new input and a version of previous inputs. In this way it remembers previous inputs. Several inputs in a series are fed to a GRU in sequence and the GRU is responsible for deciding which of the inputs is most important.
 
 GRU elements, like all recurrent network components, suffer from information loss when the input segments are very long.
 
 \section{Neural Machine Translation - Chatbot}
 
-The sequence to sequence model we use is based on the \textquoteleft Neural
-Machine Translation\textquoteright{} model, or \ac{NMT}. Originally designed
-for translating one language to another, NMT can be used to create
-a chatbot.
+The sequence to sequence model we use is based on the \textquoteleft Neural Machine Translation\textquoteright{} model, or \ac{NMT}. Originally designed for translating one language to another, NMT can be used to create a chatbot.
 
-In NMT two languages are given to the sequence to sequence model.
-For a chatbot NMT is used with two identical language sets. The input
-language is the same as the output language.
+In NMT two languages are given to the sequence to sequence model. For a chatbot NMT is used with two identical language sets. The input language is the same as the output language.
 
-After establishing this language relationship all that is left is
-to find a suitable training set. Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}
-use a set of movie subtitles. For each sentence in the data set the
-network is trained to reply with the contents of the next sentence
-in the set.
+After establishing this language relationship all that is left is to find a suitable training set. Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} use a set of movie subtitles. For each sentence in the data set the network is trained to reply with the contents of the next sentence in the set.
 
-It is pointed out in the paper (Vinyals et al, 2015)\cite{DBLP:journals/corr/VinyalsL15}
-that the NMT network is typically designed to answer questions directed
-at the computer with an answer that has the same meaning - though
-in a different language. Training for the chatbot consists of sentence
-pairs that are not necessarily related in that way. 
+It is pointed out in the paper (Vinyals et al, 2015)\cite{DBLP:journals/corr/VinyalsL15} that the NMT network is typically designed to answer questions directed at the computer with an answer that has the same meaning - though in a different language. Training for the chatbot consists of sentence pairs that are not necessarily related in that way. 
 
-During training accuracy improvements are not necessarily reflective of progress, where loss
-improvements are.
+During training accuracy improvements are not necessarily reflective of progress, where loss improvements are.
 
 We use a GRU arrangement for a Sequence to Sequence chatbot.
 
@@ -116,32 +100,15 @@ We record these values only and discard other labels.
 
 \section{Word Embeddings}
 
-There are several basic building blocks of sequence to sequence models. 
-They are regular neural network cells, recurrent
-network components, and word embedding components.
+There are several basic building blocks of sequence to sequence models. They are regular neural network weights and biases, recurrent network components, and word embedding components.
 
-Regular neural network cells, are arranged in layers and are pretty
-straight forward in most programming environments. To use them you
-define their dimensions in width and height. They have weights and
-biases that must be initialized before use.
+Regular neural network cells, are arranged in layers and are pretty straight forward in most programming environments. To use them you define their dimensions in width and height. They have weights and biases that must be initialized before use.
 
-Recurrent networks have internal parts that are constructed of regular
-network cells, so they have weights and biases too. They have several
-internal dimensions that need to be set. One of these is the RNN hidden
-unit. This hidden unit is a dimension.
+Recurrent networks have internal parts that are constructed of regular network cells, so they have weights and biases too. They have several internal dimensions that need to be set. One of these is the RNN hidden unit. This hidden unit is a dimension.
 
-Word embedding components are the third item we want to describe.
-What happens is words are translated from strings to individual numbers
-from a vocabulary dictionary. The dictionary only contains a single
-unique number for every word. Then the number is passed through an
-embedding structure. This turns the single number into a vector of
-numbers that is the same size as the RNN hidden dimension. Then, from
-that time on the model uses the vector instead of words.
+Word embedding components are the third item we want to describe. What happens is words are translated from strings to individual numbers from a vocabulary dictionary. The dictionary only contains a single unique number for every word. Then the number is passed through an embedding structure. This turns the single number into a vector of numbers that is the same size as the RNN hidden dimension. Then, from that time on the model uses the vector instead of words.
 
-The contents of the embedding unit is a table of numbers, all of the
-size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t
-have to be, unique values. There is one complete hidden dimension
-sized vector for each word in the vocabulary. 
+The contents of the embedding unit is a table of numbers, all of the size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t have to be, unique values. There is one complete hidden dimension sized vector for each word in the vocabulary. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -154,33 +121,20 @@ sized vector for each word in the vocabulary.
 	%\addcontentsline{lof}{section}{Word Embeddings}
 \end{figure}
 
-The vectors can be initialized randomly or they can be filled with
-predetermined values. As the network trains the embedding values can
-either be modified or frozen in place. Typically if the contents were
-initialized randomly the values would be trained. If the contents
-were filled with predetermined values you don\textquoteright t want
-to train them or change them in any way. 
+The vectors can be initialized randomly or they can be filled with predetermined values. As the network trains the embedding values can either be modified or frozen in place. Typically if the contents were initialized randomly the values would be trained. If the contents were filled with predetermined values you don\textquoteright t want to train them or change them in any way. 
 
-There are at this writing two main types of pretrained word embeddings.
-One is called \textquoteleft Word2Vec\textquoteright{} and one is
-called \textquoteleft GloVe\textquoteright . 
+There are at this writing two main types of pretrained word embeddings. One is called \textquoteleft Word2Vec\textquoteright{} and one is called \textquoteleft GloVe\textquoteright . 
 
-Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{}
-(Mikolov et al, 2013)\cite{mikolov2013efficient} GloVe is short for \textquoteleft Global
-Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glove} .
+Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al, 2013)\cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glove} .
 
 
 \section{WordPiece - BPE}
 
 \ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
 
-WordPiece is used by the BERT system to encode words much the way that Word2Vec does.
-Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one
-word or token to a vector of a given size.
+WordPiece is used by the BERT system to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word or token to a vector of a given size.
 
-WordPiece, though, handles Out Of Vocabulary (OOV) words gracefully. It breaks large words
-into smaller pieces that are in the vocabulary, and has a special notation so that
-these parts can easily be recombined in order to create the input word again.
+WordPiece, though, handles Out Of Vocabulary (OOV) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again.
 
 
 \section{Transformer}
