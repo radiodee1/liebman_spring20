@@ -142,7 +142,7 @@ Good bye.
 Subjectively the transformer model did not perform as well as the GPT2 model, but it did perform better than our hand coded GRU model. The model from the GRU tutorial performed better than the Transformer model but not as good as GPT2.
 
 
-\subsection{Chatbot - GRU Model}
+\subsection{Chatbot - Gated Recurrent Unit Model}
 We have two models based on the sequnce to sequence architecture proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by Matthew Inkawhich (2018)\cite{2018Inkawhich}.
 
 We trained the first sequence to sequence model on a large english
@@ -192,7 +192,7 @@ All the responses are in plain English. There is no gibberish. There is a variet
 
 The model answers well to `Hello' and `Good bye'.
 
-\subsection{Smart Speaker - GRU Model}
+\subsection{Smart Speaker - Gated Recurrent Unit Model}
 
 The GRU model was installed on a Raspberry Pi. This allowed us to test out speech-to-text and text-to-speech libraries. The Raspberry Pi model was 3B. The RAM requirements were less than 500MB and the trained model answered questions on the Raspberry Pi almost instantaneously.
 
@@ -266,7 +266,7 @@ The transformer model takes about two minutes to boot on the Raspberry Pi. After
 
 There is one special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions.
 
-\subsection{Chatbot - GPT2 Model}
+\subsection{Chatbot - Generative Pre-training Transformer 2 Model}
 We used a pre-trained GPT2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well. The corpus is called `WebText'.
 
 For our experiments GPT2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the GPT2 model in the application.
@@ -325,7 +325,7 @@ The model answers well to `Hello' and `Good bye'.
 
 The model will answer with it's name and you can tell it your name, but it is confused by this. It will on occasion tell you that it's name and your name are the same thing. This is in part because it cannot remember what it most recently said to you or what you most recently said to it. 
 
-\subsection{Smart Speaker - GPT2 Model}
+\subsection{Smart Speaker - Generative Pre-training Transformer 2 Model}
 Tests showed that the GPT2 chatbot worked well. We wanted to continue and allow the chatbot to have more of the abilities of a smart speaker. We constructed a simple corpus that contained key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning with this new corpus.
 
 We found that one of two things would happen. The chatbot would either learn the new phrases and forget all it's pre-training, or it would not learn the new phrases and it would retain all it's pre-training. For our examples there seemed to be no middle ground. Comparisons were made with all available models and a version without the transfer learning was settled on.

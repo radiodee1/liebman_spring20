@@ -5,30 +5,30 @@
 \BOOKMARK [1][-]{section.1.4}{Loss and Accuracy}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.5}{Attention Mechanism}{chapter.1}% 6
 \BOOKMARK [1][-]{section.1.6}{Sequence to Sequence Chatbot}{chapter.1}% 7
-\BOOKMARK [0][-]{chapter.2}{GPT2 and Transformers}{}% 8
+\BOOKMARK [0][-]{chapter.2}{Transformers and The Generative Pre-training Transformer 2}{}% 8
 \BOOKMARK [1][-]{section.2.1}{Transformer and Attention}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{GPT2}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{The Generative Pre-training Transformer 2}{chapter.2}% 10
 \BOOKMARK [0][-]{chapter.3}{Experiments}{}% 11
 \BOOKMARK [1][-]{section.3.1}{Approach to the Study}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.2}{Setup}{chapter.3}% 13
 \BOOKMARK [1][-]{section.3.3}{Speech and Speech To Text}{chapter.3}% 14
 \BOOKMARK [1][-]{section.3.4}{ARMv7 Build/Compile}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.5}{Experiments}{chapter.3}% 16
-\BOOKMARK [2][-]{subsection.3.5.1}{Chatbot - GRU Model}{section.3.5}% 17
-\BOOKMARK [2][-]{subsection.3.5.2}{Smart Speaker - GRU Model}{section.3.5}% 18
+\BOOKMARK [2][-]{subsection.3.5.1}{Chatbot - Gated Recurrent Unit Model}{section.3.5}% 17
+\BOOKMARK [2][-]{subsection.3.5.2}{Smart Speaker - Gated Recurrent Unit Model}{section.3.5}% 18
 \BOOKMARK [2][-]{subsection.3.5.3}{Chatbot - Transformer Model}{section.3.5}% 19
 \BOOKMARK [2][-]{subsection.3.5.4}{Smart Speaker - Transformer Model}{section.3.5}% 20
-\BOOKMARK [2][-]{subsection.3.5.5}{Chatbot - GPT2 Model}{section.3.5}% 21
-\BOOKMARK [2][-]{subsection.3.5.6}{Smart Speaker - GPT2 Model}{section.3.5}% 22
+\BOOKMARK [2][-]{subsection.3.5.5}{Chatbot - Generative Pre-training Transformer 2 Model}{section.3.5}% 21
+\BOOKMARK [2][-]{subsection.3.5.6}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.3.5}% 22
 \BOOKMARK [0][-]{appendix.A}{Terminology}{}% 23
 \BOOKMARK [1][-]{section.A.1}{Gated Recurrent Unit}{appendix.A}% 24
 \BOOKMARK [1][-]{section.A.2}{Neural Machine Translation - Chatbot}{appendix.A}% 25
 \BOOKMARK [1][-]{section.A.3}{Sequence to Sequence Architecture}{appendix.A}% 26
 \BOOKMARK [1][-]{section.A.4}{Corpus Considerations}{appendix.A}% 27
 \BOOKMARK [1][-]{section.A.5}{Word Embeddings}{appendix.A}% 28
-\BOOKMARK [1][-]{section.A.6}{WordPiece - BPE}{appendix.A}% 29
+\BOOKMARK [1][-]{section.A.6}{WordPiece - Byte Pair Encoding}{appendix.A}% 29
 \BOOKMARK [1][-]{section.A.7}{Transformer}{appendix.A}% 30
-\BOOKMARK [1][-]{section.A.8}{GPT2}{appendix.A}% 31
+\BOOKMARK [1][-]{section.A.8}{Generative Pre-training Transformer 2}{appendix.A}% 31
 \BOOKMARK [1][-]{section.A.9}{Raspberry Pi}{appendix.A}% 32
 \BOOKMARK [1][-]{section.A.10}{Tensorflow vs. Pytorch}{appendix.A}% 33
 \BOOKMARK [0][-]{appendix.B}{Tables}{}% 34

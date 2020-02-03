@@ -128,7 +128,7 @@ There are at this writing two main types of pretrained word embeddings. One is c
 Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al, 2013)\cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glove} .
 
 
-\section{WordPiece - BPE}
+\section{WordPiece - Byte Pair Encoding}
 
 \ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
 
@@ -148,7 +148,7 @@ We use the translation models for the chatbot problem by feeding the model the E
 The Transformer itself can be configured for sentence long output but it is not a pre-trained model. There are pre-trained versions of the transformer, one of which is called BERT. BERT is described in Devlin et al (2018)\cite{DBLP:journals/corr/abs-1810-04805} and the acronym stands for Bidirectional Encoder Representations from Transformers. Unfortunately BERT output is as a 
 classifier. Full sentence-length output is not supported.
 
-\section{GPT2}
+\section{Generative Pre-training Transformer 2}
 
 Another pre-trained model that uses the Transformer is GPT2. GPT2 stands for `Generative Pre-training Transformer 2.'
 
@@ -170,16 +170,7 @@ BERT transformer model. GPT2 has been released in Tensorflow format, and more re
 GPT2 works so well in certain conditions that it is appropriate to use without fine tuning. This 
 type of implementation is called `zero-shot' implementation. We use GPT2 in a zero-shot implementation with the chatbot problem.
 
-\iffalse
-\section{Question Answering -- GPT2}
-To experiment with transfer learning on GPT2 we have completed a table of results for the babi
-question answering problem. 
 
-First we program our own version of the DMN project (Kumar et al, 2015)\cite{DBLP:journals/corr/KumarISBEPOGS15}. Then we try to
-solve the same problem with GPT2. We achieve results for the 20 tests with accuracy in the mid to
-high 90 percent. Our results are not higher than the hand coded version but they are respectable
-and show the flexibility of the GPT2 model.
-\fi
 
 \section{Raspberry Pi}
 
