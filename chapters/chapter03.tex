@@ -1,12 +1,10 @@
 \section{Approach to the Study}
 
-Several tasks are necessary for the project. One task is to implement
-the algorithms for different models, one the sequence to sequence model
-and the other the transformer model for a generative chatbot and finally the GPT2 model.
+Several tasks are necessary for the project. One task is to implement the algorithms for different models, one the sequence to sequence model and the other the transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
 
-We will not try to rewrite the transformer or GPT2 model ourselves.
+We will not try to rewrite the transformer or Generative Pre-training Transformer 2 model ourselves.
 
-In this project we attempt to load as much of out chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in english sentences and producing english output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
+In this project we attempt to load as much of out chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
@@ -14,32 +12,29 @@ The speech to text service used on the project and the memory limitations on the
 
 Also, we have several models that we want to test. To test them all would require several servers. Also we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
-It is important to note that the large GPT2 model specifically could be served from a remote computer and it would operate faster. Currently on the Raspberry Pi decoding a single sentence takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
+It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. Currently on the Raspberry Pi decoding a single sentence takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
 
 \section{Setup}
 
-We use linux computers, sometimes with gpu hardware for parallel processing.
-We also use the Python programming language. Code from this project
-can be run with the 3.x version of Python.
+We use linux computers, sometimes with \ac{GPU} hardware for parallel processing. We also use the Python programming language. Code from this project can be run with the 3.x version of Python.
 
 When the project was started we did some programming with Keras using
 Tensorflow as a backend. Keras was later discarded in favor of Pytorch.
 Pytorch as a library is still under development at the time of this
 writing.
 
-Some of the GPT2 code uses Pytorch. Some of the Transformer and GPT2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
+Some of the Generative Pre-training Transformer 2 code uses Pytorch. Some of the Transformer and Generative Pre-training Transformer 2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
 
-We use github as a code repository. Code corresponding with this paper
-can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot}
+We use github as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot}
 . 
 
-As a coding experiment we rewrite the code for the sequence-to-sequence GRU model. We have varying amounts of success with these experiments. We do not rewrite the GPT2 code from the Tensorflow or Pytorch repository.
+As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have varying amounts of success with these experiments. We do not rewrite the Generative Pre-training Transformer 2 code from the Tensorflow or Pytorch repository.
 
 \section{Speech and Speech To Text}
 
 Google has python packages that translate text to speech and speech to text. In the case of text to speech the library is called `gTTS'. In the case of speech to text the library is called `google-cloud-speech'. 
 
-The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an internet connection and an account with Google that enables google cloud api use. Google charges the user a small amount for every word that they translate into text. 
+The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an internet connection and an account with Google that enables Google cloud api use. Google charges the user a small amount for every word that they translate into text. 
 
 Both of these resources, the text-to-speech and speech-to-text, work out of the box on the Raspberry Pi, but configuring speech-to-text for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration the user is allowed to download a json authentication file. The file must be copied to the Raspberry Pi. 
 
@@ -52,7 +47,7 @@ The operating system on the Raspberry Pi is based on Debian Linux. In this opera
 \subsection*{Pytorch `torch' Library 1.1.0 For ARMv7}
 We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
 
-On their web site Milosevic et al (2019)\cite{2018Milosevic} compile pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
+On their web site Milosevic et al (2019)\cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
 
 The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used in the change-root environment to compile the Pytorch library for the 1.1.0 version.
 
@@ -73,7 +68,7 @@ We recompile the Pytorch library for the Raspberry Pi. We use debian virtualizat
 
 In addition to this, the files created by the compilation are properly named. There is no need to go to the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}' to change anything. 
 
-The time spent compiling the software is approximately 5 hours. Time spent with the Virtualbox container was easily twice that. The time spent on the Raspberry Pi executing a single GPT2 question and answer remains about 13 seconds, so there was no gain in that respect.
+The time spent compiling the software is approximately 5 hours. Time spent with the Virtualbox container was easily twice that. The time spent on the Raspberry Pi executing a single Generative Pre-training Transformer 2 question and answer remains about 13 seconds, so there was no gain in that respect.
 
 There were several small hurdles to completing the compilation. Firstly the `debootstrap' command needed to be employed at the start. Debian Stretch was used as the host operating system. It was felt that if it was used that the GLIBC compatibility problem would not be faced. This turned out to be the case.
 
@@ -95,23 +90,23 @@ It was found that there existed a version of the Docker Container Daemon that ra
 `Tensorflow-model-server' is used on the localhost internet address, 127.0.0.1, with a port of 8500. tensorflow-model-server is meant for serving neural network resources on the internet, but with careful planning it works on the Raspberry Pi.
 
 \section{Experiments}
-In the section above we describe the workings of a transformer and the workings of GPT2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
+In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
-We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have the transformer and the GPT2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us six sections.
+We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have the transformer and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us six sections.
 
-The GPT2 code is versatile. We use it for the chatbot problem. The GPT2 model is pretrained. We experiment with transfer learning and further training of the GPT2 model, but in our case it does not improve the model's performance. 
+The Generative Pre-training Transformer 2 code is versatile. We use it for the chatbot problem. The model is pretrained. We experiment with transfer learning and further training of the Generative Pre-training Transformer 2 model, but in our case it does not improve the model's performance. 
 
-When we talk about the chatbot problem on GPT2 we are talking about a PyTorch version of the GPT2 code. 
+When we talk about the chatbot problem on Generative Pre-training Transformer 2 we are talking about a PyTorch version of the GPT2 code. 
 
-We found that the chatbot with the hand coded sequence to sequence NMT did not work very well. There is a tensorflow transformer-based model that worked marginally well. We found that the GPT2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. 
+We found that the chatbot with the hand coded sequence to sequence Neural Machine Translation did not work very well. There is a tensorflow transformer-based model that worked marginally well. We found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. 
 
-Fine tuning on the GPT2 problem actually had a negative effect. To fine-tune GPT2 also involved training the model on Tensorflow and then translating the model to PyTorch when that was done. 
+Fine tuning on the Generative Pre-training Transformer 2 problem actually had a negative effect. To fine-tune the model also involved training the model on Tensorflow and then translating the model to PyTorch when that was done. 
 
 We use speech recognition and speech to text libraries to allow a user to give the chatbot model auditory input.
 
-We also train the transformer to do the chatbot task. This works better than the the hand coded sequence to sequence model but not as well as the GPT2. 
+We also train the transformer to do the chatbot task. This works better than the the hand coded sequence to sequence model but not as well as the Generative Pre-training Transformer 2. 
 
-For the sake of experimentation we use a sequence to sequence GRU tutorial and implement the chatbot. This model works well and allows us to compare the GRU model with the GPT2 model.
+For the sake of experimentation we use a sequence to sequence Gated Recurrent Unit tutorial and implement the chatbot. This model works well and allows us to compare that model with the Generative Pre-training Transformer 2 model.
 
 Finally we describe installing the chatbot in small computing platforms, the Raspberry Pi 3B and 4B, in an attempt to create a smart speaker.
 
@@ -139,7 +134,7 @@ Do you like ice cream?
 Good bye.
 \end{verbatim}
 
-Subjectively the transformer model did not perform as well as the GPT2 model, but it did perform better than our hand coded GRU model. The model from the GRU tutorial performed better than the Transformer model but not as good as GPT2.
+Subjectively the transformer model did not perform as well as the Generative Pre-training Transformer 2 model, but it did perform better than our hand coded Gated Recurrent Unit model. The model from the Gated Recurrent Unit tutorial performed better than the Transformer model but not as good as Generative Pre-training Transformer 2.
 
 
 \subsection{Chatbot - Gated Recurrent Unit Model}
@@ -152,13 +147,13 @@ For this sequence to sequence model we want to use text found in a movie dialog 
 
 In our experience with coding our own chatbot we find that the model learns a single English sentence that can be used for most replies. 
 
-Subjectively the GRU chatbot is unusable.
+Subjectively the Gated Recurrent Unit chatbot is unusable.
 
 For example our chatbot frequently replies to input with the phrase `I don't know'. This is the most common output from our model. In this respect our original chatbot responds poorly.
 
 A large portion of the time the bot's response to a question is the same. This is interesting in that the chatbot has identified that this phrase is a suitable answer to many questions, but it is disappointing that there is not more variety to the output.  
 
-Occasionally the sequence-to-sequence model will reply with the phrase "I'm sorry." This happens very infrequently and it is not clear why the model chooses to reply this way. 
+Occasionally the sequence-to-sequence model will reply with the phrase `I'm sorry.' This happens very infrequently and it is not clear why the model chooses to reply this way. 
 
 The second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original, authentic answers. The answers all made sense in the English language.
 
@@ -194,7 +189,7 @@ The model answers well to `Hello' and `Good bye'.
 
 \subsection{Smart Speaker - Gated Recurrent Unit Model}
 
-The GRU model was installed on a Raspberry Pi. This allowed us to test out speech-to-text and text-to-speech libraries. The Raspberry Pi model was 3B. The RAM requirements were less than 500MB and the trained model answered questions on the Raspberry Pi almost instantaneously.
+The Gated Recurrent Unit model was installed on a Raspberry Pi. This allowed us to test out speech-to-text and text-to-speech libraries. The Raspberry Pi model was 3B. The RAM requirements were less than 500MB and the trained model answered questions on the Raspberry Pi almost instantaneously.
 
 For this experiment we compiled the Pytorch library for Raspberry Pi.
 
@@ -217,14 +212,11 @@ phrase "I don't know" training was stopped.
 At that time the corpus was modified to include no 
 sentences that have the word "don't" in them. Training was started again until the output contained nothing but the phrase "I'm sorry." 
 
-At that time the corpus was modified to include no sentences that have the word "sorry" in them.
-Training was started again and was continued for some period. Training was stopped. A further segment of training was not attempted. 
+At that time the corpus was modified to include no sentences that have the word "sorry" in them. Training was started again and was continued for some period. Training was stopped. A further segment of training was not attempted. 
 
-At this point, after looking at the change in loss, further training was not
-thought of as helpful. Loss stopped improving at some point in this process, and this lack of
-improvement was taken as a sign that progress was not likely.
+At this point, after looking at the change in loss, further training was not thought of as helpful. Loss stopped improving at some point in this process, and this lack of improvement was taken as a sign that progress was not likely.
 
-Subjectively the transformer model is better than the GRU model. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It cannot tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
+Subjectively the transformer model is better than the Gated Recurrent Unit model. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 
 %\begin{lstlisting}[language=bash]
@@ -256,8 +248,6 @@ hi , how are you today ?
 
 All the responses are in plain English. There is no gibberish. There is a variety of answers. Not all answers are the same. Some of the answers are re-used and do not follow logically from the questions. The `favorite color' and `favorite candy' questions are nearly ignored. For those questions the model answers with `Hi, how are you today?'. This seems to be the model's default answer. The model does not use `No' or `I don't know'. The model does not have an answer for `Good bye'.
 
-
-
 \subsection{Smart Speaker - Transformer Model}
 
 The transformer model is installed on the Raspberry Pi. This model is more dynamic than the GRU hand-coded model. 
@@ -267,15 +257,15 @@ The transformer model takes about two minutes to boot on the Raspberry Pi. After
 There is one special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions.
 
 \subsection{Chatbot - Generative Pre-training Transformer 2 Model}
-We used a pre-trained GPT2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well. The corpus is called `WebText'.
+We used a pre-trained Generative Pre-training Transformer 2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well. The corpus is called `WebText'.
 
-For our experiments GPT2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the GPT2 model in the application.
+For our experiments Generative Pre-training Transformer 2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the model in the application.
 
-We did do some special coding for the input and output of the GPT2 code in order to operate it as a chatbot. Input and output was limited to about 25 tokens. 
+We did do some special coding for the input and output code in order to operate it as a chatbot. Input and output was limited to about 25 tokens. 
 
-Input to the model was prepended with the character string "Q:" by our code. Output was observed to have the character string "A:" prepended to it. We assume therefore that the GPT2 model was at some point exposed to the "Question/Answer" paradigm in written passages during its training. This was helpful.
+Input to the model was prepended with the character string "Q:" by our code. Output was observed to have the character string "A:" prepended to it. We assume therefore that the model was at some point exposed to the "Question/Answer" paradigm in written passages during its training. This was helpful.
 
-Output from the GPT2 model was usually larger in size than we needed. Also, output had the character of having some sensible utterance followed by some output that was only a partial sentence.
+Output from the model was usually larger in size than we needed. Also, output had the character of having some sensible utterance followed by some output that was only a partial sentence.
 
 It was necessary to `scrape' the output. First the output was checked for the "A:" character string at the start. If it was there it was removed. Then the first complete sentence was used as output, while words and phrases after that were discarded.
 
@@ -319,21 +309,22 @@ All the responses are in plain English. There is no gibberish. There is a variet
 
 It is still debatable weather or not the answers to the questions about `favorite color' and `favorite candy' are good. The model could have a set of answers that it can use for this kind of question. The model seems to know what candy is and to a lesser extent what a color is. Some of the time the answer includes a word from the question sentence that would lead you to believe that this model has fewer stock answers.
 
-The model does not use `I don't know' that often. Through programmatic means the model was given the ability to answer questions about the time of day accurately. This did not include using Artificial Intelligence Markup Language. This method is described above.
+The model does not use `I don't know' that often. Through programmatic means the model was given the ability to answer questions about the time of day accurately. This did not include using Artificial Intelligence Markup Language. 
+%This method is described above.
 
 The model answers well to `Hello' and `Good bye'.
 
 The model will answer with it's name and you can tell it your name, but it is confused by this. It will on occasion tell you that it's name and your name are the same thing. This is in part because it cannot remember what it most recently said to you or what you most recently said to it. 
 
 \subsection{Smart Speaker - Generative Pre-training Transformer 2 Model}
-Tests showed that the GPT2 chatbot worked well. We wanted to continue and allow the chatbot to have more of the abilities of a smart speaker. We constructed a simple corpus that contained key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning with this new corpus.
+Tests showed that the Generative Pre-training Transformer 2 chatbot worked well. We wanted to continue and allow the chatbot to have more of the abilities of a smart speaker. We constructed a simple corpus that contained key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning with this new corpus.
 
 We found that one of two things would happen. The chatbot would either learn the new phrases and forget all it's pre-training, or it would not learn the new phrases and it would retain all it's pre-training. For our examples there seemed to be no middle ground. Comparisons were made with all available models and a version without the transfer learning was settled on.
 
 Code was added that uses Text To Speech and Speech To Text libraries. In this way the model could interact with a subject using auditory cues and commands.
 
-We did some programming that allowed the GPT2 model to launch programs when directed to by the user. In this way we have tried to move our project closer to the smart-speakers that are produced commercially. The programming did not rely on the neural-network aspects of the model. Instead the code used heuristics and simple word recognition. This code can be disabled when the model is run from the command line.
+We did some programming that allowed the model to launch programs when directed to by the user. In this way we have tried to move our project closer to the smart-speakers that are produced commercially. The programming did not rely on the neural-network aspects of the model. Instead the code used heuristics and simple word recognition. This code can be disabled when the model is run from the command line.
 
-The Raspberry Pi model that the GPT2 was installed on was the 4B with 4GB of RAM. It is largely for this model that we cross compiled the Pytorch Python library for the ARMv7. The GPT2 model fit on the Raspberry Pi. While execution on the production laptop was instantaneous, execution on the Raspberry Pi took about 13 seconds for every response from the neural network.
+The Raspberry Pi model that the Generative Pre-training Transformer 2 was installed on was the 4B with 4GB of RAM. It is largely for this model that we cross compiled the Pytorch Python library for the ARMv7. The GPT2 model fit on the Raspberry Pi. While execution on the production laptop was instantaneous, execution on the Raspberry Pi took about 13 seconds for every response from the neural network.
 
 The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, monitor, or keyboard. The program was modified so that there was a tone every time the model was ready for input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the GPT2 model to be physically installed on the Raspberry Pi.

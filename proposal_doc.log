@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  3 FEB 2020 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  3 FEB 2020 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1022,23 +1022,23 @@ Chapter 3.
  (./chapters/chapter03.tex [23
 
 ] [24]
-Overfull \hbox (23.27394pt too wide) in paragraph at lines 65--66
+Overfull \hbox (23.27394pt too wide) in paragraph at lines 60--61
 []\T1/cmr/m/n/10 There are three files mis-named. They can be found at `\T1/cmr
 /bx/n/10 /usr/lib/python3.7/site-packages/torch/\T1/cmr/m/n/10 '.
  []
 
 [25]
-Overfull \hbox (28.67174pt too wide) in paragraph at lines 67--68
+Overfull \hbox (28.67174pt too wide) in paragraph at lines 62--63
 \T1/cmr/m/n/10 tion. This pro-duces the fol-low-ing er-ror: `\T1/cmr/bx/n/10 Im
 portError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6:
  []
 
 [26] [27] [28]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 129.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-[29] [30] [31] [32] [33] [34] [35]) [36] [37]
+[29] [30] [31] [32] [33] [34] [35] [36]) [37]
 \openout2 = `chapters/appendixa.aux'.
 
  (./chapters/appendixa.tex
@@ -1083,10 +1083,10 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
  ) 
 Here is how much of TeX's memory you used:
- 23498 strings out of 494477
- 434166 string characters out of 6175714
- 501477 words of memory out of 5000000
- 26759 multiletter control sequences out of 15000+600000
+ 23541 strings out of 494477
+ 435424 string characters out of 6175714
+ 502739 words of memory out of 5000000
+ 26802 multiletter control sequences out of 15000+600000
  559881 words of font info for 100 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,14n,63p,1001b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1119,7 +1119,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (56 pages, 689016 bytes).
+Output written on proposal_doc.pdf (56 pages, 689813 bytes).
 PDF statistics:
  1097 PDF objects out of 1200 (max. 8388607)
  597 compressed objects within 6 object streams
