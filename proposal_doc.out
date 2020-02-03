@@ -7,7 +7,7 @@
 \BOOKMARK [1][-]{section.1.6}{Sequence to Sequence Chatbot}{chapter.1}% 7
 \BOOKMARK [0][-]{chapter.2}{Transformers and The Generative Pre-training Transformer 2}{}% 8
 \BOOKMARK [1][-]{section.2.1}{Transformer and Attention}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{The Generative Pre-training Transformer 2}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{The Generative Pre-training Transformer 2 Model}{chapter.2}% 10
 \BOOKMARK [0][-]{chapter.3}{Experiments}{}% 11
 \BOOKMARK [1][-]{section.3.1}{Approach to the Study}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.2}{Setup}{chapter.3}% 13
@@ -22,7 +22,7 @@
 \BOOKMARK [2][-]{subsection.3.5.6}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.3.5}% 22
 \BOOKMARK [0][-]{appendix.A}{Terminology}{}% 23
 \BOOKMARK [1][-]{section.A.1}{Gated Recurrent Unit}{appendix.A}% 24
-\BOOKMARK [1][-]{section.A.2}{Neural Machine Translation - Chatbot}{appendix.A}% 25
+\BOOKMARK [1][-]{section.A.2}{Neural Machine Translation as Chatbot}{appendix.A}% 25
 \BOOKMARK [1][-]{section.A.3}{Sequence to Sequence Architecture}{appendix.A}% 26
 \BOOKMARK [1][-]{section.A.4}{Corpus Considerations}{appendix.A}% 27
 \BOOKMARK [1][-]{section.A.5}{Word Embeddings}{appendix.A}% 28

@@ -5,13 +5,13 @@ The Transformer is a mechanism that is based entirely on attention. Strictly spe
 
 Recurrent components have some negative qualities. Recurrent components are hard to run with batch input data. Also they do not work with very long data strings. 
 
-If a batch of data is to be cycled through a recurrent component, all that data has to go through the component at the first cardinal position before it is cycled through the second or third position. In the first time step everything needs to go through the first RNN module. Then the data can be moved along to the second RNN  module in the second time step.
+If a batch of data is to be cycled through a recurrent component, all that data has to go through the component at the first cardinal position before it is cycled through the second or third position. In the first time step everything needs to go through the first Recurrent Neural Network module. Then the data can be moved along to the second Recurrent Neural Network  module in the second time step.
 
-Also because the RNN is so heavy with Neural Network components, many weights and biases, though they can remember patterns, they loose some information with every pass. This is why there is a practical limit to the length of the input sequences that the typical RNN can use. This is why the length of sentences in network models that use the RNN are short.
+Also because the Recurrent Neural Network is so heavy with Neural Network components, many weights and biases, though they can remember patterns, they loose some information with every pass. This is why there is a practical limit to the length of the input sequences that the typical Recurrent Neural Network can use. This is why the length of sentences in network models that use the Recurrent Neural Network are short.
 
-Transformers use no RNN components. Their operations can be parallelized so that large batches of data can be processed at once during the same time step. 
+Transformers use no Recurrent Neural Network components. Their operations can be parallelized so that large batches of data can be processed at once during the same time step. 
 
-Longer sequences can be considered as well, so Transformer input can contain longer english language sentences and even paragraphs.
+Longer sequences can be considered as well, so Transformer input can contain longer English language sentences and even paragraphs.
 
 %\subsection*{Model Overview}
 Attention mechanisms are used in a similar way in three places in the model. The first implementation of the Self Attention is discussed below.
@@ -130,7 +130,7 @@ There is a pre-trained Transformer model called \ac{BERT}. BERT stands for `Bidi
 
 The BERT models use a bidirectional training method. During training the BERT model might be presented with a sentence with a word missing. The training task is to fill in that blank. The model can look at the sentence from any direction in order to find that word.
 
-\section{The Generative Pre-training Transformer 2}
+\section{The Generative Pre-training Transformer 2 Model}
 
 \ac{GPT2} is a large model. It is based on the Transformer from Vaswani et al (2017)\cite{Vaswani2017AttentionIA} but there are some major changes. The model uses the encoder portion of the Transformer without the decoder. There are some other changes to the output layers. The biggest difference is that it's pre-trained and downloadable.
 
@@ -142,7 +142,7 @@ It still uses Scaled Dot-Product Attention. A model diagram is taken from Radfor
 		
 		\includegraphics[scale=4.0]{diagram-mat05}
 	\end{center}
-	\caption[GPT2 Encoder]{GPT2 Encoder - Radford et al(2018)\cite{radford2018improving}}
+	\caption[Generative Pre-training Transformer 2 Encoder]{GPT2 Encoder - Radford et al(2018)\cite{radford2018improving}}
 	
 	%\addcontentsline{lof}{section}{Loss and Accuracy}
 \end{figure}
