@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  4 FEB 2020 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  4 FEB 2020 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1046,12 +1046,12 @@ Overfull \hbox (28.67174pt too wide) in paragraph at lines 105--106
 portError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6:
  []
 
-[26] [27] [28]
+[26] [27] [28] [29]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 167.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-[29] [30] [31] [32] [33] [34] [35] [36]) [37] [38]
+[30] [31] [32] [33] [34] [35] [36]) [37] [38]
 \openout2 = `chapters/appendixa.aux'.
 
  (./chapters/appendixa.tex
@@ -1136,7 +1136,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (56 pages, 691175 bytes).
+Output written on proposal_doc.pdf (56 pages, 691340 bytes).
 PDF statistics:
  1107 PDF objects out of 1200 (max. 8388607)
  605 compressed objects within 7 object streams
