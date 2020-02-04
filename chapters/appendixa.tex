@@ -4,25 +4,25 @@
 
 A Gated Recurrent Unit is a relatively simple recurrent network component. It is a component where the output of the model is often fed, after some modification, to the input of the model. 
 
-At each time step the model sees the new input and a version of previous inputs. In this way it remembers previous inputs. Several inputs in a series are fed to a GRU in sequence and the GRU is responsible for deciding which of the inputs is most important.
+At each time step the model sees the new input and a version of previous inputs. In this way it remembers previous inputs. Several inputs in a series are fed to a Gated Recurrent Unit in sequence and the unit is responsible for deciding which of the inputs is most important.
 
-GRU elements, like all recurrent network components, suffer from information loss when the input segments are very long.
+Gated Recurrent Unit elements, like all recurrent network components, suffer from information loss when the input segments are very long.
 
 \section{Neural Machine Translation as Chatbot}
 
-The sequence to sequence model we use is based on the \textquoteleft Neural Machine Translation\textquoteright{} model, or \ac{NMT}. Originally designed for translating one language to another, NMT can be used to create a chatbot.
+The sequence to sequence model we use is based on the \textquoteleft Neural Machine Translation\textquoteright{} model, or \ac{NMT}. Originally designed for translating one language to another, Neural Machine Translation can be used to create a chatbot.
 
-In NMT two languages are given to the sequence to sequence model. For a chatbot NMT is used with two identical language sets. The input language is the same as the output language.
+In Neural Machine Translation two languages are given to the sequence to sequence model. For a chatbot Neural Machine Translation is used with two identical language sets. The input language is the same as the output language.
 
 After establishing this language relationship all that is left is to find a suitable training set. Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} use a set of movie subtitles. For each sentence in the data set the network is trained to reply with the contents of the next sentence in the set.
 
-It is pointed out in the paper (Vinyals et al, 2015)\cite{DBLP:journals/corr/VinyalsL15} that the NMT network is typically designed to answer questions directed at the computer with an answer that has the same meaning - though in a different language. Training for the chatbot consists of sentence pairs that are not necessarily related in that way. 
+It is pointed out in the paper (Vinyals et al, 2015)\cite{DBLP:journals/corr/VinyalsL15} that the Neural Machine Translation network is typically designed to answer questions directed at the computer with an answer that has the same meaning - though in a different language. Training for the chatbot consists of sentence pairs that are not necessarily related in that way. 
 
 During training accuracy improvements are not necessarily reflective of progress, where loss improvements are.
 
-We use a GRU arrangement for a Sequence to Sequence chatbot.
+We use a Gated Recurrent Unit arrangement for a Sequence to Sequence chatbot.
 
-Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder GRU and helps formulate $y_t$.
+Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder Gated Recurrent Unit and helps formulate $y_t$.
 
 On the left side of the formula we have $x_1,...x_T$ which represents the input sequence for the encoder. Also we have $y_1,...,y_{T'}$ which represents the entire output. $T$ is the length of the input while $T'$ is the length of the output. Those two $T$ terms do not need to be the same, and often are not. Again, $v$ is the hidden state passed from the encoder to the decoder as a 'thought vector'.
 
@@ -52,27 +52,14 @@ Below is a diagram of the sequence to sequence architecture.
 
 \section{Sequence to Sequence Architecture}
 
-In Fig. A.1 we generalize a sequence to sequence model. The idea is
-that A and B, on the left side of the diagram, deal with the encoding
-of sentences. A and B would be consecutive words in a sentence, and
-the round blue nodes below A and B are RNN units. They are Recurrent
-Neural Network elements. C and D are outputs and in the right side
-of the diagram the blue nodes represent the output RNN units. Between
-the input and the output there is a corridor of information exactly
-the size of the RNN hidden vector. 
+In Fig. A.1 we generalize a sequence to sequence model. The idea is that A and B, on the left side of the diagram, deal with the encoding of sentences. A and B would be consecutive words in a sentence, and the round blue nodes below A and B are Recurrent Neural Network units. C and D are outputs and in the right side of the diagram the blue nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
 
-All of the information that the decoder uses for it\textquoteright s
-output is present in this corridor and is passed along the corridor
-from the encoder. For this reason we refer to it as the thought vector.
+All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector.
 
-Making this vector larger by increasing the size of the hidden unit
-size allows for more information in the thought vector. Size also
-increases the time to train the network. The size must also match
-the dimension of the vectors in the GloVe or Word2Vec download if
+Making this vector larger by increasing the size of the hidden unit size allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if
 one of those is used. 
 
-Ultimately exceedingly large hidden dimension does not improve the
-sequence to sequence model. 
+Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model. 
 
 
 
