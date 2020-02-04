@@ -11,27 +11,28 @@
 \contentsline {section}{\numberline {2.2}The Generative Pre-training Transformer 2 Model}{18}{section.2.2}% 
 \contentsline {chapter}{\numberline {3}Experiments}{22}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Approach to the Study}{23}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Setup}{24}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Speech and Speech To Text}{24}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}ARMv7 Build/Compile}{25}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Experiments}{27}{section.3.5}% 
-\contentsline {subsection}{\numberline {3.5.1}Chatbot - Gated Recurrent Unit Model}{29}{subsection.3.5.1}% 
-\contentsline {subsection}{\numberline {3.5.2}Smart Speaker - Gated Recurrent Unit Model}{31}{subsection.3.5.2}% 
-\contentsline {subsection}{\numberline {3.5.3}Chatbot - Transformer Model}{31}{subsection.3.5.3}% 
-\contentsline {subsection}{\numberline {3.5.4}Smart Speaker - Transformer Model}{33}{subsection.3.5.4}% 
-\contentsline {subsection}{\numberline {3.5.5}Chatbot - Generative Pre-training Transformer 2 Model}{34}{subsection.3.5.5}% 
-\contentsline {subsection}{\numberline {3.5.6}Smart Speaker - Generative Pre-training Transformer 2 Model}{36}{subsection.3.5.6}% 
-\contentsline {chapter}{\numberline {A}Terminology}{38}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{38}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Neural Machine Translation as Chatbot}{38}{section.A.2}% 
-\contentsline {section}{\numberline {A.3}Sequence to Sequence Architecture}{40}{section.A.3}% 
-\contentsline {section}{\numberline {A.4}Corpus Considerations}{40}{section.A.4}% 
-\contentsline {section}{\numberline {A.5}Word Embeddings}{41}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}WordPiece - Byte Pair Encoding}{42}{section.A.6}% 
-\contentsline {section}{\numberline {A.7}Transformer}{43}{section.A.7}% 
-\contentsline {section}{\numberline {A.8}Generative Pre-training Transformer 2}{43}{section.A.8}% 
-\contentsline {section}{\numberline {A.9}Raspberry Pi}{44}{section.A.9}% 
-\contentsline {section}{\numberline {A.10}Tensorflow vs. Pytorch}{45}{section.A.10}% 
-\contentsline {chapter}{\numberline {B}Tables}{46}{appendix.B}% 
-\contentsline {section}{\numberline {B.1}Model Overview}{46}{section.B.1}% 
+\contentsline {section}{\numberline {3.2}Model Overview}{24}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Setup}{24}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Speech and Speech To Text}{25}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}ARMv7 Build/Compile}{26}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Experiments}{28}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}Chatbot - Gated Recurrent Unit Model}{30}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Smart Speaker - Gated Recurrent Unit Model}{32}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.3}Chatbot - Transformer Model}{32}{subsection.3.6.3}% 
+\contentsline {subsection}{\numberline {3.6.4}Smart Speaker - Transformer Model}{34}{subsection.3.6.4}% 
+\contentsline {subsection}{\numberline {3.6.5}Chatbot - Generative Pre-training Transformer 2 Model}{34}{subsection.3.6.5}% 
+\contentsline {subsection}{\numberline {3.6.6}Smart Speaker - Generative Pre-training Transformer 2 Model}{37}{subsection.3.6.6}% 
+\contentsline {chapter}{\numberline {A}Terminology}{39}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Gated Recurrent Unit}{39}{section.A.1}% 
+\contentsline {section}{\numberline {A.2}Neural Machine Translation as Chatbot}{39}{section.A.2}% 
+\contentsline {section}{\numberline {A.3}Sequence to Sequence Architecture}{41}{section.A.3}% 
+\contentsline {section}{\numberline {A.4}Corpus Considerations}{41}{section.A.4}% 
+\contentsline {section}{\numberline {A.5}Word Embeddings}{42}{section.A.5}% 
+\contentsline {section}{\numberline {A.6}WordPiece - Byte Pair Encoding}{43}{section.A.6}% 
+\contentsline {section}{\numberline {A.7}Transformer}{44}{section.A.7}% 
+\contentsline {section}{\numberline {A.8}Generative Pre-training Transformer 2}{44}{section.A.8}% 
+\contentsline {section}{\numberline {A.9}Raspberry Pi}{45}{section.A.9}% 
+\contentsline {section}{\numberline {A.10}Tensorflow vs. Pytorch}{46}{section.A.10}% 
+\contentsline {chapter}{\numberline {B}Tables}{47}{appendix.B}% 
+\contentsline {section}{\numberline {B.1}Model Overview}{47}{section.B.1}% 
 \contentsline {chapter}{\numberline {C}Abbreviations}{48}{appendix.C}% 

@@ -14,6 +14,47 @@ Also, we have several models that we want to test. To test them all would requir
 
 It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. Currently on the Raspberry Pi decoding a single sentence takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
 
+\section{Model Overview}
+
+%\begin{center}
+
+\begin{table}[h!]
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{llllll}
+			
+			Model Name    & File  & RAM  & RAM  & Pretrained  & Hand  \\
+			&  Size & Train   & Interactive   & Weights & Coded   \\
+			\hline
+			\hline
+			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M & NO                 & NO        \\
+			Transformer/Persona   & 25 M      & 556 M & 360 M & NO         & PARTIAL         \\
+			Transformer/Movie   & 550 M      & 6.5G & 1.5G & NO         & PARTIAL         \\
+			GPT2 small*   & 523 M     & 5 G   & 1.5 G & YES                & NO        \\
+			\hline
+		\end{tabular}
+		
+		* a large GPT2 model exists, but it is not small enough to fit on a raspberry pi.
+		
+		
+	\end{center}
+	
+	\label{fig:modeloverview}
+	\addcontentsline{lot}{section}{Model Overview}
+\end{table}
+%\end{center}
+
+\begin{itemize}
+	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the GRU component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al (2018)\cite{2018Inkawhich}. It actually uses the Movie Dialog corpus.
+	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus.
+	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus.
+	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option.
+\end{itemize}
+
+
+
 \section{Setup}
 
 We use linux computers, sometimes with \ac{GPU} hardware for parallel processing. We also use the Python programming language. Code from this project can be run with the 3.x version of Python.
