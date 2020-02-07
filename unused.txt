@@ -1,0 +1,9 @@
+Here we want to speak about the decoder specifically. While the encoder looks at the entire input, the decoder looks at each part of the output over and over, producing one token of output alone at a time. The decoder cycles through the output over and over and adds to the output sequence with each pass. Slowly the output is constructed.
+
+--------------------
+
+The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms throughout the decoder's work. In one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
+
+We illustrated in the Sequence to sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having A thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required. As stated above they represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder to two smaller matrices.
+
+There is a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the layer described above. This data is lowered in dimensionality and becomes the `Query' matrix for that layer.
