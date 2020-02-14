@@ -109,9 +109,19 @@ Later the output is passed through a feed forward network. After that it is comb
 This describes the encoder section. There are two other attention segments. Together these two sections combine to form the decoder section.
 
 \subsection*{Transformer - Decoder}
+The decoder is composed of two attention mechanisms and a feed-forward segment. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms throughout the decoder's work. In that one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
+
 While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one token at a time. 
 
 During inference it produces a token and then it adds to that token, one at a time, until the decoding is finished and something like a sentence is produced. It can attend to any part of the output it has already produced. During training the decoder is exposed to the target sequence under a mask. The mask prohibits the decoder from seeing parts of the target that it should not. This mimics the inference setup and still allows for large input matrices.
+
+We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having A thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder to two smaller matrices.
+
+There is also a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the layer described above. This data is lowered in dimensionality and becomes the `Query' matrix for that layer.
+
+Output
+
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -129,6 +139,8 @@ During inference it produces a token and then it adds to that token, one at a ti
 The input of the Transformer encoder and decoder employ not only a word-vector table, but also a positional encoding scheme. The model adds to the input vector information that the model can then use to learn the position of words in a sentence. 
 
 Words that are early in the sentence have a certain appearance and words later on appear differently. The Encoder and Decoder use sine and cosine waves to impart this information onto the sentence sequence. 
+
+At the output of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
 
 The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not suitable for many projects.
 
@@ -153,7 +165,7 @@ It still uses Scaled Dot-Product Attention. A model diagram is taken from Radfor
 		
 		\includegraphics[scale=4.0]{diagram-mat05}
 	\end{center}
-	\caption[Generative Pre-training Transformer 2 Encoder]{GPT2 Encoder - Radford et al(2018)\cite{radford2018improving}}
+	\caption[Generative Pre-training Transformer 2 ]{GPT2 - Radford et al(2018)\cite{radford2018improving}}
 	
 	%\addcontentsline{lof}{section}{Loss and Accuracy}
 \end{figure}
