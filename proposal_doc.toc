@@ -24,7 +24,9 @@
 \contentsline {subsection}{\numberline {3.9.3}Chatbot - Transformer Model with Persona Corpus}{39}{subsection.3.9.3}% 
 \contentsline {subsection}{\numberline {3.9.4}Smart Speaker - Transformer Model with Persona Corpus}{41}{subsection.3.9.4}% 
 \contentsline {subsection}{\numberline {3.9.5}Chatbot - Transformer Model with Movie Corpus}{42}{subsection.3.9.5}% 
-\contentsline {subsection}{\numberline {3.9.6}Smart Speaker - Transformer Model with Movie Corpus}{44}{subsection.3.9.6}% 
+\contentsline {subsection}{\numberline {3.9.6}Smart Speaker - Transformer Model with Movie Corpus}{43}{subsection.3.9.6}% 
 \contentsline {subsection}{\numberline {3.9.7}Chatbot - Generative Pre-training Transformer 2 Model}{44}{subsection.3.9.7}% 
-\contentsline {subsection}{\numberline {3.9.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{47}{subsection.3.9.8}% 
+\contentsline {subsection}{\numberline {3.9.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{46}{subsection.3.9.8}% 
+\contentsline {section}{\numberline {3.10}Observation}{47}{section.3.10}% 
+\contentsline {section}{\numberline {3.11}Tests}{47}{section.3.11}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{48}{appendix.A}% 
