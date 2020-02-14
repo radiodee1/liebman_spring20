@@ -13,7 +13,18 @@ Transformers use no Recurrent Neural Network components. Their operations can be
 
 Longer sequences can be considered as well, so Transformer input can contain longer English language sentences and even paragraphs.
 
-%\subsection*{Model Overview}
+\subsection*{Byte Pair Encoding}
+
+\ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
+
+WordPiece is used by the BERT system to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word or token to a vector of a given size.
+
+WordPiece, though, handles Out Of Vocabulary (OOV) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again. Byte Pair Encoding is not so interested in pre-trained word embeddings like Word2Vec and Glove.
+
+For the Generative Pre-training Transformer 2 a version of Byte Pair Encoding is used instead of a vocabulary system like Word2Vec or Glove.
+
+
+\subsection*{Attention}
 Attention mechanisms are used in a similar way in three places in the model. The first implementation of the Self Attention is discussed below.
 
 It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al (2017)\cite{Vaswani2017AttentionIA} use a vector size of 512. 

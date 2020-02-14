@@ -73,6 +73,59 @@ We use github as a code repository. Code corresponding with this paper can be fo
 
 As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have varying amounts of success with these experiments. We do not rewrite the Generative Pre-training Transformer 2 code from the Tensorflow or Pytorch repository.
 
+
+\section{Raspberry Pi}
+
+A Raspberry Pi is a small single board computer with an `arm' processor. There are 
+several versions on the market, the most recent of which sports built-in wifi and
+on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently
+available, the Raspberry Pi 4B computer can sport 4Gig of RAM.
+
+It has always been the intention that at some time some chatbot of
+those examined will be seen as superior and will be installed and
+operated on a Raspberry Pi computer. If more than one model is available
+then possibly several models could be installed on Pi computers.
+
+For this to work several resources need to be made available. Pytorch
+needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text
+To Speech (TTS) need to work on the Pi.
+
+For the transformer model to work Tensorflow needs to work on the Pi.
+
+All the files that are trained in the chosen model need to be small
+enough in terms of their file size to fit on the Pi. Also it must
+be determined that the memory footprint of the running model is small
+enough to run on the Pi.
+
+In the github repository files and scripts for the Raspberry Pi are
+to be found in the \textquoteleft bot\textquoteright{} folder.
+
+Early tests using Google\textquoteright s SR and TTS services show
+that the Pi can support that type of functionality. 
+
+Google's SR service costs money to operate. Details
+for setting up Google's SR and TTS functions is beyond
+the scope of this document. Some info about setting this up can be
+found in the README file of this project\textquoteright s github
+repository.
+
+The pytorch model that is chosen as best will be trained on the
+desktop computer and then the saved weights and biases will be transferred
+to the Raspberry Pi platform. The Pi will not need to do any training,
+only inference. 
+
+
+
+\section{Tensorflow vs. Pytorch}
+
+Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. The learning curve for Tensorflow is steeper than for Pytorch. Pytorch offers the programmer python objects that can be combined to create a neural network. Tensorflow has different pieces that can be combined, but they cannot be examined as easily at run time.
+
+Tensorflow has a placeholder concept for inputting data and getting back results. You set up these placeholders at design time. They are the only way of accessing your data at run time.
+
+Pytorch objects interact with Python more naturally. You can use print statements in your code to show data streaming from one object to another. This is possible at run time.
+
+In favor of Tensorflow, it has a good tool for visualization which can print out all kinds of graphs of your data while your model trains. It is called Tensorboard.
+
 \section{Speech and Speech To Text}
 
 Google has python packages that translate text to speech and speech to text. In the case of text to speech the library is called `gTTS'. In the case of speech to text the library is called `google-cloud-speech'. 
@@ -132,7 +185,7 @@ It was found that there existed a version of the Docker Container Daemon that ra
 
 `Tensorflow-model-server' is used on the localhost internet address, 127.0.0.1, with a port of 8500. tensorflow-model-server is meant for serving neural network resources on the internet, but with careful planning it works on the Raspberry Pi.
 
-\section{Experiments}
+\section{Experiments - Installations}
 In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
 We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have the transformer and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us six sections.

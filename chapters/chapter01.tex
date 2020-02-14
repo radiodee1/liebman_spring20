@@ -46,12 +46,16 @@ There are several designs for a Recurrent Neural Network component. The inner wo
 \subsection*{Gated Recurrent Unit}
 A second type of Recurrent Neural Network is the `Gated Recurrent Unit'. A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
 
+\begin{minipage}{5in}
 
 $$ z =\sigma(x_tU^z + s_{t-1} W^z) $$  
 $$ r =\sigma(x_t U^r +s_{t-1} W^r) $$  
 $$ h = tanh(x_t U^h + (s_{t-1} \circ r) W^h) $$  
 $$ s_t = (1 - z) \circ h + z \circ s_{t-1} $$  
 
+\end{minipage}
+
+\bigskip \bigskip
 
 The Gated Recurrent Unit has two inputs and two outputs. It also has two internal gates. One internal gate is the `reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the Gated Recurrent Unit. It is denoted as `$r$' above. Another internal gate is the `update' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as `$z$'.
 
@@ -71,11 +75,72 @@ A better approach is sequence to sequence translation. A description follows wit
 
 In this approach we use recurrent neural networks to obtain our translation. Two recurrent neural network components are employed. One is responsible for the input language and the other for the output. Recurrent elements can remember sequences. 
 
+
+We use a Gated Recurrent Unit arrangement for a Sequence to Sequence chatbot.
+
+Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder Gated Recurrent Unit and helps formulate $y_t$.
+
+On the left side of the formula we have $x_1,...x_T$ which represents the input sequence for the encoder. Also we have $y_1,...,y_{T'}$ which represents the entire output. $T$ is the length of the input while $T'$ is the length of the output. Those two $T$ terms do not need to be the same, and often are not. Again, $v$ is the hidden state passed from the encoder to the decoder as a 'thought vector'.
+
+\[
+\mathlarger{ \mathlarger{ \mathlarger{
+			p(y_1,...,y_{T'}|x_1,...,x_T) = \prod_{t=1}^{T'} p(y_t|v,y_1,..., y_{t-1}) 
+} } }
+\]
+
+Every prediction relies on all the previous predictions up until that point. This is what happens in sequence to sequence and transformer architectures when the model is producing output. This function can be found in Sutskever et al (2014)\cite{DBLP:journals/corr/SutskeverVL14}.
+
+
+%\section{Sequence to Sequence Architecture}
+
+ 
+
+
+\subsection*{Word Embeddings}
+
 Also employed are two vocabulary sets. One vocabulary is for the source language and another is for the target language. A table of word vectors the size of the input vocabulary is created and a maximum sentence length is picked. There is also a `hidden size', which is an important dimension in the model. In practice the hidden size could be 300 units and more for this kind of application.
 
-First text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences in both languages.
+Words are translated from strings to individual numbers from a vocabulary dictionary. The dictionary only contains a single unique number for every word. Then the number is passed through an embedding structure. This turns the single number into a vector of numbers that is the same size as the RNN hidden dimension. Then, from that time on the model uses the vector instead of words.
+
+The contents of the embedding unit is a table of numbers, all of the size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t have to be, unique values. There is one complete hidden dimension sized vector for each word in the vocabulary. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{diagram-embedding}
+		
+		
+	\end{center}
+	\caption[Word Embeddings]{Embeddings - Each word from a dictionary is converted to a vector of numbers.}
+	
+	%\addcontentsline{lof}{section}{Word Embeddings}
+\end{figure}
+
+The vectors can be initialized randomly or they can be filled with predetermined values. As the network trains the embedding values can either be modified or frozen in place. Typically if the contents were initialized randomly the values would be trained. If the contents were filled with predetermined values you don\textquoteright t want to train them or change them in any way. 
+
+There are at this writing two main types of pretrained word embeddings. One is called \textquoteleft Word2Vec\textquoteright{} and one is called \textquoteleft GloVe\textquoteright . 
+
+Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al, 2013)\cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glove} .
 
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
+
+
+\subsection*{Corpus Considerations}
+
+First a text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences in both languages.
+
+We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have the `JSON' dump from Reddit that is downloadable. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
+
+The movie corpus is medium sized and the Reddit `JSON' download is large
+and filled with hyperlinks and sentence fragments. 
+
+At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are described as noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. In the future if we can train in a faster environment the Reddit corpus might be superior.
+
+For the Persona corpus the text is organized into `JSON' objects. There
+are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not
+organized in this kind of pattern. When we take apart the Persona corpus
+we find that the sentences labeled with the `history' tag are most suited to our task.
+We record these values only and discard other labels.
+
 
 \subsection*{Recurrent Elements}
 The recurrent unit in this case is a Gated Recurrent Unit. The Gated Recurrent Unit takes as input a single vector. It processes the vector and returns another vector. This could be
@@ -107,10 +172,19 @@ The second Gated Recurrent Unit generates the second word and also its own hidde
 	\includegraphics[scale=0.5]{diagram-nmt}
 		
 \end{center}
-	\caption[Sequence to Sequence]{Seq2seq: A and B represent an input sequence and C and D represent the corresponding output.}
+	\caption[Sequence to Sequence Architecture]{Seq2seq: A and B represent an input sequence and C and D represent the corresponding output.}
 	
 
 \end{figure}
+
+In this figure we generalize a sequence to sequence model. The idea is that A and B, on the left side of the diagram, deal with the encoding of sentences. A and B would be consecutive words in a sentence, and the round blue nodes below A and B are Recurrent Neural Network units. C and D are outputs and in the right side of the diagram the blue nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
+
+All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector.
+
+Making this vector larger by increasing the size of the hidden unit size allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if
+one of those is used. 
+
+Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model.
 
 \subsection*{Output Tokens}
 Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an `arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.

@@ -1,25 +1,8 @@
 \chapter{Terminology}
 
-\section{Gated Recurrent Unit}
 
-A Gated Recurrent Unit is a relatively simple recurrent network component. It is a component where the output of the model is often fed, after some modification, to the input of the model. 
 
-At each time step the model sees the new input and a version of previous inputs. In this way it remembers previous inputs. Several inputs in a series are fed to a Gated Recurrent Unit in sequence and the unit is responsible for deciding which of the inputs is most important.
-
-Gated Recurrent Unit elements, like all recurrent network components, suffer from information loss when the input segments are very long.
-
-\section{Neural Machine Translation as Chatbot}
-
-The sequence to sequence model we use is based on the \textquoteleft Neural Machine Translation\textquoteright{} model, or \ac{NMT}. Originally designed for translating one language to another, Neural Machine Translation can be used to create a chatbot.
-
-In Neural Machine Translation two languages are given to the sequence to sequence model. For a chatbot Neural Machine Translation is used with two identical language sets. The input language is the same as the output language.
-
-After establishing this language relationship all that is left is to find a suitable training set. Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} use a set of movie subtitles. For each sentence in the data set the network is trained to reply with the contents of the next sentence in the set.
-
-It is pointed out in the paper (Vinyals et al, 2015)\cite{DBLP:journals/corr/VinyalsL15} that the Neural Machine Translation network is typically designed to answer questions directed at the computer with an answer that has the same meaning - though in a different language. Training for the chatbot consists of sentence pairs that are not necessarily related in that way. 
-
-During training accuracy improvements are not necessarily reflective of progress, where loss improvements are.
-
+\iffalse
 We use a Gated Recurrent Unit arrangement for a Sequence to Sequence chatbot.
 
 Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder Gated Recurrent Unit and helps formulate $y_t$.
@@ -33,7 +16,9 @@ On the left side of the formula we have $x_1,...x_T$ which represents the input 
 \]
 
 Every prediction relies on all the previous predictions up until that point. This is what happens in sequence to sequence and transformer architectures when the model is producing output. This function can be found in Sutskever et al (2014)\cite{DBLP:journals/corr/SutskeverVL14}.
+\fi
 
+\iffalse
 Below is a diagram of the sequence to sequence architecture.
 
 \begin{figure}[H]
@@ -60,9 +45,9 @@ Making this vector larger by increasing the size of the hidden unit size allows 
 one of those is used. 
 
 Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model. 
+\fi
 
-
-
+\iffalse
 \section{Corpus Considerations}
 We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have the `JSON' dump from Reddit that is downloadable. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
@@ -82,9 +67,9 @@ are several different repeated labels. Some of the text is meant to be used in q
 organized in this kind of pattern. When we take apart the Persona corpus
 we find that the sentences labeled with the `history' tag are most suited to our task.
 We record these values only and discard other labels.
+\fi
 
-
-
+\iffalse
 \section{Word Embeddings}
 
 There are several basic building blocks of sequence to sequence models. They are regular neural network weights and biases, recurrent network components, and word embedding components.
@@ -113,8 +98,9 @@ The vectors can be initialized randomly or they can be filled with predetermined
 There are at this writing two main types of pretrained word embeddings. One is called \textquoteleft Word2Vec\textquoteright{} and one is called \textquoteleft GloVe\textquoteright . 
 
 Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al, 2013)\cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glove} .
+\fi
 
-
+\iffalse
 \section{WordPiece - Byte Pair Encoding}
 
 \ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
@@ -122,7 +108,7 @@ Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov e
 WordPiece is used by the BERT system to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word or token to a vector of a given size.
 
 WordPiece, though, handles Out Of Vocabulary (OOV) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again.
-
+\fi
 
 \section{Transformer}
 
@@ -158,7 +144,7 @@ GPT2 works so well in certain conditions that it is appropriate to use without f
 type of implementation is called `zero-shot' implementation. We use GPT2 in a zero-shot implementation with the chatbot problem.
 
 
-
+\iffalse
 \section{Raspberry Pi}
 
 A Raspberry Pi is a small single board computer with an `arm' processor. There are 
@@ -198,9 +184,9 @@ The pytorch model that is chosen as best will be trained on the
 desktop computer and then the saved weights and biases will be transferred
 to the Raspberry Pi platform. The Pi will not need to do any training,
 only inference. 
+\fi
 
-
-
+\iffalse
 \section{Tensorflow vs. Pytorch}
 
 Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. The learning curve for Tensorflow is steeper than for Pytorch. Pytorch offers the programmer python objects that can be combined to create a neural network. Tensorflow has different pieces that can be combined, but they cannot be examined as easily at run time.
@@ -210,3 +196,5 @@ Tensorflow has a placeholder concept for inputting data and getting back results
 Pytorch objects interact with Python more naturally. You can use print statements in your code to show data streaming from one object to another. This is possible at run time.
 
 In favor of Tensorflow, it has a good tool for visualization which can print out all kinds of graphs of your data while your model trains. It is called Tensorboard.
+
+\fi

@@ -12,26 +12,15 @@
 \BOOKMARK [1][-]{section.3.1}{Approach to the Study}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.2}{Model Overview}{chapter.3}% 13
 \BOOKMARK [1][-]{section.3.3}{Setup}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.4}{Speech and Speech To Text}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.5}{ARMv7 Build/Compile}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.6}{Experiments}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.6.1}{Chatbot - Gated Recurrent Unit Model}{section.3.6}% 18
-\BOOKMARK [2][-]{subsection.3.6.2}{Smart Speaker - Gated Recurrent Unit Model}{section.3.6}% 19
-\BOOKMARK [2][-]{subsection.3.6.3}{Chatbot - Transformer Model}{section.3.6}% 20
-\BOOKMARK [2][-]{subsection.3.6.4}{Smart Speaker - Transformer Model}{section.3.6}% 21
-\BOOKMARK [2][-]{subsection.3.6.5}{Chatbot - Generative Pre-training Transformer 2 Model}{section.3.6}% 22
-\BOOKMARK [2][-]{subsection.3.6.6}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.3.6}% 23
-\BOOKMARK [0][-]{appendix.A}{Terminology}{}% 24
-\BOOKMARK [1][-]{section.A.1}{Gated Recurrent Unit}{appendix.A}% 25
-\BOOKMARK [1][-]{section.A.2}{Neural Machine Translation as Chatbot}{appendix.A}% 26
-\BOOKMARK [1][-]{section.A.3}{Sequence to Sequence Architecture}{appendix.A}% 27
-\BOOKMARK [1][-]{section.A.4}{Corpus Considerations}{appendix.A}% 28
-\BOOKMARK [1][-]{section.A.5}{Word Embeddings}{appendix.A}% 29
-\BOOKMARK [1][-]{section.A.6}{WordPiece - Byte Pair Encoding}{appendix.A}% 30
-\BOOKMARK [1][-]{section.A.7}{Transformer}{appendix.A}% 31
-\BOOKMARK [1][-]{section.A.8}{Generative Pre-training Transformer 2}{appendix.A}% 32
-\BOOKMARK [1][-]{section.A.9}{Raspberry Pi}{appendix.A}% 33
-\BOOKMARK [1][-]{section.A.10}{Tensorflow vs. Pytorch}{appendix.A}% 34
-\BOOKMARK [0][-]{appendix.B}{Tables}{}% 35
-\BOOKMARK [1][-]{section.B.1}{Model Overview}{appendix.B}% 36
-\BOOKMARK [0][-]{appendix.C}{Abbreviations}{}% 37
+\BOOKMARK [1][-]{section.3.4}{Raspberry Pi}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.5}{Tensorflow vs. Pytorch}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.6}{Speech and Speech To Text}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.7}{ARMv7 Build/Compile}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.8}{Experiments - Installations}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.8.1}{Chatbot - Gated Recurrent Unit Model}{section.3.8}% 20
+\BOOKMARK [2][-]{subsection.3.8.2}{Smart Speaker - Gated Recurrent Unit Model}{section.3.8}% 21
+\BOOKMARK [2][-]{subsection.3.8.3}{Chatbot - Transformer Model}{section.3.8}% 22
+\BOOKMARK [2][-]{subsection.3.8.4}{Smart Speaker - Transformer Model}{section.3.8}% 23
+\BOOKMARK [2][-]{subsection.3.8.5}{Chatbot - Generative Pre-training Transformer 2 Model}{section.3.8}% 24
+\BOOKMARK [2][-]{subsection.3.8.6}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.3.8}% 25
+\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 26

@@ -1,9 +1,101 @@
-Here we want to speak about the decoder specifically. While the encoder looks at the entire input, the decoder looks at each part of the output over and over, producing one token of output alone at a time. The decoder cycles through the output over and over and adds to the output sequence with each pass. Slowly the output is constructed.
+Decoder
+
+The decoder is composed of two attention mechanisms and a feed-forward segment. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms throughout the decoder's work. In that one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
 
 --------------------
 
-The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms throughout the decoder's work. In one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
+While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one token at a time. 
 
-We illustrated in the Sequence to sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having A thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required. As stated above they represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder to two smaller matrices.
+During inference it produces a token and then it adds to that token, one at a time, until the decoding is finished and something like a sentence is produced. It can attend to any part of the output it has already produced. During training the decoder is exposed to the target sequence under a mask. The mask prohibits the decoder from seeing parts of the target that it should not. This mimics the inference setup and still allows for large input matrices.
 
-There is a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the layer described above. This data is lowered in dimensionality and becomes the `Query' matrix for that layer.
+--------------------
+
+We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having A thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder to two smaller matrices.
+
+There is also a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the layer described above. This data is lowered in dimensionality and becomes the `Query' matrix for that layer.
+
+Output
+
+At the output of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
+
+--------------------
+Installations
+
+include training time!!
+
+> Hello.
+hello 
+> What is your name?
+i don't know 
+> What time is it?
+i don't know 
+> What do you do?
+what do you mean ?
+> What is your favorite color?
+i don't know 
+> Do you like red?
+no 
+> Do you like blue?
+yeah 
+> What is your favorite candy?
+i don't know 
+> Do you like ice cream?
+yeah 
+> Good bye.
+bye 
+
+----------------
+
+Graphical Processing Unit vs. Central Processing Unit
+
+A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. This allows for a logical chain of actions that can be programmed for execution. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
+
+GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. The GPU speeds up parallel processing and have a benefit to neural networking training tasks that the CPU doesn't have.
+
+Unfortunately state of the art neural network models are larger than the capacity of a single GPU. Some models are trained on many GPUs simultaneously. It is not uncommon for a model to train on a computer with eight GPU cards for many days. Training these models is prohibitively expensive for the average programmer. It is possible to rent time on Amazon Web Services or Google cloud with well outfitted computers but this can be costly.
+
+This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessable to the public. Then the average programmer downloads the model and fine tunes it to their task.
+
+This would be fine if there were a model for every task. Though many exist there seems to be many tasks that are not adressed. It seems that there is always the opportunity to train a larger model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successfull. If the goal is to do somehting that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
+
+In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training.
+
+---------------------
+
+\begin{minipage}{3in}
+  Stephen Kleene was a founder of the Theory of Computation.
+
+  He was a student of Church, wrote three influential texts,
+  was President of the Association for Symbolic Logic,
+  and won the National Medal of Science.
+\end{minipage}
+
+--------------------
+
+GPT2 context experiment
+
+GPT2 history experiment
+
+GPT2 aiml experiment
+-------------------
+
+docker armhf
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ curl -fsSL test.docker.com -o get-docker.sh 
+$ sh get-docker.sh
+
+$ sudo usermod -aG docker $USER
+
+-------------------
+
+latest version of tf doesn't have contrib module.
+
+------------------
+
+Tensorflow problems on raspberry pi 4b with python 3.7 -- tried to compile python 3.6 but went to the following github site instead.
+
+https://github.com/PINTO0309/Tensorflow-bin
+
+
