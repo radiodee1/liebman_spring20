@@ -308,7 +308,7 @@ The model requires access to the internet for the exchange that the speech to te
 
 As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input.
 
-\subsection{Chatbot - Transformer Model}
+\subsection{Chatbot - Transformer Model with Persona Corpus}
 Using the Persona corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. The Persona corpus comes from Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}.
 
 This model uses the tensorflow library, not Pytorch, and a transformer model that is somewhat small.
@@ -325,7 +325,7 @@ At that time the corpus was modified to include no sentences that have the word 
 
 At this point, after looking at the change in loss, further training was not thought of as helpful. Loss stopped improving at some point in this process, and this lack of improvement was taken as a sign that progress was not likely.
 
-Subjectively the transformer model is better than the Gated Recurrent Unit model. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
+Subjectively the transformer model is better than the original Gated Recurrent Unit model. It is not necessarily better than the Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 
 %\begin{lstlisting}[language=bash]
@@ -357,13 +357,80 @@ hi , how are you today ?
 
 All the responses are in plain English. There is no gibberish. There is a variety of answers. Not all answers are the same. Some of the answers are re-used and do not follow logically from the questions. The `favorite color' and `favorite candy' questions are nearly ignored. For those questions the model answers with `Hi, how are you today?'. This seems to be the model's default answer. The model does not use `No' or `I don't know'. The model does not have an answer for `Good bye'.
 
-\subsection{Smart Speaker - Transformer Model}
+\subsection{Smart Speaker - Transformer Model with Persona Corpus}
 
 The transformer model is installed on the Raspberry Pi. This model is more dynamic than the GRU hand-coded model. 
 
 The transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. The time between the first two or three responses is uncomfortably slow. After those first responses the time between answers gets to be more natural.
 
 There is one special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions.
+
+
+\subsection{Chatbot - Transformer Model with Movie Corpus}
+Using the Movie corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. 
+
+This model uses the tensorflow library, not Pytorch, and a transformer model that is larger than the other Transformer based model that uses the Persona corpus.
+
+The memory footprint of the model while it was running was above 1.5 Gigabyte. The model could be installed on a Raspberry Pi 4B board but it requires a python package called `tensorflow-model-server' and this package would have to be built from source for the Raspberry Pi. 
+
+The model took about seven days to train with a CPU based processor. The goal for training was 50,000 lines from the movie corpus. After training the loss graph was consulted and the installed version was culled from the saved checkpoint at the 45,000 line point.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=3.5]{Figure_2}
+		
+		
+	\end{center}
+	\caption[Loss - Larger Transformer Model]{Loss - Orange is training loss and blue is evaluation loss.}
+	
+	%\addcontentsline{lof}{section}{Word Embeddings}
+\end{figure}
+
+Subjectively this transformer model is better than the Transformer model based on the smaller hyper-parameter set and the Persona Corpus.
+
+
+%\begin{lstlisting}[language=bash]
+\subsubsection*{Questions}
+This is the sample question list as it was answered by the model.
+
+\begin{verbatim}
+> Hello.
+hello 
+> What is your name?
+i don't know 
+> What time is it?
+i don't know 
+> What do you do?
+what do you mean ?
+> What is your favorite color?
+i don't know 
+> Do you like red?
+no 
+> Do you like blue?
+yeah 
+> What is your favorite candy?
+i don't know 
+> Do you like ice cream?
+yeah 
+> Good bye.
+bye 
+\end{verbatim}
+
+All the responses are in plain English. There is no gibberish. There is a variety of answers. Not all answers are the same.  The `favorite color' and `favorite candy' questions are ignored.  The model does in fact use `No' or `I don't know'. It also likes to answer `yeah'.
+
+It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the transformer model. The important observation is that the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
+
+A single further observation is that the GRU model responds very quickly, while a transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the transformer model when it is installed on a small computer like a Raspberry Pi. 
+
+\subsection{Smart Speaker - Transformer Model with Movie Corpus}
+
+The transformer model is installed on the Raspberry Pi. It takes about five seconds to answer any question.
+
+The transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. The time between the first two or three responses is uncomfortably slow. After those first responses the time between answers gets to be more natural.
+
+There is a special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions. The model is also configured to beep intermittently during operation to signal that it is processing an input. This is helpful for a configuration where there is no monitor.
+
 
 \subsection{Chatbot - Generative Pre-training Transformer 2 Model}
 We used a pre-trained Generative Pre-training Transformer 2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well. The corpus is called `WebText'.
