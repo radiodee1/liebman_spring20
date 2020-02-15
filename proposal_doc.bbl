@@ -30,6 +30,25 @@ T.~Wolf, L.~Debut, V.~Sanh, J.~Chaumond, C.~Delangue, A.~Moi, P.~Cistac,
 \newblock
   http://www.wildml.com/2015/10/recurrent-neural-network-tutorial-part-4-implementing-a-grulstm-rnn-with-python-and-theano/.
 
+\bibitem{DBLP:journals/corr/SutskeverVL14}
+I.~Sutskever, O.~Vinyals, and Q.~V. Le, ``Sequence to sequence learning with
+  neural networks,'' {\em CoRR}, vol.~abs/1409.3215, 2014.
+
+\bibitem{mikolov2013efficient}
+T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean, ``Efficient estimation of word
+  representations in vector space,'' {\em arXiv preprint arXiv:1301.3781},
+  2013.
+
+\bibitem{pennington-etal-2014-glove}
+J.~Pennington, R.~Socher, and C.~Manning, ``{G}love: Global vectors for word
+  representation,'' in {\em Proceedings of the 2014 Conference on Empirical
+  Methods in Natural Language Processing ({EMNLP})}, (Doha, Qatar),
+  pp.~1532--1543, Association for Computational Linguistics, Oct. 2014.
+
+\bibitem{DBLP:journals/corr/abs-1809-01984}
+P.~Mazar{\'{e}}, S.~Humeau, M.~Raison, and A.~Bordes, ``Training millions of
+  personalized dialogue agents,'' {\em CoRR}, vol.~abs/1809.01984, 2018.
+
 \bibitem{DBLP:journals/corr/LuongPM15}
 M.~Luong, H.~Pham, and C.~D. Manning, ``Effective approaches to attention-based
   neural machine translation,'' {\em CoRR}, vol.~abs/1508.04025, 2015.
@@ -62,34 +81,11 @@ C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
   dialogs.,'' in {\em Proceedings of the Workshop on Cognitive Modeling and
   Computational Linguistics, ACL 2011}, 2011.
 
-\bibitem{DBLP:journals/corr/abs-1809-01984}
-P.~Mazar{\'{e}}, S.~Humeau, M.~Raison, and A.~Bordes, ``Training millions of
-  personalized dialogue agents,'' {\em CoRR}, vol.~abs/1809.01984, 2018.
-
-\bibitem{DBLP:journals/corr/SutskeverVL14}
-I.~Sutskever, O.~Vinyals, and Q.~V. Le, ``Sequence to sequence learning with
-  neural networks,'' {\em CoRR}, vol.~abs/1409.3215, 2014.
-
-\bibitem{mikolov2013efficient}
-T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean, ``Efficient estimation of word
-  representations in vector space,'' {\em arXiv preprint arXiv:1301.3781},
-  2013.
-
-\bibitem{pennington-etal-2014-glove}
-J.~Pennington, R.~Socher, and C.~Manning, ``{G}love: Global vectors for word
-  representation,'' in {\em Proceedings of the 2014 Conference on Empirical
-  Methods in Natural Language Processing ({EMNLP})}, (Doha, Qatar),
-  pp.~1532--1543, Association for Computational Linguistics, Oct. 2014.
-
-\bibitem{tensor2tensor}
-A.~Vaswani, S.~Bengio, E.~Brevdo, F.~Chollet, A.~N. Gomez, S.~Gouws, L.~Jones,
-  L.~Kaiser, N.~Kalchbrenner, N.~Parmar, R.~Sepassi, N.~Shazeer, and
-  J.~Uszkoreit, ``Tensor2tensor for neural machine translation,'' {\em CoRR},
-  vol.~abs/1803.07416, 2018.
-
-\bibitem{DBLP:journals/corr/abs-1810-04805}
-J.~Devlin, M.~Chang, K.~Lee, and K.~Toutanova, ``{BERT:} pre-training of deep
-  bidirectional transformers for language understanding,'' {\em CoRR},
-  vol.~abs/1810.04805, 2018.
+\bibitem{wiki:xxx}
+{Wikipedia contributors}, ``Winograd schema challenge --- {Wikipedia}{,} the
+  free encyclopedia.''
+  \url{https://en.wikipedia.org/w/index.php?title=Winograd_Schema_Challenge&oldid=938834078},
+  2020.
+\newblock [Online; accessed 15-February-2020].
 
 \end{thebibliography}

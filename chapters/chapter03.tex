@@ -513,4 +513,29 @@ It is important here to compare the GRU chatbot with the larger Transformer base
 A single further observation is that the GRU model responds very quickly, while a transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the transformer model when it is installed on a small computer like a Raspberry Pi. 
 
 \section{Tests}
-Text here.
+
+\subsection*{Turing Test}
+
+The Turing Test concerns itself with the question of weather a computer is intelligent. Turing says that intelligence is too hard to describe, and that if the computer can convince you that it is intelligent then it is.
+
+Weather this is right is beyond the scope of this paper. The people who trained the Generative Pre-training Transformer 2 were apprehensive about their model's ability to generate human speech. At first when they finished their model they decided not to release the largest version to the public for several months (Radford et al.)\cite{radford2019language}. Ultimately they did release their large model.
+
+The creators of the model used it differently than our chatbot implementation. They generated paragraphs of text, and it was determined at first that the ability of the model to impersonate a human was too great. It was felt that the model could be used to spam facebook and other social networking sites with content that was very convincing. If the model could be used to convince people to act badly, then it should not be released. Humans are susceptible to the sentiments of those they see as their peers. If the model was, for better or worse, passing the Turing test, then it should not fall into the wrong hands. This was the concern of the coders at the time.
+
+Ultimately the large model was released, either because the developers decided the model was not as good as originally estimated, or because they didn't care. 
+
+\subsection*{Winograd Schema}
+
+Winograd schemas are named after Terry Winograd. The idea is that there is a sentence presented that has two meanings. A computer finds these sentences challenging to understand, and that makes them interesting for the development of Artificial Intelligence.
+
+An example follows.
+
+\begin{center}
+	\textbf{He didn't put the trophy in the suitcase because it was too [big/small]}
+\end{center}
+
+We can choose which bracketed term to use, and we must choose only one bracketed term. If we choose `big' then we are referring to the trophy. If we choose `small' then we are referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
+
+The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. In the chat bot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
+
+There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors, 2020). \cite{wiki:xxx}
