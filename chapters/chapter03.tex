@@ -447,11 +447,22 @@ Output from the model was usually larger in size than we needed. Also, output ha
 
 It was necessary to `scrape' the output. First the output was checked for the "A:" character string at the start. If it was there it was removed. Then the first complete sentence was used as output, while words and phrases after that were discarded.
 
-Lastly we decided that we would attempt to give the model some details that it could draw on during normal execution. We had two choices here. One choice was to train the model using fine-tuning and transfer learning to recognize certain questions and to supply answers. The other choice was to simply show the model the list of facts that we thought were important before every input sequence. This information would be summarized with each reply.
+\subsubsection{Context Experiment}
+We decided that we would attempt to give the model some details that it could draw on during normal execution. We had two choices here. One choice was to train the model using fine-tuning and transfer learning to recognize certain questions and to supply answers. The other choice was to simply show the model the list of facts that we thought were important before every input sequence. This information would be summarized with each reply.
 
 The second choice was more interesting. The text that the model was shown always included the name of the model (picked somewhat arbitrarily) along with information about the location of the model and the occupation. The time was also included.
 
-Subjectively the model was the best of the three tested. The model would answer questions about it's location, it's name, and the time, faithfully most of the time. Interestingly there where times when it did not do so. Some times it used alternative answers. For example, it would answer with the time but not the correct time. This was odd.
+This worked under most circumstances. Occasionally the model would report the wrong time when asked. This sort of activity is mysterious.
+
+\subsubsection{History Experiment}
+We tried concatenating all input and output and including it with each question. The hope was that the model would treat the `Q' and `A' as historical input and then it could refer to that input as it answered new questions. This didn't work, and the model was usually confused by the extra input.
+
+\subsubsection{Artificial Intelligence Markup Language Experiment}
+It was deemed helpful if the model could be given a question and instructed how to answer it. To this end AIML files were constructed and an AIML kernel was employed. The user's question was shown to the AIML kernel and then the model was shown the kernel's output (if there was one) along with the original question. The hope was that the output could be controlled by the AIML component. It didn't work. The AIML confused the model, and the model would not reliably choose to answer with the AIML text, as it might with the time of day.
+
+\subsubsection{Overall}
+
+Subjectively the model was the best of those tested. The model would answer questions about it's location, it's name, and the time, faithfully most of the time. Interestingly there where times when it did not do so. Some times it used alternative answers. For example, it would answer with the time but not the correct time. This was odd.
 
 Under almost all circumstances the output was sensible English. There were few if any times where the model replied with gibberish. 
 

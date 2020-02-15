@@ -26,7 +26,11 @@
 \contentsline {subsection}{\numberline {3.9.5}Chatbot - Transformer Model with Movie Corpus}{42}{subsection.3.9.5}% 
 \contentsline {subsection}{\numberline {3.9.6}Smart Speaker - Transformer Model with Movie Corpus}{43}{subsection.3.9.6}% 
 \contentsline {subsection}{\numberline {3.9.7}Chatbot - Generative Pre-training Transformer 2 Model}{44}{subsection.3.9.7}% 
-\contentsline {subsection}{\numberline {3.9.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{46}{subsection.3.9.8}% 
-\contentsline {section}{\numberline {3.10}Observation}{47}{section.3.10}% 
+\contentsline {subsubsection}{Context Experiment}{44}{section*.27}% 
+\contentsline {subsubsection}{History Experiment}{45}{section*.28}% 
+\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{45}{section*.29}% 
+\contentsline {subsubsection}{Overall}{45}{section*.30}% 
+\contentsline {subsection}{\numberline {3.9.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{47}{subsection.3.9.8}% 
+\contentsline {section}{\numberline {3.10}Observation}{48}{section.3.10}% 
 \contentsline {section}{\numberline {3.11}Tests}{48}{section.3.11}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{50}{appendix.A}% 

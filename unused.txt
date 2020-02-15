@@ -1,12 +1,6 @@
 
 --------------------
 
-GPT2 context experiment
-
-GPT2 history experiment
-
-GPT2 aiml experiment
--------------------
 
 docker armhf
 
