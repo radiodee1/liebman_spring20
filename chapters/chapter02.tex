@@ -233,3 +233,20 @@ The output is interesting but not useful right away. Heuristics are employed to 
 Because the input is meant to be a number of sentences, and because we are using a transformer-based architecture, we have room in the input string to add more information along side the user's question. In this respect the model acts to summarize the input. 
 
 With every input string we include a set of three or four sentences. They include the time, the bot's name, and the bot location and occupation. All of these are invented. What happens is the chatbot summarizes the input and only if the information is relevant then the same information is used by the model as output. Making this possible is the fact that a transformer can accept much longer input strings than a Gated Recurrent Unit, and generate much longer output strings.
+
+\subsection*{Visualization}
+
+During inference the Scaled Dot Product Attention in the GPT2 focuses on certain words as it processes input text. Here the word `favorite' shows a relationship to many of the other words in the text. Curiously it does not relate strongly to the word `color'. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=2]{Figure_4}
+		
+		
+	\end{center}
+	\caption[Visualized Attention GPT2]{Visualized Attention GPT2 -- `favorite' shows attention to most but not all words in the sentence.}
+	
+	
+\end{figure}
+
+In our experiments the phrase `What is your favorite color?' is answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. The diagram might support this observation. At this layer and at this head, the model does not stress the word `color'. 
