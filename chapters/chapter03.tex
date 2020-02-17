@@ -192,6 +192,18 @@ Finally the Pytorch program needed to be built. We disable CUDA and distributed 
 \subsection*{Docker Container `tensorflow-model-server' For ARMv7}
 The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
 
+Docker can be run on the Raspberry Pi in the ARM environment. Below is a terminal excerpt that shows how to do this.
+
+\begin{verbatim}
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ curl -fsSL test.docker.com -o get-docker.sh 
+$ sh get-docker.sh
+$ sudo usermod -aG docker $USER
+\end{verbatim}
+
+After the last command you need to log out and then log in again to take advantage of the newly installed docker.
+
 The original idea was to follow someone else's instructions and compile the Docker Container for the ARMv7. Then the executable would be removed from the container and used natively in the Raspberry Pi.
 
 It was found that there existed a version of the Docker Container Daemon that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski (2020)\cite{2020Maciejewski}.
