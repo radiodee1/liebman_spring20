@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  17 FEB 2020 08:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  17 FEB 2020 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -485,6 +485,18 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen134
 \l_MT_below_shortintertext_sep=\dimen135
 )
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
@@ -763,26 +775,26 @@ Package: relsize 2013/03/29 ver 4.1
 ))
 \openout1 = `proposal_doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -849,7 +861,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring OFF on input line 57.
+Package hyperref Info: Link coloring OFF on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -859,9 +871,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count304
 )
-LaTeX Info: Redefining \ref on input line 57.
-LaTeX Info: Redefining \pageref on input line 57.
-LaTeX Info: Redefining \nameref on input line 57.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
 
 (./proposal_doc.out) (./proposal_doc.out)
 \@outlinefile=\write3
@@ -874,13 +886,13 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 57.
+or `english'. on input line 58.
 \c@lstlisting=\count305
-LaTeX Font Info:    Try loading font information for U+msa on input line 77.
+LaTeX Font Info:    Try loading font information for U+msa on input line 78.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 77.
+LaTeX Font Info:    Try loading font information for U+msb on input line 78.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -895,7 +907,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 tifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 \include{chapters/abstract}
+l.82 \include{chapters/abstract}
                                  [1
 
 ] (./proposal_doc.toc [1
@@ -1066,10 +1078,10 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 197.
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [37] [38]
 [39] [40] [41] [42] [43]
-<Figure_2.png, id=519, 86.0013pt x 57.816pt>
+<Figure_2.png, id=520, 86.0013pt x 57.816pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 397.
+Package pdftex.def Info: Figure_2.png  used on input line 425.
 (pdftex.def)             Requested size: 301.00374pt x 202.35544pt.
  [44] [45 <./Figure_2.png>] [46] [47] [48] [49]
 [50] [51]) [52]
@@ -1086,25 +1098,25 @@ ikipedia, the free en-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
  [55]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 3258140CB78CD0BAACB64C4FFDF074C6;2377.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 23604 strings out of 494477
- 436939 string characters out of 6175714
- 502885 words of memory out of 5000000
- 26849 multiletter control sequences out of 15000+600000
- 559881 words of font info for 100 fonts, out of 8000000 for 9000
+ 23644 strings out of 494477
+ 437567 string characters out of 6175714
+ 503533 words of memory out of 5000000
+ 26878 multiletter control sequences out of 15000+600000
+ 560931 words of font info for 103 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 41i,14n,63p,1001b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,63p,1001b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
 k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/dave/.texl
 ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/dave/.texl
@@ -1133,11 +1145,12 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (61 pages, 745361 bytes).
+ts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+zapfding/uzdr.pfb>
+Output written on proposal_doc.pdf (61 pages, 748391 bytes).
 PDF statistics:
- 1133 PDF objects out of 1200 (max. 8388607)
- 607 compressed objects within 7 object streams
+ 1137 PDF objects out of 1200 (max. 8388607)
+ 610 compressed objects within 7 object streams
  158 named destinations out of 1000 (max. 500000)
  309 words of extra memory for PDF output out of 10000 (max. 10000000)
 
