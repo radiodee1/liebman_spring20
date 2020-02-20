@@ -44,7 +44,7 @@ There are several designs for a Recurrent Neural Network component. The inner wo
 
 
 \subsection*{Gated Recurrent Unit}
-A second type of Recurrent Neural Network is the `Gated Recurrent Unit'. A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
+An implementation of a Recurrent Neural Network is the `Gated Recurrent Unit'. A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz 2015)\cite{2015Britz}, are as follows.
 
 \begin{minipage}{5in}
 
@@ -59,7 +59,7 @@ $$ s_t = (1 - z) \circ h + z \circ s_{t-1} $$
 
 The Gated Recurrent Unit has two inputs and two outputs. It also has two internal gates. One internal gate is the `reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the Gated Recurrent Unit. It is denoted as `$r$' above. Another internal gate is the `update' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as `$z$'.
 
-Here `$ s_t $' is the symbol for the output. `$h$' is the symbol for the `hidden output'. The two inputs are `$ x_t $' and `$ s_{t-1} $' . `$ x_t $' is the hidden state input. `$ s_{t-1} $' is the regular input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, while tanh activation is used to compute the hidden output.
+Here `$ s_t $' is the symbol for the output. The two inputs are `$ x_t $' and `$ s_{t-1} $' . `$ x_t $' is the hidden state input. `$ s_{t-1} $' is the regular input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, while tanh activation is used to compute the hidden output. The hidden output is found in the third line, denoted as `$h$'.
 
 In the last line, the regular output is determined using the `dot' product which is denoted with a circle, along with an addition operation. In the two gate formulas (the first and second) the output is determined as the sum of two matrix multiplication operations passed through sigmoid activation. This produces values in the range of 0 to 1.
 
@@ -67,7 +67,7 @@ Under most programming circumstances the Gated Recurrent Unit is not implemented
 
 \section{Sequence to Sequence}
 
-Translating text from one language to another has become a common task for computers. The Sequence to Sequence architecture is often used today  for this purpose.
+Translating text from one language to another has become a common task for computers. The Sequence to Sequence architecture is often used today for this purpose.
 
 A naive approach to translation involves using a dictionary. You would encode each key as a word from one language and the value for that key would be the translated word in the target language. Of course this doesn't work, because different languages not only have different words for the same thing, but they also have different sentence structures for what might be similar concepts.
 
@@ -76,8 +76,9 @@ A better approach is sequence to sequence translation. A description follows wit
 In this approach we use recurrent neural networks to obtain our translation. Two recurrent neural network components are employed. One is responsible for the input language and the other for the output. Recurrent elements can remember sequences. 
 
 
-We use a Gated Recurrent Unit arrangement for a Sequence to Sequence chatbot.
+%We use a Gated Recurrent Unit arrangement for a Sequence to Sequence chatbot.
 
+\subsection*{Formula}
 Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder Gated Recurrent Unit and helps formulate $y_t$.
 
 On the left side of the formula we have $x_1,...x_T$ which represents the input sequence for the encoder. Also we have $y_1,...,y_{T'}$ which represents the entire output. $T$ is the length of the input while $T'$ is the length of the output. Those two $T$ terms do not need to be the same, and often are not. Again, $v$ is the hidden state passed from the encoder to the decoder as a 'thought vector'.
@@ -88,7 +89,11 @@ On the left side of the formula we have $x_1,...x_T$ which represents the input 
 } } }
 \]
 
-Every prediction relies on all the previous predictions up until that point. This is what happens in sequence to sequence and transformer architectures when the model is producing output. This function can be found in Sutskever et al (2014)\cite{DBLP:journals/corr/SutskeverVL14}.
+Every prediction relies on all the previous predictions up until that point. This is what happens in sequence to sequence and transformer architectures when the model is producing output. 
+
+The probability for the entire output is the same as the product of the probability of each word as it is generated.
+
+This function can be found in Sutskever et al (2014)\cite{DBLP:journals/corr/SutskeverVL14}.
 
 
 %\section{Sequence to Sequence Architecture}
@@ -126,14 +131,12 @@ Word vectors are created composed of floating point numbers. Each word in the vo
 
 \subsection*{Corpus}
 
-First a text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences in both languages.
+A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences in both languages.
 
 
 
 \subsection*{Recurrent Elements}
-The recurrent unit in this case is a Gated Recurrent Unit. The Gated Recurrent Unit takes as input a single vector. It processes the vector and returns another vector. This could be
-exactly the same as the input but is usually somehow changed. The input vector and the output vector have the
-dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The Gated Recurrent Unit also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
+The recurrent unit in this case is a Gated Recurrent Unit. The Gated Recurrent Unit takes as input a single vector. It processes the vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The Gated Recurrent Unit also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
 
 So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the Gated Recurrent Unit does internally.
 
@@ -141,7 +144,7 @@ We will use the metaphor of a chain when we describe input and output segments t
 
 \subsection*{Encoder}
 
-The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input Gated Recurrent Unit. One output vector is like the word vector that's input to the Gated Recurrent Unit. One output vector is a hidden value.
+The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input Gated Recurrent Unit. The output vector is a hidden value.
 
 The very first Gated Recurrent Unit in the input chain ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the chain. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. Then the last Gated Recurrent Unit in the chain passes it's hidden state to the output chain.
 
@@ -152,7 +155,7 @@ The output chain is in charge of generating tokens that represent, in this case,
 
 The hidden values from the input section are passed to the first output Gated Recurrent Unit. It outputs the values that are later converted to the first word of the output. The first output Gated Recurrent Unit also has a hidden state. It passes the first word and the hidden state on to the second Gated Recurrent Unit.
 
-The second Gated Recurrent Unit generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on the the next Gated Recurrent Unit. This is repeated until a special `end-of-sequence' token is found or until the number of tokens equals the maximum number allowed.
+The second Gated Recurrent Unit generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on to the next Gated Recurrent Unit. This is repeated until a special `end-of-sequence' token is found or until the number of tokens equals the maximum number allowed.
 
 \begin{figure}[H]
 	\begin{center}
@@ -183,7 +186,7 @@ There are some inherent problems. Because the output of a Gated Recurrent Unit i
 
 Another problem is that all input to be translated to target output has to be boiled down and passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the `thought vector.' Somehow all necessary information must be there. This also limits the length of the input and output vectors. It does help, when setting up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
 
-That ends our discussion of Sequence to Sequence Translation. This is how some computer models do language translation. Using `arg-max' is an example of a greedy approach. Another approach might use something like `Beam Selection' but we're not going to get into that here.
+This is how some computer models do language translation. Using `arg-max' is an example of a greedy approach. Another approach might use something like `Beam Selection' but we're not going to get into that here.
 
 
 \section{Loss and Accuracy}
@@ -204,7 +207,7 @@ There are several numerical metrics that we can record during training that tell
 
 \section{Attention Mechanism}
 
-Here we consider a simple attention mechanism that is used in the Sequence to Sequence model by Inkawhich (2018)\cite{2018Inkawhich}. The concept for this attention comes from Luong et al (2015)\cite{DBLP:journals/corr/LuongPM15}.
+Here we consider a simple attention mechanism that is used in the Sequence to Sequence model by Inkawhich et al (2018)\cite{2018Inkawhich}. The concept for this attention comes from Luong et al (2015)\cite{DBLP:journals/corr/LuongPM15}.
 
 Luong et al (2015)\cite{DBLP:journals/corr/LuongPM15} are interested in three kinds of calculation for their attention mechanism. The three methods use slowly increasing levels of complication. First they propose a method that just uses the dot product. Then they propose a method that just uses a field of weights. Finally they use a method that uses concatination, along with a field of weights and a pass through a tanh activation layer.
 
@@ -231,7 +234,7 @@ score = h_t^\intercal \bar{h}_s
 \unboldmath
 $$ 
 
-Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. The result is multiplied by the Gated Recurrent Unit decoder output, and then passed through a tanh activation layer.
+Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. The result is multiplied by the Gated Recurrent Unit decoder output, and then passed through a `tanh' activation layer.
 
 \section{Sequence to Sequence Chatbot}
 

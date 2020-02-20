@@ -27,10 +27,10 @@
 \contentsline {subsection}{\numberline {3.10.5}Chatbot - Transformer Model with Movie Corpus}{44}{subsection.3.10.5}% 
 \contentsline {subsection}{\numberline {3.10.6}Smart Speaker - Transformer Model with Movie Corpus}{46}{subsection.3.10.6}% 
 \contentsline {subsection}{\numberline {3.10.7}Chatbot - Generative Pre-training Transformer 2 Model}{46}{subsection.3.10.7}% 
-\contentsline {subsubsection}{Context Experiment}{47}{section*.29}% 
-\contentsline {subsubsection}{History Experiment}{47}{section*.30}% 
-\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{48}{section*.31}% 
-\contentsline {subsubsection}{Overall}{48}{section*.32}% 
+\contentsline {subsubsection}{Context Experiment}{47}{section*.30}% 
+\contentsline {subsubsection}{History Experiment}{47}{section*.31}% 
+\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{48}{section*.32}% 
+\contentsline {subsubsection}{Overall}{48}{section*.33}% 
 \contentsline {subsection}{\numberline {3.10.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{50}{subsection.3.10.8}% 
 \contentsline {section}{\numberline {3.11}Observation}{50}{section.3.11}% 
 \contentsline {section}{\numberline {3.12}Tests}{51}{section.3.12}% 
