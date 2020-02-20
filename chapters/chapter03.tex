@@ -258,14 +258,13 @@ For comparison there are four models. Subjectively the first transformer model d
 \subsection{Chatbot - Gated Recurrent Unit Model}
 We have two models based on the sequnce to sequence architecture proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by Matthew Inkawhich (2018)\cite{2018Inkawhich}.
 
-We trained the first sequence to sequence model on a large english
-corpus in an attempt to produce a chatbot. 
+We trained the first sequence to sequence model on a large english corpus in an attempt to produce a chatbot. 
 
 For this sequence to sequence model we want to use text found in a movie dialog corpus (Danescu-Niculescu-Mizil et al, 2011)\cite{Danescu-Niculescu-Mizil+Lee:11a}. 
 
 In our experience with coding our own chatbot we find that the model learns a single English sentence that can be used for most replies. 
 
-Subjectively the Gated Recurrent Unit chatbot is unusable.
+Subjectively the Gated Recurrent Unit chatbot that we code is unusable.
 
 For example our chatbot frequently replies to input with the phrase `I don't know'. This is the most common output from our model. In this respect our original chatbot responds poorly.
 
@@ -276,7 +275,7 @@ Occasionally the sequence-to-sequence model will reply with the phrase `I'm sorr
 The second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original, authentic answers. The answers all made sense in the English language.
 
 \subsubsection*{Questions}
-This is the sample question list as it was answered by the model.
+This is the sample question list as it was answered by the better model.
 
 %\begin{minipage}{2in}
 \begin{verbatim}
@@ -331,7 +330,7 @@ The Raspberry Pi was outfitted with a microphone and a speaker and nothing more.
 
 The model requires access to the internet for the exchange that the speech to text software has to make with the Google servers. If there is no internet the model doesn't work.
 
-As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input.
+As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input. At that point the model beeps once.
 
 \subsection{Chatbot - Transformer Model with Persona Corpus}
 Using the Persona corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. The Persona corpus comes from Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}.
@@ -348,9 +347,9 @@ sentences that have the word "don't" in them. Training was started again until t
 
 At that time the corpus was modified to include no sentences that have the word "sorry" in them. Training was started again and was continued for some period. Training was stopped. A further segment of training was not attempted. 
 
-At this point, after looking at the change in loss, further training was not thought of as helpful. Loss stopped improving at some point in this process, and this lack of improvement was taken as a sign that progress was not likely.
+At this point, after looking at the change in loss, further training was not thought of as helpful. Loss stopped improving at some point in this process, and this lack of improvement was taken as a sign that further progress was not likely.
 
-Subjectively the transformer model is better than the original Gated Recurrent Unit model. It is not necessarily better than the Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
+Subjectively the transformer model is better than the original Gated Recurrent Unit model. It is not better than the Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 
 %\begin{lstlisting}[language=bash]
@@ -489,7 +488,7 @@ We used a pre-trained Generative Pre-training Transformer 2 model with the large
 
 For our experiments Generative Pre-training Transformer 2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the model in the application.
 
-We did do some special coding for the input and output code in order to operate it as a chatbot. Input and output was limited to about 25 tokens. 
+We did do some special coding for the input and output code in order to operate it as a chatbot. Output was limited to about 25 tokens. 
 
 Input to the model was prepended with the character string "Q:" by our code. Output was observed to have the character string "A:" prepended to it. We assume therefore that the model was at some point exposed to the "Question/Answer" paradigm in written passages during its training. This was helpful.
 
@@ -579,6 +578,8 @@ The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, mon
 It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
 
 A single further observation is that the GRU model responds very quickly, while a transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the transformer model when it is installed on a small computer like a Raspberry Pi. 
+
+The respective value of each of the models changes slightly when you  consider what platform they will be implemented on. The GRU responds more quickly and so it retains more worth.
 
 \section{Tests}
 
