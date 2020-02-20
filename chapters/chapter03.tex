@@ -31,7 +31,7 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 			\hline
 			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M & NO                 & NO        \\
 			Transformer/Persona   & 25 M      & 556 M & 360 M & NO         & PARTIAL         \\
-			Transformer/Movie   & 550 M      & 6.5G & 1.5G & NO         & PARTIAL         \\
+			Transformer/Movie   & 550 M      & 6.5 G & 1.5 G & NO         & PARTIAL         \\
 			GPT2 small*   & 523 M     & 5 G   & 1.5 G & YES                & NO        \\
 			\hline
 		\end{tabular}
@@ -83,7 +83,7 @@ Unfortunately state of the art neural network models are larger than the capacit
 
 This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessable to the public. Then the average programmer downloads the model and fine tunes it to their task.
 
-This would be fine if there were a model for every task. Though many exist there seems to be many tasks that are not adressed. It seems that there is always the opportunity to train a larger model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successfull. If the goal is to do somehting that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
+This would be fine if there were a model for every task. Though many models exist there seems to be many tasks that are not adressed. It seems that there is always the opportunity to train a larger model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successfull. If the goal is to do somehting that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
 
 In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training.
 
@@ -95,7 +95,7 @@ It has always been the intention that at some time some chatbot of those examine
 
 For this to work several resources need to be made available. Pytorch needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text To Speech (TTS) need to work on the Pi.
 
-For the transformer model to work Tensorflow needs to work on the Pi.
+For one of the transformer models to work Tensorflow needs to work on the Pi.
 
 All the files that are trained in the chosen model need to be small enough in terms of their file size to fit on the Pi. Also it must be determined that the memory footprint of the running model is small enough to run on the Pi.
 
@@ -134,7 +134,7 @@ The operating system on the Raspberry Pi is based on Debian Linux. In this opera
 
 \section{Corpus Considerations}
 
-We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have the `JSON' dump from Reddit that is downloadable. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
+We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have a `JSON' dump from Reddit that is downloadable.  This is not the same Reddit data that the authors of GPT2 use. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
 The movie corpus is medium sized and the Reddit `JSON' download is large
 and filled with hyperlinks and sentence fragments. 
@@ -252,7 +252,7 @@ Do you like ice cream?
 Good bye.
 \end{verbatim}
 
-Subjectively the transformer model did not perform as well as the Generative Pre-training Transformer 2 model, but it did perform better than our hand coded Gated Recurrent Unit model. The model from the Gated Recurrent Unit tutorial performed better than the initial Transformer model but not as good as Generative Pre-training Transformer 2.
+For comparison there are four models. Subjectively the first transformer model did not perform as well as the Generative Pre-training Transformer 2 model. It did not perform better than the Gated Recurrent Unit model either. The model from the Gated Recurrent Unit tutorial performed well. It was better than the initial Transformer model and on par with the larger Transformer model. It was not better than the Generative Pre-training Transformer 2.
 
 
 \subsection{Chatbot - Gated Recurrent Unit Model}
@@ -276,7 +276,7 @@ Occasionally the sequence-to-sequence model will reply with the phrase `I'm sorr
 The second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original, authentic answers. The answers all made sense in the English language.
 
 \subsubsection*{Questions}
-This is the sample question list as it was answered by the second model.
+This is the sample question list as it was answered by the model.
 
 %\begin{minipage}{2in}
 \begin{verbatim}

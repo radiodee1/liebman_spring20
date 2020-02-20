@@ -17,7 +17,7 @@ Longer sequences can be considered as well, so Transformer input can contain lon
 
 \ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
 
-WordPiece is used by the BERT system to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word or token to a vector of a given size.
+WordPiece is used by some transformer systems to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word or token to a vector of a given size.
 
 WordPiece, though, handles Out Of Vocabulary (OOV) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again. Byte Pair Encoding is not so interested in pre-trained word embeddings like Word2Vec and Glove.
 
@@ -33,7 +33,7 @@ It should be noted that input to the Transformer is strings of words from a desi
 
 The Transformer has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
 
-The first thing that happens is the input word is converted to three other values. These new vectors are like the input vector but they have a smaller dimensionality. Converting the word vector in this way is accomplished by three simple matrix multiplication operations.
+The first thing that happens is the input word vector is converted to three other values. These new vectors are like the input vector but they have a smaller dimensionality. Converting the word vector in this way is accomplished by three simple matrix multiplication operations.
 
 In the diagram below a simple conversion of this type is illustrated. In the diagram we convert a vector with dimension of 1x3 to a dimension of 1x2. In reality we are converting a vector from 1x512 to 1x64. This is a division of 8.
 
@@ -136,11 +136,11 @@ There is also a second attention mechanism in the decoder. It works solely on da
 
 \subsection*{Transformer - General}
 
-The input of the Transformer encoder and decoder employ not only a word-vector table, but also a positional encoding scheme. The model adds to the input vector information that the model can then use to learn the position of words in a sentence. 
+The input of the Transformer encoder and decoder employ not only a word-vector table, but also a positional encoding scheme. The model adds to the input vector information that the it can then use to learn the position of words in a sentence. 
 
 Words that are early in the sentence have a certain appearance and words later on appear differently. The Encoder and Decoder use sine and cosine waves to impart this information onto the sentence sequence. 
 
-At the output of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
+Meanwhile at the output of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
 
 The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not suitable for many projects.
 
@@ -219,7 +219,7 @@ The `Generative Pre-training Transformer 2' models also work in many circumstanc
 
 For the chatbot the model with 117 million parameters worked. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
 
-Later when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large model was not attempted.
+Later when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large model in a chatbot was not attempted.
 
 \subsection*{Application Details}
 The model is described in Radford et al (2019)\cite{radford2019language} and the accompanying blog post. The model is trained on English without a stated problem. Large neural network models are usually trained with a stated problem in mind. Rather famously this model is used after training to generate English language text. The model takes input from the user, a premise or summary of what is to be generated. The model also takes as input a number called the `temperature.' Then the model generates output. As the `temperature' is set higher the output is more fanciful. There is also a tune-able parameter for the output length. 
