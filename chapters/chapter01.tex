@@ -124,22 +124,10 @@ Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov e
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
 
-\subsection*{Corpus Considerations}
+\subsection*{Corpus}
 
 First a text is prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences in both languages.
 
-We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have the `JSON' dump from Reddit that is downloadable. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
-
-The movie corpus is medium sized and the Reddit `JSON' download is large
-and filled with hyperlinks and sentence fragments. 
-
-At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are described as noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. In the future if we can train in a faster environment the Reddit corpus might be superior.
-
-For the Persona corpus the text is organized into `JSON' objects. There
-are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not
-organized in this kind of pattern. When we take apart the Persona corpus
-we find that the sentences labeled with the `history' tag are most suited to our task.
-We record these values only and discard other labels.
 
 
 \subsection*{Recurrent Elements}

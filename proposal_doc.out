@@ -16,16 +16,17 @@
 \BOOKMARK [1][-]{section.3.5}{Raspberry Pi}{chapter.3}% 16
 \BOOKMARK [1][-]{section.3.6}{Tensorflow vs. Pytorch}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.7}{Speech and Speech To Text}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.8}{ARMv7 Build/Compile}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.9}{Experiments - Installations}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.9.1}{Chatbot - Gated Recurrent Unit Model}{section.3.9}% 21
-\BOOKMARK [2][-]{subsection.3.9.2}{Smart Speaker - Gated Recurrent Unit Model}{section.3.9}% 22
-\BOOKMARK [2][-]{subsection.3.9.3}{Chatbot - Transformer Model with Persona Corpus}{section.3.9}% 23
-\BOOKMARK [2][-]{subsection.3.9.4}{Smart Speaker - Transformer Model with Persona Corpus}{section.3.9}% 24
-\BOOKMARK [2][-]{subsection.3.9.5}{Chatbot - Transformer Model with Movie Corpus}{section.3.9}% 25
-\BOOKMARK [2][-]{subsection.3.9.6}{Smart Speaker - Transformer Model with Movie Corpus}{section.3.9}% 26
-\BOOKMARK [2][-]{subsection.3.9.7}{Chatbot - Generative Pre-training Transformer 2 Model}{section.3.9}% 27
-\BOOKMARK [2][-]{subsection.3.9.8}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.3.9}% 28
-\BOOKMARK [1][-]{section.3.10}{Observation}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.11}{Tests}{chapter.3}% 30
-\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 31
+\BOOKMARK [1][-]{section.3.8}{Corpus Considerations}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.9}{ARMv7 Build/Compile}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.10}{Experiments - Installations}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.10.1}{Chatbot - Gated Recurrent Unit Model}{section.3.10}% 22
+\BOOKMARK [2][-]{subsection.3.10.2}{Smart Speaker - Gated Recurrent Unit Model}{section.3.10}% 23
+\BOOKMARK [2][-]{subsection.3.10.3}{Chatbot - Transformer Model with Persona Corpus}{section.3.10}% 24
+\BOOKMARK [2][-]{subsection.3.10.4}{Smart Speaker - Transformer Model with Persona Corpus}{section.3.10}% 25
+\BOOKMARK [2][-]{subsection.3.10.5}{Chatbot - Transformer Model with Movie Corpus}{section.3.10}% 26
+\BOOKMARK [2][-]{subsection.3.10.6}{Smart Speaker - Transformer Model with Movie Corpus}{section.3.10}% 27
+\BOOKMARK [2][-]{subsection.3.10.7}{Chatbot - Generative Pre-training Transformer 2 Model}{section.3.10}% 28
+\BOOKMARK [2][-]{subsection.3.10.8}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.3.10}% 29
+\BOOKMARK [1][-]{section.3.11}{Observation}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.12}{Tests}{chapter.3}% 31
+\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 32

@@ -3,34 +3,35 @@
 \contentsline {section}{\numberline {1.1}Background}{2}{section.1.1}% 
 \contentsline {section}{\numberline {1.2}Recurrent Neural Network Components}{2}{section.1.2}% 
 \contentsline {section}{\numberline {1.3}Sequence to Sequence}{4}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Loss and Accuracy}{11}{section.1.4}% 
+\contentsline {section}{\numberline {1.4}Loss and Accuracy}{10}{section.1.4}% 
 \contentsline {section}{\numberline {1.5}Attention Mechanism}{11}{section.1.5}% 
 \contentsline {section}{\numberline {1.6}Sequence to Sequence Chatbot}{12}{section.1.6}% 
-\contentsline {chapter}{\numberline {2}Transformers and The Generative Pre-training Transformer 2}{15}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Transformer and Attention}{16}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}The Generative Pre-training Transformer 2 Model}{24}{section.2.2}% 
-\contentsline {chapter}{\numberline {3}Experiments}{29}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Approach to the Study}{30}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Model Overview}{31}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Setup}{31}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}Graphical Processing Unit vs. Central Processing Unit}{32}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Raspberry Pi}{33}{section.3.5}% 
-\contentsline {section}{\numberline {3.6}Tensorflow vs. Pytorch}{34}{section.3.6}% 
-\contentsline {section}{\numberline {3.7}Speech and Speech To Text}{34}{section.3.7}% 
-\contentsline {section}{\numberline {3.8}ARMv7 Build/Compile}{35}{section.3.8}% 
-\contentsline {section}{\numberline {3.9}Experiments - Installations}{37}{section.3.9}% 
-\contentsline {subsection}{\numberline {3.9.1}Chatbot - Gated Recurrent Unit Model}{40}{subsection.3.9.1}% 
-\contentsline {subsection}{\numberline {3.9.2}Smart Speaker - Gated Recurrent Unit Model}{41}{subsection.3.9.2}% 
-\contentsline {subsection}{\numberline {3.9.3}Chatbot - Transformer Model with Persona Corpus}{42}{subsection.3.9.3}% 
-\contentsline {subsection}{\numberline {3.9.4}Smart Speaker - Transformer Model with Persona Corpus}{44}{subsection.3.9.4}% 
-\contentsline {subsection}{\numberline {3.9.5}Chatbot - Transformer Model with Movie Corpus}{44}{subsection.3.9.5}% 
-\contentsline {subsection}{\numberline {3.9.6}Smart Speaker - Transformer Model with Movie Corpus}{46}{subsection.3.9.6}% 
-\contentsline {subsection}{\numberline {3.9.7}Chatbot - Generative Pre-training Transformer 2 Model}{46}{subsection.3.9.7}% 
+\contentsline {chapter}{\numberline {2}Transformers and The Generative Pre-training Transformer 2}{14}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Transformer and Attention}{15}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}The Generative Pre-training Transformer 2 Model}{23}{section.2.2}% 
+\contentsline {chapter}{\numberline {3}Experiments}{28}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Approach to the Study}{29}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Model Overview}{30}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Setup}{30}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Graphical Processing Unit vs. Central Processing Unit}{31}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Raspberry Pi}{32}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Tensorflow vs. Pytorch}{33}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Speech and Speech To Text}{33}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Corpus Considerations}{34}{section.3.8}% 
+\contentsline {section}{\numberline {3.9}ARMv7 Build/Compile}{35}{section.3.9}% 
+\contentsline {section}{\numberline {3.10}Experiments - Installations}{37}{section.3.10}% 
+\contentsline {subsection}{\numberline {3.10.1}Chatbot - Gated Recurrent Unit Model}{39}{subsection.3.10.1}% 
+\contentsline {subsection}{\numberline {3.10.2}Smart Speaker - Gated Recurrent Unit Model}{41}{subsection.3.10.2}% 
+\contentsline {subsection}{\numberline {3.10.3}Chatbot - Transformer Model with Persona Corpus}{42}{subsection.3.10.3}% 
+\contentsline {subsection}{\numberline {3.10.4}Smart Speaker - Transformer Model with Persona Corpus}{44}{subsection.3.10.4}% 
+\contentsline {subsection}{\numberline {3.10.5}Chatbot - Transformer Model with Movie Corpus}{44}{subsection.3.10.5}% 
+\contentsline {subsection}{\numberline {3.10.6}Smart Speaker - Transformer Model with Movie Corpus}{46}{subsection.3.10.6}% 
+\contentsline {subsection}{\numberline {3.10.7}Chatbot - Generative Pre-training Transformer 2 Model}{46}{subsection.3.10.7}% 
 \contentsline {subsubsection}{Context Experiment}{47}{section*.29}% 
 \contentsline {subsubsection}{History Experiment}{47}{section*.30}% 
 \contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{48}{section*.31}% 
 \contentsline {subsubsection}{Overall}{48}{section*.32}% 
-\contentsline {subsection}{\numberline {3.9.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{50}{subsection.3.9.8}% 
-\contentsline {section}{\numberline {3.10}Observation}{50}{section.3.10}% 
-\contentsline {section}{\numberline {3.11}Tests}{51}{section.3.11}% 
+\contentsline {subsection}{\numberline {3.10.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{50}{subsection.3.10.8}% 
+\contentsline {section}{\numberline {3.11}Observation}{50}{section.3.11}% 
+\contentsline {section}{\numberline {3.12}Tests}{51}{section.3.12}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{53}{appendix.A}% 

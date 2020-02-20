@@ -89,43 +89,24 @@ In this paper the GRU based Sequence-to-sequence model and the Tensorflow based 
 
 \section{Raspberry Pi}
 
-A Raspberry Pi is a small single board computer with an `arm' processor. There are 
-several versions on the market, the most recent of which sports built-in wifi and
-on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently
-available, the Raspberry Pi 4B computer can sport 4Gig of RAM.
+A Raspberry Pi is a small single board computer with an `arm' processor. There are several versions on the market, the most recent of which sports built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer can sport 4Gig of RAM.
 
-It has always been the intention that at some time some chatbot of
-those examined will be seen as superior and will be installed and
-operated on a Raspberry Pi computer. If more than one model is available
-then possibly several models could be installed on Pi computers.
+It has always been the intention that at some time some chatbot of those examined will be seen as superior and will be installed and operated on a Raspberry Pi computer. If more than one model is available then possibly several models could be installed on Pi computers.
 
-For this to work several resources need to be made available. Pytorch
-needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text
-To Speech (TTS) need to work on the Pi.
+For this to work several resources need to be made available. Pytorch needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text To Speech (TTS) need to work on the Pi.
 
 For the transformer model to work Tensorflow needs to work on the Pi.
 
-All the files that are trained in the chosen model need to be small
-enough in terms of their file size to fit on the Pi. Also it must
-be determined that the memory footprint of the running model is small
-enough to run on the Pi.
+All the files that are trained in the chosen model need to be small enough in terms of their file size to fit on the Pi. Also it must be determined that the memory footprint of the running model is small enough to run on the Pi.
 
-In the github repository files and scripts for the Raspberry Pi are
-to be found in the \textquoteleft bot\textquoteright{} folder.
+In the github repository files and scripts for the Raspberry Pi are to be found in the \textquoteleft bot\textquoteright{} folder.
 
-Early tests using Google\textquoteright s SR and TTS services show
-that the Pi can support that type of functionality. 
+Early tests using Google\textquoteright s SR and TTS services show that the Pi can support that type of functionality. 
 
-Google's SR service costs money to operate. Details
-for setting up Google's SR and TTS functions is beyond
-the scope of this document. Some info about setting this up can be
-found in the README file of this project\textquoteright s github
-repository.
+Google's SR service costs money to operate. Details for setting up Google's SR and TTS functions is beyond the scope of this document. Some info about setting this up can be
+found in the README file of this project\textquoteright s github repository.
 
-The pytorch model that is chosen as best will be trained on the
-desktop computer and then the saved weights and biases will be transferred
-to the Raspberry Pi platform. The Pi will not need to do any training,
-only inference. 
+The pytorch model that is chosen as best will be trained on the desktop computer and then the saved weights and biases will be transferred to the Raspberry Pi platform. The Pi will not need to do any training, only inference. 
 
 
 
@@ -150,6 +131,22 @@ Both of these resources, the text-to-speech and speech-to-text, work out of the 
 Furthermore an environment variable must be set that points to the authentication file. The variable is called `GOOGLE\_APPLICATION\_CREDENTIALS'. This environment variable has to be set up before the respective model runs. When the model is launched on startup it may not be launched as a regular user. The model may be launched as, for example, the root user. Somehow the environment variable must be set along with the launching of the neural network model.
 
 The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, we attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
+
+\section{Corpus Considerations}
+
+We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have the `JSON' dump from Reddit that is downloadable. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
+
+The movie corpus is medium sized and the Reddit `JSON' download is large
+and filled with hyperlinks and sentence fragments. 
+
+At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are described as noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. In the future if we can train in a faster environment the Reddit corpus might be superior.
+
+For the Persona corpus the text is organized into `JSON' objects. There
+are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not
+organized in this kind of pattern. When we take apart the Persona corpus
+we find that the sentences labeled with the `history' tag are most suited to our task.
+We record these values only and discard other labels.
+
 
 \section{ARMv7 Build/Compile}
 
