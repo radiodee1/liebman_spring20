@@ -55,7 +55,7 @@ One thing we want to do is to preserve the dimension of our vector. We start wit
 
 In this self-attention scheme three vectors are actually required. All three vectors are sized 64, and all three are converted by separate matrix multiplication operations. The weights to convert each of the three vectors are different. For this reason the new smaller vectors are all different.
 
-The smaller vectors individually are called q,k, and v. They can also be referred to as larger matrices. The new vector matrices are denoted as Q, K, and V. Q stands for `Query'. K stands for `Key'. V stands for `Value'. 
+The smaller vectors individually are called q, k, and v. They can also be referred to as larger matrices. The new vector matrices are denoted as Q, K, and V. Q stands for `Query'. K stands for `Key'. V stands for `Value'. 
 
 The Query value is multiplied by the Key values from all vectors in the input. This multiplication is `dot-product' multiplication. When it is done all keys will have low output except those that are closest to the Query. Then the results are passed through a softmax function. When this is complete there will be a single vector that is close to 1 and another group of vectors that are all close to 0.
 
@@ -115,7 +115,7 @@ While the encoder takes in the entire input and attends to whatever portion of t
 
 During inference it produces a token and then it adds to that token, one at a time, until the decoding is finished and something like a sentence is produced. It can attend to any part of the output it has already produced. During training the decoder is exposed to the target sequence under a mask. The mask prohibits the decoder from seeing parts of the target that it should not. This mimics the inference setup and still allows for large input matrices.
 
-We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having A thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder to two smaller matrices.
+We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder to two smaller matrices.
 
 There is also a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the layer described above. This data is lowered in dimensionality and becomes the `Query' matrix for that layer.
 
@@ -191,7 +191,6 @@ It still uses Scaled Dot-Product Attention. A model diagram is taken from Radfor
 \end{figure}
 
 There are several sizes of pre-trained `Generative Pre-training Transformer 2' model. They are all rather large. The smallest model matches the size of the largest `Bidirectional Encoder Representations from Transformers' model. The GPT2 models input and output text sequences. In this way they are preferred for our application over the BERT models. 
-
 
 The `Generative Pre-training Transformer 2' models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `carma' rating of 3 or better. `Carma' is a rating system used internally on Reddit. 
 
