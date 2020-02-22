@@ -153,7 +153,7 @@ There is a pre-trained Transformer model called \ac{BERT}. BERT stands for `Bidi
 
 The `Bidirectional Encoder Representations from Transformer' models use a bidirectional training method. During training the BERT model might be presented with a sentence with a word missing. The training task is to fill in that blank. The model can look at the sentence from any direction in order to find that word. This is a very simplistic explanation for what is termed a Masked Language Model.
 
-\subsection*{Visualization}
+\subsection*{Visualization - Transformer}
 
 In order to visualize what is happening during inference we have colorful charts that we can look at. In this chart we are looking at how each word attends to all the other words in the input text.
 
@@ -235,7 +235,7 @@ Because the input is meant to be a number of sentences, and because we are using
 
 With every input string we include a set of three or four sentences. They include the time, the bot's name, and the bot location and occupation. All of these are invented. What happens is the chatbot summarizes the input and only if the information is relevant then the same information is used by the model as output. Making this possible is the fact that a transformer can accept much longer input strings than a Gated Recurrent Unit, and generate much longer output strings.
 
-\subsection*{Visualization}
+\subsection*{Visualization - GPT2}
 
 During inference the Scaled Dot Product Attention in the GPT2 focuses on certain words as it processes input text. Here the word `favorite' shows a relationship to many of the other words in the text.  
 
@@ -250,4 +250,6 @@ During inference the Scaled Dot Product Attention in the GPT2 focuses on certain
 	
 \end{figure}
 
-In our experiments the phrase `What is your favorite color?' is answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. The diagram might support this observation. At this layer and at this head, the model does not stress the word `color'. 
+In our experiments the phrase `What is your favorite color?' is answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. The diagram might support this observation. 
+
+%At this layer and at this head, the model does not stress the word `color'. 
