@@ -66,7 +66,9 @@ This formula from Vaswani et al (2017)\cite{Vaswani2017AttentionIA}
 shows the process.
 
 $$
+\mathlarger{ \mathlarger{
 Attention(Q,K,V)=softmax(\dfrac{QK^T}{\sqrt{d_k}})V
+} }
 $$
 
 Here the value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output and $d_k$ is the dimension 512. Without this the softmax function has to deal with much larger numbers. Smaller numbers for the softmax are preferred. 
