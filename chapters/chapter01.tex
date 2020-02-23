@@ -40,7 +40,9 @@ There are several designs for a Recurrent Neural Network component. The inner wo
 
 
 \subsection*{Gated Recurrent Unit}
-An implementation of a Recurrent Neural Network is the `Gated Recurrent Unit'. A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz et al 2015)\cite{2015Britz}, are as follows.
+An implementation of a Recurrent Neural Network is the `Gated Recurrent Unit'. There are other varieties of RNN, most notably the Long Short Term Memory cell. We do not explore \ac{LSTM} cells here.
+
+A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz et al 2015)\cite{2015Britz}, are as follows.
 
 \begin{minipage}{5in}
 
@@ -123,17 +125,15 @@ Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov e
 
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
-
 \subsection*{Corpus}
 
 A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences in both languages.
 
+\subsection*{Input Tokens}
 
+So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU, one at a time. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the Gated Recurrent Unit does internally.
 
-\subsection*{Recurrent Elements}
-The recurrent unit in this case is a Gated Recurrent Unit. The Gated Recurrent Unit takes as input a single vector. It processes the vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The Gated Recurrent Unit also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
-
-So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the Gated Recurrent Unit does internally.
+The Gated Recurrent Unit takes as input a single vector. It processes the vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The Gated Recurrent Unit also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
 
 We will use the metaphor of a chain when we describe input and output segments that are composed of Gated Recurrent Units. The input chain is sometimes referred to as the Encoder, and the output chain is sometimes referred to as the Decoder.
 
@@ -165,7 +165,7 @@ The second Gated Recurrent Unit generates the second word and also its own hidde
 
 In this figure we generalize a sequence to sequence model. The idea is that A and B, on the left side of the diagram, deal with the encoding of sentences. A and B would be consecutive words in a sentence, and the round blue nodes below A and B are Recurrent Neural Network units. C and D are outputs and in the right side of the diagram the blue nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
 
-All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector.
+All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. We will see later that aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
 
 Making this vector larger by increasing the size of the hidden unit size allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if
 one of those is used. 
