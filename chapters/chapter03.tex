@@ -4,7 +4,7 @@ Several tasks are necessary for the project. One task is to implement the algori
 
 We will not try to rewrite the transformer or Generative Pre-training Transformer 2 model ourselves.
 
-In this project we attempt to load as much of out chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
+In this project we attempt to load as much of our chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
@@ -61,10 +61,7 @@ Here we itemize a short description for each row in the table.
 
 We use linux computers, sometimes with \ac{GPU} hardware for parallel processing. We also use the Python programming language. Code from this project can be run with the 3.x version of Python.
 
-When the project was started we did some programming with Keras using
-Tensorflow as a backend. Keras was later discarded in favor of Pytorch.
-Pytorch as a library is still under development at the time of this
-writing.
+When the project was started we did some programming with Keras using Tensorflow as a backend. Keras was later discarded in favor of Pytorch. Pytorch as a library is still under development at the time of this writing.
 
 Some of the Generative Pre-training Transformer 2 code uses Pytorch. Some of the Transformer and Generative Pre-training Transformer 2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
 
@@ -75,15 +72,15 @@ As a coding experiment we rewrite the code for the sequence-to-sequence Gated Re
 
 \section{Graphical Processing Unit vs. Central Processing Unit}
 
-A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. This allows for a logical chain of actions that can be programmed for execution. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
+A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. This allows for a logical program that can be executed. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
 
 GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. The GPU speeds up parallel processing and have a benefit to neural networking training tasks that the CPU doesn't have.
 
 Unfortunately state of the art neural network models are larger than the capacity of a single GPU. Some models are trained on many GPUs simultaneously. It is not uncommon for a model to train on a computer with eight GPU cards for many days. Training these models is prohibitively expensive for the average programmer. It is possible to rent time on Amazon Web Services or Google cloud with well outfitted computers but this can be costly.
 
-This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessable to the public. Then the average programmer downloads the model and fine tunes it to their task.
+This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessible to the public. Then the average programmer downloads the model and fine tunes it to their task.
 
-This would be fine if there were a model for every task. Though many models exist there seems to be many tasks that are not adressed. It seems that there is always the opportunity to train a larger model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successfull. If the goal is to do somehting that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
+This would be fine if there were a model for every task. Though many models exist there seems to be many tasks that are not addressed. It seems that there is always the opportunity to train a larger model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successful. If the goal is to do something that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
 
 In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training.
 
@@ -107,8 +104,6 @@ Google's SR service costs money to operate. Details for setting up Google's SR a
 found in the README file of this project\textquoteright s github repository.
 
 The pytorch model that is chosen as best will be trained on the desktop computer and then the saved weights and biases will be transferred to the Raspberry Pi platform. The Pi will not need to do any training, only inference. 
-
-
 
 \section{Tensorflow vs. Pytorch}
 
@@ -136,16 +131,11 @@ The operating system on the Raspberry Pi is based on Debian Linux. In this opera
 
 We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have a `JSON' dump from Reddit that is downloadable.  This is not the same Reddit data that the authors of GPT2 use. Finally we have the corpus described by Mazar{\'{e}} et al(2018)\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
-The movie corpus is medium sized and the Reddit `JSON' download is large
-and filled with hyperlinks and sentence fragments. 
+The movie corpus is medium sized and the Reddit `JSON' download is large and filled with hyperlinks and sentence fragments. 
 
 At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are described as noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. In the future if we can train in a faster environment the Reddit corpus might be superior.
 
-For the Persona corpus the text is organized into `JSON' objects. There
-are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not
-organized in this kind of pattern. When we take apart the Persona corpus
-we find that the sentences labeled with the `history' tag are most suited to our task.
-We record these values only and discard other labels.
+For the Persona corpus the text is organized into `JSON' objects. There are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not organized in this kind of pattern. When we take apart the Persona corpus we find that the sentences labeled with the `history' tag are most suited to our task. We record these values only and discard other labels.
 
 
 \section{ARMv7 Build/Compile}
@@ -161,7 +151,7 @@ The production laptop used for development ran Ubuntu linux. For this reason a V
 
 There are two problems with the resulting built python package. Firstly there is an error in python when importing the torch library. The error reads `ImportError: No module named \_C'. 
 
-After some research it is clear that the build process for ARMv7 creates some shared object files that are misnamed. A hackey fix is to find the misnamed files and make copies of them with a suitable name. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
+After some research it is clear that the build process for ARMv7 creates some shared object files that are misnamed. A fix is to find the misnamed files and make copies of them with a suitable name. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
 
 There are three files misnamed. They can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}'. They are named with the same convention. They all have the ending `.cpython-37m-arm7hf-linux-gnu.so'. We want to rename them with the much shorter `.so'. The files are then named `\textbf{\_C.so}', `\textbf{\_dl.so}', and `\textbf{\_thnn.so}'.
 
@@ -189,7 +179,7 @@ Finally the Pytorch program needed to be built. We disable CUDA and distributed 
 \subsection*{Docker Container `tensorflow-model-server' For ARMv7}
 The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
 
-Docker can be run on the Raspberry Pi in the ARM environment. Below is a terminal excerpt that shows how to do this.
+Docker can be run on the Raspberry Pi in the ARM environment. Below is a terminal excerpt that shows how to do this. These commands are executed on the Pi.
 
 \begin{verbatim}
 $ sudo apt-get update
@@ -216,7 +206,7 @@ The Generative Pre-training Transformer 2 code is versatile. We use it for the c
 
 When we talk about the chatbot problem on Generative Pre-training Transformer 2 we are talking about a PyTorch version of the GPT2 code. 
 
-We found that the chatbot with the hand coded sequence to sequence Neural Machine Translation did not work very well. There is a tensorflow transformer-based model that worked marginally well. We found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. 
+We actually install three Raspberry Pi boards. We found that the chatbot with the hand coded sequence to sequence Neural Machine Translation did not work very well. In place of that we use code from a sequence to sequence tutorial. There is a tensorflow transformer-based model that worked marginally well based on the Persona corpus, but we used the Movie corpus more effectively with the transformer architecture. Finally, we found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. 
 
 Fine tuning on the Generative Pre-training Transformer 2 problem actually had a negative effect. To fine-tune the model also involved training the model on Tensorflow and then translating the model to PyTorch when that was done. 
 
@@ -226,7 +216,7 @@ We also train the transformer to do the chatbot task. This works better than the
 
 For the sake of experimentation we use a sequence to sequence Gated Recurrent Unit tutorial and implement the chatbot. This model works well and allows us to compare that model with the Generative Pre-training Transformer 2 model.
 
-Finally we describe installing the chatbot in small computing platforms, the Raspberry Pi 3B and 4B, in an attempt to create a smart speaker.
+Finally we describe installing the chatbot in small computing platforms, the Raspberry Pi 3B and 4B, in an attempt to create a smart speaker. We show some of our results below.
 
 All of the three mentioned models work on a laptop computer. For the laptop we experimented with a setup where the model would launch applications for the user when the user asked the model to. These audio cues were interesting but were in no way the focus of our experiments.
 
@@ -256,7 +246,7 @@ For comparison there are four models. Subjectively the first transformer model d
 
 
 \subsection{Chatbot - Gated Recurrent Unit Model}
-We have two models based on the sequnce to sequence architecture proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by Matthew Inkawhich (2018)\cite{2018Inkawhich}.
+We have two models based on the sequnce to sequence architecture proposed by Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al (2018)\cite{2018Inkawhich}.
 
 We trained the first sequence to sequence model on a large english corpus in an attempt to produce a chatbot. 
 
