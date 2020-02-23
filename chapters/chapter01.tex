@@ -172,19 +172,21 @@ one of those is used.
 
 Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model.
 
-\subsection*{Output Tokens}
-Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary. Then they are processed in what is called an `arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
+Again in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason a single GRU is employed for the Decoder.
 
-How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. The output is called a prediction. If the target and the prediction are not the same, the model must modify itself so that in the future they are.
+\subsection*{Output Tokens}
+Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary, through matrix multiplication. Then they are processed in what is called an `arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
+
+%How does the model know what target vocabulary indexes go at what point in the output? For this we refer back to the corpus that we already have. One part of the corpus is the source language. The other part is the target language. A sentence is applied to the input and for that sentence an output is generated. The output is called a prediction. If the target and the prediction are not the same, the model must modify itself so that in the future they are.
 
 There are some inherent problems. Because the output of a Gated Recurrent Unit is constantly being reused as the input, lots of data that might be useful to have is lost when the Gated Recurrent Unit churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
 
-Another problem is that all input to be translated to target output has to be boiled down and passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the `thought vector.' Somehow all necessary information must be there. This also limits the length of the input and output vectors. It does help, when setting up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
+Another problem is that all input to be translated to target output has to be boiled down and passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the `thought vector.' Without attention, described below, all necessary information must be right there. This also limits the length of the input and output vectors. It does help, when setting up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
 
 This is how some computer models do language translation. Using `arg-max' is an example of a greedy approach. Another approach might use something like `Beam Selection' but we're not going to get into that here.
 
 
-\section{Loss and Accuracy}
+\section{Loss and Accuracy During Training}
 
 At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. 
 
@@ -201,6 +203,8 @@ This is done over and over with every source/target sentence pair. Slowly the mo
 There are several numerical metrics that we can record during training that tell us how our model is training. The loss, a mathematical calculation of the difference between the model's output and the predicted value, is mentioned above. Loss is an important number. Also accuracy is important. Accuracy is a mathematical calculation of the difference between the model's output and the value that output should be, but it focuses on the number of times the model comes out with a correct prediction verses how many output values there are in total.
 
 \section{Attention Mechanism}
+
+Attention Mechanisms are used by sequence to sequence models to transfer more information from the encoder to the decoder. As stated above there is only one place where the encoder imparts information on the decoder, the `thought vector'. Attention helps the encoder tell the decoder which word is more important. This stressing of a vector by the model is the attention mechanism attending to one output.
 
 Here we consider a simple attention mechanism that is used in the Sequence to Sequence model by Inkawhich et al (2018)\cite{2018Inkawhich}. The concept for this attention comes from Luong et al (2015)\cite{DBLP:journals/corr/LuongPM15}.
 
@@ -229,7 +233,7 @@ score = h_t^\intercal \bar{h}_s
 \unboldmath
 $$ 
 
-Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. The result is multiplied by the Gated Recurrent Unit decoder output, and then passed through a `tanh' activation layer.
+Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. The result, the score, is multiplied by the Gated Recurrent Unit decoder output, and then passed through a `tanh' activation layer.
 
 \section{Sequence to Sequence Chatbot}
 
@@ -239,7 +243,9 @@ Chatbots have for a long time been constructed using \ac{AIML}. AIML, (Artificia
 
 To create a model like this more is required than just a single input and output language. There must be a relationship between the source and the target. We want there to be a question-and-answer-like relation. Finding a corpus like this can be difficult.
 
-It would be easy to duplicate the input source material in the target corpus. This would produce auto-encoding. The model would learn to repeat everything that was given to it in it's output. Though the model learns a task, it is not the dynamic task we want. Conversations, on the other hand, supply the relationship we are looking for. Starting with almost any question sentence in a conversation, the sentence following it answers the question posed. The latter fills a space that is opened up by the former. 
+It would be easy to duplicate the input source material in the target corpus. This would produce auto-encoding. The model would learn to repeat everything that was given to it in it's output. Though the model learns a task, it is not the dynamic task we want. Conversations, on the other hand, supply the relationship we are looking for. Starting with almost any question sentence in a conversation, the sentence following it answers the question posed. 
+
+%The latter fills a space that is opened up by the former. 
 
 What would be a good candidate for this kind of verbal play? Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Even numbered sentence are the source material, and odd numbered sentences are the target. Using this method there are times when the source and target are not from the same conversation, like times in a movie dialog when the scene switches from one locale to another. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
 
