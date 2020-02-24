@@ -202,14 +202,18 @@ In the section above we describe the workings of a transformer and the workings 
 
 We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections.
 
-We have four models we consider and at the same time only three Raspberry Pi boards. We actually try all four models, but keep only three Raspberry Pi installations. We found that the chatbot with the sequence to sequence Neural Machine Translation from the tutorial worked well. There is a tensorflow transformer-based model that worked marginally well based on the Persona corpus, but we used the Movie corpus more effectively with the transformer architecture. Finally, we found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. It was installed on one of the boards. 
+We have four models we consider and at the same time only three Raspberry Pi boards. We actually try all four models, but keep only three Raspberry Pi installations. We found that the chatbot with the sequence to sequence Neural Machine Translation from the tutorial worked well. There is a tensorflow transformer-based model that worked marginally well based on the Persona corpus, but we used the Movie corpus more effectively with the transformer architecture. We use that model. Finally, we found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. It was also installed on one of the boards. 
 
+The model that did not make it to the final three and installation on a Raspberry Pi was the smaller Transformer with the Persona corpus.
+
+\iffalse
 If we were measuring progress with an actual translation task accuracy could be measured as a score that improves when the output matches the meaning of the input, albeit in a different language. We don't use an actual translation task, we use something close to one. The problem is that though the input and the output are in the same language, the input and output have different meanings. We do not dictate what the correct output would be for a given input. The output just has to make sense as a reply in the English language. We would actually prefer that the output not have the same meaning as the input. This makes it difficult to calculate an objective accuracy score. This is touched on in the paper from Vinyals et al(2015)\cite{DBLP:journals/corr/VinyalsL15}.
 
 Loss can still be monitored during training. When the loss stops decreasing you know you should stop training as the model is probably overfitting.
+\fi
 
 \subsubsection*{Questions}
-Below is a list of questions asked of all models.
+Below is a list of questions asked of all models. From this list and the answers from each model we try to make comparisons between the models about their strengths.
 
 \begin{verbatim}
 Hello.

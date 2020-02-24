@@ -166,12 +166,12 @@ In order to visualize what is happening during inference we have colorful charts
 		
 		
 	\end{center}
-	\caption[Visualized Attention]{Visualized Attention -- `favorite' shows attention to most words in the sentence.}
+	\caption[Visualized Attention]{Visualized Attention -- `favorite' shows attention to some but not all words in the sentence.}
 	
 	
 \end{figure}
 
-Significant, but not shown, is that other words, like `what' and `your', do not have strong attention to words in the text. In a chart like this one they would show no colors on the right and no lines connecting the left to the right.
+Significant is that words, like `what' and `your', do not have strong attention to words in the text on the right. In a chart like this one they would show no colors on the left and light colored lines connecting the left to the right.
 
 This diagram is from the Transformer with the larger hyper-parameter set that we describe in Chapter 3, trained on the movie dialog corpus.
 
@@ -248,11 +248,11 @@ During inference the Scaled Dot Product Attention in the GPT2 focuses on certain
 		
 		
 	\end{center}
-	\caption[Visualized Attention GPT2]{Visualized Attention GPT2 -- `favorite' shows attention to most but not all words in the sentence.}
+	\caption[Visualized Attention GPT2]{Visualized Attention GPT2 -- `favorite' shows attention to some but not all words in the sentence.}
 	
 	
 \end{figure}
 
-In our experiments the phrase `What is your favorite color?' is answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. The diagram might support this observation. 
+In our experiments the phrase `What is your favorite color?' is answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. The diagram might support this observation because `color' on the left is not heavily highlighted. Words like `what' and `your' are barely considered at this head at all. 
 
 %At this layer and at this head, the model does not stress the word `color'. 
