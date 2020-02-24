@@ -200,15 +200,13 @@ It was found that there existed a version of the Docker Container Daemon that ra
 \section{Experiments - Installations}
 In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
-We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have the transformer and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us six sections.
+We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections.
 
-The Generative Pre-training Transformer 2 code is versatile. We use it for the chatbot problem. The model is pretrained. We experiment with transfer learning and further training of the Generative Pre-training Transformer 2 model, but in our case it does not improve the model's performance. 
 
-When we talk about the chatbot problem on Generative Pre-training Transformer 2 we are talking about a PyTorch version of the GPT2 code. 
+We have four models we consider and at the same time only three Raspberry Pi boards. We actually try all four models, but keep only three Raspberry Pi installations. We found that the chatbot with the sequence to sequence Neural Machine Translation from the tutorial worked well. There is a tensorflow transformer-based model that worked marginally well based on the Persona corpus, but we used the Movie corpus more effectively with the transformer architecture. Finally, we found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. It was installed on one of the boards. 
 
-We actually install three Raspberry Pi boards. We found that the chatbot with the hand coded sequence to sequence Neural Machine Translation did not work very well. In place of that we use code from a sequence to sequence tutorial. There is a tensorflow transformer-based model that worked marginally well based on the Persona corpus, but we used the Movie corpus more effectively with the transformer architecture. Finally, we found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. 
-
-Fine tuning on the Generative Pre-training Transformer 2 problem actually had a negative effect. To fine-tune the model also involved training the model on Tensorflow and then translating the model to PyTorch when that was done. 
+\iffalse
+%The Generative Pre-training Transformer 2 code is versatile. We use it for the chatbot problem. The model is pretrained. We experiment with transfer learning and further training of the Generative Pre-training Transformer 2 model, but in our case it does not improve the model's performance. When we talk about the chatbot problem on Generative Pre-training Transformer 2 we are talking about a PyTorch version of the GPT2 code. Fine tuning on the Generative Pre-training Transformer 2 problem actually had a negative effect. To fine-tune the model also involved training the model on Tensorflow and then translating the model to PyTorch when that was done. 
 
 We use speech recognition and speech to text libraries to allow a user to give the chatbot model auditory input.
 
@@ -218,9 +216,10 @@ For the sake of experimentation we use a sequence to sequence Gated Recurrent Un
 
 Finally we describe installing the chatbot in small computing platforms, the Raspberry Pi 3B and 4B, in an attempt to create a smart speaker. We show some of our results below.
 
-All of the three mentioned models work on a laptop computer. For the laptop we experimented with a setup where the model would launch applications for the user when the user asked the model to. These audio cues were interesting but were in no way the focus of our experiments.
+All of the mentioned models work on a laptop computer. For the laptop we experimented with a setup where the model would launch applications for the user when the user asked the model to. These audio cues were interesting but were in no way the focus of our experiments.
 
 It should be noted that at some point we would like to describe some of our subjective results with the different models. It is difficult to measure our results objectively because we are using code most closely associated with a translation task. 
+\fi
 
 If we were measuring progress with an actual translation task accuracy could be measured as a score that improves when the output matches the meaning of the input, albeit in a different language. We don't use an actual translation task, we use something close to one. The problem is that though the input and the output are in the same language, the input and output have different meanings. We do not dictate what the correct output would be for a given input. The output just has to make sense as a reply in the English language. We would actually prefer that the output not have the same meaning as the input. This makes it difficult to calculate an objective accuracy score. This is touched on in the paper from Vinyals et al(2015)\cite{DBLP:journals/corr/VinyalsL15}.
 

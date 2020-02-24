@@ -22,16 +22,16 @@
 \contentsline {section}{\numberline {3.10}Experiments - Installations}{37}{section.3.10}% 
 \contentsline {subsection}{\numberline {3.10.1}Chatbot - Gated Recurrent Unit Model}{39}{subsection.3.10.1}% 
 \contentsline {subsection}{\numberline {3.10.2}Smart Speaker - Gated Recurrent Unit Model}{41}{subsection.3.10.2}% 
-\contentsline {subsection}{\numberline {3.10.3}Chatbot - Transformer Model with Persona Corpus}{42}{subsection.3.10.3}% 
-\contentsline {subsection}{\numberline {3.10.4}Smart Speaker - Transformer Model with Persona Corpus}{44}{subsection.3.10.4}% 
-\contentsline {subsection}{\numberline {3.10.5}Chatbot - Transformer Model with Movie Corpus}{44}{subsection.3.10.5}% 
-\contentsline {subsection}{\numberline {3.10.6}Smart Speaker - Transformer Model with Movie Corpus}{46}{subsection.3.10.6}% 
+\contentsline {subsection}{\numberline {3.10.3}Chatbot - Transformer Model with Persona Corpus}{41}{subsection.3.10.3}% 
+\contentsline {subsection}{\numberline {3.10.4}Smart Speaker - Transformer Model with Persona Corpus}{43}{subsection.3.10.4}% 
+\contentsline {subsection}{\numberline {3.10.5}Chatbot - Transformer Model with Movie Corpus}{43}{subsection.3.10.5}% 
+\contentsline {subsection}{\numberline {3.10.6}Smart Speaker - Transformer Model with Movie Corpus}{45}{subsection.3.10.6}% 
 \contentsline {subsection}{\numberline {3.10.7}Chatbot - Generative Pre-training Transformer 2 Model}{46}{subsection.3.10.7}% 
-\contentsline {subsubsection}{Context Experiment}{47}{section*.30}% 
+\contentsline {subsubsection}{Context Experiment}{46}{section*.30}% 
 \contentsline {subsubsection}{History Experiment}{47}{section*.31}% 
-\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{48}{section*.32}% 
-\contentsline {subsubsection}{Overall}{48}{section*.33}% 
-\contentsline {subsection}{\numberline {3.10.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{50}{subsection.3.10.8}% 
+\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{47}{section*.32}% 
+\contentsline {subsubsection}{Overall}{47}{section*.33}% 
+\contentsline {subsection}{\numberline {3.10.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{49}{subsection.3.10.8}% 
 \contentsline {section}{\numberline {3.11}Observation}{50}{section.3.11}% 
-\contentsline {section}{\numberline {3.12}Tests}{51}{section.3.12}% 
-\contentsline {chapter}{\numberline {A}Abbreviations}{53}{appendix.A}% 
+\contentsline {section}{\numberline {3.12}Tests}{50}{section.3.12}% 
+\contentsline {chapter}{\numberline {A}Abbreviations}{52}{appendix.A}% 
