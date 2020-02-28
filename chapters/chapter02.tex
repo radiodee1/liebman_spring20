@@ -204,10 +204,12 @@ There are several sizes of pre-trained `Generative Pre-training Transformer 2' m
 
 The GPT2 models input and output text sequences. In this way they are preferred for our application over the BERT models. 
 
+\subsection*{Corpus}
 The `Generative Pre-training Transformer 2' models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `carma' rating of 3 or better. `Carma' is a rating system used internally on Reddit. 
 
 As with the decoder layer of the Transformer model, the GPT2 model concerns itself with generating words that are later strung together to make sentences or paragraphs. During training the model uses a masking scheme so that input can be parallel-ized. Output cannot be parallel-ized, so output must focus on one example at a time.
 
+\subsection*{Releases}
 In their paper Radford et al (2019)\cite{radford2019language} show that their model can generate text from a seed sentence or paragraph. At the time the case was made that the largest `Generative Pre-training Transformer 2' models should not be released because of their ability to generate text that might fool humans into believing that another person was responsible for the text. Later the larger models were released to the public.
 
 \begin{center}
