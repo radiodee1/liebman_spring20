@@ -7,11 +7,15 @@ Recurrent components have some negative qualities. Recurrent components are hard
 
 If a batch of data is to be cycled through a recurrent component, we would like all that data to go through the component at the first cardinal position first. Then we would like it all cycled through the second or third position. In actuality the first time step the first part of the data needs to go through the first Recurrent Neural Network module and then the next component all the way to the last position in the model. Then the data can be moved along to the second time step where the Recurrent Neural Network module sees the second part of the data which is processed through all components of the GRU. At some point the third part of the data is seen, and all data after that is processed the same way.
 
+This sort of bottleneck is found in Neural Machine Translation that is based on recurrent elements.
+
 Also because the Recurrent Neural Network is so heavy with Neural Network components, many weights and biases, though they can remember patterns, they loose some information with every pass. This is why there is a practical limit to the length of the input sequences that the typical Recurrent Neural Network can use. This is why the length of sentences in network models that use the Recurrent Neural Network are short.
 
 Transformers use no Recurrent Neural Network components. Their operations can be parallelized so that large batches of data can be processed at once during the same time step. 
 
-Longer sequences can be considered as well, so Transformer input can contain longer English language sentences and even paragraphs.
+Longer sequences can be considered as well, so Transformer input can contain longer English language sentences and even paragraphs. 
+
+We will discuss one layer of a multi-layer Transformer below. Transformers are usually constructed on eight or more of these layers in the decoder and the encoder.
 
 \subsection*{Byte Pair Encoding}
 
@@ -26,13 +30,13 @@ For the Generative Pre-training Transformer 2 a version of Byte Pair Encoding is
 Some form of Byte Pair Encoding is included in almost every Transformer typed Neural Network model, so no decision needs to be made about what type of word embeddings to use.
 
 \subsection*{Attention}
-Attention mechanisms are used in a similar way in three places in the model. The first implementation of the Self Attention is discussed below.
+Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of the Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
 It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al (2017)\cite{Vaswani2017AttentionIA} use a vector size of 512. 
 
 \subsection*{Scaled Dot-Product Attention}
 
-The Transformer has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
+Each layer of the Transformer has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
 
 The first thing that happens is the input word vector is converted to three other values. These new vectors are like the input vector but they have a smaller dimensionality. Converting the word vector in this way is accomplished by three simple matrix multiplication operations.
 
@@ -85,7 +89,7 @@ In the green triangle in the Figure 2.2 we preform the multiplication and select
 	\end{center}
 	\caption[Attention Output]{Attention Output}
 	
-	%\addcontentsline{lof}{section}{Loss and Accuracy}
+
 \end{figure}
 
 
@@ -103,28 +107,26 @@ This multi-headed approach allows different heads to learn different types of re
 \end{center}
 	\caption[Matching Input and Output]{Matching Input and Output}
 	
-	%\addcontentsline{lof}{section}{Loss and Accuracy}
+
 \end{figure}
 
 
-Later the output is passed through a feed forward network. After that it is combined with the original input again through addition. Then the vectors are normalized. This makes sure that the values are all within reasonable ranges.
+Later the output is passed through a feed forward network. After that it is combined with the original input again through addition. Then the vectors are normalized. This makes sure that the values are all within reasonable ranges. This recombination of the attention output with the original output is done throughout each Transformer layer.
 
-This describes the encoder section. There are two other attention segments. Together these two sections combine to form the decoder section.
+This describes the encoder section. There are two other attention segments. Together these two sections combine to form the decoder section. This is repeated for each layer.
 
 \subsection*{Transformer - Decoder}
-The decoder is composed of two attention mechanisms and a feed-forward segment. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms throughout the decoder's work. In that one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
+The decoder is composed of two attention mechanisms and a feed-forward segment at each layer. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms in each decoder layer. In that one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
 
-While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one token at a time. 
+While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. 
 
 During inference it produces a token and then it adds to that token, one at a time, until the decoding is finished and something like a sentence is produced. It can attend to any part of the output it has already produced. During training the decoder is exposed to the target sequence under a mask. The mask prohibits the decoder from seeing parts of the target that it should not. This mimics the inference setup and still allows for large input matrices.
 
-We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder to two smaller matrices.
+We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder layers to two smaller matrices. 
 
-There is also a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the layer described above. This data is lowered in dimensionality and becomes the `Query' matrix for that layer. During training this section is masked also.
+This full sized vector comes from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of all the decoder layers.
 
-
-
-
+There is also a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. During training this section is masked also.
 
 \begin{figure}[H]
 	\begin{center}
@@ -134,16 +136,16 @@ There is also a second attention mechanism in the decoder. It works solely on da
 	\end{center}
 	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder - Vaswani et al(2017)\cite{Vaswani2017AttentionIA}}
 	
-	%\addcontentsline{lof}{section}{Loss and Accuracy}
+
 \end{figure}
 
 \subsection*{Transformer - General}
 
-The input of the Transformer encoder and decoder employ not only a word-vector table, but also a positional encoding scheme. The model adds to the input vector information that it can then use to learn the position of words in a sentence. 
+The input of the Transformer encoder and decoder layers employ not only a word-vector table, but also a positional encoding scheme. The model adds to the input vector information that it can then use to learn the position of words in a sentence. 
 
 Words that are early in the sentence have a certain appearance and words later on appear differently. The Encoder and Decoder use sine and cosine waves to impart this information onto the sentence sequence. 
 
-Meanwhile at the output of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
+Meanwhile at the output of the last layer of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
 
 The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not suitable for many projects.
 
@@ -171,7 +173,7 @@ In order to visualize what is happening during inference we have colorful charts
 	
 \end{figure}
 
-Significant is that words, like `what' and `your', do not have strong attention to words in the text on the right. In a chart like this one they would show no colors on the left and light colored lines connecting the left to the right.
+Significant is that words, like `what' and `your', do not have strong attention to words in the text on the left. In a chart like this one they would show no colors on the left and light colored lines connecting the left to the right.
 
 This diagram is from the Transformer with the larger hyper-parameter set that we describe in Chapter 3, trained on the movie dialog corpus.
 
@@ -182,7 +184,7 @@ This diagram is from the Transformer with the larger hyper-parameter set that we
 
 `Generative Pre-training Transformer 2' (\ac{GPT2}) is a large model. It is based on the Transformer from Vaswani et al (2017)\cite{Vaswani2017AttentionIA} but there are some major changes. The model uses the decoder portion of the Transformer without the encoder. There are some other changes to the output layers. The biggest difference is that it is pre-trained and downloadable.
 
-It still uses Scaled Dot-Product Attention. A model diagram is taken from Radford et al (2018)\cite{radford2018improving}. A mask is used in the Self Attention segment of the model.
+It still uses Scaled Dot-Product Attention. A model diagram is taken from Radford et al (2018)\cite{radford2018improving}. A mask is used in the Self Attention segment of the model during training.
 
 \begin{figure}[H]
 	\begin{center}
@@ -192,12 +194,16 @@ It still uses Scaled Dot-Product Attention. A model diagram is taken from Radfor
 	\end{center}
 	\caption[Generative Pre-training Transformer 2 ]{GPT2 - Radford et al(2018)\cite{radford2018improving}}
 	
-	%\addcontentsline{lof}{section}{Loss and Accuracy}
+
 \end{figure}
 
-There are several sizes of pre-trained `Generative Pre-training Transformer 2' model. They are all rather large. The smallest model matches the size of the largest `Bidirectional Encoder Representations from Transformers' model. The GPT2 models input and output text sequences. In this way they are preferred for our application over the BERT models. 
+There are several sizes of pre-trained `Generative Pre-training Transformer 2' model. They are all rather large. The smallest model matches the size of the largest `Bidirectional Encoder Representations from Transformers' model. This model has 12 layers while the Transformer model in the example from Vaswani et al(2017)\cite{Vaswani2017AttentionIA} uses 8 layers. This model also has a hidden dimension of 768, not 512. With 8 heads this leaves a smaller dimensionality of 96 at each attention head. 
+
+The GPT2 models input and output text sequences. In this way they are preferred for our application over the BERT models. 
 
 The `Generative Pre-training Transformer 2' models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `carma' rating of 3 or better. `Carma' is a rating system used internally on Reddit. 
+
+As with the decoder layer of the Transformer model, the GPT2 model concerns itself with generating words that are later strung together to make sentences or paragraphs. During training the model uses a masking scheme so that input can be parallel-ized. Output cannot be parallel-ized, so output must focus on one example at a time.
 
 In their paper Radford et al (2019)\cite{radford2019language} show that their model can generate text from a seed sentence or paragraph. At the time the case was made that the largest `Generative Pre-training Transformer 2' models should not be released because of their ability to generate text that might fool humans into believing that another person was responsible for the text. Later the larger models were released to the public.
 
@@ -221,7 +227,7 @@ At the time that the first `Generative Pre-training Transformer 2' model was rel
 
 The `Generative Pre-training Transformer 2' models also work in many circumstances in `zero-shot' mode. This is when you use the model pre-trained but without transfer learning. There is no extra training that goes on to make the model suit the task. It is used `as is'.
 
-For the chatbot the model with 117 million parameters worked. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
+For our chatbot the model with 117 million parameters worked. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
 
 Later, as a test, when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted.
 
@@ -232,7 +238,7 @@ Given the ability of the model to invent content, it was determined by the autho
 
 For our chatbot we set the temperature to a low number. We set the length of the output to a sentence-length number of tokens. Then as input we use the output from the speech-to-text translator.
 
-The output is interesting but not useful right away. Heuristics are employed to clean the output and render a short single sentence. This is our final output.
+The output is interesting but not useful right away. Traditional programming and string manipulation are employed to clean the output and render a short single sentence. This is our final output.
 
 Because the input is meant to be a number of sentences, and because we are using a transformer-based architecture, we have room in the input string to add more information along side the user's question. In this respect the model acts to summarize the input. 
 
@@ -253,6 +259,6 @@ During inference the Scaled Dot Product Attention in the GPT2 focuses on certain
 	
 \end{figure}
 
-In our experiments the phrase `What is your favorite color?' is answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. The diagram might support this observation because `color' on the left is not heavily highlighted. Words like `what' and `your' are barely considered at this head at all. 
+In our experiments the phrase `What is your favorite color?' is usually answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. The diagram might support this observation because `color' on the left is not heavily highlighted. Words like `what' and `your' are barely considered at this head at all. 
 
 %At this layer and at this head, the model does not stress the word `color'. 
