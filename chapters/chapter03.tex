@@ -1,6 +1,6 @@
 \section{Approach to the Study}
 
-Several tasks are necessary for the project. One task is to implement the algorithms for different models, one the sequence to sequence model and the other the transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
+Several neural network models are used in the project. One is the sequence to sequence model and another the transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
 
 We will not try to rewrite the transformer or Generative Pre-training Transformer 2 model ourselves.
 
@@ -23,16 +23,16 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 	\begin{center}
 		
 		
-		\begin{tabular}{llllll}
+		\begin{tabular}{lllllll}
 			
-			Model Name    & File  & RAM  & RAM  & Pretrained  & Hand  \\
-			&  Size & Train   & Interactive   & Weights & Coded   \\
+			Model Name    & File  & RAM  & RAM  & Pretrained  & Hand & Raspberry \\
+			&  Size & Train   & Interactive   & Weights & Coded &   Pi \\
 			\hline
 			\hline
-			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M & NO                 & NO        \\
-			Transformer/Persona   & 25 M      & 556 M & 360 M & NO         & PARTIAL         \\
-			Transformer/Movie   & 550 M      & 6.5 G & 1.5 G & NO         & PARTIAL         \\
-			GPT2 small*   & 523 M     & 5 G   & 1.5 G & YES                & NO        \\
+			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M & NO                 & NO  &   3B \\
+			Transformer/Persona   & 25 M      & 556 M & 360 M & NO         & PARTIAL  & NONE \\
+			Transformer/Movie   & 550 M      & 6.5 G & 1.5 G & NO         & PARTIAL    & 4B  \\
+			GPT2 small*   & 523 M     & 5 G   & 1.5 G & YES                & NO     &  4B \\
 			\hline
 		\end{tabular}
 		
@@ -49,7 +49,7 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 Here we itemize a short description for each row in the table.
 
 \begin{itemize}
-	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al (2018)\cite{2018Inkawhich}. It actually uses the Movie Dialog corpus.
+	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al (2018)\cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. It is not on a Raspberry Pi board.
 	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus.
 	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus.
 	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. Some modification was made so that model output was suitable for our purposes.
@@ -80,7 +80,7 @@ Unfortunately state of the art neural network models are larger than the capacit
 
 This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessible to the public. Then the average programmer downloads the model and fine tunes it to their task.
 
-This would be fine if there were a model for every task. Though many models exist there seems to be many tasks that are not addressed. It seems that there is always the opportunity to train a larger model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successful. If the goal is to do something that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
+This would be fine if there were a model for every task. Though many models exist there seems to be many tasks that are not addressed. It seems that there is often the opportunity to train a large model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successful. If the goal is to do something that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
 
 In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training.
 
@@ -206,11 +206,7 @@ We have four models we consider and at the same time only three Raspberry Pi boa
 
 The model that did not make it to the final three and installation on a Raspberry Pi was the smaller Transformer with the Persona corpus.
 
-\iffalse
-If we were measuring progress with an actual translation task accuracy could be measured as a score that improves when the output matches the meaning of the input, albeit in a different language. We don't use an actual translation task, we use something close to one. The problem is that though the input and the output are in the same language, the input and output have different meanings. We do not dictate what the correct output would be for a given input. The output just has to make sense as a reply in the English language. We would actually prefer that the output not have the same meaning as the input. This makes it difficult to calculate an objective accuracy score. This is touched on in the paper from Vinyals et al(2015)\cite{DBLP:journals/corr/VinyalsL15}.
 
-Loss can still be monitored during training. When the loss stops decreasing you know you should stop training as the model is probably overfitting.
-\fi
 
 \subsubsection*{Questions}
 Below is a list of questions asked of all models. From this list and the answers from each model we try to make comparisons between the models about their strengths.
