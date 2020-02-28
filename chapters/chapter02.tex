@@ -149,14 +149,7 @@ Meanwhile at the output of the last layer of the decoder the output vectors are 
 
 The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not suitable for many projects.
 
-\subsection*{Pre-Training}
-Pre-Training is when the authors of a model train an instance and then make the model available to the public on-line. This is helpful for the average programmer interested in Neural Networks. Training an instance of the transformer model can use up computation resources for days, and require hardware that is costly. Usually the cost of producing a trained model is prohibitively expensive.
 
-After acquiring a trained model, the programmer goes on to adjust the model to their task. Adjusting a pre-trained model to a given task is called `Transfer Learning'. Many tasks lend themselves to Transfer Learning. Conceptually a model can be fine-tuned to any problem and many problems can be addressed with good results after only modest fine-tuning.
-
-There is a pre-trained Transformer model called \ac{BERT}. BERT stands for `Bidirectional Encoder Representations from Transformers'. The BERT files available on-line are mainly for classification tasks. They allow for input that uses a vocabulary size that is very large, but the output is meant to be smaller.
-
-The `Bidirectional Encoder Representations from Transformer' models use a bidirectional training method. During training the BERT model might be presented with a sentence with a word missing. The training task is to fill in that blank. The model can look at the sentence from any direction in order to find that word. This is a very simplistic explanation for what is termed a Masked Language Model.
 
 \subsection*{Visualization - Transformer}
 
@@ -184,7 +177,17 @@ This diagram is from the Transformer with the larger hyper-parameter set that we
 
 `Generative Pre-training Transformer 2' (\ac{GPT2}) is a large model. It is based on the Transformer from Vaswani et al (2017)\cite{Vaswani2017AttentionIA} but there are some major changes. The model uses the decoder portion of the Transformer without the encoder. There are some other changes to the output layers. The biggest difference is that it is pre-trained and downloadable.
 
-It still uses Scaled Dot-Product Attention. A model diagram is taken from Radford et al (2018)\cite{radford2018improving}. A mask is used in the Self Attention segment of the model during training.
+\subsection*{Pre-Training}
+Pre-Training is when the authors of a model train an instance and then make the model available to the public on-line. This is helpful for the average programmer interested in Neural Networks. Training an instance of the transformer model can use up computation resources for days, and require hardware that is costly. Usually the cost of producing a trained model is prohibitively expensive.
+
+After acquiring a trained model, the programmer goes on to adjust the model to their task. Adjusting a pre-trained model to a given task is called `Transfer Learning'. Many tasks lend themselves to Transfer Learning. Conceptually a model can be fine-tuned to any problem and many problems can be addressed with good results after only modest fine-tuning.
+
+There is a pre-trained Transformer model called \ac{BERT}. BERT stands for `Bidirectional Encoder Representations from Transformers'. The BERT files available on-line are mainly for classification tasks. They allow for input that uses a vocabulary size that is very large, but the output is meant to be smaller.
+
+The `Bidirectional Encoder Representations from Transformer' models use a bidirectional training method. During training the BERT model might be presented with a sentence with a word missing. The training task is to fill in that blank. The model can look at the sentence from any direction in order to find that word. This is a very simplistic explanation for what is termed a Masked Language Model.
+
+\subsection*{General}
+`Generative Pre-training Transformer 2' still uses Scaled Dot-Product Attention. A model diagram is taken from Radford et al (2018)\cite{radford2018improving}. A mask is used in the Self Attention segment of the model during training.
 
 \begin{figure}[H]
 	\begin{center}
