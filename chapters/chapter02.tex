@@ -5,7 +5,9 @@ The Transformer is a mechanism that is based entirely on attention. Strictly spe
 
 Recurrent components have some negative qualities. Recurrent components are hard to run with batch input data. Also they do not work with very long data strings. 
 
-If a batch of data is to be cycled through a recurrent component, we would like all that data to go through the component at the first cardinal position first. Then we would like it all cycled through the second or third position. In actuality the first time step the first part of the data needs to go through the first Recurrent Neural Network module and then the next component all the way to the last position in the model. Then the data can be moved along to the second time step where the Recurrent Neural Network module sees the second part of the data which is processed through all components of the GRU. At some point the third part of the data is seen, and all data after that is processed the same way.
+If a batch of data is to be cycled through a recurrent component, we would like all that data to go through the component at the first cardinal position first. Then we would like it all cycled through the second or third position. 
+
+In actuality the first time step the first part of the data needs to go through the first Recurrent Neural Network module and then the next component all the way to the last position in the model. Then the data can be moved along to the second time step where the Recurrent Neural Network module sees the second part of the data which is processed through all components of the GRU. At some point the third part of the data is seen, and all data after that is processed the same way.
 
 This sort of bottleneck is found in Neural Machine Translation that is based on recurrent elements.
 
@@ -56,7 +58,7 @@ In the diagram below a simple conversion of this type is illustrated. In the dia
 \end{figure}
 
 
-One thing we want to do is to preserve the dimension of our vector. We start with a 512 sized floating point vector and after some processing we want to return to the same size. Before that is done the vector is processed at the smaller size of 64. 
+One thing we want to do is to preserve the dimension of our starting vector. We start with a 512 sized floating point vector and after some processing we want to return to the same size. Before that is done the vector is processed at the smaller size of 64. 
 
 In this self-attention scheme three vectors are actually required. All three vectors are sized 64, and all three are converted by separate matrix multiplication operations. The weights to convert each of the three vectors are different. For this reason the new smaller vectors are all different.
 
@@ -75,7 +77,7 @@ Attention(Q,K,V)=softmax(\dfrac{QK^T}{\sqrt{d_k}})V
 } }
 $$
 
-Here the value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output and $d_k$ is the dimension 512. Without this the softmax function has to deal with much larger numbers. Smaller numbers for the softmax are preferred. 
+Here the value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output and $d_k$ is the dimension 512. Without this the softmax function has to deal with much larger numbers. Smaller numbers for the softmax are preferred. $K^T$ is notation for the $K$ vector transposed.
 
 The function can actually perform this on large matrices with high dimensionality, in parallel. This parallel matrix operation increases the speed of training.
 
@@ -111,7 +113,7 @@ This multi-headed approach allows different heads to learn different types of re
 \end{figure}
 
 
-Later the output is passed through a feed forward network. After that it is combined with the original input again through addition. Then the vectors are normalized. This makes sure that the values are all within reasonable ranges. This recombination of the attention output with the original output is done throughout each Transformer layer.
+Later the output is passed through a feed forward network. It is also re-combined with the original input again through addition. Then the vectors are normalized. This makes sure that the values are all within reasonable ranges. This recombination of the attention output with the original output is done throughout each Transformer layer.
 
 This describes the encoder section. There are two other attention segments. Together these two sections combine to form the decoder section. This is repeated for each layer.
 
@@ -134,7 +136,7 @@ There is also a second attention mechanism in the decoder. It works solely on da
 		
 		\includegraphics[scale=2.0]{diagram-mat04}
 	\end{center}
-	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder - Vaswani et al(2017)\cite{Vaswani2017AttentionIA}}
+	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder. - $Nx$ shows number of layers. - Vaswani et al(2017)\cite{Vaswani2017AttentionIA}}
 	
 
 \end{figure}
