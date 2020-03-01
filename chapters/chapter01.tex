@@ -133,7 +133,7 @@ We will use the metaphor of a chain when we describe input and output segments t
 
 \subsection*{Encoder}
 
-The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous input Gated Recurrent Unit. The output vector is a hidden value.
+The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the previous hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous Gated Recurrent Unit. The output vector is a hidden value for the Recurrent Unit to the right.
 
 The very first Gated Recurrent Unit in the input chain ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the chain. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. Then the last Gated Recurrent Unit in the chain passes it's hidden state to the output chain, the decoder.
 
@@ -161,8 +161,7 @@ In this figure we generalize a sequence to sequence model. The idea is that A an
 
 All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. We will see later that aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
 
-Making this vector larger by increasing the size of the hidden unit size allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if
-one of those is used. 
+Making this vector larger by increasing the size of the hidden dimension allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if one of those is used. 
 
 Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model.
 
