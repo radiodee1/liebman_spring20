@@ -11,27 +11,27 @@
 \contentsline {section}{\numberline {2.2}The Generative Pre-training Transformer 2 Model}{24}{section.2.2}% 
 \contentsline {chapter}{\numberline {3}Experiments}{29}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Approach to the Study}{30}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Model Overview}{31}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Model Overview}{30}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}Setup}{31}{section.3.3}% 
 \contentsline {section}{\numberline {3.4}Graphical Processing Unit vs. Central Processing Unit}{32}{section.3.4}% 
 \contentsline {section}{\numberline {3.5}Raspberry Pi}{33}{section.3.5}% 
 \contentsline {section}{\numberline {3.6}Tensorflow vs. Pytorch}{34}{section.3.6}% 
 \contentsline {section}{\numberline {3.7}Speech and Speech To Text}{34}{section.3.7}% 
 \contentsline {section}{\numberline {3.8}Corpus Considerations}{35}{section.3.8}% 
-\contentsline {section}{\numberline {3.9}ARMv7 Build/Compile}{36}{section.3.9}% 
+\contentsline {section}{\numberline {3.9}ARMv7 Build/Compile}{35}{section.3.9}% 
 \contentsline {section}{\numberline {3.10}Experiments - Installations}{38}{section.3.10}% 
-\contentsline {subsection}{\numberline {3.10.1}Chatbot - Gated Recurrent Unit Model}{40}{subsection.3.10.1}% 
+\contentsline {subsection}{\numberline {3.10.1}Chatbot - Gated Recurrent Unit Model}{39}{subsection.3.10.1}% 
 \contentsline {subsection}{\numberline {3.10.2}Smart Speaker - Gated Recurrent Unit Model}{41}{subsection.3.10.2}% 
 \contentsline {subsection}{\numberline {3.10.3}Chatbot - Transformer Model with Persona Corpus}{41}{subsection.3.10.3}% 
-\contentsline {subsection}{\numberline {3.10.4}Smart Speaker - Transformer Model with Persona Corpus}{44}{subsection.3.10.4}% 
+\contentsline {subsection}{\numberline {3.10.4}Smart Speaker - Transformer Model with Persona Corpus}{43}{subsection.3.10.4}% 
 \contentsline {subsection}{\numberline {3.10.5}Chatbot - Transformer Model with Movie Corpus}{44}{subsection.3.10.5}% 
 \contentsline {subsection}{\numberline {3.10.6}Smart Speaker - Transformer Model with Movie Corpus}{46}{subsection.3.10.6}% 
 \contentsline {subsection}{\numberline {3.10.7}Chatbot - Generative Pre-training Transformer 2 Model}{46}{subsection.3.10.7}% 
 \contentsline {subsubsection}{Context Experiment}{47}{section*.33}% 
 \contentsline {subsubsection}{History Experiment}{47}{section*.34}% 
-\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{48}{section*.35}% 
+\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{47}{section*.35}% 
 \contentsline {subsubsection}{Overall}{48}{section*.36}% 
-\contentsline {subsection}{\numberline {3.10.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{50}{subsection.3.10.8}% 
+\contentsline {subsection}{\numberline {3.10.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{49}{subsection.3.10.8}% 
 \contentsline {section}{\numberline {3.11}Observation}{50}{section.3.11}% 
 \contentsline {section}{\numberline {3.12}Tests}{51}{section.3.12}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{53}{appendix.A}% 
