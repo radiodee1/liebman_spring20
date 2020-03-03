@@ -1,20 +1,20 @@
 
 \section{Background}
 
-In their paper Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} discuss making a chatbot using a neural network configured for sequence to sequence neural machine translation. We code our own sequence to sequence chatbot, though our results are less than spectacular. As our hand coded model does not run sufficiently well, we use code authored by Inkawhich et al (2018)\cite{2018Inkawhich}.
+In their paper Vinyals et al\cite{DBLP:journals/corr/VinyalsL15} discuss making a chatbot using a neural network configured for sequence to sequence neural machine translation. An attempt to code our own sequence to sequence model was not very fruitful so instead we use code authored by Inkawhich et al\cite{2018Inkawhich}.
 
-In their paper Vaswani et al (2017)\cite{Vaswani2017AttentionIA} discuss using the Transformer architecture for solving machine learning tasks. We train a transformer model as a chatbot.
+In their paper Vaswani et al\cite{Vaswani2017AttentionIA} discuss using the Transformer architecture for solving machine learning tasks. We train a transformer model as a chatbot. We adopt this model to create a chatbot.
 
-Also Radford et al (2019)\cite{radford2019language} discuss the `Generative Pre-training Transformer 2' neural network for \ac{NLP} tasks. The Generative Pre-training Transformer 2 model is based largely on the Transformer architecture. 
+Also Radford et al\cite{radford2019language} discuss the `Generative Pre-training Transformer 2' (GPT2) neural network for Natural Language Processing (\ac{NLP}) tasks. The GPT2 model is based largely on the Transformer architecture. 
 
-We implement a chatbot with a Generative Pre-training Transformer 2 model. We use a program library from Wolf et al (2019)\cite{Wolf2019HuggingFacesTS} to run our model.
+We implement a chatbot with a GPT2 model. We use a program library from Wolf et al\cite{Wolf2019HuggingFacesTS} to run our model.
 
-It is worth noting that with the appearance of the Transformer architecture and WordPiece vocabulary scheme, some technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
+It is worth noting that with the appearance of the Transformer architecture and WordPiece vocabulary scheme, some traditional technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
 
 \section{Recurrent Neural Network Components}
 
 \subsection*{Overview}
-The goal behind Recurrent Neural Network components is to detect patterns. Here we explore a simple \ac{RNN}.
+The goal behind Recurrent Neural Network (RNN) components is to detect patterns. Since understanding RNNs is important to GPT2 and Transformer models, we discuss RNNs here. Here we explore a simple \ac{RNN} first. 
 
 The simplest Recurrent Neural Network has two inputs and two outputs. They can be arranged in chains. In our example the input will be a sequence of data and the Recurrent Neural Network chain will be a line of components of the same length as the data.
 
@@ -31,16 +31,16 @@ One input from each component is the hidden state output from the Recurrent Neur
 
 \end{figure}
 
-In our diagram the two inputs are labeled on the left side, and the single output does double duty as both the hidden state output and the value that the Recurrent Neural Network outputs or surmises.
+In our diagram the two inputs are labeled 1 and 2, and the single output does double duty as both the hidden state output and the value that the Recurrent Neural Network outputs or surmises.
 
-There are several designs for a Recurrent Neural Network component. The inner workings of these components are what makes them different. In the example in the diagram the inner workings are very simple. Two paths, labeled as inputs, take data into the Recurrent Neural Network. Their data is combined in the green circle. This combination is done with concatination and simple feed forward neural network components. The output from the concatination is passed through the red circle. This is a `tanh' activation operation that limits the output to values from -1 through 1. This `tanh' activation keeps the output within reasonable values. Finally the output is delivered outside the component to the program employing the Recurrent Neural Network. In this diagram there is only one output. The single output would serve as both the hidden state output for that position in the chain, and also the data output component for that position in the chain.
+There are several designs for a Recurrent Neural Network component. The inner workings of these components are what makes them different. In the example in the diagram the inner workings are very simple. Two paths, labeled as inputs, take data into the Recurrent Neural Network. Their data is combined in the green circle. This combination is done with concatenation and simple feed forward neural network components. The output from the concatenation is passed through the red circle. This is a `tanh' activation operation that limits the output to values from -1 through 1. This `tanh' activation keeps the output within reasonable values. Finally the output is delivered outside the component to the program employing the Recurrent Neural Network. In this diagram there is only one output. The single output would serve as both the hidden state output for that position in the chain, and also the data output component for that position in the chain.
 
 
 
 \subsection*{Gated Recurrent Unit}
-An implementation of a Recurrent Neural Network is the `Gated Recurrent Unit'. There are other varieties of RNN, most notably the Long Short Term Memory cell. We do not explore \ac{LSTM} cells here.
+An implementation of a Recurrent Neural Network is the `Gated Recurrent Unit' (GRU). There are other varieties of RNN, most notably the Long Short Term Memory (LSTM) cell. We do not explore \ac{LSTM} cells here.
 
-A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz et al 2015)\cite{2015Britz}, are as follows.
+A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz et al)\cite{2015Britz}, are as follows.
 
 \begin{minipage}{5in}
 
@@ -55,7 +55,9 @@ $$ s_t = (1 - z) \circ h + z \circ s_{t-1} $$
 
 The Gated Recurrent Unit has two inputs and two outputs. It also has two internal gates. One internal gate is the `reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the Gated Recurrent Unit. It is denoted as `$r$' above. Another internal gate is the `update' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as `$z$'.
 
-Here `$ s_t $' is the symbol for the output. The two inputs are `$ x_t $' and `$ s_{t-1} $' . `$ x_t $' is the hidden state input. `$ s_{t-1} $' is the regular input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, while tanh activation is used to compute the hidden output. The hidden output is found in the third line, denoted as `$h$'.
+Here `$ s_t $' is the symbol for the output. The two inputs are `$ x_t $' and `$ s_{t-1} $' . `$ x_t $' is the hidden state input. `$ s_{t-1} $' is the regular input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, using the symbol `$ \sigma(...) $' , while tanh activation is used to compute the hidden output. The hidden output is found in the third line, denoted as `$h$'.
+
+The dimension of the $U^z$, $U^r$ and $U^h$ matrices is the hidden unit size by the hidden unit size. $ x_t $ is a vector the size of the hidden unit. The $U$ values, along with $ W^z $, $ W^r $ and $ W^h $  are all simple matrices that allow the GRU to operate.
 
 In the last line, the regular output is determined using the `dot' product which is denoted with a circle, along with an addition operation. In the two gate formulas (the first and second) the output is determined as the sum of two matrix multiplication operations passed through sigmoid activation. This produces values in the range of 0 to 1.
 
@@ -63,9 +65,7 @@ Under most programming circumstances the Gated Recurrent Unit is not implemented
 
 \section{Sequence to Sequence}
 
-Translating text from one language to another has become a common task for computers. The Sequence to Sequence architecture is often used today for this purpose.
-
-Here, with a few diversions, we explain how this works.
+Translating text from one language to another has become a common task for computers. The Sequence to Sequence architecture is often used today for this purpose. Here we explain how this works.
 
 A naive approach to translation involves using a dictionary. You would encode each key as a word from one language and the value for that key would be the translated word in the target language. Of course this doesn't work, because different languages not only have different words for the same thing, but they also have different sentence structures for what might be similar concepts.
 
@@ -89,7 +89,7 @@ Every prediction relies on all the previous predictions up until that point. Thi
 
 The probability for the entire output is the same as the product of the probability of each word as it is generated.
 
-This function can be found in Sutskever et al (2014)\cite{DBLP:journals/corr/SutskeverVL14}.
+This function can be found in Sutskever et al\cite{DBLP:journals/corr/SutskeverVL14}.
 
 
 \subsection*{Word Embeddings}
@@ -115,7 +115,7 @@ The vectors can be initialized randomly or they can be filled with predetermined
 
 There are at this writing two main types of pretrained word embeddings. One is called \textquoteleft Word2Vec\textquoteright{} and one is called \textquoteleft GloVe\textquoteright . 
 
-Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al, 2013)\cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al, 2014)\cite{pennington-etal-2014-glove} .
+Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al.)\cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al.)\cite{pennington-etal-2014-glove} .
 
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
@@ -197,9 +197,9 @@ There are several numerical metrics that we can record during training that tell
 
 Attention Mechanisms are used by sequence to sequence models to transfer more information from the encoder to the decoder. As stated above there is only one place where the encoder imparts information on the decoder, the `thought vector'. Attention helps the encoder tell the decoder which word is more important. This stressing of a vector by the model is the attention mechanism attending to one output.
 
-Here we consider a simple attention mechanism that is used in the Sequence to Sequence model by Inkawhich et al (2018)\cite{2018Inkawhich}. The concept for this attention comes from Luong et al (2015)\cite{DBLP:journals/corr/LuongPM15}.
+Here we consider a simple attention mechanism that is used in the Sequence to Sequence model by Inkawhich et al.\cite{2018Inkawhich}. The concept for this attention comes from Luong et al\cite{DBLP:journals/corr/LuongPM15}.
 
-Luong et al (2015)\cite{DBLP:journals/corr/LuongPM15} are interested in three kinds of calculation for their attention mechanism. The three methods use slowly increasing levels of complication. First they propose a method that just uses the dot product. Then they propose a method that just uses a field of weights. Finally they use a method that uses concatination, along with a field of weights and a pass through a `tanh' activation layer.
+Luong et al\cite{DBLP:journals/corr/LuongPM15} are interested in three kinds of calculation for their attention mechanism. The three methods use slowly increasing levels of complication. First they propose a method that just uses the dot product. Then they propose a method that just uses a field of weights. Finally they use a method that uses concatenation, along with a field of weights and a pass through a `tanh' activation layer.
 
 $$
 \boldmath
@@ -212,7 +212,7 @@ score(h_t^ \text{,} \bar{h}_s) =
 \unboldmath
 $$
 
-Here $h_t$ is the symbol for the output of the current decoder and $\bar{h}_s $ is the symbol for another output taken from the input encoder. This one is the entire set of encoder states. $h_t^\intercal$ stands for $h_t$ transposed. Inkawhich et al (2018)\cite{2018Inkawhich} uses the `dot' variety.
+Here $h_t$ is the symbol for the output of the current decoder and $\bar{h}_s $ is the symbol for another output taken from the input encoder. This one is the entire set of encoder states. $h_t^\intercal$ stands for $h_t$ transposed. Inkawhich et al\cite{2018Inkawhich} uses the `dot' variety.
 
 The formula is used after the decoder Gated Recurrent Unit calculates it's hidden state. It is below.
 
@@ -228,7 +228,7 @@ Basically the output of the current decoder is transposed. Then it is multiplied
 
 \section{Sequence to Sequence Chatbot}
 
-Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} make an interesting proposition. They say that it's possible to make what they call a Neural Conversational Model by constructing a Sequence to Sequence model, but instead of using two corpus from different languages a single language is used for both source and target.
+Vinyals et al\cite{DBLP:journals/corr/VinyalsL15} make an interesting proposition. They say that it's possible to make what they call a Neural Conversational Model by constructing a Sequence to Sequence model, but instead of using two corpus from different languages a single language is used for both source and target.
 
 Chatbots have for a long time been constructed using \ac{AIML}. AIML, (Artificial Intelligence Markup Language) requires hand coding individual rules for every input and response. A Neural Conversational Model would not use those sorts of rules.
 
@@ -238,7 +238,7 @@ It would be easy to duplicate the input source material in the target corpus. Th
 
 %The latter fills a space that is opened up by the former. 
 
-What would be a good candidate for this kind of verbal play? Vinyals et al (2015)\cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Even numbered sentence are the source material, and odd numbered sentences are the target. Using this method there are times when the source and target are not from the same conversation, like times in a movie dialog when the scene switches from one locale to another. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
+What would be a good candidate for this kind of verbal play? Vinyals et al\cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Even numbered sentence are the source material, and odd numbered sentences are the target. Using this method there are times when the source and target are not from the same conversation, like times in a movie dialog when the scene switches from one locale to another. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
 
 Training for this model is relatively straight forward. There is a problem though. We can follow the loss and make sure it is decreasing, but the accuracy tells us nothing and in this case does not increase as we would like it to. The loss goes down but the accuracy does not go up.
 
@@ -250,7 +250,7 @@ Training for this model is relatively straight forward. There is a problem thoug
 \end{center}
 	\caption[Loss and Accuracy]{Loss and Accuracy: Red is accuracy and blue is loss.}
 	
-	%\addcontentsline{lof}{section}{Loss and Accuracy}
+
 \end{figure}
 
 This is because the source and target do not have the same meaning. The model does learn the task at hand but during training we have to ignore the accuracy. Success is usually measured by the accuracy of the holdout test set. Here we must measure the success with a subjective examination of the trained model.

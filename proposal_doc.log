@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  1 MAR 2020 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  3 MAR 2020 13:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -946,54 +946,53 @@ Package pdftex.def Info: diagram-rnn.png  used on input line 26.
  [2
 
 ] [3 <./diagram-rnn.png>] [4] [5]
-<diagram-embedding.png, id=281, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=280, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
-Package pdftex.def Info: diagram-embedding.png  used on input line 105.
+Package pdftex.def Info: diagram-embedding.png  used on input line 107.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
- [6 <./diagram-embedding.png>] [7]
-<diagram-nmt.png, id=299, 351.3125pt x 260.975pt>
+ [6 <./diagram-embedding.png>] [7] [8]
+<diagram-nmt.png, id=304, 351.3125pt x 260.975pt>
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
-Package pdftex.def Info: diagram-nmt.png  used on input line 152.
+Package pdftex.def Info: diagram-nmt.png  used on input line 154.
 (pdftex.def)             Requested size: 175.6558pt x 130.48718pt.
- [8] [9 <./diagram-nmt.png>] [10]
+ [9 <./diagram-nmt.png>] [10] [11]
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 205.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 207.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 205
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 207
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 212.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 214.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 212
-.
-
-[11]
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 220.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 220
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 214
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 224.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 222.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 222
+.
+
+
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 226.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 224
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 226
 .
 
 [12]
 <Figure_1.png, id=338, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 248.
+Package pdftex.def Info: Figure_1.png  used on input line 250.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 ) [13 <./Figure_1.png>] [14]
 Chapter 2.
@@ -1149,9 +1148,9 @@ fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (61 pages, 753135 bytes).
+Output written on proposal_doc.pdf (61 pages, 753909 bytes).
 PDF statistics:
- 1147 PDF objects out of 1200 (max. 8388607)
+ 1148 PDF objects out of 1200 (max. 8388607)
  619 compressed objects within 7 object streams
  163 named destinations out of 1000 (max. 500000)
  317 words of extra memory for PDF output out of 10000 (max. 10000000)
