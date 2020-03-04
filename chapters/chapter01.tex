@@ -16,9 +16,9 @@ It is worth noting that with the appearance of the Transformer architecture and 
 \subsection*{Overview}
 The goal behind Recurrent Neural Network (RNN) components is to detect patterns. Since understanding RNNs is important to GPT2 and Transformer models, we discuss RNNs here. Here we explore a simple \ac{RNN} first. 
 
-The simplest Recurrent Neural Network has two inputs and two outputs. They can be arranged in chains. In our example the input will be a sequence of data and the Recurrent Neural Network chain will be a line of components of the same length as the data.
+The simplest Recurrent Neural Network has two inputs and two outputs. They can be arranged in patterns. In our example the input will be a sequence of data and the Recurrent Neural Network will be a line of components of the same length as the data.
 
-One input from each component is the hidden state output from the Recurrent Neural Network to the left. Another input is the current input from the sequence that the chain is monitoring. One output is the generated hidden state, meant for the component to the right. The last output is the value that the Recurrent Neural Network outputs or surmises. 
+One input from each component is the hidden state output from the Recurrent Neural Network to the left. Another input is the current input from the sequence that the component is encoding. One output is the generated hidden state, meant for the component to the right. The last output is the value that the Recurrent Neural Network outputs or surmises. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -33,7 +33,7 @@ One input from each component is the hidden state output from the Recurrent Neur
 
 In our diagram the two inputs are labeled 1 and 2, and the single output does double duty as both the hidden state output and the value that the Recurrent Neural Network outputs or surmises.
 
-There are several designs for a Recurrent Neural Network component. The inner workings of these components are what makes them different. In the example in the diagram the inner workings are very simple. Two paths, labeled as inputs, take data into the Recurrent Neural Network. Their data is combined in the green circle. This combination is done with concatenation and simple feed forward neural network components. The output from the concatenation is passed through the red circle. This is a `tanh' activation operation that limits the output to values from -1 through 1. This `tanh' activation keeps the output within reasonable values. Finally the output is delivered outside the component to the program employing the Recurrent Neural Network. In this diagram there is only one output. The single output would serve as both the hidden state output for that position in the chain, and also the data output component for that position in the chain.
+There are several designs for a Recurrent Neural Network component. The inner workings of these components are what makes them different. In the example in the diagram the inner workings are very simple. Two paths, labeled as inputs, take data into the Recurrent Neural Network. Their data is combined in the green circle. This combination is done with concatenation and simple feed forward neural network components. The output from the concatenation is passed through the red circle. This is a `tanh' activation operation that limits the output to values from -1 through 1. This `tanh' activation keeps the output within reasonable values. Finally the output is delivered outside the component to the program employing the Recurrent Neural Network. In this diagram there is only one output. The single output would serve as both the hidden state output for that position in the encoder or decoder, and also the data output component for that position.
 
 
 
@@ -87,7 +87,9 @@ On the left side of the formula we have $x_1,...x_T$ which represents the input 
 
 Every prediction relies on all the previous predictions up until that point. This is what happens in sequence to sequence and transformer architectures when the model is producing output. 
 
-The probability for the entire output is the same as the product of the probability of each word as it is generated.
+The probability for the entire output is the same as the product of the probability of each word as it is generated. 
+
+%We include this formula in place of a flow chart.
 
 This function can be found in Sutskever et al\cite{DBLP:journals/corr/SutskeverVL14}.
 
@@ -129,18 +131,20 @@ So far the model takes a word, translates it to an integer, and finds the vector
 
 The Gated Recurrent Unit takes as input two vectors. It processes the `input' vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The Gated Recurrent Unit also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
 
-We will use the metaphor of a chain when we describe input and output segments that are composed of Gated Recurrent Units. The input chain is sometimes referred to as the Encoder, and the output chain is sometimes referred to as the Decoder.
+We will describe components in two groups. The input components, from the source language, are the encoder and the output components, from the target language, are the decoder.
+
+%We will use the metaphor of a chain when we describe input and output segments that are composed of Gated Recurrent Units. The input chain is sometimes referred to as the Encoder, and the output chain is sometimes referred to as the Decoder.
 
 \subsection*{Encoder}
 
 The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the previous hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous Gated Recurrent Unit. The output vector is a hidden value for the Recurrent Unit to the right.
 
-The very first Gated Recurrent Unit in the input chain ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the chain. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. Then the last Gated Recurrent Unit in the chain passes it's hidden state to the output chain, the decoder.
+The very first Gated Recurrent Unit in the input chain ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the chain. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. Then the last Gated Recurrent Unit in the encoder passes it's hidden state to the output chain, the decoder.
 
-A complicating detail is that although many Gated Recurrent Units are called for in the input chain they all use the same set of weights and biases. For this reason only a single input Gated Recurrent Unit is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the Gated Recurrent Unit. 
+A complicating detail is that although many Gated Recurrent Units are called for in the encoder they all use the same set of weights and biases. For this reason only a single input Gated Recurrent Unit is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the Gated Recurrent Unit. 
 
 \subsection*{Decoder}
-The output chain is in charge of generating tokens that represent, in this case, the translation of the input to the output language. The output uses Gated Recurrent Unit segments also. The first hidden input for the first output cell is taken from the last hidden output of the last recursive unit of the input chain. It is important because it is the spot where a great amount of data is passed from the input chain to the output chain. The connection at this point is said to carry the `thought vector'. Most of the information responsible for translating one language to another is passed at this point.
+The output is in charge of generating tokens that represent, in this case, the translation of the input to the output language. The output uses Gated Recurrent Unit segments also. The first hidden input for the first output cell is taken from the last hidden output of the last recursive unit of the input. It is important because it is the spot where a great amount of data is passed from the encoder to the decoder. The connection at this point is said to carry the `thought vector'. Most of the information responsible for translating one language to another is passed at this point.
 
 The hidden values from the input section are passed to the first output Gated Recurrent Unit. It outputs the values that are later converted to the first word of the output. The first output Gated Recurrent Unit also has a hidden state. It passes the first word and the hidden state on to the second Gated Recurrent Unit.
 
@@ -165,7 +169,7 @@ Making this vector larger by increasing the size of the hidden dimension allows 
 
 Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model.
 
-Again in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason a single GRU is employed for the Decoder.
+Again in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason a single GRU is employed for the entire Decoder.
 
 \subsection*{Output Tokens}
 Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary, through matrix multiplication. Then they are processed in what is called an `arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
@@ -180,8 +184,6 @@ This is how some computer models do language translation. Using `arg-max' is an 
 \section{Loss and Accuracy During Training}
 
 At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. 
-
-%A typical loss function is 'Mean Squared Error' or MSE.
 
 Another metric is Accuracy. `Accuracy' is a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
 
@@ -224,7 +226,7 @@ score = h_t^\intercal \bar{h}_s
 \unboldmath
 $$ 
 
-Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. The result, the score, is multiplied by the Gated Recurrent Unit decoder output, and then passed through a `tanh' activation layer.
+Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. Not pictured here, the score is multiplied by the Gated Recurrent Unit decoder output, and then passed through a `tanh' activation layer. It becomes the decoder output.
 
 \section{Sequence to Sequence Chatbot}
 
@@ -235,8 +237,6 @@ Chatbots have for a long time been constructed using \ac{AIML}. AIML, (Artificia
 To create a model like this more is required than just a single input and output language. There must be a relationship between the source and the target. We want there to be a question-and-answer-like relation. Finding a corpus like this can be difficult.
 
 It would be easy to duplicate the input source material in the target corpus. This would produce auto-encoding. The model would learn to repeat everything that was given to it in it's output. Though the model learns a task, it is not the dynamic task we want. Conversations, on the other hand, supply the relationship we are looking for. Starting with almost any question sentence in a conversation, the sentence following it answers the question posed. 
-
-%The latter fills a space that is opened up by the former. 
 
 What would be a good candidate for this kind of verbal play? Vinyals et al\cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Even numbered sentence are the source material, and odd numbered sentences are the target. Using this method there are times when the source and target are not from the same conversation, like times in a movie dialog when the scene switches from one locale to another. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
 
