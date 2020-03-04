@@ -5,9 +5,9 @@ The Transformer is a mechanism that is based entirely on attention. Strictly spe
 
 Recurrent components have some negative qualities. Recurrent components are hard to run with batch input data. Also they do not work with very long data strings. 
 
-If a batch of data is to be cycled through a recurrent component, we would like all that data to go through the component at the first cardinal position first. Then we would like it all cycled through the second or third position. We want this to happen for whole batches at a time.
+If a batch of data is to be cycled through a recurrent component, we would like all that batch to go through all the components at once.  We want this to happen for whole batches at a time.
 
-The problem is that in Neural Machine Translation there are times when data has to be processed by the recurrent units one source-target pair at a time. This bottleneck has to do with how the model is designed.
+The problem is that in Neural Machine Translation there are times when data has to be processed by the recurrent units one source-target pair at a time. This bottleneck has to do with how the RNN is designed.
 
 
 This sort of bottleneck is found in Neural Machine Translation that is based on recurrent elements.
@@ -26,7 +26,7 @@ We will discuss one layer of a multi-layer Transformer below. Transformers are u
 
 WordPiece is used by some transformer systems to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word or token to a vector of a given size.
 
-WordPiece, though, handles Out Of Vocabulary (OOV) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again. Byte Pair Encoding is not so interested in pre-trained word embeddings like Word2Vec and Glove.
+WordPiece, though, handles Out Of Vocabulary (\ac{OOV}) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again. Byte Pair Encoding is not so interested in pre-trained word embeddings like Word2Vec and Glove.
 
 For the Generative Pre-training Transformer 2 a version of Byte Pair Encoding is used instead of a vocabulary system like Word2Vec or Glove.
 
@@ -249,7 +249,7 @@ Because the input is meant to be a number of sentences, and because we are using
 
 With every input string we include a set of three or four sentences. They include the time, the bot's name, and the bot location and occupation. All of these are invented. What happens is the chatbot summarizes the input and only if the information is relevant then the same information is used by the model as output. Making this possible is the fact that a transformer can accept much longer input strings than a Gated Recurrent Unit, and generate much longer output strings.
 
-Surprisingly the chatbot answers most of our questions in the first person. It is felt that WebText, the Reddit corpus, has many examples of sentences in the first person.
+Surprisingly the chatbot answers most of our questions in the first person. We feel that WebText, the Reddit corpus, has many examples of sentences in the first person.
 
 \subsection*{Visualization - GPT2}
 
