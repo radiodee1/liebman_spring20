@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  5 MAR 2020 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  5 MAR 2020 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1035,18 +1035,18 @@ Package pdftex.def Info: diagram-mat04.png  used on input line 150.
 (pdftex.def)             Requested size: 323.7688pt x 441.3277pt.
 
 [22 <./diagram-mat04.png>]
-<Figure_3.png, id=402, 98.769pt x 63.3567pt>
+<Figure_3.png, id=401, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 175.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
- [23 <./Figure_3.png>]
-<diagram-mat05.png, id=411, 46.0119pt x 89.133pt>
+ [23 <./Figure_3.png>] [24]
+<diagram-mat05.png, id=416, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 209.
 (pdftex.def)             Requested size: 184.04712pt x 356.53107pt.
- [24] [25 <./diagram-mat05.png (PNG copy)>] [26] [27]
+ [25 <./diagram-mat05.png (PNG copy)>] [26] [27]
 <Figure_4.png, id=440, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
@@ -1153,7 +1153,7 @@ fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (61 pages, 799971 bytes).
+Output written on proposal_doc.pdf (61 pages, 800664 bytes).
 PDF statistics:
  1152 PDF objects out of 1200 (max. 8388607)
  621 compressed objects within 7 object streams
