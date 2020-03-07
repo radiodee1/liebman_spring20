@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  5 MAR 2020 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  6 MAR 2020 07:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1153,7 +1153,7 @@ fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (61 pages, 800664 bytes).
+Output written on proposal_doc.pdf (61 pages, 800681 bytes).
 PDF statistics:
  1152 PDF objects out of 1200 (max. 8388607)
  621 compressed objects within 7 object streams
