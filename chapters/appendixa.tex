@@ -73,3 +73,16 @@ As the chatbot answers questions the content of the conversation is saved for th
 
 Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 1024 tokens and it is 1280 for the larger model. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
 
+\subsubsection{Usage Example}
+
+Consider that you are interested in the musical group `The Beatles'. If you wanted to find out about the band you might say to the chatbot `Tell me about the beatles.'
+
+The chatbot would take a little time to respond. Ultimately it would answer with something like `The Beatles were an English rock band formed in Liverpool in 1960.'
+
+Then you might ask it a question like `How many members were in the band?'
+
+To this question the chatbot answered this way for us, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' We note that this is not actually the correct answer. This may be because after clipping the information asked for does not exist in the context section. You can ask other questions. Some of them may be answered correctly and some not. 
+
+At some point you will want to end the Q/A session. You would say `OK' or `OK thanks'. After that the web page for the `Beatles' would no longer be available to the chatbot. It could still answer questions. You could ask `What are the Beatles'. You might get an answer like above, `The Beatles were an English rock band formed in Liverpool in 1960.'
+
+This is an example of using the model. Other topics can be asked about. You do not need to re-start the model to ask about a second or third topic. Each question takes several seconds before an answer is produced.
