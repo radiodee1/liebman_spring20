@@ -18,7 +18,7 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 
 %\begin{center}
 
-\begin{table}[h!]
+\begin{table}[h]
 	
 	\begin{center}
 		
@@ -44,7 +44,7 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 	\label{fig:modeloverview}
 	\addcontentsline{lot}{section}{Model Overview}
 \end{table}
-%\end{center}
+
 
 Here we itemize a short description for each row in the table.
 
@@ -199,7 +199,9 @@ It was found that there existed a version of the Docker Container Daemon that ra
 \section{Experiments - Installations}
 In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
-We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections.
+We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections. 
+
+%If there is any other code in this paper it is considered after the eighth section of this chapter. 
 
 We have four models we consider and at the same time only three Raspberry Pi boards. We actually try all four models, but keep only three Raspberry Pi installations. We found that the chatbot with the sequence to sequence Neural Machine Translation from the tutorial worked well. There is a tensorflow transformer-based model that worked marginally well based on the Persona corpus, but we used the Movie corpus more effectively with the transformer architecture. We use that model on one of the boards. Finally, we found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. It was also installed on one of the boards. 
 
@@ -457,10 +459,23 @@ The second choice was more interesting. The text that the model was shown always
 This worked under most circumstances. Occasionally the model would report the wrong time when asked. This sort of activity is mysterious.
 
 \subsubsection{History Experiment}
-We tried concatenating all input and output and including it with each question. The hope was that the model would treat the `Q' and `A' as historical input and then it could refer to that input as it answered new questions. This didn't work, and sometimes the model was confused by the extra input.
+We tried concatenating all input and output and including it with each question. The hope was that the model would treat the `Q' and `A' as historical input and then it could refer to that input as it answered new questions. This didn't always work as expected. Sometimes the model was confused by the extra input. Sometimes it seemed to have no effect at all.
+
+Without some mechanism of this sort the model has no notion of temporal context. The answers to questions could never possibly depend on the answers to past questions. Though this historical input did not always work, we retain the code in the hopes that at some point it is useful.
+
+Consider the questions below.
+\begin{verbatim}
+> Do you like the color red?
+I like the color red.
+> What is your favorite color?
+Red.
+\end{verbatim}
+The model is asked about the color `red'. Doing so the model is encouraged to pick `red' as the answer to the next question about color. When `favorite color' is requested, `red' is the answer. Without any history the model will answer the `favorite color' question with another answer. It may answer `pink' or it may answer `the colors of the rainbow'. 
+
+From one sentence to the next the model is keeping track of the context of the conversation. History is considered.
 
 \subsubsection{Artificial Intelligence Markup Language Experiment}
-It was deemed helpful if the model could be given a question and instructed how to answer it. To this end AIML files were constructed and an AIML kernel was employed. The user's question was shown to the AIML kernel and then the model was shown the kernel's output (if there was one) along with the original question. The hope was that the output could be controlled by the AIML component. 
+It was deemed helpful if the model could be given a question and instructed exactly how to answer it. To this end AIML files were constructed and an AIML kernel was employed. The user's question was shown to the AIML kernel and then the model was shown the kernel's output (if there was one) along with the original question. The hope was that the output could be controlled by the AIML component. 
 
 At first it didn't work. The AIML confused the model, and the model would not reliably choose to answer with the AIML text, as it might with the time of day.
 

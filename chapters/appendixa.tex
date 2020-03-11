@@ -1,39 +1,75 @@
-\chapter{Terminology}
+\chapter{Further Installations}
+
+\section{Generative Pre-training Transformer 2 - Large Model}
+
+The large 774M model of GPT2 was ultimately released to the public. The model is too large for a Raspberry Pi, using 6.3 Gig of ram while it is running. We experiment with the model on the development laptop computer.
+
+As with the smaller model and the Raspberry Pi installation, we do not attempt transfer learning on the model. Instead we show the model specific information during inference which the model is free to reply with if it finds the information appropriate.
+
+We also want the model to be able to summarize articles from the internet and reply with that information when asked to do so. 
+
+\subsection{Context Experiment}
+
+As before we gave the model details in sentence form that it could use as reply to questions when appropriate. The larger model works better if all the sentences shown to it have the `Q:' and `A:' strings prepended to them. 
+
+In each example the information we wanted the model to choose from was presented in sentence pairs. Though these sentences look much like source/target pairs from our movie corpus, they are totally unrelated.
+
+An example might be the presentation to the model of the model's name. In the smaller GPT2 model we simply show the model the single sentence `My name is Jane'. In the larger GPT2 model's code we must show the model two sentences. One is `Q: What is your name?' and the other one, following it directly, is `A: My name is Jane'. We follow these conventions for the time of day, the model's location, and the model's occupation.
+
+These sorts of questions can be answered without any memory of what the last question was.
+
+\subsection{History Experiment}
+
+We tried concatenating all input and output and including it with each question. While this did little or nothing during the smaller GPT2 experiment, with the larger model the history sentences were helpful. Consider the questions below.
+\begin{verbatim}
+> Do you like the color red?
+I like the color red.
+> What is your favorite color?
+Red.
+\end{verbatim}
+This is the same text excerpt as from the small GPT2 model. The `favorite color' example continues to work on the larger GPT2 model. Again as in the small model, the chatbot is keeping track of the conversation. 
 
 
+\subsection{Artificial Intelligence Markup Language Experiment}
 
+We want to be able to tell the model exactly how to answer a given question if we have a particular need. For example, the model handles remembering the user's name very badly. We would like to dictate how the model handles that situation. We have employed Artificial Intelligence Markup Language for this. 
 
-\section{Transformer}
+AIML is actually poorly suited for handling this task. In AIML you must code every question and response as a separate rule. If you have a question `How are you?' and an answer `I am fine' the AIML kernel will only answer with the programmed response if the input is an exact match. If you enter `How are you doing?' or `How do you feel?' the kernel does not have an answer for that. The two or three questions are phrased differently but can be answered with the same text.
 
-In this section we discuss the `Transformer' model. In their paper, Vaswani et al (2018)\cite{tensor2tensor} describe use of the python project Tensorflow and the Transformer model which is part of it.
+The GPT2 chatbot is much different. Groups of questions have the same answer. Sometimes the answer could even be `I don't know', but still the answer makes sense in English. The chatbot could answer `How are you?', `How are you doing?' and `How do you feel' with one answer like `I don't know' or `I am fine'. These questions are phrased differently with the same answer.
 
-The Transformer uses no recurrent elements. It is in a sense a group of attention mechanisms. The Transformer in this case is a single structure that can be used to solve many machine learning problems. It is used for Neural Machine Translation, Sentiment Analysis, and others. It is a single model capable of solving many machine learning questions.
+For us to use AIML for our task we code questions and answers in pairs for all possible phrasing of a question.
 
-We use the translation models for the chatbot problem by feeding the model the English language on both input and output. 
+We have to count the number of AIML rules that we are coding and compare it to the number of English sentences that the GPT2 chatbot can answer. We have to make sure that the number of chatbot answers is much higher.
 
-The Transformer itself can be configured for sentence long output but it is not a pre-trained model. There are pre-trained versions of the transformer, one of which is called BERT. BERT is described in Devlin et al (2018)\cite{DBLP:journals/corr/abs-1810-04805} and the acronym stands for Bidirectional Encoder Representations from Transformers. Unfortunately BERT output is as a 
-classifier. Full sentence-length output is not supported.
+We prefer the answers provided by the generative chatbot over those provided by an AIML file. We want to maximize the amount of time that the overall model answers using the transformer that is internal to the chatbot, and minimize the use of AIML and the AIML kernel. We set a criteria for ourselves. If the generative chatbot is handling most of the questions and answers then we can proceed. If the AIML question/answering set is larger than the number of questions that the chatbot can answer, then the AIML should be avoided. 
 
-\section{Generative Pre-training Transformer 2}
+\subsubsection{User Name}
+The name of the user is our first example of AIML coding. This example is easy. There are few ways to say `My name is *'. In this case `*' is a wildcard. Another variant is `* is my name'. That's as many ways to say it as there are.
 
-Another pre-trained model that uses the Transformer is GPT2. GPT2 stands for `Generative Pre-training Transformer 2.'
+Each question is answerable with a phrase like `Hello *'. Here the asterisk is a wildcard for the memorized name. An AIML file can handle this sort of question very easily. We write an AIML file with these questions. During a typical chatbot run we show all user input to the AIML kernel. 
 
-GPT2 is a model that takes as input a seed sentence or topic and returns as output text in the same language that is auto-generated. GPT2 also is very capable at summarizing the input or seed statement. We use both of these capabilities in our experiments.
+When the kernel does not match anything there is no output from the kernel, but when there is a match we show the AIML output to the chatbot as the context for that input. This is to say that the input from the user is concatenated with the context text, in this case the answer from the AIML kernel. The chatbot is then left to decide what to answer from the user question and the context. Usually the answer makes sense.
 
-There are two GPT2 models. One is larger than the other. The smaller model has been released and the larger model has not. 
+Usually the user's question and whatever the chatbot decides will be the answer are both added to the history. As noted before, history of what the user enters and the chatbot's answer are kept by the chatbot so that the chatbot can keep track of answers over time. In this case, though, keeping sentences that refer to user names confuses the bot's answers. In other cases the bot keeps track of answers that are generated in the AIML/chatbot hybrid process.
 
-GPT2 is discussed in Radford et al (2019)\cite{radford2019language} and on the blog associated with the parent company, OpenAI.com. (https://openai.com/blog/better-language-models/)
+\subsubsection{Internet Search Experiment}
 
-GPT2 comes with its own vocabulary encoding and decoding functionality. This system is closer to
-WordPiece and BPE than it is to Glove or Word2Vec.
+We want to be able to search the internet for an article, download that article, and summarize parts of the article as answers to questions asked of the model. This is leveraging of the token size of the input to the model. It's usually very large. It can be 1024 tokens.
 
-It is pre-trained on a corpus that is developed from Reddit posts called WebText. WebText is a
-40 Gigabyte corpus that takes high powered computers to train.
+The AIML required is minimal but larger than the AIML for the `user name' problem. The goal is to detect when the user wants to talk about an internet page and detect when they are done.
 
-The version of GPT2 which has been released is similar in size to the largest currently released 
-BERT transformer model. GPT2 has been released in Tensorflow format, and more recently in a converted PyTorch format. It is possible to download the trained model and then fine-tune the model for your own task. This kind of fine-tuning is called `transfer learning'. 
+The first case, when the user wants to talk about an internet page, is associated with utterances like `Tell me about *' and `I want to talk about *' where `*' is a wildcard for what the user is interested in. There can be other phrases that imply the same intention on the part of the user. In these cases the text from the wildcard in the invocation is saved.
 
-GPT2 works so well in certain conditions that it is appropriate to use without fine tuning. This 
-type of implementation is called `zero-shot' implementation. We use GPT2 in a zero-shot implementation with the chatbot problem.
+The second case, when the user is done with the internet page and wants to return to normal operation, is associated with utterances like `Ok thanks' and `That's enough'. These two phrases can be checked for when the bot is in `Internet-Search' mode. There could easily be other phrases that cause the same operation in the chatbot code.
 
+When the AIML detects one of these signals the program goes into a special mode of operation. The first signal, we will call the `find' signal, causes operation of an internet browser. The web search uses the text from the invocation of the `find' command. The browser yields results as they would be found using a google search engine. The first 20 results are kept and the url for the highest ranking wikipedia page is retained. That page is loaded and the `body' tag is scanned for `paragraph' type content. This web page replaces the context input. 
+
+After that the context is retained while the chatbot answers any questions that the user might have. The GPT2 model has some facility with this, and the larger GPT2 model is more adept.
+
+Later when the AIML detects the second signal, we will call the `restore' signal, the program switches back from special operation to normal operation. The web page contents are removed and the context is restored as it was during regular chatbot use. There is a part that has the history of the last few questions and answers, and there is a part that has the bot name, occupation, and the current time.
+
+As the chatbot answers questions the content of the conversation is saved for the `history' of the context text, as it is used in the regular chatbot mode. This means there is a record of the questions and answers the chatbot goes through during it's operation, even when it is answering questions about a web page that it has searched for. Because of size limitations the history is not included in the chatbot input when it is answering questions about a web page, but a record is kept of `q' and `a' and the bot can refer to them later.
+
+Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 1024 tokens and it is 1280 for the larger model. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
 
