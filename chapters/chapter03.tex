@@ -546,11 +546,23 @@ The Raspberry Pi model that the Generative Pre-training Transformer 2 was instal
 The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, monitor, or keyboard. The program was modified so that there was a tone every time the model was processing input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the Generative Pre-training Transformer 2 model to be physically installed on the Raspberry Pi.
 
 \section{Observation}
+
+\subsection*{GRU vs. Transformer}
 It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
 
 A single further observation is that the GRU model responds very quickly, while a transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the transformer model when it is installed on a small computer like a Raspberry Pi. 
 
 The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains more worth.
+
+\subsection*{Smaller Chatbot}
+
+For the chatbot task we want to know what the Transformer is doing during training and later during inference.
+
+It seems the model learns a set of multi-purpose English answers. Then it spends time as a classifier. Each input sentence type is associated with a given answer. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained all the answers that the model would ever use. For a given model this list can only be so long.
+
+It is interesting to point out that probably at the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
+
+For the very large pre-trained model this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
 
 \section{Tests}
 
