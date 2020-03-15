@@ -73,7 +73,7 @@ A better approach is sequence to sequence translation. A description follows wit
 
 In this approach we use recurrent neural networks to obtain our translation. Two recurrent neural network components are employed. One is responsible for the input language and the other for the output. 
 
-
+\iffalse
 \subsection*{Formula}
 Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder Gated Recurrent Unit and helps formulate $y_t$.
 
@@ -93,6 +93,7 @@ The probability for the entire output is the same as the product of the probabil
 
 This function can be found in Sutskever et al\cite{DBLP:journals/corr/SutskeverVL14}.
 
+\fi
 
 \subsection*{Word Embeddings}
 
@@ -133,7 +134,7 @@ The Gated Recurrent Unit takes as input two vectors. It processes the `input' ve
 
 We will describe components in two groups. The input components, from the source language, are the encoder and the output components, from the target language, are the decoder.
 
-%We will use the metaphor of a chain when we describe input and output segments that are composed of Gated Recurrent Units. The input chain is sometimes referred to as the Encoder, and the output chain is sometimes referred to as the Decoder.
+
 
 \subsection*{Encoder}
 
