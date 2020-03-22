@@ -182,7 +182,7 @@ Another problem is that all input to be translated to target output has to be bo
 This is how some computer models do language translation. Using `arg-max' is an example of a greedy approach. Another approach might use something like `Beam Selection' but we're not going to get into that here.
 
 
-\section{Loss and Accuracy During Training}
+\subsection{Loss and Accuracy During Training}
 
 At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. 
 
@@ -196,7 +196,7 @@ This is done over and over with every source/target sentence pair. Slowly the mo
 
 There are several numerical metrics that we can record during training that tell us how our model is training. The loss, a mathematical calculation of the difference between the model's output and the predicted value, is mentioned above. Loss is an important number. Also accuracy is important. Accuracy is a mathematical calculation of the difference between the model's output and the value that output should be, but it focuses on the number of times the model comes out with a correct prediction verses how many output values there are in total.
 
-\section{Attention Mechanism}
+\subsection{Attention Mechanism}
 
 Attention Mechanisms are used by sequence to sequence models to transfer more information from the encoder to the decoder. As stated above there is only one place where the encoder imparts information on the decoder, the `thought vector'. Attention helps the encoder tell the decoder which word is more important. This stressing of a vector by the model is the attention mechanism attending to one output.
 
@@ -229,7 +229,7 @@ $$
 
 Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. Not pictured here, the score is multiplied by the Gated Recurrent Unit decoder output, and then passed through a `tanh' activation layer. It becomes the decoder output.
 
-\section{Sequence to Sequence Chatbot}
+\subsection{Sequence to Sequence Chatbot}
 
 Vinyals et al\cite{DBLP:journals/corr/VinyalsL15} make an interesting proposition. They say that it's possible to make what they call a Neural Conversational Model by constructing a Sequence to Sequence model, but instead of using two corpus from different languages a single language is used for both source and target.
 
