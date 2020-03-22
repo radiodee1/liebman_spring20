@@ -139,7 +139,7 @@ For the Persona corpus the text is organized into `JSON' objects. There are seve
 
 \section{ARMv7 Build/Compile}
 
-\subsection*{Pytorch `torch' Library 1.1.0 For ARMv7}
+\subsection{Pytorch `torch' Library 1.1.0 For ARMv7}
 We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
 
 On their web site Milosevic et al\cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
@@ -158,7 +158,7 @@ This takes care of the `ImportError'. The second problem is that the version of 
 
 This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
  
-\subsection*{Pytorch `torch' Library 1.4.0 For ARMv7}
+\subsection{Pytorch `torch' Library 1.4.0 For ARMv7}
 We recompile the Pytorch library for the Raspberry Pi. We use debian virtualization techniques for the compilation. Because ubuntu is a debian derivative it is not necessary to run the process in a Virtualbox container. 
 
 In addition to this, the files created by the compilation are properly named. There is no need to go to the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}' to change anything. 
@@ -175,7 +175,7 @@ It is conceivable that the GLIBC issue would not be important if the `chroot' en
 
 Finally the Pytorch program needed to be built. We disable CUDA and distributed computing as neither exists on the Raspberry Pi.
 
-\subsection*{Docker Container `tensorflow-model-server' For ARMv7}
+\subsection{Docker Container `tensorflow-model-server' For ARMv7}
 The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
 
 Docker can be run on the Raspberry Pi in the ARM environment. Below is a terminal excerpt that shows how to do this. These commands are executed on the Pi.

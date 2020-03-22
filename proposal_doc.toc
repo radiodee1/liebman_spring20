@@ -39,6 +39,9 @@
 \contentsline {section}{\numberline {3.7}Speech and Speech To Text}{33}{section.3.7}% 
 \contentsline {section}{\numberline {3.8}Corpus Considerations}{34}{section.3.8}% 
 \contentsline {section}{\numberline {3.9}ARMv7 Build/Compile}{34}{section.3.9}% 
+\contentsline {subsection}{\numberline {3.9.1}Pytorch `torch' Library 1.1.0 For ARMv7}{34}{subsection.3.9.1}% 
+\contentsline {subsection}{\numberline {3.9.2}Pytorch `torch' Library 1.4.0 For ARMv7}{35}{subsection.3.9.2}% 
+\contentsline {subsection}{\numberline {3.9.3}Docker Container `tensorflow-model-server' For ARMv7}{36}{subsection.3.9.3}% 
 \contentsline {section}{\numberline {3.10}Experiments - Installations}{37}{section.3.10}% 
 \contentsline {subsection}{\numberline {3.10.1}Chatbot - Gated Recurrent Unit Model}{38}{subsection.3.10.1}% 
 \contentsline {subsection}{\numberline {3.10.2}Smart Speaker - Gated Recurrent Unit Model}{40}{subsection.3.10.2}% 
@@ -47,10 +50,10 @@
 \contentsline {subsection}{\numberline {3.10.5}Chatbot - Transformer Model with Movie Corpus}{42}{subsection.3.10.5}% 
 \contentsline {subsection}{\numberline {3.10.6}Smart Speaker - Transformer Model with Movie Corpus}{44}{subsection.3.10.6}% 
 \contentsline {subsection}{\numberline {3.10.7}Chatbot - Generative Pre-training Transformer 2 Model}{45}{subsection.3.10.7}% 
-\contentsline {subsubsection}{Context Experiment}{45}{section*.12}% 
-\contentsline {subsubsection}{History Experiment}{46}{section*.13}% 
-\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{46}{section*.14}% 
-\contentsline {subsubsection}{Overall}{47}{section*.15}% 
+\contentsline {subsubsection}{Context Experiment}{45}{section*.9}% 
+\contentsline {subsubsection}{History Experiment}{46}{section*.10}% 
+\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{46}{section*.11}% 
+\contentsline {subsubsection}{Overall}{47}{section*.12}% 
 \contentsline {subsection}{\numberline {3.10.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{48}{subsection.3.10.8}% 
 \contentsline {section}{\numberline {3.11}Observation}{49}{section.3.11}% 
 \contentsline {subsection}{\numberline {3.11.1}GRU vs. Transformer}{49}{subsection.3.11.1}% 
@@ -65,7 +68,7 @@
 \contentsline {subsection}{\numberline {A.1.1}Context Experiment}{55}{subsection.A.1.1}% 
 \contentsline {subsection}{\numberline {A.1.2}History Experiment}{56}{subsection.A.1.2}% 
 \contentsline {subsection}{\numberline {A.1.3}Artificial Intelligence Markup Language Experiment}{56}{subsection.A.1.3}% 
-\contentsline {subsubsection}{User Name}{57}{section*.17}% 
-\contentsline {subsubsection}{Internet Search Experiment}{58}{section*.18}% 
-\contentsline {subsubsection}{Usage Example}{59}{section*.19}% 
+\contentsline {subsubsection}{User Name}{57}{section*.14}% 
+\contentsline {subsubsection}{Internet Search Experiment}{58}{section*.15}% 
+\contentsline {subsubsection}{Usage Example}{59}{section*.16}% 
 \contentsline {chapter}{\numberline {B}Abbreviations}{60}{appendix.B}% 
