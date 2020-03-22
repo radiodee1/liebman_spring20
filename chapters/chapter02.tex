@@ -20,7 +20,7 @@ Longer sequences can be considered as well, so Transformer input can contain lon
 
 We will discuss one layer of a multi-layer Transformer below. Transformers are usually constructed on eight or more of these layers in the decoder and the encoder.
 
-\subsection*{Byte Pair Encoding}
+\subsection{Byte Pair Encoding}
 
 \ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
 
@@ -32,12 +32,12 @@ For the Generative Pre-training Transformer 2 a version of Byte Pair Encoding is
 
 Some form of Byte Pair Encoding is included in almost every Transformer typed Neural Network model, so no decision needs to be made about what type of word embeddings to use.
 
-\subsection*{Attention}
+\subsection{Attention}
 Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of the Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
 It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al\cite{Vaswani2017AttentionIA} use a vector size of 512. 
 
-\subsection*{Scaled Dot-Product Attention}
+\subsection{Scaled Dot-Product Attention}
 
 Each layer of the Transformer has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
 
@@ -117,7 +117,7 @@ Later the output is passed through a feed forward network. It is also re-combine
 
 This describes the encoder section. There are two other attention segments. Together these two sections combine to form the decoder section. This is repeated for each layer.
 
-\subsection*{Transformer - Decoder}
+\subsection{Transformer - Decoder}
 The decoder is composed of two attention mechanisms and a feed-forward segment at each layer. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms in each decoder layer. In that one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
 
 While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. 
@@ -154,7 +154,7 @@ There is also a second attention mechanism in the decoder. It works solely on da
 
 \end{figure}
 
-\subsection*{Transformer - General}
+\subsection{Transformer - General}
 
 The input of the Transformer encoder and decoder layers employ not only a word-vector table, but also a positional encoding scheme. The model adds to the input vector information that it can then use to learn the position of words in a sentence. 
 
@@ -166,7 +166,7 @@ The Transformer model takes large memory resources, large corpus resources, and 
 
 
 
-\subsection*{Visualization - Transformer}
+\subsection{Visualization - Transformer}
 
 In order to visualize what is happening during inference we have colorful charts that we can look at. In this chart we are looking at how each word attends to all the other words in the input text.
 
@@ -190,7 +190,7 @@ This diagram is from the Transformer with the larger hyper-parameter set that we
 
 `Generative Pre-training Transformer 2' (\ac{GPT2}) is a large model. It is based on the Transformer from Vaswani et al\cite{Vaswani2017AttentionIA} but there are some major changes. The model uses the decoder portion of the Transformer without the encoder. There are some other changes to the output layers. The biggest difference is that it is pre-trained and downloadable.
 
-\subsection*{Pre-Training}
+\subsection{Pre-Training}
 Pre-Training is when the authors of a model train an instance and then make the model available to the public on-line. This is helpful for the average programmer interested in Neural Networks. Training an instance of the transformer model can use up computation resources for days, and require hardware that is costly. Usually the cost of producing a trained model is prohibitively expensive.
 
 After acquiring a trained model, the programmer goes on to adjust the model to their task. Adjusting a pre-trained model to a given task is called `Transfer Learning'. Many tasks lend themselves to Transfer Learning. Conceptually a model can be fine-tuned to any problem and many problems can be addressed with good results after only modest fine-tuning.
@@ -199,7 +199,7 @@ There is a pre-trained Transformer model called \ac{BERT}. BERT stands for `Bidi
 
 The `Bidirectional Encoder Representations from Transformer' models use a bidirectional training method. During training the BERT model might be presented with a sentence with a word missing. The training task is to fill in that blank. The model can look at the sentence from any direction in order to find that word. This is a very simplistic explanation for what is termed a Masked Language Model.
 
-\subsection*{General}
+\subsection{General}
 `Generative Pre-training Transformer 2' still uses Scaled Dot-Product Attention. A model diagram is taken from Radford et al\cite{radford2018improving}. A mask is used in the Self Attention segment of the model during training.
 
 \begin{figure}[H]
@@ -217,12 +217,12 @@ There are several sizes of pre-trained `Generative Pre-training Transformer 2' m
 
 The GPT2 models input and output text sequences. In this way they are preferred for our application over the BERT models. 
 
-\subsection*{Corpus}
+\subsection{Corpus}
 The `Generative Pre-training Transformer 2' models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `carma' rating of 3 or better. `Carma' is a rating system used internally on Reddit. 
 
 As with the decoder layer of the Transformer model, the GPT2 model concerns itself with generating words that are later strung together to make sentences or paragraphs. During training the model uses a masking scheme so that input can be parallel-ized. Output cannot be parallel-ized, so output must focus on one example at a time.
 
-\subsection*{Releases}
+\subsection{Releases}
 In their paper Radford et al\cite{radford2019language} show that their model can generate text from a seed sentence or paragraph. At the time the case was made that the largest `Generative Pre-training Transformer 2' models should not be released because of their ability to generate text that might fool humans into believing that another person was responsible for the text. Later the larger models were released to the public.
 
 \begin{center}
@@ -249,7 +249,7 @@ For our chatbot the model with 117 million parameters worked. Some programming w
 
 Later, as a test, when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted.
 
-\subsection*{Application Details}
+\subsection{Application Details}
 The model is described in Radford et al\cite{radford2019language} and the accompanying blog post. The model is trained on English without a stated problem. Large neural network models are usually trained with a stated problem in mind. Rather famously this model is used after training to generate English language text. The model takes input from the user, a premise or summary of what is to be generated. The model also takes as input a number called the `temperature.' Then the model generates output. As the `temperature' is set higher the output is more fanciful. There is also a tune-able parameter for the output length. 
 
 Given the ability of the model to invent content, it was determined by the authors that the 'large' model should not be released to the public at first. Months later the 'large' model was released. 
@@ -264,7 +264,7 @@ With every input string we include a set of three or four sentences. They includ
 
 Surprisingly the chatbot answers most of our questions in the first person. We feel that WebText, the Reddit corpus, has many examples of sentences in the first person.
 
-\subsection*{Visualization - GPT2}
+\subsection{Visualization - GPT2}
 
 During inference the Scaled Dot Product Attention in the GPT2 focuses on certain words as it processes input text. Here the word `favorite' shows a relationship to many of the other words in the text.  
 

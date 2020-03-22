@@ -549,14 +549,14 @@ The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, mon
 
 \section{Observation}
 
-\subsection*{GRU vs. Transformer}
+\subsection{GRU vs. Transformer}
 It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
 
 A single further observation is that the GRU model responds very quickly, while a transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the transformer model when it is installed on a small computer like a Raspberry Pi. 
 
 The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains more worth.
 
-\subsection*{Smaller Chatbot}
+\subsection{Smaller Chatbot Learning}
 
 For the chatbot task we want to know what the Transformer is doing during training and later during inference.
 
@@ -566,7 +566,7 @@ It is interesting to point out that probably at the start the multi-purpose answ
 
 For the very large pre-trained model this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
 
-\subsection*{Word Usage}
+\subsection{Word Usage}
 
 We make a general assumption that any model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. Also some percentage of words are used repeatedly.
 
@@ -581,7 +581,7 @@ We make a general assumption that any model uses only a small subset of words th
 	
 \end{figure}
 
-If we remove the Vocabulary Total and the GPT2 Total from the diagram the GRU output and the Transformer output takes the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. The difference between the tokens available and the tokens used is large.
+If we remove the Vocabulary Total and the GPT2 Total from the diagram the GRU output and the Transformer output takes the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
 
 
 \begin{figure}[H]
@@ -597,7 +597,7 @@ If we remove the Vocabulary Total and the GPT2 Total from the diagram the GRU ou
 
 We might conclude from these comparisons that the GRU model operates more robustly than the Transformer model. This may be the case, or the transformer model may be over trained or over fitted. It also might be that the hyper parameter set is poorly adjusted. We suspect the learning rate, for example, may be too high.
 
-\subsection*{Sentence Usage}
+\subsection{Sentence Usage}
 
 If we were interested in transfer learning and we wanted to train the model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly or over and over.
 
@@ -622,7 +622,7 @@ For example, if we had a tech support task that we wanted a chatbot to handle, a
 
 \section{Tests}
 
-\subsection*{Turing Test}
+\subsection{Turing Test}
 
 The Turing Test concerns itself with the question of weather a computer is intelligent. Turing says that intelligence is too hard to describe, and that if the computer can convince you that it is intelligent then it is.
 
@@ -632,7 +632,7 @@ The creators of the model used it differently than our chatbot implementation. T
 
 Ultimately the large model was released, either because the developers decided the model was not as good as originally estimated, or because they didn't care. 
 
-\subsection*{Winograd Schema}
+\subsection{Winograd Schema}
 
 Winograd schemas are named after Terry Winograd. The idea is that there is a sentence presented that has two meanings. A computer finds these sentences challenging to understand, and that makes them interesting for the development of Artificial Intelligence.
 

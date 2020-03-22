@@ -13,7 +13,7 @@ It is worth noting that with the appearance of the Transformer architecture and 
 
 \section{Recurrent Neural Network Components}
 
-\subsection*{Overview}
+\subsection{Overview}
 The goal behind Recurrent Neural Network (RNN) components is to detect patterns. Since understanding RNNs is important to GPT2 and Transformer models, we discuss RNNs here. Here we explore a simple \ac{RNN} first. 
 
 The simplest Recurrent Neural Network has two inputs and two outputs. They can be arranged in patterns. In our example the input will be a sequence of data and the Recurrent Neural Network will be a line of components of the same length as the data.
@@ -37,7 +37,7 @@ There are several designs for a Recurrent Neural Network component. The inner wo
 
 
 
-\subsection*{Gated Recurrent Unit}
+\subsection{Gated Recurrent Unit}
 An implementation of a Recurrent Neural Network is the `Gated Recurrent Unit' (GRU). There are other varieties of RNN, most notably the Long Short Term Memory (LSTM) cell. We do not explore \ac{LSTM} cells here.
 
 A \ac{GRU} has two inputs and two outputs. The formulas for a Gated Recurrent Unit, as outlined by Denny Britz in the website WILDML (Britz et al)\cite{2015Britz}, are as follows.
@@ -74,7 +74,7 @@ A better approach is sequence to sequence translation. A description follows wit
 In this approach we use recurrent neural networks to obtain our translation. Two recurrent neural network components are employed. One is responsible for the input language and the other for the output. 
 
 \iffalse
-\subsection*{Formula}
+\subsection{Formula}
 Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder Gated Recurrent Unit and helps formulate $y_t$.
 
 On the left side of the formula we have $x_1,...x_T$ which represents the input sequence for the encoder. Also we have $y_1,...,y_{T'}$ which represents the entire output. $T$ is the length of the input while $T'$ is the length of the output. Those two $T$ terms do not need to be the same, and often are not. Again, $v$ is the hidden state passed from the encoder to the decoder as a 'thought vector'.
@@ -95,7 +95,7 @@ This function can be found in Sutskever et al\cite{DBLP:journals/corr/SutskeverV
 
 \fi
 
-\subsection*{Word Embeddings}
+\subsection{Word Embeddings}
 
 Also employed are two vocabulary sets. One vocabulary is for the source language and another is for the target language. A table of word vectors the size of the input vocabulary is created and a maximum sentence length is picked. There is also a `hidden size', which is an important dimension in the model. In practice the hidden size could be 300 units and more for this kind of application.
 
@@ -122,11 +122,11 @@ Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov e
 
 Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
-\subsection*{Corpus}
+\subsection{Corpus}
 
 A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
 
-\subsection*{Input Tokens}
+\subsection{Input Tokens}
 
 So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU, one at a time. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the Gated Recurrent Unit does internally.
 
@@ -136,7 +136,7 @@ We will describe components in two groups. The input components, from the source
 
 
 
-\subsection*{Encoder}
+\subsection{Encoder}
 
 The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the previous hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous Gated Recurrent Unit. The output vector is a hidden value for the Recurrent Unit to the right.
 
@@ -144,7 +144,7 @@ The very first Gated Recurrent Unit in the input chain ignores the fact that the
 
 A complicating detail is that although many Gated Recurrent Units are called for in the encoder they all use the same set of weights and biases. For this reason only a single input Gated Recurrent Unit is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the Gated Recurrent Unit. 
 
-\subsection*{Decoder}
+\subsection{Decoder}
 The output is in charge of generating tokens that represent, in this case, the translation of the input to the output language. The output uses Gated Recurrent Unit segments also. The first hidden input for the first output cell is taken from the last hidden output of the last recursive unit of the input. It is important because it is the spot where a great amount of data is passed from the encoder to the decoder. The connection at this point is said to carry the `thought vector'. Most of the information responsible for translating one language to another is passed at this point.
 
 The hidden values from the input section are passed to the first output Gated Recurrent Unit. It outputs the values that are later converted to the first word of the output. The first output Gated Recurrent Unit also has a hidden state. It passes the first word and the hidden state on to the second Gated Recurrent Unit.
@@ -172,7 +172,7 @@ Ultimately exceedingly large hidden dimension does not improve the sequence to s
 
 Again in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason a single GRU is employed for the entire Decoder.
 
-\subsection*{Output Tokens}
+\subsection{Output Tokens}
 Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary, through matrix multiplication. Then they are processed in what is called an `arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
 
 There are some inherent problems. Because the output of a Gated Recurrent Unit is constantly being reused as the input, lots of data that might be useful to have is lost when the Gated Recurrent Unit churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
