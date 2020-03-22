@@ -581,7 +581,8 @@ We make a general assumption that any model uses only a small subset of words th
 	
 \end{figure}
 
-If we remove the Vocabulary Total and the GPT2 Total from the diagram the GRU output and the Transformer output takes the shape of a curve with a limit somewhere below 2000 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. The difference between the tokens available and the tokens used is large.
+If we remove the Vocabulary Total and the GPT2 Total from the diagram the GRU output and the Transformer output takes the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. The difference between the tokens available and the tokens used is large.
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -602,7 +603,7 @@ If we were interested in transfer learning and we wanted to train the model as a
 
 The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. It would be good to tell how many repeated sentences occurred as output in some number of inputs.
 
-We have a rough number for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer sentences in total. The GRU is increasing still at 350 sentences at the end of our study. We assume that at some point the number of total GRU sentences that that model can produce reaches some kind of limit.
+We have a rough number for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer in total. The GRU is increasing still at 350 sentences at the end of our study. We assume that at some point the number of total GRU sentences that that model can produce reaches some kind of limit.
 
 \begin{figure}[H]
 	\begin{center}
@@ -617,7 +618,7 @@ We have a rough number for those two models. They use about 125 sentences repeat
 
 In a classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a chatbot that was trained for a specific Q/A task this might be important.
 
-For example, if we had a tech support task that we wanted a chatbot to handle, and we had a script to work from and a specific outcome in mind, This info might be helpful.
+For example, if we had a tech support task that we wanted a chatbot to handle, and we had a script to work from and a specific outcome in mind, this info might be helpful.
 
 \section{Tests}
 
