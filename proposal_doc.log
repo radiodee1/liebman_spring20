@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  23 MAR 2020 10:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  23 MAR 2020 10:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1142,13 +1142,13 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: C00A15AEC6CF0B5769E2A145F561C63B;5064.
+(rerunfilecheck)             Checksum: 224BAC04759AD9425E9440B9F66CCC0E;5068.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
  23817 strings out of 494477
- 441696 string characters out of 6175714
- 500499 words of memory out of 5000000
+ 441712 string characters out of 6175714
+ 500500 words of memory out of 5000000
  27012 multiletter control sequences out of 15000+600000
  559385 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -1181,9 +1181,9 @@ ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (69 pages, 881248 bytes).
+Output written on proposal_doc.pdf (69 pages, 879455 bytes).
 PDF statistics:
- 1355 PDF objects out of 1440 (max. 8388607)
+ 1350 PDF objects out of 1440 (max. 8388607)
  802 compressed objects within 9 object streams
  187 named destinations out of 1000 (max. 500000)
  617 words of extra memory for PDF output out of 10000 (max. 10000000)

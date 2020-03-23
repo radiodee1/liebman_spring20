@@ -70,7 +70,7 @@ We use github as a code repository. Code corresponding with this paper can be fo
 
 As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have varying amounts of success with these experiments. We do not rewrite the Generative Pre-training Transformer 2 code from the Tensorflow or Pytorch repository.
 
-\section{Graphical Processing Unit vs. Central Processing Unit}
+\subsection{Graphical Processing Unit vs. Central Processing Unit}
 
 A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. This allows for a logical program that can be executed. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
 
@@ -84,7 +84,7 @@ This would be fine if there were a model for every task. Though many models exis
 
 In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training. In the GRU example the model trained in less than an hour.
 
-\section{Raspberry Pi}
+\subsection{Raspberry Pi}
 
 A Raspberry Pi is a small single board computer with an `arm' processor. There are several versions on the market, the most recent of which sports built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer can sport 4Gig of RAM.
 
@@ -105,7 +105,7 @@ found in the README file of this project\textquoteright s github repository.
 
 The pytorch model that is chosen as best will be trained on the desktop computer and then the saved weights and biases will be transferred to the Raspberry Pi platform. The Pi will not need to do any training, only inference. 
 
-\section{Tensorflow vs. Pytorch}
+\subsection{Tensorflow vs. Pytorch}
 
 Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. The learning curve for Tensorflow is steeper than for Pytorch. Pytorch offers the programmer python objects that can be combined to create a neural network. Tensorflow has different pieces that can be combined, but they cannot be examined as easily at run time.
 
@@ -115,7 +115,7 @@ Pytorch objects interact with Python more naturally. You can use print statement
 
 In favor of Tensorflow, it has a good tool for visualization which can print out all kinds of graphs of your data while your model trains. It is called Tensorboard.
 
-\section{Speech and Speech To Text}
+\subsection{Speech and Speech To Text}
 
 Google has python packages that translate text to speech and speech to text. In the case of text to speech the library is called `gTTS'. In the case of speech to text the library is called `google-cloud-speech'. 
 
@@ -127,7 +127,7 @@ Furthermore an environment variable must be set that points to the authenticatio
 
 The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, we attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
 
-\section{Corpus Considerations}
+\subsection{Corpus Considerations}
 
 We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have a `JSON' dump from Reddit that is downloadable.  This is not the same Reddit data that the authors of GPT2 use. Finally we have the corpus described by Mazar{\'{e}} et al\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
