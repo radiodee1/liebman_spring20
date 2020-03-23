@@ -35,7 +35,7 @@ Some form of Byte Pair Encoding is included in almost every Transformer typed Ne
 \subsection{Attention}
 Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of the Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
-It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al\cite{Vaswani2017AttentionIA} use a vector size of 512. 
+It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. 
 
 \subsection{Scaled Dot-Product Attention}
 
@@ -117,7 +117,7 @@ Later the output is passed through a feed forward network. It is also re-combine
 
 This describes the encoder section. There are two other attention segments. Together these two sections combine to form the decoder section. This is repeated for each layer.
 
-\subsection{Transformer - Decoder}
+\subsection{Decoder}
 The decoder is composed of two attention mechanisms and a feed-forward segment at each layer. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms in each decoder layer. In that one of the two attention mechanisms of the decoder the `Key' and `Value' matrices are imported from the encoder. 
 
 While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. 
@@ -154,15 +154,16 @@ There is also a second attention mechanism in the decoder. It works solely on da
 
 \end{figure}
 
-\subsection{Transformer - General}
-
+%\subsection{Transformer - General}
+\subsection{Input - Positional Encoding}
 The input of the Transformer encoder and decoder layers employ not only a word-vector table, but also a positional encoding scheme. The model adds to the input vector information that it can then use to learn the position of words in a sentence. 
 
 Words that are early in the sentence have a certain appearance and words later on appear differently. The Encoder and Decoder use sine and cosine waves to impart this information onto the sentence sequence. 
 
-Meanwhile at the output of the last layer of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
+\subsection{Output - Feed Forward Network}
+At the output of the last layer of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
 
-The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not suitable for many projects.
+%The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not suitable for many projects.
 
 
 
