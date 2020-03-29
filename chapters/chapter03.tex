@@ -49,7 +49,7 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 Here we itemize a short description for each row in the table.
 
 \begin{itemize}
-	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al\cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. 
+	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. 
 	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board.
 	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus.
 	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. Some modification was made so that model output was suitable for our purposes.
@@ -129,11 +129,11 @@ The operating system on the Raspberry Pi is based on Debian Linux. In this opera
 
 \subsection{Corpus Considerations}
 
-We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have a `JSON' dump from Reddit that is downloadable.  This is not the same Reddit data that the authors of GPT2 use. Finally we have the corpus described by Mazar{\'{e}} et al\cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
+We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have a `JSON' dump from Reddit that is downloadable.  This is not the same Reddit data that the authors of GPT2 use. Finally we have the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
-The movie corpus is medium sized and the Reddit `JSON' download is large and filled with hyperlinks and sentence fragments. 
+%The movie corpus is medium sized and the Reddit `JSON' download is large and filled with hyperlinks and sentence fragments. 
 
-At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are described as noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. In the future if we can train in a faster environment the Reddit corpus might be superior.
+At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are  noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. In the future if we can train in a faster environment the Reddit corpus might be superior.
 
 For the Persona corpus the text is organized into `JSON' objects. There are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not organized in this kind of pattern. When we take apart the Persona corpus we find that the sentences labeled with the `history' tag are most suited to our task. We record these values only and discard other labels.
 
@@ -142,7 +142,7 @@ For the Persona corpus the text is organized into `JSON' objects. There are seve
 \subsection{Pytorch `torch' Library 1.1.0 For ARMv7}
 We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
 
-On their web site Milosevic et al\cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
+On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
 
 The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used in the change-root environment to compile the Pytorch library for the 1.1.0 version.
 
@@ -229,14 +229,14 @@ For comparison there are four models. Subjectively the first transformer model d
 
 
 \subsection{Chatbot - Gated Recurrent Unit Model}
-We have two models based on the sequnce to sequence architecture proposed by Vinyals et al\cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al\cite{2018Inkawhich}.
+We have two models based on the sequnce to sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al \cite{2018Inkawhich}.
 
 We trained this sequence to sequence model on a large english corpus in an attempt to produce a chatbot. 
 
 This second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original, authentic answers. The answers all made sense in the English language.
 
 \subsubsection*{Questions}
-This is the sample question list as it was answered by the better model.
+This is the sample question list as it was answered by the GRU model.
 
 %\begin{minipage}{2in}
 \begin{verbatim}
@@ -298,8 +298,9 @@ Using the Persona corpus we trained a transformer model to use as a chatbot. Thi
 
 This model uses the tensorflow library, not Pytorch, and a transformer model that is somewhat small.
 
-The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board but it requires a python package called `tensorflow-model-server' and this package had to be built from source for the Raspberry Pi. 
+The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board but it requires a python package called `tensorflow-model-server' and this package had to be built for ARMv7 for the Raspberry Pi. 
 
+\subsubsection{Training}
 Training of the model followed a certain pattern. First the model was trained on the persona corpus until a familiar pattern emerged. When the model began to answer all questions with the 
 phrase "I don't know" training was stopped. 
 
@@ -310,9 +311,11 @@ At that time the corpus was modified to include no sentences that have the word 
 
 At this point, after looking at the change in loss, further training was not thought of as helpful. Loss stopped improving at some point in this process, and this lack of improvement was taken as a sign that further progress was not likely.
 
-Subjectively the transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
+%Subjectively the transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 \subsubsection*{Questions}
+Subjectively this transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
+
 This is the sample question list as it was answered by the model.
 
 \begin{verbatim}
@@ -424,9 +427,9 @@ bye
 	
 	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] There is a variety of answers. Not all answers are the same.
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] The `favorite color' and `favorite candy' questions are ignored.
+	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] The `favorite color' and `favorite candy' questions are ignored. The model does not have original answers for these questions.
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] The model does in fact use `No' or `I don't know'. It also likes to answer `yeah'.
+	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] The model does in fact use `No' or `I don't know'. %It also likes to answer `yeah'.
 	
 	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model does have an answer for `Good bye'.
 \end{itemize}
@@ -472,7 +475,7 @@ I like the color red.
 > What is your favorite color?
 Red.
 \end{verbatim}
-We are like this output. The model is asked about the color `red'. Doing so the model is encouraged to pick `red' as the answer to the next question about color. When `favorite color' is requested, `red' is the answer. Without any history the model will answer the `favorite color' question with another answer. It may answer `pink' or it may answer `the colors of the rainbow'. 
+We like this output. The model is asked about the color `red'. Doing so the model is encouraged to pick `red' as the answer to the next question about color. When `favorite color' is requested, `red' is the answer. Without any history the model will answer the `favorite color' question with another answer. It may answer `pink' or it may answer `the colors of the rainbow'. 
 
 From one sentence to the next the model is keeping track of the context of the conversation. History is considered. Unfortunately the results of our history experiment are not so robust. It is not always the case that the model chooses the color recently discussed as the `favorite' color.
 

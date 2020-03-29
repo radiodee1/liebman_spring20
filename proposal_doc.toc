@@ -47,14 +47,15 @@
 \contentsline {subsection}{\numberline {3.5.1}Chatbot - Gated Recurrent Unit Model}{38}{subsection.3.5.1}% 
 \contentsline {subsection}{\numberline {3.5.2}Smart Speaker - Gated Recurrent Unit Model}{39}{subsection.3.5.2}% 
 \contentsline {subsection}{\numberline {3.5.3}Chatbot - Transformer Model with Persona Corpus}{40}{subsection.3.5.3}% 
+\contentsline {subsubsection}{Training}{40}{section*.7}% 
 \contentsline {subsection}{\numberline {3.5.4}Smart Speaker - Transformer Model with Persona Corpus}{42}{subsection.3.5.4}% 
 \contentsline {subsection}{\numberline {3.5.5}Chatbot - Transformer Model with Movie Corpus}{42}{subsection.3.5.5}% 
 \contentsline {subsection}{\numberline {3.5.6}Smart Speaker - Transformer Model with Movie Corpus}{44}{subsection.3.5.6}% 
 \contentsline {subsection}{\numberline {3.5.7}Chatbot - Generative Pre-training Transformer 2 Model}{45}{subsection.3.5.7}% 
-\contentsline {subsubsection}{Context Experiment}{45}{section*.9}% 
-\contentsline {subsubsection}{History Experiment}{46}{section*.10}% 
-\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{46}{section*.11}% 
-\contentsline {subsubsection}{Overall}{47}{section*.12}% 
+\contentsline {subsubsection}{Context Experiment}{45}{section*.10}% 
+\contentsline {subsubsection}{History Experiment}{46}{section*.11}% 
+\contentsline {subsubsection}{Artificial Intelligence Markup Language Experiment}{46}{section*.12}% 
+\contentsline {subsubsection}{Overall}{47}{section*.13}% 
 \contentsline {subsection}{\numberline {3.5.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{48}{subsection.3.5.8}% 
 \contentsline {section}{\numberline {3.6}Observation}{49}{section.3.6}% 
 \contentsline {subsection}{\numberline {3.6.1}GRU vs. Transformer}{49}{subsection.3.6.1}% 
@@ -69,7 +70,7 @@
 \contentsline {subsection}{\numberline {A.1.1}Context Experiment}{55}{subsection.A.1.1}% 
 \contentsline {subsection}{\numberline {A.1.2}History Experiment}{56}{subsection.A.1.2}% 
 \contentsline {subsection}{\numberline {A.1.3}Artificial Intelligence Markup Language Experiment}{56}{subsection.A.1.3}% 
-\contentsline {subsubsection}{User Name}{57}{section*.14}% 
-\contentsline {subsubsection}{Internet Search Experiment}{58}{section*.15}% 
-\contentsline {subsubsection}{Usage Example}{59}{section*.16}% 
+\contentsline {subsubsection}{User Name}{57}{section*.15}% 
+\contentsline {subsubsection}{Internet Search Experiment}{58}{section*.16}% 
+\contentsline {subsubsection}{Usage Example}{59}{section*.17}% 
 \contentsline {chapter}{\numberline {B}Abbreviations}{60}{appendix.B}% 
