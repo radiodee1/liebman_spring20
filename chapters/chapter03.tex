@@ -227,6 +227,23 @@ Good bye.
 
 For comparison there are four models. Subjectively the first transformer model did not perform as well as the Generative Pre-training Transformer 2 model. It did not perform better than the Gated Recurrent Unit model either. The model from the Gated Recurrent Unit tutorial performed well. It was better than the initial Transformer model and on par with the larger Transformer model. It was not better than the Generative Pre-training Transformer 2.
 
+We visit and revisit this checklist to subjectively rate our chatbots.
+
+\noindent \textbf{Checklist:} 
+
+\begin{itemize}
+	
+	\item[$\square$] Are all the responses are in plain English? Are any of the answers gibberish?
+	
+	\item[$\square$] Is there a  variety of answers? Are all answers the same?
+	
+	\item[$\square$] Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
+	
+	\item[$\square$] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?
+	
+	\item[$\square$] Does the model answer well to `Hello' and `Good bye'?
+\end{itemize}
+
 
 \subsection{Chatbot - Gated Recurrent Unit Model}
 We have two models based on the sequnce to sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al \cite{2018Inkawhich}.
