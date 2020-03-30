@@ -1,13 +1,15 @@
 
 \section{Transformer and Attention}
 
-The Transformer is a mechanism that is based entirely on attention. Strictly speaking this is not the attention explored in the Sequence to Sequence model in Chapter 1, though there are some similarities. It is a model that uses no recurrent components. % and no convolution components. 
+The Transformer is a mechanism that is based entirely on attention. Strictly speaking this is not the attention explored in the Sequence to Sequence model in Chapter 1, though there are some similarities. It is a model that uses no recurrent components.
 
 Recurrent components have some negative qualities. Recurrent components are hard to run with batch input data. Also they do not work with very long data strings. 
 
 If a batch of data is to be cycled through a recurrent component, we would like all that batch to go through all the components at once.  We want this to happen for whole batches at a time.
 
-The problem is that in Neural Machine Translation there are times when data has to be processed by the recurrent units one source-target pair at a time. This bottleneck has to do with how the RNN is designed.
+The problem is that in Neural Machine Translation there are times when data has to be processed by the recurrent units one batch at a time. First the data is passed to the first RNN. Then the batch can be passed to the next RNN. Remember that a single GRU is used in our example for all words in the encoder. Another GRU is used in the decoder. These GRU's can not process the subsequent batches all at once. They have to wait for the previous batch to be done. This is a bottleneck has to do with how the RNN is used. 
+
+Also we don't know how long each input sentence or output sentence is going to be. If sentences cannot be made to look like the same length to the RNN's, they must be handled individually. This ruins the batch concept.
 
 This sort of bottleneck is found in Neural Machine Translation that is based on recurrent elements.
 
@@ -34,7 +36,7 @@ Some form of Byte Pair Encoding is included in almost every Transformer typed Ne
 \subsection{Attention}
 Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of the Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
-It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. 
+It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. Later, in our discussion of Generative Pre-training Transformer 2, we will see vector sizes of 768 and 1280.
 
 \subsection{Scaled Dot-Product Attention}
 
@@ -162,9 +164,6 @@ Words that are early in the sentence have a certain appearance and words later o
 \subsection{Output - Feed Forward Network}
 At the output of the last layer of the decoder the output vectors are processed through a linear matrix which increases the vector's dimensionality so that the output vector is the size of the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
 
-%The Transformer model takes large memory resources, large corpus resources, and large training time resources. Without these components the Transformer is not suitable for many projects.
-
-
 
 \subsection{Visualization - Transformer}
 
@@ -247,7 +246,7 @@ The `Generative Pre-training Transformer 2' models also work in many circumstanc
 
 For our chatbot the model with 117 million parameters worked. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
 
-Later, as a test, when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted.
+We use both the small and large model. As a test when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted.
 
 \subsection{Application Details}
 The model is described in Radford et al \cite{radford2019language} and the accompanying blog post. The model is trained on English without a stated problem. Large neural network models are usually trained with a stated problem in mind. Rather famously this model is used after training to generate English language text. The model takes input from the user, a premise or summary of what is to be generated. The model also takes as input a number called the `temperature.' Then the model generates output. As the `temperature' is set higher the output is more fanciful. There is also a tune-able parameter for the output length. 

@@ -3,20 +3,22 @@
 
 In their paper Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} discuss making a chatbot using a neural network configured for sequence to sequence neural machine translation. An attempt to code our own sequence to sequence model was not very fruitful so instead we use code authored by Inkawhich et al \cite{2018Inkawhich}.
 
-In their paper Vaswani et al \cite{Vaswani2017AttentionIA} discuss using the Transformer architecture for solving machine learning tasks. We train a transformer model as a chatbot. We adopt this model to create a chatbot.
+In their paper Vaswani et al \cite{Vaswani2017AttentionIA} discuss using the Transformer architecture for solving machine learning tasks. We train a transformer model as a chatbot. %We adopt this model to create a chatbot.
 
 Also Radford et al \cite{radford2019language} discuss the `Generative Pre-training Transformer 2' (GPT2) neural network for Natural Language Processing (\ac{NLP}) tasks. The GPT2 model is based largely on the Transformer architecture. 
 
 We implement a chatbot with a GPT2 model. We use a program library from Wolf et al \cite{Wolf2019HuggingFacesTS} to run our model.
 
-It is worth noting that with the appearance of the Transformer architecture and WordPiece vocabulary scheme, some traditional technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
+It is worth noting that with the appearance of the Transformer architecture some traditional technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
 
 \section{Recurrent Neural Network Components}
 
 \subsection{Overview}
 The goal behind Recurrent Neural Network (RNN) components is to detect patterns. Since understanding RNNs is important to GPT2 and Transformer models, we discuss RNNs here. Here we explore a simple \ac{RNN} first. 
 
-The simplest Recurrent Neural Network has two inputs and two outputs. They can be arranged in patterns. In our example the input will be a sequence of data and the Recurrent Neural Network will be a line of components of the same length as the data.
+Imagine that we want to use as input a string of words. This could be a sentence used for the input of a translation task.
+
+The simplest Recurrent Neural Network has two inputs and two outputs. They can be arranged in patterns. In our example the input will be a sequence of data as stated above, and the Recurrent Neural Network will be a line of components of the same length as the data.
 
 One input from each component is the hidden state output from the Recurrent Neural Network to the left. Another input is the current input from the sequence that the component is encoding. One output is the generated hidden state, meant for the component to the right. The last output is the value that the Recurrent Neural Network outputs or surmises. 
 
@@ -69,7 +71,7 @@ Translating text from one language to another has become a common task for compu
 
 A naive approach to translation involves using a dictionary. You would encode each key as a word from one language and the value for that key would be the translated word in the target language. Of course this doesn't work, because different languages not only have different words for the same thing, but they also have different sentence structures for what might be similar concepts.
 
-A better approach is sequence to sequence translation. A description follows with a section at the end for how training works.
+A better approach for a computer is sequence to sequence translation. A description follows with a section at the end for how training works.
 
 In this approach we use recurrent neural networks to obtain our translation. Two recurrent neural network components are employed. One is responsible for the input language and the other for the output. 
 
@@ -99,7 +101,7 @@ This function can be found in Sutskever et al \cite{DBLP:journals/corr/Sutskever
 
 Also employed are two vocabulary sets. One vocabulary is for the source language and another is for the target language. A table of word vectors the size of the input vocabulary is created and a maximum sentence length is picked. There is also a `hidden size', which is an important dimension in the model. In practice the hidden size could be 300 units and more for this kind of application.
 
-Words are translated from strings to individual numbers from a vocabulary dictionary. The dictionary only contains a single unique number for every word. Then the number is passed through an embedding structure. This turns the single number into a vector of numbers that is the same size as the RNN hidden dimension. Then, from that time on the model uses the vector instead of words.
+Words are translated from strings to individual numbers from an input vocabulary dictionary. The dictionary only contains a single unique number for every word. Then the number is passed through an embedding structure. This turns the single number into a vector of numbers that is the same size as the RNN hidden dimension. Then, from that time on the model uses the vector instead of words.
 
 The contents of the embedding unit is a table of numbers, all are of the size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t have to be, unique values. There is one complete hidden dimension sized vector for each word in the vocabulary. 
 
@@ -120,7 +122,7 @@ There are at this writing two main types of pretrained word embeddings. One is c
 
 Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al.) \cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al.) \cite{pennington-etal-2014-glove} .
 
-Word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
+%Input word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
 \subsection{Corpus}
 
@@ -140,7 +142,7 @@ We will describe components in two groups. The input components, from the source
 
 The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the previous hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous Gated Recurrent Unit. The output vector is a hidden value for the Recurrent Unit to the right.
 
-The very first Gated Recurrent Unit in the input chain ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the chain. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. Then the last Gated Recurrent Unit in the encoder passes it's hidden state to the output chain, the decoder.
+The very first Gated Recurrent Unit in the input encoder ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the encoder. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. Then the last Gated Recurrent Unit in the encoder passes it's hidden state to the output decoder.
 
 A complicating detail is that although many Gated Recurrent Units are called for in the encoder they all use the same set of weights and biases. For this reason only a single input Gated Recurrent Unit is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the Gated Recurrent Unit. 
 
@@ -149,7 +151,7 @@ The output is in charge of generating tokens that represent, in this case, the t
 
 The hidden values from the input section are passed to the first output Gated Recurrent Unit. It outputs the values that are later converted to the first word of the output. The first output Gated Recurrent Unit also has a hidden state. It passes the first word and the hidden state on to the second Gated Recurrent Unit.
 
-The second Gated Recurrent Unit generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on to the next Gated Recurrent Unit. This is repeated until a special `end-of-sequence' token is found or until the number of tokens equals the maximum number allowed.
+The second Gated Recurrent Unit generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on to the next Gated Recurrent Unit. This is repeated until a special `end-of-sequence' token is generated or until the number of tokens equals the maximum number allowed.
 
 \begin{figure}[H]
 	\begin{center}
@@ -164,7 +166,7 @@ The second Gated Recurrent Unit generates the second word and also its own hidde
 
 In this figure we generalize a sequence to sequence model. The idea is that A and B, on the left side of the diagram, deal with the encoding of sentences. A and B would be consecutive words in a sentence, and the round blue nodes below A and B are Recurrent Neural Network units. C and D are outputs and in the right side of the diagram the blue nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
 
-All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. We will see later that aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
+All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. Aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
 
 Making this vector larger by increasing the size of the hidden dimension allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if one of those is used. 
 
