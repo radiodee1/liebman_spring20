@@ -9,6 +9,8 @@ Also Radford et al \cite{radford2019language} discuss the `Generative Pre-traini
 
 We implement a chatbot with a GPT2 model. We use a program library from Wolf et al \cite{Wolf2019HuggingFacesTS} to run our model.
 
+We use Transformer style models and also a Recurrent Neural Network model to allow for meaningful comparison. We explain both types of models below.
+
 It is worth noting that with the appearance of the Transformer architecture some traditional technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
 
 \section{Recurrent Neural Network Components}
@@ -18,7 +20,7 @@ The goal behind Recurrent Neural Network (RNN) components is to detect patterns.
 
 Imagine that we want to use as input a string of words. This could be a sentence used for the input of a translation task.
 
-The simplest Recurrent Neural Network has two inputs and two outputs. They can be arranged in patterns. In our example the input will be a sequence of data as stated above, and the Recurrent Neural Network will be a line of components of the same length as the data.
+The simplest Recurrent Neural Network unit has two inputs and two outputs. They can be arranged in patterns. In our example the input will be a sequence of data as stated above, and the Recurrent Neural Network will be a line of components of the same length as the data.
 
 One input from each component is the hidden state output from the Recurrent Neural Network to the left. Another input is the current input from the sequence that the component is encoding. One output is the generated hidden state, meant for the component to the right. The last output is the value that the Recurrent Neural Network outputs or surmises. 
 
@@ -33,7 +35,7 @@ One input from each component is the hidden state output from the Recurrent Neur
 
 \end{figure}
 
-In our diagram the two inputs are labeled 1 and 2, and the single output does double duty as both the hidden state output and the value that the Recurrent Neural Network outputs or surmises.
+In our diagram the two inputs are labeled 1 and 2, and the single output does double duty as both the hidden state output and the value that the Recurrent Neural Network outputs or surmises. This is labeled 3.
 
 There are several designs for a Recurrent Neural Network component. The inner workings of these components are what makes them different. In the example in the diagram the inner workings are very simple. Two paths, labeled as inputs, take data into the Recurrent Neural Network. Their data is combined in the green circle. This combination is done with concatenation and simple feed forward neural network components. The output from the concatenation is passed through the red circle. This is a `tanh' activation operation that limits the output to values from -1 through 1. This `tanh' activation keeps the output within reasonable values. Finally the output is delivered outside the component to the program employing the Recurrent Neural Network. In this diagram there is only one output. The single output would serve as both the hidden state output for that position in the encoder or decoder, and also the data output component for that position.
 
@@ -65,7 +67,7 @@ In the last line, the regular output is determined using the `dot' product which
 
 Under most programming circumstances the Gated Recurrent Unit is not implemented by the average programmer. The programmer employs a language like python and a programming library like Pytorch or Tensorflow. The library then implements the Gated Recurrent Unit and makes it easy for the programmer to use that implementation.
 
-\section{Sequence to Sequence}
+\section{Sequence to Sequence and Translation}
 
 Translating text from one language to another has become a common task for computers. The Sequence to Sequence architecture is often used today for this purpose. Here we explain how this works.
 
@@ -122,11 +124,22 @@ There are at this writing two main types of pretrained word embeddings. One is c
 
 Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al.) \cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al.) \cite{pennington-etal-2014-glove} .
 
-%Input word vectors are created composed of floating point numbers. Each word in the vocabulary is translated to an integer which remains the same throughout the use of the translator. The word vectors are arranged in a table of floating point numbers with one dimension being the size of the input vocabulary and one dimension being the hidden size for the vector.
 
 \subsection{Corpus}
 
 A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
+
+\subsection{Training and Evaluation}
+
+We have a corpus. It is generally felt that the corpus should be divided into three parts. The largest part, maybe \%80 is held for training. Then \%10 should go to what is called `validation' and \%10 should go to `testing'.
+
+The training portion, obviously, is used during the training phase. The model can become familiar with training data and provide target data that leads one to believe that the model is learning well. This is similar to memorization. The model may see the same training data repeatedly and thereby learn how to answer a source with a target without learning the task of why it is giving a particular answer.
+
+For this reason, during training, the validation set is used for statistical purposes. The actual training mechanism is halted and the validation set is run through the model. Loss is measured and compared to the loss found when training is enabled. Loss during validation is usually greater than during training. This is done periodically during what would otherwise be called training.
+
+This is useful for tuning hyper-parameters. Over and over you train, and as you do you look at the validation for clues on what to change in your hyper-parameters. 
+
+When you are done you use the final holdout set, the `test' set, to determine weather or not you have been successful. You must always remember not to train with the test set.
 
 \subsection{Input Tokens}
 
@@ -172,16 +185,17 @@ Making this vector larger by increasing the size of the hidden dimension allows 
 
 Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model.
 
-Again in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason a single GRU is employed for the entire Decoder.
+Again in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason a single GRU is employed for the entire Decoder. The encoder and decoder are never the same unit.
 
 \subsection{Output Tokens}
-Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary, through matrix multiplication. Then they are processed in what is called an `arg-max' function. This processing determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
+Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. What's done with them is they are converted to the dimensions of the output vocabulary, through matrix multiplication. Then they are processed in what is called a `softmax' function. This processing, along with an `arg-max' function, determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output chain.
 
 There are some inherent problems. Because the output of a Gated Recurrent Unit is constantly being reused as the input, lots of data that might be useful to have is lost when the Gated Recurrent Unit churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
 
 Another problem is that all input to be translated to target output has to be boiled down and passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the `thought vector.' Without attention, described below, all necessary information must be right there. This also limits the length of the input and output vectors. It does help, when setting up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
 
 This is how some computer models do language translation. Using `arg-max' is an example of a greedy approach. Another approach might use something like `Beam Selection' but we're not going to get into that here.
+
 
 
 \subsection{Loss and Accuracy During Training}
@@ -241,7 +255,9 @@ To create a model like this more is required than just a single input and output
 
 It would be easy to duplicate the input source material in the target corpus. This would produce auto-encoding. The model would learn to repeat everything that was given to it in it's output. Though the model learns a task, it is not the dynamic task we want. Conversations, on the other hand, supply the relationship we are looking for. Starting with almost any question sentence in a conversation, the sentence following it answers the question posed. 
 
-What would be a good candidate for this kind of verbal play? Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Even numbered sentence are the source material, and odd numbered sentences are the target. Using this method there are times when the source and target are not from the same conversation, like times in a movie dialog when the scene switches from one locale to another. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
+What would be a good candidate for this kind of verbal play? Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Consecutive sentences can be divided into source and target. Each sentence is a source and the sentence that follows it would be the target for that pair. 
+
+Using this method there are times when the source and target are not from the same conversation, like times in a movie dialog when the scene switches from one locale to another. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
 
 Training for this model is relatively straight forward. There is a problem though. We can follow the loss and make sure it is decreasing, but the accuracy tells us nothing and in this case does not increase as we would like it to. The loss goes down but the accuracy does not go up.
 
