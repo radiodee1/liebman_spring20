@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  1 APR 2020 10:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  1 APR 2020 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1119,12 +1119,12 @@ Appendix A.
 
 
 
-] [58] [59] [60]) [61]
+] [58] [59] [60] [61]) [62]
 Appendix B.
-[62
+[63
 
 
-] (./proposal_doc.bbl [63
+] (./proposal_doc.bbl [64
 
 ]
 Underfull \hbox (badness 6691) in paragraph at lines 85--90
@@ -1134,27 +1134,20 @@ ikipedia, the free en-
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
- [64]
+ [65]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
 (./chapters/appendixa.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
-
-
-Package rerunfilecheck Warning: File `proposal_doc.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proposal_doc.out':
-(rerunfilecheck)             Before: 88DA2E8E2A93553072DBD7B01C83A8C6;5163
-(rerunfilecheck)             After:  26ED1C934CA8506CD097317179565434;5163.
+Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
+(rerunfilecheck)             Checksum: 26ED1C934CA8506CD097317179565434;5163.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 23823 strings out of 494477
- 441784 string characters out of 6175714
+ 23824 strings out of 494477
+ 441791 string characters out of 6175714
  500504 words of memory out of 5000000
  27013 multiletter control sequences out of 15000+600000
  559385 words of font info for 97 fonts, out of 8000000 for 9000
@@ -1188,10 +1181,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (71 pages, 883344 bytes).
+Output written on proposal_doc.pdf (72 pages, 884182 bytes).
 PDF statistics:
- 1364 PDF objects out of 1440 (max. 8388607)
- 815 compressed objects within 9 object streams
- 192 named destinations out of 1000 (max. 500000)
+ 1369 PDF objects out of 1440 (max. 8388607)
+ 819 compressed objects within 9 object streams
+ 193 named destinations out of 1000 (max. 500000)
  625 words of extra memory for PDF output out of 10000 (max. 10000000)
 

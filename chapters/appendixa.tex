@@ -42,14 +42,22 @@ The GPT2 chatbot is much different. Groups of questions have the same answer. So
 
 For us to use AIML for our task we code questions and answers in pairs for all possible phrasing of a question.
 
-We have to count the number of AIML rules that we are coding and compare it to the number of English sentences that the GPT2 chatbot can answer. We have to make sure that the number of chatbot answers is much higher.
+We have to count the number of AIML rules that we are coding and compare it to the number of English sentences that the GPT2 chatbot can answer. We have to make sure that the number of chatbot answers is much higher. 
+
+We are interested in two numbers. One is the average number of rules that we write in AIML to represent a given outcome. The other number is how many outcomes we are working on.
 
 We prefer the answers provided by the generative chatbot over those provided by an AIML file. We want to maximize the amount of time that the overall model answers using the transformer that is internal to the chatbot, and minimize the use of AIML and the AIML kernel. We set a criteria for ourselves. If the generative chatbot is handling most of the questions and answers then we can proceed. If the AIML question/answering set is larger than the number of questions that the chatbot can answer, then the AIML should be avoided. 
 
 \subsubsection{User Name}
 The name of the user is our first example of AIML coding. This example is easy. There are few ways to say `My name is *'. In this case `*' is a wildcard. Another variant is `* is my name'. That's as many ways to say it as there are.
 
-Each question is answerable with a phrase like `Hello *'. Here the asterisk is a wildcard for the memorized name. An AIML file can handle this sort of question very easily. We write an AIML file with these questions. During a typical chatbot run we show all user input to the AIML kernel. 
+Each question is answerable with a phrase like `Hello *'. Here the asterisk is a wildcard for the memorized name. An AIML file can handle this sort of question very easily. We write an AIML file with these questions. We depend on the AIML to remember the name from the wildcard. 
+
+Another question in this scenario is `What is my name?' With this question also there are very few ways to phrase the AIML. Here we are referring to the name recorded in the previous AIML question as discussed above. 
+
+%We have a situation where we are working on two outcomes. One is to tell the chatbot your name. The second is to ask the chatbot to tell you what that name is, albeit from the earlier question. For the time being we will add together the number of phrases in both questions. For this example we record three phrases. Two phrases come from stating your name, and one phrase comes from the answer to the question `What is my name?'
+
+During a typical chatbot run we show all user input to the AIML kernel. 
 
 When the kernel does not match anything there is no output from the kernel, but when there is a match we show the AIML output to the chatbot as the context for that input. This is to say that the input from the user is concatenated with the context text, in this case the answer from the AIML kernel. The chatbot is then left to decide what to answer from the user question and the context. Usually the answer makes sense.
 
@@ -73,7 +81,7 @@ Later when the AIML detects the second signal, we will call the `restore' signal
 
 As the chatbot answers questions the content of the conversation is saved for the `history' of the context text, as it is used in the regular chatbot mode. This means there is a record of the questions and answers the chatbot goes through during it's operation, even when it is answering questions about a web page that it has searched for. Because of size limitations the history is not included in the chatbot input when it is answering questions about a web page, but a record is kept of `q' and `a' and the bot can refer to them later.
 
-Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 1024 tokens and it is 1280 for the larger model. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
+Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 768 tokens and it is 1280 for the larger model. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
 
 \subsubsection{Usage Example}
 
@@ -84,6 +92,8 @@ The chatbot would take a little time to respond. Ultimately it would answer with
 Then you might ask it a question like `How many members were in the band?'
 
 To this question the chatbot answered this way for us, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' We note that this is not actually the correct answer. This may be because after clipping the information asked for does not exist in the context section. You can ask other questions. Some of them may be answered correctly and some not. 
+
+When you ask the question `How many members were in the band?' you do not need to specify which band. The model seems to be able to intuit the band that you are referring to.
 
 At some point you will want to end the Q/A session. You would say `OK' or `OK thanks'. After that the web page for the `Beatles' would no longer be available to the chatbot. It could still answer questions. You could ask `What are the Beatles'. You might get an answer like above, `The Beatles were an English rock band formed in Liverpool in 1960.'
 
