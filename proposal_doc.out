@@ -30,7 +30,7 @@
 \BOOKMARK [2][-]{subsection.2.2.4}{Releases}{section.2.2}% 30
 \BOOKMARK [2][-]{subsection.2.2.5}{Application Details}{section.2.2}% 31
 \BOOKMARK [2][-]{subsection.2.2.6}{Visualization - GPT2}{section.2.2}% 32
-\BOOKMARK [0][-]{chapter.3}{Experiments}{}% 33
+\BOOKMARK [0][-]{chapter.3}{Experimental Design and Setup}{}% 33
 \BOOKMARK [1][-]{section.3.1}{Approach to the Study}{chapter.3}% 34
 \BOOKMARK [1][-]{section.3.2}{Model Overview}{chapter.3}% 35
 \BOOKMARK [1][-]{section.3.3}{Setup}{chapter.3}% 36
@@ -43,26 +43,28 @@
 \BOOKMARK [2][-]{subsection.3.4.1}{Pytorch `torch' Library 1.1.0 For ARMv7}{section.3.4}% 43
 \BOOKMARK [2][-]{subsection.3.4.2}{Pytorch `torch' Library 1.4.0 For ARMv7}{section.3.4}% 44
 \BOOKMARK [2][-]{subsection.3.4.3}{Docker Container `tensorflow-model-server' For ARMv7}{section.3.4}% 45
-\BOOKMARK [1][-]{section.3.5}{Experiments - Installations}{chapter.3}% 46
-\BOOKMARK [2][-]{subsection.3.5.1}{Chatbot - Gated Recurrent Unit Model}{section.3.5}% 47
-\BOOKMARK [2][-]{subsection.3.5.2}{Smart Speaker - Gated Recurrent Unit Model}{section.3.5}% 48
-\BOOKMARK [2][-]{subsection.3.5.3}{Chatbot - Transformer Model with Persona Corpus}{section.3.5}% 49
-\BOOKMARK [2][-]{subsection.3.5.4}{Smart Speaker - Transformer Model with Persona Corpus}{section.3.5}% 50
-\BOOKMARK [2][-]{subsection.3.5.5}{Chatbot - Transformer Model with Movie Corpus}{section.3.5}% 51
-\BOOKMARK [2][-]{subsection.3.5.6}{Smart Speaker - Transformer Model with Movie Corpus}{section.3.5}% 52
-\BOOKMARK [2][-]{subsection.3.5.7}{Chatbot - Generative Pre-training Transformer 2 Model}{section.3.5}% 53
-\BOOKMARK [2][-]{subsection.3.5.8}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.3.5}% 54
-\BOOKMARK [1][-]{section.3.6}{Observations}{chapter.3}% 55
-\BOOKMARK [2][-]{subsection.3.6.1}{GRU vs. Transformer}{section.3.6}% 56
-\BOOKMARK [2][-]{subsection.3.6.2}{Smaller Chatbot Learning}{section.3.6}% 57
-\BOOKMARK [2][-]{subsection.3.6.3}{Word Usage}{section.3.6}% 58
-\BOOKMARK [2][-]{subsection.3.6.4}{Sentence Usage}{section.3.6}% 59
-\BOOKMARK [1][-]{section.3.7}{Tests}{chapter.3}% 60
-\BOOKMARK [2][-]{subsection.3.7.1}{Turing Test}{section.3.7}% 61
-\BOOKMARK [2][-]{subsection.3.7.2}{Winograd Schema}{section.3.7}% 62
-\BOOKMARK [0][-]{appendix.A}{Further Installations}{}% 63
-\BOOKMARK [1][-]{section.A.1}{Generative Pre-training Transformer 2 - Large Model}{appendix.A}% 64
-\BOOKMARK [2][-]{subsection.A.1.1}{Context Experiment}{section.A.1}% 65
-\BOOKMARK [2][-]{subsection.A.1.2}{History Experiment}{section.A.1}% 66
-\BOOKMARK [2][-]{subsection.A.1.3}{Artificial Intelligence Markup Language Experiment}{section.A.1}% 67
-\BOOKMARK [0][-]{appendix.B}{Abbreviations}{}% 68
+\BOOKMARK [0][-]{chapter.4}{Experimental Results}{}% 46
+\BOOKMARK [1][-]{section.4.1}{Experiments - Installations}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.1.1}{Chatbot - Gated Recurrent Unit Model}{section.4.1}% 48
+\BOOKMARK [2][-]{subsection.4.1.2}{Smart Speaker - Gated Recurrent Unit Model}{section.4.1}% 49
+\BOOKMARK [2][-]{subsection.4.1.3}{Chatbot - Transformer Model with Persona Corpus}{section.4.1}% 50
+\BOOKMARK [2][-]{subsection.4.1.4}{Smart Speaker - Transformer Model with Persona Corpus}{section.4.1}% 51
+\BOOKMARK [2][-]{subsection.4.1.5}{Chatbot - Transformer Model with Movie Corpus}{section.4.1}% 52
+\BOOKMARK [2][-]{subsection.4.1.6}{Smart Speaker - Transformer Model with Movie Corpus}{section.4.1}% 53
+\BOOKMARK [2][-]{subsection.4.1.7}{Chatbot - Generative Pre-training Transformer 2 Model}{section.4.1}% 54
+\BOOKMARK [2][-]{subsection.4.1.8}{Smart Speaker - Generative Pre-training Transformer 2 Model}{section.4.1}% 55
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 56
+\BOOKMARK [1][-]{section.5.1}{Observations}{chapter.5}% 57
+\BOOKMARK [2][-]{subsection.5.1.1}{GRU vs. Transformer}{section.5.1}% 58
+\BOOKMARK [2][-]{subsection.5.1.2}{Smaller Chatbot Learning}{section.5.1}% 59
+\BOOKMARK [2][-]{subsection.5.1.3}{Word Usage}{section.5.1}% 60
+\BOOKMARK [2][-]{subsection.5.1.4}{Sentence Usage}{section.5.1}% 61
+\BOOKMARK [1][-]{section.5.2}{Tests}{chapter.5}% 62
+\BOOKMARK [2][-]{subsection.5.2.1}{Turing Test}{section.5.2}% 63
+\BOOKMARK [2][-]{subsection.5.2.2}{Winograd Schema}{section.5.2}% 64
+\BOOKMARK [0][-]{appendix.A}{Further Installations}{}% 65
+\BOOKMARK [1][-]{section.A.1}{Generative Pre-training Transformer 2 - Large Model}{appendix.A}% 66
+\BOOKMARK [2][-]{subsection.A.1.1}{Context Experiment}{section.A.1}% 67
+\BOOKMARK [2][-]{subsection.A.1.2}{History Experiment}{section.A.1}% 68
+\BOOKMARK [2][-]{subsection.A.1.3}{Artificial Intelligence Markup Language Experiment}{section.A.1}% 69
+\BOOKMARK [0][-]{appendix.B}{Abbreviations}{}% 70

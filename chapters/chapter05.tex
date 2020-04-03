@@ -1,3 +1,5 @@
+\iffalse
+
 \section{Approach to the Study}
 
 Several neural network models are used in the project. One is the sequence to sequence model and another the transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
@@ -197,7 +199,6 @@ It was found that there existed a version of the Docker Container Daemon that ra
 
 `Tensorflow-model-server' is used on the localhost internet address, 127.0.0.1, with a port of 8500. tensorflow-model-server is meant for serving neural network resources on the internet, but with careful planning it works on the Raspberry Pi.
 
-\iffalse
 \section{Experiments - Installations}
 In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
@@ -580,6 +581,8 @@ The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, mon
 
 A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. The lights are helpful.
 
+\fi
+
 \section{Observations}
 
 \subsection{GRU vs. Transformer}
@@ -681,4 +684,3 @@ The Transformer, and the Scaled Dot-product Attention that it uses, lends itself
 
 There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
 
-\fi
