@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  3 APR 2020 12:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  3 APR 2020 14:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -942,19 +942,19 @@ Chapter 1.
  (./chapters/chapter01.tex [2
 
 ]
-<diagram-rnn.png, id=464, 321.2pt x 361.35pt>
+<diagram-rnn.png, id=479, 321.2pt x 361.35pt>
 File: diagram-rnn.png Graphic file (type png)
 <use diagram-rnn.png>
 Package pdftex.def Info: diagram-rnn.png  used on input line 30.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [3 <./diagram-rnn.png>] [4]
-<diagram-embedding.png, id=483, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=498, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 112.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
  [5] [6 <./diagram-embedding.png>] [7] [8]
-<diagram-nmt.png, id=507, 351.3125pt x 260.975pt>
+<diagram-nmt.png, id=522, 351.3125pt x 260.975pt>
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
 Package pdftex.def Info: diagram-nmt.png  used on input line 172.
@@ -991,7 +991,7 @@ LaTeX Font Warning: Command \mathversion invalid in math mode on input line 243
 .
 
 [12]
-<Figure_1.png, id=541, 462.528pt x 346.896pt>
+<Figure_1.png, id=556, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 267.
@@ -1007,50 +1007,50 @@ Chapter 2.
  (./chapters/chapter02.tex [16
 
 ] [17]
-<diagram-mat01.png, id=564, 321.2pt x 361.35pt>
+<diagram-mat01.png, id=579, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 55.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [18 <./diagram-mat01.png>]
-<diagram-mat03-64.png, id=572, 321.2pt x 361.35pt>
+<diagram-mat03-64.png, id=587, 321.2pt x 361.35pt>
 File: diagram-mat03-64.png Graphic file (type png)
 <use diagram-mat03-64.png>
 Package pdftex.def Info: diagram-mat03-64.png  used on input line 91.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [19 <./diagram-mat03-64.png>]
-<diagram-mat02.png, id=580, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=595, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 109.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [20 <./diagram-mat02.png>]
-<diagram-flow1.png, id=586, 284.262pt x 260.172pt>
+<diagram-flow1.png, id=601, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
 Package pdftex.def Info: diagram-flow1.png  used on input line 132.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
  [21 <./diagram-flow1.png>]
-<diagram-mat04.png, id=592, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=607, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 151.
 (pdftex.def)             Requested size: 323.7688pt x 441.3277pt.
 
 [22] [23 <./diagram-mat04.png>]
-<Figure_3.png, id=603, 98.769pt x 63.3567pt>
+<Figure_3.png, id=618, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 174.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
  [24 <./Figure_3.png>]
-<diagram-mat05.png, id=612, 46.0119pt x 89.133pt>
+<diagram-mat05.png, id=627, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 208.
 (pdftex.def)             Requested size: 184.04712pt x 356.53107pt.
  [25] [26 <./diagram-mat05.png (PNG copy)>] [27] [28]
-<Figure_4.png, id=637, 84.7968pt x 46.2528pt>
+<Figure_4.png, id=652, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 272.
@@ -1096,7 +1096,7 @@ Chapter 4.
  (./chapters/chapter04.tex [41
 
 ] [42] [43] [44] [45] [46]
-<Figure_2.png, id=732, 86.0013pt x 57.816pt>
+<Figure_2.png, id=747, 86.0013pt x 57.816pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
 Package pdftex.def Info: Figure_2.png  used on input line 206.
@@ -1112,18 +1112,18 @@ Chapter 5.
  (./chapters/chapter05.tex [56
 
 ]
-<Figure_5.png, id=778, 607.26875pt x 341.275pt>
+<Figure_5.png, id=793, 607.26875pt x 341.275pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
 Package pdftex.def Info: Figure_5.png  used on input line 28.
 (pdftex.def)             Requested size: 303.63364pt x 170.63707pt.
-<Figure_6.png, id=779, 607.26875pt x 341.275pt>
+<Figure_6.png, id=794, 607.26875pt x 341.275pt>
 File: Figure_6.png Graphic file (type png)
 <use Figure_6.png>
 Package pdftex.def Info: Figure_6.png  used on input line 42.
 (pdftex.def)             Requested size: 303.63364pt x 170.63707pt.
  [57 <./Figure_5.png>]
-<Figure_8.png, id=785, 607.26875pt x 341.275pt>
+<Figure_8.png, id=800, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
 Package pdftex.def Info: Figure_8.png  used on input line 63.
@@ -1161,14 +1161,14 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 8AED81ACB83604B7F8EA47E2C3C62F25;5443.
+(rerunfilecheck)             Checksum: 3BFEEB7870FA6EC59866B92DA39965C6;5676.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
  ) 
 Here is how much of TeX's memory you used:
- 23850 strings out of 494477
- 442179 string characters out of 6175714
+ 23853 strings out of 494477
+ 442248 string characters out of 6175714
  501325 words of memory out of 5000000
- 27022 multiletter control sequences out of 15000+600000
+ 27025 multiletter control sequences out of 15000+600000
  559385 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,11n,63p,1001b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1200,10 +1200,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (76 pages, 888842 bytes).
+Output written on proposal_doc.pdf (76 pages, 889147 bytes).
 PDF statistics:
- 1411 PDF objects out of 1440 (max. 8388607)
- 852 compressed objects within 9 object streams
+ 1423 PDF objects out of 1440 (max. 8388607)
+ 864 compressed objects within 9 object streams
  196 named destinations out of 1000 (max. 500000)
- 665 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 689 words of extra memory for PDF output out of 10000 (max. 10000000)
 
