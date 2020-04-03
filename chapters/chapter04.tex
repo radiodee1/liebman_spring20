@@ -1,207 +1,6 @@
-\iffalse
 
-\section{Approach to the Study}
 
-Several neural network models are used in the project. One is the sequence to sequence model and another the transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
-
-We will not try to rewrite the transformer or GPT2 model ourselves.
-
-In this project we attempt to load as much of our chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
-
-Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
-
-The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
-
-Also, we have several models that we want to test. To test them all would require several servers. In addition we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
-
-It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. Currently on the Raspberry Pi decoding a single sentence takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
-
-\section{Model Overview}
-
-
-
-\begin{table}[h]
-	
-	\begin{center}
-		
-		
-		\begin{tabular}{llllll}
-			
-			Model Name    & File  & RAM  & RAM    & Hand & Raspberry \\
-			&  Size & Train   & Inference    & Trained &   Pi \\
-			\hline
-			\hline
-			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &   3B \\
-			Transformer/Persona   & 25 M      & 556 M & 360 M          & YES  & NONE \\
-			Transformer/Movie   & 550 M      & 6.5 G & 1.5 G          & YES    & 4B  \\
-			GPT2 small*   & 523 M     & 5 G   & 1.5 G               & NO     &  4B \\
-			\hline
-		\end{tabular}
-		
-		* a large GPT2 model exists, but it is not small enough to fit on a raspberry pi.
-		
-		
-	\end{center}
-	
-	\label{fig:modeloverview}
-	\addcontentsline{lot}{section}{Model Overview}
-\end{table}
-
-
-Here we itemize a short description for each row in the table.
-
-\begin{itemize}
-	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. 
-	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board.
-	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus.
-	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. Some modification was made so that model output was suitable for our purposes.
-\end{itemize}
-
-
-
-\section{Setup}
-
-We use linux computers, sometimes with \ac{GPU} hardware for parallel processing. We also use the Python programming language. Code from this project can be run with the 3.x version of Python.
-
-When the project was started we did some programming with Keras using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow. Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
-
-Some of the Generative Pre-training Transformer 2 code uses Pytorch. Some of the Transformer and Generative Pre-training Transformer 2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
-
-We use github as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot} . 
-
-As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have varying amounts of success with these experiments. We do not rewrite the Generative Pre-training Transformer 2 code from the Tensorflow or Pytorch repository.
-
-\subsection{Graphical Processing Unit vs. Central Processing Unit}
-
-A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. This allows for a logical program that can be executed. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
-
-GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. The GPU speeds up parallel processing and have a benefit to neural networking training tasks that the CPU doesn't have.
-
-Unfortunately state of the art neural network models are larger than the capacity of a single GPU. Some models are trained on many GPUs simultaneously. It is not uncommon for a model to train on a computer with eight GPU cards for many days. Training these models is prohibitively expensive for the average programmer. It is possible to rent time on Amazon Web Services or Google cloud with well outfitted computers to do this training, but this can be costly.
-
-This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessible to the public. Then the average programmer downloads the model and fine tunes it to their task.
-
-This would be fine if there were a model for every task. Though many models exist there seems to be many tasks that are not addressed. 
-
-%It seems that there is often the opportunity to train a large model by utilizing the CPU and training for long periods of time. This arrangement is not advised for the sort of experimentation where it is not a certainty that the output will be successful. If the goal is to do something that might not work, don't undertake it or use a Amazon or Google computer. If success is assured and time is plentiful continue with the CPU.
-
-In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training. In the GRU example the model trained in less than an hour.
-
-\subsection{Raspberry Pi}
-
-A Raspberry Pi is a small single board computer with an `arm' processor. There are several versions on the market, the most recent of which sports built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer can sport 4Gig of RAM.
-
-It has always been the intention that at some time some chatbot of those examined will be seen as superior and will be installed and operated on a Raspberry Pi computer. If more than one model is available then possibly several models could be installed on Pi computers.
-
-For this to work several resources need to be made available. Pytorch needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text To Speech (TTS) need to work on the Pi.
-
-For one of the transformer models to work Tensorflow needs to work on the Pi.
-
-All the files that are trained in the chosen model need to be small enough in terms of their file size to fit on the Pi. Also it must be determined that the memory footprint of the running model is small enough to run on the Pi.
-
-In the github repository files and scripts for the Raspberry Pi are to be found in the \textquoteleft bot\textquoteright{} folder.
-
-Early tests using Google\textquoteright s SR and TTS services show that the Pi can support that type of functionality. 
-
-Google's SR service costs money to operate. Details for setting up Google's SR and TTS functions is beyond the scope of this document. Some info about setting this up can be
-found in the README file of this project\textquoteright s github repository.
-
-The pytorch model that is chosen as best will be trained on the desktop computer and then the saved weights and biases will be transferred to the Raspberry Pi platform. The Pi will not need to do any training, only inference. 
-
-\subsection{Tensorflow vs. Pytorch}
-
-Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. The learning curve for Tensorflow is steeper than for Pytorch. Pytorch offers the programmer python objects that can be combined to create a neural network. Tensorflow has different pieces that can be combined, but they cannot be examined as easily at run time.
-
-Tensorflow has a placeholder concept for inputting data and getting back results. You set up these placeholders at design time. They are the only way of accessing your data at run time.
-
-Pytorch objects interact with Python more naturally. You can use print statements in your code to show data streaming from one object to another. This is possible at run time.
-
-In favor of Tensorflow, it has a good tool for visualization which can print out all kinds of graphs of your data while your model trains. It is called Tensorboard.
-
-\subsection{Speech and Speech To Text}
-
-Google has python packages that translate text to speech and speech to text. In the case of text to speech the library is called `gTTS'. In the case of speech to text the library is called `google-cloud-speech'. 
-
-The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an internet connection and an account with Google that enables Google cloud api use. Google charges the user a small amount for every word that they translate into text. 
-
-Both of these resources, the text-to-speech and speech-to-text, work out of the box on the Raspberry Pi, but configuring speech-to-text for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration the user is able to download a json authentication file. The file must be copied to the Raspberry Pi. 
-
-Furthermore an environment variable must be set that points to the authentication file. The variable is called `GOOGLE\_APPLICATION\_CREDENTIALS'. This environment variable has to be set up before the respective model runs. When the model is launched on startup it may not be launched as a regular user. The model may be launched as, for example, the root user. Somehow the environment variable must be set along with the launching of the neural network model.
-
-The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, we attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
-
-\subsection{Corpus Considerations}
-
-We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have a `JSON' dump from Reddit that is downloadable.  This is not the same Reddit data that the authors of GPT2 use. Finally we have the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
-
-%The movie corpus is medium sized and the Reddit `JSON' download is large and filled with hyperlinks and sentence fragments. 
-
-At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are  noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. In the future if we can train in a faster environment the Reddit corpus might be superior.
-
-For the Persona corpus the text is organized into `JSON' objects. There are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not organized in this kind of pattern. When we take apart the Persona corpus we find that the sentences labeled with the `history' tag are most suited to our task. We record these values only and discard other labels.
-
-\section{ARMv7 Build/Compile}
-
-\subsection{Pytorch `torch' Library 1.1.0 For ARMv7}
-We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
-
-On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
-
-The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used in the change-root environment to compile the Pytorch library for the 1.1.0 version.
-
-The production laptop used for development ran Ubuntu linux. For this reason a Virtualbox emulation was set up with Fedora Core 30 on it. Inside that emulator the change-root environment was set up. The library was compiled there successfully. 
-
-There are two problems with the resulting built python package. Firstly there is an error in python when importing the torch library. The error reads `ImportError: No module named \_C'. 
-
-After some research it is clear that the build process for ARMv7 creates some shared object files that are misnamed. A fix is to find the misnamed files and make copies of them with a suitable name. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
-
-There are three files misnamed. They can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}'. They are named with the same convention. They all have the ending `.cpython-37m-arm7hf-linux-gnu.so'. We want to rename them with the much shorter `.so'. The files are then named `\textbf{\_C.so}', `\textbf{\_dl.so}', and `\textbf{\_thnn.so}'.
-
-This takes care of the `ImportError'. The second problem is that the version of GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: `\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version `GLIBCXX\_3.4.26' not found}'.
-
-This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
- 
-\subsection{Pytorch `torch' Library 1.4.0 For ARMv7}
-We recompile the Pytorch library for the Raspberry Pi. We use debian virtualization techniques for the compilation. Because Ubuntu is a Debian derivative it is not necessary to run the process in a Virtualbox container. 
-
-In addition to this, the files created by the compilation are properly named. There is no need to go to the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}' to change anything. 
-
-The time spent compiling the software is approximately 5 hours. Time spent with the Virtualbox container was easily twice that. The time spent on the Raspberry Pi executing a single Generative Pre-training Transformer 2 question and answer remains about 13 seconds, so there was no gain in that respect.
-
-There were several small hurdles to completing the compilation. Firstly the `debootstrap' command needed to be employed at the start. Debian Stretch was used as the host operating system. It was felt that if it was used that the GLIBC compatibility problem would not be faced. This turned out to be the case.
-
-There are some dependencies that need to be installed on the `chroot' environment for Pytorch to compile. One of these is that is important is `libblas3.'
-
-Then Python 3.7 needed to be built on Stretch. The Stretch program repositories use Python 2.7 and 3.5 . The Raspbian operating system on the Raspberry Pi 4B is based on Debian Buster and uses Python 3.7. After compiling Python 3.7 the Git program needed to be compiled from scratch. Git on Stretch has a issue that is fixed upstream, but we want to use Stretch because of the GLIBC issue. Instead of using the upstream fix, we compile Git ourselves.
-
-It is conceivable that the GLIBC issue would not be important if the `chroot' environment used Debian Buster, since that is the basis for the current Raspbian operating system. The Stretch operating system solution works though.
-
-Finally the Pytorch program needed to be built. We disable CUDA and distributed computing as neither exists on the Raspberry Pi.
-
-\subsection{Docker Container `tensorflow-model-server' For ARMv7}
-The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
-
-Docker can be run on the Raspberry Pi in the ARM environment. Below is a terminal excerpt that shows how to do this. These commands are executed on the Pi.
-
-\begin{verbatim}
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ curl -fsSL test.docker.com -o get-docker.sh 
-$ sh get-docker.sh
-$ sudo usermod -aG docker $USER
-\end{verbatim}
-
-After the last command you need to log out and then log in again to take advantage of the newly installed docker.
-
-The original idea was to follow someone else's instructions and compile the Docker Container for the ARMv7. Then the executable would be removed from the container and used natively in the Raspberry Pi.
-
-It was found that there existed a version of the Docker Container Daemon that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski \cite{2020Maciejewski}.
-
-`Tensorflow-model-server' is used on the localhost internet address, 127.0.0.1, with a port of 8500. tensorflow-model-server is meant for serving neural network resources on the internet, but with careful planning it works on the Raspberry Pi.
-
-\fi
-
-\section{Experiments - Installations}
+%\section{Experiments - Installations}
 In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
 We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections. 
@@ -214,7 +13,7 @@ We have four models we consider and at the same time only three Raspberry Pi boa
 
 The model that did not make it to the final three and installation on a Raspberry Pi was the smaller Transformer with the Persona corpus.
 
-\subsubsection*{Questions}
+\subsection*{Questions}
 Below is a list of questions asked of all models. From this list and the answers from each model we try to make comparisons between the models about their strengths.
 
 \begin{verbatim}
@@ -252,14 +51,14 @@ We visit and revisit this checklist to subjectively rate our chatbots.
 \end{itemize}
 
 
-\subsection{Chatbot - Gated Recurrent Unit Model}
+\section{Chatbot - Gated Recurrent Unit Model}
 We have two models based on the sequnce to sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al \cite{2018Inkawhich}.
 
 We trained this sequence to sequence model on a large english corpus in an attempt to produce a chatbot. This model does not use a transformer architecture.
 
 This second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original, authentic answers. Almost all the answers made sense in the English language.
 
-\subsubsection*{Questions}
+\subsection*{Questions}
 This is the sample question list as it was answered by the GRU model.
 
 %\begin{minipage}{2in}
@@ -305,7 +104,7 @@ good bye .
 \item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model answers well to `Hello' and `Good bye'.
 \end{itemize}
 
-\subsection{Smart Speaker - Gated Recurrent Unit Model}
+\section{Smart Speaker - Gated Recurrent Unit Model}
 
 The Gated Recurrent Unit model was installed on a Raspberry Pi. This allowed us to test out speech-to-text and text-to-speech libraries. The Raspberry Pi model was 3B. The RAM requirements were less than 500MB and the trained model answered questions on the Raspberry Pi almost instantaneously.
 
@@ -317,14 +116,14 @@ The model requires access to the internet for the exchange that the speech to te
 
 As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input. At that point the model beeps once.
 
-\subsection{Chatbot - Transformer Model with Persona Corpus}
+\section{Chatbot - Transformer Model with Persona Corpus}
 Using the Persona corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. The Persona corpus comes from Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}.
 
 This model uses the tensorflow library, not Pytorch, and a transformer model that is somewhat small.
 
 The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board. That requires a python package called `tensorflow-model-server' and this package had to be built for ARMv7 for the Raspberry Pi. 
 
-\subsubsection{Training}
+\subsection{Training}
 Training of the model followed a certain pattern. First the model was trained on the persona corpus until a familiar pattern emerged. When the model began to answer all questions with the 
 phrase "I don't know" training was stopped. 
 
@@ -337,7 +136,7 @@ At this point, after looking at the change in loss, further training was not tho
 
 %Subjectively the transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
-\subsubsection*{Questions}
+\subsection*{Questions}
 Subjectively this transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 This is the sample question list as it was answered by the model.
@@ -381,7 +180,7 @@ hi , how are you today ?
 \end{itemize}
 
 
-\subsection{Smart Speaker - Transformer Model with Persona Corpus}
+\section{Smart Speaker - Transformer Model with Persona Corpus}
 
 The transformer model was tested on the Raspberry Pi. This model is not more dynamic than the GRU tutorial model. 
 
@@ -390,7 +189,7 @@ The transformer model takes about two minutes to boot on the Raspberry Pi. After
 There is one special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions.
 
 
-\subsection{Chatbot - Transformer Model with Movie Corpus}
+\section{Chatbot - Transformer Model with Movie Corpus}
 Using the Movie corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. 
 
 This model uses the tensorflow library, not Pytorch, and a transformer model that is larger than the other Transformer based model that uses the Persona corpus.
@@ -417,7 +216,7 @@ Subjectively this transformer model is better than the Transformer model based o
 
 
 %\begin{lstlisting}[language=bash]
-\subsubsection*{Questions}
+\subsection*{Questions}
 This is the sample question list as it was answered by the model.
 
 \begin{verbatim}
@@ -458,7 +257,7 @@ bye
 	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model does have an answer for `Good bye'.
 \end{itemize}
 
-\subsection{Smart Speaker - Transformer Model with Movie Corpus}
+\section{Smart Speaker - Transformer Model with Movie Corpus}
 
 The transformer model is installed on the Raspberry Pi. It takes about five seconds to answer any question.
 
@@ -469,7 +268,7 @@ There is a special tone that the Raspberry Pi gives at the end of loading the mo
 A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. The lights are helpful.
 
 
-\subsection{Chatbot - Generative Pre-training Transformer 2 Model}
+\section{Chatbot - Generative Pre-training Transformer 2 Model}
 We used a pre-trained Generative Pre-training Transformer 2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well and this model was considered superior. The corpus is called `WebText'. We did not train this model ourselves.
 
 For our experiments the Generative Pre-training Transformer 2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the model in the application.
@@ -482,14 +281,14 @@ Output from the model was usually larger in size than we needed. Also, output ha
 
 It was necessary to process the output. First the output was checked for the "A:" character string at the start. If it was there it was removed. Then the first complete sentence was used as output, while words and phrases after that were discarded.
 
-\subsubsection{Context Experiment}
+\subsection{Context Experiment}
 We decided that we would attempt to give the model some details that it could draw on during normal execution. We had two choices here. One choice was to train the model using fine-tuning and transfer learning to recognize certain questions and to supply answers. The other choice was to simply show the model the list of facts that we thought were important before every input sequence. This information would be summarized with each reply.
 
 The second choice was more interesting. The text that the model was shown always included the name of the model (picked somewhat arbitrarily) along with information about the location of the model and the occupation. The time was also included.
 
 This worked under most circumstances. Occasionally the model would report the wrong time when asked. This sort of activity is mysterious.
 
-\subsubsection{History Experiment}
+\subsection{History Experiment}
 We tried concatenating all input and output and including it with each question. The hope was that the model would treat the `Q' and `A' as historical input and then it could refer to that input as it answered new questions. This didn't always work as expected. Sometimes the model was confused by the extra input. Sometimes it seemed to have no effect at all.
 
 Without some mechanism of this sort the model has no notion of temporal context. The answers to questions could never possibly depend on the answers to past questions. Though this historical input did not always work, we retain the code in the hopes that at some point it is useful.
@@ -505,7 +304,7 @@ We like this output. The model is asked about the color `red'. Doing so the mode
 
 From one sentence to the next the model is keeping track of the context of the conversation. History is considered. Unfortunately the results of our history experiment are not so robust. It is not always the case that the model chooses the color recently discussed as the `favorite' color.
 
-\subsubsection{Artificial Intelligence Markup Language Experiment}
+\subsection{Artificial Intelligence Markup Language Experiment}
 Tests showed that the Generative Pre-training Transformer 2 chatbot worked well. We wanted to continue and allow the chatbot to have more of the abilities of a smart speaker. We constructed a simple corpus that contained key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning with this new corpus.
 
 We found that one of two things would happen. The chatbot would either learn the new phrases and forget all it's pre-training, or it would not learn the new phrases and it would retain all it's pre-training. For our examples there seemed to be no middle ground. Comparisons were made with all available models and a version without the transfer learning was settled on.
@@ -516,13 +315,13 @@ At first it didn't work. The AIML confused the model, and the model would not re
 
 Later the AIML was modified to appear to the model with the `Q:' and `A:' at the beginning of the lines. Some of the time the model answered with the AIML. 
 
-\subsubsection{Program Launching}
+\subsection{Program Launching}
 
 We did some programming that allowed the model to launch programs when directed to by the user. In this way we have tried to move our project closer to the smart-speakers that are produced commercially. The programming did not rely on the neural-network aspects of the model. Instead the code used string manipulation and simple word recognition. This code can be enabled when the model is run from the command line. This was not enabled for the Raspberry Pi.
 
 There is no space prohibition for using the Program Launching code on the Raspberry Pi. Future work may use Chromecast as a way to connect the Raspberry Pi with the user's home TV or monitor. 
 
-\subsubsection{Overall}
+\subsection{Overall}
 
 Subjectively the model was the best of those tested. The model would answer questions about it's location, it's name, and the time, faithfully most of the time. Interestingly there where times when it did not do so. Some times it used alternative answers. For example, it would answer with the time but not the correct time. This was odd.
 
@@ -530,7 +329,7 @@ Under almost all circumstances the output was sensible English. There were no ti
 
 The subject matter of the prompts did not need to be the same as the simple introductory conversation of the transformer model. In fact any subject matter could be chosen and the model would answer. The model did not remember its own answers but it was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
 
-\subsubsection*{Questions}
+\subsection*{Questions}
 This is the sample question list as it was answered by the model. Note that the information mentioned in the answer about the time was accurate when the test was run.
 
 \begin{verbatim}
@@ -573,7 +372,7 @@ Good bye.
 
 The model will answer with it's name and you can tell it your name, but it is confused by this. It will on occasion tell you that it's name and your name are the same thing. This is in part because it cannot remember what it most recently said to you or what you most recently said to it. 
 
-\subsection{Smart Speaker - Generative Pre-training Transformer 2 Model}
+\section{Smart Speaker - Generative Pre-training Transformer 2 Model}
 
 Code was added that uses Text To Speech and Speech To Text libraries. In this way the model could interact with a subject using auditory cues and commands.
 
@@ -583,107 +382,3 @@ The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, mon
 
 A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. The lights are helpful.
 
-\iffalse
-
-\section{Observations}
-
-\subsection{GRU vs. Transformer}
-It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
-
-A single further observation is that the GRU model responds very quickly, while a transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the transformer model when it is installed on a small computer like a Raspberry Pi. 
-
-The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains some worth.
-
-\subsection{Smaller Chatbot Learning}
-
-For the chatbot task we want to know what the Transformer is doing during training and later during inference.
-
-It seems the model learns a set of multi-purpose English answers in a form close to a list. Then it spends time as a classifier. Each input sentence is compared to the set of answers. A question is associated with a given answer from the set when possible. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained many of the answers that the model would use. For a given model this list can only be so long.
-
-It is interesting to point out that probably at the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
-
-For the very large pre-trained model this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
-
-\subsection{Word Usage}
-
-We make a general assumption that any model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. Also some percentage of words are used repeatedly.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{Figure_5}
-		
-		
-	\end{center}
-	\caption[Word Usage]{Word Usage - Including Vocabulary Total}
-	
-	
-\end{figure}
-
-If we remove the Vocabulary Total and the GPT2 Total from the diagram the GRU output and the Transformer output takes the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{Figure_6}
-		
-		
-	\end{center}
-	\caption[Simple Word Usage]{Simple Word Usage - No Vocabulary Total}
-	
-	
-\end{figure}
-
-We might conclude from these comparisons that the GRU model operates more robustly than the Transformer model. This may be the case, or the transformer model may be over trained or over fitted. It also might be that the hyper parameter set is poorly adjusted. We suspect the learning rate, for example, may be too high.
-
-\subsection{Sentence Usage}
-
-If we were interested in transfer learning and we wanted to train the model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly or over and over.
-
-The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs.
-
-We have a rough number for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer in total. The GRU is increasing still at 350 sentences at the end of our study. We assume that at some point the number of total GRU sentences that that model can produce reaches some kind of limit.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.6]{Figure_8}
-		
-		
-	\end{center}
-	\caption[Simple Sentence Usage]{Simple Sentence Usage}
-	
-	
-\end{figure}
-
-In a transformer classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a chatbot that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. 
-
-We do not experiment with classifiers, but we mentioned BERT, which can be configured as a classifier.
-
-\section{Tests}
-
-\subsection{Turing Test}
-
-The Turing Test concerns itself with the question of weather a computer is intelligent. Turing says that intelligence is too hard to describe, and that if the computer can convince you that it is intelligent then it is.
-
-Weather this is right is beyond the scope of this paper. The people who trained the Generative Pre-training Transformer 2 were apprehensive about their model's ability to generate human speech. They felt the model worked too well. At first when they finished their model they decided not to release the largest version to the public for several months (Radford et al) \cite{radford2019language}. Ultimately they did release their large model.
-
-The creators of the model used it differently than our chatbot implementation. They generated paragraphs of text, and it was determined at first that the ability of the model to impersonate a human was too great. It was felt that the model could be used to spam facebook and other social networking sites with content that was very convincing. If the model could be used to convince people to act badly, then it should not be released. Humans are susceptible to the sentiments of those they see as their peers. If the model was, for better or worse, passing the Turing test, then it should not fall into the wrong hands. This was the concern of the coders at the time.
-
-Ultimately the large model was released, either because the developers decided the model was not as good as originally estimated, or because they didn't care. 
-
-\subsection{Winograd Schema}
-
-Winograd schemas are named after Terry Winograd. The idea is that there is a sentence presented that has two meanings. A computer finds these sentences challenging to understand, and that makes them interesting for the development of Artificial Intelligence.
-
-An example follows.
-
-\begin{center}
-	\textbf{He didn't put the trophy in the suitcase because it was too [big/small]}
-\end{center}
-
-We can choose which bracketed term to use, and we must choose only one bracketed term. If we choose `big' then we are referring to the trophy. If we choose `small' then we are referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
-
-The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. In the chat bot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
-
-There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
-
-\fi
