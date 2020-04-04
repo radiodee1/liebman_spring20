@@ -1,7 +1,5 @@
 
 
-%\section{Observations}
-
 \section{GRU vs. Transformer}
 It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
 
@@ -11,13 +9,13 @@ The respective value of each of the models changes slightly when you consider wh
 
 \section{Smaller Chatbot Transformer Learning}
 
-For the chatbot task we want to know what the Transformer is doing during training and later during inference.
+For the chatbot task we want to know what the Transformer is doing during training and later during inference. Here we are concerned with the Transformer model trained on the movie dialog corpus and not the GPT2 model.
 
 It seems the model learns a set of multi-purpose English answers in a form close to a list. Then it spends time as a classifier. Each input sentence is compared to the set of answers. A question is associated with a given answer from the set when possible. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained many of the answers that the model would use. For a given model this list can only be so long.
 
 It is interesting to point out that probably at the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
 
-For the very large pre-trained model this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
+For the very large pre-trained model, like the GPT2, this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
 
 \section{Word Usage}
 
@@ -25,7 +23,7 @@ We make a general assumption that any model uses only a small subset of words th
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{Figure_5}
+		\includegraphics[scale=0.75]{Figure_5}
 		
 		
 	\end{center}
@@ -34,12 +32,14 @@ We make a general assumption that any model uses only a small subset of words th
 	
 \end{figure}
 
-If we remove the Vocabulary Total and the GPT2 Total from the diagram the GRU output and the Transformer output takes the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
+The yellow line at the top of the graph is the total words in the GRU vocabulary. The total words in the GPT2 vocabulary is not represented on the graph. Total responses in words are shown with the three remaining lines. The GPT2 responses are higher, and the GRU and Transformer responses look like horizontal lines at the bottom of the graph.
+
+If we remove the Vocabulary Total and the GPT2 responses from the diagram the GRU output and the Transformer output take the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{Figure_6}
+		\includegraphics[scale=0.75]{Figure_6}
 		
 		
 	\end{center}
@@ -54,13 +54,13 @@ We might conclude from these comparisons that the GRU model operates more robust
 
 If we were interested in transfer learning and we wanted to train the model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly or over and over.
 
-The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs.
+The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above we use 2000 inputs from the training set of the movie dialog corpus.
 
 We have a rough number for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer in total. The GRU is increasing still at 350 sentences at the end of our study. We assume that at some point the number of total GRU sentences that that model can produce reaches some kind of limit.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{Figure_8}
+		\includegraphics[scale=0.75]{Figure_8}
 		
 		
 	\end{center}
@@ -69,11 +69,9 @@ We have a rough number for those two models. They use about 125 sentences repeat
 	
 \end{figure}
 
-In a transformer classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a chatbot that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. 
+In a transformer classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a neural network model that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. 
 
-We do not experiment with classifiers, but we mentioned BERT, which can be configured as a classifier.
-
-%\section{Tests}
+We do not experiment with classifiers, but we mentioned BERT previously, which can be configured as a classifier.
 
 \section{Turing Test}
 
