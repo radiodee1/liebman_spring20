@@ -123,7 +123,7 @@ The decoder is composed of two attention mechanisms and a feed-forward segment a
 
 While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. 
 
-During inference it produces a token and then it adds to that token, one at a time, until the decoding is finished and something like a sentence is produced. It can attend to any part of the output it has already produced. During training the decoder is exposed to the target sequence under a mask. The mask prohibits the decoder from seeing parts of the target that it should not. This mimics the inference setup and still allows for large input matrices.
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -140,9 +140,13 @@ In our flow diagram we are not concerned with most sub segments of the entire tr
 
 We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder layers to two smaller matrices. 
 
-This full sized vector comes from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of all the decoder layers.
+This full sized vector comes from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
 
-There is also a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. During training this section is masked also.
+There is also a second attention mechanism in the decoder. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
+
+During training the decoder section is masked. The mask prohibits the decoder from seeing parts of the target that it should not during training. This mimics the inference setup and still allows for large input matrices.
+
+During inference the decoder produces a token and then it adds to that token, one at a time, until the decoding is finished and something like a sentence is produced. It can attend to any part of the output it has already produced. During training the decoder is exposed to the target sequence under a mask.
 
 \begin{figure}[H]
 	\begin{center}
