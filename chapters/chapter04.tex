@@ -1,6 +1,6 @@
 
 
-%\section{Experiments - Installations}
+\section{Experiments - Installations}
 In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
 We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections. 
@@ -13,7 +13,7 @@ We have four models we consider and at the same time only three Raspberry Pi boa
 
 The model that did not make it to the final three and installation on a Raspberry Pi was the smaller Transformer with the Persona corpus.
 
-\subsection*{Questions}
+\subsection{Questions}
 Below is a list of questions asked of all models. From this list and the answers from each model we try to make comparisons between the models about their strengths.
 
 \begin{verbatim}
@@ -35,7 +35,8 @@ The model from the Gated Recurrent Unit tutorial performed well. It was better t
 
 We visit and revisit this checklist to subjectively rate our chatbots.
 
-\noindent \textbf{Checklist:} 
+%\noindent \textbf{Checklist:}
+\subsection{Checklist} 
 
 \begin{itemize}
 	
@@ -58,7 +59,7 @@ We trained this sequence to sequence model on a large english corpus in an attem
 
 This second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original, authentic answers. Almost all the answers made sense in the English language.
 
-\subsection*{Questions}
+\subsection{Questions}
 This is the sample question list as it was answered by the GRU model.
 
 %\begin{minipage}{2in}
@@ -88,8 +89,8 @@ good bye .
 %\bigskip
 
  
-\noindent \textbf{Checklist:} 
-
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
 
 \begin{itemize}
 
@@ -136,7 +137,7 @@ At this point, after looking at the change in loss, further training was not tho
 
 %Subjectively the transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
-\subsection*{Questions}
+\subsection{Questions}
 Subjectively this transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 This is the sample question list as it was answered by the model.
@@ -164,7 +165,8 @@ yes , i do
 hi , how are you today ?
 \end{verbatim}
 
-\noindent \textbf{Checklist:} 
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
 
 \begin{itemize}
 	
@@ -216,7 +218,7 @@ Subjectively this transformer model is better than the Transformer model based o
 
 
 %\begin{lstlisting}[language=bash]
-\subsection*{Questions}
+\subsection{Questions}
 This is the sample question list as it was answered by the model.
 
 \begin{verbatim}
@@ -242,7 +244,8 @@ yeah
 bye 
 \end{verbatim}
 
-\noindent \textbf{Checklist:} 
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
 
 \begin{itemize}
 	
@@ -329,7 +332,7 @@ Under almost all circumstances the output was sensible English. There were no ti
 
 The subject matter of the prompts did not need to be the same as the simple introductory conversation of the transformer model. In fact any subject matter could be chosen and the model would answer. The model did not remember its own answers but it was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
 
-\subsection*{Questions}
+\subsection{Questions}
 This is the sample question list as it was answered by the model. Note that the information mentioned in the answer about the time was accurate when the test was run.
 
 \begin{verbatim}
@@ -355,7 +358,8 @@ I do.
 Good bye.
 \end{verbatim}
 
-\noindent \textbf{Checklist:} 
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
 
 \begin{itemize}
 	

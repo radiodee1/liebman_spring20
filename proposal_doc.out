@@ -44,33 +44,44 @@
 \BOOKMARK [2][-]{subsection.3.4.2}{Pytorch `torch' Library 1.4.0 For ARMv7}{section.3.4}% 44
 \BOOKMARK [2][-]{subsection.3.4.3}{Docker Container `tensorflow-model-server' For ARMv7}{section.3.4}% 45
 \BOOKMARK [0][-]{chapter.4}{Experimental Results}{}% 46
-\BOOKMARK [1][-]{section.4.1}{Chatbot - Gated Recurrent Unit Model}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.2}{Smart Speaker - Gated Recurrent Unit Model}{chapter.4}% 48
-\BOOKMARK [1][-]{section.4.3}{Chatbot - Transformer Model with Persona Corpus}{chapter.4}% 49
-\BOOKMARK [2][-]{subsection.4.3.1}{Training}{section.4.3}% 50
-\BOOKMARK [1][-]{section.4.4}{Smart Speaker - Transformer Model with Persona Corpus}{chapter.4}% 51
-\BOOKMARK [1][-]{section.4.5}{Chatbot - Transformer Model with Movie Corpus}{chapter.4}% 52
-\BOOKMARK [1][-]{section.4.6}{Smart Speaker - Transformer Model with Movie Corpus}{chapter.4}% 53
-\BOOKMARK [1][-]{section.4.7}{Chatbot - Generative Pre-training Transformer 2 Model}{chapter.4}% 54
-\BOOKMARK [2][-]{subsection.4.7.1}{Context Experiment}{section.4.7}% 55
-\BOOKMARK [2][-]{subsection.4.7.2}{History Experiment}{section.4.7}% 56
-\BOOKMARK [2][-]{subsection.4.7.3}{Artificial Intelligence Markup Language Experiment}{section.4.7}% 57
-\BOOKMARK [2][-]{subsection.4.7.4}{Program Launching}{section.4.7}% 58
-\BOOKMARK [2][-]{subsection.4.7.5}{Overall}{section.4.7}% 59
-\BOOKMARK [1][-]{section.4.8}{Smart Speaker - Generative Pre-training Transformer 2 Model}{chapter.4}% 60
-\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 61
-\BOOKMARK [1][-]{section.5.1}{GRU vs. Transformer}{chapter.5}% 62
-\BOOKMARK [1][-]{section.5.2}{Smaller Chatbot Transformer Learning}{chapter.5}% 63
-\BOOKMARK [1][-]{section.5.3}{Word Usage}{chapter.5}% 64
-\BOOKMARK [1][-]{section.5.4}{Sentence Usage}{chapter.5}% 65
-\BOOKMARK [1][-]{section.5.5}{Turing Test}{chapter.5}% 66
-\BOOKMARK [1][-]{section.5.6}{Winograd Schema}{chapter.5}% 67
-\BOOKMARK [0][-]{appendix.A}{Further Installations}{}% 68
-\BOOKMARK [1][-]{section.A.1}{Generative Pre-training Transformer 2 - Large Model}{appendix.A}% 69
-\BOOKMARK [2][-]{subsection.A.1.1}{Context Experiment}{section.A.1}% 70
-\BOOKMARK [2][-]{subsection.A.1.2}{History Experiment}{section.A.1}% 71
-\BOOKMARK [2][-]{subsection.A.1.3}{Artificial Intelligence Markup Language Experiment}{section.A.1}% 72
-\BOOKMARK [2][-]{subsection.A.1.4}{User Name Experiment}{section.A.1}% 73
-\BOOKMARK [2][-]{subsection.A.1.5}{Internet Search Experiment}{section.A.1}% 74
-\BOOKMARK [2][-]{subsection.A.1.6}{Usage Example}{section.A.1}% 75
-\BOOKMARK [0][-]{appendix.B}{Abbreviations}{}% 76
+\BOOKMARK [1][-]{section.4.1}{Experiments - Installations}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.1.1}{Questions}{section.4.1}% 48
+\BOOKMARK [2][-]{subsection.4.1.2}{Checklist}{section.4.1}% 49
+\BOOKMARK [1][-]{section.4.2}{Chatbot - Gated Recurrent Unit Model}{chapter.4}% 50
+\BOOKMARK [2][-]{subsection.4.2.1}{Questions}{section.4.2}% 51
+\BOOKMARK [2][-]{subsection.4.2.2}{Checklist}{section.4.2}% 52
+\BOOKMARK [1][-]{section.4.3}{Smart Speaker - Gated Recurrent Unit Model}{chapter.4}% 53
+\BOOKMARK [1][-]{section.4.4}{Chatbot - Transformer Model with Persona Corpus}{chapter.4}% 54
+\BOOKMARK [2][-]{subsection.4.4.1}{Training}{section.4.4}% 55
+\BOOKMARK [2][-]{subsection.4.4.2}{Questions}{section.4.4}% 56
+\BOOKMARK [2][-]{subsection.4.4.3}{Checklist}{section.4.4}% 57
+\BOOKMARK [1][-]{section.4.5}{Smart Speaker - Transformer Model with Persona Corpus}{chapter.4}% 58
+\BOOKMARK [1][-]{section.4.6}{Chatbot - Transformer Model with Movie Corpus}{chapter.4}% 59
+\BOOKMARK [2][-]{subsection.4.6.1}{Questions}{section.4.6}% 60
+\BOOKMARK [2][-]{subsection.4.6.2}{Checklist}{section.4.6}% 61
+\BOOKMARK [1][-]{section.4.7}{Smart Speaker - Transformer Model with Movie Corpus}{chapter.4}% 62
+\BOOKMARK [1][-]{section.4.8}{Chatbot - Generative Pre-training Transformer 2 Model}{chapter.4}% 63
+\BOOKMARK [2][-]{subsection.4.8.1}{Context Experiment}{section.4.8}% 64
+\BOOKMARK [2][-]{subsection.4.8.2}{History Experiment}{section.4.8}% 65
+\BOOKMARK [2][-]{subsection.4.8.3}{Artificial Intelligence Markup Language Experiment}{section.4.8}% 66
+\BOOKMARK [2][-]{subsection.4.8.4}{Program Launching}{section.4.8}% 67
+\BOOKMARK [2][-]{subsection.4.8.5}{Overall}{section.4.8}% 68
+\BOOKMARK [2][-]{subsection.4.8.6}{Questions}{section.4.8}% 69
+\BOOKMARK [2][-]{subsection.4.8.7}{Checklist}{section.4.8}% 70
+\BOOKMARK [1][-]{section.4.9}{Smart Speaker - Generative Pre-training Transformer 2 Model}{chapter.4}% 71
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 72
+\BOOKMARK [1][-]{section.5.1}{GRU vs. Transformer}{chapter.5}% 73
+\BOOKMARK [1][-]{section.5.2}{Smaller Chatbot Transformer Learning}{chapter.5}% 74
+\BOOKMARK [1][-]{section.5.3}{Word Usage}{chapter.5}% 75
+\BOOKMARK [1][-]{section.5.4}{Sentence Usage}{chapter.5}% 76
+\BOOKMARK [1][-]{section.5.5}{Turing Test}{chapter.5}% 77
+\BOOKMARK [1][-]{section.5.6}{Winograd Schema}{chapter.5}% 78
+\BOOKMARK [0][-]{appendix.A}{Further Installations}{}% 79
+\BOOKMARK [1][-]{section.A.1}{Generative Pre-training Transformer 2 - Large Model}{appendix.A}% 80
+\BOOKMARK [2][-]{subsection.A.1.1}{Context Experiment}{section.A.1}% 81
+\BOOKMARK [2][-]{subsection.A.1.2}{History Experiment}{section.A.1}% 82
+\BOOKMARK [2][-]{subsection.A.1.3}{Artificial Intelligence Markup Language Experiment}{section.A.1}% 83
+\BOOKMARK [2][-]{subsection.A.1.4}{User Name Experiment}{section.A.1}% 84
+\BOOKMARK [2][-]{subsection.A.1.5}{Internet Search Experiment}{section.A.1}% 85
+\BOOKMARK [2][-]{subsection.A.1.6}{Usage Example}{section.A.1}% 86
+\BOOKMARK [0][-]{appendix.B}{Abbreviations}{}% 87

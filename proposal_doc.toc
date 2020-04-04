@@ -45,20 +45,31 @@
 \contentsline {subsection}{\numberline {3.4.2}Pytorch `torch' Library 1.4.0 For ARMv7}{37}{subsection.3.4.2}% 
 \contentsline {subsection}{\numberline {3.4.3}Docker Container `tensorflow-model-server' For ARMv7}{38}{subsection.3.4.3}% 
 \contentsline {chapter}{\numberline {4}Experimental Results}{40}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Chatbot - Gated Recurrent Unit Model}{42}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Smart Speaker - Gated Recurrent Unit Model}{44}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Chatbot - Transformer Model with Persona Corpus}{44}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Training}{44}{subsection.4.3.1}% 
-\contentsline {section}{\numberline {4.4}Smart Speaker - Transformer Model with Persona Corpus}{46}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}Chatbot - Transformer Model with Movie Corpus}{46}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Smart Speaker - Transformer Model with Movie Corpus}{49}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Chatbot - Generative Pre-training Transformer 2 Model}{49}{section.4.7}% 
-\contentsline {subsection}{\numberline {4.7.1}Context Experiment}{50}{subsection.4.7.1}% 
-\contentsline {subsection}{\numberline {4.7.2}History Experiment}{50}{subsection.4.7.2}% 
-\contentsline {subsection}{\numberline {4.7.3}Artificial Intelligence Markup Language Experiment}{51}{subsection.4.7.3}% 
-\contentsline {subsection}{\numberline {4.7.4}Program Launching}{51}{subsection.4.7.4}% 
-\contentsline {subsection}{\numberline {4.7.5}Overall}{52}{subsection.4.7.5}% 
-\contentsline {section}{\numberline {4.8}Smart Speaker - Generative Pre-training Transformer 2 Model}{53}{section.4.8}% 
+\contentsline {section}{\numberline {4.1}Experiments - Installations}{41}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Questions}{41}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Checklist}{42}{subsection.4.1.2}% 
+\contentsline {section}{\numberline {4.2}Chatbot - Gated Recurrent Unit Model}{42}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Questions}{42}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Checklist}{43}{subsection.4.2.2}% 
+\contentsline {section}{\numberline {4.3}Smart Speaker - Gated Recurrent Unit Model}{44}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Chatbot - Transformer Model with Persona Corpus}{44}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Training}{44}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Questions}{45}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Checklist}{46}{subsection.4.4.3}% 
+\contentsline {section}{\numberline {4.5}Smart Speaker - Transformer Model with Persona Corpus}{46}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Chatbot - Transformer Model with Movie Corpus}{47}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Questions}{48}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}Checklist}{48}{subsection.4.6.2}% 
+\contentsline {section}{\numberline {4.7}Smart Speaker - Transformer Model with Movie Corpus}{49}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Chatbot - Generative Pre-training Transformer 2 Model}{49}{section.4.8}% 
+\contentsline {subsection}{\numberline {4.8.1}Context Experiment}{50}{subsection.4.8.1}% 
+\contentsline {subsection}{\numberline {4.8.2}History Experiment}{50}{subsection.4.8.2}% 
+\contentsline {subsection}{\numberline {4.8.3}Artificial Intelligence Markup Language Experiment}{51}{subsection.4.8.3}% 
+\contentsline {subsection}{\numberline {4.8.4}Program Launching}{51}{subsection.4.8.4}% 
+\contentsline {subsection}{\numberline {4.8.5}Overall}{52}{subsection.4.8.5}% 
+\contentsline {subsection}{\numberline {4.8.6}Questions}{52}{subsection.4.8.6}% 
+\contentsline {subsection}{\numberline {4.8.7}Checklist}{53}{subsection.4.8.7}% 
+\contentsline {section}{\numberline {4.9}Smart Speaker - Generative Pre-training Transformer 2 Model}{54}{section.4.9}% 
 \contentsline {chapter}{\numberline {5}Conclusions}{55}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}GRU vs. Transformer}{56}{section.5.1}% 
 \contentsline {section}{\numberline {5.2}Smaller Chatbot Transformer Learning}{56}{section.5.2}% 
