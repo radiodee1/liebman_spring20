@@ -143,21 +143,19 @@ We illustrated in the Sequence-to-sequence discussion the importance of the sing
 This full sized vector comes from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
 
 
+\subsection{Decoder - Query}
+There is also a second attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
+
 \begin{figure}[H]
 	\begin{center}
 		
 		
 		\includegraphics[scale=1.5]{diagram-mask01}
 	\end{center}
-	\caption[Transformer Mask]{Transformer Mask. - Decoder uses masked input.}
+	\caption[Transformer Mask]{Transformer Mask. - Decoder uses masked input during training.}
 	
 	
 \end{figure}
-
-
-
-\subsection{Decoder - Query}
-There is also a second attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
 
 During training the decoder section is masked. The mask prohibits the decoder from seeing parts of the target that it should not during training. This mimics the inference setup and still allows for large input matrices.
 
