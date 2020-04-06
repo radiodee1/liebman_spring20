@@ -19,70 +19,71 @@
 \BOOKMARK [2][-]{subsection.2.1.1}{Byte Pair Encoding}{section.2.1}% 19
 \BOOKMARK [2][-]{subsection.2.1.2}{Attention}{section.2.1}% 20
 \BOOKMARK [2][-]{subsection.2.1.3}{Scaled Dot-Product Attention}{section.2.1}% 21
-\BOOKMARK [2][-]{subsection.2.1.4}{Decoder - Key and Value}{section.2.1}% 22
-\BOOKMARK [2][-]{subsection.2.1.5}{Decoder - Query}{section.2.1}% 23
-\BOOKMARK [2][-]{subsection.2.1.6}{Input - Positional Encoding}{section.2.1}% 24
-\BOOKMARK [2][-]{subsection.2.1.7}{Output - Feed Forward Network}{section.2.1}% 25
-\BOOKMARK [2][-]{subsection.2.1.8}{Visualization - Transformer}{section.2.1}% 26
-\BOOKMARK [1][-]{section.2.2}{The Generative Pre-training Transformer 2 Model}{chapter.2}% 27
-\BOOKMARK [2][-]{subsection.2.2.1}{Pre-Training}{section.2.2}% 28
-\BOOKMARK [2][-]{subsection.2.2.2}{General}{section.2.2}% 29
-\BOOKMARK [2][-]{subsection.2.2.3}{Corpus}{section.2.2}% 30
-\BOOKMARK [2][-]{subsection.2.2.4}{Releases}{section.2.2}% 31
-\BOOKMARK [2][-]{subsection.2.2.5}{Application Details}{section.2.2}% 32
-\BOOKMARK [2][-]{subsection.2.2.6}{Visualization - GPT2}{section.2.2}% 33
-\BOOKMARK [0][-]{chapter.3}{Experimental Design and Setup}{}% 34
-\BOOKMARK [1][-]{section.3.1}{Approach to the Study}{chapter.3}% 35
-\BOOKMARK [1][-]{section.3.2}{Model Overview}{chapter.3}% 36
-\BOOKMARK [1][-]{section.3.3}{Setup}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.3.1}{Graphical Processing Unit vs. Central Processing Unit}{section.3.3}% 38
-\BOOKMARK [2][-]{subsection.3.3.2}{Raspberry Pi}{section.3.3}% 39
-\BOOKMARK [2][-]{subsection.3.3.3}{Tensorflow vs. Pytorch}{section.3.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.4}{Speech and Speech To Text}{section.3.3}% 41
-\BOOKMARK [2][-]{subsection.3.3.5}{Corpus Considerations}{section.3.3}% 42
-\BOOKMARK [1][-]{section.3.4}{ARMv7 Build/Compile}{chapter.3}% 43
-\BOOKMARK [2][-]{subsection.3.4.1}{Pytorch `torch' Library 1.1.0 For ARMv7}{section.3.4}% 44
-\BOOKMARK [2][-]{subsection.3.4.2}{Pytorch `torch' Library 1.4.0 For ARMv7}{section.3.4}% 45
-\BOOKMARK [2][-]{subsection.3.4.3}{Docker Container `tensorflow-model-server' For ARMv7}{section.3.4}% 46
-\BOOKMARK [0][-]{chapter.4}{Experimental Results}{}% 47
-\BOOKMARK [1][-]{section.4.1}{Experiments - Installations}{chapter.4}% 48
-\BOOKMARK [2][-]{subsection.4.1.1}{Questions}{section.4.1}% 49
-\BOOKMARK [2][-]{subsection.4.1.2}{Checklist}{section.4.1}% 50
-\BOOKMARK [1][-]{section.4.2}{Chatbot - Gated Recurrent Unit Model}{chapter.4}% 51
-\BOOKMARK [2][-]{subsection.4.2.1}{Questions}{section.4.2}% 52
-\BOOKMARK [2][-]{subsection.4.2.2}{Checklist}{section.4.2}% 53
-\BOOKMARK [1][-]{section.4.3}{Smart Speaker - Gated Recurrent Unit Model}{chapter.4}% 54
-\BOOKMARK [1][-]{section.4.4}{Chatbot - Transformer Model with Persona Corpus}{chapter.4}% 55
-\BOOKMARK [2][-]{subsection.4.4.1}{Training}{section.4.4}% 56
-\BOOKMARK [2][-]{subsection.4.4.2}{Questions}{section.4.4}% 57
-\BOOKMARK [2][-]{subsection.4.4.3}{Checklist}{section.4.4}% 58
-\BOOKMARK [1][-]{section.4.5}{Smart Speaker - Transformer Model with Persona Corpus}{chapter.4}% 59
-\BOOKMARK [1][-]{section.4.6}{Chatbot - Transformer Model with Movie Corpus}{chapter.4}% 60
-\BOOKMARK [2][-]{subsection.4.6.1}{Questions}{section.4.6}% 61
-\BOOKMARK [2][-]{subsection.4.6.2}{Checklist}{section.4.6}% 62
-\BOOKMARK [1][-]{section.4.7}{Smart Speaker - Transformer Model with Movie Corpus}{chapter.4}% 63
-\BOOKMARK [1][-]{section.4.8}{Chatbot - Generative Pre-training Transformer 2 Model}{chapter.4}% 64
-\BOOKMARK [2][-]{subsection.4.8.1}{Context Experiment}{section.4.8}% 65
-\BOOKMARK [2][-]{subsection.4.8.2}{History Experiment}{section.4.8}% 66
-\BOOKMARK [2][-]{subsection.4.8.3}{Artificial Intelligence Markup Language Experiment}{section.4.8}% 67
-\BOOKMARK [2][-]{subsection.4.8.4}{Program Launching}{section.4.8}% 68
-\BOOKMARK [2][-]{subsection.4.8.5}{Overall}{section.4.8}% 69
-\BOOKMARK [2][-]{subsection.4.8.6}{Questions}{section.4.8}% 70
-\BOOKMARK [2][-]{subsection.4.8.7}{Checklist}{section.4.8}% 71
-\BOOKMARK [1][-]{section.4.9}{Smart Speaker - Generative Pre-training Transformer 2 Model}{chapter.4}% 72
-\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 73
-\BOOKMARK [1][-]{section.5.1}{GRU vs. Transformer}{chapter.5}% 74
-\BOOKMARK [1][-]{section.5.2}{Smaller Chatbot Transformer Learning}{chapter.5}% 75
-\BOOKMARK [1][-]{section.5.3}{Word Usage}{chapter.5}% 76
-\BOOKMARK [1][-]{section.5.4}{Sentence Usage}{chapter.5}% 77
-\BOOKMARK [1][-]{section.5.5}{Turing Test}{chapter.5}% 78
-\BOOKMARK [1][-]{section.5.6}{Winograd Schema}{chapter.5}% 79
-\BOOKMARK [0][-]{appendix.A}{Further Installations}{}% 80
-\BOOKMARK [1][-]{section.A.1}{Generative Pre-training Transformer 2 - Large Model}{appendix.A}% 81
-\BOOKMARK [2][-]{subsection.A.1.1}{Context Experiment}{section.A.1}% 82
-\BOOKMARK [2][-]{subsection.A.1.2}{History Experiment}{section.A.1}% 83
-\BOOKMARK [2][-]{subsection.A.1.3}{Artificial Intelligence Markup Language Experiment}{section.A.1}% 84
-\BOOKMARK [2][-]{subsection.A.1.4}{User Name Experiment}{section.A.1}% 85
-\BOOKMARK [2][-]{subsection.A.1.5}{Internet Search Experiment}{section.A.1}% 86
-\BOOKMARK [2][-]{subsection.A.1.6}{Usage Example}{section.A.1}% 87
-\BOOKMARK [0][-]{appendix.B}{Abbreviations}{}% 88
+\BOOKMARK [2][-]{subsection.2.1.4}{Decoder - `Key' and `Value'}{section.2.1}% 22
+\BOOKMARK [2][-]{subsection.2.1.5}{Decoder - `Query'}{section.2.1}% 23
+\BOOKMARK [2][-]{subsection.2.1.6}{Masking During Training}{section.2.1}% 24
+\BOOKMARK [2][-]{subsection.2.1.7}{Input - Positional Encoding}{section.2.1}% 25
+\BOOKMARK [2][-]{subsection.2.1.8}{Output - Feed Forward Network}{section.2.1}% 26
+\BOOKMARK [2][-]{subsection.2.1.9}{Visualization - Transformer}{section.2.1}% 27
+\BOOKMARK [1][-]{section.2.2}{The Generative Pre-training Transformer 2 Model}{chapter.2}% 28
+\BOOKMARK [2][-]{subsection.2.2.1}{Pre-Training}{section.2.2}% 29
+\BOOKMARK [2][-]{subsection.2.2.2}{General}{section.2.2}% 30
+\BOOKMARK [2][-]{subsection.2.2.3}{Corpus}{section.2.2}% 31
+\BOOKMARK [2][-]{subsection.2.2.4}{Releases}{section.2.2}% 32
+\BOOKMARK [2][-]{subsection.2.2.5}{Application Details}{section.2.2}% 33
+\BOOKMARK [2][-]{subsection.2.2.6}{Visualization - GPT2}{section.2.2}% 34
+\BOOKMARK [0][-]{chapter.3}{Experimental Design and Setup}{}% 35
+\BOOKMARK [1][-]{section.3.1}{Approach to the Study}{chapter.3}% 36
+\BOOKMARK [1][-]{section.3.2}{Model Overview}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.3}{Setup}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.1}{Graphical Processing Unit vs. Central Processing Unit}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.2}{Raspberry Pi}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.3}{Tensorflow vs. Pytorch}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.4}{Speech and Speech To Text}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.5}{Corpus Considerations}{section.3.3}% 43
+\BOOKMARK [1][-]{section.3.4}{ARMv7 Build/Compile}{chapter.3}% 44
+\BOOKMARK [2][-]{subsection.3.4.1}{Pytorch `torch' Library 1.1.0 For ARMv7}{section.3.4}% 45
+\BOOKMARK [2][-]{subsection.3.4.2}{Pytorch `torch' Library 1.4.0 For ARMv7}{section.3.4}% 46
+\BOOKMARK [2][-]{subsection.3.4.3}{Docker Container `tensorflow-model-server' For ARMv7}{section.3.4}% 47
+\BOOKMARK [0][-]{chapter.4}{Experimental Results}{}% 48
+\BOOKMARK [1][-]{section.4.1}{Experiments - Installations}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.1.1}{Questions}{section.4.1}% 50
+\BOOKMARK [2][-]{subsection.4.1.2}{Checklist}{section.4.1}% 51
+\BOOKMARK [1][-]{section.4.2}{Chatbot - Gated Recurrent Unit Model}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.2.1}{Questions}{section.4.2}% 53
+\BOOKMARK [2][-]{subsection.4.2.2}{Checklist}{section.4.2}% 54
+\BOOKMARK [1][-]{section.4.3}{Smart Speaker - Gated Recurrent Unit Model}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.4}{Chatbot - Transformer Model with Persona Corpus}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.4.1}{Training}{section.4.4}% 57
+\BOOKMARK [2][-]{subsection.4.4.2}{Questions}{section.4.4}% 58
+\BOOKMARK [2][-]{subsection.4.4.3}{Checklist}{section.4.4}% 59
+\BOOKMARK [1][-]{section.4.5}{Smart Speaker - Transformer Model with Persona Corpus}{chapter.4}% 60
+\BOOKMARK [1][-]{section.4.6}{Chatbot - Transformer Model with Movie Corpus}{chapter.4}% 61
+\BOOKMARK [2][-]{subsection.4.6.1}{Questions}{section.4.6}% 62
+\BOOKMARK [2][-]{subsection.4.6.2}{Checklist}{section.4.6}% 63
+\BOOKMARK [1][-]{section.4.7}{Smart Speaker - Transformer Model with Movie Corpus}{chapter.4}% 64
+\BOOKMARK [1][-]{section.4.8}{Chatbot - Generative Pre-training Transformer 2 Model}{chapter.4}% 65
+\BOOKMARK [2][-]{subsection.4.8.1}{Context Experiment}{section.4.8}% 66
+\BOOKMARK [2][-]{subsection.4.8.2}{History Experiment}{section.4.8}% 67
+\BOOKMARK [2][-]{subsection.4.8.3}{Artificial Intelligence Markup Language Experiment}{section.4.8}% 68
+\BOOKMARK [2][-]{subsection.4.8.4}{Program Launching}{section.4.8}% 69
+\BOOKMARK [2][-]{subsection.4.8.5}{Overall}{section.4.8}% 70
+\BOOKMARK [2][-]{subsection.4.8.6}{Questions}{section.4.8}% 71
+\BOOKMARK [2][-]{subsection.4.8.7}{Checklist}{section.4.8}% 72
+\BOOKMARK [1][-]{section.4.9}{Smart Speaker - Generative Pre-training Transformer 2 Model}{chapter.4}% 73
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 74
+\BOOKMARK [1][-]{section.5.1}{GRU vs. Transformer}{chapter.5}% 75
+\BOOKMARK [1][-]{section.5.2}{Smaller Chatbot Transformer Learning}{chapter.5}% 76
+\BOOKMARK [1][-]{section.5.3}{Word Usage}{chapter.5}% 77
+\BOOKMARK [1][-]{section.5.4}{Sentence Usage}{chapter.5}% 78
+\BOOKMARK [1][-]{section.5.5}{Turing Test}{chapter.5}% 79
+\BOOKMARK [1][-]{section.5.6}{Winograd Schema}{chapter.5}% 80
+\BOOKMARK [0][-]{appendix.A}{Further Installations}{}% 81
+\BOOKMARK [1][-]{section.A.1}{Generative Pre-training Transformer 2 - Large Model}{appendix.A}% 82
+\BOOKMARK [2][-]{subsection.A.1.1}{Context Experiment}{section.A.1}% 83
+\BOOKMARK [2][-]{subsection.A.1.2}{History Experiment}{section.A.1}% 84
+\BOOKMARK [2][-]{subsection.A.1.3}{Artificial Intelligence Markup Language Experiment}{section.A.1}% 85
+\BOOKMARK [2][-]{subsection.A.1.4}{User Name Experiment}{section.A.1}% 86
+\BOOKMARK [2][-]{subsection.A.1.5}{Internet Search Experiment}{section.A.1}% 87
+\BOOKMARK [2][-]{subsection.A.1.6}{Usage Example}{section.A.1}% 88
+\BOOKMARK [0][-]{appendix.B}{Abbreviations}{}% 89
