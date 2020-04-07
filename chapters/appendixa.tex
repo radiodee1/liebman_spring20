@@ -1,8 +1,12 @@
 \chapter{Further Installations}
 
-\section{Generative Pre-training Transformer 2 - Large Model}
+\section{Generative Pre-training Transformer 2 - XLarge Model}
 
-The large 774M model of GPT2 was ultimately released to the public. The model is too large for a Raspberry Pi, using 6.3 Gig of ram while it is running with inference. We experiment with the model on the development laptop computer.
+The large 774M model of GPT2 was ultimately released to the public. In addition to this, two other models were created. One, named `x-large,' had 1.5 Billion parameters. Another, named `xx-large,' had 8.3 Billion parameters. We download the `x-large' model for testing purposes.
+
+The tests performed worked on the `large' 774M model. Subjectively the answers provided by the 1.5B model were better. The answers were stronger grammatically.
+
+The 1.5B model is too large for a Raspberry Pi, using 12.3 Gig of ram while it is running with inference. We experiment with the model on the development laptop computer.
 
 As with the smaller model and the Raspberry Pi installation, we do not attempt transfer learning on the model. Instead we show the model specific information during inference which the model is free to reply with if it finds the information appropriate.
 
@@ -20,7 +24,7 @@ These sorts of questions can be answered without any memory of what the last que
 
 \subsection{History Experiment}
 
-We tried concatenating all input and output and including it with each question. While this did little or nothing during the smaller GPT2 experiment, with the larger model the history sentences were helpful. Consider the questions below.
+We tried concatenating all input and output and including it with each question. While this did little or nothing during the smaller GPT2 experiment, with the larger models the history sentences were helpful. Consider the questions below.
 \begin{verbatim}
 > Do you like the color red?
 I like the color red.
@@ -81,7 +85,7 @@ Later when the AIML detects the second signal, we will call the `restore' signal
 
 As the chatbot answers questions the content of the conversation is saved for the `history' of the context text, as it is used in the regular chatbot mode. This means there is a record of the questions and answers the chatbot goes through during it's operation, even when it is answering questions about a web page that it has searched for. Because of size limitations the history is not included in the chatbot input when it is answering questions about a web page, but a record is kept of `q' and `a' and the bot can refer to them later.
 
-Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 768 tokens and it is 1280 for the larger model. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
+Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 768 tokens and it is more than 1000 for the larger models. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
 
 \subsection{Usage Example}
 
@@ -91,7 +95,9 @@ The chatbot would take a little time to respond. Ultimately it would answer with
 
 Then you might ask it a question like `How many members were in the band?'
 
-To this question the chatbot answered this way for us, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' We note that this is not actually the correct answer. This may be because after clipping the information asked for does not exist in the context section. You can ask other questions. Some of them may be answered correctly and some not. 
+To this question the 774M chatbot answered this way for us, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' We note that this is not actually the correct answer. This may be because after clipping the information asked for does not exist in the context section. You can ask other questions. Some of them may be answered correctly and some not. 
+
+To this question the x-large model answers `There were 4 members in the band.'
 
 When you ask the question `How many members were in the band?' you do not need to specify which band. The model seems to be able to intuit the band that you are referring to.
 
