@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  7 APR 2020 08:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  7 APR 2020 09:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -773,7 +773,7 @@ Package: relsize 2013/03/29 ver 4.1
 (./proposal_acc.tex) (./proposal_doc.aux (./chapters/abstract.aux)
 (./chapters/chapter01.aux) (./chapters/chapter02.aux) (./chapters/chapter03.aux
 ) (./chapters/chapter04.aux) (./chapters/chapter05.aux)
-(./chapters/appendixa.aux))
+(./chapters/chapter06.aux))
 \openout1 = `proposal_doc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
@@ -942,19 +942,19 @@ Chapter 1.
  (./chapters/chapter01.tex [2
 
 ]
-<diagram-rnn.png, id=551, 321.2pt x 361.35pt>
+<diagram-rnn.png, id=556, 321.2pt x 361.35pt>
 File: diagram-rnn.png Graphic file (type png)
 <use diagram-rnn.png>
 Package pdftex.def Info: diagram-rnn.png  used on input line 30.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [3 <./diagram-rnn.png>] [4]
-<diagram-embedding.png, id=570, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=575, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 112.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
  [5] [6 <./diagram-embedding.png>] [7] [8]
-<diagram-nmt.png, id=593, 351.3125pt x 260.975pt>
+<diagram-nmt.png, id=598, 351.3125pt x 260.975pt>
 File: diagram-nmt.png Graphic file (type png)
 <use diagram-nmt.png>
 Package pdftex.def Info: diagram-nmt.png  used on input line 172.
@@ -991,7 +991,7 @@ LaTeX Font Warning: Command \mathversion invalid in math mode on input line 243
 .
 
 [12]
-<Figure_1.png, id=627, 462.528pt x 346.896pt>
+<Figure_1.png, id=632, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 267.
@@ -1007,55 +1007,55 @@ Chapter 2.
  (./chapters/chapter02.tex [16
 
 ] [17]
-<diagram-mat01.png, id=652, 321.2pt x 361.35pt>
+<diagram-mat01.png, id=657, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 55.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [18 <./diagram-mat01.png>]
-<diagram-mat03-64.png, id=659, 321.2pt x 361.35pt>
+<diagram-mat03-64.png, id=664, 321.2pt x 361.35pt>
 File: diagram-mat03-64.png Graphic file (type png)
 <use diagram-mat03-64.png>
 Package pdftex.def Info: diagram-mat03-64.png  used on input line 91.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [19 <./diagram-mat03-64.png>]
-<diagram-mat02.png, id=667, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=672, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 109.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-flow1.png, id=668, 284.262pt x 260.172pt>
+<diagram-flow1.png, id=673, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
 Package pdftex.def Info: diagram-flow1.png  used on input line 132.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
  [20 <./diagram-mat02.png>] [21 <./diagram-flow1.png>]
-<diagram-mask01.png, id=679, 154.176pt x 204.765pt>
+<diagram-mask01.png, id=684, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
 Package pdftex.def Info: diagram-mask01.png  used on input line 153.
 (pdftex.def)             Requested size: 192.7195pt x 255.9556pt.
-<diagram-mat04.png, id=680, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=685, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 170.
 (pdftex.def)             Requested size: 242.8266pt x 330.99577pt.
 
 [22 <./diagram-mask01.png>] [23 <./diagram-mat04.png>]
-<Figure_3.png, id=693, 98.769pt x 63.3567pt>
+<Figure_3.png, id=698, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 193.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
  [24 <./Figure_3.png>]
-<diagram-mat05.png, id=701, 46.0119pt x 89.133pt>
+<diagram-mat05.png, id=706, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 227.
 (pdftex.def)             Requested size: 184.04712pt x 356.53107pt.
 
 [25] [26 <./diagram-mat05.png (PNG copy)>] [27] [28]
-<Figure_4.png, id=725, 84.7968pt x 46.2528pt>
+<Figure_4.png, id=730, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 291.
@@ -1101,7 +1101,7 @@ Chapter 4.
  (./chapters/chapter04.tex [41
 
 ] [42] [43] [44] [45] [46]
-<Figure_2.png, id=817, 86.0013pt x 57.816pt>
+<Figure_2.png, id=822, 86.0013pt x 57.816pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
 Package pdftex.def Info: Figure_2.png  used on input line 208.
@@ -1116,8 +1116,18 @@ Chapter 5.
 
  (./chapters/chapter05.tex [56
 
+] [57] [58] [59] [60]) [61]
+Chapter 6.
+[62
+
+
 ]
-<Figure_5.png, id=862, 607.26875pt x 341.275pt>
+\openout2 = `chapters/chapter06.aux'.
+
+ (./chapters/chapter06.tex [63
+
+]
+<Figure_5.png, id=904, 607.26875pt x 341.275pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
 Package pdftex.def Info: Figure_5.png  used on input line 26.
@@ -1127,7 +1137,7 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 26--27
  [] 
  []
 
-<Figure_6.png, id=863, 607.26875pt x 341.275pt>
+<Figure_6.png, id=905, 607.26875pt x 341.275pt>
 File: Figure_6.png Graphic file (type png)
 <use Figure_6.png>
 Package pdftex.def Info: Figure_6.png  used on input line 42.
@@ -1137,8 +1147,8 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 42--43
  [] 
  []
 
-[57 <./Figure_5.png>] [58 <./Figure_6.png>]
-<Figure_8.png, id=874, 607.26875pt x 341.275pt>
+[64 <./Figure_5.png>] [65 <./Figure_6.png>]
+<Figure_8.png, id=921, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
 Package pdftex.def Info: Figure_8.png  used on input line 63.
@@ -1148,21 +1158,12 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 63--64
  [] 
  []
 
-[59 <./Figure_8.png>]) [60] [61]
-\openout2 = `chapters/appendixa.aux'.
-
- (./chapters/appendixa.tex
+[66 <./Figure_8.png>]) [67] [68]
 Appendix A.
-[62
+[69
 
 
-
-] [63] [64] [65] [66]) [67]
-Appendix B.
-[68
-
-
-] (./proposal_doc.bbl [69
+] (./proposal_doc.bbl [70
 
 ]
 Underfull \hbox (badness 6691) in paragraph at lines 85--90
@@ -1171,59 +1172,114 @@ ikipedia, the free en-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
- [70]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 146.
+ [71]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
-(./chapters/chapter04.aux) (./chapters/chapter05.aux) (./chapters/appendixa.aux
+(./chapters/chapter04.aux) (./chapters/chapter05.aux) (./chapters/chapter06.aux
 ))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
-Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 9A7ECD2448131CB274F8E598F02CB9FC;6549.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 146.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 146.
+
+
+Package rerunfilecheck Warning: File `proposal_doc.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `proposal_doc.out':
+(rerunfilecheck)             Before: 7B6DB2879F4D0B7C8DA0B1E5686E7707;6619
+(rerunfilecheck)             After:  940700AF7B544F717095B2575DFAB2DB;6562.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 146.
  ) 
 Here is how much of TeX's memory you used:
- 23925 strings out of 494477
- 444062 string characters out of 6175714
+ 23943 strings out of 494477
+ 444279 string characters out of 6175714
  501634 words of memory out of 5000000
- 27085 multiletter control sequences out of 15000+600000
+ 27086 multiletter control sequences out of 15000+600000
  559385 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 41i,11n,63p,1001b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
-k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dave/.texl
-ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-mextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (78 pages, 924704 bytes).
+ 41i,11n,63p,1001b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{figure.7.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.7.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.7.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.7} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.6} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+ </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk>
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dave/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cme
+xtra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/zapfding/uzdr.pfb>
+Output written on proposal_doc.pdf (79 pages, 925505 bytes).
 PDF statistics:
- 1505 PDF objects out of 1728 (max. 8388607)
- 934 compressed objects within 10 object streams
- 207 named destinations out of 1000 (max. 500000)
- 798 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1537 PDF objects out of 1728 (max. 8388607)
+ 964 compressed objects within 10 object streams
+ 224 named destinations out of 1000 (max. 500000)
+ 806 words of extra memory for PDF output out of 10000 (max. 10000000)
 

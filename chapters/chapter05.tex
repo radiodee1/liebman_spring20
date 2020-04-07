@@ -1,101 +1,106 @@
+%\chapter{Further Installations}
+
+\section{Generative Pre-training Transformer 2 - XLarge Model}
+
+The large 774M model of GPT2 was ultimately released to the public. In addition to this, two other models were created. One, named `x-large,' had 1.5 Billion parameters. Another, named `xx-large,' had 8.3 Billion parameters. We download the `x-large' model for testing purposes.
+
+The tests performed worked on the `large' 774M model. Subjectively the answers provided by the 1.5B model were better. The answers were stronger grammatically.
+
+The 1.5B model is too large for a Raspberry Pi, using 12.3 Gig of ram while it is running with inference. We experiment with the model on the development laptop computer.
+
+As with the smaller model and the Raspberry Pi installation, we do not attempt transfer learning on the model. Instead we show the model specific information during inference which the model is free to reply with if it finds the information appropriate.
+
+We also want the model to be able to summarize articles from the internet and reply with that information when asked to do so. 
+
+\subsection{Context Experiment}
+
+As before we gave the model details in sentence form that it could use as reply to questions when appropriate. The larger model works better if all the sentences shown to it have the `Q:' and `A:' strings prepended to them. 
+
+In each example the information we wanted the model to choose from was presented in sentence pairs. Though these sentences look much like source/target pairs from our movie corpus, they are totally unrelated.
+
+An example might be the presentation to the model of the model's name. In the smaller GPT2 model we simply show the model the single sentence `My name is Jane'. In the larger GPT2 model's code we must show the model two sentences. One is `Q: What is your name?' and the other one, following it directly, is `A: My name is Jane'. We follow these conventions for the time of day, the model's location, and the model's occupation.
+
+These sorts of questions can be answered without any memory of what the last question was.
+
+\subsection{History Experiment}
+
+We tried concatenating all input and output and including it with each question. While this did little or nothing during the smaller GPT2 experiment, with the larger models the history sentences were helpful. Consider the questions below.
+\begin{verbatim}
+> Do you like the color red?
+I like the color red.
+> What is your favorite color?
+Red.
+\end{verbatim}
+This is the same text excerpt as from the small GPT2 model. The `favorite color' example continues to work on the larger GPT2 model. Again as in the small model, the chatbot is keeping track of the conversation. 
+
+Even though the history is consulted before answers are formulated, the output of the model is not always predictable. This has something to do with the `temperature' setting of the model. The output is sometimes more fanciful.
 
 
-\section{GRU vs. Transformer}
-It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
+\subsection{Artificial Intelligence Markup Language Experiment}
 
-A single further observation is that the GRU model responds very quickly, while a transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the transformer model when it is installed on a small computer like a Raspberry Pi. 
+We want to be able to tell the model exactly how to answer a given question if we have a particular need. For example, the model handles remembering the user's name very badly. We would like to dictate how the model handles that situation. We have employed Artificial Intelligence Markup Language for this. 
 
-The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains some worth.
+AIML is actually poorly suited for handling this task. In AIML you must code every question and response as a separate rule. If you have a question `How are you?' and an answer `I am fine' the AIML kernel will only answer with the programmed response if the input is an exact match. If you enter `How are you doing?' or `How do you feel?' the kernel does not have an answer for that. The two or three questions are phrased differently but can be answered with the same text.
 
-\section{Smaller Chatbot Transformer Learning}
+The GPT2 chatbot is much different. Groups of questions have the same answer. Sometimes the answer could even be `I don't know', but still the answer makes sense in English. The chatbot could answer `How are you?', `How are you doing?' and `How do you feel' with one answer like `I don't know' or `I am fine'. These questions are phrased differently with the same answer.
 
-For the chatbot task we want to know what the Transformer is doing during training and later during inference. Here we are concerned with the Transformer model trained on the movie dialog corpus and not the GPT2 model.
+For us to use AIML for our task we code questions and answers in pairs for all possible phrasing of a question.
 
-It seems the model learns a set of multi-purpose English answers in a form close to a list. Then it spends time as a classifier. Each input sentence is compared to the set of answers. A question is associated with a given answer from the set when possible. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained many of the answers that the model would use. For a given model this list can only be so long.
+We have to count the number of AIML rules that we are coding and compare it to the number of English sentences that the GPT2 chatbot can answer. We have to make sure that the number of chatbot answers is much higher. As it stands the GPT2 chatbot answers dwarf the AIML rules.
 
-It is interesting to point out that probably at the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
+We prefer the answers provided by the generative chatbot over those provided by an AIML file. We want to maximize the amount of time that the overall model answers using the transformer that is internal to the chatbot, and minimize the use of AIML and the AIML kernel. We set a criteria for ourselves. If the generative chatbot is handling most of the questions and answers then we can proceed. If the AIML question/answering set is larger than the number of questions that the chatbot can answer, then the AIML should be avoided. 
 
-For the very large pre-trained model, like the GPT2, this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
+Below we illustrate two situations where AIML might be useful. In both cases the AIML files are small.
 
-\section{Word Usage}
+\subsection{User Name Experiment}
+The name of the user is our first example of AIML coding. This example is easy. There are few ways to say `My name is *'. In this case `*' is a wildcard. Another variant is `* is my name'. That's as many ways to say it as there are.
 
-We make a general assumption that any model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. Also some percentage of words are used repeatedly.
+Each question is answerable with a phrase like `Hello *'. Here the asterisk is a wildcard for the memorized name. An AIML file can handle this sort of question very easily. We write an AIML file with these questions. We depend on the AIML to remember the name from the wildcard. 
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.75]{Figure_5}
-		
-		
-	\end{center}
-	\caption[Word Usage]{Word Usage - Including Vocabulary Total}
-	
-	
-\end{figure}
+Another question in this scenario is `What is my name?' With this question also there are very few ways to phrase the AIML. Here we are referring to the name recorded in the previous AIML question as discussed above. 
 
-The yellow line at the top of the graph is the total words in the GRU vocabulary. The total words in the GPT2 vocabulary is not represented on the graph. Total responses in words are shown with the three remaining lines. The GPT2 responses are higher, and the GRU and Transformer responses look like horizontal lines at the bottom of the graph.
+During a typical chatbot run we show all user input to the AIML kernel. 
 
-If we remove the Vocabulary Total and the GPT2 responses from the diagram the GRU output and the Transformer output take the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
+When the kernel does not match anything there is no output from the kernel, but when there is a match we show the AIML output to the chatbot as the context for that input. This is to say that the input from the user is concatenated with the context text, in this case the answer from the AIML kernel. The chatbot is then left to decide what to answer from the user question and the context. Usually the answer makes sense.
 
+Usually the user's question and whatever the chatbot decides will be the answer are both added to the history. As noted before, history of what the user enters and the chatbot's answer are kept by the chatbot so that the chatbot can keep track of answers over time. Sometimes, though, keeping sentences that refer to user names confuses the bot's answers. In other cases the bot keeps track of answers that are generated in the AIML/chatbot hybrid process.
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.75]{Figure_6}
-		
-		
-	\end{center}
-	\caption[Simple Word Usage]{Simple Word Usage - No Vocabulary Total}
-	
-	
-\end{figure}
+Even when the answer makes sense there is only a certain percentage of time that this example works. Sometimes, even with the coaching of the AIML, the model does not answer with the right name. Sometimes you ask it for your name and it responds with it's name. Some times you ask it for it's name and it responds with yours. Without the AIML the model always answers all name questions with it's name.
 
-We might conclude from these comparisons that the GRU model operates more robustly than the Transformer model. This may be the case, or the transformer model may be over trained or over fitted. It also might be that the hyper parameter set is poorly adjusted. We suspect the learning rate, for example, may be too high.
+\subsection{Internet Search Experiment}
 
-\section{Sentence Usage}
+We want to be able to search the internet for an article, download that article, and summarize parts of the article as answers to questions asked of the model. This is leveraging of the token size of the input to the model. It's usually very large. It can be 1280 tokens.
 
-If we were interested in transfer learning and we wanted to train the model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly or over and over.
+The AIML required is minimal but larger than the AIML for the `user name' problem. The goal is to detect when the user wants to talk about an internet page and detect when they are done.
 
-The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above we use 2000 inputs from the training set of the movie dialog corpus.
+The first case, when the user wants to talk about an internet page, is associated with utterances like `Tell me about *' and `I want to talk about *' where `*' is a wildcard for what the user is interested in. There can be other phrases that imply the same intention on the part of the user. In these cases the text from the wildcard in the invocation is saved.
 
-We have a rough number for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer in total. The GRU is increasing still at 350 sentences at the end of our study. We assume that at some point the number of total GRU sentences that that model can produce reaches some kind of limit.
+The second case, when the user is done with the internet page and wants to return to normal operation, is associated with utterances like `Ok thanks' and `That's enough'. These two phrases can be checked for when the bot is in `Internet-Search' mode. There could easily be other phrases that cause the same operation in the chatbot code.
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.75]{Figure_8}
-		
-		
-	\end{center}
-	\caption[Simple Sentence Usage]{Simple Sentence Usage}
-	
-	
-\end{figure}
+When the AIML detects one of these signals the program goes into a special mode of operation. The first signal, we will call the `find' signal, causes operation of an internet browser. The web search uses the text from the invocation of the `find' command. The browser yields results as they would be found using a google search engine. The first 20 results are kept and the url for the highest ranking wikipedia page is retained. That page is loaded and the `body' tag is scanned for `paragraph' type content. This web page replaces the context input. 
 
-In a transformer classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a neural network model that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. 
+After that the context is retained while the chatbot answers any questions that the user might have. The GPT2 model has some facility with this, and the larger GPT2 model is more adept.
 
-We do not experiment with classifiers, but we mentioned BERT previously, which can be configured as a classifier.
+Later when the AIML detects the second signal, we will call the `restore' signal, the program switches back from special operation to normal operation. The web page contents are removed and the context is restored as it was during regular chatbot use. There is a part that has the history of the last few questions and answers, and there is a part that has the bot name, occupation, and the current time.
 
-\section{Turing Test}
+As the chatbot answers questions the content of the conversation is saved for the `history' of the context text, as it is used in the regular chatbot mode. This means there is a record of the questions and answers the chatbot goes through during it's operation, even when it is answering questions about a web page that it has searched for. Because of size limitations the history is not included in the chatbot input when it is answering questions about a web page, but a record is kept of `q' and `a' and the bot can refer to them later.
 
-The Turing Test concerns itself with the question of weather a computer is intelligent. Turing says that intelligence is too hard to describe, and that if the computer can convince you that it is intelligent then it is.
+Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 768 tokens and it is more than 1000 for the larger models. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
 
-Weather this is right is beyond the scope of this paper. The people who trained the Generative Pre-training Transformer 2 were apprehensive about their model's ability to generate human speech. They felt the model worked too well. At first when they finished their model they decided not to release the largest version to the public for several months (Radford et al) \cite{radford2019language}. Ultimately they did release their large model.
+\subsection{Usage Example}
 
-The creators of the model used it differently than our chatbot implementation. They generated paragraphs of text, and it was determined at first that the ability of the model to impersonate a human was too great. It was felt that the model could be used to spam facebook and other social networking sites with content that was very convincing. If the model could be used to convince people to act badly, then it should not be released. Humans are susceptible to the sentiments of those they see as their peers. If the model was, for better or worse, passing the Turing test, then it should not fall into the wrong hands. This was the concern of the coders at the time.
+Consider that you are interested in the musical group `The Beatles'. If you wanted to find out about the band you might say to the chatbot `Tell me about the beatles.'
 
-Ultimately the large model was released, either because the developers decided the model was not as good as originally estimated, or because they didn't care. 
+The chatbot would take a little time to respond. Ultimately it would answer with something like `The Beatles were an English rock band formed in Liverpool in 1960.'
 
-\section{Winograd Schema}
+Then you might ask it a question like `How many members were in the band?'
 
-Winograd schemas are named after Terry Winograd. The idea is that there is a sentence presented that has two meanings. A computer finds these sentences challenging to understand, and that makes them interesting for the development of Artificial Intelligence.
+To this question the 774M chatbot answered this way for us, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' We note that this is not actually the correct answer. This may be because after clipping the information asked for does not exist in the context section. You can ask other questions. Some of them may be answered correctly and some not. 
 
-An example follows.
+To this question the x-large model answers `There were 4 members in the band.'
 
-\begin{center}
-	\textbf{He didn't put the trophy in the suitcase because it was too [big/small]}
-\end{center}
+When you ask the question `How many members were in the band?' you do not need to specify which band. The model seems to be able to intuit the band that you are referring to.
 
-We can choose which bracketed term to use, and we must choose only one bracketed term. If we choose `big' then we are referring to the trophy. If we choose `small' then we are referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
+At some point you will want to end the Q/A session. You would say `OK' or `OK thanks'. After that the web page for the `Beatles' would no longer be available to the chatbot. It could still answer questions. You could ask `What are the Beatles'. You might get an answer like above, `The Beatles were an English rock band formed in Liverpool in 1960.'
 
-The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. In the chat bot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
-
-There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
-
+This is an example of using the model. Other topics can be asked about. You do not need to re-start the model to ask about a second or third topic. Each question takes several seconds before an answer is produced. The large version of this model does not work on the Raspberry Pi.
