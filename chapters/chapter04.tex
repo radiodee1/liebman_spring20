@@ -5,11 +5,7 @@ In the section above we describe the workings of a transformer and the workings 
 
 We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections. 
 
-%If there is any other code in this paper it is considered after the eighth section of this chapter. 
-
 We have four models we consider and at the same time only three Raspberry Pi boards. We actually try all four models, but keep only three Raspberry Pi installations. 
-
-%We found that the chatbot with the sequence to sequence Neural Machine Translation from the tutorial worked well. There is a tensorflow transformer-based model that worked marginally well based on the Persona corpus, but we used the Movie corpus more effectively with the transformer architecture. We use that model on one of the boards. Finally, we found that the Generative Pre-training Transformer 2 chatbot worked well enough with the `zero-shot' setup so that fine-tuning was not necessary. It was also installed on one of the boards. 
 
 The model that did not make it to the final three and installation on a Raspberry Pi was the smaller Transformer with the Persona corpus.
 
@@ -134,8 +130,6 @@ sentences that have the word "don't" in them. Training was started again until t
 At that time the corpus was modified to include no sentences that have the word "sorry" in them. Training was started again and was continued for some period. A further segment of training was not attempted. 
 
 At this point, after looking at the change in loss, further training was not thought of as helpful. Loss stopped improving at some point in this process, and this lack of improvement was taken as a sign that further progress was not likely.
-
-%Subjectively the transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 \subsection{Questions}
 Subjectively this transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'

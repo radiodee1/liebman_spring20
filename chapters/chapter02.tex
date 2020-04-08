@@ -265,7 +265,7 @@ The `Generative Pre-training Transformer 2' models also work in many circumstanc
 
 For our chatbot the model with 117 million parameters worked. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
 
-We use both the small and large model. As a test when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted.
+We use both the small and large model. As a test when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted at first.
 
 \subsection{Application Details}
 The model is described in Radford et al \cite{radford2019language} and the accompanying blog post. The model is trained on English without a stated problem. Large neural network models are usually trained with a stated problem in mind. Rather famously this model is used after training to generate English language text. The model takes input from the user, a premise or summary of what is to be generated. The model also takes as input a number called the `temperature.' Then the model generates output. As the `temperature' is set higher the output is more fanciful. There is also a tune-able parameter for the output length. 
