@@ -38,9 +38,20 @@ Attention mechanisms are used in a similar way in three places in the Transforme
 
 It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. Later, in our discussion of Generative Pre-training Transformer 2, we will see vector sizes of 768 and 1280.
 
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=1.5]{diagram-mat04}
+	\end{center}
+	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder. - $Nx$ shows number of layers. - Vaswani et al \cite{Vaswani2017AttentionIA}}
+	
+	
+\end{figure}
+
 \subsection{Scaled Dot-Product Attention}
 
-Each layer of the Transformer has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
+Each layer of the Transformer's encoder has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
 
 The first thing that happens is the input word vector is converted to three other values. These new vectors are like the input vector but they have a smaller dimensionality. Converting the word vector in this way is accomplished by three simple matrix multiplication operations.
 
@@ -150,6 +161,23 @@ There is also a second attention mechanism in each decoder layer. It works solel
 	\begin{center}
 		
 		
+		\includegraphics[scale=1.25]{diagram-flow-decoder}
+	\end{center}
+	\caption[Decoder Flow]{Decoder Flow Details}
+	
+	
+\end{figure}
+
+\subsection{Masking During Training}
+
+During training the decoder section is masked. The mask prohibits the decoder from seeing parts of the target that it should not during training. This mimics the inference setup. In inference the decoder can only see up to the most recent word it has produced.
+
+During inference the decoder produces a token and then it adds to that token, one at a time, until the decoding is finished and something like English is produced. It can attend to any part of the output it has already produced. 
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
 		\includegraphics[scale=1.25]{diagram-mask01}
 	\end{center}
 	\caption[Decoder Mask]{Mask. - Decoder uses masked input during training.}
@@ -157,22 +185,7 @@ There is also a second attention mechanism in each decoder layer. It works solel
 	
 \end{figure}
 
-\subsection{Masking During Training}
 
-During training the decoder section is masked. The mask prohibits the decoder from seeing parts of the target that it should not during training. This mimics the inference setup.
-
-During inference the decoder produces a token and then it adds to that token, one at a time, until the decoding is finished and something like English is produced. It can attend to any part of the output it has already produced. During training the decoder is exposed to the target sequence under a mask.
-
-\begin{figure}[H]
-	\begin{center}
-		
-		
-		\includegraphics[scale=1.5]{diagram-mat04}
-	\end{center}
-	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder. - $Nx$ shows number of layers. - Vaswani et al \cite{Vaswani2017AttentionIA}}
-	
-
-\end{figure}
 
 %\subsection{Transformer - General}
 \subsection{Input - Positional Encoding}
