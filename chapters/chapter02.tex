@@ -157,6 +157,8 @@ This full sized vector comes from the last encoder layer's output. Typically the
 \subsection{Decoder - `Query'}
 There is also a second attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes it's output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
 
+In our flow diagram we illustrate one layer of the decoder.
+
 \begin{figure}[H]
 	\begin{center}
 		
