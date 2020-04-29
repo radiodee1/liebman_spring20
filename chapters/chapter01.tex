@@ -105,7 +105,7 @@ Also employed are two vocabulary sets. One vocabulary is for the source language
 
 Words are translated from strings to individual numbers from an input vocabulary dictionary. The dictionary only contains a single unique number for every word. Then the number is passed through an embedding structure. This turns the single number into a vector of numbers that is the same size as the RNN hidden dimension. Then, from that time on the model uses the vector instead of words.
 
-The contents of the embedding unit is a table of numbers, all are of the size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t have to be, unique values. There is one complete hidden dimension sized vector for each word in the vocabulary. 
+The contents of the embedding unit is a table of numbers, all are of the size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t have to be, unique values. For each word in the dictionary there is a vector whose size is equal to the hidden dimension.
 
 \begin{figure}[H]
 	\begin{center}
@@ -118,7 +118,7 @@ The contents of the embedding unit is a table of numbers, all are of the size of
 
 \end{figure}
 
-The vectors can be initialized randomly or they can be filled with predetermined values. As the network trains the embedding values can either be modified or frozen in place. Typically if the contents were initialized randomly the values would be trained. If the contents were filled with predetermined values you don\textquoteright t want to train them or change them in any way. 
+The vectors can be initialized randomly or they can be filled with predetermined values. As the network trains, the embedding values can either be modified or frozen in place. Typically if the contents were initialized randomly the values would be trained. If the contents were filled with predetermined values, you don\textquoteright t want to train them or change them in any way. 
 
 There are at this writing two main types of pretrained word embeddings. One is called \textquoteleft Word2Vec\textquoteright{} and one is called \textquoteleft GloVe\textquoteright . 
 
@@ -130,14 +130,13 @@ Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov e
 A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
 
 \subsection{Training and Evaluation}
-
-We have a corpus. It is generally felt that the corpus should be divided into three parts. The largest part, maybe \%80 is held for training. Then \%10 should go to what is called `validation' and \%10 should go to `testing'.
+Our task is to train a Neural Network to translate a given input corpus. It is generally felt that the corpus should be divided into three parts. The largest part, maybe \%80 is held for training. Then \%10 should go to what is called `validation' and \%10 should go to `testing'.
 
 The training portion, obviously, is used during the training phase. The model can become familiar with training data and provide target data that leads one to believe that the model is learning well. This is similar to memorization. The model may see the same training data repeatedly and thereby learn how to answer a source with a target without learning the task of why it is giving a particular answer.
 
 For this reason, during training, the validation set is used for statistical purposes. The actual training mechanism is halted and the validation set is run through the model. Loss is measured and compared to the loss found when training is enabled. Loss during validation is usually greater than during training. This is done periodically during what would otherwise be called training.
 
-This is useful for tuning hyper-parameters. Over and over you train, and as you do you look at the validation for clues on what to change in your hyper-parameters. 
+This is useful for tuning hyper-parameters, which are parameters that occur in the model. Repeatedly you train, and as you do you asses at the validation scores for clues on what to change in your hyper-parameters. 
 
 When you are done you use the final holdout set, the `test' set, to determine weather or not you have been successful. You must always remember not to train with the test set.
 
@@ -147,7 +146,7 @@ So far the model takes a word, translates it to an integer, and finds the vector
 
 The Gated Recurrent Unit takes as input two vectors. It processes the `input' vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The Gated Recurrent Unit also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
 
-We will describe components in two groups. The input components, from the source language, are the encoder and the output components, from the target language, are the decoder.
+We will describe the components in two groups. The input components, from the source language, are the encoder and the output components, from the target language, are the decoder.
 
 
 
@@ -155,7 +154,7 @@ We will describe components in two groups. The input components, from the source
 
 The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the previous hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous Gated Recurrent Unit. The output vector is a hidden value for the Recurrent Unit to the right.
 
-The very first Gated Recurrent Unit in the input encoder ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the encoder. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. If needed this is repeated. Then the last Gated Recurrent Unit in the encoder passes it's hidden state to the output decoder.
+The very first Gated Recurrent Unit in the input encoder ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the encoder. This Gated Recurrent Unit uses the output of the previous Gated Recurrent Unit as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. This is repeated if needed. Then the last Gated Recurrent Unit in the encoder passes it's hidden state to the output decoder.
 
 A complicating detail is that although many Gated Recurrent Units are called for in the encoder they all use the same set of weights and biases. For this reason only a single input Gated Recurrent Unit is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the Gated Recurrent Unit. 
 
@@ -179,7 +178,7 @@ The second Gated Recurrent Unit generates the second word and also its own hidde
 
 In this figure we generalize a sequence to sequence model. The idea is that the left side of the diagram deals with the encoding of sentences. A and B would be consecutive words in a sentence, and the round blue nodes below A and B are Recurrent Neural Network units. C and D are outputs and in the right side of the diagram the blue nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
 
-All of the information that the decoder uses for it\textquoteright s output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. Aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
+All of the information that the decoder uses for its output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. Aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
 
 Making this vector larger by increasing the size of the hidden dimension allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if one of those is used. 
 
@@ -251,13 +250,13 @@ Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} make an interesting propositi
 
 Chatbots have for a long time been constructed using \ac{AIML}. AIML, (Artificial Intelligence Markup Language) requires hand coding individual rules for every input and response. A Neural Conversational Model would not use those sorts of rules.
 
-To create a model like this more is required than just a single input and output language. There must be a relationship between the source and the target. We want there to be a question-and-answer-like relation. Finding a corpus like this can be difficult.
+To create a model like this, more is required than just a single input and output language. There must be a relationship between the source and the target. We want there to be a question-and-answer-like relation. Finding a corpus like this can be difficult.
 
-It would be easy to duplicate the input source material in the target corpus. This would produce auto-encoding. The model would learn to repeat everything that was given to it in it's output. Though the model learns a task, it is not the dynamic task we want. Conversations, on the other hand, supply the relationship we are looking for. Starting with almost any question sentence in a conversation, the sentence following it answers the question posed. 
+It would be easy to duplicate the input source material in the target corpus. This would produce auto-encoding. The model would learn to repeat everything that was given to it in its output. Though the model learns a task, it is not the dynamic task we want. Conversations, on the other hand, supply the relationship we are looking for. Starting with almost any question sentence in a conversation, the sentence following it answers the question posed. 
 
 What would be a good candidate for this kind of verbal play? Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Consecutive sentences can be divided into source and target. Each sentence is a source and the sentence that follows it would be the target for that pair. 
 
-Using this method there are times when the source and target are not from the same conversation, like times in a movie dialog when the scene switches from one locale to another. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
+Using this method there are times when the source and target are not from the same conversation, as happens in dialogues when a scene switches to a different locale. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
 
 Training for this model is relatively straight forward. There is a problem though. We can follow the loss and make sure it is decreasing, but the accuracy tells us nothing and in this case does not increase as we would like it to. The loss goes down but the accuracy does not go up.
 
