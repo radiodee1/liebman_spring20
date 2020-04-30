@@ -85,6 +85,6 @@
 \contentsline {section}{\numberline {6.2}Smaller Transformer Chatbot Learning}{64}{section.6.2}% 
 \contentsline {section}{\numberline {6.3}Word Usage}{65}{section.6.3}% 
 \contentsline {section}{\numberline {6.4}Sentence Usage}{66}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Turing Test}{67}{section.6.5}% 
+\contentsline {section}{\numberline {6.5}Turing Test}{68}{section.6.5}% 
 \contentsline {section}{\numberline {6.6}Winograd Schema}{68}{section.6.6}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{70}{appendix.A}% 

@@ -9,7 +9,7 @@ The respective value of each of the models changes slightly when you consider wh
 
 \section{Smaller Transformer Chatbot Learning}
 
-For the chatbot task we want to know what the Transformer is doing during training and later during inference. Here we are concerned with the Transformer model trained on the movie dialog corpus and not the GPT2 model.
+For the chatbot task we want to know what the Transformer is doing during training and later during inference. Here we are concerned with the Transformer model trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers and a hidden size of 512 units.
 
 It seems the model learns a set of multi-purpose English answers in a form close to a list. Then it spends time as a classifier. Each input sentence is compared to the set of answers. A question is associated with a given answer from the set when possible. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained many of the answers that the model would use. For a given model this list can only be so long.
 
@@ -71,7 +71,9 @@ We have a rough number for those two models. They use about 125 sentences repeat
 
 In a transformer classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a neural network model that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. This is a relatively large number.
 
-We do not experiment with classifiers, but we mentioned BERT previously, which can be configured as a classifier.
+We do not experiment with classifiers, but we mentioned BERT previously, which can be configured as a classifier. The Transformer model from the figure has 6 layers and a hidden size of 512. There is a BERT model with exactly those parameters as well as several other sizes.
+
+As stated previously, BERT models are pretrained and meant to be fine-tuned.
 
 \section{Turing Test}
 
