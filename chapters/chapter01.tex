@@ -136,7 +136,7 @@ The training portion, obviously, is used during the training phase. The model ca
 
 For this reason, during training, the validation set is used for statistical purposes. The actual training mechanism is halted and the validation set is run through the model. Loss is measured and compared to the loss found when training is enabled. Loss during validation is usually greater than during training. This is done periodically during what would otherwise be called training.
 
-This is useful for tuning hyper-parameters, which are parameters that occur in the model. Repeatedly you train, and as you do you asses at the validation scores for clues on what to change in your hyper-parameters. 
+This is useful for tuning hyper-parameters, which are parameters that occur in the model. Repeatedly you train, and as you do you asses the validation scores for clues on what to change in your hyper-parameters. 
 
 When you are done you use the final holdout set, the `test' set, to determine weather or not you have been successful. You must always remember not to train with the test set.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  29 APR 2020 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  30 APR 2020 09:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1082,19 +1082,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [32
 
 ] [33] [34] [35] [36] [37]
-Overfull \hbox (23.27394pt too wide) in paragraph at lines 155--156
+Overfull \hbox (23.27394pt too wide) in paragraph at lines 158--159
 []\T1/cmr/m/n/10 There are three files mis-named. They can be found at `\T1/cmr
 /bx/n/10 /usr/lib/python3.7/site-packages/torch/\T1/cmr/m/n/10 '.
  []
 
 
-Overfull \hbox (28.67174pt too wide) in paragraph at lines 157--158
+Overfull \hbox (28.67174pt too wide) in paragraph at lines 160--161
 \T1/cmr/m/n/10 tion. This pro-duces the fol-low-ing er-ror: `\T1/cmr/bx/n/10 Im
 portError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6:
  []
 
 [38]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 183.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 186.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [39]) [40]
@@ -1111,7 +1111,7 @@ Chapter 4.
 <Figure_2.png, id=826, 86.0013pt x 57.816pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 202.
+Package pdftex.def Info: Figure_2.png  used on input line 205.
 (pdftex.def)             Requested size: 301.00374pt x 202.35544pt.
  [48 <./Figure_2.png>] [49] [50] [51] [52] [53] [54]) [55]
 Chapter 5.
@@ -1189,14 +1189,14 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 146.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 146.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 940700AF7B544F717095B2575DFAB2DB;6562.
+(rerunfilecheck)             Checksum: 1BEA88600D720950E885591F2B9CE77D;6579.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 146.
  ) 
 Here is how much of TeX's memory you used:
- 23933 strings out of 494477
- 444224 string characters out of 6175714
+ 23934 strings out of 494477
+ 444237 string characters out of 6175714
  501635 words of memory out of 5000000
- 27089 multiletter control sequences out of 15000+600000
+ 27090 multiletter control sequences out of 15000+600000
  559385 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,11n,63p,1001b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1228,9 +1228,9 @@ ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (80 pages, 958042 bytes).
+Output written on proposal_doc.pdf (80 pages, 959379 bytes).
 PDF statistics:
- 1517 PDF objects out of 1728 (max. 8388607)
+ 1519 PDF objects out of 1728 (max. 8388607)
  943 compressed objects within 10 object streams
  210 named destinations out of 1000 (max. 500000)
  803 words of extra memory for PDF output out of 10000 (max. 10000000)

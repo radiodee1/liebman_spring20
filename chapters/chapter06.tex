@@ -7,7 +7,7 @@ A single further observation is that the GRU model responds very quickly, while 
 
 The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains some worth.
 
-\section{Smaller Chatbot Transformer Learning}
+\section{Smaller Transformer Chatbot Learning}
 
 For the chatbot task we want to know what the Transformer is doing during training and later during inference. Here we are concerned with the Transformer model trained on the movie dialog corpus and not the GPT2 model.
 
@@ -52,7 +52,7 @@ We might conclude from these comparisons that the GRU model operates more robust
 
 \section{Sentence Usage}
 
-If we were interested in transfer learning and we wanted to train the model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly or over and over.
+If we were interested in transfer learning and we wanted to train the model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly.
 
 The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above we use 2000 inputs from the training set of the movie dialog corpus.
 

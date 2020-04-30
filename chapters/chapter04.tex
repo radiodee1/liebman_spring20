@@ -116,16 +116,14 @@ As there was no monitor and it took some time for the model to launch, the progr
 \section{Chatbot - Transformer Model with Persona Corpus}
 Using the Persona corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. The Persona corpus comes from Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}.
 
-This model uses the tensorflow library, not Pytorch, and a transformer model that is somewhat small.
+This model uses the tensorflow library, not Pytorch, and a transformer model that is somewhat small. The model has encoder and decoder sections. The model uses 2 layers, 4 heads, and a hidden size of 128.
 
 The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board. That requires a python package called `tensorflow-model-server' and this package had to be built for ARMv7 for the Raspberry Pi. 
 
 \subsection{Training}
-Training of the model followed a certain pattern. First the model was trained on the persona corpus until a familiar pattern emerged. When the model began to answer all questions with the 
-phrase "I don't know" training was stopped. 
+First the model was trained on the persona corpus until a familiar pattern emerged. When the model began to answer all questions with the phrase "I don't know" training was stopped. 
 
-At that time the corpus was modified to include no 
-sentences that have the word "don't" in them. Training was started again until the output contained nothing but the phrase "I'm sorry." 
+At that time the corpus was modified to include no sentences that have the word "don't" in them. Training was started again until the output contained nothing but the phrase "I'm sorry." 
 
 At that time the corpus was modified to include no sentences that have the word "sorry" in them. Training was started again and was continued for some period. A further segment of training was not attempted. 
 
@@ -184,13 +182,18 @@ The transformer model takes about two minutes to boot on the Raspberry Pi. After
 
 There is one special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions.
 
+The Persona corpus model is not interesting to watch. Though smart speaker installation was attempted and ultimately successful, the Raspberry Pi that was used was required for another model. That other model worked better and was retained for the thesis.
 
 \section{Chatbot - Transformer Model with Movie Corpus}
+
+
 Using the Movie corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. 
 
-This model uses the tensorflow library, not Pytorch, and a transformer model that is larger than the other Transformer based model that uses the Persona corpus.
+This is the model we refer to as the larger Transformer model. It is larger than the Transformer model with the Persona corpus but it is smaller than the smallest GPT2 model.
 
-In contrast the Persona corpus model uses 2 layers, 4 heads, and a hidden size of 128. The Movie corpus model uses 6 layers, 8 heads, and a hidden size of 512.
+This model uses the Tensorflow library, not Pytorch. %, and a transformer model that is larger than the other Transformer based model that uses the Persona corpus.
+
+In contrast the Persona corpus model uses 2 layers, 4 heads, and a hidden size of 128. The Movie corpus model uses 6 layers, 8 heads, and a hidden size of 512. This model has both encoder and decoder sections.
 
 The memory footprint of the Movie corpus model while it was running was above 1.5 Gigabyte. The model could be installed on a Raspberry Pi 4B board but it requires a python package called `tensorflow-model-server' and this package had to be built from source or somehow provided for the Raspberry Pi. 
 

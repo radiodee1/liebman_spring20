@@ -31,15 +31,18 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 			\hline
 			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &   3B \\
 			Transformer/Persona   & 25 M      & 556 M & 360 M          & YES  & NONE \\
-			Transformer/Movie   & 550 M      & 6.5 G & 1.5 G          & YES    & 4B  \\
-			GPT2 small*   & 523 M     & 5 G   & 1.5 G               & NO     &  4B \\
+			Transformer/Movie \dag \dag  & 550 M      & 6.5 G & 1.5 G  & YES    & 4B  \\
+			GPT2 small \dag   & 523 M     & 5 G   & 1.5 G               & NO     &  4B \\
 			\hline
 		\end{tabular}
 		
-		* a large GPT2 model exists, but it is not small enough to fit on a raspberry pi.
-		
-		
+		\bigskip
 	\end{center}
+		\dag \ a large GPT2 model exists, but it is not small enough to fit on a raspberry pi.
+		
+		\dag \dag \ this is the model we refer to as the `larger' transformer model, though it is smaller than the smallest GPT2 model.
+		
+	%\end{center}
 	
 	\label{fig:modeloverview}
 	\addcontentsline{lot}{section}{Model Overview}
