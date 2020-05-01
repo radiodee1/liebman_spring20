@@ -19,7 +19,7 @@ For the very large pre-trained model, like the GPT2, this may not be true. These
 
 \section{Word Usage}
 
-We make a general assumption that any model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. Also some percentage of words are used repeatedly.
+We make a general assumption that our transformer model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. Also some percentage of words are used repeatedly.
 
 \begin{figure}[H]
 	\begin{center}
@@ -52,7 +52,7 @@ We might conclude from these comparisons that the GRU model operates more robust
 
 \section{Sentence Usage}
 
-If we were interested in transfer learning and we wanted to train the model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly.
+If we were interested in transfer learning and we wanted to train a model as a classifier, we might be interested in how many fully formed responses the given model uses. We might also be interested in when or how many of these responses were used repeatedly.
 
 The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above we use 2000 inputs from the training set of the movie dialog corpus.
 
