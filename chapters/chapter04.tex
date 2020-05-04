@@ -36,15 +36,16 @@ We visit and revisit this checklist to subjectively rate our chatbots.
 
 \begin{itemize}
 	
-	\item[$\square$] Are all the responses are in plain English? Are any of the answers gibberish?
+	\item [1.] Are all the responses are in plain English? Are any of the answers gibberish?
 	
-	\item[$\square$] Is there a  variety of answers? Are all answers the same?
+	\item [2.] Is there a  variety of answers? Are all answers the same?
 	
-	\item[$\square$] Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
+	\item [3.] Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
 	
-	\item[$\square$] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?
+	\item [4.] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?
 	
-	\item[$\square$] Does the model answer well to `Hello' and `Good bye'?
+	\item [5.] Does the model answer well to `Hello' and `Good bye'?
+	
 \end{itemize}
 
 
@@ -84,21 +85,29 @@ good bye .
 %\end{minipage}
 %\bigskip
 
- 
+
 %\noindent \textbf{Checklist:} 
 \subsection{Checklist}
 
 \begin{itemize}
-
-\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] All the responses are in plain English. There is no gibberish.
-
-\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] There is a variety of answers. Not all answers are the same.
-
-\item[$\square$] It is debatable weather or not the answers to the questions about `favorite color' and `favorite candy' are good. The model could have a set of easy answers that it can use for this kind of question. 
-
-\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. This model uses that answer at times.
-
-\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model answers well to `Hello' and `Good bye'.
+	\item [1.] Are all the responses are in plain English? Are any of the answers gibberish?
+	
+	\item [] All the responses are in plain English. There is no gibberish.
+	
+	\item [2.] Is there a  variety of answers? Are all answers the same?
+	
+	\item [] Not all answers are the same.
+	\item [3.] Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
+	
+	\item[] It is debatable weather or not the answers to the questions about `favorite color' and `favorite candy' are good. It is good that the two types of questions don't have the same answers.
+	
+	\item [4.] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?
+	
+	\item[] This model uses that answer at times. It does not use `no' always.
+	
+	\item [5.] Does the model answer well to `Hello' and `Good bye'?
+	
+	\item []The model answers well to `Hello' and `Good bye'.
 \end{itemize}
 
 \section{Smart Speaker - Gated Recurrent Unit Model}
@@ -161,16 +170,26 @@ hi , how are you today ?
 \subsection{Checklist}
 
 \begin{itemize}
+	\item [1.] Are all the responses are in plain English? Are any of the answers gibberish?
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] All the responses are in plain English. There is no gibberish.
+	\item []All the responses are in plain English. There is no gibberish.
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] There is a variety of answers. Not all answers are the same.
+	\item [2.] Is there a  variety of answers? Are all answers the same?
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] Some of the answers are re-used and do not follow logically from the questions. The `favorite color' and `favorite candy' questions are nearly ignored. For those questions the model answers with `Hi, how are you today?'. This seems to be the model's default answer.
+	\item []There is a variety of answers. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model does not use `No' or `I don't know'.
+	\item [3.] Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] The model does not have an answer for `Good bye'.
+	\item []Some of the answers are re-used and do not follow logically from the questions. The `favorite color' and `favorite candy' questions are nearly ignored. For those questions the model answers with `Hi, how are you today?'. This seems to be the model's default answer.
+	
+	\item [4.] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?
+	
+	\item []The model does not use `No' or `I don't know'.
+	
+	\item [5.] Does the model answer well to `Hello' and `Good bye'?
+	
+	\item []The model does not have an answer for `Good bye'. It does answer for `Hello'.
+	
 \end{itemize}
 
 
@@ -245,16 +264,25 @@ bye
 \subsection{Checklist}
 
 \begin{itemize}
+	\item [1.] Are all the responses are in plain English? Are any of the answers gibberish?
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] All the responses are in plain English. There is no gibberish.
+	\item []All the responses are in plain English. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] There is a variety of answers. Not all answers are the same.
+	\item [2.] Is there a  variety of answers? Are all answers the same?
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] The `favorite color' and `favorite candy' questions are ignored. The model does not have original answers for these questions.
+	\item []There is a variety of answers. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] The model does in fact use `No' or `I don't know'. %It also likes to answer `yeah'.
+	\item [3.] Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model does have an answer for `Good bye'.
+	\item []The `favorite color' and `favorite candy' questions are ignored. The model does not have original answers for these questions.
+	
+	\item [4.] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?
+	
+	\item []The model does in fact use `No' or `I don't know'. 
+	
+	\item [5.] Does the model answer well to `Hello' and `Good bye'?
+	
+	\item []The model does have an answer for `Good bye'.
 \end{itemize}
 
 \section{Smart Speaker - Transformer Model with Movie Corpus}
@@ -359,16 +387,26 @@ Good bye.
 \subsection{Checklist}
 
 \begin{itemize}
+	\item [1.] Are all the responses are in plain English? Are any of the answers gibberish?
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] All the responses are in plain English. There is no gibberish.
+	\item []All the responses are in plain English. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] There is a variety of answers. Not all answers are the same.
+	\item [2.] Is there a  variety of answers? Are all answers the same?
 	
-	\item[$\square$] It is still debatable weather or not the answers to the questions about `favorite color' and `favorite candy' are good. The model could have a set of answers that it can use for this kind of question. The model seems to know what candy is and to a lesser extent what a color is. Some of the time the answer includes a word from the question sentence that would lead you to believe that this model has fewer stock answers. The answers are good but not perfect.
+	\item []There is a variety of answers. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model does not use `I don't know' that often. 
+	\item [3.] Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
 	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{52}}}$\square$] The model does have an answer for `Good bye'.
+	\item []It is still debatable weather or not the answers to the questions about `favorite color' and `favorite candy' are good. They are better than many other models. The model could have a set of answers that it can use for this kind of question. The model seems to know what candy is and to a lesser extent what a color is. Some of the time the answer includes a word from the question sentence that would lead you to believe that this model has fewer stock answers. The answers are good but not perfect.
+	
+	\item [4.] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?
+	
+	\item []The model does not use `I don't know' that often. 
+	
+	\item [5.] Does the model answer well to `Hello' and `Good bye'?
+	
+	\item []The model does have an answer for `Good bye' and `Hello'.
+	
 \end{itemize}
 
 The model will answer with it's name and you can tell it your name, but it is confused by this. It will on occasion tell you that it's name and your name are the same thing. This is in part because it cannot remember what it most recently said to you or what you most recently said to it. 
@@ -382,4 +420,3 @@ The Raspberry Pi model that the Generative Pre-training Transformer 2 was instal
 The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, monitor, or keyboard. The program was modified so that there was a tone every time the model was processing input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the Generative Pre-training Transformer 2 model to be physically installed on the Raspberry Pi.
 
 A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. The lights are helpful.
-

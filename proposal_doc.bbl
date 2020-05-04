@@ -30,10 +30,6 @@ T.~Wolf, L.~Debut, V.~Sanh, J.~Chaumond, C.~Delangue, A.~Moi, P.~Cistac,
 \newblock
   http://www.wildml.com/2015/10/recurrent-neural-network-tutorial-part-4-implementing-a-grulstm-rnn-with-python-and-theano/.
 
-\bibitem{DBLP:journals/corr/SutskeverVL14}
-I.~Sutskever, O.~Vinyals, and Q.~V. Le, ``Sequence to sequence learning with
-  neural networks,'' {\em CoRR}, vol.~abs/1409.3215, 2014.
-
 \bibitem{mikolov2013efficient}
 T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean, ``Efficient estimation of word
   representations in vector space,'' {\em arXiv preprint arXiv:1301.3781},
@@ -44,10 +40,6 @@ J.~Pennington, R.~Socher, and C.~Manning, ``{G}love: Global vectors for word
   representation,'' in {\em Proceedings of the 2014 Conference on Empirical
   Methods in Natural Language Processing ({EMNLP})}, (Doha, Qatar),
   pp.~1532--1543, Association for Computational Linguistics, Oct. 2014.
-
-\bibitem{DBLP:journals/corr/abs-1809-01984}
-P.~Mazar{\'{e}}, S.~Humeau, M.~Raison, and A.~Bordes, ``Training millions of
-  personalized dialogue agents,'' {\em CoRR}, vol.~abs/1809.01984, 2018.
 
 \bibitem{DBLP:journals/corr/LuongPM15}
 M.~Luong, H.~Pham, and C.~D. Manning, ``Effective approaches to attention-based
@@ -64,6 +56,10 @@ A.~Radford, K.~Narasimhan, T.~Salimans, and I.~Sutskever, ``Improving language
   parameter language models using gpu model parallelism,'' 2019.
 \newblock https://nv-adlr.github.io/MegatronLM.
 
+\bibitem{DBLP:journals/corr/abs-1809-01984}
+P.~Mazar{\'{e}}, S.~Humeau, M.~Raison, and A.~Bordes, ``Training millions of
+  personalized dialogue agents,'' {\em CoRR}, vol.~abs/1809.01984, 2018.
+
 \bibitem{2018Milosevic}
 {Nemanja Milosevic}, ``Compling arm stuff without an arm board / build pytorch
   for the raspberry pi,'' 2019.
@@ -74,12 +70,6 @@ A.~Radford, K.~Narasimhan, T.~Salimans, and I.~Sutskever, ``Improving language
 {Erik Maciejewski}, ``Tensorflow serving arm - a project for cross-compiling
   tensorflow serving targeting popular arm cores,'' 2020.
 \newblock https://github.com/emacski/tensorflow-serving-arm.
-
-\bibitem{Danescu-Niculescu-Mizil+Lee:11a}
-C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
-  A new approach to understanding coordination of linguistic style in
-  dialogs.,'' in {\em Proceedings of the Workshop on Cognitive Modeling and
-  Computational Linguistics, ACL 2011}, 2011.
 
 \bibitem{wiki:xxx}
 {Wikipedia contributors}, ``Winograd schema challenge --- {Wikipedia}{,} the

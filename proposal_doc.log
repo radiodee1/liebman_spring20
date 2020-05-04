@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  1 MAY 2020 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.12.15)  4 MAY 2020 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1107,34 +1107,34 @@ Chapter 4.
 
  (./chapters/chapter04.tex [42
 
-] [43] [44] [45] [46] [47]
-<Figure_2.png, id=826, 86.0013pt x 57.816pt>
+] [43] [44] [45] [46] [47] [48]
+<Figure_2.png, id=829, 86.0013pt x 57.816pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
-Package pdftex.def Info: Figure_2.png  used on input line 205.
+Package pdftex.def Info: Figure_2.png  used on input line 224.
 (pdftex.def)             Requested size: 301.00374pt x 202.35544pt.
- [48 <./Figure_2.png>] [49] [50] [51] [52] [53] [54]) [55]
+ [49 <./Figure_2.png>] [50] [51] [52] [53] [54] [55]) [56] [57]
 Chapter 5.
-[56
+[58
 
 
 ]
 \openout2 = `chapters/chapter05.aux'.
 
- (./chapters/chapter05.tex [57
+ (./chapters/chapter05.tex [59
 
-] [58] [59] [60] [61]) [62]
+] [60] [61] [62] [63]) [64]
 Chapter 6.
-[63
+[65
 
 
 ]
 \openout2 = `chapters/chapter06.aux'.
 
- (./chapters/chapter06.tex [64
+ (./chapters/chapter06.tex [66
 
 ]
-<Figure_5.png, id=899, 607.26875pt x 341.275pt>
+<Figure_5.png, id=907, 607.26875pt x 341.275pt>
 File: Figure_5.png Graphic file (type png)
 <use Figure_5.png>
 Package pdftex.def Info: Figure_5.png  used on input line 26.
@@ -1144,7 +1144,7 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 26--27
  [] 
  []
 
-<Figure_6.png, id=900, 607.26875pt x 341.275pt>
+<Figure_6.png, id=908, 607.26875pt x 341.275pt>
 File: Figure_6.png Graphic file (type png)
 <use Figure_6.png>
 Package pdftex.def Info: Figure_6.png  used on input line 42.
@@ -1154,8 +1154,8 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 42--43
  [] 
  []
 
-[65 <./Figure_5.png>] [66 <./Figure_6.png>]
-<Figure_8.png, id=912, 607.26875pt x 341.275pt>
+[67 <./Figure_5.png>] [68 <./Figure_6.png>]
+<Figure_8.png, id=919, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
 Package pdftex.def Info: Figure_8.png  used on input line 63.
@@ -1165,22 +1165,22 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 63--64
  [] 
  []
 
-[67 <./Figure_8.png>] [68]) [69]
+[69 <./Figure_8.png>] [70]) [71]
 Appendix A.
-[70
+[72
 
 
-] (./proposal_doc.bbl [71
+] (./proposal_doc.bbl [73
 
 ]
-Underfull \hbox (badness 6691) in paragraph at lines 85--90
+Underfull \hbox (badness 6691) in paragraph at lines 75--80
 []\T1/cmr/m/n/10 Wikipedia con-trib-u-tors, ``Wino-grad schema chal-lenge --- W
 ikipedia, the free en-
  []
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 146.
- [72]
+ [74]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
@@ -1193,11 +1193,11 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 146.
  ) 
 Here is how much of TeX's memory you used:
- 23934 strings out of 494477
- 444237 string characters out of 6175714
- 501635 words of memory out of 5000000
- 27090 multiletter control sequences out of 15000+600000
- 559385 words of font info for 97 fonts, out of 8000000 for 9000
+ 23931 strings out of 494477
+ 444100 string characters out of 6175714
+ 501526 words of memory out of 5000000
+ 27087 multiletter control sequences out of 15000+600000
+ 559025 words of font info for 96 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,11n,63p,1001b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
@@ -1226,12 +1226,11 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (80 pages, 959654 bytes).
+texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on proposal_doc.pdf (82 pages, 957121 bytes).
 PDF statistics:
- 1519 PDF objects out of 1728 (max. 8388607)
- 943 compressed objects within 10 object streams
+ 1518 PDF objects out of 1728 (max. 8388607)
+ 944 compressed objects within 10 object streams
  210 named destinations out of 1000 (max. 500000)
  803 words of extra memory for PDF output out of 10000 (max. 10000000)
 
