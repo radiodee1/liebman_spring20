@@ -51,27 +51,27 @@
 \contentsline {subsection}{\numberline {4.1.1}Questions}{42}{subsection.4.1.1}% 
 \contentsline {subsection}{\numberline {4.1.2}Checklist}{43}{subsection.4.1.2}% 
 \contentsline {section}{\numberline {4.2}Chatbot - Gated Recurrent Unit Model}{43}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Questions}{43}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Checklist}{44}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Questions}{44}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Checklist}{45}{subsection.4.2.2}% 
 \contentsline {section}{\numberline {4.3}Smart Speaker - Gated Recurrent Unit Model}{45}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}Chatbot - Transformer Model with Persona Corpus}{45}{section.4.4}% 
+\contentsline {section}{\numberline {4.4}Chatbot - Transformer Model with Persona Corpus}{46}{section.4.4}% 
 \contentsline {subsection}{\numberline {4.4.1}Training}{46}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}Questions}{46}{subsection.4.4.2}% 
-\contentsline {subsection}{\numberline {4.4.3}Checklist}{47}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.2}Questions}{47}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Checklist}{48}{subsection.4.4.3}% 
 \contentsline {section}{\numberline {4.5}Smart Speaker - Transformer Model with Persona Corpus}{48}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Chatbot - Transformer Model with Movie Corpus}{48}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}Questions}{49}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}Checklist}{50}{subsection.4.6.2}% 
-\contentsline {section}{\numberline {4.7}Smart Speaker - Transformer Model with Movie Corpus}{51}{section.4.7}% 
-\contentsline {section}{\numberline {4.8}Chatbot - Generative Pre-training Transformer 2 Model}{51}{section.4.8}% 
-\contentsline {subsection}{\numberline {4.8.1}Context Experiment}{52}{subsection.4.8.1}% 
-\contentsline {subsection}{\numberline {4.8.2}History Experiment}{52}{subsection.4.8.2}% 
-\contentsline {subsection}{\numberline {4.8.3}Artificial Intelligence Markup Language Experiment}{53}{subsection.4.8.3}% 
+\contentsline {section}{\numberline {4.6}Chatbot - Transformer Model with Movie Corpus}{49}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Questions}{50}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}Checklist}{51}{subsection.4.6.2}% 
+\contentsline {section}{\numberline {4.7}Smart Speaker - Transformer Model with Movie Corpus}{52}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Chatbot - Generative Pre-training Transformer 2 Model}{52}{section.4.8}% 
+\contentsline {subsection}{\numberline {4.8.1}Context Experiment}{53}{subsection.4.8.1}% 
+\contentsline {subsection}{\numberline {4.8.2}History Experiment}{53}{subsection.4.8.2}% 
+\contentsline {subsection}{\numberline {4.8.3}Artificial Intelligence Markup Language Experiment}{54}{subsection.4.8.3}% 
 \contentsline {subsection}{\numberline {4.8.4}Program Launching}{54}{subsection.4.8.4}% 
-\contentsline {subsection}{\numberline {4.8.5}Overall}{54}{subsection.4.8.5}% 
-\contentsline {subsection}{\numberline {4.8.6}Questions}{54}{subsection.4.8.6}% 
-\contentsline {subsection}{\numberline {4.8.7}Checklist}{55}{subsection.4.8.7}% 
-\contentsline {section}{\numberline {4.9}Smart Speaker - Generative Pre-training Transformer 2 Model}{56}{section.4.9}% 
+\contentsline {subsection}{\numberline {4.8.5}Overall}{55}{subsection.4.8.5}% 
+\contentsline {subsection}{\numberline {4.8.6}Questions}{55}{subsection.4.8.6}% 
+\contentsline {subsection}{\numberline {4.8.7}Checklist}{56}{subsection.4.8.7}% 
+\contentsline {section}{\numberline {4.9}Smart Speaker - Generative Pre-training Transformer 2 Model}{57}{section.4.9}% 
 \contentsline {chapter}{\numberline {5}Further Installations}{58}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Generative Pre-training Transformer 2 - XLarge Model}{59}{section.5.1}% 
 \contentsline {subsection}{\numberline {5.1.1}Context Experiment}{59}{subsection.5.1.1}% 

@@ -48,6 +48,11 @@ We visit and revisit this checklist to subjectively rate our chatbots.
 	
 \end{itemize}
 
+The reason for question 1, 2 and 5 are straight forward. The reason for question 3 is to determine how well the model understands English. If the answers to `favorite candy' and `favorite color' are the same, then the model is pretty simple. If the answers are different then the answer set that the model uses is larger. The model might or might not know there is a difference to candy and color. %This is just one example of the model being larger. 
+
+A simpler model will answer `I don't know' for the `favorite candy' and `favorite color' questions. It can even answer questions like `do you like red' and `do you like ice cream' with `I don't know'. 
+
+Question 4 refers to weather simple `No' answers are used all the time to answer questions that would otherwise need complex sentence structure. A simpler model might figure out during training that `No' answers were easier to remember and could be applied in many places.
 
 \section{Chatbot - Gated Recurrent Unit Model}
 We have two models based on the sequnce to sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al \cite{2018Inkawhich}.
@@ -109,6 +114,8 @@ good bye .
 	
 	\item []The model answers well to `Hello' and `Good bye'.
 \end{itemize}
+
+This is a reasonably good model. It is also very light weight.
 
 \section{Smart Speaker - Gated Recurrent Unit Model}
 
@@ -192,6 +199,7 @@ hi , how are you today ?
 	
 \end{itemize}
 
+This is a poor model. It does use English language answers, but does not perform well in many other respects.
 
 \section{Smart Speaker - Transformer Model with Persona Corpus}
 
@@ -284,6 +292,8 @@ bye
 	
 	\item []The model does have an answer for `Good bye'.
 \end{itemize}
+
+This is a reasonably good model. We prefer this model over the one that uses the Persona corpus.
 
 \section{Smart Speaker - Transformer Model with Movie Corpus}
 
@@ -410,6 +420,8 @@ Good bye.
 \end{itemize}
 
 The model will answer with it's name and you can tell it your name, but it is confused by this. It will on occasion tell you that it's name and your name are the same thing. This is in part because it cannot remember what it most recently said to you or what you most recently said to it. 
+
+This is the best model we tested, but it is relatively large and that aspect makes it difficult to apply in some cases.
 
 \section{Smart Speaker - Generative Pre-training Transformer 2 Model}
 
