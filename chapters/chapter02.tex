@@ -228,9 +228,11 @@ Pre-Training is when the authors of a model train an instance and then make the 
 
 After acquiring a trained model, the programmer goes on to adjust the model to their task. Adjusting a pre-trained model to a given task is called `Transfer Learning'. Many tasks lend themselves to Transfer Learning. Conceptually a model can be fine-tuned to any problem and many problems can be addressed with good results after only modest fine-tuning.
 
+\iffalse
 There is a pre-trained Transformer model called \ac{BERT}. BERT stands for `Bidirectional Encoder Representations from Transformers'. The BERT files available on-line are mainly for classification tasks. They allow for input that uses a vocabulary size that is very large, but the output is meant to be smaller.
 
 The BERT models use a bidirectional training method. During training the BERT model might be presented with a sentence with a word missing. The training task is to fill in that blank. The model can look at the sentence from any direction in order to find that word. This is a very simplistic explanation for what is termed a Masked Language Model.
+\fi
 
 \subsection{General}
 GPT2 still uses Scaled Dot-Product Attention. A model diagram is taken from Radford et al \cite{radford2018improving}. A mask is used in the Self Attention segment of the model during training.
@@ -239,7 +241,7 @@ GPT2 still uses Scaled Dot-Product Attention. A model diagram is taken from Radf
 	\begin{center}
 		
 		
-		\includegraphics[scale=4.0]{diagram-mat05}
+		\includegraphics[scale=3.0]{diagram-mat05}
 	\end{center}
 	\caption[Generative Pre-training Transformer 2 ]{GPT2 - Radford et al \cite{radford2018improving}}
 	
@@ -248,10 +250,10 @@ GPT2 still uses Scaled Dot-Product Attention. A model diagram is taken from Radf
 
 There are several sizes of pre-trained GPT2 model. They are all rather large. The smallest model matches the size of the largest `Bidirectional Encoder Representations from Transformers' model. This model has 12 layers while the Transformer model in the example from Vaswani et al \cite{Vaswani2017AttentionIA} uses 8 layers. This model also has a hidden dimension of 768, not 512. With 8 heads this leaves a smaller dimensionality of 96 at each attention head. 
 
-The GPT2 models input and output text sequences. In this way they are preferred for our application over the BERT models. 
+The GPT2 models input and output text sequences. %In this way they are preferred for our application over the BERT models. 
 
 \subsection{Corpus}
-The GPT2 models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `karma' rating of 3 or better. `karma' is a rating system used internally on Reddit. 
+The GPT2 models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `karma' rating of 3 or better. `Karma' is a rating system used internally on Reddit. 
 
 As with the decoder layer of the Transformer model, the GPT2 model concerns itself with generating words that are later strung together to make sentences or paragraphs. During training the model uses a masking scheme so that input can be parallel-ized. During inference output cannot be parallel-ized, so during inference output must focus on one example at a time.
 

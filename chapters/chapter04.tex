@@ -134,7 +134,7 @@ Using the Persona corpus we trained a transformer model to use as a chatbot. Thi
 
 This model uses the tensorflow library, not Pytorch, and a transformer model that is somewhat small. The model has encoder and decoder sections. The model uses 2 layers, 4 heads, and a hidden size of 128.
 
-The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board. That requires a python package called `tensorflow-model-server' and this package had to be built for ARMv7 for the Raspberry Pi. 
+The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board. That requires a python package called `tensorflow-model-server' and this package had to be provided for ARMv7 for the Raspberry Pi. 
 
 \subsection{Training}
 First the model was trained on the persona corpus until a familiar pattern emerged. When the model began to answer all questions with the phrase "I don't know" training was stopped. 
