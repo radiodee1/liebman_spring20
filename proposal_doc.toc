@@ -82,9 +82,9 @@
 \contentsline {subsection}{\numberline {5.1.6}Usage Example}{62}{subsection.5.1.6}% 
 \contentsline {chapter}{\numberline {6}Observations and Conclusions}{64}{chapter.6}% 
 \contentsline {section}{\numberline {6.1}GRU vs. Transformer}{65}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Smaller Transformer Chatbot Learning}{65}{section.6.2}% 
+\contentsline {section}{\numberline {6.2}Transformer Chatbot Learning}{65}{section.6.2}% 
 \contentsline {section}{\numberline {6.3}Word Usage}{66}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Sentence Usage}{67}{section.6.4}% 
+\contentsline {section}{\numberline {6.4}Sentence Usage}{68}{section.6.4}% 
 \contentsline {section}{\numberline {6.5}Turing Test}{69}{section.6.5}% 
 \contentsline {section}{\numberline {6.6}Winograd Schema}{69}{section.6.6}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{71}{appendix.A}% 

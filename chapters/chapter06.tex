@@ -7,7 +7,7 @@ A single further observation is that the GRU model responds very quickly, while 
 
 The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains some worth.
 
-\section{Smaller Transformer Chatbot Learning}
+\section{Transformer Chatbot Learning}
 
 For the chatbot task we want to know what the Transformer is doing during training and later during inference. Here we are concerned with the Transformer model trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers and a hidden size of 512 units.
 
@@ -16,6 +16,8 @@ It seems the model learns a set of multi-purpose English answers in a form close
 It is interesting to point out that probably at the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
 
 We feel that this list making is a function of the model trying to optimize the answers that it gives, and can give, given a certain size memory capacity. The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
+
+We don't feel that the output of the Transformer, for example, shows intelligence. The actual utterances of the model are pretty plain. The internal building of lists, though, shows a process that is found in some intelligent activity.
 
 For the very large pre-trained model, like the GPT2, this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
 
