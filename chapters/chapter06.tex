@@ -15,11 +15,13 @@ It seems the model learns a set of multi-purpose English answers in a form close
 
 It is interesting to point out that probably at the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
 
+We feel that this list making is a function of the model trying to optimize the answers that it gives, and can give, given a certain size memory capacity. The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
+
 For the very large pre-trained model, like the GPT2, this may not be true. These models may be more dynamic. Also we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
 
 \section{Word Usage}
 
-We make a general assumption that our transformer model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. Some percentage of words are used repeatedly.
+We make a general assumption that our transformer model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. These sentences came from the movie dialog corpus. Some percentage of words are used repeatedly.
 
 \begin{figure}[H]
 	\begin{center}
@@ -71,9 +73,9 @@ We have a rough number for those two models. They use about 125 sentences repeat
 
 In a transformer classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a neural network model that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. This is a relatively large number.
 
-We do not experiment with classifiers, but we mentioned BERT previously, which can be configured as a classifier. The Transformer model from the figure has 6 layers and a hidden size of 512. There is a BERT model with exactly those parameters as well as several other sizes.
+%We do not experiment with classifiers, but we mentioned BERT previously, which can be configured as a classifier. The Transformer model from the figure has 6 layers and a hidden size of 512. There is a BERT model with exactly those parameters as well as several other sizes.
 
-As stated previously, BERT models are pretrained and meant to be fine-tuned.
+%As stated previously, BERT models are pretrained and meant to be fine-tuned.
 
 \section{Turing Test}
 
