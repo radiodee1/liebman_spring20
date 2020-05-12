@@ -39,13 +39,13 @@
 \contentsline {section}{\numberline {3.3}Setup}{32}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Graphical Processing Unit vs. Central Processing Unit}{33}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Raspberry Pi}{34}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Tensorflow vs. Pytorch}{34}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.3}Tensorflow vs. Pytorch}{35}{subsection.3.3.3}% 
 \contentsline {subsection}{\numberline {3.3.4}Speech and Speech To Text}{35}{subsection.3.3.4}% 
 \contentsline {subsection}{\numberline {3.3.5}Corpus Considerations}{36}{subsection.3.3.5}% 
-\contentsline {section}{\numberline {3.4}ARMv7 Build/Compile}{36}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Pytorch `torch' Library 1.1.0 For ARMv7}{36}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Pytorch `torch' Library 1.4.0 For ARMv7}{37}{subsection.3.4.2}% 
-\contentsline {subsection}{\numberline {3.4.3}Docker Container `tensorflow-model-server' For ARMv7}{38}{subsection.3.4.3}% 
+\contentsline {section}{\numberline {3.4}ARMv7 Build/Compile}{37}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Pytorch `torch' Library 1.1.0 For ARMv7}{37}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Pytorch `torch' Library 1.4.0 For ARMv7}{38}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}Docker Container `tensorflow-model-server' For ARMv7}{39}{subsection.3.4.3}% 
 \contentsline {chapter}{\numberline {4}Experimental Results - Raspberry Pi}{40}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Experiments - Installations}{41}{section.4.1}% 
 \contentsline {subsection}{\numberline {4.1.1}Questions}{41}{subsection.4.1.1}% 
@@ -82,9 +82,9 @@
 \contentsline {subsection}{\numberline {5.1.6}Usage Example}{62}{subsection.5.1.6}% 
 \contentsline {chapter}{\numberline {6}Observations and Conclusions}{64}{chapter.6}% 
 \contentsline {section}{\numberline {6.1}GRU vs. Transformer}{65}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Transformer Chatbot Learning}{65}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Word Usage}{66}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Sentence Usage}{68}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Turing Test}{69}{section.6.5}% 
-\contentsline {section}{\numberline {6.6}Winograd Schema}{69}{section.6.6}% 
+\contentsline {section}{\numberline {6.2}Turing Test}{65}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Winograd Schema}{66}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Word Usage}{66}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Sentence Usage}{68}{section.6.5}% 
+\contentsline {section}{\numberline {6.6}Transformer Chatbot Learning}{69}{section.6.6}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{71}{appendix.A}% 
