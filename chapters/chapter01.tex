@@ -59,7 +59,7 @@ $$ s_t = (1 - z) \circ h + z \circ s_{t-1} $$
 
 The Gated Recurrent Unit has two inputs and two outputs. It also has two internal gates. One internal gate is the `reset' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the Gated Recurrent Unit. It is denoted as `$r$' above. Another internal gate is the `update' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as `$z$'.
 
-Here `$ s_t $' is the symbol for the output. The two inputs are `$ x_t $' and `$ s_{t-1} $' . `$ x_t $' is the hidden state input. `$ s_{t-1} $' is the regular input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, using the symbol `$ \sigma(...) $' , while tanh activation is used to compute the hidden output. The hidden output is found in the third line, denoted as `$h$'.
+Here `$ s_t $' is the symbol for the combined output. The two inputs are `$ x_t $' and `$ s_{t-1} $' . `$ x_t $' is the regular input. `$ s_{t-1} $' is the hidden state input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, using the symbol `$ \sigma(...) $' , while tanh activation is used to compute the hidden output. %The output is found in the fourth line, denoted as `$s_t$'. This serves as both hidden and regular output.
 
 The dimension of the $U^z$, $U^r$ and $U^h$ matrices is the hidden unit size by the hidden unit size. $ x_t $ is a vector the size of the hidden unit. The $U$ values, along with $ W^z $, $ W^r $ and $ W^h $  are all simple matrices that allow the GRU to operate.
 
@@ -130,7 +130,7 @@ Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov e
 A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
 
 \subsection{Training and Evaluation}
-Our task is to train a Neural Network to translate a given input corpus. It is generally felt that the corpus should be divided into three parts. The largest part, possibly eighty percent is held for training. Then ten percent should go to what is called `validation' and ten percent should go to `testing'.
+Our task is to train a Neural Network to translate a given input corpus. It is generally felt that the corpus should be divided into three parts. The largest part, possibly 80\% is held for training. Then 10\% should go to what is called `validation' and 10\% should go to `testing'.
 
 The training portion, obviously, is used during the training phase. The model can become familiar with training data and provide target data that leads one to believe that the model is learning well. This is similar to memorization. The model may see the same training data repeatedly and thereby learn how to answer a source with a target without learning the task of why it is giving a particular answer.
 
