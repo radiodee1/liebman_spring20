@@ -30,7 +30,9 @@ An example follows.
 
 We can choose which bracketed term to use, and we must choose only one bracketed term. If we choose `big' then we are referring to the trophy. If we choose `small' then we are referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
 
-The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. In the chat bot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
+The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. Remember that the Attention scheme compares tokens to other tokens in the same sentence. 
+
+In the chat bot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
 
 There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
 
@@ -86,11 +88,9 @@ We have a rough number for those two models. They use about 125 sentences repeat
 	
 \end{figure}
 
-In a transformer classifier we might choose 125 sentences for the maximum number of classifications. If we were going to try to create a neural network model that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. This is a relatively large number.
+In a transformer classifier we might be tempted to choose 125 sentences for the maximum number of classifications. If we were going to try to create a neural network model that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. This is a relatively large number. Transformer classifier networks often have just a few classes.
 
-%We do not experiment with classifiers, but we mentioned BERT previously, which can be configured as a classifier. The Transformer model from the figure has 6 layers and a hidden size of 512. There is a BERT model with exactly those parameters as well as several other sizes.
-
-%As stated previously, BERT models are pretrained and meant to be fine-tuned.
+The interesting thing is that the transformer and the GRU models both have similar `Repeated Sentence' graphs. They are totally different models and have totally different sizes. They are not similar in many ways but in this metric. They share the same corpus, so they may be learning the same task.
 
 
 \section{Transformer Chatbot Learning}

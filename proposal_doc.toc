@@ -87,5 +87,5 @@
 \contentsline {section}{\numberline {6.3}Winograd Schema}{67}{section.6.3}% 
 \contentsline {section}{\numberline {6.4}Word Usage}{67}{section.6.4}% 
 \contentsline {section}{\numberline {6.5}Sentence Usage}{69}{section.6.5}% 
-\contentsline {section}{\numberline {6.6}Transformer Chatbot Learning}{70}{section.6.6}% 
+\contentsline {section}{\numberline {6.6}Transformer Chatbot Learning}{71}{section.6.6}% 
 \contentsline {chapter}{\numberline {A}Abbreviations}{72}{appendix.A}% 
