@@ -71,7 +71,7 @@ We might conclude from these comparisons that the GRU model operates more robust
 
 \section{Sentence Usage}
 
-If we were interested in transfer learning and we wanted to train a model as a classifier, we might be interested in how many fully formed responses the given model uses. Additionally we might be interested in when or how many of these responses were used repeatedly.
+If we were interested in transfer learning or we wanted to train a model as a classifier, we might be interested in how many fully formed responses the given model uses. Additionally we might be interested in when or how many of these responses were used repeatedly.
 
 The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above we use 2000 inputs from the training set of the movie dialog corpus.
 
@@ -88,9 +88,6 @@ We have a rough number for those two models. They use about 125 sentences repeat
 	
 \end{figure}
 
-\iffalse
-In a transformer classifier we might be tempted to choose 125 sentences for the maximum number of classifications. If we were going to try to create a neural network model that was trained for a specific Q/A task using a transformer this might be important. We could use 125 as our maximum number of outputs. This is a relatively large number. Transformer classifier networks often have just a few classes.
-\fi
 
 The interesting thing is that the Transformer and the GRU models both have similar `Repeated Sentence' graphs. They are totally different models and have totally different sizes. They are not similar in many ways but in this metric. They share the same corpus, so they may be learning the same task.
 
@@ -105,6 +102,8 @@ It is interesting to point out that probably at the start the multi-purpose answ
 
 We feel that this list making is a function of the model trying to optimize the answers that it gives, and can give, given a certain size memory capacity. The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
 
-We don't feel that the output of the Transformer, for example, shows intelligence. The actual utterances of the model are pretty plain. The internal building of lists, though, shows a process that is found in some intelligent activity.
+By contrast, AIML has a tag called `\textit{<random>}'. This tag is one of the more powerful AIML tags. With this tag you enter one pattern and the kernel picks one answer from a list of possible replies. This is the opposite of our Neural Network example. In this AIML construct there is one input and several possible outputs. With the simple chatbot from the Transformer or GRU there is one output for several inputs.
 
-For the very large pre-trained model, like the GPT2, this may not be true. These models may be more dynamic. In addition we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
+For the very large pre-trained model, like the GPT2, full sentences may not be saved. These models may be more dynamic. In addition we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
+
+We don't feel that the output of the Transformer, for example, shows intelligence. The actual utterances of the model are pretty plain. The internal building of lists, though, shows a process that is found in some intelligent activity.
