@@ -183,7 +183,7 @@ hi , how are you today ?
 	
 	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
 	
-	\item []There is a variety of answers. 
+	\item []There is a variety of answers. There is not a great variety though, and this is a problem for this model.
 	
 	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
 	
@@ -203,7 +203,7 @@ This is a poor model. It does use English language answers, but does not perform
 
 \section{Smart Speaker - Transformer Model with Persona Corpus}
 
-The transformer model was tested on the Raspberry Pi. This model is not more dynamic than the GRU tutorial model. 
+This transformer model was tested on the Raspberry Pi. The model is not more dynamic than the GRU tutorial model. 
 
 The transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. The time between the first two or three responses is uncomfortably slow. After those first responses the time between answers gets to be more natural.
 
@@ -302,11 +302,11 @@ bye
 	
 	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?}
 	
-	\item []The model does in fact use `No' or `I don't know'. 
+	\item []The model does in fact use `No' or `I don't know'. It does not use these exclusively.
 	
 	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye'?}
 	
-	\item []The model does have an answer for `Good bye'.
+	\item []The model does have an answer for `Hello' and `Good bye'.
 \end{itemize}
 
 This is a reasonably good model. We prefer this model over the one that uses the Persona corpus.

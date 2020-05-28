@@ -67,6 +67,14 @@ Usually the user's question and whatever the chatbot decides will be the answer 
 
 Even when the answer makes sense there is only a certain percentage of time that this example works. Sometimes, even with the coaching of the AIML, the model does not answer with the right name. Sometimes you ask it for your name and it responds with it's name. Some times you ask it for it's name and it responds with yours. Without the AIML the model always answers all name questions with it's name.
 
+\subsubsection{Usage Example}
+
+The user might say `Hello, my name is John.' The bot might reply `Hello.' The user might then say `What is your name?' The bot should reply `My name is Jane.'
+
+Then the user might say `What is my name?'. The bot should reply `John.'
+
+In practice the bot will reply with `Jane' most of the time without the AIML augmentation. With the smaller GPT2 model the reply is often `Jane' even with the AIML kernel. With the larger GPT2 model the bot tends to answer what the AIML suggests for it's answer.
+
 \subsection{Internet Search Experiment}
 
 We want to be able to search the internet for an article, download that article, and summarize parts of the article as answers to questions asked of the model. This is leveraging of the token size of the input to the model. It's usually very large. It can be 1280 tokens.
@@ -87,7 +95,7 @@ As the chatbot answers questions the content of the conversation is saved for th
 
 Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. Then, after the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input for the small model is 768 tokens and it is more than 1000 for the larger models. Though this would appear to be a large space for text, it is common for wiki articles to be clipped so that the user's question can be inserted at the end.
 
-\subsection{Usage Example}
+\subsubsection{Usage Example}
 
 Consider that you are interested in the musical group `The Beatles'. If you wanted to find out about the band you might say to the chatbot `Tell me about the beatles.'
 
