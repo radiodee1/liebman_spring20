@@ -138,7 +138,7 @@ For this reason, during training, the validation set is used for statistical pur
 
 This is useful for tuning hyper-parameters, which are parameters that occur in the model. Repeatedly you train, and as you do you asses the validation scores for clues on what to change in your hyper-parameters. 
 
-When you are done you use the final holdout set, the `test' set, to determine weather or not you have been successful. You must always remember not to train with the test set.
+When you are done you use the final holdout set, the `test' set, to determine weather or not you have been successful. You must always remember not to train with the test or validation set.
 
 \subsection{Input Tokens}
 
@@ -168,10 +168,10 @@ The second Gated Recurrent Unit generates the second word and also its own hidde
 \begin{figure}[H]
 	\begin{center}
 	
-	\includegraphics[scale=0.5]{diagram-nmt}
+	\includegraphics[scale=0.5]{diagram-nmt02}
 		
 \end{center}
-	\caption[Sequence to Sequence Architecture]{Seq2seq: A and B represent an input sequence and C and D represent the corresponding output.}
+	\caption[Sequence to Sequence Architecture]{Seq2seq: A, B and C represent an input sequence and W, X, Y and Z represent the corresponding output. (Sutskever et al \cite{DBLP:journals/corr/SutskeverVL14})}
 	
 
 \end{figure}

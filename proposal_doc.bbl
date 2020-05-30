@@ -41,6 +41,10 @@ J.~Pennington, R.~Socher, and C.~Manning, ``{G}love: Global vectors for word
   Methods in Natural Language Processing ({EMNLP})}, (Doha, Qatar),
   pp.~1532--1543, Association for Computational Linguistics, Oct. 2014.
 
+\bibitem{DBLP:journals/corr/SutskeverVL14}
+I.~Sutskever, O.~Vinyals, and Q.~V. Le, ``Sequence to sequence learning with
+  neural networks,'' {\em CoRR}, vol.~abs/1409.3215, 2014.
+
 \bibitem{DBLP:journals/corr/LuongPM15}
 M.~Luong, H.~Pham, and C.~D. Manning, ``Effective approaches to attention-based
   neural machine translation,'' {\em CoRR}, vol.~abs/1508.04025, 2015.
