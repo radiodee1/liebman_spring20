@@ -52,10 +52,13 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 Here we itemize a short description for each row in the table.
 
 \begin{itemize}
-	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. 
-	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board.
-	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus.
-	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. Some modification was made so that model output was suitable for our purposes.
+	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. It uses a hidden size of 512.
+	
+	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board. It uses 2 layers, 4  heads, and a hidden size of 128.
+	
+	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512.
+	
+	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768.
 \end{itemize}
 
 
@@ -143,13 +146,13 @@ The operating system on the Raspberry Pi is based on Debian Linux. In this opera
 
 \subsection{Corpus Considerations}
 
-We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Secondly we have a `JSON' dump from Reddit that is downloadable.  This is not the same Reddit data that the authors of GPT2 use. Finally we have the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This final corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
-
-%The movie corpus is medium sized and the Reddit `JSON' download is large and filled with hyperlinks and sentence fragments. 
-
-At the time of this writing we are using the movie subtitles corpus and the Persona corpus. We use the movie corpus because it is smaller. Both the movie corpus and the Reddit corpus are  noise filled, so it is likely that neither one is perfect for the training. The movie corpus is easier to deal with if we are training on a single processor. %In the future if we can train in a faster environment the Reddit corpus might be superior.
+We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Then we have the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
 For the Persona corpus the text is organized into `JSON' objects. There are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not organized in this kind of pattern. When we take apart the Persona corpus we find that the sentences labeled with the `history' tag are most suited to our task. We record these values only and discard other labels.
+
+When discussing corpus considerations it is important to mention the WebText corpus, which is culled from Reddit. This corpus is very large. This is the material used for the training of the GPT2 model. We do not use this material our selves, but it is a big part of the success of the GPT2. This corpus is about 40Gig of data.
+
+Because Reddit is so important to the GPT2 model, we experiment with Reddit downloads. It is possible to download months of reddit posts. We do not use these downloads in these experiments.
 
 \section{ARMv7 Build/Compile}
 
