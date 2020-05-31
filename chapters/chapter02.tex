@@ -93,17 +93,17 @@ Here the value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output an
 
 The function can actually perform this on large matrices with high dimensionality, in parallel. This parallel matrix operation increases the speed of training.
 
-In the green triangle in the Figure 2.2 we preform the multiplication and selection that was just described.
+In the triangle in the Figure \ref{attantion-7} we perform the multiplication and selection that was just described.
 
 \begin{figure}[H]
 	\begin{center}
 		
 		
-		\includegraphics[scale=0.5]{diagram-mat03-64}
+		\includegraphics[scale=0.5]{diagram-mat07}
 	\end{center}
 	\caption[Attention Output]{Attention Output}
 	
-
+	\label{attantion-7}
 \end{figure}
 
 
@@ -120,7 +120,7 @@ This multi-headed approach allows different heads to learn different types of re
 	\includegraphics[scale=0.5]{diagram-mat02}
 \end{center}
 	\caption[Matching Input and Output]{Matching Input and Output}
-	
+	\label{attention-matching}
 
 \end{figure}
 
