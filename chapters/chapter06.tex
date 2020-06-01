@@ -42,7 +42,7 @@ We make a general assumption that our transformer model uses only a small subset
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.75]{Figure_5}
+		\includegraphics[scale=0.75]{diagram-word02}
 		
 		
 	\end{center}
@@ -62,7 +62,7 @@ If we remove the Vocabulary Total and the GPT2 responses from the diagram the GR
 		
 		
 	\end{center}
-	\caption[Simple Word Usage]{Simple Word Usage - No Vocabulary Total}
+	\caption[Total Word Responses]{Total Word Responses - No Vocabulary Total}
 	
 	
 \end{figure}
@@ -92,8 +92,6 @@ We have a rough number for those two models. They use about 125 sentences repeat
 The interesting thing is that the Transformer and the GRU models both have similar `Repeated Sentence' graphs. They are totally different models and have totally different sizes. They are not similar in many ways but in this metric. They share the same corpus, so they may be learning the same task.
 
 \section{Transformer and GRU Training Progress}
-
-%\subsection{Training Pattern}
 
 It is useful to observe these models' progress during training. The Movie Dialog corpus is used here. This training is not interrupted. The section below describes how the models' output evolves. These models are not pre-trained. This is not an example of Transfer Learning.
 

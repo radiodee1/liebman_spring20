@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.27)  1 JUN 2020 12:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.27)  1 JUN 2020 13:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1138,10 +1138,10 @@ Chapter 6.
  (./chapters/chapter06.tex [65
 
 ]
-<Figure_5.png, id=913, 607.26875pt x 341.275pt>
-File: Figure_5.png Graphic file (type png)
-<use Figure_5.png>
-Package pdftex.def Info: Figure_5.png  used on input line 45.
+<diagram-word02.png, id=913, 607.26875pt x 341.275pt>
+File: diagram-word02.png Graphic file (type png)
+<use diagram-word02.png>
+Package pdftex.def Info: diagram-word02.png  used on input line 45.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
 Overfull \hbox (21.83044pt too wide) in paragraph at lines 45--46
@@ -1159,7 +1159,7 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 61--62
  [] 
  []
 
-[67 <./Figure_5.png>] [68 <./diagram-word01.png>]
+[67 <./diagram-word02.png>] [68 <./diagram-word01.png>]
 <Figure_8.png, id=930, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
@@ -1199,7 +1199,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 146.
  ) 
 Here is how much of TeX's memory you used:
  23986 strings out of 494553
- 445615 string characters out of 6177377
+ 445645 string characters out of 6177377
  501674 words of memory out of 5000000
  27128 multiletter control sequences out of 15000+600000
  559025 words of font info for 96 fonts, out of 8000000 for 9000
@@ -1232,7 +1232,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (82 pages, 8750172 bytes).
+Output written on proposal_doc.pdf (82 pages, 8750262 bytes).
 PDF statistics:
  1532 PDF objects out of 1728 (max. 8388607)
  952 compressed objects within 10 object streams
