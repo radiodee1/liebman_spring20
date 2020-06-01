@@ -112,7 +112,7 @@ Notably, the model restricts it's answers to full English sentences very early o
 
 \section{Learning Lists}
 
-For the chatbot task we want to know what the Transformer or GRU is doing during training and later during inference. Here we are concerned with the Transformer and GRU models trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers, eight heads, and a hidden size of 512 units. The GRU model has a hidden size of 500.
+For the chatbot task we want to know what the Transformer or GRU is doing during training and later during inference. Here we are concerned with the Transformer and GRU models trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers, 8 heads, and a hidden size of 512 units. The GRU model has a hidden size of 500.
 
 It seems the model learns a set of multi-purpose English answers in a form close to a list. Then it spends time as a classifier. Each input sentence is compared to the set of answers. A question is associated with a given answer from the set when possible. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained many of the answers that the model would use. For a given model this list can only be so long.
 
