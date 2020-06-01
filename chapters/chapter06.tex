@@ -58,7 +58,7 @@ If we remove the Vocabulary Total and the GPT2 responses from the diagram the GR
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.75]{Figure_6}
+		\includegraphics[scale=0.75]{diagram-word01}
 		
 		
 	\end{center}
@@ -91,10 +91,28 @@ We have a rough number for those two models. They use about 125 sentences repeat
 
 The interesting thing is that the Transformer and the GRU models both have similar `Repeated Sentence' graphs. They are totally different models and have totally different sizes. They are not similar in many ways but in this metric. They share the same corpus, so they may be learning the same task.
 
+\section{Transformer and GRU Training Progress}
 
-\section{Transformer Chatbot Learning}
+%\subsection{Training Pattern}
 
-For the chatbot task we want to know what the Transformer is doing during training and later during inference. Here we are concerned with the Transformer model trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers and a hidden size of 512 units.
+It is useful to observe these models' progress during training. The Movie Dialog corpus is used here. This training is not interrupted. The section below describes how the models' output evolves. These models are not pre-trained. This is not an example of Transfer Learning.
+
+First the model produces random tokens as output. Then the model begins to recognize the patterns of the input data. It begins to put an `end-of-line', or \ac{EOL} token, at the end of each output. At the very beginning of this phase it is not uncommon to see output patterns that consist of nothing more than the 'end-of-line' token. 
+
+At the next stage the model passes a barrier of sorts and will not reply with anything that is not proper English. 
+
+Then the models choose the first real sentences. These sentences are usually negative. It is usually something like `I don't know' or `I'm sorry.' It uses these sentences repeatedly for a long time. It has, at this point, no other responses. It may spend half of its total training time answering with these sentences. At this point it seems that the model will never learn the task.
+
+Then the model chooses a second real sentence. This sentence is usually negative also. 
+
+Then the model starts to understand that the task at hand requires many answers. Rather quickly the model starts to use many answers for different questions. Here is where we typically stop training.
+
+Notably, the model restricts it's answers to full English sentences very early on. Later it decides to generate many sentences for response. Sometimes the answers are simple, one or two word sentences, often in the negative. An example is `no' or `I don't know'. If the training goes far enough the answers will start to be more diversified. 
+
+
+\section{Learning Lists}
+
+For the chatbot task we want to know what the Transformer or GRU is doing during training and later during inference. Here we are concerned with the Transformer and GRU models trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers, eight heads, and a hidden size of 512 units. The GRU model has a hidden size of 500.
 
 It seems the model learns a set of multi-purpose English answers in a form close to a list. Then it spends time as a classifier. Each input sentence is compared to the set of answers. A question is associated with a given answer from the set when possible. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained many of the answers that the model would use. For a given model this list can only be so long.
 
