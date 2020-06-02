@@ -248,7 +248,7 @@ GPT2 still uses Scaled Dot-Product Attention. A model diagram is taken from Radf
 
 \end{figure}
 
-There are several sizes of pre-trained GPT2 model. They are all rather large. The smallest model matches the size of the largest `Bidirectional Encoder Representations from Transformers' model. This model has 12 layers while the Transformer model in the example from Vaswani et al \cite{Vaswani2017AttentionIA} uses 8 layers. This model also has a hidden dimension of 768, not 512. With 8 heads this leaves a smaller dimensionality of 96 at each attention head. 
+There are several sizes of pre-trained GPT2 model. They are all rather large. The smallest model has 12 layers while the Transformer model in the example from Vaswani et al \cite{Vaswani2017AttentionIA} uses 8 layers. This model also has a hidden dimension of 768, not 512. With 8 heads this leaves a smaller dimensionality of 96 at each attention head. 
 
 The GPT2 models input and output text sequences. %In this way they are preferred for our application over the BERT models. 
 
@@ -310,9 +310,9 @@ During inference the Scaled Dot Product Attention in the GPT2 focuses on certain
 		
 	\end{center}
 	\caption[Visualized Attention GPT2]{Visualized Attention GPT2 -- `favorite' shows attention to some but not all words in the sentence.}
-	
+	\label{diagram-vis04}
 	
 \end{figure}
 
-In our experiments the phrase `What is your favorite color?' is usually answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. Figure 2.10 might support this observation because `color' on the left is not heavily highlighted. Words like `what' and `your' are barely considered at this head at all. 
+In our experiments the phrase `What is your favorite color?' is usually answered with `I love the colors of the rainbow.' This answer does not mention a specific color, as one might expect it should. Figure \ref{diagram-vis04} might support this observation because `color' on the left is not heavily highlighted. Words like `what' and `your' are barely considered at this head at all. 
 

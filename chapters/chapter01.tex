@@ -176,7 +176,7 @@ The second Gated Recurrent Unit generates the second word and also its own hidde
 
 \end{figure}
 
-In this figure we generalize a sequence to sequence model. The idea is that the left side of the diagram deals with the encoding of sentences. `Open the door' would be consecutive words in a sentence, and the rectangular blue nodes below the sentence are Recurrent Neural Network units. `Ouvre la porte' are outputs and in the right side of the diagram the tan nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
+In this figure we generalize a sequence to sequence model. The idea is that the left side of the diagram deals with the encoding of sentences. `Open the door' would be consecutive words in a sentence, and the rectangular blue nodes below the words are Recurrent Neural Network units. `Ouvre la porte' are outputs and in the right side of the diagram the tan nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
 
 All of the information that the decoder uses for its output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. Aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
 

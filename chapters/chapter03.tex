@@ -128,7 +128,7 @@ Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run i
 
 Tensorflow has a placeholder concept for inputting data and getting back results. You set up these placeholders at design time. They are the only way of accessing your data at run time.
 
-Pytorch objects interact with Python more naturally. You can use print statements in your code to show data streaming from one object to another. This is possible at run time.
+Pytorch objects interact with Python more naturally. You can use print statements in your code to show data transferred from one object to another. This is possible at run time.
 
 In favor of Tensorflow, it has a good tool for visualization which can print out all kinds of graphs of your data while your model trains. It is called Tensorboard.
 
@@ -190,7 +190,7 @@ Then Python 3.7 needed to be built on Stretch. The Stretch program repositories 
 
 It is conceivable that the GLIBC issue would not be important if the `chroot' environment used Debian Buster, since that is the basis for the current Raspbian operating system. The Stretch operating system solution works though.
 
-Finally the Pytorch program needed to be built. We disable CUDA and distributed computing as neither exists on the Raspberry Pi.
+Finally for Pytorch we disable CUDA and distributed computing as neither exists on the Raspberry Pi.
 
 \subsection{Docker Container `tensorflow-model-server' For ARMv7}
 The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
