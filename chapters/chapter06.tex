@@ -32,7 +32,7 @@ We can choose which bracketed term to use, and we must choose only one bracketed
 
 The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. Remember that the Attention scheme compares tokens to other tokens in the same sentence. 
 
-In the chat bot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
+In the chatbot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
 
 There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
 
@@ -101,7 +101,7 @@ At the next stage the model passes a barrier of sorts and will not reply with an
 
 The models choose the first real sentences. These sentences are usually negative. It is usually something like `I don't know' or `I'm sorry.' It uses these sentences repeatedly for a long time. It has, at this point, no other responses. It may spend half of its total training time answering with these sentences. At this point it seems that the model will never learn the task.
 
-Then the model chooses a second real sentence. This sentence is usually negative also. 
+%Then the model chooses a second real sentence. This sentence is usually negative also. 
 
 Then the model starts to understand that the task at hand requires many answers. Rather quickly the model starts to use many answers for different questions. Here is where we typically stop training.
 
