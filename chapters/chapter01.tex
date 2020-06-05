@@ -77,27 +77,6 @@ A better approach for a computer is sequence to sequence translation. A descript
 
 In this approach we use recurrent neural networks to obtain our translation. Two recurrent neural network components are employed. One is responsible for the input language and the other for the output. 
 
-\iffalse
-\subsection{Formula}
-Below is a product formula. It says that the $y_n$ term relies on the sequence of terms that starts with $y_1$ and continues to $y_{n-1}$. It also has $v$ that represents the 'thought vector' which is present along with $y_1,...,y_{t-1}$ as an input to the decoder Gated Recurrent Unit and helps formulate $y_t$.
-
-On the left side of the formula we have $x_1,...x_T$ which represents the input sequence for the encoder. Also we have $y_1,...,y_{T'}$ which represents the entire output. $T$ is the length of the input while $T'$ is the length of the output. Those two $T$ terms do not need to be the same, and often are not. Again, $v$ is the hidden state passed from the encoder to the decoder as a 'thought vector'.
-
-\[
-\mathlarger{ \mathlarger{ \mathlarger{
-			p(y_1,...,y_{T'}|x_1,...,x_T) = \prod_{t=1}^{T'} p(y_t|v,y_1,..., y_{t-1}) 
-} } }
-\]
-
-Every prediction relies on all the previous predictions up until that point. This is what happens in sequence to sequence and transformer architectures when the model is producing output. 
-
-The probability for the entire output is the same as the product of the probability of each word as it is generated. 
-
-%We include this formula in place of a flow chart.
-
-This function can be found in Sutskever et al \cite{DBLP:journals/corr/SutskeverVL14}.
-
-\fi
 
 \subsection{Word Embeddings}
 
