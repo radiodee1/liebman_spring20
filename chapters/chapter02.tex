@@ -70,6 +70,7 @@ In the diagram below a simple conversion of this type is illustrated. In the dia
 
 \end{figure}
 
+In the transformer, this conversion operation is probably the reason for the model's name. The input is \textit{transformed} to a lower dimension. In their paper Vaswani et al \cite{Vaswani2017AttentionIA} do not make the reason for the name obvious.
 
 One thing we want to do is to preserve the dimension of our starting vector. We start with a 512 sized floating point vector and after some processing we want to return to the same size. Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
 
@@ -109,7 +110,7 @@ In the triangle in the Figure \ref{attantion-7} we perform the multiplication an
 
 
 
-Finally the output we calculated above must be returned somehow to the input dimensionality. This is accomplished by duplicating the procedure described eight times with eight separate weights. When this is done the output of the attention mechanism is concatenated together, returning the output to the proper size.
+Finally the output we calculated above must be returned somehow to the input dimensionality. This is accomplished by duplicating the procedure described eight times with eight separate weights. When this is done the output of the eight separate attention mechanisms is concatenated together, returning the output to the proper size.
 
 This multi-headed approach allows different heads to learn different types of relationships, and then when they are grouped together the learned relations are recovered and contribute to the output.
 
@@ -143,11 +144,11 @@ While the encoder takes in the entire input and attends to whatever portion of t
 		\includegraphics[scale=1.0]{diagram-flow1}
 	\end{center}
 	\caption[Transformer Encoder and Decoder Flow]{Transformer Encoder and Decoder Flow. - Three layers and data flow.}
-	
+	\label{diagram-flow1}
 	
 \end{figure}
 
-In our flow diagram we are not concerned with most sub segments of the entire transformer. We are interested in the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
+In our flow diagram, Figure \ref{diagram-flow1}, we are not concerned with most sub segments of the entire transformer. We are interested in the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
 
 We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the `Key' and `Value' matrices. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder layers to two smaller matrices. 
 
