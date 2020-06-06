@@ -1,0 +1,17 @@
+\section{Winograd Schema}
+
+Winograd schemas are named after Terry Winograd. The idea is that there is a sentence presented that has two meanings. A computer finds these sentences challenging to understand, and that makes them interesting for the development of Artificial Intelligence.
+
+An example follows.
+
+\begin{center}
+	\textbf{He didn't put the trophy in the suitcase because it was too [big/small]}
+\end{center}
+
+We can choose which bracketed term to use, and we must choose only one bracketed term. If we choose `big' then we are referring to the trophy. If we choose `small' then we are referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
+
+The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. Remember that the Attention scheme compares tokens to other tokens in the same sentence. 
+
+In the chatbot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-training Transformer 2, and it's exhaustive training, it is interesting to consider the Winograd style example sentences.
+
+There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}

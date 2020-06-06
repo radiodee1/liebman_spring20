@@ -84,9 +84,10 @@
 \contentsline {chapter}{\numberline {6}Observations and Conclusions}{64}{chapter.6}% 
 \contentsline {section}{\numberline {6.1}GRU vs. Transformer}{65}{section.6.1}% 
 \contentsline {section}{\numberline {6.2}Turing Test}{65}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Winograd Schema}{66}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Word Usage}{66}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Sentence Usage}{68}{section.6.5}% 
-\contentsline {section}{\numberline {6.6}Transformer and GRU - Training Progress}{69}{section.6.6}% 
-\contentsline {section}{\numberline {6.7}Transformer and GRU - Learning Lists}{70}{section.6.7}% 
-\contentsline {chapter}{\numberline {A}Abbreviations}{72}{appendix.A}% 
+\contentsline {section}{\numberline {6.3}Word Usage}{66}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Sentence Usage}{67}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Transformer and GRU - Training Progress}{68}{section.6.5}% 
+\contentsline {section}{\numberline {6.6}Transformer and GRU - Learning Lists}{69}{section.6.6}% 
+\contentsline {chapter}{\numberline {7}Future Reading}{71}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Winograd Schema}{72}{section.7.1}% 
+\contentsline {chapter}{\numberline {A}Abbreviations}{73}{appendix.A}% 
