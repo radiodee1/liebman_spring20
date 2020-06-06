@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {2.1.3}Encoder - Scaled Dot-Product Attention}{18}{subsection.2.1.3}% 
 \contentsline {subsection}{\numberline {2.1.4}Decoder Attention I - `Key' and `Value'}{21}{subsection.2.1.4}% 
 \contentsline {subsection}{\numberline {2.1.5}Decoder Attention I - `Query'}{23}{subsection.2.1.5}% 
-\contentsline {subsection}{\numberline {2.1.6}Decoder Attention II - Masking During Training}{24}{subsection.2.1.6}% 
+\contentsline {subsection}{\numberline {2.1.6}Decoder Attention II - Masking}{24}{subsection.2.1.6}% 
 \contentsline {subsection}{\numberline {2.1.7}Input - Positional Encoding}{24}{subsection.2.1.7}% 
 \contentsline {subsection}{\numberline {2.1.8}Output - Feed Forward Network}{25}{subsection.2.1.8}% 
 \contentsline {subsection}{\numberline {2.1.9}Visualization - Transformer}{25}{subsection.2.1.9}% 

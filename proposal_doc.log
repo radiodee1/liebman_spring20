@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.27)  6 JUN 2020 13:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.27)  6 JUN 2020 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1036,12 +1036,12 @@ File: diagram-flow1.png Graphic file (type png)
 Package pdftex.def Info: diagram-flow1.png  used on input line 144.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
  [21 <./diagram-mat02.png>] [22 <./diagram-flow1.png>]
-<diagram-flow-decoder.png, id=699, 229.3368pt x 258.7266pt>
-File: diagram-flow-decoder.png Graphic file (type png)
-<use diagram-flow-decoder.png>
-Package pdftex.def Info: diagram-flow-decoder.png  used on input line 169.
+<diagram-flow-decoder02.png, id=699, 229.3368pt x 258.7266pt>
+File: diagram-flow-decoder02.png Graphic file (type png)
+<use diagram-flow-decoder02.png>
+Package pdftex.def Info: diagram-flow-decoder02.png  used on input line 169.
 (pdftex.def)             Requested size: 286.6703pt x 323.40741pt.
- [23 <./diagram-flow-decoder.png>]
+ [23 <./diagram-flow-decoder02.png>]
 <diagram-mask01.png, id=706, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
@@ -1053,7 +1053,7 @@ File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 211.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
-[25 <./Figure_3.png>]
+ [25 <./Figure_3.png>]
 <diagram-mat05.png, id=720, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
@@ -1065,8 +1065,8 @@ File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 311.
 (pdftex.def)             Requested size: 169.59314pt x 92.50537pt.
- [29])
-[30 <./Figure_4.png>]
+
+[29]) [30 <./Figure_4.png>]
 Chapter 3.
 [31
 
@@ -1205,12 +1205,12 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: BBC45C7C8ABD66B81C3902B2487291C9;6706.
+(rerunfilecheck)             Checksum: B8230A31FC16A4B19EE85D8D8CB61478;6690.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
  24001 strings out of 494553
- 445906 string characters out of 6177377
+ 445916 string characters out of 6177377
  502203 words of memory out of 5000000
  27133 multiletter control sequences out of 15000+600000
  559025 words of font info for 96 fonts, out of 8000000 for 9000
@@ -1243,7 +1243,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (84 pages, 8752049 bytes).
+Output written on proposal_doc.pdf (84 pages, 8752339 bytes).
 PDF statistics:
  1552 PDF objects out of 1728 (max. 8388607)
  969 compressed objects within 10 object streams

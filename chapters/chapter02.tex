@@ -150,11 +150,11 @@ While the encoder takes in the entire input and attends to whatever portion of t
 
 In our flow diagram, Figure \ref{diagram-flow1}, we are not concerned with most sub segments of the entire transformer. We are interested in the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
 
-We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. It is composed of a sequence of vectors the size of the input sequence or sentence.
+We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. It is composed of a sequence of vectors the size of the input sequence or sentence. It is larger, strictly speaking, than a single vector.
 
-Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the `Key' and `Value' matrices from the thought vector. The matrices required are the size of the smaller, reduced, vector. The full sized vector is transported from the encoder and is reduced dimensionally in the decoder layers to two smaller matrices. 
+Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the `Key' and `Value' matrices from the thought vector. The matrices required are the size of the smaller, reduced, vector. The full sized vectors are transported from the encoder and are reduced dimensionally in the decoder layers to a sequence of two smaller matrices. 
 
-This full sized vector comes from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
+These full sized vectors come from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
 
 
 \subsection{Decoder Attention I - `Query'}
@@ -166,18 +166,18 @@ In our flow diagram we illustrate one layer of the decoder.
 	\begin{center}
 		
 		
-		\includegraphics[scale=1.25]{diagram-flow-decoder}
+		\includegraphics[scale=1.25]{diagram-flow-decoder02}
 	\end{center}
 	\caption[Decoder Flow]{Decoder Flow Details}
 	
 	
 \end{figure}
 
-\subsection{Decoder Attention II - Masking During Training}
+\subsection{Decoder Attention II - Masking}
 
 During training the second decoder section is masked. The mask prohibits the decoder from seeing parts of the target. This mimics the inference setup. In inference the decoder can only see up to the most recent word it has produced.
 
-During inference the decoder produces a token and then it adds to that token, one at a time, until the decoding is finished and something like English is produced. It can attend to any part of the output it has already produced. 
+During inference the decoder produces a token and then it adds to that token, one at a time, until the decoding is finished and something like English is produced. It can attend to any part of the output it has already produced. It is concerned with producing a single token at a time.
 
 \begin{figure}[H]
 	\begin{center}
