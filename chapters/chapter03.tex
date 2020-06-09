@@ -79,14 +79,11 @@ As a coding experiment we rewrite the code for the sequence-to-sequence Gated Re
 
 A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. This allows for a logical program that can be executed. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
 
-GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. The GPU speeds up parallel processing and have a benefit to neural networking training tasks that the CPU doesn't have.
+GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. The GPU speeds up parallel processing and has a benefit to neural networking training tasks that the CPU doesn't have.
 
 Unfortunately state of the art neural network models are larger than the capacity of a single GPU. Some models are trained on many GPUs simultaneously. It is not uncommon for a model to train on a computer with eight GPU cards for many days. Training these models is prohibitively expensive for the average programmer. It is possible to rent time on Amazon Web Services or Google cloud with well outfitted computers to do this training, but this can be costly.
 
 This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessible to the public. Then the average programmer downloads the model and fine tunes it to their task.
-
-%This would be fine if there were a model for every task. Though many models exist there seems to be many tasks that are not addressed. 
-
 
 In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training. In the GRU example the model trained in less than an hour.
 
@@ -106,7 +103,7 @@ In the github repository files and scripts for the Raspberry Pi are to be found 
 
 Early tests using Google\textquoteright s SR and TTS services show that the Pi can support that type of functionality. 
 
-Google's SR service costs money to operate. Details for setting up Google's SR and TTS functions is beyond the scope of this document. Some info about setting this up can be
+Google's SR service costs money to operate. Details for setting up Google's SR and TTS functions are beyond the scope of this document. Some info about setting this up can be
 found in the README file of this project\textquoteright s github repository.
 
 The pytorch model that is chosen as best will be trained on the desktop computer and then the saved weights and biases will be transferred to the Raspberry Pi platform. The Pi will not need to do any training, only inference. 
@@ -152,7 +149,7 @@ For the Persona corpus the text is organized into `JSON' objects. There are seve
 
 When discussing corpus considerations it is important to mention the WebText corpus, which is culled from Reddit. This corpus is very large. This is the material used for the training of the GPT2 model. We do not use this material our selves, but it is a big part of the success of the GPT2. This corpus is about 40Gig of data.
 
-Because Reddit is so important to the GPT2 model, we experiment with Reddit downloads. It is possible to download months of reddit posts. We do not use these downloads in these experiments.
+%Because Reddit is so important to the GPT2 model, we experiment with Reddit downloads. It is possible to download months of reddit posts. We do not use these downloads in these experiments.
 
 \section{ARMv7 Build/Compile}
 
