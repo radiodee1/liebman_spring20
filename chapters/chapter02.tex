@@ -34,7 +34,7 @@ For the Generative Pre-training Transformer 2 a version of Byte Pair Encoding is
 Some form of Byte Pair Encoding is included in almost every Transformer typed Neural Network model, so no decision needs to be made about what type of word embeddings to use.
 
 \subsection{Attention}
-Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of the Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
+Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
 It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. Later, in our discussion of Generative Pre-training Transformer 2, we will see vector sizes of 768 and 1280.
 
@@ -53,7 +53,7 @@ It should be noted that input to the Transformer is strings of words from a desi
 
 Each layer of the Transformer's encoder has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
 
-The first thing that happens is the input word vector is converted to three other values. These new vectors are like the input vector but they have a smaller dimensionality. Converting the word vector in this way is accomplished by three simple matrix multiplication operations.
+The first thing that happens is the input word vectors are converted to three other values. These new vectors are like the input vector but they have a smaller dimensionality. Converting the word vectors in this way is accomplished by three simple matrix multiplication operations.
 
 In the diagram below a simple conversion of this type is illustrated. In the diagram we convert a vector with dimension of 1x3 to a dimension of 1x2. In a real world example we are converting a vector from 1x512 to 1x64. This is a division of 8.
 
@@ -70,7 +70,7 @@ In the diagram below a simple conversion of this type is illustrated. In the dia
 
 \end{figure}
 
-In the transformer, this conversion operation is probably the reason for the model's name. The input is \textit{transformed} to a lower dimension. %In their paper Vaswani et al \cite{Vaswani2017AttentionIA} do not make the reason for the name obvious.
+In the transformer, this conversion operation is probably the reason for the model's name. The input is \textit{transformed} to a lower dimension. 
 
 One thing we want to do is to preserve the dimension of our starting vector. We start with a 512 sized floating point vector and after some processing we want to return to the same size. Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
 
@@ -148,7 +148,6 @@ The decoder is composed of two attention mechanisms and a feed-forward segment a
 
 While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. 
 
-
 In our flow diagram we illustrate one layer of the decoder.
 
 \begin{figure}[H]
@@ -169,25 +168,8 @@ Two important smaller vector-sized inputs from the encoder are ultimately requir
 
 These full sized vectors come from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
 
-
-
 \subsection{Decoder Attention I - `Query'}
 There is another attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes its output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
-
-\iffalse
-In our flow diagram we illustrate one layer of the decoder.
-
-\begin{figure}[H]
-	\begin{center}
-		
-		
-		\includegraphics[scale=1.25]{diagram-flow-decoder02}
-	\end{center}
-	\caption[Decoder Flow]{Decoder Flow Details}
-	
-	
-\end{figure}
-\fi
 
 \subsection{Decoder Attention II - Masking}
 
@@ -233,7 +215,7 @@ In order to visualize what is happening during inference we have colorful charts
 	
 \end{figure}
 
-It is significant that words, like `what' and `your', do not have strong attention to words in the text on the left. In a chart like this one they would show no colors on the left and light colored lines connecting the left to the right.
+It is significant that words, like `what' and `your', do not have strong attention to other words in the text. In a chart like this one they would show no colors on the left and light colored lines connecting the right to the left.
 
 This diagram is from the Transformer with the larger hyper-parameter set that we describe in Chapter 3, trained on the movie dialog corpus.
 
