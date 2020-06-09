@@ -25,7 +25,7 @@ Do you like ice cream?
 Good bye.
 \end{verbatim}
 
-For comparison there are four models. Subjectively the first transformer model did not perform as well as the Generative Pre-training Transformer 2 model. It did not perform better than the Gated Recurrent Unit model either. 
+For comparison there are four models. Subjectively the first transformer model with the Persona corpus did not perform as well as the Generative Pre-training Transformer 2 model. It did not perform better than the Gated Recurrent Unit model either. 
 
 The model from the Gated Recurrent Unit tutorial performed well. It was better than the initial Transformer model and on par with the larger Transformer model. It was not better than the Generative Pre-training Transformer 2.
 
@@ -59,7 +59,7 @@ We have two models based on the sequnce to sequence architecture proposed by Vin
 
 We trained this sequence to sequence model on a large english corpus in an attempt to produce a chatbot. This model does not use a transformer architecture.
 
-This second sequence to sequence model performed exactly as expected. It answered a number of subjective questions with original, authentic answers. Almost all the answers made sense in the English language.
+This second sequence to sequence model from the GRU tutorial performed exactly as expected. It answered a number of subjective questions with original, authentic answers. Almost all the answers made sense in the English language.
 
 \subsection{Questions}
 This is the sample question list as it was answered by the GRU model.
@@ -282,7 +282,7 @@ bye
 	
 	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. }
 	
-	\item []The `favorite color' and `favorite candy' questions are ignored. The model does not have original answers for these questions.
+	\item []The `favorite color' and `favorite candy' questions are ignored. The model does not have original answers for these questions. It will reply with `I don't know'.
 	
 	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?}
 	
