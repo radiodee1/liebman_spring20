@@ -85,8 +85,6 @@ At the next stage the model passes a barrier of sorts and will not reply with an
 
 The models choose the first real sentences. These sentences are usually negative. It is usually something like `I don't know' or `I'm sorry.' It uses these sentences repeatedly for a long time. It has, at this point, no other responses. It may spend half of its total training time answering with these sentences. At this point it seems that the model will never learn the task.
 
-%Then the model chooses a second real sentence. This sentence is usually negative also. 
-
 Then the model starts to understand that the task at hand requires many answers. Rather quickly the model starts to use many answers for different questions. Here is where we typically stop training.
 
 Notably, the model restricts it's answers to full English sentences very early on. Later it decides to generate many sentences for response. Sometimes the answers are simple, one or two word sentences, often in the negative. An example is `no' or `I don't know'. If the training goes far enough the answers will start to be more diversified. 
