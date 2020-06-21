@@ -307,6 +307,8 @@ A set of LED lights is installed on the Raspberry Pi to show when the model is p
 
 
 \section{Chatbot - Generative Pre-training Transformer 2 Model}
+
+\label{install-gpt2-chatbot}
 We used a pre-trained Generative Pre-training Transformer 2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well and this model was considered superior. The corpus is called `WebText'. We did not train this model ourselves.
 
 For our experiments the Generative Pre-training Transformer 2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the model in the application.
@@ -425,6 +427,7 @@ This is the best model we tested, but it is relatively large and that aspect mak
 
 \section{Smart Speaker - Generative Pre-training Transformer 2 Model}
 
+\label{install-gpt2-smart}
 Code was added that uses Text To Speech and Speech To Text libraries. In this way the model could interact with a subject using auditory cues and commands.
 
 The Raspberry Pi model that the Generative Pre-training Transformer 2 was installed on was the 4B with 4GB of RAM. It is largely for this model that we cross compiled the Pytorch Python library for the ARMv7. The GPT2 model fit on the Raspberry Pi. While execution on the production laptop was instantaneous, execution on the Raspberry Pi took about 13 seconds for every response from the neural network.

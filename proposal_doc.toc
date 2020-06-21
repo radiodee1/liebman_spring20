@@ -81,13 +81,14 @@
 \contentsline {subsubsection}{Usage Example}{62}{section*.5}%
 \contentsline {subsection}{\numberline {5.1.5}Internet Search Experiment}{62}{subsection.5.1.5}%
 \contentsline {subsubsection}{Usage Example}{64}{section*.6}%
-\contentsline {chapter}{\numberline {6}Observations and Conclusions}{65}{chapter.6}%
-\contentsline {section}{\numberline {6.1}GRU vs. Transformer}{66}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Turing Test}{66}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Word Usage}{67}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Sentence Usage}{68}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Transformer and GRU - Training Progress}{69}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Transformer and GRU - Learning Lists}{70}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Further Reading}{72}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Winograd Schema}{73}{section.7.1}%
-\contentsline {chapter}{\numberline {A}Abbreviations}{74}{appendix.A}%
+\contentsline {section}{\numberline {5.2}Generative Pre-training Transformer 2 -- Jetson Nano}{65}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Observations and Conclusions}{66}{chapter.6}%
+\contentsline {section}{\numberline {6.1}GRU vs. Transformer}{67}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Turing Test}{67}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Word Usage}{68}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Sentence Usage}{69}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Transformer and GRU - Training Progress}{70}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Transformer and GRU - Learning Lists}{71}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Further Reading}{73}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Winograd Schema}{74}{section.7.1}%
+\contentsline {chapter}{\numberline {A}Abbreviations}{75}{appendix.A}%

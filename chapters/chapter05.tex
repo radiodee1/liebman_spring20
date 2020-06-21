@@ -12,6 +12,8 @@ As with the smaller model and the Raspberry Pi installation, we do not attempt t
 
 We also want the model to be able to summarize articles from the internet and reply with that information when asked to do so. 
 
+\label{chapter-gpt2-xl-intro}
+
 \subsection{Context Experiment}
 
 As before we gave the model details in sentence form that it could use as reply to questions when appropriate. The larger model works better if all the sentences shown to it have the `Q:' and `A:' strings prepended to them. 
@@ -116,3 +118,11 @@ This is an example of using the model. Other topics can be asked about. You do n
 If you use a GPU for your matrix multiplication the reply from the model would be faster. It might be instantaneous. On the smart phone and tablet Google has a product called the `Google Assistant'. The internal workings of the Google Assistant are not known, but if you ask it `Tell me about the beatles' the Assistant answers `According to Wikipedia the Beatles were an English rock band formed in Liverpool in 1960.' This is an answer culled from the same Wikipedia article that we use in our example above. The Google Assistant could use a Transformer architecture internally.
 
 \label{chapter-xlarge}
+
+\section{Generative Pre-training Transformer 2 -- Jetson Nano}
+
+The Nvidia Jetson Nano was used as a platform for the GPT2 117 Million parameter model. Initial tests showed a model that could answer a basic question in two to three seconds. Previously a Raspberry Pi computer would take approximately thirteen or fourteen seconds. On the host laptop where development was done the 117M model still outperforms the Nano. On the host laptop the model replies to a general question in one second.
+
+This smaller 117 million parameter model was not used for the sort of wikipedia searches that were attempted in Section \ref{chapter-gpt2-xl-intro}. Instead it was just used for the same basic chatbot task that was tested on the Raspberry Pi platforms.
+
+Some details from this experiment are identical to Section \ref{install-gpt2-chatbot} or Section \ref{install-gpt2-smart} where the 117M model is installed on a Raspberry Pi.
