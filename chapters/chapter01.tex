@@ -192,6 +192,8 @@ There are several numerical metrics that we can record during training that tell
 
 \subsection{Attention Mechanism}
 
+\label{section-gru-attention}
+
 Attention Mechanisms are used by sequence to sequence models to transfer more information from the encoder to the decoder. As stated above there is only one place where the encoder imparts information on the decoder, the `thought vector'. Attention helps the encoder tell the decoder which word is more important. This stressing of a vector by the model is the attention mechanism attending to one output.
 
 Here we consider a simple attention mechanism that is used in the Sequence to Sequence model by Inkawhich et al. \cite{2018Inkawhich}. The concept for this attention comes from Luong et al \cite{DBLP:journals/corr/LuongPM15}.

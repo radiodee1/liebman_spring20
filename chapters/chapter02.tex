@@ -1,7 +1,7 @@
 
 \section{Transformer and Attention}
 
-The Transformer is a mechanism that is based entirely on attention. Strictly speaking this is not the attention explored in the Sequence to Sequence model in Chapter 1, though there are some similarities. It is a model that uses no recurrent components.
+The Transformer is a mechanism that is based entirely on attention. Strictly speaking this is not the attention explored in the Sequence to Sequence model in Section \ref{section-gru-attention}, though there are some similarities. It is a model that uses no recurrent components.
 
 Recurrent components have some negative qualities. They are hard to run with batch input data. In addition they do not work with very long data strings. 
 
@@ -168,7 +168,7 @@ Two important smaller vector-sized inputs from the encoder are ultimately requir
 
 These full sized vectors come from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
 
-\subsection{Decoder Attention I - `Query'}
+\subsection{Decoder Attention II - `Query'}
 There is another attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes its output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
 
 \subsection{Decoder Attention II - Masking}
