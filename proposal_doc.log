@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.20)  21 JUN 2020 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.20)  21 JUN 2020 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -638,19 +638,19 @@ Chapter 1.
  (./chapters/chapter01.tex [2
 
 ]
-<diagram-rnn01.png, id=565, 321.2pt x 361.35pt>
+<diagram-rnn01.png, id=567, 321.2pt x 361.35pt>
 File: diagram-rnn01.png Graphic file (type png)
 <use diagram-rnn01.png>
 Package pdftex.def Info: diagram-rnn01.png  used on input line 30.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [3 <./diagram-rnn01.png>] [4]
-<diagram-embedding.png, id=585, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=587, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 91.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
  [5] [6 <./diagram-embedding.png>] [7] [8]
-<diagram-nmt03.png, id=608, 193.9245pt x 61.4295pt>
+<diagram-nmt03.png, id=610, 193.9245pt x 61.4295pt>
 File: diagram-nmt03.png Graphic file (type png)
 <use diagram-nmt03.png>
 Package pdftex.def Info: diagram-nmt03.png  used on input line 150.
@@ -687,7 +687,7 @@ LaTeX Font Warning: Command \mathversion invalid in math mode on input line 221
 .
 
 [12]
-<Figure_1.png, id=642, 462.528pt x 346.896pt>
+<Figure_1.png, id=644, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 245.
@@ -703,60 +703,60 @@ Chapter 2.
  (./chapters/chapter02.tex [16
 
 ]
-<diagram-mat04.png, id=662, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=664, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 45.
 (pdftex.def)             Requested size: 242.8266pt x 330.99577pt.
  [17]
-<diagram-mat01.png, id=669, 321.2pt x 361.35pt>
+<diagram-mat01.png, id=671, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 66.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [18 <./diagram-mat04.png>] [19 <./diagram-mat01.png>]
-<diagram-mat07.png, id=683, 321.2pt x 361.35pt>
+<diagram-mat07.png, id=685, 321.2pt x 361.35pt>
 File: diagram-mat07.png Graphic file (type png)
 <use diagram-mat07.png>
 Package pdftex.def Info: diagram-mat07.png  used on input line 103.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-mat02.png, id=684, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=686, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 121.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [20 <./diagram-mat07.png>]
-<diagram-flow1.png, id=692, 284.262pt x 260.172pt>
+<diagram-flow1.png, id=694, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
 Package pdftex.def Info: diagram-flow1.png  used on input line 137.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
  [21 <./diagram-mat02.png>]
-<diagram-flow-decoder02.png, id=699, 229.3368pt x 258.7266pt>
+<diagram-flow-decoder02.png, id=701, 229.3368pt x 258.7266pt>
 File: diagram-flow-decoder02.png Graphic file (type png)
 <use diagram-flow-decoder02.png>
 Package pdftex.def Info: diagram-flow-decoder02.png  used on input line 157.
 (pdftex.def)             Requested size: 286.6703pt x 323.40741pt.
  [22 <./diagram-flow1.png>] [23 <./diagram-flow-decoder02.png>]
-<diagram-mask01.png, id=711, 154.176pt x 204.765pt>
+<diagram-mask01.png, id=713, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
 Package pdftex.def Info: diagram-mask01.png  used on input line 184.
 (pdftex.def)             Requested size: 192.7195pt x 255.9556pt.
  [24 <./diagram-mask01.png>]
-<Figure_3.png, id=717, 98.769pt x 63.3567pt>
+<Figure_3.png, id=719, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 209.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
  [25 <./Figure_3.png>]
-<diagram-mat05.png, id=725, 46.0119pt x 89.133pt>
+<diagram-mat05.png, id=727, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 245.
 (pdftex.def)             Requested size: 138.03534pt x 267.3983pt.
  [26] [27 <./diagram-mat05.png (PNG copy)>] [28]
-<Figure_4.png, id=745, 84.7968pt x 46.2528pt>
+<Figure_4.png, id=747, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 309.
@@ -777,7 +777,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [32
 
 ] [33] [34]
-<diagram-pic01.png, id=777, 2581.645pt x 2477.255pt>
+<diagram-pic01.png, id=779, 2581.645pt x 2477.255pt>
 File: diagram-pic01.png Graphic file (type png)
 <use diagram-pic01.png>
 Package pdftex.def Info: diagram-pic01.png  used on input line 113.
@@ -810,7 +810,7 @@ Chapter 4.
  (./chapters/chapter04.tex [42
 
 ] [43] [44] [45] [46] [47] [48]
-<Figure_2.png, id=848, 86.0013pt x 57.816pt>
+<Figure_2.png, id=850, 86.0013pt x 57.816pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
 Package pdftex.def Info: Figure_2.png  used on input line 232.
@@ -825,7 +825,13 @@ Chapter 5.
 
  (./chapters/chapter05.tex [59
 
-] [60] [61] [62] [63] [64]) [65]
+] [60] [61] [62] [63] [64]
+<diagram-jetson-nano.png, id=924, 2440.11626pt x 2175.12625pt>
+File: diagram-jetson-nano.png Graphic file (type png)
+<use diagram-jetson-nano.png>
+Package pdftex.def Info: diagram-jetson-nano.png  used on input line 132.
+(pdftex.def)             Requested size: 244.02592pt x 217.52536pt.
+) [65 <./diagram-jetson-nano.png>]
 Chapter 6.
 [66
 
@@ -836,7 +842,7 @@ Chapter 6.
  (./chapters/chapter06.tex [67
 
 ]
-<diagram-word02.png, id=936, 607.26875pt x 341.275pt>
+<diagram-word02.png, id=940, 607.26875pt x 341.275pt>
 File: diagram-word02.png Graphic file (type png)
 <use diagram-word02.png>
 Package pdftex.def Info: diagram-word02.png  used on input line 29.
@@ -847,7 +853,7 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 29--30
  []
 
 [68 <./diagram-word02.png>]
-<diagram-word01.png, id=942, 607.26875pt x 341.275pt>
+<diagram-word01.png, id=946, 607.26875pt x 341.275pt>
 File: diagram-word01.png Graphic file (type png)
 <use diagram-word01.png>
 Package pdftex.def Info: diagram-word01.png  used on input line 45.
@@ -858,7 +864,7 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 45--46
  []
 
 [69 <./diagram-word01.png>]
-<Figure_8.png, id=948, 607.26875pt x 341.275pt>
+<Figure_8.png, id=952, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
 Package pdftex.def Info: Figure_8.png  used on input line 66.
@@ -906,10 +912,10 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
- 14753 strings out of 481239
- 268282 string characters out of 5920377
+ 14761 strings out of 481239
+ 268472 string characters out of 5920377
  534793 words of memory out of 5000000
- 29462 multiletter control sequences out of 15000+600000
+ 29469 multiletter control sequences out of 15000+600000
  559025 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,11n,44p,1003b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -938,10 +944,10 @@ ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (85 pages, 8805468 bytes).
+Output written on proposal_doc.pdf (85 pages, 18685972 bytes).
 PDF statistics:
- 1132 PDF objects out of 1200 (max. 8388607)
- 972 compressed objects within 10 object streams
- 219 named destinations out of 1000 (max. 500000)
- 824 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1136 PDF objects out of 1200 (max. 8388607)
+ 974 compressed objects within 10 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 829 words of extra memory for PDF output out of 10000 (max. 10000000)
 
