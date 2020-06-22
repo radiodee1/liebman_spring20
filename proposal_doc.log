@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.20)  21 JUN 2020 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.20)  22 JUN 2020 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -907,15 +907,8 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 ) (./chapters/chapter07.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
-
-
-Package rerunfilecheck Warning: File `proposal_doc.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proposal_doc.out':
-(rerunfilecheck)             Before: 6BAD848D70D827DE39CFB0E775AC56BD;6791
-(rerunfilecheck)             After:  C52756F774459AAE9705E517B9AA2B93;6792.
+Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
+(rerunfilecheck)             Checksum: C52756F774459AAE9705E517B9AA2B93;6792.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
@@ -951,7 +944,7 @@ ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (85 pages, 18686017 bytes).
+Output written on proposal_doc.pdf (85 pages, 18686007 bytes).
 PDF statistics:
  1137 PDF objects out of 1200 (max. 8388607)
  975 compressed objects within 10 object streams
