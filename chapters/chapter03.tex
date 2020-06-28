@@ -12,7 +12,13 @@ The speech to text service used on the project and the memory limitations on the
 
 Also, we have several models that we want to test. To test them all would require several servers. In addition we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
-It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. Currently on the Raspberry Pi decoding a single sentence takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
+It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. 
+
+Currently on the Raspberry Pi decoding a single sentence with the 117M GPT2 takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
+
+The 117M GPT2 model fits on a Jetson Nano and can produce the response to a question in two or three seconds. The Nano is not much bigger than a Raspberry Pi.
+
+If we were to replace every Raspberry Pi computer in our project with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
 
 \section{Model Overview}
 
@@ -25,20 +31,20 @@ It is important to note that the large Generative Pre-training Transformer 2 mod
 		
 		\begin{tabular}{llllll}
 			
-			Model Name    & File  & RAM  & RAM    & Hand & Raspberry \\
-			&  Size & Train   & Inference    & Trained &   Pi \\
+			Model Name    & File  & RAM  & RAM    & Hand & Board \\
+			&  Size & Train   & Inference    & Trained &    \\
 			\hline
 			\hline
-			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &   3B \\
+			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &  Pi 3B \\
 			Transformer/Persona   & 25 M      & 556 M & 360 M          & YES  & NONE \\
-			Transformer/Movie \dag \dag  & 550 M      & 6.5 G & 1.5 G  & YES    & 4B  \\
-			GPT2 small \dag   & 523 M     & 5 G   & 1.5 G               & NO     &  4B \\
+			Transformer/Movie \dag \dag  & 550 M      & 6.5 G & 1.5 G  & YES    & Pi 4B  \\
+			GPT2 small \dag   & 523 M     & 5 G   & 1.5 G         & NO     &  Jetson Nano \\
 			\hline
 		\end{tabular}
 		
 		\bigskip
 	\end{center}
-		\dag \ a large GPT2 model exists, but it is not small enough to fit on a raspberry pi.
+		\dag \ a large GPT2 model exists, but it is not small enough to fit on a Raspberry Pi or Jetson Nano.
 		
 		\dag \dag \ this is the model we refer to as the `larger' transformer model, though it is smaller than the smallest GPT2 model.
 		
@@ -58,7 +64,7 @@ Here we itemize a short description for each row in the table.
 	
 	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512.
 	
-	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768.
+	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768.
 \end{itemize}
 
 
@@ -118,6 +124,20 @@ The pytorch model that is chosen as best will be trained on the desktop computer
 	
 	
 \end{figure}
+
+\subsection{Jetson Nano}
+
+The Jetson Nano is another small board computer. Though it has no Wifi, it is outfitted with an NVIDIA Graphical Processing Unit. 
+
+While the development computer uses x86\_64 and the Raspberry Pi uses ARMv7, the Nano uses aarch64. It is based on the ARM architecture with 64 bit memory units. ARMv7 uses 32 bit units.
+
+It is not much bigger than a Raspberry Pi. It has four Gigabytes of memory and a Ubuntu based operating system. The operating system has Python 3.6 and special NVIDIA GPU libraries pre-installed. It does not have Pytorch out of the box, but Pytorch can be installed.
+
+In normal mode the board has an HDMI connector which provides both video and audio output. For the project the board was outfitted in headless mode. In headless mode the board needs USB connectors to provide audio input and output.
+
+Because it does not have on-board Wifi out of the box, a Wifi board must be installed, or a Wifi USB dongle must be used.
+
+Google's Speech Recognition and Text-To-Speech software works on this platform. The Nano did not need to be employed for any training. It was used solely for inference.
 
 \subsection{Tensorflow vs. Pytorch}
 
