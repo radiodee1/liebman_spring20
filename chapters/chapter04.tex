@@ -3,11 +3,11 @@
 \section{Experiments - Installations}
 In the section above we describe the workings of a transformer and the workings of Generative Pre-training Transformer 2. We propose they are similar. Here we distinguish between the two. For the experiments section they are totally separate.
 
-We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. This gives us eight sections. 
+We have several basic neural network models. One is the basic sequence to sequence model typically used for neural machine translation. We also have two Transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and we also distinguish between chatbot operation and smart-speaker operation. 
 
-We have four models we consider and at the same time only three Raspberry Pi boards. We actually try all four models, but keep only three Raspberry Pi installations. 
+We have only three Raspberry Pi boards. There is also a Jetson Nano board. We actually try all four models, but keep only three Raspberry Pi installations. The Nano is used for the final installation and serves as a speed comparison with the Raspberry Pi for the GPT2.
 
-The model that did not make it to the final three and installation on a Raspberry Pi was the smaller Transformer with the Persona corpus.
+The model that did not make it to permanent installation on a Raspberry Pi was the smaller Transformer with the Persona corpus. There are four complete installations with the Nano board.
 
 \subsection{Questions}
 Below is a list of questions asked of all models. From this list and the answers from each model we try to make comparisons between the models about their strengths.
@@ -430,8 +430,12 @@ This is the best model we tested, but it is relatively large and that aspect mak
 \label{install-gpt2-smart}
 Code was added that uses Text To Speech and Speech To Text libraries. In this way the model could interact with a subject using auditory cues and commands.
 
+The model was installed on two computers, the Raspberry Pi and the Jetson Nano.
+
 The Raspberry Pi model that the Generative Pre-training Transformer 2 was installed on was the 4B with 4GB of RAM. It is largely for this model that we cross compiled the Pytorch Python library for the ARMv7. The GPT2 model fit on the Raspberry Pi. While execution on the production laptop was instantaneous, execution on the Raspberry Pi took about 13 seconds for every response from the neural network.
 
-The Raspberry Pi was outfitted with a microphone and a speaker but no mouse, monitor, or keyboard. The program was modified so that there was a tone every time the model was processing input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the Generative Pre-training Transformer 2 model to be physically installed on the Raspberry Pi.
+The Nano that the GPT2 model was installed on was outfitted with a speaker, a microphone, and a wifi dongle. Execution of a single response from the model took two or three seconds.
+
+The Raspberry Pi program was modified so that there was a tone every time the model was processing input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the Generative Pre-training Transformer 2 model to be physically installed on the Raspberry Pi.
 
 A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. The lights are helpful.
