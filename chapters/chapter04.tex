@@ -430,11 +430,9 @@ This is the best model we tested, but it is relatively large and that aspect mak
 \label{install-gpt2-smart}
 Code was added that uses Text To Speech and Speech To Text libraries. In this way the model could interact with a subject using auditory cues and commands.
 
-The model was installed on two small computers, the Raspberry Pi and the Jetson Nano.
+The model was installed on two small computers, the Raspberry Pi and the Jetson Nano. The Nano is discussed in Section \ref{chapter-nano}.
 
 The Raspberry Pi model that the Generative Pre-training Transformer 2 was installed on was the 4B with 4GB of RAM. It is largely for this model that we cross compiled the Pytorch Python library for the ARMv7. The GPT2 model fit on the Raspberry Pi. While execution on the production laptop was instantaneous, execution on the Raspberry Pi took about 13 seconds for every response from the neural network.
-
-The Nano that the GPT2 model was installed on was outfitted with a speaker, a microphone, and a wifi dongle. Pytorch for the Nano is installed from a community web site where version 1.5 was already cross compiled for the aarch64 environment. Execution of a single response from the model took two or three seconds.
 
 The Raspberry Pi program was modified so that there was a tone every time the model was processing input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the Generative Pre-training Transformer 2 model to be physically installed on the Raspberry Pi.
 
