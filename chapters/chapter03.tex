@@ -10,7 +10,7 @@ Unfortunately the speech to text resources supplied by Google cost money. To use
 
 The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
 
-Also, we have several models that we want to test. To test them all would require several servers. In addition we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
+We have several models that we want to test. To test them all would require several servers. In addition we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
 It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. 
 
@@ -20,7 +20,7 @@ The 117M GPT2 model fits on a Jetson Nano and can produce the response to a ques
 
 If we were to replace every Raspberry Pi computer in our project with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
 
-\section{Model Overview}
+\section{Hardware Overview}
 
 
 
@@ -38,7 +38,7 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &  Pi 3B \\
 			Transformer/Persona   & 25 M      & 556 M & 360 M          & YES  & NONE \\
 			Transformer/Movie \dag \dag  & 550 M      & 6.5 G & 1.5 G  & YES    & Pi 4B  \\
-			GPT2 small \dag   & 523 M     & 5 G   & 1.5 G         & NO     &  Jetson Nano \\
+			GPT2 small \dag   & 523 M     & 5 G   & 1.5 G         & NO     &  Pi 4B/Jetson Nano \\
 			\hline
 		\end{tabular}
 		
@@ -83,7 +83,7 @@ As a coding experiment we rewrite the code for the sequence-to-sequence Gated Re
 
 \subsection{Graphical Processing Unit vs. Central Processing Unit}
 
-A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. This allows for a logical program that can be executed. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
+A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
 
 GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. The GPU speeds up parallel processing and has a benefit to neural networking training tasks that the CPU doesn't have.
 
@@ -129,7 +129,7 @@ The pytorch model that is chosen as best will be trained on the desktop computer
 
 The Jetson Nano is another small board computer. Though it has no Wifi, it is outfitted with an NVIDIA Graphical Processing Unit. 
 
-While the development computer uses x86\_64 and the Raspberry Pi uses ARMv7, the Nano uses aarch64. It is based on the ARM architecture with 64 bit memory units. ARMv7 uses 32 bit units.
+While the development computer uses x86\_64 and the Raspberry Pi uses ARMv7, the Nano uses aarch64. It is based on the ARM architecture with 64 bit memory units. ARMv7 uses 32 bit memory units.
 
 It is not much bigger than a Raspberry Pi. It has four Gigabytes of memory and a Ubuntu based operating system. The operating system has Python 3.6 and special NVIDIA GPU libraries pre-installed. It does not have Pytorch out of the box, but Pytorch can be installed.
 
