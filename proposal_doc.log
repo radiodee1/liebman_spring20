@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  30 JUN 2020 08:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  30 JUN 2020 09:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -780,24 +780,24 @@ Chapter 3.
 <diagram-pic01.png, id=795, 2581.645pt x 2477.255pt>
 File: diagram-pic01.png Graphic file (type png)
 <use diagram-pic01.png>
-Package pdftex.def Info: diagram-pic01.png  used on input line 119.
+Package pdftex.def Info: diagram-pic01.png  used on input line 121.
 (pdftex.def)             Requested size: 258.17963pt x 247.74pt.
  [35] [36 <./diagram-pic01.png>]
 [37] [38]
-Overfull \hbox (23.27394pt too wide) in paragraph at lines 189--190
+Overfull \hbox (23.27394pt too wide) in paragraph at lines 191--192
 []\T1/cmr/m/n/10 There are three files mis-named. They can be found at `\T1/cmr
 /bx/n/10 /usr/lib/python3.7/site-packages/torch/\T1/cmr/m/n/10 '.
  []
 
 
-Overfull \hbox (28.67174pt too wide) in paragraph at lines 191--192
+Overfull \hbox (28.67174pt too wide) in paragraph at lines 193--194
 \T1/cmr/m/n/10 tion. This pro-duces the fol-low-ing er-ror: `\T1/cmr/bx/n/10 Im
 portError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6:
  []
 
 [39]
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
-7.
+9.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [40]) [41]
@@ -909,13 +909,13 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 1450959836222945D81BA4D4823139F3;7026.
+(rerunfilecheck)             Checksum: A1D73C4AEC3458DF4A501C9F83F63B9E;7039.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
  14775 strings out of 483183
  268706 string characters out of 5966292
- 530082 words of memory out of 5000000
+ 530095 words of memory out of 5000000
  29227 multiletter control sequences out of 15000+600000
  559025 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -947,7 +947,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (87 pages, 18639338 bytes).
+Output written on proposal_doc.pdf (87 pages, 18639603 bytes).
 PDF statistics:
  1603 PDF objects out of 1728 (max. 8388607)
  1010 compressed objects within 11 object streams

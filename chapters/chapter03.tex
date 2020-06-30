@@ -1,16 +1,18 @@
 \section{Approach to the Study}
 
-Several neural network models are used in the project. One is the sequence to sequence model and another the Transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
+Several neural network models are used in the project. One is the GRU sequence to sequence model and another the Transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
 
 We will not try to rewrite the Transformer or GPT2 model ourselves.
 
-In this project we attempt to load as much of our chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
+In this project we attempt to load as much of our chatbot code onto small board computers as possible. The Raspberry Pi and the Jetson Nano are considered to be small board computers.
+
+We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
-The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be servable from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
+The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be served from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
 
-We have several models that we want to test. To test them all would require several servers. In addition we use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
+There are several models to test. To test them all would require several servers. In addition they use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
 It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. 
 
@@ -20,7 +22,7 @@ The 117M GPT2 model fits on a Jetson Nano and can produce the response to a ques
 
 If we were to replace every Raspberry Pi computer in our project with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
 
-\section{Hardware Overview}
+\section{Hardware Installation Overview}
 
 
 
@@ -55,16 +57,16 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 \end{table}
 
 
-Here we itemize a short description for each row in the table.
+Here is provided a short description for each row in the table.
 
 \begin{itemize}
-	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. It uses a hidden size of 500 units.
+	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. It uses a hidden size of 500 units. This model was used in one Raspberry Pi installation.
 	
-	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board. It uses 2 layers, 4  heads, and a hidden size of 128.
+	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board. It uses 2 layers, 4  heads, and a hidden size of 128. This model was not permanently installed.
 	
-	\item \textbf{Transformer - Movie} This model is based on the Transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512.
+	\item \textbf{Transformer - Movie} This model is based on the Transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512. This model was used in one Raspberry Pi installation.
 	
-	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768.
+	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768. This model was used in one Raspberry Pi installation and one Jetson Nano installation.
 \end{itemize}
 
 
