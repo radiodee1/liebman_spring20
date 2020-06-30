@@ -8,4 +8,4 @@ Latex files for an independent study. See file named `proposal_doc.pdf`.
 
 * 03-07-2020 Much further along.
 
-* 06-30_2020 Add Jetson Nano material.
+* 06-30-2020 Add Jetson Nano material.
