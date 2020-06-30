@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  30 JUN 2020 08:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  30 JUN 2020 08:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,13 +909,13 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: C6AA29E7D09E203316AE73F1D47A4D8B;7029.
+(rerunfilecheck)             Checksum: 1450959836222945D81BA4D4823139F3;7026.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
  14775 strings out of 483183
  268706 string characters out of 5966292
- 530083 words of memory out of 5000000
+ 530082 words of memory out of 5000000
  29227 multiletter control sequences out of 15000+600000
  559025 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -947,9 +947,9 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (87 pages, 18639519 bytes).
+Output written on proposal_doc.pdf (87 pages, 18639338 bytes).
 PDF statistics:
- 1604 PDF objects out of 1728 (max. 8388607)
+ 1603 PDF objects out of 1728 (max. 8388607)
  1010 compressed objects within 11 object streams
  225 named destinations out of 1000 (max. 500000)
  853 words of extra memory for PDF output out of 10000 (max. 10000000)
