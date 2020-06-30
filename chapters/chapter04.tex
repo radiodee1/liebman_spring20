@@ -25,7 +25,7 @@ Do you like ice cream?
 Good bye.
 \end{verbatim}
 
-For comparison there are four models. Subjectively the first transformer model with the Persona corpus did not perform as well as the Generative Pre-training Transformer 2 model. It did not perform better than the Gated Recurrent Unit model either. 
+For comparison there are four models. Subjectively the first Transformer model with the Persona corpus did not perform as well as the Generative Pre-training Transformer 2 model. It did not perform better than the Gated Recurrent Unit model either. 
 
 The model from the Gated Recurrent Unit tutorial performed well. It was better than the initial Transformer model and on par with the larger Transformer model. It was not better than the Generative Pre-training Transformer 2.
 
@@ -57,7 +57,7 @@ Question 4 refers to weather simple `No' answers are used all the time to answer
 \section{Chatbot - Gated Recurrent Unit Model}
 We have two models based on the sequnce to sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al \cite{2018Inkawhich}.
 
-We trained this sequence to sequence model on a large english corpus in an attempt to produce a chatbot. This model does not use a transformer architecture.
+We trained this sequence to sequence model on a large english corpus in an attempt to produce a chatbot. This model does not use a Transformer architecture.
 
 This second sequence to sequence model from the GRU tutorial performed exactly as expected. It answered a number of subjective questions with original, authentic answers. Almost all the answers made sense in the English language.
 
@@ -130,9 +130,9 @@ The model requires access to the internet for the exchange that the speech to te
 As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input. At that point the model beeps once.
 
 \section{Chatbot - Transformer Model with Persona Corpus}
-Using the Persona corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. The Persona corpus comes from Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}.
+Using the Persona corpus we trained a Transformer model to use as a chatbot. This Transformer was not pre-trained with any large corpus, so this example did not use transfer learning. The Persona corpus comes from Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}.
 
-This model uses the tensorflow library, not Pytorch, and a transformer model that is somewhat small. The model has encoder and decoder sections. The model uses 2 layers, 4 heads, and a hidden size of 128.
+This model uses the tensorflow library, not Pytorch, and a Transformer model that is somewhat small. The model has encoder and decoder sections. The model uses 2 layers, 4 heads, and a hidden size of 128.
 
 The memory footprint of the model while it was running was below 1 Gigabyte. It is conceivable that the model could be installed on a Raspberry Pi board. That requires a python package called `tensorflow-model-server' and this package had to be provided for ARMv7 for the Raspberry Pi. 
 
@@ -146,7 +146,7 @@ At that time the corpus was modified to include no sentences that have the word 
 At this point, after looking at the change in loss, further training was not thought of as helpful. Loss stopped improving at some point in this process, and this lack of improvement was taken as a sign that further progress was not likely.
 
 \subsection{Questions}
-Subjectively this transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
+Subjectively this Transformer model is not better than the original Gated Recurrent Unit model from the Sequence to sequence tutorial. It can respond to something like four sentences. When it comes upon a question that it doesn't expect it defaults to a certain sentence. It can answer questions that you might ask in a rudimentary conversation. It has answers to prompts like `hi', `How are you?' and `What do you do?'. If you tell it your name it will tell you that its name is `Sarah'. It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?'. It can not tell you the time. The default reply sentence for unknown prompts is `Hi, how are you today?'
 
 This is the sample question list as it was answered by the model.
 
@@ -203,9 +203,9 @@ This is a poor model. It does use English language answers, but does not perform
 
 \section{Smart Speaker - Transformer Model with Persona Corpus}
 
-This transformer model was tested on the Raspberry Pi. The model is not more dynamic than the GRU tutorial model. 
+This Transformer model was tested on the Raspberry Pi. The model is not more dynamic than the GRU tutorial model. 
 
-The transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. The time between the first two or three responses is uncomfortably slow. After those first responses the time between answers gets to be more natural.
+The Transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. The time between the first two or three responses is uncomfortably slow. After those first responses the time between answers gets to be more natural.
 
 There is one special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions.
 
@@ -214,11 +214,11 @@ The Persona corpus model is not interesting to watch. Though smart speaker insta
 \section{Chatbot - Transformer Model with Movie Corpus}
 
 
-Using the Movie corpus we trained a transformer model to use as a chatbot. This transformer was not pre-trained with any large corpus, so this example did not use transfer learning. 
+Using the Movie corpus we trained a Transformer model to use as a chatbot. This Transformer was not pre-trained with any large corpus, so this example did not use transfer learning. 
 
 This is the model we refer to as the larger Transformer model. It is larger than the Transformer model with the Persona corpus but it is smaller than the smallest GPT2 model.
 
-This model uses the Tensorflow library, not Pytorch. %, and a transformer model that is larger than the other Transformer based model that uses the Persona corpus.
+This model uses the Tensorflow library, not Pytorch. %, and a Transformer model that is larger than the other Transformer based model that uses the Persona corpus.
 
 In contrast the Persona corpus model uses 2 layers, 4 heads, and a hidden size of 128. The Movie corpus model uses 6 layers, 8 heads, and a hidden size of 512. This model has both encoder and decoder sections.
 
@@ -238,7 +238,7 @@ The model was trained on the development computer in a x86\_64 environment. The 
 	%\addcontentsline{lof}{section}{Word Embeddings}
 \end{figure}
 
-Subjectively this transformer model is better than the Transformer model based on the smaller hyper-parameter set and the Persona Corpus.
+Subjectively this Transformer model is better than the Transformer model based on the smaller hyper-parameter set and the Persona Corpus.
 
 
 %\begin{lstlisting}[language=bash]
@@ -297,9 +297,9 @@ This is a reasonably good model. We prefer this model over the one that uses the
 
 \section{Smart Speaker - Transformer Model with Movie Corpus}
 
-The transformer model is installed on the Raspberry Pi. It takes about 6 seconds to answer any question.
+The Transformer model is installed on the Raspberry Pi. It takes about 6 seconds to answer any question.
 
-The transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. 
+The Transformer model takes about two minutes to boot on the Raspberry Pi. After that the time between responses is slow. 
 
 There is a special tone that the Raspberry Pi gives at the end of loading the model. This tone notifies the user that the model is loaded and ready to respond to questions. The model is also configured to beep intermittently during operation to signal that it is processing an input. This is helpful for a configuration where there is no monitor.
 
@@ -340,6 +340,9 @@ I like the color red.
 > What is your favorite color?
 Red.
 \end{verbatim}
+
+\label{install-gpt2-history}
+
 We like this output. The model is asked about the color `red'. Doing so the model is encouraged to pick `red' as the answer to the next question about color. When `favorite color' is requested, `red' is the answer. Without any history the model will answer the `favorite color' question with another answer. It may answer `pink' or it may answer `the colors of the rainbow'. 
 
 From one sentence to the next the model is keeping track of the context of the conversation. History is considered. Unfortunately the results of our history experiment are not so robust. It is not always the case that the model chooses the color recently discussed as the `favorite' color.
@@ -367,7 +370,7 @@ Subjectively the model was the best of those tested. The model would answer ques
 
 Under almost all circumstances the output was sensible English. There were no times where the model replied with gibberish. 
 
-The subject matter of the prompts did not need to be the same as the simple introductory conversation of the transformer model. In fact any subject matter could be chosen and the model would answer. The model did not remember its own answers but it was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
+The subject matter of the prompts did not need to be the same as the simple introductory conversation of the Transformer model. In fact any subject matter could be chosen and the model would answer. The model did not remember its own answers but it was consistent. Questions it answered include `What is your favorite color?' and `Do you like lollipops?'. 
 
 \subsection{Questions}
 This is the sample question list as it was answered by the model. Note that the information mentioned in the answer about the time was accurate when the test was run.

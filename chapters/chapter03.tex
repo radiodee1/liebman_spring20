@@ -1,8 +1,8 @@
 \section{Approach to the Study}
 
-Several neural network models are used in the project. One is the sequence to sequence model and another the transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
+Several neural network models are used in the project. One is the sequence to sequence model and another the Transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
 
-We will not try to rewrite the transformer or GPT2 model ourselves.
+We will not try to rewrite the Transformer or GPT2 model ourselves.
 
 In this project we attempt to load as much of our chatbot code onto a Raspberry Pi as possible. We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
@@ -46,7 +46,7 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 	\end{center}
 		\dag \ a large GPT2 model exists, but it is not small enough to fit on a Raspberry Pi or Jetson Nano.
 		
-		\dag \dag \ this is the model we refer to as the `larger' transformer model, though it is smaller than the smallest GPT2 model.
+		\dag \dag \ this is the model we refer to as the `larger' Transformer model, though it is smaller than the smallest GPT2 model.
 		
 	%\end{center}
 	
@@ -62,7 +62,7 @@ Here we itemize a short description for each row in the table.
 	
 	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board. It uses 2 layers, 4  heads, and a hidden size of 128.
 	
-	\item \textbf{Transformer - Movie} This model is based on the transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512.
+	\item \textbf{Transformer - Movie} This model is based on the Transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512.
 	
 	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768.
 \end{itemize}
@@ -101,7 +101,7 @@ It has always been the intention that at some time some chatbot of those examine
 
 For this to work several resources need to be made available. Pytorch needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text To Speech (TTS) need to work on the Pi.
 
-For one of the transformer models to work Tensorflow needs to work on the Pi.
+For one of the Transformer models to work Tensorflow needs to work on the Pi.
 
 All the files that are trained in the chosen model need to be small enough in terms of their file size to fit on the Pi. Also it must be determined that the memory footprint of the running model is small enough to run on the Pi.
 

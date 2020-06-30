@@ -83,10 +83,12 @@
 \BOOKMARK [0][-]{chapter.6}{Observations and Conclusions}{}% 83
 \BOOKMARK [1][-]{section.6.1}{GRU vs. Transformer}{chapter.6}% 84
 \BOOKMARK [1][-]{section.6.2}{Turing Test}{chapter.6}% 85
-\BOOKMARK [1][-]{section.6.3}{Word Usage}{chapter.6}% 86
-\BOOKMARK [1][-]{section.6.4}{Sentence Usage}{chapter.6}% 87
-\BOOKMARK [1][-]{section.6.5}{Transformer and GRU - Training Progress}{chapter.6}% 88
-\BOOKMARK [1][-]{section.6.6}{Transformer and GRU - Learning Lists}{chapter.6}% 89
-\BOOKMARK [0][-]{chapter.7}{Further Reading}{}% 90
-\BOOKMARK [1][-]{section.7.1}{Winograd Schema}{chapter.7}% 91
-\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 92
+\BOOKMARK [1][-]{section.6.3}{Word and Sentence Comparisons}{chapter.6}% 86
+\BOOKMARK [2][-]{subsection.6.3.1}{Word Usage}{section.6.3}% 87
+\BOOKMARK [2][-]{subsection.6.3.2}{Sentence Usage}{section.6.3}% 88
+\BOOKMARK [1][-]{section.6.4}{Training and Lists}{chapter.6}% 89
+\BOOKMARK [2][-]{subsection.6.4.1}{Transformer and GRU - Training Progress}{section.6.4}% 90
+\BOOKMARK [2][-]{subsection.6.4.2}{Transformer and GRU - Learning Lists}{section.6.4}% 91
+\BOOKMARK [0][-]{chapter.7}{Further Reading}{}% 92
+\BOOKMARK [1][-]{section.7.1}{Winograd Schema}{chapter.7}% 93
+\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 94
