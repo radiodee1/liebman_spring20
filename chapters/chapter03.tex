@@ -40,7 +40,7 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &  Pi 3B \\
 			Transformer/Persona   & 25 M      & 556 M & 360 M          & YES  & NONE \\
 			Transformer/Movie \dag \dag  & 550 M      & 6.5 G & 500 M  & YES    & Pi 4B  \\
-			GPT2 small \dag   & 523 M     & -   & 1.5 G         & NO     &  Pi 4B/Nano \\
+			GPT2 small \dag   & 523 M     & -   & 2.0 G         & NO     &  Pi 4B/Nano \\
 			\hline
 		\end{tabular}
 		
@@ -53,7 +53,7 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 	%\end{center}
 	
 	\label{fig:modeloverview}
-	\addcontentsline{lot}{section}{Model Overview}
+	\addcontentsline{lot}{section}{Hardware Overview}
 \end{table}
 
 
@@ -162,6 +162,50 @@ Both of these resources, the text-to-speech and speech-to-text, work out of the 
 Furthermore an environment variable must be set that points to the authentication file. The variable is called `GOOGLE\_APPLICATION\_CREDENTIALS'. This environment variable has to be set up before the respective model runs. When the model is launched on startup it may not be launched as a regular user. The model may be launched as, for example, the root user. Somehow the environment variable must be set along with the launching of the neural network model.
 
 The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, we attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
+
+
+\subsection{Reply Time}
+
+The Text-To-Speech, or TTS software, takes almost no time to execute.
+
+The Speech-To-Text, or STT software, takes a few seconds (one or two) to execute, as each audio sample must be sent to a Google server for translation into text.
+
+The actual model is responsible for taking text, provided by the STT software or on the commmand line, and returning to the calling function a sensible answer in text form. Each model actually does this same operation. Each model is in turn connected to the same STT and TTS software.
+
+On the development computer most of the models tested take little or no time to execute.
+
+On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models takes some time to execute.
+
+On the Jetson Nano the largest model, the 117 M GPT2 model, takes a few seconds to execute. There is a delay that is small. The other models are smaller than the GPT2 model, and so all would take less than two seconds.
+
+To ascertain the time that a model takes to reply one must start with the time the model takes on the respective hardware and then add to that the time for general Speech-To-Text server calls.
+
+\begin{table}[H]
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{lllll}
+			
+			Model Name    & Board  & Time  & Time    & Total  \\
+			              &  Type & STT   & Reply    & Time  \\
+			\hline
+			\hline
+			Seq-2-Seq/Tutorial & Pi 3B     & 2s & 0s             & 2s   \\
+			Transformer/Movie  & Pi 4B      & 2s & 5s  & 7s      \\
+			GPT2 small    & Pi 4B     & 2s   & 13s         & 15s      \\
+            GPT2 small    & Jetson Nano & 2s   & 3s         & 5s      \\
+			\hline
+		\end{tabular}
+		
+		\bigskip
+	\end{center}
+	
+	
+	\label{fig:time-compare}
+	\addcontentsline{lot}{section}{Time Comparison}
+\end{table}
+
 
 \subsection{Corpus Considerations}
 
