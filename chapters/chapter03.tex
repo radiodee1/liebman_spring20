@@ -180,6 +180,8 @@ On the Jetson Nano the largest model, the 117 M GPT2 model, takes a few seconds 
 
 To ascertain the time that a model takes to reply one must start with the time the model takes on the respective hardware and then add to that the time for general Speech-To-Text server calls.
 
+
+
 \begin{table}[H]
 	
 	\begin{center}
@@ -187,8 +189,8 @@ To ascertain the time that a model takes to reply one must start with the time t
 		
 		\begin{tabular}{lllll}
 			
-			Model Name    & Board  & Time  & Time    & Total  \\
-			              &  Type & STT   & Reply    & Time  \\
+			Model Name    & Board  & STT  & Reply    & Total  \\
+			              &  Type & Time  & Time    & Time  \\
 			\hline
 			\hline
 			Seq-2-Seq/Tutorial & Pi 3B     & 2s & 0s             & 2s   \\
