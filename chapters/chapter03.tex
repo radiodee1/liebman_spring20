@@ -164,51 +164,6 @@ Furthermore an environment variable must be set that points to the authenticatio
 The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, we attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
 
 
-\subsection{Reply Time}
-
-The Google Text-To-Speech, or gTTS software, takes almost no time to execute.
-
-The Speech Recognition, or SR software, takes a few seconds (one or two) to execute, as each audio sample must be sent to a Google server for translation into text.
-
-The actual model is responsible for taking text, provided by the SR software or on the commmand line, and returning to the calling function a sensible answer in text form. Each model actually does this same operation. Each model is in turn connected to the same SR and gTTS software.
-
-On the development computer most of the models tested take little or no time to execute.
-
-On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models takes some time to execute.
-
-On the Jetson Nano the largest installed model, the 117 M GPT2 model, takes a few seconds to execute. The other models are smaller than the GPT2 model, and so all would take less than two seconds.
-
-To ascertain the time that a model takes to reply one must start with the time the model takes on the respective hardware and then add to that the time for general Speech Recognition server calls.
-
-All models take a few seconds more than normal to reply for the very first time. This leads one to believe that something is wrong with the model. This is normal and is explained by the need for the program to load a large set of matrices for the first reply. This loading overhead is not needed in the subsequent program replies. The matrices only need to load once.
-
-\begin{table}[H]
-	
-	\begin{center}
-		
-		
-		\begin{tabular}{lllll}
-			
-			Model Name    & Board  & SR  & Reply    & Total  \\
-			              &  Type & Time  & Time    & Time  \\
-			\hline
-			\hline
-			Seq-2-Seq/GRU Tutorial & Pi 3B     & 2s & 0s             & 2s   \\
-			Transformer/Movie Corpus & Pi 4B      & 2s & 5s  & 7s      \\
-			GPT2 small    & Pi 4B     & 2s   & 13s         & 15s      \\
-            GPT2 small    & Jetson Nano & 2s   & 3s         & 5s      \\
-			\hline
-		\end{tabular}
-		
-		\bigskip
-	\end{center}
-	
-	
-	\label{fig:time-compare}
-	\addcontentsline{lot}{section}{Time Comparison}
-\end{table}
-
-
 \subsection{Corpus Considerations}
 
 We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Then we have the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
@@ -277,4 +232,49 @@ The original idea was to follow someone else's instructions and compile the Dock
 It was found that there existed a version of the Docker Container for the model server that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski \cite{2020Maciejewski}.
 
 `Tensorflow-model-server' is used on the localhost internet address, 127.0.0.1, with a port of 8500. tensorflow-model-server is meant for serving neural network resources on the internet, but with careful planning it works on the Raspberry Pi.
+
+
+\subsection{Reply Time}
+
+The Google Text-To-Speech, or gTTS software, takes almost no time to execute.
+
+The Speech Recognition, or SR software, takes a few seconds (one or two) to execute, as each audio sample must be sent to a Google server for translation into text.
+
+The actual model is responsible for taking text, provided by the SR software or on the commmand line, and returning to the calling function a sensible answer in text form. Each model actually does this same operation. Each model is in turn connected to the same SR and gTTS software.
+
+On the development computer most of the models tested take little or no time to execute.
+
+On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models takes some time to execute.
+
+On the Jetson Nano the largest installed model, the 117 M GPT2 model, takes a few seconds to execute. The other models are smaller than the GPT2 model, and so all would take less than two seconds.
+
+To ascertain the time that a model takes to reply one must start with the time the model takes on the respective hardware and then add to that the time for general Speech Recognition server calls.
+
+All models take a few seconds more than normal to reply for the very first time. This leads one to believe that something is wrong with the model. This is normal and is explained by the need for the program to load a large set of matrices for the first reply. This loading overhead is not needed in the subsequent program replies. The matrices only need to load once.
+
+\begin{table}[H]
+	
+	\begin{center}
+		
+		
+		\begin{tabular}{lllll}
+			
+			Model Name    & Board  & SR  & Reply    & Total  \\
+			&  Type & Time  & Time    & Time  \\
+			\hline
+			\hline
+			Seq-2-Seq/GRU Tutorial & Pi 3B     & 2s & 0s             & 2s   \\
+			Transformer/Movie Corpus & Pi 4B      & 2s & 5s  & 7s      \\
+			GPT2 small    & Pi 4B     & 2s   & 13s         & 15s      \\
+			GPT2 small    & Jetson Nano & 2s   & 3s         & 5s      \\
+			\hline
+		\end{tabular}
+		
+		\bigskip
+	\end{center}
+	
+	
+	\label{fig:time-compare}
+	\addcontentsline{lot}{section}{Time Comparison}
+\end{table}
 

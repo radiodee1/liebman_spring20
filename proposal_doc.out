@@ -41,12 +41,12 @@
 \BOOKMARK [2][-]{subsection.3.3.3}{Jetson Nano}{section.3.3}% 41
 \BOOKMARK [2][-]{subsection.3.3.4}{Tensorflow vs. Pytorch}{section.3.3}% 42
 \BOOKMARK [2][-]{subsection.3.3.5}{Speech and Speech To Text}{section.3.3}% 43
-\BOOKMARK [2][-]{subsection.3.3.6}{Reply Time}{section.3.3}% 44
-\BOOKMARK [2][-]{subsection.3.3.7}{Corpus Considerations}{section.3.3}% 45
-\BOOKMARK [1][-]{section.3.4}{ARMv7 Build/Compile}{chapter.3}% 46
-\BOOKMARK [2][-]{subsection.3.4.1}{Pytorch `torch' Library 1.1.0 For ARMv7}{section.3.4}% 47
-\BOOKMARK [2][-]{subsection.3.4.2}{Pytorch `torch' Library 1.4.0 For ARMv7}{section.3.4}% 48
-\BOOKMARK [2][-]{subsection.3.4.3}{Docker Container `tensorflow-model-server' For ARMv7}{section.3.4}% 49
+\BOOKMARK [2][-]{subsection.3.3.6}{Corpus Considerations}{section.3.3}% 44
+\BOOKMARK [1][-]{section.3.4}{ARMv7 Build/Compile}{chapter.3}% 45
+\BOOKMARK [2][-]{subsection.3.4.1}{Pytorch `torch' Library 1.1.0 For ARMv7}{section.3.4}% 46
+\BOOKMARK [2][-]{subsection.3.4.2}{Pytorch `torch' Library 1.4.0 For ARMv7}{section.3.4}% 47
+\BOOKMARK [2][-]{subsection.3.4.3}{Docker Container `tensorflow-model-server' For ARMv7}{section.3.4}% 48
+\BOOKMARK [2][-]{subsection.3.4.4}{Reply Time}{section.3.4}% 49
 \BOOKMARK [0][-]{chapter.4}{Experimental Results - Raspberry Pi}{}% 50
 \BOOKMARK [1][-]{section.4.1}{Experiments - Installations}{chapter.4}% 51
 \BOOKMARK [2][-]{subsection.4.1.1}{Questions}{section.4.1}% 52
