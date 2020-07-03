@@ -40,14 +40,14 @@
 \contentsline {subsection}{\numberline {3.3.1}Graphical Processing Unit vs. Central Processing Unit}{34}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Raspberry Pi}{35}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Jetson Nano}{36}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Tensorflow vs. Pytorch}{37}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Speech and Speech To Text}{37}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Corpus Considerations}{38}{subsection.3.3.6}%
-\contentsline {section}{\numberline {3.4}ARMv7 Build/Compile}{38}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Pytorch `torch' Library 1.1.0 For ARMv7}{38}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Pytorch `torch' Library 1.4.0 For ARMv7}{39}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Docker Container `tensorflow-model-server' For ARMv7}{40}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Reply Time}{41}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.3.4}Reply Time}{37}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Tensorflow vs. Pytorch}{38}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Speech and Speech To Text}{38}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Corpus Considerations}{39}{subsection.3.3.7}%
+\contentsline {section}{\numberline {3.4}ARMv7 Build/Compile}{39}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Pytorch `torch' Library 1.1.0 For ARMv7}{39}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Pytorch `torch' Library 1.4.0 For ARMv7}{40}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Docker Container `tensorflow-model-server' For ARMv7}{41}{subsection.3.4.3}%
 \contentsline {chapter}{\numberline {4}Experimental Results - Raspberry Pi}{43}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Experiments - Installations}{44}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Questions}{44}{subsection.4.1.1}%
