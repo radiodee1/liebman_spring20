@@ -95,4 +95,5 @@
 \contentsline {subsection}{\numberline {6.4.2}Transformer and GRU - Learning Lists}{74}{subsection.6.4.2}%
 \contentsline {chapter}{\numberline {7}Further Reading}{76}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Winograd Schema}{77}{section.7.1}%
-\contentsline {chapter}{\numberline {A}Abbreviations}{78}{appendix.A}%
+\contentsline {section}{\numberline {7.2}Generative Pre-training Transformer 3}{77}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Abbreviations}{79}{appendix.A}%
