@@ -329,6 +329,32 @@ The second choice was more interesting. The text that the model was shown always
 
 This worked under most circumstances. Occasionally the model would report the wrong time when asked. This sort of activity is mysterious.
 
+\subsection{GPT2 Fact Sheet}
+
+When we talk about the GPT2 chatbot, we show the model a paragraph or table with each question. Below are the contents of the paragraph. It should be noted that when we show the model the time, it is always the latest system time.
+
+There is not enough room with the other models to include this kind of a fact sheet or fact paragraph. Subject matter like that found in the `favorite color' question and the `favorite candy' question are not found in the table.
+
+\begin{table}[h]
+	\begin{center}	
+		
+		\begin{tabular}{lll}
+			Num & Question             & Answer                        \\
+			\hline \hline
+			1   & What is your name?   & My name is Jane.              \\
+			2   & What time is it?     & It is 12:00, January 1, 2020. \\
+			3   & What do you do?      & I am a student.               \\
+			4   & Where are you?       & I am in New York.             \\
+			5   & How are you feeling? & I am happy.                  \\
+			\hline     
+		\end{tabular}
+	\end{center}
+	\label{fig-fact-sheet}
+	\addcontentsline{lot}{section}{GPT2 Fact Overview}
+	
+\end{table}
+
+
 \subsection{History Experiment}
 We tried concatenating all input and output and including it with each question. The hope was that the model would treat the `Q' and `A' as historical input and then it could refer to that input as it answered new questions. This didn't always work as expected. Sometimes the model was confused by the extra input. Sometimes it seemed to have no effect at all.
 
