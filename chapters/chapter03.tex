@@ -165,6 +165,8 @@ To ascertain the time that a model takes to reply one must start with the time t
 
 All models take a few seconds more than normal to reply for the very first time. This leads one to believe that something is wrong with the model. This is normal and is explained by the need for the program to load a large set of matrices for the first reply. This loading overhead is not needed in the subsequent program replies. The matrices only need to load once.
 
+\label{setup-reply-time}
+
 \begin{table}[H]
 	
 	\begin{center}
@@ -208,7 +210,7 @@ Google has python packages that translate text to speech and speech to text. In 
 
 The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an internet connection and an account with Google that enables Google cloud api use. Google charges the user a small amount for every word that they translate into text. 
 
-Both of these resources, the text-to-speech and speech-to-text, work out of the box on the Raspberry Pi, but configuring speech-to-text for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration the user is able to download a json authentication file. The file must be copied to the Raspberry Pi. 
+Both of these resources, the text-to-speech and speech-to-text, work well on the Raspberry Pi, but configuring speech-to-text for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration the user is able to download a json authentication file. The file must be copied to the Raspberry Pi. 
 
 Furthermore an environment variable must be set that points to the authentication file. The variable is called `GOOGLE\_APPLICATION\_CREDENTIALS'. This environment variable has to be set up before the respective model runs. When the model is launched on startup it may not be launched as a regular user. The model may be launched as, for example, the root user. Somehow the environment variable must be set along with the launching of the neural network model.
 
@@ -278,7 +280,7 @@ $ sudo usermod -aG docker $USER
 
 After the last command you need to log out and then log in again to take advantage of the newly installed docker.
 
-The original idea was to follow someone else's instructions and compile the Docker Container for the ARMv7. Then the executable would be removed from the container and used natively in the Raspberry Pi.
+The original idea was to find a docker image that used tensorflow-model-server. It might be possible to find and compile a Docker Container for the ARMv7. Then the executable would be removed from the container and used natively on the Raspberry Pi. 
 
 It was found that there existed a version of the Docker Container for the model server that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski \cite{2020Maciejewski}.
 
