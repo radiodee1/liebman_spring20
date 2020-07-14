@@ -40,7 +40,7 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &  Pi 3B \\
 			Transformer/Persona   & 25 M      & 556 M & 360 M          & YES  & NONE \\
 			Transformer/Movie \dag \dag  & 550 M      & 6.5 G & 500 M  & YES    & Pi 4B  \\
-			GPT2 small \dag   & 523 M     & -   & 2.0 G         & NO     &  Pi 4B/Nano \\
+			GPT2 small - 117M \dag   & 523 M  & -   & 2.0 G         & NO     &  Pi 4B/Nano \\
 			\hline
 		\end{tabular}
 		
@@ -151,13 +151,13 @@ Google's Speech Recognition and Text-To-Speech software works on this platform. 
 
 The Google Text-To-Speech, or gTTS software, takes almost no time to execute.
 
-The Speech Recognition, or SR software, takes a few seconds (one or two) to execute, as each audio sample must be sent to a Google server for translation into text.
+The Speech Recognition, or SR software, takes a few seconds (one or two) to execute, as each audio sample must be sent to a Google server for translation into text. It is difficult to estimate exactly how much time the SR software will take as its performance relies on network speeds.
 
 The actual model is responsible for taking text, provided by the SR software or on the command line, and returning to the calling function a sensible answer in text form. Each model actually does this same operation. Each model is in turn connected to the same SR and gTTS software.
 
 On the development computer most of the models tested take little or no time to execute.
 
-On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models takes some time to execute.
+On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models takes some time to reply to a basic request.
 
 On the Jetson Nano the largest installed model, the 117 M GPT2 model, takes a few seconds to execute. The other models are smaller than the GPT2 model, and so all would take less than two seconds.
 
