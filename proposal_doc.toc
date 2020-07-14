@@ -86,16 +86,16 @@
 \contentsline {subsection}{\numberline {5.1.5}Internet Search Experiment}{66}{subsection.5.1.5}%
 \contentsline {subsubsection}{Usage Example}{68}{section*.6}%
 \contentsline {section}{\numberline {5.2}Generative Pre-training Transformer 2 - Jetson Nano}{69}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Observations and Conclusions}{70}{chapter.6}%
-\contentsline {section}{\numberline {6.1}GRU vs. Transformer}{71}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Turing Test}{71}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Word and Sentence Comparisons}{72}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Word Usage}{72}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Sentence Usage}{74}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Training and Lists}{75}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Transformer and GRU - Training Progress}{75}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Transformer and GRU - Learning Lists}{76}{subsection.6.4.2}%
-\contentsline {chapter}{\numberline {7}Further Reading}{78}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Winograd Schema}{79}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Generative Pre-training Transformer 3}{79}{section.7.2}%
-\contentsline {chapter}{\numberline {A}Abbreviations}{81}{appendix.A}%
+\contentsline {chapter}{\numberline {6}Observations and Conclusions}{71}{chapter.6}%
+\contentsline {section}{\numberline {6.1}GRU vs. Transformer}{72}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Turing Test}{72}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Word and Sentence Comparisons}{73}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Word Usage}{73}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Sentence Usage}{75}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Training and Lists}{76}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Transformer and GRU - Training Progress}{76}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Transformer and GRU - Learning Lists}{77}{subsection.6.4.2}%
+\contentsline {chapter}{\numberline {7}Further Reading}{79}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Winograd Schema}{80}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Generative Pre-training Transformer 3}{80}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Abbreviations}{82}{appendix.A}%
