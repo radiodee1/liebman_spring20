@@ -80,8 +80,9 @@ We have a rough number for those two models. They use about 125 sentences repeat
 The interesting thing is that the Transformer and the GRU models both have similar `Repeated Sentence' graphs. They are totally different models and have totally different sizes. They are not similar in many ways but in this metric. They share the same corpus, so they may be learning the same task.
 
 \section{Training and Lists}
-In this discussion the output of the GPT2 model is mostly ignored. There is a short discussion of the Transformer and the GRU and what kind of patterns they show during training.
+In this discussion the output of the GPT2 model is mostly ignored. There is a short discussion of the Transformer and the GRU. % and what kind of patterns they show during training.
 
+\iffalse
 \subsection{Transformer and GRU - Training Progress}
 
 It is useful to observe these models' progress during training. The Movie Dialog corpus is used here. This training is not interrupted. The section below describes how the models' output evolves. These models are not pre-trained. This is not an example of Transfer Learning.
@@ -95,9 +96,9 @@ The models choose the first real sentences. These sentences are usually negative
 Then the model starts to understand that the task at hand requires many answers. Rather quickly the model starts to use many answers for different questions. Here is where we typically stop training.
 
 Notably, the model restricts it's answers to full English sentences very early on. Later it decides to generate many sentences for response. Sometimes the answers are simple, one or two word sentences, often in the negative. An example is `no' or `I don't know'. If the training goes far enough the answers will start to be more diversified. 
+\fi
 
-
-\subsection{Transformer and GRU - Learning Lists}
+%\subsection{Transformer and GRU - Learning Lists}
 
 For the chatbot task we want to know what the Transformer or GRU is doing during training and later during inference. Here we are concerned with the Transformer and GRU models trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers, 8 heads, and a hidden size of 512 units. The GRU model has a hidden size of 500.
 

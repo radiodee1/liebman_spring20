@@ -93,9 +93,7 @@
 \contentsline {subsection}{\numberline {6.3.1}Word Usage}{73}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Sentence Usage}{75}{subsection.6.3.2}%
 \contentsline {section}{\numberline {6.4}Training and Lists}{76}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Transformer and GRU - Training Progress}{76}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Transformer and GRU - Learning Lists}{77}{subsection.6.4.2}%
-\contentsline {chapter}{\numberline {7}Further Reading}{79}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Winograd Schema}{80}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Generative Pre-training Transformer 3}{80}{section.7.2}%
-\contentsline {chapter}{\numberline {A}Abbreviations}{82}{appendix.A}%
+\contentsline {chapter}{\numberline {7}Further Reading}{78}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Winograd Schema}{79}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Generative Pre-training Transformer 3}{79}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Abbreviations}{81}{appendix.A}%
