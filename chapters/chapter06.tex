@@ -12,7 +12,7 @@ The respective value of each of the models changes slightly when you consider wh
 
 The Turing Test concerns itself with the question of weather a computer is intelligent. Turing says that intelligence is too hard to describe, and that if the computer can convince you that it is intelligent then it is.
 
-Weather this is right is beyond the scope of this paper. The people who trained the Generative Pre-training Transformer 2 were apprehensive about their model's ability to generate human speech. They felt the model worked too well. At first when they finished their model they decided not to release the largest version to the public for several months (Radford et al) \cite{radford2019language}. Ultimately they did release their large model.
+Weather this is right is beyond the scope of this paper. The people who trained the Generative Pre-Training 2 transformer were apprehensive about their model's ability to generate human speech. They felt the model worked too well. At first when they finished their model they decided not to release the largest version to the public for several months (Radford et al) \cite{radford2019language}. Ultimately they did release their large model.
 
 The creators of the model used it differently than our chatbot implementation. They generated paragraphs of text, and it was determined at first that the ability of the model to impersonate a human was too great. It was felt that the model could be used to spam facebook and other social networking sites with content that was very convincing. If the model could be used to convince people to act badly, then it should not be released. Humans are susceptible to the sentiments of those they see as their peers. If the model was, for better or worse, passing the Turing test, then it should not fall into the wrong hands. This was the concern of the coders at the time.
 
@@ -80,25 +80,7 @@ We have a rough number for those two models. They use about 125 sentences repeat
 The interesting thing is that the Transformer and the GRU models both have similar `Repeated Sentence' graphs. They are totally different models and have totally different sizes. They are not similar in many ways but in this metric. They share the same corpus, so they may be learning the same task.
 
 \section{Training and Lists}
-In this discussion the output of the GPT2 model is mostly ignored. There is a short discussion of the Transformer and the GRU. % and what kind of patterns they show during training.
-
-\iffalse
-\subsection{Transformer and GRU - Training Progress}
-
-It is useful to observe these models' progress during training. The Movie Dialog corpus is used here. This training is not interrupted. The section below describes how the models' output evolves. These models are not pre-trained. This is not an example of Transfer Learning.
-
-First the model produces random tokens as output. Then the model begins to recognize the patterns of the input data. It begins to put an `end-of-line', or \ac{EOL} token, at the end of each output. At the very beginning of this phase it is not uncommon to see output patterns that consist of nothing more than the 'end-of-line' token. 
-
-At the next stage the model passes a barrier of sorts and will not reply with anything that is not proper English. 
-
-The models choose the first real sentences. These sentences are usually negative. It is usually something like `I don't know' or `I'm sorry.' It uses these sentences repeatedly for a long time. It has, at this point, no other responses. It may spend half of its total training time answering with these sentences. At this point it seems that the model will never learn the task.
-
-Then the model starts to understand that the task at hand requires many answers. Rather quickly the model starts to use many answers for different questions. Here is where we typically stop training.
-
-Notably, the model restricts it's answers to full English sentences very early on. Later it decides to generate many sentences for response. Sometimes the answers are simple, one or two word sentences, often in the negative. An example is `no' or `I don't know'. If the training goes far enough the answers will start to be more diversified. 
-\fi
-
-%\subsection{Transformer and GRU - Learning Lists}
+In this discussion the output of the GPT2 model is mostly ignored. There is a short discussion of the Transformer and the GRU.
 
 For the chatbot task we want to know what the Transformer or GRU is doing during training and later during inference. Here we are concerned with the Transformer and GRU models trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers, 8 heads, and a hidden size of 512 units. The GRU model has a hidden size of 500.
 

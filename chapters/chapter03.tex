@@ -1,6 +1,6 @@
 \section{Approach to the Study}
 
-Several neural network models are used in the project. One is the GRU sequence to sequence model and another the Transformer model for a generative chatbot and finally the Generative Pre-training Transformer 2 model.
+Several neural network models are used in the project. One is the GRU sequence to sequence model and another the Transformer model for a generative chatbot and finally the Generative Pre-Training 2 model.
 
 We will not try to rewrite the Transformer or GPT2 model ourselves.
 
@@ -14,7 +14,7 @@ The speech to text service used on the project and the memory limitations on the
 
 There are several models to test. To test them all would require several servers. In addition they use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
-It is important to note that the large Generative Pre-training Transformer 2 model specifically could be served from a remote computer and it would operate faster. 
+It is important to note that the large Generative Pre-Training 2 model specifically could be served from a remote computer and it would operate faster. 
 
 Currently on the Raspberry Pi decoding a single sentence with the 117M GPT2 takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
 
@@ -77,11 +77,11 @@ We use linux computers, sometimes with \ac{GPU} hardware for parallel processing
 
 When the project was started we did some programming with Keras using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow. Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
 
-Some of the Generative Pre-training Transformer 2 code uses Pytorch. Some of the Transformer and Generative Pre-training Transformer 2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
+Some of the Generative Pre-Training 2 code uses Pytorch. Some of the Transformer and Generative Pre-Training 2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
 
 We use github as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot} . 
 
-As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have little success with this experiment. We do not rewrite the Generative Pre-training Transformer 2 code from the Tensorflow or Pytorch repository.
+As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have little success with this experiment. We do not rewrite the Generative Pre-Training 2 code from the Tensorflow or Pytorch repository.
 
 
 
@@ -137,7 +137,7 @@ The Jetson Nano is another small board computer. Though it has no Wifi, it is ou
 
 While the development computer uses x86\_64 and the Raspberry Pi uses ARMv7, the Nano uses aarch64. It is based on the ARM architecture with 64 bit memory units. ARMv7 uses 32 bit memory units.
 
-It is not much bigger than a Raspberry Pi. It has four Gigabytes of memory and a Ubuntu based operating system. The operating system has Python 3.6 and special NVIDIA GPU libraries pre-installed. It does not have Pytorch out of the box, but Pytorch can be installed.
+It is not much bigger than a Raspberry Pi. It has four Gigabytes of memory and an Ubuntu based operating system. The operating system has Python 3.6 and special NVIDIA GPU libraries pre-installed. It does not have Pytorch out of the box, but Pytorch can be installed.
 
 In normal mode the board has an HDMI connector which provides both video and audio output. For the project the board was outfitted in headless mode. In headless mode the board needs USB connectors to provide audio input and output.
 
@@ -225,7 +225,6 @@ For the Persona corpus the text is organized into `JSON' objects. There are seve
 
 When discussing corpus considerations it is important to mention the WebText corpus, which is culled from Reddit. This corpus is very large. This is the material used for the training of the GPT2 model. We do not use this material our selves, but it is a big part of the success of the GPT2. This corpus is about 40Gig of data.
 
-%Because Reddit is so important to the GPT2 model, we experiment with Reddit downloads. It is possible to download months of reddit posts. We do not use these downloads in these experiments.
 
 \section{ARMv7 Build/Compile}
 
@@ -253,7 +252,7 @@ We recompile the Pytorch library for the Raspberry Pi. We use debian virtualizat
 
 In addition to this, the files created by the compilation are properly named. There is no need to go to the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}' to change anything. 
 
-The time spent compiling the software is approximately 5 hours. Time spent with the Virtualbox container was easily twice that. The time spent on the Raspberry Pi executing a single Generative Pre-training Transformer 2 question and answer remains about 13 seconds, so there was no gain in that respect.
+The time spent compiling the software is approximately 5 hours. Time spent with the Virtualbox container was easily twice that. The time spent on the Raspberry Pi executing a single Generative Pre-Training 2 question and answer remains about 13 seconds, so there was no gain in that respect.
 
 There were several small hurdles to completing the compilation. Firstly the `debootstrap' command needed to be employed at the start. Debian Stretch was used as the host operating system. It was felt that if it was used that the GLIBC compatibility problem would not be faced. This turned out to be the case.
 

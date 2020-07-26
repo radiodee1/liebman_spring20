@@ -1,6 +1,6 @@
 %\chapter{Further Installations}
 
-\section{Generative Pre-training Transformer 2 - XLarge Model}
+\section{Generative Pre-Training 2 - XLarge Model}
 
 The large 774M model of GPT2 was ultimately released to the public. In addition to this, two other models were created. One, named `x-large,' had 1.5 Billion parameters. Another, named `xx-large,' had 8.3 Billion parameters. We download the `x-large' model for testing purposes.
 
@@ -40,7 +40,7 @@ Even though the history is consulted before answers are formulated, the output o
 
 \subsection{Artificial Intelligence Markup Language Experiment}
 
-We want to be able to tell the model exactly how to answer a given question if we have a particular need. For example, the model handles remembering the user's name very badly. We would like to dictate how the model handles that situation. We have employed Artificial Intelligence Markup Language for this. 
+We want to be able to tell the model exactly how to answer a given question if we have a particular need. For example, the GPT2 models that we have handle remembering the user's name very badly. We would like to dictate how the model handles that situation. We have employed Artificial Intelligence Markup Language for this. 
 
 AIML is actually poorly suited for handling this task. In AIML you must code every question and response as a separate rule. If you have a question `How are you?' and an answer `I am fine' the AIML kernel will only answer with the programmed response if the input is an exact match. If you enter `How are you doing?' or `How do you feel?' the kernel does not have an answer for that. The two or three questions are phrased differently but can be answered with the same text.
 
@@ -67,7 +67,9 @@ When the kernel does not match anything there is no output from the kernel, but 
 
 Usually the user's question and whatever the chatbot decides will be the answer are both added to the history. As noted before, history of what the user enters and the chatbot's answer are kept by the chatbot so that the chatbot can keep track of answers over time. Sometimes, though, keeping sentences that refer to user names confuses the bot's answers. In other cases the bot keeps track of answers that are generated in the AIML/chatbot hybrid process.
 
-Even when the answer makes sense there is only a certain percentage of time that this example works. Sometimes, even with the coaching of the AIML, the model does not answer with the right name. Sometimes you ask it for your name and it responds with it's name. Some times you ask it for it's name and it responds with yours. Without the AIML the model always answers all name questions with it's name.
+Even when the answer makes sense there is only a certain percentage of time that this example works. Sometimes, even with the coaching of the AIML, the model does not answer with the right name. Sometimes you ask it for your name and it responds with it's name. Some times you ask it for it's name and it responds with yours. Without the AIML the model always answers all name questions with it's name. 
+
+We suspect if the model was much larger that it would have less trouble with this kind of example.
 
 \subsubsection{Usage Example}
 
@@ -119,7 +121,7 @@ If you use a GPU for your matrix multiplication the reply from the model would b
 
 \label{chapter-xlarge}
 
-\section{Generative Pre-training Transformer 2 - Jetson Nano}
+\section{Generative Pre-Training 2 - Jetson Nano}
 
 \label{chapter-nano}
 The NVIDIA Jetson Nano is a small single board computer that has a GPU and runs on the aarch64 platform. It has 4 Gigabytes of ram.

@@ -1,9 +1,9 @@
 
 
 \section{Experiments - Installations}
-In Section \ref{transformer-intro} above the workings of a Transformer and the workings of Generative Pre-training Transformer 2 are described. It is proposed there that they are similar. For the experiments section they are totally separate.
+In Section \ref{transformer-intro} above the workings of a Transformer and the workings of Generative Pre-Training 2 are described. It is proposed there that they are similar. For the experiments section they are totally separate.
 
-There are several basic neural network models. One is the basic Sequence to Sequence GRU model typically used for neural machine translation. There are also two Transformers and the Generative Pre-training Transformer 2. We try to touch on each model type and also distinguish between chatbot operation and smart-speaker operation. 
+There are several basic neural network models. One is the basic Sequence to Sequence GRU model typically used for neural machine translation. There are also two Transformers and the Generative Pre-Training 2. We try to touch on each model type and also distinguish between chatbot operation and smart-speaker operation. 
 
 There are only three Raspberry Pi boards. There is also a Jetson Nano board. Installation of all four models is attempted on Pi boards, but only three Raspberry Pi installations are kept. The Nano is used for an additional GPT2 installation and serves as a speed comparison with the Raspberry Pi. 
 
@@ -27,9 +27,9 @@ Good bye.
 
 Without considering reply time, the GPT2 model worked best. 
 
-Subjectively the first Transformer model with the Persona corpus did not perform as well as the Generative Pre-training Transformer 2 model. It did not perform better than the Gated Recurrent Unit model either. 
+Subjectively the first Transformer model with the Persona corpus did not perform as well as the Generative Pre-Training 2 model. It did not perform better than the Gated Recurrent Unit model either. 
 
-The model from the Gated Recurrent Unit tutorial performed well. It was better than the initial Transformer model and on par with the larger Transformer model. It was not better than the Generative Pre-training Transformer 2.
+The model from the Gated Recurrent Unit tutorial performed well. It was better than the initial Transformer model and on par with the larger Transformer model. It was not better than the Generative Pre-Training 2 transformer.
 
 We visit and revisit this checklist to subjectively rate our chatbots.
 
@@ -37,7 +37,7 @@ We visit and revisit this checklist to subjectively rate our chatbots.
 
 \begin{itemize}
 	
-	\item [1.] Are all the responses are in plain English? Are any of the answers gibberish?
+	\item [1.] Are all the responses in plain English? Are any of the answers gibberish?
 	
 	\item [2.] Is there a  variety of answers? Are all answers the same?
 	
@@ -49,7 +49,7 @@ We visit and revisit this checklist to subjectively rate our chatbots.
 	
 \end{itemize}
 
-The reason for question 1, 2 and 5 are straight forward. The reason for question 3 is to determine how well the model understands English. If the answers to `favorite candy' and `favorite color' are the same, then the model is pretty simple. If the answers are different then the answer set that the model uses is larger. The model might or might not know there is a difference to candy and color. %This is just one example of the model being larger. 
+The reason for question 1, 2 and 5 are straight forward. The reason for question 3 is to determine how well the model understands English. If the answers to `favorite candy' and `favorite color' are the same, then the model is pretty simple. If the answers are different then the answer set that the model uses is larger. The model might or might not know there is a difference to candy and color. 
 
 A simpler model will answer `I don't know' for the `favorite candy' and `favorite color' questions. It can even answer questions like `do you like red' and `do you like ice cream' with `I don't know'. 
 
@@ -58,7 +58,7 @@ Question 4 refers to weather simple `No' answers are used all the time to answer
 \section{Chatbot - Gated Recurrent Unit Model}
 We have two models based on the sequence to sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}. One model was largely written by hand. This first model does not work very well. The second model was taken largely from an online tutorial by  Inkawhich et al \cite{2018Inkawhich}.
 
-We trained this sequence to sequence model on a large english corpus in an attempt to produce a chatbot. This model does not use a Transformer architecture.
+We trained this sequence to sequence model on a large English corpus in an attempt to produce a chatbot. This model does not use a Transformer architecture.
 
 This second sequence to sequence model from the GRU tutorial performed exactly as expected. It answered a number of subjective questions with original, authentic answers. Almost all the answers made sense in the English language.
 
@@ -96,7 +96,7 @@ good bye .
 \subsection{Checklist}
 
 \begin{itemize}
-	\item [1.] \textbf{Are all the responses are in plain English? Are any of the answers gibberish?}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
 	
 	\item [] All the responses are in plain English. There is no gibberish.
 	
@@ -128,7 +128,7 @@ The Raspberry Pi was outfitted with a microphone and a speaker and nothing more.
 
 The model requires access to the internet for the exchange that the speech to text software has to make with the Google servers. If there is no internet the model doesn't work.
 
-As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input. %At that point the model beeps once.
+As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input.
 
 \section{Chatbot - Transformer Model with Persona Corpus}
 Using the Persona corpus we trained a Transformer model to use as a chatbot. This Transformer was not pre-trained with any large corpus, so this example did not use transfer learning. The Persona corpus comes from Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}.
@@ -178,7 +178,7 @@ hi , how are you today ?
 \subsection{Checklist}
 
 \begin{itemize}
-	\item [1.] \textbf{Are all the responses are in plain English? Are any of the answers gibberish?}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
 	
 	\item []All the responses are in plain English. There is no gibberish.
 	
@@ -219,7 +219,7 @@ Using the Movie corpus we trained a Transformer model to use as a chatbot. This 
 
 This is the model we refer to as the larger Transformer model. It is larger than the Transformer model with the Persona corpus but it is smaller than the smallest GPT2 model.
 
-This model uses the Tensorflow library, not Pytorch. %, and a Transformer model that is larger than the other Transformer based model that uses the Persona corpus.
+This model uses the Tensorflow library, not Pytorch. 
 
 In contrast the Persona corpus model uses 2 layers, 4 heads, and a hidden size of 128. The Movie corpus model uses 6 layers, 8 heads, and a hidden size of 512. This model has both encoder and decoder sections.
 
@@ -273,7 +273,7 @@ bye
 \subsection{Checklist}
 
 \begin{itemize}
-	\item [1.] \textbf{Are all the responses are in plain English? Are any of the answers gibberish?}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
 	
 	\item []All the responses are in plain English. 
 	
@@ -307,14 +307,14 @@ There is a special tone that the Raspberry Pi gives at the end of loading the mo
 A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. The lights are helpful.
 
 
-\section{Chatbot - Generative Pre-training Transformer 2 Model}
+\section{Chatbot - Generative Pre-Training 2 Model}
 
 \label{install-gpt2-chatbot}
-We used a pre-trained Generative Pre-training Transformer 2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well and this model was considered superior. The corpus is called `WebText'. We did not train this model ourselves.
+We used a pre-trained Generative Pre-Training 2 model with the large english corpus to produce a chatbot and ascertain if this model works better than the sequence-to-sequence model. In our tests this worked well and this model was considered superior. The corpus is called `WebText'. We did not train this model ourselves.
 
 Though the 774M model was available, the 117M model was smaller and is the version used in this test and on the Raspberry Pi. The 117M model was later tested on the Jetson Nano.
 
-For our experiments the Generative Pre-training Transformer 2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the model in the application.
+For our experiments the Generative Pre-Training 2 was used for the chatbot model in `zero-shot' mode. This means we did no special fine-tuning of the model in the application.
 
 We did do some special coding for the input and output code in order to operate it as a chatbot. Output was limited to about 25 tokens. 
 
@@ -378,8 +378,10 @@ We like this output. The model is asked about the color `red'. Doing so the mode
 
 From one sentence to the next the model is keeping track of the context of the conversation. History is considered. Unfortunately the results of our history experiment are not so robust. It is not always the case that the model chooses the color recently discussed as the `favorite' color.
 
+In Section \ref{chapter-gpt2-xl-intro} we use a larger GPT2 model on the development computer. In this experiment the GPT2 model answers questions based on previous conversation better. It appears that the larger model allows for better replies.
+
 \subsection{Artificial Intelligence Markup Language Experiment}
-Tests showed that the Generative Pre-training Transformer 2 chatbot worked well. We wanted to continue and allow the chatbot to have more of the abilities of a smart speaker. We constructed a simple corpus that contained key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning with this new corpus.
+Tests showed that the Generative Pre-Training 2 chatbot worked well. We wanted to continue and allow the chatbot to have more of the abilities of a smart speaker. We constructed a simple corpus that contained key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning with this new corpus.
 
 We found that one of two things would happen. The chatbot would either learn the new phrases and forget all it's pre-training, or it would not learn the new phrases and it would retain all it's pre-training. For our examples there seemed to be no middle ground. Comparisons were made with all available models and a version without the transfer learning was settled on.
 
@@ -433,7 +435,7 @@ Good bye.
 \subsection{Checklist}
 
 \begin{itemize}
-	\item [1.] \textbf{Are all the responses are in plain English? Are any of the answers gibberish?}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
 	
 	\item []All the responses are in plain English. 
 	
@@ -459,15 +461,15 @@ The model will answer with it's name and you can tell it your name, but it is co
 
 This is the best model we tested, but it is relatively large and that aspect makes it difficult to apply in some cases.
 
-\section{Smart Speaker - Generative Pre-training Transformer 2 Model}
+\section{Smart Speaker - Generative Pre-Training 2 Model}
 
 \label{install-gpt2-smart}
 Code was added that uses Text To Speech and Speech To Text libraries. In this way the model could interact with a subject using auditory cues and commands.
 
 The model was installed on two small computers, the Raspberry Pi and the Jetson Nano. The Nano is discussed in Section \ref{chapter-nano}.
 
-The Raspberry Pi model that the Generative Pre-training Transformer 2 was installed on was the 4B with 4GB of RAM. It is largely for this model that we cross compiled the Pytorch Python library for the ARMv7. The GPT2 model fit on the Raspberry Pi. While execution on the production laptop was instantaneous, execution on the Raspberry Pi took 13 to 15 seconds for every response from the neural network. See the discussion of `Reply Time' in Section \ref{setup-reply-time}.
+The Raspberry Pi model that the Generative Pre-Training 2 was installed on was the 4B with 4GB of RAM. It is largely for this model that we cross compiled the Pytorch Python library for the ARMv7. The GPT2 model fit on the Raspberry Pi. While execution on the production laptop was instantaneous, execution on the Raspberry Pi took 13 to 15 seconds for every response from the neural network. See the discussion of `Reply Time' in Section \ref{setup-reply-time}.
 
-The Raspberry Pi program was modified so that there was a tone every time the model was processing input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the Generative Pre-training Transformer 2 model to be physically installed on the Raspberry Pi.
+The Raspberry Pi program was modified so that there was a tone every time the model was processing input. Without such a tone it would be difficult to know when to speak and when to wait for a response. Aesthetically this arrangement is not perfect, but it allows the Generative Pre-Training 2 model to be physically installed on the Raspberry Pi.
 
 A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. The lights are helpful.
