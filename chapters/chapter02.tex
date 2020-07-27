@@ -266,8 +266,7 @@ For this task the mask is important. Training could consist of incrementally sho
 
 On the other hand training could present the model with the text in complete form and have the model look at it through the mask. 
 
-Each word would have a opportunity to be focused on as the `next' word. The boundary between each word is explored and the model can still be trained in large batches in parallel.
-
+Each word would have a opportunity to be focused on as the `next' word. The boundary between each word and the one that follows it is explored and the model can still be trained in large batches in parallel. Words to the right of the particular boundary being looked at are not available to the model.
 
 
 \subsection{Inference}
