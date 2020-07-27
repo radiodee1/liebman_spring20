@@ -255,7 +255,48 @@ GPT2 still uses Scaled Dot-Product Attention. A model diagram is taken from Radf
 
 There are several sizes of pre-trained GPT2 model. They are all rather large. The smallest model has 12 layers while the Transformer model in the example from Vaswani et al \cite{Vaswani2017AttentionIA} uses 8 layers. This model also has a hidden dimension of 768, not 512. With 8 heads this leaves a smaller dimensionality of 96 at each attention head. 
 
-The GPT2 models input and output text sequences. %In this way they are preferred for our application over the BERT models. 
+The GPT2 models input and output text sequences.
+
+
+\subsection{Training}
+
+The GPT2 model is trained on text from the web, specifically Reddit. The goal for training is to show the model part of a large piece of text and then to have the model predict the next word. 
+
+For this task the mask is important. Training could consist of incrementally showing the model text at different states of completion and then asking it to predict the next token. In this kind of arrangement the batch sizes would be shorter and focus on each word. 
+
+On the other hand training could present the model with the text in complete form and have the model look at it through the mask. 
+
+Each word would have a opportunity to be focused on as the `next' word. The boundary between each word is explored and the model can still be trained in large batches in parallel.
+
+
+
+\subsection{Inference}
+
+In this example we will discuss creating `conditional samples'. This is in contrast to creating `unconditional samples'. Conditional samples rely on an input sequence for generating output. Unconditional samples have no input specified. A mask is not used during inference.
+
+First we must select for our example a series of input tokens. This series of tokens are generated from an English sentence of our choosing. The sequence we use will be `Good day' for this example. We will assume that the words in the sequence translate into single tokens in the corpus. It could be that an input word is made up of several tokens, but our example is simple enough that that should not be the case.
+
+Assume that the input context for our GPT2 model is 768 tokens. This is reasonable to assume for the 117M model. Our input tokens, the words `good' and `day' take up two spots in the input area. They are followed by an end-of-sequence token. Together they all take up three spots. At that time there are 765 spots left in the input area.
+
+The first words are converted to tokens. They are passed through the embedding matrix where they are converted to vectors. Positional encoding patterns are generated for each of the three vectors. These positional encoding patterns are created from sine and cosine waves that are concatenated together. They are added to the input tokens.
+
+The model starts at the 4th location and attempts to generate the 4th token. The entire model is at this moment addressing the task of generating the 4th token.
+
+One of the important processes that the input goes through is the Scaled Dot-Product Attention. This is performed at each layer. There are 12 layers in the 117M model.
+
+All three tokens are converted to smaller vectors for each layer. Then the third vector, for the end-of-sequence token, is treated as the `Query'. The matrices for the `Key' and `Value' are assembled from the words in the input. This is done for all of the heads of the individual layer.
+
+At this time the model is addressing the transition from the third spot to the fourth spot.
+
+The third word `Query' vector, the end-of-sequence, is compared to each other previous word `Key' vector using dot-product multiplication. Then the result is Softmaxed. This produces a single vector that is close to 1 and a group of all other vectors that are closer to 0. The result of that is multiplied by all of the three `Value' vectors. A single result is found in this way.
+
+The output is concatenated together at each layer across all the heads at that layer. Ultimately the output is recombined with the input. There are also components in each layer that do normalization.
+
+Ultimately an output vector is produces that represents the model's best guess at what the next token should be. This vector is converted into a size equivalent to the size of the vocabulary. Then the model can use some method to choose a word from the vocabulary.
+
+The new token is placed in position four. The first three tokens are left as they are and GPT2 goes back to the start and looks at, now, the first four tokens as input. It will try to generate the fifth token.
+
+The model will continue to try to generate tokens until the input area is filled and there are 768 tokens, or until there is a special `end-of-sequence' token generated. The output could be anywhere from 1 to 765 tokens long. This is because the input area starts with a dimension of 768, and there are three tokens in the input sentence.
 
 \subsection{Corpus}
 The GPT2 models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `karma' rating of 3 or better. `Karma' is a rating system used internally on Reddit. 
