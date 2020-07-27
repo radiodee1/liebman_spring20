@@ -145,6 +145,8 @@ This describes the encoder section. There are two other attention segments. Toge
 
 In our flow diagram, Figure \ref{diagram-flow1}, we are not concerned with most sub segments of the entire transformer. We are interested in the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
 
+The output of the encoder is a group of vectors the same size as the input sequence. They become the `Key' and `Value' batches below.
+
 \subsection{Decoder Attention I - `Key' and `Value'}
 The decoder is composed of two attention mechanisms and a feed-forward segment at each layer. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms in each decoder layer. In one attention mechanism of the decoder the `Key' and `Value' matrices are imported from the encoder. 
 
@@ -173,11 +175,16 @@ These full sized vectors come from the last encoder layer's output. Typically th
 \subsection{Decoder Attention II - `Query'}
 There is another attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes its output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
 
+The `Key' and `Value' sequences from the Encoder are a group of vectors the size of the input sequence. The `Query' matrix is the size of a single vector. This is because the Decoder is interested in predicting one word at a time. This section produces a single vector as well.
+
 \subsection{Decoder Attention II - Masking}
+Input for the second decoder attention section is a group of vectors from the output generated so far. During inference this output grows by one token with every pass through the decoder. This is how text is generated.
 
 During training the second decoder section is masked. The mask prohibits the decoder from seeing parts of the target. This mimics the inference setup. In inference the decoder can only see up to the most recent word it has produced.
 
 During inference the decoder produces a token and then it adds to that token, one at a time, until the decoding is finished and something like English is produced. It can attend to any part of the output it has already produced. It is concerned with producing a single token at a time.
+
+These tokens strung together are the output of the Transformer. This output should be readable English if the model output is set up for the English language.
 
 \begin{figure}[H]
 	\begin{center}
