@@ -283,7 +283,7 @@ The model starts at the 4th location and attempts to generate the 4th token. The
 
 One of the important processes that the input goes through is the Scaled Dot-Product Attention. This is performed at each layer. There are 12 layers in the 117M model.
 
-All three tokens are converted to smaller vectors for each layer. Then the third vector, for the end-of-sequence token, is treated as the `Query'. The matrices for the `Key' and `Value' are assembled from the words in the input. This is done for all of the heads of the individual layer.
+All three tokens are converted to smaller vectors for each layer. Then the third vector, for the end-of-sequence token, is treated as the `Query'. The matrices for the `Key' and `Value' are assembled from the words in the input. This is done for all of the heads of each individual layer.
 
 At this time the model is addressing the transition from the third spot to the fourth spot.
 
@@ -291,11 +291,13 @@ The third word `Query' vector, the end-of-sequence, is compared to each other pr
 
 The output is concatenated together at each layer across all the heads at that layer. Ultimately the output is recombined with the input. There are also components in each layer that do normalization.
 
-Ultimately an output vector is produces that represents the model's best guess at what the next token should be. This vector is converted into a size equivalent to the size of the vocabulary. Then the model can use some method to choose a word from the vocabulary.
+Ultimately an output vector is produces that represents the model's best guess at what the next token should be. This vector is converted into a size equivalent to the size of the vocabulary. Then the model can use some method to choose a word from the vocabulary. 
+
+Frequently, the model looks to the largest floating point number and its association with a word in the vocabulary.
 
 The new token is placed in position four. The first three tokens are left as they are and GPT2 goes back to the start and looks at, now, the first four tokens as input. It will try to generate the fifth token.
 
-The model will continue to try to generate tokens until the input area is filled and there are 768 tokens, or until there is a special `end-of-sequence' token generated. The output could be anywhere from 1 to 765 tokens long. This is because the input area starts with a dimension of 768, and there are three tokens in the input sentence.
+The model will continue to try to generate tokens until the input area is filled and there are 768 tokens, or until there is a special `end-of-sequence' token generated. The output could be anywhere from 1 to 765 tokens long. This is because the input area starts with a dimension of 768, and there are three tokens in the original input sentence.
 
 \subsection{Corpus}
 The GPT2 models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `karma' rating of 3 or better. `Karma' is a rating system used internally on Reddit. 
