@@ -194,7 +194,7 @@ These tokens strung together are the output of the Transformer. This output shou
 	\end{center}
 	\caption[Decoder Mask]{Mask. - Decoder uses masked input during training.}
 	
-	
+	\label{diagram-mask-01}
 \end{figure}
 
 
@@ -248,7 +248,7 @@ GPT2 still uses Scaled Dot-Product Attention. A model diagram is taken from Radf
 		
 		\includegraphics[scale=3.0]{diagram-mat05}
 	\end{center}
-	\caption[Generative Pre-training Transformer 2 ]{GPT2 - Radford et al \cite{radford2018improving}}
+	\caption[Generative Pre-Training 2 ]{GPT2 - Radford et al \cite{radford2018improving}}
 	
 
 \end{figure}
@@ -264,7 +264,7 @@ The GPT2 model is trained on text from the web, specifically Reddit. The goal fo
 
 For this task the mask is important. Training could consist of incrementally showing the model text at different states of completion and then asking it to predict the next token. In this kind of arrangement the batch sizes would be shorter and focus on each word. 
 
-On the other hand training could present the model with the text in complete form and have the model look at it through the mask. 
+On the other hand training could present the model with the text in complete form and have the model look at it through the mask. A mask is visualized in Diagram \ref{diagram-mask-01}.
 
 Each word would have a opportunity to be focused on as the `next' word. The boundary between each word and the one that follows it is explored and the model can still be trained in large batches in parallel. Words to the right of the particular boundary being looked at are not available to the model.
 
@@ -298,6 +298,18 @@ Frequently, the model looks to the largest floating point number and its associa
 The new token is placed in position four. The first three tokens are left as they are and GPT2 goes back to the start and looks at, now, the first four tokens as input. It will try to generate the fifth token.
 
 The model will continue to try to generate tokens until the input area is filled and there are 768 tokens, or until there is a special `end-of-sequence' token generated. The output could be anywhere from 1 to 765 tokens long. This is because the input area starts with a dimension of 768, and there are three tokens in the original input sentence.
+
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=3.0]{diagram-inference-01}
+	\end{center}
+	\caption[Generative Pre-Training 2 Inference]{GPT2 - Inference Progress}
+	
+	
+\end{figure}
 
 \subsection{Corpus}
 The GPT2 models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `karma' rating of 3 or better. `Karma' is a rating system used internally on Reddit. 
