@@ -266,8 +266,9 @@ For this task the mask is important. Training could consist of incrementally sho
 
 On the other hand training could present the model with the text in complete form and have the model look at it through the mask. A mask is visualized in Diagram \ref{diagram-mask-01}.
 
-Each word would have a opportunity to be focused on as the `next' word. A boundary is formed between the last word and the masked area to its right. The boundary between each word and the one that follows it is explored and the model can still be trained in large batches in parallel. Words to the right of the last word and the particular boundary being looked at are not available to the model.
+Each word would have an opportunity to be focused on as the `next' word. A boundary is formed between the last word and the masked area to its right. The boundary between each word and the one that follows it is explored and the model can still be trained in large batches in parallel. Words to the right of the last word and the particular boundary being looked at are not available to the model.
 
+Training is done by the developers of the model and the authors of the paper. The model is too big for individuals to train from scratch. 
 
 \subsection{Inference}
 
@@ -291,7 +292,7 @@ The third word `Query' vector, the end-of-sequence, is compared to each other pr
 
 The output is concatenated together at each layer across all the heads at that layer. Ultimately the output is recombined with the input. There are also components in each layer that do normalization.
 
-Ultimately an output vector is produces that represents the model's best guess at what the next token should be. This vector is converted into a size equivalent to the size of the vocabulary. Then the model can use some method to choose a word from the vocabulary. 
+Ultimately an output vector is produced that represents the model's best guess at what the next token should be. This vector is converted into a size equivalent to the size of the vocabulary. Then the model can use some method to choose a word from the vocabulary. 
 
 Frequently, the model looks to the largest floating point number and its association with a word in the vocabulary.
 
@@ -304,7 +305,7 @@ The model will continue to try to generate tokens until the input area is filled
 	\begin{center}
 		
 		
-		\includegraphics[scale=3.0]{diagram-inference-01}
+		\includegraphics[scale=2.0]{diagram-inference-01}
 	\end{center}
 	\caption[Generative Pre-Training 2 Inference]{GPT2 - Inference Progress}
 	
@@ -314,7 +315,7 @@ The model will continue to try to generate tokens until the input area is filled
 \subsection{Corpus}
 The GPT2 models are trained on a corpus called WebText. WebText is a 40GB corpus that is taken from the Reddit web site. All the material comes from before 2017 and all the material has a `karma' rating of 3 or better. `Karma' is a rating system used internally on Reddit. 
 
-As with the decoder layer of the Transformer model, the GPT2 model concerns itself with generating words that are later strung together to make sentences or paragraphs. During training the model uses a masking scheme so that input can be parallel-ized. During inference output cannot be parallel-ized, so during inference output must focus on one example at a time.
+%As with the decoder layer of the Transformer model, the GPT2 model concerns itself with generating words that are later strung together to make sentences or paragraphs. During training the model uses a masking scheme so that input can be parallel-ized. During inference output cannot be parallel-ized, so during inference output must focus on one example at a time.
 
 \subsection{Releases}
 In their paper Radford et al \cite{radford2019language} show that their model can generate text from a seed sentence or paragraph. At the time the case was made that the largest `Generative Pre-Training 2' models should not be released because of their ability to generate text that might fool humans into believing that another person was responsible for the text. Later the larger models were released to the public.
