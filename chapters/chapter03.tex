@@ -10,9 +10,9 @@ We have trained models using the pytorch and tensorflow libraries. These models 
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
-The speech to text service used on the project and the memory limitations on the Raspberry Pi leads one to ask the question weather the neural network responsible for the chatbot function could not be served from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
+The speech to text service used on the project and the memory limitations on the Raspberry Pi lead one to ask the question weather the neural network responsible for the chatbot function could not be served from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
 
-There are several models to test. To test them all would require several servers. In addition they use both Pytorch and tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
+There are several models to test. To test them all would require several servers. In addition they use both Pytorch and Tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
 It is important to note that the large Generative Pre-Training 2 model specifically could be served from a remote computer and it would operate faster. 
 
@@ -69,11 +69,9 @@ Here is provided a short description for each row in the table.
 	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768. This model was used in one Raspberry Pi installation and one Jetson Nano installation.
 \end{itemize}
 
-
-
 \section{Setup}
 
-We use linux computers, sometimes with \ac{GPU} hardware for parallel processing. We also use the Python programming language. Code from this project can be run with the 3.x version of Python.
+We use linux computers, sometimes with \ac{GPU} hardware for parallel processing. We also use the Python programming language. Code from this project can be run with the 3.6 or 3.7 version of Python.
 
 When the project was started we did some programming with Keras using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow. Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
 
@@ -82,10 +80,6 @@ Some of the Generative Pre-Training 2 code uses Pytorch. Some of the Transformer
 We use github as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot} . 
 
 As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have little success with this experiment. We do not rewrite the Generative Pre-Training 2 code from the Tensorflow or Pytorch repository.
-
-
-
-
 
 \subsection{Graphical Processing Unit vs. Central Processing Unit}
 
@@ -111,7 +105,7 @@ For one of the Transformer models to work Tensorflow needs to work on the Pi.
 
 All the files that are trained in the chosen model need to be small enough in terms of their file size to fit on the Pi. Also it must be determined that the memory footprint of the running model is small enough to run on the Pi.
 
-In the github repository files and scripts for the Raspberry Pi are to be found in the \textquoteleft bot\textquoteright{} folder.
+%In the github repository files and scripts for the Raspberry Pi are to be found in the \textquoteleft bot\textquoteright{} folder.
 
 Early tests using Google\textquoteright s SR and TTS services show that the Pi can support that type of functionality. 
 
