@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  29 JUL 2020 15:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  3 AUG 2020 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -725,23 +725,24 @@ File: diagram-mat01.png Graphic file (type png)
 Package pdftex.def Info: diagram-mat01.png  used on input line 68.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [19 <./diagram-mat04.png>] [20 <./diagram-mat01.png>]
-<diagram-mat07.png, id=737, 321.2pt x 361.35pt>
-File: diagram-mat07.png Graphic file (type png)
-<use diagram-mat07.png>
-Package pdftex.def Info: diagram-mat07.png  used on input line 105.
+<diagram-mat04-64.png, id=737, 321.2pt x 361.35pt>
+File: diagram-mat04-64.png Graphic file (type png)
+<use diagram-mat04-64.png>
+Package pdftex.def Info: diagram-mat04-64.png  used on input line 105.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
 <diagram-mat02.png, id=738, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 123.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [21 <./diagram-mat07.png>]
+ [21 <./diagram-mat04-64.png>]
 <diagram-flow1.png, id=746, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
 Package pdftex.def Info: diagram-flow1.png  used on input line 139.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
- [22 <./diagram-mat02.png>] [23 <./diagram-flow1.png>]
+ [22 <./diagram-mat02.png>]
+[23 <./diagram-flow1.png>]
 <diagram-flow-decoder02.png, id=759, 229.3368pt x 258.7266pt>
 File: diagram-flow-decoder02.png Graphic file (type png)
 <use diagram-flow-decoder02.png>
@@ -765,14 +766,14 @@ File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 249.
 (pdftex.def)             Requested size: 138.03534pt x 267.3983pt.
- [28 <./diagram-mat05.png (PNG copy)>] [29]
+ [28 <./diagram-mat05.png (PNG copy)>]
+[29]
 <diagram-inference-01.png, id=798, 145.2627pt x 103.587pt>
 File: diagram-inference-01.png Graphic file (type png)
 <use diagram-inference-01.png>
 Package pdftex.def Info: diagram-inference-01.png  used on input line 308.
 (pdftex.def)             Requested size: 290.52466pt x 207.1735pt.
-
-[30] [31 <./diagram-inference-01.png>] [32]
+ [30] [31 <./diagram-inference-01.png>] [32]
 <Figure_4.png, id=816, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
@@ -926,8 +927,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
  14811 strings out of 483183
- 269307 string characters out of 5966292
- 530207 words of memory out of 5000000
+ 269328 string characters out of 5966292
+ 530196 words of memory out of 5000000
  29250 multiletter control sequences out of 15000+600000
  559025 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -959,7 +960,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (94 pages, 9113289 bytes).
+Output written on proposal_doc.pdf (94 pages, 9113284 bytes).
 PDF statistics:
  1669 PDF objects out of 1728 (max. 8388607)
  1065 compressed objects within 11 object streams
