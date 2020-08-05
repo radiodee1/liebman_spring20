@@ -1,5 +1,18 @@
 %\chapter{Further Installations}
 
+\section{GRU Chatbot Coding Experiment}
+
+We code our own version of the GRU model. We refer to the Inkawhich et al \cite{2018Inkawhich} tutorial frequently. For this code we use the Movie Dialog Corpus. This is the same corpus that the tutorial uses, and is the same corpus we used in the larger Transformer model chatbot.
+
+The GRU coding experiment is considered unsuccessful. For all Raspberry Pi installations we use the GRU tutorial. % from Inkawhich. % et al \cite{2018Inkawhich}.
+
+The major differences in the code from Inkawhich et al %\cite{2018Inkawhich} 
+and our code for the GRU chatbot is that they use their own loss function while we use a Pytorch loss function. The loss function we use is called `CrossEntropyLoss'. Also they use Beam Search while we use an `argmax' function. An explanation of Beam Search is beyond the scope of this paper. The tutorial also uses the `Dot' attention while we use the `General' attention. 
+
+Comparing these attention mechanisms you might consider the `Dot' attention to be the simplest, while the `General' attention is more complex. Most complex of the three methods considered would be `Concat' attention. These approaches are touched on in section \ref{section-gru-attention}.
+
+Because of these differences the tutorial code trains to completion in under an hour on a cpu based machine. Our code trains for several hours before the kinds of replies that it gives are satisfactory.
+
 \section{Generative Pre-Training 2 - XLarge Model}
 
 The large 774M model of GPT2 was ultimately released to the public. In addition to this, two other models were created. One, named `x-large,' had 1.5 Billion parameters. Another, named `xx-large,' had 8.3 Billion parameters. We download the `x-large' model for testing purposes.
