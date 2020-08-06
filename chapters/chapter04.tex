@@ -62,6 +62,8 @@ We trained this sequence to sequence model on a large English corpus in an attem
 
 This second sequence to sequence model from the GRU tutorial performed exactly as expected. It answered a number of subjective questions with original, authentic answers. Almost all the answers made sense in the English language.
 
+\label{chatbot-gru-tutorial-used}
+
 \subsection{Questions}
 This is the sample question list as it was answered by the GRU model.
 
@@ -380,20 +382,10 @@ From one sentence to the next the model is keeping track of the context of the c
 
 In Section \ref{chapter-gpt2-xl-intro} we use a larger GPT2 model on the development computer. In this experiment the GPT2 model answers questions based on previous conversation better. It appears that the larger model allows for better replies.
 
-\subsection{Artificial Intelligence Markup Language Experiment}
-Tests showed that the Generative Pre-Training 2 chatbot worked well. We wanted to continue and allow the chatbot to have more of the abilities of a smart speaker. We constructed a simple corpus that contained key phrases that we wanted the chatbot to recognize and act upon. We did some transfer learning with this new corpus.
-
-We found that one of two things would happen. The chatbot would either learn the new phrases and forget all it's pre-training, or it would not learn the new phrases and it would retain all it's pre-training. For our examples there seemed to be no middle ground. Comparisons were made with all available models and a version without the transfer learning was settled on.
-
-It was deemed helpful if the model could be given a question and instructed exactly how to answer it. To this end AIML files were constructed and an AIML kernel was employed. The user's question was shown to the AIML kernel and then the model was shown the kernel's output (if there was one) along with the original question. The hope was that the output could be controlled by the AIML component. 
-
-At first it didn't work. The AIML confused the model, and the model would not reliably choose to answer with the AIML text, as it might with the time of day.
-
-Later the AIML was modified to appear to the model with the `Q:' and `A:' at the beginning of the lines. Some of the time the model answered with the AIML. 
 
 \subsection{Program Launching}
 
-We did some programming that allowed the model to launch programs when directed to by the user. In this way we have tried to move our project closer to the smart-speakers that are produced commercially. The programming did not rely on the neural-network aspects of the model. Instead the code used string manipulation and simple word recognition. This code can be enabled when the model is run from the command line. This was not enabled for the Raspberry Pi.
+We did some programming that allowed the model to launch programs when directed to by the user. In this way we have tried to move our project closer to the smart-speakers that are produced commercially. The programming did not rely on the neural-network aspects of the model. Instead the code used string manipulation and simple keyword recognition. This code can be enabled when the model is run from the command line. This was not enabled for the Raspberry Pi.
 
 There is no space prohibition for using the Program Launching code on the Raspberry Pi. Future work may use Chromecast as a way to connect the Raspberry Pi with the user's home TV or monitor. 
 
