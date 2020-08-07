@@ -78,27 +78,23 @@
 \contentsline {subsection}{\numberline {4.8.7}Checklist}{61}{subsection.4.8.7}%
 \contentsline {section}{\numberline {4.9}Smart Speaker - Generative Pre-Training 2 Model}{62}{section.4.9}%
 \contentsline {chapter}{\numberline {5}Further Installations}{63}{chapter.5}%
-\contentsline {section}{\numberline {5.1}GRU Chatbot Coding Experiment}{64}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Questions}{64}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Checklist}{65}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}General}{66}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Generative Pre-Training 2 - XLarge Model}{66}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Context Experiment}{66}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}History Experiment}{67}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Artificial Intelligence Markup Language Experiment}{67}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}User Name Experiment}{68}{subsection.5.2.4}%
-\contentsline {subsubsection}{Usage Example}{69}{section*.5}%
-\contentsline {subsection}{\numberline {5.2.5}Internet Search Experiment}{69}{subsection.5.2.5}%
-\contentsline {subsubsection}{Usage Example}{71}{section*.6}%
-\contentsline {section}{\numberline {5.3}Generative Pre-Training 2 - Jetson Nano}{72}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Observations and Conclusions}{74}{chapter.6}%
-\contentsline {section}{\numberline {6.1}GRU vs. Transformer}{75}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Turing Test}{75}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Word and Sentence Comparisons}{76}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Word Usage}{76}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Sentence Usage}{78}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Training and Lists}{79}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Further Reading}{81}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Winograd Schema}{82}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Generative Pre-Training 3}{82}{section.7.2}%
-\contentsline {chapter}{\numberline {A}Abbreviations}{84}{appendix.A}%
+\contentsline {section}{\numberline {5.1}Generative Pre-Training 2 - XLarge Model}{64}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Context Experiment}{64}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}History Experiment}{65}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Artificial Intelligence Markup Language Experiment}{65}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}User Name Experiment}{66}{subsection.5.1.4}%
+\contentsline {subsubsection}{Usage Example}{67}{section*.5}%
+\contentsline {subsection}{\numberline {5.1.5}Internet Search Experiment}{67}{subsection.5.1.5}%
+\contentsline {subsubsection}{Usage Example}{69}{section*.6}%
+\contentsline {section}{\numberline {5.2}Generative Pre-Training 2 - Jetson Nano}{70}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Observations and Conclusions}{72}{chapter.6}%
+\contentsline {section}{\numberline {6.1}GRU vs. Transformer}{73}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Turing Test}{73}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Word and Sentence Comparisons}{74}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Word Usage}{74}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Sentence Usage}{76}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Training and Lists}{77}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Further Reading}{79}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Winograd Schema}{80}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Generative Pre-Training 3}{80}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Abbreviations}{82}{appendix.A}%
