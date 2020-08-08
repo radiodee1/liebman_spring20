@@ -3,10 +3,13 @@
 \section{GRU vs. Transformer}
 It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the Transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
 
-A single further observation is that the GRU model responds very quickly, while a Transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the Transformer model when it is installed on a small computer like a Raspberry Pi. 
+Another observation is that the GRU model responds very quickly, while a Transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the Transformer model when it is installed on a small computer like a Raspberry Pi. 
 
 The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains some worth.
 
+Time complexity for the GRU Recurrent Neural Network is $ n  d^2 $, where $ n $ is the number of words in a sentence and $ d $ is the dimension of the hidden vector. Complexity for the Transformer's Scaled Dot Product Attention is $ n^2  d $. Again, $n$ is the number of words and $d$ is the hidden vector's dimension. In the GRU the $n$ is always set at the maximum sentence length. For the Transformer, $n$ is the length of the input sentence. It need not be the maximum allowable input.
+
+The maximum allowable input from the GRU is short, and in our example is 10. The maximum allowable input from the Transformer models varies, but in the 117M GPT2 model it is 768. In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. 
 
 \section{Turing Test}
 

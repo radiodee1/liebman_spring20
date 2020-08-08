@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  8 AUG 2020 08:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  8 AUG 2020 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -863,35 +863,35 @@ Chapter 6.
  (./chapters/chapter06.tex [73
 
 ]
-<diagram-word02.png, id=1021, 607.26875pt x 341.275pt>
+<diagram-word02.png, id=1022, 607.26875pt x 341.275pt>
 File: diagram-word02.png Graphic file (type png)
 <use diagram-word02.png>
-Package pdftex.def Info: diagram-word02.png  used on input line 33.
+Package pdftex.def Info: diagram-word02.png  used on input line 36.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 33--34
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 36--37
  [] 
  []
 
 [74]
-<diagram-word01.png, id=1026, 607.26875pt x 341.275pt>
+<diagram-word01.png, id=1027, 607.26875pt x 341.275pt>
 File: diagram-word01.png Graphic file (type png)
 <use diagram-word01.png>
-Package pdftex.def Info: diagram-word01.png  used on input line 49.
+Package pdftex.def Info: diagram-word01.png  used on input line 52.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 49--50
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 52--53
  [] 
  []
 
 [75 <./diagram-word02.png>] [76 <./diagram-word01.png>]
-<Figure_8.png, id=1038, 607.26875pt x 341.275pt>
+<Figure_8.png, id=1039, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
-Package pdftex.def Info: Figure_8.png  used on input line 70.
+Package pdftex.def Info: Figure_8.png  used on input line 73.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 70--71
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 73--74
  [] 
  []
 
@@ -933,10 +933,10 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 14811 strings out of 483183
- 269333 string characters out of 5966292
- 530260 words of memory out of 5000000
- 29251 multiletter control sequences out of 15000+600000
+ 14812 strings out of 483183
+ 269359 string characters out of 5966292
+ 530333 words of memory out of 5000000
+ 29252 multiletter control sequences out of 15000+600000
  559646 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,11n,44p,1003b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -967,10 +967,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (94 pages, 9113689 bytes).
+Output written on proposal_doc.pdf (94 pages, 9114571 bytes).
 PDF statistics:
- 1665 PDF objects out of 1728 (max. 8388607)
- 1059 compressed objects within 11 object streams
+ 1666 PDF objects out of 1728 (max. 8388607)
+ 1060 compressed objects within 11 object streams
  236 named destinations out of 1000 (max. 500000)
  887 words of extra memory for PDF output out of 10000 (max. 10000000)
 
