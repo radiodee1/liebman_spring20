@@ -9,9 +9,9 @@ The respective value of each of the models changes slightly when you consider wh
 
 Time complexity is discussed on Youtube by Kaiser et al \cite{youtubeKaiser2017}. For the GRU Recurrent Neural Network it is $ n \cdot d^2 $, where $ n $ is the number of words in a sentence and $ d $ is the dimension of the hidden vector. Complexity for the Transformer's Scaled Dot Product Attention is $ n^2 \cdot  d $. Again, $n$ is the number of words and $d$ is the hidden vector's dimension. 
 
-In the GRU the $n$ is always set at the maximum sentence length. For the Transformer, $n$ is the length of the input sentence. It need not be the maximum allowable input.
+The maximum allowable input from the GRU is short, and in our example is 10. The maximum allowable input from the Transformer models varies, but in the 117M GPT2 model it is 768. In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. This is the same as the hidden vector size for the Transformer in question.
 
-The maximum allowable input from the GRU is short, and in our example is 10. The maximum allowable input from the Transformer models varies, but in the 117M GPT2 model it is 768. In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. 
+The hidden vector size for the GRU model is 500 in this example.
 
 \section{Turing Test}
 
