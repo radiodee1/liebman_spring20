@@ -7,7 +7,7 @@ Another observation is that the GRU model responds very quickly, while a Transfo
 
 The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains some worth.
 
-Time complexity for the GRU Recurrent Neural Network is $ n  d^2 $, where $ n $ is the number of words in a sentence and $ d $ is the dimension of the hidden vector. Complexity for the Transformer's Scaled Dot Product Attention is $ n^2  d $. Again, $n$ is the number of words and $d$ is the hidden vector's dimension. In the GRU the $n$ is always set at the maximum sentence length. For the Transformer, $n$ is the length of the input sentence. It need not be the maximum allowable input.
+Time complexity for the GRU Recurrent Neural Network is $ n \cdot d^2 $, where $ n $ is the number of words in a sentence and $ d $ is the dimension of the hidden vector. Complexity for the Transformer's Scaled Dot Product Attention is $ n^2 \cdot  d $. Again, $n$ is the number of words and $d$ is the hidden vector's dimension. In the GRU the $n$ is always set at the maximum sentence length. For the Transformer, $n$ is the length of the input sentence. It need not be the maximum allowable input.
 
 The maximum allowable input from the GRU is short, and in our example is 10. The maximum allowable input from the Transformer models varies, but in the 117M GPT2 model it is 768. In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. 
 
