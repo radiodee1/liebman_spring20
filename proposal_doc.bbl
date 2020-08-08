@@ -71,6 +71,11 @@ P.~Mazar{\'{e}}, S.~Humeau, M.~Raison, and A.~Bordes, ``Training millions of
   tensorflow serving targeting popular arm cores,'' 2020.
 \newblock https://github.com/emacski/tensorflow-serving-arm.
 
+\bibitem{youtubeKaiser2017}
+Łukasz Kaiser, ``Attention is all you need; attentional neural network models
+  | Łukasz kaiser | masterclass,'' 2017.
+\newblock https://youtu.be/rBCqOTEfxvg.
+
 \bibitem{wiki:xxx}
 {Wikipedia contributors}, ``Winograd schema challenge --- {Wikipedia}{,} the
   free encyclopedia.''
