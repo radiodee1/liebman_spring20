@@ -7,15 +7,6 @@ The Transformer is a mechanism that is based entirely on attention. Strictly spe
 
 Recurrent components have some negative qualities. They are hard to run with batch input data. In addition they do not work with very long data strings. 
 
-If a batch of data is to be cycled through a recurrent component, we would like all that batch to go through all the components at once.  We want this to happen for whole batches at a time.
-
-The problem is that in Neural Machine Translation there are times when data has to be processed by the recurrent units one batch at a time. First the data is passed to the first RNN. Then the batch can be passed to the next RNN. Remember that a single GRU is used in our example for all words in the encoder. Another GRU is used in the decoder. These GRU's can not process the subsequent batches all at once. They have to wait for the previous batch to be done. This bottleneck has to do with how the RNN is used. 
-
-We don't know how long each input sentence or output sentence is going to be. If sentences cannot be made to look like the same length to the RNN's, they must be handled individually. This ruins the batch concept.
-
-These sorts of bottlenecks are found in Neural Machine Translation based on recurrent elements.
-
-Because the Recurrent Network is so heavy with Neural Network components, many weights and biases, though they can remember patterns, they loose some information with every pass. This is why there is a practical limit to the length of the input sequences that the typical Recurrent Neural Network can use. This is why the length of sentences in network models that use the Recurrent Neural Network are short.
 
 Transformers use no Recurrent Neural Network components. Their operations can be parallelized so that large batches of data can be processed at once during the same time step. 
 
