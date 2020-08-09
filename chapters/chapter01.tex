@@ -252,8 +252,6 @@ If a batch of data is to be cycled through a recurrent component, we would like 
 
 The problem is that in Neural Machine Translation there are times when data has to be processed by the recurrent units one batch at a time. First the data is passed to the first RNN. Then the batch can be passed to the next RNN. Remember that a single GRU is used in our example for all words in the encoder. Another GRU is used in the decoder. These GRU's can not process the subsequent batches all at once. They have to wait for the previous batch to be done. This bottleneck has to do with how the RNN is used. 
 
-%We don't know how long each input sentence or output sentence is going to be. If sentences cannot be made to look like the same length to the RNN's, they must be handled individually. This ruins the batch concept.
-
 These sorts of bottlenecks are found in Neural Machine Translation based on recurrent elements.
 
 \subsection{Exploding or Vanishing Gradients}
