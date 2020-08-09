@@ -262,9 +262,9 @@ These sorts of bottlenecks are found in Neural Machine Translation based on recu
 
 There are also some specific problems that affect gradients in RNN components.
 
-If a number starts out with a floating point value above 1.0, when it is multiplied with weights it will tend to return a value above 1.0. We are using the same RNN component for every position in the encoder or decoder. Quickly the value will tend to infinity. This is called an exploding gradient.
+If some data starts out with a floating point value above 1.0, when it is multiplied with weights it will tend to return a value above 1.0. We are using the same RNN component for every position in the encoder or decoder. Quickly the value will tend to infinity with the repeated application of these weights. This is called an exploding gradient.
 
-If a gradient starts out as a floating point number below 1.0, when it is multiplied with RNN weights it will tend to a value of zero very quickly. This is called a vanishing gradient.
+If a number starts out as a floating point below 1.0, when it is multiplied with RNN weights it will tend to a value of zero very quickly. This is called a vanishing gradient.
 
 Gradients in an RNN are unstable. This is why RNN input and output length needs to be limited to a small number. In our examples we use a limit of 10.
 
