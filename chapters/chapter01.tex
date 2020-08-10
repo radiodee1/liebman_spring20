@@ -101,7 +101,7 @@ Also employed are two vocabulary sets. One vocabulary is for the source language
 
 Words are translated from strings to individual numbers from an input vocabulary dictionary. The dictionary only contains a single unique number for every word. Then the number is passed through an embedding structure. This turns the single number into a vector of numbers that is the same size as the RNN hidden dimension. Then, from that time on the model uses the vector instead of words.
 
-The contents of the embedding unit is a table of numbers, all are of the size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t have to be, unique values. For each word in the dictionary there is a vector whose size is equal to the hidden dimension.
+The contents of the embedding unit is a table of numbers, all of the size of the RNN hidden dimension. The vectors are usually, but don\textquoteright t have to be, unique values. For each word in the dictionary there is a vector whose size is equal to the hidden dimension.
 
 \begin{figure}[H]
 	\begin{center}
@@ -114,16 +114,16 @@ The contents of the embedding unit is a table of numbers, all are of the size of
 
 \end{figure}
 
-The vectors can be initialized randomly or they can be filled with predetermined values. As the network trains, the embedding values can either be modified or frozen in place. Typically if the contents were initialized randomly the values would be trained. If the contents were filled with predetermined values, you don\textquoteright t want to train them or change them in any way. 
+The vectors can be initialized randomly or they can be filled with predetermined values. As the network trains, the embedding values can either be modified or frozen in place. Typically if the contents were initialized randomly the values would be trained. If the contents were filled with predetermined values, we don\textquoteright t want to train them or change them in any way. 
 
-There are at this writing two main types of pretrained word embeddings. One is called \textquoteleft Word2Vec\textquoteright{} and one is called \textquoteleft GloVe\textquoteright . 
+There are at this writing two main types of pretrained word embeddings. One is called \textquoteleft Word2Vec\textquoteright{} and one is called \textquoteleft GloVe.\textquoteright  
 
-Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al.) \cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector.\textquoteright{} (Pennington et al.) \cite{pennington-etal-2014-glove} .
+Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov et al.) \cite{mikolov2013efficient} GloVe is short for \textquoteleft Global Vector\textquoteright{} (Pennington et al.) \cite{pennington-etal-2014-glove} 
 
 
 \subsection{Corpus}
 
-A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and for all sentences shorter than that length a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
+A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and, for all sentences shorter than that length, a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
 
 \subsection{Training and Evaluation}
 Our task is to train a Neural Network to translate a given input corpus. It is generally felt that the corpus should be divided into three parts. The largest part, possibly 80\% is held for training. Then 10\% should go to what is called `validation' and 10\% should go to `testing'.
@@ -132,13 +132,13 @@ The training portion, obviously, is used during the training phase. The model ca
 
 For this reason, during training, the validation set is used for statistical purposes. The actual training mechanism is halted and the validation set is run through the model. Loss is measured and compared to the loss found when training is enabled. Loss during validation is usually greater than during training. This is done periodically during what would otherwise be called training.
 
-This is useful for tuning hyper-parameters, which are parameters that occur in the model. Repeatedly you train, and as you do you asses the validation scores for clues on what to change in your hyper-parameters. 
+This is useful for tuning hyper-parameters, which are parameters that occur in the model. Repeatedly one trains, and as one does one assesses the validation scores for clues on what to change in the hyper-parameters. 
 
-When you are done you use the final holdout set, the `test' set, to determine weather or not you have been successful. You must always remember not to train with the test or validation set.
+When done one uses the final holdout set, the `test' set, to determine weather or not it has been successful. One must never train with the test or validation set.
 
 \subsection{Input Tokens}
 
-So far the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU, one at a time. The GRU takes the word and passes it to some inner components. It decides weather to return as output just the input or the input modified. This is what the Gated Recurrent Unit does internally.
+At this point, the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU, one at a time. The GRU takes the word and passes it to inner components. It decides whether to return as output only the input or the input modified. This is what the Gated Recurrent Unit does internally.
 
 The Gated Recurrent Unit takes as input two vectors. It processes the `input' vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the `hidden size' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The Gated Recurrent Unit also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
 
@@ -148,74 +148,93 @@ We will describe the components in two groups. The input components, from the so
 
 \subsection{Encoder}
 
-The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the previous hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous Gated Recurrent Unit. The output vector is a hidden value for the Recurrent Unit to the right.
+The input segments, composed of Gated Recurrent Units, take two input vectors and return two output vectors. One input is the vector from the embedding table. Another input vector is the previous hidden state. The hidden state is the same size as the input from the embedding table, but typically it comes from the previous Gated Recurrent Unit. The output vector is a hidden value for the Recurrent Unit to the right. %Refer to Figure \ref{diagram-s2s-overview}.
 
-The very first Gated Recurrent Unit in the input encoder ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes it's output to the next Gated Recurrent Unit in the encoder. This GRU uses the output of the previous GRU as the hidden value. It also uses the vector for the second word. It passes it's important information to the Gated Recurrent Unit to it's right. This is repeated if needed. Then the last Gated Recurrent Unit in the encoder passes it's hidden state to the output decoder.
+The very first Gated Recurrent Unit in the input encoder ignores the fact that the first word has no hidden value. It consumes the first word vector. Then it passes its output to the next Gated Recurrent Unit in the encoder. This GRU uses the output of the previous GRU as the hidden value. It also uses the vector for the second word. It passes its important information to the Gated Recurrent Unit to its right. This is repeated if needed. Then the last Gated Recurrent Unit in the encoder passes its hidden state to the output decoder.
 
-A complicating detail is that although many GRUs are called for in the encoder they all use the same set of weights and biases. For this reason only a single input Gated Recurrent Unit is used for all of the words in practice. Outputs are calculated and then cycled around and fed with the next word from the sentence in vector form to the input of the Gated Recurrent Unit. 
+A complicating detail is that although many GRUs are called for in the encoder, they all use the same set of weights and biases. For this reason only a single input Gated Recurrent Unit is used for all of the words in practice. 
+
+%Outputs are calculated and then cycled and fed with the next word from the sentence in vector form to the input of the Gated Recurrent Unit. 
+
+\begin{figure}[H]
+	\begin{center}
+		
+		\includegraphics[scale=2]{diagram-nmt03}
+		
+	\end{center}
+	\caption[Sequence to Sequence Architecture]{Seq2seq: The left represents an input sequence and the right represents the corresponding output. `sol' stands for `start-of-line'. `eol' stands for `end-of-line'}
+	
+	\label{diagram-s2s-overview}
+	
+\end{figure}
 
 \subsection{Decoder}
-The decoder is in charge of generating tokens that represent, in this case, the translation of the input to the output language. The output uses Gated Recurrent Unit segments also. The first hidden input for the first output cell is taken from the last hidden output of the last recursive unit of the input. It is important because it is the spot where a great amount of data is passed from the encoder to the decoder. The connection at this point is said to carry the `thought vector'. Most of the information responsible for translating one language to another is passed at this point.
+The decoder is in charge of generating tokens that represent, in this case, the translation of the input to the output language. The output uses Gated Recurrent Unit segments also. The first hidden input for the first output cell is taken from the last hidden output of the last recursive unit of the input. It is important because it is the spot where a great amount of data is passed from the encoder to the decoder. The connection at this point is said to carry the `thought vector.' Most of the information responsible for translating one language to another is passed at this point.
 
 The hidden values from the input section are passed to the first output Gated Recurrent Unit. It outputs the values that are later converted to the first word of the translation. The first output Gated Recurrent Unit also has a hidden state. It passes the first word and the hidden state on to the second Gated Recurrent Unit to it's right.
 
 The second Gated Recurrent Unit generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on to the next Gated Recurrent Unit. This is repeated until a special `end-of-sequence' token is generated or until the number of tokens equals the maximum number allowed.
 
+\iffalse
 \begin{figure}[H]
 	\begin{center}
 	
 	\includegraphics[scale=2]{diagram-nmt03}
 		
 \end{center}
-	\caption[Sequence to Sequence Architecture]{Seq2seq: The left represents an input sequence and the right represent the corresponding output. `sol' stands for `start-of-line'. `eol' stands for `end-of-line'}
+	\caption[Sequence to Sequence Architecture]{Seq2seq: The left side represents an input sequence and the right represents the corresponding output. `Sol' stands for `start-of-line.' `Eol' stands for `end-of-line.'}
 	
-
+	%\label{diagram-s2s-overview}
+	
 \end{figure}
-
-In this figure we generalize a sequence to sequence model. The idea is that the left side of the diagram deals with the encoding of sentences. `Open the door' would be consecutive words in a sentence, and the rectangular blue nodes below the words are Recurrent Neural Network units. `Ouvre la porte' are outputs and in the right side of the diagram the tan nodes represent the output Recurrent Neural Network units. Between the input and the output there is a corridor of information exactly the size of the Recurrent Neural Network hidden vector. 
+\fi
+In Figure \ref{diagram-s2s-overview} we generalize a sequence-to-sequence model. The left side of the diagram deals with the encoding of sentences. `Open the door' would be consecutive words in a sentence, and the rectangular blue nodes below those words are Recurrent Neural Network units. `Ouvre la porte' are outputs and in the right side of the diagram, the nodes represent the output RNN units. Between the input and the output, there is a corridor of information exactly the size of the RNN hidden vector. 
 
 All of the information that the decoder uses for its output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. Aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
 
-Making this vector larger by increasing the size of the hidden dimension allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download if one of those is used. 
+Making this vector larger by increasing the size of the hidden dimension allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download, if one of those is used. 
 
-Ultimately exceedingly large hidden dimension does not improve the sequence to sequence model.
+Ultimately an exceedingly large hidden dimension does not improve the sequence to sequence model.
 
-Again in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason a single GRU is employed for the entire Decoder. The encoder and decoder are never the same unit.
+Again, in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason, a single GRU is employed for the entire decoder. The encoder and decoder are never the same unit.
 
 \subsection{Output Tokens}
-Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. They are converted to the dimensions of the output vocabulary, through matrix multiplication. Then they are processed in what is called a `softmax' function. This processing, along with an `arg-max' function, determines the index of the maximum value in the new vocabulary sized vector. This index allows the program to look up the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output decoder.
+Each output we have is currently in the form of a vector. These vectors are a long string of floating point numbers, each one the dimensions of the `hidden size' mentioned above. They are converted to the dimensions of the output vocabulary, through matrix multiplication. Then they are processed in what is called a `softmax' function. This processing, along with an `arg-max' function, determines the index of the maximum value in the new vocabulary-sized vector. This index allows the program to find the corresponding word in the output vocabulary. This word is then used as the model output at that point in the output decoder.
 
-There are some inherent problems. Because the output of a Gated Recurrent Unit is constantly being reused as the input, lots of data that might be useful to have is lost when the Gated Recurrent Unit churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
+%There are some inherent problems. Because the output of a GRU is constantly being reused as the input, data that might be useful to have is lost when the Gated Recurrent Unit churns through internal operations where several matrix multiplication operations are performed together on input. With every iteration more data is lost and so, for example, the effective length of the input and output sentences must be short. 
 
-Another problem is that all input to be translated to target output has to be boiled down and passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the `thought vector.' Without attention, described below, all necessary information must be right there. This also limits the length of the input and output vectors. It does help, when setting up a model for later training, to make the hidden size larger, but it only helps so much. There is a point at which the benefit of increasing the hidden size is lost.
+%Another problem is that all input to be translated to target output has to be boiled down and passed to the output section through a small corridor the size of a typical word vector. This channel is sometimes referred to as the `thought vector.' Without attention, described below, all necessary information must be there. This also limits the length of the input and output vectors. When setting up a model for later training, on must make the hidden size larger, but this is of limited use. There is a point at which the benefit of increasing the hidden size is lost.
 
-This is how some computer models do language translation. Using `arg-max' is an example of a greedy approach to decoding. Another approach might use something like `Beam Selection' but we're not going to get into that here.
+Some computer models do language translation this way. Using `arg-max' is an example of a greedy approach to decoding. Another approach is `Beam Selection,' not discussed here. 
 
 
 
 \subsection{Loss and Accuracy During Training}
 
-At first the prediction from a model is not very close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. 
+At first the prediction from a model is not close to the desired output. The output is compared to the prediction and a `loss' is generated. `Loss' measures the difference between the predicted output and the target. A larger loss represents two values, prediction and target, that are further apart. 
 
-Another metric is Accuracy. `Accuracy' is a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
+Another metric is Accuracy, a numerical representation of the difference between the desired output and the generated prediction. It is a percentage of the time that the output is exactly correct.
 
-Getting a prediction, running input data through a neural network, is forward propagation. Training, then, is a mathematical process involving backpropagagtion. Backpropagation identifies areas of the model weights that need to be modified in order to get the proper prediction in the future.
+Getting a prediction, running input data through a neural network is forward-propagation. Training is a mathematical process involving back-propagation. Back-propagation identifies areas of the model weights that need to be modified in order to get the proper prediction in the future.
 
-We take the derivative of the loss function in order to backpropagate. The derivative is manipulated with the learning rate. The original weight value is changed minutely. The amount changed with every backward propagation is dependent on the learning rate. The result is a set of adjusted weight matrices and a new loss. When these matrices are used later they allow for better predictions. 
+We take the derivative of the loss function in order to back-propagate. The derivative is manipulated with the learning rate. A learning rate is required in these calculations. It is a small positive fraction. 
 
-This is done over and over with every source/target sentence pair. Slowly the model is changed and predictions start to match the target. That's training. The loss should decrease over time and the accuracy should increase.
+The original weight value is changed minutely. The amount changed with every backward propagation is dependent on the learning rate. The result is a set of adjusted weight matrices and a new loss. When these matrices are used later they allow for better predictions. 
 
-There are several numerical metrics that we can record during training that tell us how our model is training. The loss, a mathematical calculation of the difference between the model's output and the predicted value, is mentioned above. Loss is an important number. Also accuracy is important. Accuracy is a mathematical calculation of the difference between the model's output and the value that output should be, but it focuses on the number of times the model comes out with a correct prediction verses how many output values there are in total.
+To train the model this is done repeatedly with every source/target sentence pair. The model is changed and predictions start to match the target. The loss should decrease over time and the accuracy should increase.
+
+There are several numerical metrics that are recorded during training to measure success. The loss is a mathematical calculation of the difference between the model's output and the predicted value. Loss is an important metric as is accuracy. Accuracy is a mathematical calculation of the percentage of times the answer is right. 
+
 
 \subsection{Attention Mechanism}
 
 \label{section-gru-attention}
 
-Attention Mechanisms are used by sequence to sequence models to transfer more information from the encoder to the decoder. As stated above there is only one place where the encoder imparts information on the decoder, the `thought vector'. Attention helps the encoder tell the decoder which word is more important. This stressing of a vector by the model is the attention mechanism attending to one output.
+Attention Mechanisms are used by sequence-to-sequence models to transfer more information from the encoder to the decoder. The encoder imparts information to the decoder only at the `thought vector'. Attention helps the encoder tell the decoder which word is more important. This stressing of a vector by the model is the attention mechanism attending to one output.
 
-Here we consider a simple attention mechanism that is used in the Sequence to Sequence model by Inkawhich et al. \cite{2018Inkawhich}. The concept for this attention comes from Luong et al \cite{DBLP:journals/corr/LuongPM15}.
+A simple attention mechanism is used in the Sequence-to-Sequence model by Inkawhich et al. \cite{2018Inkawhich} The concept for this attention comes from Luong et al. \cite{DBLP:journals/corr/LuongPM15}
 
-Luong et al \cite{DBLP:journals/corr/LuongPM15} are interested in three kinds of calculation for their attention mechanism. The three methods use slowly increasing levels of complication. First they propose a method that just uses the dot product. Then they propose a method that just uses a field of weights. Finally they use a method that uses concatenation, along with a field of weights and a pass through a `tanh' activation layer.
+Luong et al \cite{DBLP:journals/corr/LuongPM15} are interested in three kinds of calculation for their attention mechanisms. These methods use slowly increasing levels of complication. First they propose a method that uses the dot-product. Then they propose a method that uses a field of weights. Finally they use a method that uses concatenation, along with a field of weights and a pass through a `tanh' activation layer.
 
 $$
 \boldmath
@@ -228,7 +247,7 @@ score(h_t^ \text{,} \bar{h}_s) =
 \unboldmath
 $$
 
-Here $h_t$ is the symbol for the output of the current decoder and $\bar{h}_s $ is the symbol for another output taken from the input encoder. This one is the entire set of encoder states. $h_t^\intercal$ stands for $h_t$ transposed. Inkawhich et al \cite{2018Inkawhich} uses the `dot' variety.
+Here $h_t$ is the symbol for the output of the current decoder and $\bar{h}_s $ is the symbol for another output taken from the input encoder. This is the entire set of encoder states. $h_t^\intercal$ stands for $h_t$ transposed. Inkawhich et al \cite{2018Inkawhich} uses the `dot' variety.
 
 The formula is used after the decoder Gated Recurrent Unit calculates it's hidden state. It is below.
 
@@ -240,17 +259,21 @@ score = h_t^\intercal \bar{h}_s
 \unboldmath
 $$ 
 
-Basically the output of the current decoder is transposed. Then it is multiplied by the hidden value from the entire set of encoder states. Not pictured here, the score is multiplied by the Gated Recurrent Unit decoder output, and then passed through a `tanh' activation layer. It becomes the decoder output.
+The output of the current decoder is transposed. It is multiplied by the hidden value from the entire set of encoder states. The score is multiplied by the Gated Recurrent Unit decoder output, and passed through a `tanh' activation layer. It becomes the decoder output.
 
 \subsection{Batching Problems}
 
 \label{section-gru-batching-problems}
 
-There are some general batching problems with using RNN components.
+There are some general batching problems with using Recurrent Neural Network components.
 
-If a batch of data is to be cycled through a recurrent component, we would like all that batch to go through all the components at once.  We want this to happen for whole batches at a time.
+If a batch of data is to be cycled through a recurrent component, it should go through all the components at once.  
 
-The problem is that in Neural Machine Translation there are times when data has to be processed by the recurrent units one batch at a time. First the data is passed to the first RNN. Then the batch can be passed to the next RNN. Remember that a single GRU is used in our example for all words in the encoder. Another GRU is used in the decoder. These GRU's can not process the subsequent batches all at once. They have to wait for the previous batch to be done. This bottleneck has to do with how the RNN is used. 
+%We want this to happen for whole batches at a time.
+
+In Neural Machine Translation the data has to be processed one batch at a time. The data is passed to the first RNN. Only then it can be passed to the next RNN. A single GRU is used in this example for all words in the encoder, while another GRU is used in the decoder. These GRU's can not process the subsequent batches all at once. It must be done sequentially creating a bottleneck. 
+
+%They have to wait for the previous batch to be done. This bottleneck has to do with how the RNN is used. 
 
 These sorts of bottlenecks are found in Neural Machine Translation based on recurrent elements.
 
@@ -258,33 +281,35 @@ These sorts of bottlenecks are found in Neural Machine Translation based on recu
 
 \label{section-gru-gradient-problems}
 
-There are also some specific problems that affect gradients in RNN components.
+There are some specific problems that affect gradients in Recurrent Neural Network components.
 
-If some data starts out with a floating point value above 1.0, when it is multiplied with weights with a value above 1.0, it will tend to return a value above 1.0. We are using the same RNN component for every position in the encoder or decoder. The same weight multiplication will happen over and over. Quickly the value will tend to infinity. This is called an exploding gradient. 
+Data that begins with a floating point value above 1.0. When multiplied with weights with  values above 1.0, it will return values above 1.0. 
 
-This is similar to the situation where a number greater than 1.0 is multiplied by itself many times. It will tend to infinity.
+The same RNN component is used for every position in the encoder or decoder. The value will tend to infinity. This is called an exploding gradient. 
 
-If a number starts out as a floating point below 1.0, when it is multiplied with certain RNN weights it will tend to a value of zero very quickly. This is called a vanishing gradient.
+%This is similar to the situation where a number greater than 1.0 is multiplied by itself many times. It will tend to infinity.
 
-This is similar to a number less than 1.0 multiplied by itself many times. It will tend to zero.
+The reverse is true. When a number starts out as a floating point below 1.0, and is multiplied with RNN weights it will tend to a value of zero. This is called a vanishing gradient.
 
-Gradients in an RNN can be unstable. This is why RNN input and output length needs to be limited to a small number. In our examples we use a limit of 10.
+%This is similar to a number less than 1.0 multiplied by itself many times. It will tend to zero.
+
+Gradients in an RNN can be unstable. RNN input and output length needs to be limited to a small number. In our examples we use a limit of 10.
 
 \subsection{Sequence to Sequence Chatbot}
 
-Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} make an interesting proposition. They say that it's possible to make what they call a Neural Conversational Model by constructing a Sequence to Sequence model, but instead of using two corpus from different languages a single language is used for both source and target.
+Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} make an interesting proposition. It is possible to make a Neural Conversational Model by constructing a Sequence-to-Sequence model. Instead of using two corpus from different languages, a single language is used for both source and target.
 
-Chatbots have for a long time been constructed using \ac{AIML}. AIML, (Artificial Intelligence Markup Language) requires hand coding individual rules for every input and response. A Neural Conversational Model would not use those sorts of rules.
+Chatbots have for a long time been constructed using \ac{AIML}. AIML, (Artificial Intelligence Markup Language) requires hand coding individual rules for every input and response. A Neural Conversational Model would not use those rules.
 
-To create a model like this, more is required than just a single input and output language. There must be a relationship between the source and the target. We want there to be a question-and-answer-like relation. Finding a corpus like this can be difficult.
+To create such a model, more is required than a single input and output language. There must be a relationship between the source and the target permitting a question and answer paradigm. Finding a corpus like this can be difficult.
 
-It would be easy to duplicate the input source material in the target corpus. This would produce auto-encoding. The model would learn to repeat everything that was given to it in its output. Though the model learns a task, it is not the dynamic task we want. Conversations, on the other hand, supply the relationship we are looking for. 
+It would be easy to duplicate the input source material in the target corpus, producing auto-encoding. The model would learn to repeat everything that was given to it in its output. Though the model learns a task, it is not the preferred task. Conversations, on the other hand, supply that relationship. 
 
-What would be a good candidate for this kind of verbal play? Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Consecutive sentences can be divided into source and target. Each sentence is a source and the sentence that follows it would be the target for that pair. 
+Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Consecutive sentences can be divided into source and target. Each sentence is a source and the sentence that follows it would be the target for that pair. 
 
-Using this method there are times when the source and target are not from the same conversation, as happens in dialogues when a scene switches to a different locale. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
+%Using this method, there are times when the source and target are not from the same conversation, as happens in dialogues when a scene switches to a different locale. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
 
-Training for this model is relatively straight forward. There is a problem though. We can follow the loss and make sure it is decreasing, but the accuracy tells us nothing and in this case does not increase as we would like it to. The loss goes down but the accuracy does not go up.
+Training for this model is relatively straight forward however the accuracy does not increase. We can follow the loss and make sure it is decreasing, but the accuracy tells us nothing. %The loss goes down but the accuracy does not go up.
 
 \begin{figure}[H]
 	\begin{center}
@@ -292,11 +317,13 @@ Training for this model is relatively straight forward. There is a problem thoug
 	\includegraphics[scale=0.5]{Figure_1}
 		
 \end{center}
-	\caption[Loss and Accuracy]{Loss and Accuracy: Red is accuracy and blue is loss.}
+	\caption[Loss and Accuracy]{Loss and Accuracy: Loss is above and accuracy is below.}
 	
 
 \end{figure}
 
-This is because the source and target do not have the same meaning. The model does learn the task at hand but during training we have to ignore the accuracy. Success is usually measured by the accuracy of the holdout test set. Here we must measure the success with a subjective examination of the trained model.
+This is because the source and target do not have the same meaning. The model does learn the task at hand but during training we have to ignore the accuracy. Success is usually measured by the accuracy of the holdout test set. Here success is measured with the subjective examination of the trained model.
 
-We have to interactively give the model questions that we might ask someone that we are having a conversation with, and then see how it answers. Over and over we have to test the model. If we are satisfied with the answers then the training was a success.
+%The model is given questions interactively that might be asked in a conversation. The answers are subjectively judged. The model is tested repeatedly. 
+If the answers are considered satisfactory the training was a success. 
+
