@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  10 AUG 2020 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  10 AUG 2020 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -680,135 +680,135 @@ Package pdftex.def Info: diagram-nmt03.png  used on input line 162.
  [9 <./diagram-nmt03.png>]
 [10] [11]
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 240.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 231.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 240
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 231
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 247.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 238.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 247
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 238
 .
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 255.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 246.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 255
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 246
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 259.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 250.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 259
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 250
 .
 
 [12] [13]
 <Figure_1.png, id=706, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 317.
+Package pdftex.def Info: Figure_1.png  used on input line 306.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-) [14 <./Figure_1.png>] [15]
+) [14 <./Figure_1.png>]
 Chapter 2.
-[16
+[15
 
 
 ]
 \openout2 = `chapters/chapter02.aux'.
 
- (./chapters/chapter02.tex [17
+ (./chapters/chapter02.tex [16
 
 ]
-<diagram-mat04.png, id=727, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=723, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
-Package pdftex.def Info: diagram-mat04.png  used on input line 38.
+Package pdftex.def Info: diagram-mat04.png  used on input line 36.
 (pdftex.def)             Requested size: 242.8266pt x 330.99577pt.
- [18 <./diagram-mat04.png>]
-<diagram-mat01.png, id=734, 321.2pt x 361.35pt>
+ [17 <./diagram-mat04.png>]
+<diagram-mat01.png, id=731, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
-Package pdftex.def Info: diagram-mat01.png  used on input line 59.
+Package pdftex.def Info: diagram-mat01.png  used on input line 57.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [19 <./diagram-mat01.png>]
-<diagram-mat04-64.png, id=743, 321.2pt x 361.35pt>
+ [18 <./diagram-mat01.png>]
+<diagram-mat04-64.png, id=740, 321.2pt x 361.35pt>
 File: diagram-mat04-64.png Graphic file (type png)
 <use diagram-mat04-64.png>
-Package pdftex.def Info: diagram-mat04-64.png  used on input line 96.
+Package pdftex.def Info: diagram-mat04-64.png  used on input line 94.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [20 <./diagram-mat04-64.png>]
-<diagram-mat02.png, id=751, 321.2pt x 361.35pt>
+ [19 <./diagram-mat04-64.png>]
+<diagram-mat02.png, id=748, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
-Package pdftex.def Info: diagram-mat02.png  used on input line 114.
+Package pdftex.def Info: diagram-mat02.png  used on input line 112.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-flow1.png, id=752, 284.262pt x 260.172pt>
+<diagram-flow1.png, id=749, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
-Package pdftex.def Info: diagram-flow1.png  used on input line 130.
+Package pdftex.def Info: diagram-flow1.png  used on input line 128.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
- [21 <./diagram-mat02.png>] [22 <./diagram-flow1.png>]
-<diagram-flow-decoder02.png, id=765, 229.3368pt x 258.7266pt>
+ [20 <./diagram-mat02.png>] [21 <./diagram-flow1.png>]
+<diagram-flow-decoder02.png, id=762, 229.3368pt x 258.7266pt>
 File: diagram-flow-decoder02.png Graphic file (type png)
 <use diagram-flow-decoder02.png>
-Package pdftex.def Info: diagram-flow-decoder02.png  used on input line 152.
+Package pdftex.def Info: diagram-flow-decoder02.png  used on input line 150.
 (pdftex.def)             Requested size: 286.6703pt x 323.40741pt.
- [23 <./diagram-flow-decoder02.png>]
-<diagram-mask01.png, id=771, 154.176pt x 204.765pt>
+ [22 <./diagram-flow-decoder02.png>]
+<diagram-mask01.png, id=768, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
-Package pdftex.def Info: diagram-mask01.png  used on input line 184.
+Package pdftex.def Info: diagram-mask01.png  used on input line 182.
 (pdftex.def)             Requested size: 192.7195pt x 255.9556pt.
- [24]
-<Figure_3.png, id=776, 98.769pt x 63.3567pt>
+ [23]
+<Figure_3.png, id=773, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
-Package pdftex.def Info: Figure_3.png  used on input line 209.
+Package pdftex.def Info: Figure_3.png  used on input line 207.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
- [25 <./diagram-mask01.png>] [26 <./Figure_3.png>]
-<diagram-mat05.png, id=790, 46.0119pt x 89.133pt>
+ [24 <./diagram-mask01.png>] [25 <./Figure_3.png>]
+<diagram-mat05.png, id=787, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
-Package pdftex.def Info: diagram-mat05.png  used on input line 240.
+Package pdftex.def Info: diagram-mat05.png  used on input line 238.
 (pdftex.def)             Requested size: 138.03534pt x 267.3983pt.
- [27 <./diagram-mat05.png (PNG copy)>] [28]
-<diagram-inference-01.png, id=804, 145.2627pt x 103.587pt>
+ [26 <./diagram-mat05.png (PNG copy)>] [27]
+<diagram-inference-01.png, id=801, 145.2627pt x 103.587pt>
 File: diagram-inference-01.png Graphic file (type png)
 <use diagram-inference-01.png>
-Package pdftex.def Info: diagram-inference-01.png  used on input line 299.
+Package pdftex.def Info: diagram-inference-01.png  used on input line 297.
 (pdftex.def)             Requested size: 290.52466pt x 207.1735pt.
- [29]
-[30 <./diagram-inference-01.png>] [31]
-<Figure_4.png, id=822, 84.7968pt x 46.2528pt>
+ [28]
+[29 <./diagram-inference-01.png>] [30]
+<Figure_4.png, id=819, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
-Package pdftex.def Info: Figure_4.png  used on input line 359.
+Package pdftex.def Info: Figure_4.png  used on input line 357.
 (pdftex.def)             Requested size: 169.59314pt x 92.50537pt.
-) [32 <./Figure_4.png>]
+) [31 <./Figure_4.png>]
 Chapter 3.
-[33
+[32
 
 
 ]
 \openout2 = `chapters/chapter03.aux'.
 
- (./chapters/chapter03.tex [34
+ (./chapters/chapter03.tex [33
 
-] [35] [36]
-<diagram-pic01.png, id=849, 2581.645pt x 2477.255pt>
+] [34] [35]
+<diagram-pic01.png, id=846, 2581.645pt x 2477.255pt>
 File: diagram-pic01.png Graphic file (type png)
 <use diagram-pic01.png>
 Package pdftex.def Info: diagram-pic01.png  used on input line 119.
 (pdftex.def)             Requested size: 258.17963pt x 247.74pt.
- [37] [38 <./diagram-pic01.png>]
-[39] [40] [41]
+ [36] [37 <./diagram-pic01.png>]
+[38] [39] [40]
 Overfull \hbox (23.27394pt too wide) in paragraph at lines 238--239
 []\T1/cmr/m/n/10 There are three files mis-named. They can be found at `\T1/cmr
 /bx/n/10 /usr/lib/python3.7/site-packages/torch/\T1/cmr/m/n/10 '.
@@ -820,50 +820,50 @@ Overfull \hbox (28.67174pt too wide) in paragraph at lines 240--241
 portError: /usr/lib/x86_64-linux-gnu/libstdc++.so.6:
  []
 
-[42] [43]) [44]
+[41] [42]) [43]
 Chapter 4.
-[45
+[44
 
 
 ]
 \openout2 = `chapters/chapter04.aux'.
 
- (./chapters/chapter04.tex [46
+ (./chapters/chapter04.tex [45
 
-] [47] [48] [49] [50] [51] [52]
-<Figure_2.png, id=929, 86.0013pt x 57.816pt>
+] [46] [47] [48] [49] [50] [51]
+<Figure_2.png, id=926, 86.0013pt x 57.816pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
 Package pdftex.def Info: Figure_2.png  used on input line 235.
 (pdftex.def)             Requested size: 301.00374pt x 202.35544pt.
- [53] [54 <./Figure_2.png>] [55] [56] [57] [58] [59] [60]) [61]
+ [52] [53 <./Figure_2.png>] [54] [55] [56] [57] [58] [59]) [60]
 Chapter 5.
-[62
+[61
 
 
 ]
 \openout2 = `chapters/chapter05.aux'.
 
- (./chapters/chapter05.tex [63
+ (./chapters/chapter05.tex [62
 
-] [64] [65] [66] [67] [68]
-<diagram-jetson-nano-02.png, id=1008, 401.5pt x 358.33875pt>
+] [63] [64] [65] [66] [67]
+<diagram-jetson-nano-02.png, id=1005, 401.5pt x 358.33875pt>
 File: diagram-jetson-nano-02.png Graphic file (type png)
 <use diagram-jetson-nano-02.png>
 Package pdftex.def Info: diagram-jetson-nano-02.png  used on input line 217.
 (pdftex.def)             Requested size: 361.34665pt x 322.50189pt.
-) [69] [70 <./diagram-jetson-nano-02.png>]
+) [68] [69 <./diagram-jetson-nano-02.png>]
 Chapter 6.
-[71
+[70
 
 
 ]
 \openout2 = `chapters/chapter06.aux'.
 
- (./chapters/chapter06.tex [72
+ (./chapters/chapter06.tex [71
 
 ]
-<diagram-word02.png, id=1031, 607.26875pt x 341.275pt>
+<diagram-word02.png, id=1028, 607.26875pt x 341.275pt>
 File: diagram-word02.png Graphic file (type png)
 <use diagram-word02.png>
 Package pdftex.def Info: diagram-word02.png  used on input line 38.
@@ -873,8 +873,8 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 38--39
  [] 
  []
 
-[73]
-<diagram-word01.png, id=1036, 607.26875pt x 341.275pt>
+[72]
+<diagram-word01.png, id=1033, 607.26875pt x 341.275pt>
 File: diagram-word01.png Graphic file (type png)
 <use diagram-word01.png>
 Package pdftex.def Info: diagram-word01.png  used on input line 54.
@@ -884,8 +884,8 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 54--55
  [] 
  []
 
-[74 <./diagram-word02.png>] [75 <./diagram-word01.png>]
-<Figure_8.png, id=1048, 607.26875pt x 341.275pt>
+[73 <./diagram-word02.png>] [74 <./diagram-word01.png>]
+<Figure_8.png, id=1044, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
 Package pdftex.def Info: Figure_8.png  used on input line 75.
@@ -895,22 +895,22 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 75--76
  [] 
  []
 
-[76 <./Figure_8.png>]) [77]
+[75 <./Figure_8.png>]) [76]
 Chapter 7.
-[78
+[77
 
 
 ]
 \openout2 = `chapters/chapter07.aux'.
 
- (./chapters/chapter07.tex [79
+ (./chapters/chapter07.tex [78
 
-]) [80]
+]) [79]
 Appendix A.
-[81
+[80
 
 
-] (./proposal_doc.bbl [82
+] (./proposal_doc.bbl [81
 
 ]
 Underfull \hbox (badness 6691) in paragraph at lines 80--85
@@ -920,7 +920,7 @@ ikipedia, the free en-
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
- [83]
+ [82]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
@@ -929,14 +929,14 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 45AEC404C1714A08C20F698AF527E553;7250.
+(rerunfilecheck)             Checksum: A0B11C9429C4DF6875FB5C7AD21CA1CC;7250.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
  14820 strings out of 483183
- 269549 string characters out of 5966292
- 530555 words of memory out of 5000000
- 29258 multiletter control sequences out of 15000+600000
+ 269563 string characters out of 5966292
+ 530605 words of memory out of 5000000
+ 29259 multiletter control sequences out of 15000+600000
  559646 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,11n,44p,1003b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -967,10 +967,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (93 pages, 9112937 bytes).
+Output written on proposal_doc.pdf (92 pages, 9112811 bytes).
 PDF statistics:
- 1675 PDF objects out of 1728 (max. 8388607)
- 1070 compressed objects within 11 object streams
- 238 named destinations out of 1000 (max. 500000)
+ 1673 PDF objects out of 1728 (max. 8388607)
+ 1068 compressed objects within 11 object streams
+ 237 named destinations out of 1000 (max. 500000)
  903 words of extra memory for PDF output out of 10000 (max. 10000000)
 

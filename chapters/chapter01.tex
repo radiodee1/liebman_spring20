@@ -168,6 +168,10 @@ A complicating detail is that although many GRUs are called for in the encoder, 
 	
 \end{figure}
 
+
+%%% move? %%%
+In Figure \ref{diagram-s2s-overview} we generalize a sequence-to-sequence model. The left side of the diagram deals with the encoding of sentences. `Open the door' would be consecutive words in a sentence, and the rectangular blue nodes below those words are Recurrent Neural Network units. `Ouvre la porte' are outputs and in the right side of the diagram, the nodes represent the output RNN units. Between the input and the output, there is a corridor of information exactly the size of the RNN hidden vector. 
+
 \subsection{Decoder}
 The decoder is in charge of generating tokens that represent, in this case, the translation of the input to the output language. The output uses Gated Recurrent Unit segments also. The first hidden input for the first output cell is taken from the last hidden output of the last recursive unit of the input. It is important because it is the spot where a great amount of data is passed from the encoder to the decoder. The connection at this point is said to carry the `thought vector.' Most of the information responsible for translating one language to another is passed at this point.
 
@@ -175,20 +179,7 @@ The hidden values from the input section are passed to the first output Gated Re
 
 The second Gated Recurrent Unit generates the second word and also its own hidden state. The second word is recorded and the word and the hidden state are passed on to the next Gated Recurrent Unit. This is repeated until a special `end-of-sequence' token is generated or until the number of tokens equals the maximum number allowed.
 
-\iffalse
-\begin{figure}[H]
-	\begin{center}
-	
-	\includegraphics[scale=2]{diagram-nmt03}
-		
-\end{center}
-	\caption[Sequence to Sequence Architecture]{Seq2seq: The left side represents an input sequence and the right represents the corresponding output. `Sol' stands for `start-of-line.' `Eol' stands for `end-of-line.'}
-	
-	%\label{diagram-s2s-overview}
-	
-\end{figure}
-\fi
-In Figure \ref{diagram-s2s-overview} we generalize a sequence-to-sequence model. The left side of the diagram deals with the encoding of sentences. `Open the door' would be consecutive words in a sentence, and the rectangular blue nodes below those words are Recurrent Neural Network units. `Ouvre la porte' are outputs and in the right side of the diagram, the nodes represent the output RNN units. Between the input and the output, there is a corridor of information exactly the size of the RNN hidden vector. 
+
 
 All of the information that the decoder uses for its output is present in this corridor and is passed along the corridor from the encoder. For this reason we refer to it as the thought vector. Aside from Attention Mechanisms, there is no other place where information is passed from the encoder to the decoder.
 
@@ -307,8 +298,6 @@ It would be easy to duplicate the input source material in the target corpus, pr
 
 Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} use a movie transcript data set. Essentially they take movie dialogue and break it into sentences. Consecutive sentences can be divided into source and target. Each sentence is a source and the sentence that follows it would be the target for that pair. 
 
-%Using this method, there are times when the source and target are not from the same conversation, as happens in dialogues when a scene switches to a different locale. Comparing this, though, to the number of times that the two sentences are from the same dialogue, the movie transcript database serves very well.
-
 Training for this model is relatively straight forward however the accuracy does not increase. We can follow the loss and make sure it is decreasing, but the accuracy tells us nothing. %The loss goes down but the accuracy does not go up.
 
 \begin{figure}[H]
@@ -324,6 +313,5 @@ Training for this model is relatively straight forward however the accuracy does
 
 This is because the source and target do not have the same meaning. The model does learn the task at hand but during training we have to ignore the accuracy. Success is usually measured by the accuracy of the holdout test set. Here success is measured with the subjective examination of the trained model.
 
-%The model is given questions interactively that might be asked in a conversation. The answers are subjectively judged. The model is tested repeatedly. 
 If the answers are considered satisfactory the training was a success. 
 

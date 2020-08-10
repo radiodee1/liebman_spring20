@@ -3,7 +3,7 @@
 
 \label{transformer-intro}
 
-The Transformer is a mechanism that is based entirely on attention. Strictly speaking this is not the attention explored in the Sequence to Sequence model in Section \ref{section-gru-attention}, though there are some similarities. It is a model that uses no recurrent components.
+The Transformer is a mechanism that is based entirely on attention. Strictly speaking, this is not the attention explored in the sequence-to-sequence model in Section \ref{section-gru-attention}, though there are some similarities. It is a model that uses no recurrent components.
 
 Recurrent components have some negative qualities. They are hard to run with batch input data. In addition they do not work with very long data strings. 
 
@@ -12,24 +12,22 @@ Transformers use no Recurrent Neural Network components. Their operations can be
 
 Longer sequences can be considered as well, so Transformer input can contain longer English language sentences and even paragraphs. 
 
-We will discuss one layer of a multi-layer Transformer below. Transformers are usually constructed on eight or more of these layers in the decoder and the encoder.
+Transformers are usually constructed on eight or more of these layers in the decoder and the encoder. One layer is discussed below.
 
 \subsection{Byte Pair Encoding}
 
-\ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of Byte Pair Encoding.
+\ac{BPE} stands for `Byte Pair Encoding.' WordPiece is a particular implementation of BPE.
 
 WordPiece is used by some Transformer systems to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word or token to a vector of a given size.
 
-WordPiece, though, handles Out Of Vocabulary (\ac{OOV}) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again. Byte Pair Encoding is not so interested in pre-trained word embeddings like Word2Vec and Glove.
+WordPiece, though, handles Out Of Vocabulary (\ac{OOV}) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again. Byte Pair Encoding doesn't use pre-trained word embeddings as do Word2Vec and Glove.
 
-For the Generative Pre-training Transformer 2 a version of Byte Pair Encoding is used instead of a vocabulary system like Word2Vec or Glove.
-
-Some form of Byte Pair Encoding is included in almost every Transformer typed Neural Network model, so no decision needs to be made about what type of word embeddings to use.
+For the Generative Pre-Training 2 transformer, a version of BPE is used instead of a vocabulary system like Word2Vec or Glove. Some form of BPE is included in almost every Transformer type Neural Network model, so no decision needs to be made about what type of word embeddings to use.
 
 \subsection{Attention}
 Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
-It should be noted that input to the Transformer is strings of words from a desired input language. Output is similarly words in a given language. Input words are treated very much the way that they are in Sequence to Sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward a word is represented by a vector of floating point numbers. In a Transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. Later, in our discussion of Generative Pre-Training 2, we will see vector sizes of 768 and 1280.
+Input to the Transformer is strings of words from a desired input language. Output is words in a given language. Input words are treated very much the way that they are in sequence-to-sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward, a word is represented by a vector of floating point numbers. In a Transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. The discussion of Generative Pre-Training 2, will see vector sizes of 768 and 1280.
 
 \begin{figure}[H]
 	\begin{center}
@@ -46,9 +44,9 @@ It should be noted that input to the Transformer is strings of words from a desi
 
 Each layer of the Transformer's encoder has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
 
-The first thing that happens is the input word vectors are converted to three other values. These new vectors are like the input vector but they have a smaller dimensionality. Converting the word vectors in this way is accomplished by three simple matrix multiplication operations.
+Initially the input word vectors are converted to three other values. These vectors are similar to the input vector but they have a smaller dimensionality. Converting the word vectors in this way is accomplished by three simple matrix multiplication operations.
 
-In the diagram below a simple conversion of this type is illustrated. In the diagram we convert a vector with dimension of 1x3 to a dimension of 1x2. In a real world example we are converting a vector from 1x512 to 1x64. This is a division of 8.
+Figure \ref{diagram-mat-mult-01} shows a simple conversion of this type. In the diagram a conversion of a vector with dimension of 1x3 to a dimension of 1x2 is shown. In a real world example matrices are converted from a vector of 1x512 to 1x64, a division of 8.
 
 
 
@@ -60,12 +58,12 @@ In the diagram below a simple conversion of this type is illustrated. In the dia
 \end{center}
 	\caption[Lowering Dimensionality]{Lowering Dimensionality}
 	
-
+	\label{diagram-mat-mult-01}
 \end{figure}
 
 In the Transformer, this conversion operation is probably the reason for the model's name. The input is \textit{transformed} to a lower dimension. 
 
-One thing we want to do is to preserve the dimension of our starting vector. We start with a 512 sized floating point vector and after some processing we want to return to the same size. Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
+The dimension of the starting vector must be preserved. The starting vector is a floating point number sized 512. After some processing the the vector is converted to a smaller 64 sized floating point number. The output of the attention mechanism must be 512. %Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
 
 In this self-attention scheme three vectors are actually required. All three vectors are sized 64, and all three are converted by separate matrix multiplication operations. The weights to convert each of the three vectors are different. For this reason the new smaller vectors are all different.
 
