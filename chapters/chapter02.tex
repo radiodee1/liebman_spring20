@@ -63,7 +63,7 @@ Figure \ref{diagram-mat-mult-01} shows a simple conversion of this type. In the 
 
 In the Transformer, this conversion operation is probably the reason for the model's name. The input is \textit{transformed} to a lower dimension. 
 
-The dimension of the starting vector must be preserved. The starting vector is a floating point number sized 512. After some processing the the vector is converted to a smaller 64 sized floating point number. The output of the attention mechanism must be 512. %Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
+The dimension of the starting vector must be preserved. The starting vector is a floating point number sized 512. After some processing the the vector is converted to a smaller 64 sized floating point number. The final output of the attention mechanism must be 512. %Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
 
 In this self-attention scheme three vectors are actually required. All three vectors are sized 64, and all three are converted by separate matrix multiplication operations. The weights to convert each of the three vectors are different. For this reason the new smaller vectors are all different.
 
@@ -81,7 +81,7 @@ Attention(Q,K,V)=softmax(\dfrac{QK^T}{\sqrt{d_k}})V
 } }
 $$
 
-Here the value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output and $d_k$ is the dimension 512. Without this the softmax function has to deal with much larger numbers. Smaller numbers for the softmax are preferred. $K^T$ is notation for the $K$ vector transposed.
+The value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output and $d_k$ is the dimension 512. Without this the softmax function has to deal with much larger numbers. Smaller numbers for the softmax are preferred. $K^T$ is notation for the $K$ vector transposed.
 
 The function can actually perform this on large matrices with high dimensionality, in parallel. This parallel matrix operation increases the speed of training.
 
