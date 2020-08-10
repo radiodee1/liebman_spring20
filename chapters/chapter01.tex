@@ -274,9 +274,7 @@ These sorts of bottlenecks are found in Neural Machine Translation based on recu
 
 There are some specific problems that affect gradients in Recurrent Neural Network components.
 
-Data that begins with a floating point value above 1.0. When multiplied with weights with  values above 1.0, it will return values above 1.0. 
-
-The same RNN component is used for every position in the encoder or decoder. The value will tend to infinity. This is called an exploding gradient. 
+Data that begins with a floating point value above 1.0, when multiplied with weights with  values above 1.0, will return values above 1.0. The same RNN component is used for every position in the encoder or decoder. The value will tend to infinity. This is called an exploding gradient. 
 
 %This is similar to the situation where a number greater than 1.0 is multiplied by itself many times. It will tend to infinity.
 
