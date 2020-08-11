@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  11 AUG 2020 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  11 AUG 2020 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,8 +884,8 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 54--55
  [] 
  []
 
-[73 <./diagram-word02.png>] [74 <./diagram-word01.png>]
-<Figure_8.png, id=1045, 607.26875pt x 341.275pt>
+[73 <./diagram-word02.png>]
+<Figure_8.png, id=1040, 607.26875pt x 341.275pt>
 File: Figure_8.png Graphic file (type png)
 <use Figure_8.png>
 Package pdftex.def Info: Figure_8.png  used on input line 75.
@@ -895,7 +895,7 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 75--76
  [] 
  []
 
-[75 <./Figure_8.png>]) [76]
+[74 <./diagram-word01.png>] [75 <./Figure_8.png>]) [76]
 Chapter 7.
 [77
 
@@ -967,7 +967,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (92 pages, 9112616 bytes).
+Output written on proposal_doc.pdf (92 pages, 9112215 bytes).
 PDF statistics:
  1674 PDF objects out of 1728 (max. 8388607)
  1069 compressed objects within 11 object streams

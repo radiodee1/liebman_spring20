@@ -1,9 +1,9 @@
 
 
 \section{GRU vs. Transformer}
-It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications we see that the GRU model answers with more variety than the Transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. We can train a larger Transformer and obtain the benefit associated with this, namely better responses.
+It is important here to compare the GRU chatbot with the larger Transformer based chatbot. Using our subjective qualifications the GRU model answers with more variety than the Transformer model. The important observation is that the hyper-parameter set for the Transformer model can be expanded and enlarged as needed before training. The GRU model cannot be trained successfully with an arbitrarily large hyper-parameter set. A larger Transformer can be trained, the benefit associated with this, better responses.
 
-Another observation is that the GRU model responds very quickly, while a Transformer model may take more time relatively. This is not a problem for general applications, but for our purposes we cannot ignore the time spent by the Transformer model when it is installed on a small computer like a Raspberry Pi. 
+Another observation is that the GRU model responds very quickly, while a Transformer model may take more time relatively. This is not a problem for general applications, but one cannot ignore the time spent by the Transformer model when it is installed on a small computer like a Raspberry Pi. 
 
 The respective value of each of the models changes slightly when you consider what platform they will be implemented on. The GRU responds more quickly and so it retains some worth.
 
@@ -27,11 +27,11 @@ Ultimately the large model was released, either because the developers decided t
 
 It is important to try to make sense of what is going on in the models during training and inference. In this section there are several graphs and a discussion of the GRU model and the Transformer model and their word and sentence usage.
 
-In these discussions we use the fully trained GRU and Transformer models. They are setup in inference mode and their output is observed when they are exposed to the first 2000 training question sentences from the Movie Subtitles corpus.
+In these discussions the fully trained GRU and Transformer models are used. They are setup in inference mode and their output is observed when they are exposed to the first 2000 training question sentences from the Movie Subtitles corpus.
 
 \subsection{Word Usage}
 
-We make a general assumption that our Transformer model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. These sentences came from the movie dialog corpus. Some percentage of words are used repeatedly.
+In general the Transformer model uses only a small subset of words that it has available to it. In the example below 2000 input lines were tested from the training set and only a small percentage of the vocabulary words are used by the models in the output. These sentences came from the movie dialog corpus. Some percentage of words are used repeatedly.
 
 \begin{figure}[H]
 	\begin{center}
@@ -46,7 +46,7 @@ We make a general assumption that our Transformer model uses only a small subset
 
 The yellow line at the top of the graph is the total words in the GRU vocabulary. The total words in the GPT2 vocabulary is not represented on the graph. Total responses in words are shown with the three remaining lines. The GPT2 responses are higher, and the GRU and Transformer responses look like horizontal lines at the bottom of the graph.
 
-If we remove the Vocabulary Total and the GPT2 responses from the diagram the GRU output and the Transformer output take the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
+If the Vocabulary Total and the GPT2 responses are removed from the diagram the GRU output and the Transformer output take the shape of a curve with a limit somewhere below 300 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
 
 
 \begin{figure}[H]
@@ -60,15 +60,15 @@ If we remove the Vocabulary Total and the GPT2 responses from the diagram the GR
 	
 \end{figure}
 
-We might conclude from these comparisons that the GRU model operates more robustly than the Transformer model. This may be the case, or the Transformer model may be over trained or over fitted. It also might be that the hyper parameter set is poorly adjusted. We suspect the learning rate, for example, may be too high.
+It is possible the GRU model operates more robustly than the Transformer model, or the Transformer model may be over trained or over fitted. It also might be that the hyper parameter set is poorly adjusted. The learning rate, for example, may be too high.
 
 \subsection{Sentence Usage}
 
-If we were interested in transfer learning or we wanted to train a model as a classifier, we might be interested in how many fully formed responses the given model uses. Additionally we might be interested in when or how many of these responses were used repeatedly.
+How many fully formed responses does the given model use. Additionally when or how many of these responses are used repeatedly.
 
-The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above we use 2000 inputs from the training set of the movie dialog corpus.
+The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above 2000 inputs from the training set of the movie dialog corpus are used.
 
-We have a rough number for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer in total. The GRU is increasing still at 350 sentences at the end of our study. We assume that at some point the number of total GRU sentences that that model can produce reaches some kind of limit.
+There are rough numbers for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer in total. The GRU is increasing still at 350 sentences at the end of our study. At some point the number of total GRU sentences that that model can produce reaches some kind of limit.
 
 \begin{figure}[H]
 	\begin{center}
@@ -85,16 +85,16 @@ We have a rough number for those two models. They use about 125 sentences repeat
 The interesting thing is that the Transformer and the GRU models both have similar `Repeated Sentence' graphs. They are totally different models and have totally different sizes. They are not similar in many ways but in this metric. They share the same corpus, so they may be learning the same task.
 
 \section{Training and Lists}
-In this discussion the output of the GPT2 model is mostly ignored. There is a short discussion of the Transformer and the GRU.
+In this discussion the output of the GPT2 model is mostly ignored. %There is a short discussion of the Transformer and the GRU.
 
-For the chatbot task we want to know what the Transformer or GRU is doing during training and later during inference. Here we are concerned with the Transformer and GRU models trained on the movie dialog corpus and not the GPT2 model. The Transformer model in question has 6 layers, 8 heads, and a hidden size of 512 units. The GRU model has a hidden size of 500.
+What is the Transformer or GRU doing during training and later during inference. Here the Transformer and GRU models are trained on the movie dialog corpus. The Transformer model in question has 6 layers, 8 heads, and a hidden size of 512 units. The GRU model has a hidden size of 500.
 
 It seems the model learns a set of multi-purpose English answers in a form close to a list. Then it spends time as a classifier. Each input sentence is compared to the set of answers. A question is associated with a given answer from the set when possible. There would be fewer answers than there are questions. It is as if there were a list somewhere that contained many of the answers that the model would use. For a given model this list can only be so long.
 
 It is interesting to point out that probably at the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
 
-We feel that this list making is a function of the model trying to optimize the answers that it gives, and can give, given a certain size memory capacity. The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
+This list making is a function of the model trying to optimize the answers that it gives, and can give, given a certain size memory capacity. The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
 
-For the very large pre-trained model, like the GPT2, full sentences may not be saved. These models may be more dynamic. In addition we have not done tests with translation tasks. For translation the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
+For the very large pre-trained model, like the GPT2, full sentences may not be saved. These models may be more dynamic. For translation for instance, the same model may be able to remember longer lists, or in place of a list of complete responses keep a list of phrases or partial responses that could be combined to create translated output.
 
-We don't feel that the output of the Transformer, for example, shows intelligence. The actual utterances of the model are pretty plain. The internal building of lists, though, shows a process that is found in some intelligent activity.
+The output of the Transformer or GRU, shows little intelligence. The actual utterances of the model are pretty plain. The internal building of lists, though, shows a process that is found in some intelligent activity.
