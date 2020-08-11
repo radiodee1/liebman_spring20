@@ -4,15 +4,15 @@
 
 Several neural network models are used in the project. One is the GRU sequence to sequence model and another the Transformer model for a generative chatbot and finally the Generative Pre-Training 2 model.
 
-We will not try to rewrite the Transformer or GPT2 model ourselves.
+A rewrite for the Transformer or GPT2 model is not attempted.
 
-In this project we attempt to load as much of our chatbot code onto small board computers as possible. The Raspberry Pi and the Jetson Nano are considered to be small board computers.
+In this project our chatbot code is loaded onto small board computers as much as possible. The Raspberry Pi and the Jetson Nano are considered to be small board computers.
 
 Models are trained using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose speech to text resources are used supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
-The speech to text service used on the project and the memory limitations on the Raspberry Pi lead one to ask the question weather the neural network responsible for the chatbot function could not be served from some faster machine located somewhere on the internet. At this time we are not interested in serving these resources. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
+The speech to text service used on the project and the memory limitations on the Raspberry Pi lead one to ask the question whether the neural network responsible for the chatbot function could not be served from some faster machine located somewhere on the internet. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
 
 There are several models to test. To test them all would require several servers. In addition they use both Pytorch and Tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
 
@@ -22,7 +22,7 @@ Currently on the Raspberry Pi decoding a single sentence with the 117M GPT2 take
 
 The 117M GPT2 model fits on a Jetson Nano and can produce the response to a question in two or three seconds. The Nano is not much bigger than a Raspberry Pi.
 
-If we were to replace every Raspberry Pi computer in our project with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
+If every Raspberry Pi computer in our project was replaced with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
 
 \section{Hardware Installation Overview}
 
