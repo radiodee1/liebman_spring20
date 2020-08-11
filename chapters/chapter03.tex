@@ -8,7 +8,7 @@ We will not try to rewrite the Transformer or GPT2 model ourselves.
 
 In this project we attempt to load as much of our chatbot code onto small board computers as possible. The Raspberry Pi and the Jetson Nano are considered to be small board computers.
 
-We have trained models using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose we use speech to text resources supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
+Models are trained using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose speech to text resources are used supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
 Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
@@ -18,7 +18,7 @@ There are several models to test. To test them all would require several servers
 
 It is important to note that the large Generative Pre-Training 2 model specifically could be served from a remote computer and it would operate faster. 
 
-Currently on the Raspberry Pi decoding a single sentence with the 117M GPT2 takes approximately 13 seconds. Even so, we prefer to install our trained models on the Raspberry Pi directly.
+Currently on the Raspberry Pi decoding a single sentence with the 117M GPT2 takes approximately 13 seconds. Even so, it is preferred to install our trained models on the Raspberry Pi directly.
 
 The 117M GPT2 model fits on a Jetson Nano and can produce the response to a question in two or three seconds. The Nano is not much bigger than a Raspberry Pi.
 
@@ -50,7 +50,7 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 	\end{center}
 		\dag \ a large GPT2 model exists, but it is not small enough to fit on a Raspberry Pi or Jetson Nano.
 		
-		\dag \dag \ this is the model we refer to as the `larger' Transformer model, though it is smaller than the smallest GPT2 model.
+		\dag \dag \ This is referred to as the `larger' Transformer model, though it is smaller than the smallest GPT2 model.
 		
 	%\end{center}
 	
@@ -62,7 +62,7 @@ If we were to replace every Raspberry Pi computer in our project with Jetson Nan
 Here is provided a short description for each row in the table.
 
 \begin{itemize}
-	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. We hand-coded our own example of this model but it performed poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. It uses a hidden size of 500 units. This model was used in one Raspberry Pi installation.
+	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. Our own example of this model is hand-coded but it performs poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. It uses a hidden size of 500 units. This model was used in one Raspberry Pi installation.
 	
 	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board. It uses 2 layers, 4  heads, and a hidden size of 128. This model was not permanently installed.
 	
@@ -73,15 +73,15 @@ Here is provided a short description for each row in the table.
 
 \section{Setup}
 
-We use linux computers, sometimes with \ac{GPU} hardware for parallel processing. We also use the Python programming language. Code from this project can be run with the 3.6 or 3.7 version of Python.
+Linux computers are used, sometimes with \ac{GPU} hardware for parallel processing. The Python programming language is used. Code from this project can be run with the 3.6 or 3.7 version of Python.
 
-When the project was started we did some programming with Keras using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow. Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
+When the project was started some programming with Keras was done using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow. Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
 
 Some of the Generative Pre-Training 2 code uses Pytorch. Some of the Transformer and Generative Pre-Training 2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
 
-We use github as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot} . 
+Github is used as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot} . 
 
-As a coding experiment we rewrite the code for the sequence-to-sequence Gated Recurrent Unit model. We have little success with this experiment. We do not rewrite the Generative Pre-Training 2 code from the Tensorflow or Pytorch repository.
+As an experiment a rewrite for the sequence-to-sequence Gated Recurrent Unit model is coded. These experiments have little success. There is no rewrite for the Generative Pre-Training 2 code from the Tensorflow or Pytorch repository.
 
 \subsection{Graphical Processing Unit vs. Central Processing Unit}
 
@@ -210,24 +210,24 @@ Both of these resources, the text-to-speech and speech-to-text, work well on the
 
 Furthermore an environment variable must be set that points to the authentication file. The variable is called `GOOGLE\_APPLICATION\_CREDENTIALS'. This environment variable has to be set up before the respective model runs. When the model is launched on startup it may not be launched as a regular user. The model may be launched as, for example, the root user. Somehow the environment variable must be set along with the launching of the neural network model.
 
-The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, we attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
+The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, there is an attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
 
 
 \subsection{Corpus Considerations}
 
-We have collected several data sets for the training of a chatbot model. Firstly we have a corpus of movie subtitles. Then we have the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
+Several data sets have been collected for the training of a chatbot model. Firstly there is a corpus of movie subtitles. Then there is the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
 
-For the Persona corpus the text is organized into `JSON' objects. There are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not organized in this kind of pattern. When we take apart the Persona corpus we find that the sentences labeled with the `history' tag are most suited to our task. We record these values only and discard other labels.
+For the Persona corpus the text is organized into `JSON' objects. There are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not organized in this kind of pattern. When the Persona corpus is taken apart the sentences labeled with the `history' tag are most suited to our task. These values are recorded only and discard other labels.
 
-When discussing corpus considerations it is important to mention the WebText corpus, which is culled from Reddit. This corpus is very large. This is the material used for the training of the GPT2 model. We do not use this material our selves, but it is a big part of the success of the GPT2. This corpus is about 40Gig of data.
+When discussing corpus considerations it is important to mention the WebText corpus, which is culled from Reddit. This corpus is very large. This is the material used for the training of the GPT2 model. This material is not used in this paper directly, but it is a big part of the success of the GPT2. This corpus is about 40Gig of data.
 
 
 \section{ARMv7 Build/Compile}
 
 \subsection{Pytorch `torch' Library 1.1.0 For ARMv7}
-We compile the Pytorch library for Raspberry Pi. We use several virtualization techniques to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
+The Pytorch library is compiled for the Raspberry Pi. Several virtualization techniques are used to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
 
-On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. We follow their instructions closely. We are able to build the package for the ARMv7 platform.
+On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. By following these instructions closely, it is possible to build the package for the ARMv7 platform.
 
 The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used in the change-root environment to compile the Pytorch library for the 1.1.0 version.
 
@@ -237,14 +237,14 @@ There are two problems with the resulting built python package. Firstly there is
 
 After some research it is clear that the build process for ARMv7 creates some shared object files that are misnamed. A fix is to find the misnamed files and make copies of them with a suitable name. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
 
-There are three files misnamed. They can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}'. They are named with the same convention. They all have the ending `.cpython-37m-arm7hf-linux-gnu.so'. We want to rename them with the much shorter `.so'. The files are then named `\textbf{\_C.so}', `\textbf{\_dl.so}', and `\textbf{\_thnn.so}'.
+There are three files misnamed. They can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}'. They are named with the same convention. They all have the ending `.cpython-37m-arm7hf-linux-gnu.so'. They must be renamed with the much shorter `.so'. The files are then named `\textbf{\_C.so}', `\textbf{\_dl.so}', and `\textbf{\_thnn.so}'.
 
 This takes care of the `ImportError'. The second problem is that the version of GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: `\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version `GLIBCXX\_3.4.26' not found}'.
 
 This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
  
 \subsection{Pytorch `torch' Library 1.4.0 For ARMv7}
-We recompile the Pytorch library for the Raspberry Pi. We use debian virtualization techniques for the compilation. Because Ubuntu is a Debian derivative it is not necessary to run the process in a Virtualbox container. 
+The Pytorch library is recompiled for the Raspberry Pi. Debian virtualization techniques are used for the compilation. Because Ubuntu is a Debian derivative it is not necessary to run the process in a Virtualbox container. 
 
 In addition to this, the files created by the compilation are properly named. There is no need to go to the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}' to change anything. 
 
@@ -254,11 +254,11 @@ There were several small hurdles to completing the compilation. Firstly the `deb
 
 There are some dependencies that need to be installed on the `chroot' environment for Pytorch to compile. One of these is that is important is `libblas3.'
 
-Then Python 3.7 needed to be built on Stretch. The Stretch program repositories use Python 2.7 and 3.5 . The Raspbian operating system on the Raspberry Pi 4B is based on Debian Buster and uses Python 3.7. After compiling Python 3.7 the Git program needed to be compiled from scratch. Git on Stretch has a issue that is fixed upstream, but we want to use Stretch because of the GLIBC issue. Instead of using the upstream fix, we compile Git ourselves.
+Then Python 3.7 needed to be built on Stretch. The Stretch program repositories use Python 2.7 and 3.5 . The Raspbian operating system on the Raspberry Pi 4B is based on Debian Buster and uses Python 3.7. After compiling Python 3.7 the Git program needed to be compiled from scratch. Git on Stretch has a issue that is fixed upstream, but it is important to use Stretch because of the GLIBC issue. Instead of using the upstream fix, Git is compiled from source. 
 
 It is conceivable that the GLIBC issue would not be important if the `chroot' environment used Debian Buster, since that is the basis for the current Raspbian operating system. The Stretch operating system solution works though.
 
-Finally for Pytorch we disable CUDA and distributed computing as neither exists on the Raspberry Pi.
+Finally for Pytorch CUDA and distributed computing is disabled as neither exists on the Raspberry Pi.
 
 \subsection{Docker Container `tensorflow-model-server' For ARMv7}
 The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
