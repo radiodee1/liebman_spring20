@@ -1,102 +1,26 @@
 %\chapter{Further Installations}
 
-\iffalse
-
-\section{GRU Chatbot Coding Experiment}
-
-We code our own version of the GRU model. We refer to the Inkawhich et al \cite{2018Inkawhich} tutorial frequently. For this code we use the Movie Dialog Corpus. This is the same corpus that the tutorial uses, and is the same corpus we used in the larger Transformer model chatbot.
-
-The GRU coding experiment is considered unsuccessful. For Raspberry Pi installation we use the GRU tutorial. See Section \ref{chatbot-gru-tutorial-used} for a discussion of the Raspberry Pi installation. 
-
-The major differences in the code from Inkawhich et al %\cite{2018Inkawhich} 
-and our code for the GRU chatbot is that they use their own loss function while we use a Pytorch loss function. The loss function we use is called `CrossEntropyLoss'. The tutorial also uses the `Dot' attention while we use the `General' attention. 
-
-Comparing these attention mechanisms you might consider the `Dot' attention to be the simplest, while the `General' attention is more complex. Most complex of the three methods considered would be `Concat' attention. These approaches are touched on in section \ref{section-gru-attention}.
-
-Because of these differences the tutorial code trains to completion in under an hour on a cpu based machine. Our code trains for several hours. The kinds of replies that it gives are not  satisfactory.
-
-\subsection{Questions}
-We repeat the standard question list here.
-
-
-\begin{verbatim}
-> hello
-that one is here .
-> what is your name?
-what do you want ?
-> what time is it ?
-what ?
-> what do you do ?
-i don't know .
-> what is your favorite color ?
-my father is a good one .
-> do you like red ?
-yes .
-> do you like blue ?
-i like you .
-> what is your favorite candy ?
-i don't know .
-> do you like ice cream ?
-i think i do .
-> good bye
-good day .
-\end{verbatim}
-
-%\noindent \textbf{Checklist:} 
-\subsection{Checklist}
-
-
-\begin{itemize}
-	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
-	
-	\item []All the responses are in plain English. There is no gibberish. Some answers seem directed at a different question.
-	
-	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
-	
-	\item []There is a variety of answers. 
-	
-	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
-	
-	\item []Some of the answers seem to be the sort that would apply to a different question. There is an answer to the question `do you like blue?' that is `i like you.' This is an interesting answer but it does not apply well.
-	
-	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?}
-	
-	\item []The model does use `No' or `I don't know'. It also uses `yes' and `yeah.'
-	
-	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye'?}
-	
-	\item []The model has an answer for `Good bye'. It does not answer well for `Hello'.
-	
-\end{itemize}
-
-\subsection{General}
-
-Some of the behavior of this model comes from the fact that the corpus is used over and over during training. In the Inkawhich et al tutorial \cite{2018Inkawhich}, the network is trained completely in less than one full epoch of the training data. In our example we train a similar model for many epochs. If we had a larger corpus we might end up with a better model.
-
-
-\fi
-
 \section{Generative Pre-Training 2 - XLarge Model}
 
-The large 774M model of GPT2 was ultimately released to the public. In addition to this, two other models were created. One, named `x-large,' had 1.5 Billion parameters. Another, named `xx-large,' had 8.3 Billion parameters. We download the `x-large' model for testing purposes.
+The large 774M model of GPT2 was ultimately released to the public. In addition to this, two other models were created. One, named `x-large,' had 1.5 Billion parameters. Another, named `xx-large,' had 8.3 Billion parameters. The `x-large' model is downloaded for testing purposes.
 
 The tests from the previous sections worked on the `large' 774M model. Subjectively the answers provided by the 1.5B model were better. The answers were stronger grammatically.
 
-The 1.5B model is too large for a Raspberry Pi, using 12.3 Gig of ram while it is running with inference. We experiment with the model on the development laptop computer.
+The 1.5B model is too large for a Raspberry Pi, using 12.3 Gig of ram while it is running with inference. The 1.5B model is experimented with on the development laptop computer.
 
-As with the smaller model and the Raspberry Pi installation, we do not attempt transfer learning on the model. Instead we show the model specific information during inference which the model is free to reply with if it finds the information appropriate.
+As with the smaller model and the Raspberry Pi installation, no attempt is made to do transfer learning on the model. Instead the model is shown specific information during inference which it is free to reply with if it finds the information appropriate.
 
-We also want the model to be able to summarize articles from the internet and reply with that information when asked to do so. 
+Additionally the model should be able to summarize articles from the internet and reply with that information when asked to do so. 
 
 \label{chapter-gpt2-xl-intro}
 
 \subsection{Context Experiment}
 
-As before we gave the model details in sentence form that it could use as reply to questions when appropriate. The larger model works better if all the sentences shown to it have the `Q:' and `A:' strings prepended to them. 
+As before the model is given details in sentence form that it could use as reply to questions when appropriate. The larger model works better if all the sentences shown to it have the `Q:' and `A:' strings prepended to them. 
 
-In each example the information we wanted the model to choose from was presented in sentence pairs. Though these sentences look much like source/target pairs from our movie corpus, they are totally unrelated.
+In each example the information the model should choose from was presented in sentence pairs. Though these sentences look much like source/target pairs from our movie corpus, they are totally unrelated.
 
-An example might be the presentation to the model of the model's name. In the smaller GPT2 model we simply show the model the single sentence `My name is Jane'. In the larger GPT2 model's code we must show the model two sentences. One is `Q: What is your name?' and the other one, following it directly, is `A: My name is Jane'. We follow these conventions for the time of day, the model's location, and the model's occupation.
+An example might be the presentation to the model of it's name. In the smaller GPT2 model, the model is shown the single sentence `My name is Jane'. In the larger GPT2 model's code, the model is shown two sentences. One is `Q: What is your name?' and the other one, following it directly, is `A: My name is Jane'. These conventions are followed for the time of day, the model's location, and the model's occupation.
 
 These sorts of questions can be answered without any memory of what the last question was.
 
@@ -183,7 +107,7 @@ The chatbot would take a little time to respond. During this pause the model is 
 
 Then you might ask it a question like `How many members were in the band?'
 
-To this question the 774M chatbot answered this way for us, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' We note that this is not actually the correct answer. This may be because after clipping the information asked for does not exist in the context section. You can ask other questions. Some of them may be answered correctly and some not. 
+To this question the 774M chatbot answered this way for us, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' It is noted that this is not actually the correct answer. This may be because after clipping the information asked for does not exist in the context section. You can ask other questions. Some of them may be answered correctly and some not. 
 
 To this question the x-large model answers `There were 4 members in the band.'
 

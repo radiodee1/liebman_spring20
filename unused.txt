@@ -22,3 +22,77 @@ Tensorflow problems on raspberry pi 4b with python 3.7 -- tried to compile pytho
 https://github.com/PINTO0309/Tensorflow-bin
 
 
+------------------
+
+
+\section{GRU Chatbot Coding Experiment}
+
+A version of the GRU model is coded for this experiment. The Inkawhich et al \cite{2018Inkawhich} tutorial is referred to frequently. For this code the Movie Dialog Corpus is used. This is the same corpus that the tutorial uses, and is the same corpus used in the larger Transformer model chatbot.
+
+The GRU coding experiment is considered unsuccessful. For Raspberry Pi installation the GRU tutorial is used. See Section \ref{chatbot-gru-tutorial-used} for a discussion of the Raspberry Pi installation. 
+
+The major differences in the code from Inkawhich et al %\cite{2018Inkawhich} 
+and our code for the GRU chatbot is that they use their own loss function while we use a Pytorch loss function. The loss function we use is called `CrossEntropyLoss'. The tutorial also uses the `Dot' attention while we use the `General' attention. 
+
+Comparing these attention mechanisms you might consider the `Dot' attention to be the simplest, while the `General' attention is more complex. Most complex of the three methods considered would be `Concat' attention. These approaches are touched on in section \ref{section-gru-attention}.
+
+Because of these differences the tutorial code trains to completion in under an hour on a cpu based machine. Our code trains for several hours. The kinds of replies that it gives are not  satisfactory.
+
+\subsection{Questions}
+The standard question list is repeated here.
+
+
+\begin{verbatim}
+> hello
+that one is here .
+> what is your name?
+what do you want ?
+> what time is it ?
+what ?
+> what do you do ?
+i don't know .
+> what is your favorite color ?
+my father is a good one .
+> do you like red ?
+yes .
+> do you like blue ?
+i like you .
+> what is your favorite candy ?
+i don't know .
+> do you like ice cream ?
+i think i do .
+> good bye
+good day .
+\end{verbatim}
+
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
+
+
+\begin{itemize}
+\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
+
+\item []All the responses are in plain English. There is no gibberish. Some answers seem directed at a different question.
+
+\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
+
+\item []There is a variety of answers. 
+
+\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy'? The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
+
+\item []Some of the answers seem to be the sort that would apply to a different question. There is an answer to the question `do you like blue?' that is `i like you.' This is an interesting answer but it does not apply well.
+
+\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know'. Does the model use these answer at all times?}
+
+\item []The model does use `No' or `I don't know'. It also uses `yes' and `yeah.'
+
+\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye'?}
+
+\item []The model has an answer for `Good bye'. It does not answer well for `Hello'.
+
+\end{itemize}
+
+\subsection{General}
+
+Some of the behavior of this model comes from the fact that the corpus is used over and over during training. In the Inkawhich et al tutorial \cite{2018Inkawhich}, the network is trained completely in less than one full epoch of the training data. In our example we train a similar model for many epochs. If we had a larger corpus we might end up with a better model.
+
