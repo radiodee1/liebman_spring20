@@ -27,7 +27,7 @@ For the Generative Pre-Training 2 transformer, a version of BPE is used instead 
 \subsection{Attention}
 Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
-Input to the Transformer is strings of words from a desired input language. Output is words in a given language. Input words are treated very much the way that they are in sequence-to-sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward, a word is represented by a vector of floating point numbers. In a Transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. The discussion of Generative Pre-Training 2, will see vector sizes of 768 and 1280.
+Input to the Transformer is strings of words from a desired input language. Output is words in a given language. Input words are treated very much the way that they are in sequence-to-sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward, a word is represented by a vector of floating point numbers. In a Transformer this word vector can be large. In the original paper Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. The discussion of Generative Pre-Training 2 will see vector sizes of 768 and 1280.
 
 \begin{figure}[H]
 	\begin{center}
@@ -85,7 +85,7 @@ The value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output and $d_
 
 The function can actually perform this on large matrices with high dimensionality, in parallel. This parallel matrix operation increases the speed of training.
 
-In the triangle in the Figure \ref{attantion-7} we perform the multiplication and selection that was just described.
+In the triangle in the Figure \ref{attantion-7} the multiplication and selection that was just described is performed.
 
 \begin{figure}[H]
 	\begin{center}
@@ -132,7 +132,7 @@ This describes the encoder section. There are two other attention segments. Toge
 	
 \end{figure}
 
-In our flow diagram, Figure \ref{diagram-flow1}, we are not concerned with most sub segments of the entire transformer. We are interested in the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
+In the flow diagram, Figure \ref{diagram-flow1}, most sub segments of the entire transformer are not described. The focus is the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
 
 The output of the encoder is a group of vectors the same size as the input sequence. They become the `Key' and `Value' batches below.
 
@@ -141,7 +141,7 @@ The decoder is composed of two attention mechanisms and a feed-forward segment a
 
 While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. 
 
-In our flow diagram we illustrate one layer of the decoder.
+In the flow diagram one layer of the decoder is illustrated.
 
 \begin{figure}[H]
 	\begin{center}
@@ -155,7 +155,7 @@ In our flow diagram we illustrate one layer of the decoder.
 \end{figure}
 
 
-We illustrated in the Sequence-to-sequence discussion the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. It is composed of a sequence of vectors the size of the input sequence or sentence. It is larger, strictly speaking, than a single vector.
+Illustrated in the sequence-to-sequence discussion was the importance of the single `thought vector'. The Transformer can be seen as having a thought-vector also. There is a corridor of data from encoder to decoder. It is composed of a sequence of vectors the size of the input sequence or sentence. It is larger, strictly speaking, than a single vector.
 
 Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the `Key' and `Value' matrices from the thought vector. The matrices required are the size of the smaller, reduced, vector. The full sized vectors are transported from the encoder and are reduced dimensionally in the decoder layers to a sequence of two smaller matrices. 
 
@@ -200,7 +200,7 @@ At the output of the last layer of the decoder the output vectors are processed 
 
 \subsection{Visualization - Transformer}
 
-In order to visualize what is happening during inference we have colorful charts that we can look at. In this chart we are looking at how each word attends to all the other words in the input text.
+Colorful charts are used to visualize what is happening during inference. This chart illustrates how each word attends to all the other words in the input text.
 
 \begin{figure}[H]
 	\begin{center}
@@ -215,7 +215,7 @@ In order to visualize what is happening during inference we have colorful charts
 
 It is significant that words, like `what' and `your', do not have strong attention to other words in the text. In a chart like this one they would show no colors on the left and light colored lines connecting the right to the left.
 
-This diagram is from the Transformer with the larger hyper-parameter set that we describe in Chapter 3, trained on the movie dialog corpus.
+This diagram is from the Transformer with the larger hyper-parameter set that is described in Chapter \ref{chapter-approach-to-study}, trained on the movie dialog corpus.
 
 
 \section{The Generative Pre-Training 2 Model}
@@ -261,9 +261,9 @@ Training is done by the developers of the model and the authors of the paper. Th
 
 \subsection{Inference}
 
-In this example we will discuss creating `conditional samples'. This is in contrast to creating `unconditional samples'. Conditional samples rely on an input sequence for generating output. Unconditional samples have no input specified. A mask is not used during inference.
+In this example creating `conditional samples' are discussed. This is in contrast to creating `unconditional samples'. Conditional samples rely on an input sequence for generating output. Unconditional samples have no input specified. A mask is not used during inference.
 
-First we must select for our example a series of input tokens. This series of tokens are generated from an English sentence of our choosing. The sequence we use will be `Good day' for this example. We will assume that the words in the sequence translate into single tokens in the corpus. It could be that an input word is made up of several tokens, but our example is simple enough that that should not be the case.
+First a series of input tokens must be selected for our example. This series of tokens are generated from an English sentence of our choosing. The sequence used will be `Good day' for this example. Assume that the words in the sequence translate into single tokens in the corpus. It could be that an input word is made up of several tokens, but our example is simple enough that that should not be the case.
 
 Assume that the input context for our GPT2 model is 768 tokens. This is reasonable to assume for the 117M model. Our input tokens, the words `good' and `day' take up two spots in the input area. They are followed by an end-of-sequence token. Together they all take up three spots. At that time there are 765 spots left in the input area.
 
@@ -331,22 +331,22 @@ The `Generative Pre-Training 2' models also work in many circumstances in `zero-
 
 For our chatbot the model with 117 million parameters worked. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
 
-We use both the small and large model. As a test, when the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted at first.
+Tests are done on both the small and large model. When the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted at first.
 
 \subsection{Application Details}
 The model is described in Radford et al \cite{radford2019language} and the accompanying blog post. The model is trained on English without a stated problem. Large neural network models are usually trained with a stated problem in mind. Rather famously this model is used after training to generate English language text. The model takes input from the user, a premise or summary of what is to be generated. The model also takes as input a number called the `temperature.' Then the model generates output. As the `temperature' is set higher the output is more fanciful. There is also a tune-able parameter for the output length. 
 
 Given the ability of the model to invent content, it was determined by the authors that the 'large' model should not be released to the public at first. Months later the 'large' model was released. 
 
-For our chatbot we set the temperature to a low number. We set the length of the output to a sentence-length number of tokens. Then as input we use the output from the speech-to-text translator.
+For the chatbot the temperature is set to a low number. The length of the output is set to a sentence-length number of tokens. Then as input the output from the speech-to-text translator is used.
 
 The output is interesting but not useful right away. Traditional programming and string manipulation are employed to clean the output and render a short single sentence. This is our final output.
 
-Because the input is meant to be a number of sentences, and because we are using a Transformer-based architecture, we have room in the input string to add more information along side the user's question. In this respect the model acts to summarize the input. 
+Because the input is meant to be a number of sentences, and because the architecture is Transformer-based, there is room in the input string to add more information along side the user's question. In this respect the model acts to summarize the input. 
 
-With every input string we include a set of three or four sentences. They include the time, the bot's name, and the bot location and occupation. All of these are invented. What happens is the chatbot summarizes the input and only if the information is relevant then the same information is used by the model as output. Making this possible is the fact that a Transformer can accept much longer input strings than a Gated Recurrent Unit, and generate much longer output strings.
+With every input string is included a set of three or four sentences. They suggest the time, the bot's name, and the bot location and occupation. All of these are invented. What happens is the chatbot summarizes the input and only if the information is relevant then the same information is used by the model as output. Making this possible is the fact that a Transformer can accept much longer input strings than a Gated Recurrent Unit, and generate much longer output strings.
 
-Surprisingly the chatbot answers most of our questions in the first person. We feel that WebText, the Reddit corpus, has many examples of sentences in the first person.
+Surprisingly the chatbot answers most of our questions in the first person. It is felt that WebText, the Reddit corpus, has many examples of sentences in the first person.
 
 \subsection{Visualization - GPT2}
 
