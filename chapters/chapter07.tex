@@ -8,15 +8,15 @@ An example follows.
 	\textbf{He didn't put the trophy in the suitcase because it was too [big/small]}
 \end{center}
 
-We can choose which bracketed term to use, and we must choose only one bracketed term. If we choose `big' then we are referring to the trophy. If we choose `small' then we are referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
+One can choose which bracketed term to use, and one must choose only one bracketed term. If `big' is chosen then `it' is referring to the trophy. If `small' is chosen then `it' is referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
 
 The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. Remember that the Attention scheme compares tokens to other tokens in the same sentence. 
 
-In the chatbot example, we are less interested in the Winograd example because it doesn't come up often. However, in the case of the Generative Pre-Training 2 transformer, and it's exhaustive training, it is interesting to consider the Winograd style sentences.
+In the chatbot example, the Winograd schema is less interesting because it doesn't come up often. However, in the case of the Generative Pre-Training 2 transformer, and it's exhaustive training, it is interesting to consider the Winograd style sentences.
 
 There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
 
-Though it is not a classic Winograd schema, when we test the x-large GPT2 model in chapter \ref{chapter-xlarge}, we ask the model how many members there are in the band `The Beatles' without specifying which band we are talking about. The x-large model answers what could be an ambiguous question. Sometimes it answers this sort of question correctly.
+Though it is not a classic Winograd schema, when the x-large GPT2 model is tested in chapter \ref{chapter-xlarge}, the model is asked how many members there are in the band `The Beatles' without specifying which band the question is talking about. The x-large model answers what could be an ambiguous question. Sometimes it answers this sort of question correctly.
 
 \section{Generative Pre-Training 3}
 
@@ -30,8 +30,9 @@ Results from the model are impressive. The model is tested in three modes. The t
 
 In all three modes the model is not fine-tuned. There is no additional training done on the model to prepare it for a question-answering task.
 
-In our use of GPT2 the context that we create for our smaller model is closest to the `few-shot' paradigm above in GPT3. The major difference is by contrast to their model, in our experiments the text from previous queries is saved and added to the context for subsequent questioning.
+In our use of GPT2 the context created for our smaller model is closest to the `few-shot' paradigm above in GPT3. The major difference is by contrast to their model, in our experiments the text from previous queries is saved and added to the context for subsequent questioning.
 
-Just as the GPT2 models larger than 117M parameters are too large for our installations, all the GPT3 models are also too large. 
+%Just as the GPT2 models larger than 117M parameters are too large for our installations, all the GPT3 models are also too large. 
+GPT3 is used by the public through an on-line API and private OpenAI server.
 
-If we were to apply to OpenAI for permission to access the GPT3 API we could test the GPT3 model from one of our devices. This would be relatively simple. Each reply to the user would entail two calls to online resources. One call would go the the Google Text To Speech server and one call would go to the GPT3 API.
+Applying to OpenAI for permission to access the GPT3 API, the GPT3 model could be accessed from one of our devices. This would be relatively simple. Each reply to the user would entail two calls to online resources. One call would go the the Google Text To Speech server and one call would go to the GPT3 API.
