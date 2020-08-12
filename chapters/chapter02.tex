@@ -161,10 +161,33 @@ Two important smaller vector-sized inputs from the encoder are ultimately requir
 
 These full sized vectors come from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
 
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=0.75]{diagram-graph-encoder-flow-a}
+	\end{center}
+	\caption[Encoder Flow Detail]{Encoder Flow Details - encoder attention.}
+	
+	
+\end{figure}
+
 \subsection{Decoder Attention II - `Query'}
 There is another attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes its output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
 
 The `Key' and `Value' sequences from the Encoder are a group of vectors the size of the input sequence. The `Query' matrix is the size of a single vector. This is because the Decoder is interested in predicting one word at a time. This section produces a single vector as well.
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=0.75]{diagram-graph-decoder-flow-a}
+	\end{center}
+	\caption[Decoder Flow Detail]{Decoder Flow Details for encoder-decoder attention.}
+	
+	
+\end{figure}
+
 
 \subsection{Decoder Attention II - Masking}
 Input for the second decoder attention section is a group of vectors from the output generated so far. During inference this output grows by one token with every pass through the decoder. This is how text is generated.
