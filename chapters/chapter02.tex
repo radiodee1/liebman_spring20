@@ -189,18 +189,6 @@ There is another attention mechanism in each decoder layer. It works solely on d
 
 The `Key' and `Value' sequences from the Encoder are a group of vectors the size of the input sequence. The `Query' matrix is the size of a single vector. This is because the Decoder is interested in predicting one word at a time. This section produces a single vector as well.
 
-\iffalse
-\begin{figure}[H]
-	\begin{center}
-		
-		
-		\includegraphics[scale=0.75]{diagram-graph-decoder-flow-a}
-	\end{center}
-	\caption[Decoder Flow Detail]{Decoder Flow Details - decoder attention.}
-	
-	
-\end{figure}
-\fi
 
 \subsection{Decoder Attention II - Masking}
 Input for the second decoder attention section is a group of vectors from the output generated so far. During inference this output grows by one token with every pass through the decoder. This is how text is generated.
