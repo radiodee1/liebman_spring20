@@ -285,7 +285,7 @@ Training is done by the developers of the model and the authors of the paper. Th
 
 \subsection{Inference}
 
-In this example creating `conditional samples' are discussed. This is in contrast to creating `unconditional samples'. Conditional samples rely on an input sequence for generating output. Unconditional samples have no input specified. A mask is not used during inference.
+In this example creating `conditional samples' are discussed. This is in contrast to creating `unconditional samples'. Conditional samples rely on an input sequence for generating output. Unconditional samples have no input specified. %A mask is not used during inference.
 
 First a series of input tokens must be selected for our example. This series of tokens are generated from an English sentence of our choosing. The sequence used will be `Good day' for this example. Assume that the words in the sequence translate into single tokens in the corpus. It could be that an input word is made up of several tokens, but our example is simple enough that that should not be the case.
 
@@ -355,7 +355,7 @@ The `Generative Pre-Training 2' models also work in many circumstances in `zero-
 
 For our chatbot the model with 117 million parameters worked. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
 
-Tests are done on both the small and large model. When the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. Using the extra large 1.5B parameter model in a chatbot was not attempted at first.
+Tests are done on both the small and large model. When the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed on a permanent basis. %Using the extra large 1.5B parameter model in a chatbot was not attempted at first.
 
 \subsection{Application Details}
 The model is described in Radford et al \cite{radford2019language} and the accompanying blog post. The model is trained on English without a stated problem. Large neural network models are usually trained with a stated problem in mind. Rather famously this model is used after training to generate English language text. The model takes input from the user, a premise or summary of what is to be generated. The model also takes as input a number called the `temperature.' Then the model generates output. As the `temperature' is set higher the output is more fanciful. There is also a tune-able parameter for the output length. 
