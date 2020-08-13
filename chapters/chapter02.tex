@@ -136,6 +136,18 @@ In the flow diagram, Figure \ref{diagram-flow1}, most sub segments of the entire
 
 The output of the encoder is a group of vectors the same size as the input sequence. They become the `Key' and `Value' batches below.
 
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=0.75]{diagram-graph-encoder-flow-a}
+	\end{center}
+	\caption[Encoder Attention Detail]{Encoder Attention Detail}
+	
+	
+\end{figure}
+
 \subsection{Decoder Attention I - `Key' and `Value'}
 The decoder is composed of two attention mechanisms and a feed-forward segment at each layer. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms in each decoder layer. In one attention mechanism of the decoder the `Key' and `Value' matrices are imported from the encoder. 
 
@@ -160,34 +172,35 @@ Illustrated in the sequence-to-sequence discussion was the importance of the sin
 Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the `Key' and `Value' matrices from the thought vector. The matrices required are the size of the smaller, reduced, vector. The full sized vectors are transported from the encoder and are reduced dimensionally in the decoder layers to a sequence of two smaller matrices. 
 
 These full sized vectors come from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the `Key' and `Value' inputs of one of the attention mechanisms in all the decoder layers.
-
 \begin{figure}[H]
 	\begin{center}
 		
 		
-		\includegraphics[scale=0.75]{diagram-graph-encoder-flow-a}
+		\includegraphics[scale=0.75]{diagram-graph-decoder-flow-a}
 	\end{center}
-	\caption[Encoder Flow Detail]{Encoder Flow Details - encoder attention.}
+	\caption[Decoder Attention Detail]{Decoder Attention Detail}
 	
 	
 \end{figure}
+
 
 \subsection{Decoder Attention II - `Query'}
 There is another attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder - only it attends to every word of output as opposed to the entire input sequence. It passes its output to the attention mechanism described above. This data is lowered in dimensionality and becomes the `Query' matrix for that mechanism. 
 
 The `Key' and `Value' sequences from the Encoder are a group of vectors the size of the input sequence. The `Query' matrix is the size of a single vector. This is because the Decoder is interested in predicting one word at a time. This section produces a single vector as well.
 
+\iffalse
 \begin{figure}[H]
 	\begin{center}
 		
 		
-		\includegraphics[scale=0.75]{diagram-graph-decoder-flow-b}
+		\includegraphics[scale=0.75]{diagram-graph-decoder-flow-a}
 	\end{center}
-	\caption[Decoder Flow Detail]{Decoder Flow Details for encoder-decoder attention.}
+	\caption[Decoder Flow Detail]{Decoder Flow Details - decoder attention.}
 	
 	
 \end{figure}
-
+\fi
 
 \subsection{Decoder Attention II - Masking}
 Input for the second decoder attention section is a group of vectors from the output generated so far. During inference this output grows by one token with every pass through the decoder. This is how text is generated.
