@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  12 AUG 2020 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  13 AUG 2020 09:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -767,19 +767,19 @@ File: diagram-graph-encoder-flow-a.png Graphic file (type png)
 Package pdftex.def Info: diagram-graph-encoder-flow-a.png  used on input line 1
 68.
 (pdftex.def)             Requested size: 155.01875pt x 161.8844pt.
-<diagram-graph-decoder-flow-a.png, id=773, 260.4129pt x 385.44pt>
-File: diagram-graph-decoder-flow-a.png Graphic file (type png)
-<use diagram-graph-decoder-flow-a.png>
-Package pdftex.def Info: diagram-graph-decoder-flow-a.png  used on input line 1
+<diagram-graph-decoder-flow-b.png, id=773, 338.7054pt x 377.2494pt>
+File: diagram-graph-decoder-flow-b.png Graphic file (type png)
+<use diagram-graph-decoder-flow-b.png>
+Package pdftex.def Info: diagram-graph-decoder-flow-b.png  used on input line 1
 84.
-(pdftex.def)             Requested size: 195.30917pt x 289.07928pt.
+(pdftex.def)             Requested size: 254.02843pt x 282.93636pt.
  [23 <./diagram-graph-encoder-flow-a.png>]
 <diagram-mask01.png, id=779, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
 Package pdftex.def Info: diagram-mask01.png  used on input line 205.
 (pdftex.def)             Requested size: 192.7195pt x 255.9556pt.
- [24 <./diagram-graph-decoder-flow-a.png>]
+ [24 <./diagram-graph-decoder-flow-b.png>]
 <Figure_3.png, id=785, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
@@ -980,9 +980,9 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (93 pages, 9172573 bytes).
+Output written on proposal_doc.pdf (93 pages, 9178622 bytes).
 PDF statistics:
- 1685 PDF objects out of 1728 (max. 8388607)
+ 1686 PDF objects out of 1728 (max. 8388607)
  1076 compressed objects within 11 object streams
  240 named destinations out of 1000 (max. 500000)
  913 words of extra memory for PDF output out of 10000 (max. 10000000)
