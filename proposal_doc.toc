@@ -34,10 +34,10 @@
 \contentsline {subsection}{\numberline {2.2.2}General}{27}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Training}{28}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Inference}{29}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Corpus}{31}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.5}Corpus}{30}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}Releases}{31}{subsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.2.7}Application Details}{32}{subsection.2.2.7}%
-\contentsline {subsection}{\numberline {2.2.8}Visualization - GPT2}{33}{subsection.2.2.8}%
+\contentsline {subsection}{\numberline {2.2.7}Application Details}{31}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Visualization - GPT2}{32}{subsection.2.2.8}%
 \contentsline {chapter}{\numberline {3}Experimental Design and Setup}{34}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Approach to the Study}{35}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Hardware Installation Overview}{36}{section.3.2}%
