@@ -2,33 +2,33 @@
 
 \section{Approach to the Study}
 
-Several neural network models are used in the project. One is the GRU sequence to sequence model and another the Transformer model for a generative chatbot and finally the Generative Pre-Training 2 model.
+Several neural network models are used in the project. One is the GRU sequence-to-sequence model, another the Transformer model for a generative chatbot and finally, the Generative Pre-Training 2 model.
 
 A rewrite for the Transformer or GPT2 model is not attempted.
 
-In this project our chatbot code is loaded onto small board computers as much as possible. The Raspberry Pi and the Jetson Nano are considered to be small board computers.
+In this project the chatbot code is loaded onto small single board computers as much as possible. The Raspberry Pi and the Jetson Nano are considered to be small single board computers.
 
-Models are trained using the pytorch and tensorflow libraries. These models are responsible for taking in English sentences and producing English output. There is another part of the typical Raspberry Pi setup that includes another neural network component. Speech to text models, which our application requires, rely on large neural network resources. For this purpose speech to text resources are used supplied by Google on the google cloud. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
+Models are trained using the Pytorch and Tensorflow libraries. These models are responsible for taking in English sentences and producing English output. Another part of the typical Raspberry Pi setup includes another neural network component. Speech to text models, which this application requires, rely on large neural network resources. Speech to text resources, supplied by Google on the Google Cloud are used. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
 
-Unfortunately the speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
+%The speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
 
-The speech to text service used on the project and the memory limitations on the Raspberry Pi lead one to ask the question whether the neural network responsible for the chatbot function could not be served from some faster machine located somewhere on the internet. It would entail two calls from the Raspberry Pi for every sentence. This complicates things and also has a time overhead. 
+The speech to text service used here and the Raspberry Pi memory limitations are problematic. The chatbot function could be served from some faster machine located somewhere on the internet. It would entail two calls from the Raspberry Pi for every sentence.% complicates things. % and also has a time overhead. 
 
-There are several models to test. To test them all would require several servers. In addition they use both Pytorch and Tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent.
+%There are several models to test. 
+%To test them all would require several servers. In addition they 
+Another problem is the models use both Pytorch and Tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent. %Testing them all requires several servers.
 
-It is important to note that the large Generative Pre-Training 2 model specifically could be served from a remote computer and it would operate faster. 
+It is important to note that the large GPT2 model specifically could be served from a remote computer and would operate faster. Currently on the Raspberry Pi, decoding a single sentence with the 117M parameter GPT2 takes approximately 13 seconds. However, it is preferred to install these trained models on the Raspberry Pi directly.
 
-Currently on the Raspberry Pi decoding a single sentence with the 117M GPT2 takes approximately 13 seconds. Even so, it is preferred to install our trained models on the Raspberry Pi directly.
+The 117M parameter GPT2 model fits on a Jetson Nano and can produce the response to a question in two or three seconds. The Nano is not much bigger than a Raspberry Pi.
 
-The 117M GPT2 model fits on a Jetson Nano and can produce the response to a question in two or three seconds. The Nano is not much bigger than a Raspberry Pi.
-
-If every Raspberry Pi computer in our project was replaced with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
+If every Raspberry Pi computer in this project was replaced with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
 
 \section{Hardware Installation Overview}
 
 
 
-\begin{table}[h]
+\begin{table}[H]
 	
 	\begin{center}
 		
@@ -59,62 +59,57 @@ If every Raspberry Pi computer in our project was replaced with Jetson Nano comp
 \end{table}
 
 
-Here is provided a short description for each row in the table.
+A short description for each row is provided below.
 
 \begin{itemize}
-	\item \textbf{Sequence to Sequence - Tutorial} This model uses the sequence to sequence architecture and the Gated Recurrent Unit component. Our own example of this model is hand-coded but it performs poorly. This model is the slightly modified version of the Sequence to Sequence model based on the tutorial from Inkawhich et al \cite{2018Inkawhich}. It actually uses the Movie Dialog corpus. It uses a hidden size of 500 units. This model was used in one Raspberry Pi installation.
+	\item \textbf{Sequence-to-Sequence - Tutorial} This model uses the sequence-to-sequence architecture and the Gated Recurrent Unit component. Here the slightly modified version of the sequence-to-sequence model is based on the tutorial from Inkawhich et al \cite{2018Inkawhich}, using the Movie Dialog corpus with a hidden size of 500 units. This model was used in one Raspberry Pi installation.
 	
-	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. There was some coding involved to get the model to interface with the text-to-speech and speech-to-text libraries. There was also some coding to load our own corpus data during training. The model parameters describe a rather small model. This model also uses the Persona Dialog corpus. It is not on a Raspberry Pi board. It uses 2 layers, 4  heads, and a hidden size of 128. This model was not permanently installed.
+	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. Coding was used to interface with the text-to-speech and speech-to-text libraries. Additional coding loaded project corpus data during this training. The model parameters describe a rather small model and uses the Persona Dialog corpus. It uses 2 layers, 4  heads, and a hidden size of 128. This model was not permanently installed. It is not on a Raspberry Pi board.
 	
-	\item \textbf{Transformer - Movie} This model is based on the Transformer model above but uses the Movie Dialog corpus and a parameter set that is larger. In many ways this model is bigger than the model that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512. This model was used in one Raspberry Pi installation.
+	\item \textbf{Transformer - Movie} This model is based on the Transformer model above but uses the Movie Dialog corpus and a larger parameter set. In many ways this model is bigger than the one that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512. This was used in one Raspberry Pi installation.
 	
-	\item \textbf{GPT2 small} This model was downloaded from the internet. It fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable for our purposes. It uses 117 million parameters, with 12 layers and a hidden size of 768. This model was used in one Raspberry Pi installation and one Jetson Nano installation.
+	\item \textbf{GPT2 small} This model was downloaded from the internet, and fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable. It uses 117M parameters, with 12 layers and a hidden size of 768. This model was used in one Raspberry Pi installation and one Jetson Nano installation.
 \end{itemize}
 
 \section{Setup}
 
 Linux computers are used, sometimes with \ac{GPU} hardware for parallel processing. The Python programming language is used. Code from this project can be run with the 3.6 or 3.7 version of Python.
 
-When the project was started some programming with Keras was done using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow. Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
+When the project was started, some programming with Keras was done using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow, although Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
 
-Some of the Generative Pre-Training 2 code uses Pytorch. Some of the Transformer and Generative Pre-Training 2 code uses Tensorflow. There is a repository on Github that has the GPT2 trained model using Pytorch instead of Tensorflow.
+Some of the Generative Pre-Training 2 code uses Pytorch, and some uses Tensorflow. A repository on Github uses the GPT2 trained model with Pytorch instead of Tensorflow.
 
 Github is used as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot} . 
 
-As an experiment a rewrite for the sequence-to-sequence Gated Recurrent Unit model is coded. These experiments have little success. There is no rewrite for the Generative Pre-Training 2 code from the Tensorflow or Pytorch repository.
+As an experiment, a rewrite for the sequence-to-sequence GRU was coded with little success. There is no rewrite for the GPT2 code from the Tensorflow or Pytorch repository.
 
 \subsection{Graphical Processing Unit vs. Central Processing Unit}
 
-A CPU has a number of cores, a number usually between 2 and 16. A CPU is designed, though, to execute one command at a time. A CPU has limitations when it comes to executing matrix multiplication. Matrix multiplication using a CPU can take a long time.
+A CPU has a number of cores, usually between 2 and 16. A CPU is designed, to execute one command at a time, and has limitations when it comes to executing matrix multiplication. %Matrix multiplication using a CPU can take a long time.
 
-GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. The GPU speeds up parallel processing and has a benefit to neural networking training tasks that the CPU doesn't have.
+GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. They speed up parallel processing and are a benefit to neural networking training.% tasks that the CPU doesn't have.
 
-Unfortunately state of the art neural network models are larger than the capacity of a single GPU. Some models are trained on many GPUs simultaneously. It is not uncommon for a model to train on a computer with eight GPU cards for many days. Training these models is prohibitively expensive for the average programmer. It is possible to rent time on Amazon Web Services or Google cloud with well outfitted computers to do this training, but this can be costly.
+Unfortunately, state of the art neural network models are larger than the capacity of a single GPU. Some models are trained on many GPUs simultaneously. It is not uncommon for a model to train on a computer with eight GPU cards for many days. %Training these models is prohibitively expensive for the average programmer. 
+It is possible to rent time on Amazon Web Services or Google cloud to do this training. It  can be costly.
 
-This sort of situation is addressed partially by the Transfer Learning scheme. In Transfer Learning someone else trains the model and makes the trained version accessible to the public. Then the average programmer downloads the model and fine tunes it to their task.
+This is addressed partially by the Transfer Learning scheme, where an already trained version is accessible to the public. The programmer downloads the model and fine tunes it to suit the task.
 
-In this paper the GRU based Sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training. In the GRU example the model trained in less than an hour.
+Here, the GRU based sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training. In the GRU example the model trained in less than an hour.
 
 \subsection{Raspberry Pi}
 
-A Raspberry Pi is a small single board computer with an `arm' processor. There are several versions on the market, the most recent of which sports built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer can sport 4Gig of RAM.
+A Raspberry Pi is a small single board computer with an `arm' processor. There are several versions on the market, the most recent of which has built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer has 4Gig of RAM.
 
-It has always been the intention that at some time some chatbot of those examined will be seen as superior and will be installed and operated on a Raspberry Pi computer. If more than one model is available then possibly several models could be installed on Pi computers.
+It is the intention of this project to install several chatbot models on Raspberry Pi computers. All chosen models must be small enough in file size to fit on the Pi.
 
-For this to work several resources need to be made available. Pytorch needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text To Speech (TTS) need to work on the Pi.
+%Several resources must be made available. 
+Pytorch needs to be compiled for the Pi. Speech Recognition (\ac{SR}) and Text To Speech (TTS) must be available. Early tests using Google\textquoteright s SR and TTS services show that the Pi can support them. 
 
-For one of the Transformer models to work Tensorflow needs to work on the Pi.
 
-All the files that are trained in the chosen model need to be small enough in terms of their file size to fit on the Pi. Also it must be determined that the memory footprint of the running model is small enough to run on the Pi.
+%Google's SR service is expensive. 
+Details for setting up Google's SR and TTS functions are found in the README file of this project\textquoteright s Github repository.
 
-%In the github repository files and scripts for the Raspberry Pi are to be found in the \textquoteleft bot\textquoteright{} folder.
-
-Early tests using Google\textquoteright s SR and TTS services show that the Pi can support that type of functionality. 
-
-Google's SR service costs money to operate. Details for setting up Google's SR and TTS functions are beyond the scope of this document. Some info about setting this up can be
-found in the README file of this project\textquoteright s github repository.
-
-The pytorch model that is chosen as best will be trained on the desktop computer and then the saved weights and biases will be transferred to the Raspberry Pi platform. The Pi will not need to do any training, only inference. 
+The chosen model is trained on the desktop computer and then the saved weights and biases are transferred to the Raspberry Pi platform. The Pi is not required to do any training, only inference. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -129,15 +124,16 @@ The pytorch model that is chosen as best will be trained on the desktop computer
 
 \subsection{Jetson Nano}
 
-The Jetson Nano is another small board computer. Though it has no Wifi, it is outfitted with an NVIDIA Graphical Processing Unit. 
+The Jetson Nano is another small single board computer. Though it has no WiFi, it is outfitted with an NVIDIA Graphical Processing Unit. 
 
 While the development computer uses x86\_64 and the Raspberry Pi uses ARMv7, the Nano uses aarch64. It is based on the ARM architecture with 64 bit memory units. ARMv7 uses 32 bit memory units.
 
-It is not much bigger than a Raspberry Pi. It has four Gigabytes of memory and an Ubuntu based operating system. The operating system has Python 3.6 and special NVIDIA GPU libraries pre-installed. It does not have Pytorch out of the box, but Pytorch can be installed.
+It is not much bigger than a Raspberry Pi, has four Gigabytes of memory, and an Ubuntu based operating system. The operating system has Python 3.6 and special NVIDIA GPU libraries pre-installed. Pytorch can be installed.
 
-In normal mode the board has an HDMI connector which provides both video and audio output. For the project the board was outfitted in headless mode. In headless mode the board needs USB connectors to provide audio input and output.
+In normal mode the board has an HDMI connector providing both video and audio output. For the project, the board was outfitted in headless mode, % In headless mode the 
+requiring USB connectors to provide audio input and output.
 
-Because it does not have on-board Wifi out of the box, a Wifi board must be installed, or a Wifi USB dongle must be used.
+Because it does not have on-board WiFi, a WiFi board must be installed, or a WiFi USB dongle used.
 
 Google's Speech Recognition and Text-To-Speech software works on this platform. The Nano did not need to be employed for any training. It was used solely for inference.
 
@@ -145,21 +141,19 @@ Google's Speech Recognition and Text-To-Speech software works on this platform. 
 
 \subsection{Reply Time}
 
-The Google Text-To-Speech, or gTTS software, takes almost no time to execute.
+The Google Text-To-Speech software, takes negligible time to execute.
 
-The Speech Recognition, or SR software, takes a few seconds (one or two) to execute, as each audio sample must be sent to a Google server for translation into text. It is difficult to estimate exactly how much time the SR software will take as its performance relies on network speeds.
+The Speech Recognition software, takes one or two seconds to execute, as each audio sample must be sent to a Google server for translation into text. Because performance relies on network speeds execution time is uncertain.
 
-The actual model is responsible for taking text, provided by the SR software or on the command line, and returning to the calling function a sensible answer in text form. Each model actually does this same operation. Each model is in turn connected to the same SR and gTTS software.
+The actual model is responsible for taking text, and returning an appropriate answer in text form to the calling function. Each model, is in turn, connected to the same SR and gTTS software.
 
-On the development computer most of the models tested take little or no time to execute.
+On the development computer most of the models tested take little or no time to execute. On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models require more.  %s some time to reply to a basic request.
 
-On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models takes some time to reply to a basic request.
+On the Jetson Nano the largest installed model, the 117M GPT2 model, requires a few seconds to execute. The other models require less. %are smaller than the GPT2 model, and so all would take less than two seconds.
 
-On the Jetson Nano the largest installed model, the 117 M GPT2 model, takes a few seconds to execute. The other models are smaller than the GPT2 model, and so all would take less than two seconds.
+Reply time is determined by inference time and time for general Speech Recognition server calls.
 
-To ascertain the time that a model takes to reply one must start with the time the model takes on the respective hardware and then add to that the time for general Speech Recognition server calls.
-
-All models take a few seconds more than normal to reply for the very first time. This leads one to believe that something is wrong with the model. This is normal and is explained by the need for the program to load a large set of matrices for the first reply. This loading overhead is not needed in the subsequent program replies. The matrices only need to load once.
+All models' first reply is longer. This is normal and is explained by the program's need to load a large set of matrices for the first reply. This loading overhead is not needed in the subsequent program replies. % The matrices only need to load once.
 
 \label{setup-reply-time}
 
@@ -192,25 +186,25 @@ All models take a few seconds more than normal to reply for the very first time.
 
 \subsection{Tensorflow vs. Pytorch}
 
-Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. The learning curve for Tensorflow is steeper than for Pytorch. Pytorch offers the programmer python objects that can be combined to create a neural network. Tensorflow has different pieces that can be combined, but they cannot be examined as easily at run time.
+Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. While Pytorch offers Python objects that can be combined to create a neural network, Tensorflow has different pieces, but they cannot be examined as easily at run time.
 
-Tensorflow has a placeholder concept for inputting data and getting back results. You set up these placeholders at design time. They are the only way of accessing your data at run time.
+Tensorflow has a placeholder concept for inputting data and their results. Placeholders are set up at design time and are used to access your data at run time.
 
-Pytorch objects interact with Python more naturally. You can use print statements in your code to show data transferred from one object to another. This is possible at run time.
+Pytorch objects interact with Python more easily, allowing print statements in your code to show data transferred from one object to another. This is possible at run time.
 
-In favor of Tensorflow, it has a good tool for visualization which can print out all kinds of graphs of your data while your model trains. It is called Tensorboard.
+Tensorflow has a tool, called Tensorboard, good for visualization which can print out graphs of data while the model trains. 
 
 \subsection{Speech and Speech To Text}
 
-Google has python packages that translate text to speech and speech to text. In the case of text to speech the library is called `\ac{gTTS}'. In the case of speech to text the library is called `google-cloud-speech'. 
+Google has Python packages that translate text to speech and speech to text. In the case of text to speech the library is called `\ac{gTTS}.' In the case of speech to text the library is called `google-cloud-speech'. 
 
-The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an internet connection and an account with Google that enables Google cloud api use. Google charges the user a small amount for every word that they translate into text. 
+The gTTS package is simple to use and can be run locally without connection to the internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an internet connection and an account with Google that enables Google Cloud API use. %Google charges the user a small amount for every word that they translate into text. 
 
-Both of these resources, the text-to-speech and speech-to-text, work well on the Raspberry Pi, but configuring speech-to-text for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration the user is able to download a json authentication file. The file must be copied to the Raspberry Pi. 
+Both of these resources work well on the Raspberry Pi, but configuring speech-to-text for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration, the user is able to download a JSON authentication file that  must be copied to the Raspberry Pi. 
 
-Furthermore an environment variable must be set that points to the authentication file. The variable is called `GOOGLE\_APPLICATION\_CREDENTIALS'. This environment variable has to be set up before the respective model runs. When the model is launched on startup it may not be launched as a regular user. The model may be launched as, for example, the root user. Somehow the environment variable must be set along with the launching of the neural network model.
+Furthermore, an environment variable, called `GOOGLE\_APPLICATION\_CREDENTIALS' must be set that points to the authentication file. It must be set along with the launching of the neural network model.
 
-The operating system on the Raspberry Pi is based on Debian Linux. In this operating system there is a file which is run immediately after the basic system starts up. This script is called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. To ensure that the process goes without a hitch, there is an attempt to combine the setting of the environment variable with the launching of the program in a single line of code.
+The operating system on the Raspberry Pi is based on Debian Linux. In this system a file is run immediately after the basic system starts up, called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. The setting of the environment variable is combined with the launching of the program in a single line of code.
 
 
 \subsection{Corpus Considerations}
