@@ -209,55 +209,53 @@ The operating system on the Raspberry Pi is based on Debian Linux. In this syste
 
 \subsection{Corpus Considerations}
 
-Several data sets have been collected for the training of a chatbot model. Firstly there is a corpus of movie subtitles. Then there is the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is designed for training the chatbot task specifically. This is referred to as the Persona corpus.
+Several data sets have been collected for the training of a chatbot model. First is a corpus of movie subtitles, then the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is specifically designed to train the chatbot task specifically. This is referred to as the Persona corpus.
 
-For the Persona corpus the text is organized into `JSON' objects. There are several different repeated labels. Some of the text is meant to be used in question and answer pairs. There is also some very specific information there that is not organized in this kind of pattern. When the Persona corpus is taken apart the sentences labeled with the `history' tag are most suited to our task. These values are recorded only and discard other labels.
+For the Persona corpus, the text is organized into `JSON' objects with several different repeated labels. Some of the text is meant to be used in question and answer pairs. %There is also some very specific information there that is not organized in this kind of pattern. 
+Sentences labeled as `history' are most suited to this task. %These values are recorded only and discard other labels.
 
-When discussing corpus considerations it is important to mention the WebText corpus, which is culled from Reddit. This corpus is very large. This is the material used for the training of the GPT2 model. This material is not used in this paper directly, but it is a big part of the success of the GPT2. This corpus is about 40Gig of data.
+The WebText corpus, culled from Reddit is used for the training the GPT2 model. This material is not used in this paper directly, but it is a part of the success of the GPT2. This corpus is 40Gig of data.
 
 
 \section{ARMv7 Build/Compile}
 
 \subsection{Pytorch `torch' Library 1.1.0 For ARMv7}
-The Pytorch library is compiled for the Raspberry Pi. Several virtualization techniques are used to do this compilation. The result of those efforts is a Pytorch python 3.7 library for the Raspberry Pi.
+The Pytorch library is compiled for the Raspberry Pi. Several virtualization techniques are used to do this compilation. The result of those efforts is a Pytorch Python 3.7 library for the Raspberry Pi.
 
-On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. By following these instructions closely, it is possible to build the package for the ARMv7 platform.
+On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. We build the package for the ARMv7 platform.
 
-The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used in the change-root environment to compile the Pytorch library for the 1.1.0 version.
+The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used to compile the Pytorch library. % for the 1.1.0 version.
 
-The production laptop used for development ran Ubuntu linux. For this reason a Virtualbox emulation was set up with Fedora Core 30 on it. Inside that emulator the change-root environment was set up. The library was compiled there successfully. 
+The production laptop used for development ran Ubuntu linux. For this reason a Virtualbox emulation was set up with Fedora Core 30, and the change-root environment.% The library was compiled there successfully. 
 
-There are two problems with the resulting built python package. Firstly there is an error in python when importing the torch library. The error reads `ImportError: No module named \_C'. 
+There are two problems with the resulting built Python package. First there is a Python error when importing the torch library, that reads `ImportError: No module named \_C.' 
 
-After some research it is clear that the build process for ARMv7 creates some shared object files that are misnamed. A fix is to find the misnamed files and make copies of them with a suitable name. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
+The build process for ARMv7 creates misnamed shared object files. To correct this, the misnamed files must be found, copied, and suitably renamed. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
 
-There are three files misnamed. They can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}'. They are named with the same convention. They all have the ending `.cpython-37m-arm7hf-linux-gnu.so'. They must be renamed with the much shorter `.so'. The files are then named `\textbf{\_C.so}', `\textbf{\_dl.so}', and `\textbf{\_thnn.so}'.
+Three misnamed files can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}.' Named with the same convention, all have the ending `.cpython-37m-arm7hf-linux-gnu.so.' They must be renamed with the shorter `.so.' Now the files are named `\textbf{\_C.so},' `\textbf{\_dl.so},' and `\textbf{\_thnn.so}.'
 
-This takes care of the `ImportError'. The second problem is that the version of GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: `\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version `GLIBCXX\_3.4.26' not found}'.
-
-This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
+%This takes care of the `ImportError'. 
+The second problem occurs because, the GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: `\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version `GLIBCXX\_3.4.26' not found}.' This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
  
 \subsection{Pytorch `torch' Library 1.4.0 For ARMv7}
-The Pytorch library is recompiled for the Raspberry Pi. Debian virtualization techniques are used for the compilation. Because Ubuntu is a Debian derivative it is not necessary to run the process in a Virtualbox container. 
+The Pytorch library is recompiled for the Raspberry Pi using Debian virtualization techniques. Because Ubuntu is a Debian derivative it is not necessary to run the process in a Virtualbox container. 
 
-In addition to this, the files created by the compilation are properly named. There is no need to go to the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}' to change anything. 
+In addition, the files are properly named and there is no need to change anything in the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}'. 
 
-The time spent compiling the software is approximately 5 hours. Time spent with the Virtualbox container was easily twice that. The time spent on the Raspberry Pi executing a single Generative Pre-Training 2 question and answer remains about 13 seconds, so there was no gain in that respect.
+Compiling takes five hours. Time spent with the Virtualbox container was more than twice that. The time spent on the Raspberry Pi executing a single Generative Pre-Training 2 question and answer remains 13 seconds. There was no gain in that respect.
 
-There were several small hurdles to completing the compilation. Firstly the `debootstrap' command needed to be employed at the start. Debian Stretch was used as the host operating system. It was felt that if it was used that the GLIBC compatibility problem would not be faced. This turned out to be the case.
+There were several small hurdles to completing the compilation. The `debootstrap' command needed to be employed. Because Debian Stretch was used as the host operating system, the GLIBC compatibility problem was not faced. 
 
-There are some dependencies that need to be installed on the `chroot' environment for Pytorch to compile. One of these is that is important is `libblas3.'
+Second, some dependencies need to be installed on the `chroot' environment for Pytorch to compile. One is `libblas3.'
 
-Then Python 3.7 needed to be built on Stretch. The Stretch program repositories use Python 2.7 and 3.5 . The Raspbian operating system on the Raspberry Pi 4B is based on Debian Buster and uses Python 3.7. After compiling Python 3.7 the Git program needed to be compiled from scratch. Git on Stretch has a issue that is fixed upstream, but it is important to use Stretch because of the GLIBC issue. Instead of using the upstream fix, Git is compiled from source. 
+Thirdly, Python 3.7 needed to be built on Stretch because program repositories use Python 2.7 and 3.5. Furthermore, the Raspbian operating system on the Raspberry Pi 4B is based on Debian Buster and uses Python 3.7. After that the Git program needed to be compiled. Git on Stretch has an issue that is fixed upstream, but it is important to use Stretch because of the GLIBC issue. Instead of using the upstream fix, Git is compiled from source. 
 
-It is conceivable that the GLIBC issue would not be important if the `chroot' environment used Debian Buster, since that is the basis for the current Raspbian operating system. The Stretch operating system solution works though.
-
-Finally for Pytorch CUDA and distributed computing is disabled as neither exists on the Raspberry Pi.
+Finally, for Pytorch, CUDA and distributed computing is disabled as neither exists on the Raspberry Pi.
 
 \subsection{Docker Container `tensorflow-model-server' For ARMv7}
-The Google machine learning library for python uses a standalone program called `tensorflow-model-server' for serving all tensorflow models in a standard way. The program has not been officially compiled for ARMv7. There exists, though, a docker image that will run on ARMv7.
+The Google machine learning library for Python uses a standalone program called `tensorflow-model-server' for serving all Tensorflow models in a standard way. The program has not officially been compiled for ARMv7. A Docker image does exist that will run on ARMv7 (Maciejewski et al \cite{2020Maciejewski}).
 
-Docker can be run on the Raspberry Pi in the ARM environment. Below is a terminal excerpt that shows how to do this. These commands are executed on the Pi.
+Docker can be run on the Raspberry Pi in the ARM environment. This terminal excerpt shows this. These commands are executed on the Pi.
 
 \begin{verbatim}
 $ sudo apt-get update
@@ -267,11 +265,11 @@ $ sh get-docker.sh
 $ sudo usermod -aG docker $USER
 \end{verbatim}
 
-After the last command you need to log out and then log in again to take advantage of the newly installed docker.
+To take advantage of Docker one needs to log out and then log in again.
 
-The original idea was to find a docker image that used tensorflow-model-server. It might be possible to find and compile a Docker Container for the ARMv7. Then the executable would be removed from the container and used natively on the Raspberry Pi. 
+%The original idea was to find a docker image that used tensorflow-model-server. It might be possible to find and compile a Docker Container for the ARMv7. Then the executable would be removed from the container and used natively on the Raspberry Pi. 
 
-It was found that there existed a version of the Docker Container for the model server that ran on the Raspberry Pi. All that remained was to write a Docker Container script that interacted with the existing ARMv7 container. The author of the original container is Erik Maciejewski \cite{2020Maciejewski}.
+A version of the Docker Container for the model server ran on the Raspberry Pi. A Docker Container script must be written that interacts with the existing ARMv7 container. % The author of the original container is Erik Maciejewski \cite{2020Maciejewski}.
 
-`Tensorflow-model-server' is used on the localhost internet address, 127.0.0.1, with a port of 8500. tensorflow-model-server is meant for serving neural network resources on the internet, but with careful planning it works on the Raspberry Pi.
+`Tensorflow-model-server' is used on the localhost Internet address, 127.0.0.1, with a port of 8500. while tensorflow-model-server is meant for serving neural network resources on the Internet, with planning it operates on the Raspberry Pi.
 
