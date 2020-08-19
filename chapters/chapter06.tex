@@ -64,15 +64,15 @@ It is possible the GRU model operates more robustly than the Transformer model, 
 
 \subsection{Sentence Usage}
 
-How many fully formed responses does the given model use. Additionally when or how many of these responses are used repeatedly.
+How many fully formed responses does the given model use? Additionally when or how many of these responses are used repeatedly?
 
-The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. As above 2000 inputs from the training set of the movie dialog corpus are used.
+The GPT2 model is very large and very versatile, but the Transformer model and the GRU model are smaller. For these two smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. For the graph 6000 inputs from the training set of the movie dialog corpus are used in contrast to the previous section where 2000 inputs are used.
 
-There are rough numbers for those two models. They use about 125 sentences repeatedly. As for total sentences used the Transformer uses fewer in total. The GRU is increasing still at 350 sentences at the end of our study. At some point the number of total GRU sentences that that model can produce reaches some kind of limit.
+There are rough numbers for those two models. They use about 275 sentences repeatedly. As for total sentences used the GRU is increasing still at 600 sentences at the end of our study. It is assumed at some point the number of total GRU sentences that that model can produce reaches some kind of limit.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.75]{Figure_8}
+		\includegraphics[scale=0.75]{diagram-output-count}
 		
 		
 	\end{center}
