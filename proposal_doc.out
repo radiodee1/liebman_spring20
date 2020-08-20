@@ -61,39 +61,38 @@
 \BOOKMARK [2][-]{subsection.4.2.2}{Checklist}{section.4.2}% 61
 \BOOKMARK [1][-]{section.4.3}{Smart Speaker - Gated Recurrent Unit Model}{chapter.4}% 62
 \BOOKMARK [1][-]{section.4.4}{Chatbot - Transformer Model with Persona Corpus}{chapter.4}% 63
-\BOOKMARK [2][-]{subsection.4.4.1}{Training}{section.4.4}% 64
-\BOOKMARK [2][-]{subsection.4.4.2}{Questions}{section.4.4}% 65
-\BOOKMARK [2][-]{subsection.4.4.3}{Checklist}{section.4.4}% 66
-\BOOKMARK [1][-]{section.4.5}{Smart Speaker - Transformer Model with Persona Corpus}{chapter.4}% 67
-\BOOKMARK [1][-]{section.4.6}{Chatbot - Transformer Model with Movie Corpus}{chapter.4}% 68
-\BOOKMARK [2][-]{subsection.4.6.1}{Questions}{section.4.6}% 69
-\BOOKMARK [2][-]{subsection.4.6.2}{Checklist}{section.4.6}% 70
-\BOOKMARK [1][-]{section.4.7}{Smart Speaker - Transformer Model with Movie Corpus}{chapter.4}% 71
-\BOOKMARK [1][-]{section.4.8}{Chatbot - Generative Pre-Training 2 Model}{chapter.4}% 72
-\BOOKMARK [2][-]{subsection.4.8.1}{Context Experiment}{section.4.8}% 73
-\BOOKMARK [2][-]{subsection.4.8.2}{GPT2 Fact Sheet}{section.4.8}% 74
-\BOOKMARK [2][-]{subsection.4.8.3}{History Experiment}{section.4.8}% 75
-\BOOKMARK [2][-]{subsection.4.8.4}{Program Launching}{section.4.8}% 76
-\BOOKMARK [2][-]{subsection.4.8.5}{Overall}{section.4.8}% 77
-\BOOKMARK [2][-]{subsection.4.8.6}{Questions}{section.4.8}% 78
-\BOOKMARK [2][-]{subsection.4.8.7}{Checklist}{section.4.8}% 79
-\BOOKMARK [1][-]{section.4.9}{Smart Speaker - Generative Pre-Training 2 Model}{chapter.4}% 80
-\BOOKMARK [0][-]{chapter.5}{Further Installations}{}% 81
-\BOOKMARK [1][-]{section.5.1}{Generative Pre-Training 2 - XLarge Model}{chapter.5}% 82
-\BOOKMARK [2][-]{subsection.5.1.1}{Context Experiment}{section.5.1}% 83
-\BOOKMARK [2][-]{subsection.5.1.2}{History Experiment}{section.5.1}% 84
-\BOOKMARK [2][-]{subsection.5.1.3}{Artificial Intelligence Markup Language Experiment}{section.5.1}% 85
-\BOOKMARK [2][-]{subsection.5.1.4}{User Name Experiment}{section.5.1}% 86
-\BOOKMARK [2][-]{subsection.5.1.5}{Internet Search Experiment}{section.5.1}% 87
-\BOOKMARK [1][-]{section.5.2}{Generative Pre-Training 2 - Jetson Nano}{chapter.5}% 88
-\BOOKMARK [0][-]{chapter.6}{Observations and Conclusions}{}% 89
-\BOOKMARK [1][-]{section.6.1}{GRU vs. Transformer}{chapter.6}% 90
-\BOOKMARK [1][-]{section.6.2}{Turing Test}{chapter.6}% 91
-\BOOKMARK [1][-]{section.6.3}{Word and Sentence Comparisons}{chapter.6}% 92
-\BOOKMARK [2][-]{subsection.6.3.1}{Word Usage}{section.6.3}% 93
-\BOOKMARK [2][-]{subsection.6.3.2}{Sentence Usage}{section.6.3}% 94
-\BOOKMARK [1][-]{section.6.4}{Training and Lists}{chapter.6}% 95
-\BOOKMARK [0][-]{chapter.7}{Further Reading}{}% 96
-\BOOKMARK [1][-]{section.7.1}{Winograd Schema}{chapter.7}% 97
-\BOOKMARK [1][-]{section.7.2}{Generative Pre-Training 3}{chapter.7}% 98
-\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 99
+\BOOKMARK [2][-]{subsection.4.4.1}{Questions}{section.4.4}% 64
+\BOOKMARK [2][-]{subsection.4.4.2}{Checklist}{section.4.4}% 65
+\BOOKMARK [1][-]{section.4.5}{Smart Speaker - Transformer Model with Persona Corpus}{chapter.4}% 66
+\BOOKMARK [1][-]{section.4.6}{Chatbot - Transformer Model with Movie Corpus}{chapter.4}% 67
+\BOOKMARK [2][-]{subsection.4.6.1}{Questions}{section.4.6}% 68
+\BOOKMARK [2][-]{subsection.4.6.2}{Checklist}{section.4.6}% 69
+\BOOKMARK [1][-]{section.4.7}{Smart Speaker - Transformer Model with Movie Corpus}{chapter.4}% 70
+\BOOKMARK [1][-]{section.4.8}{Chatbot - Generative Pre-Training 2 Model}{chapter.4}% 71
+\BOOKMARK [2][-]{subsection.4.8.1}{Context Experiment}{section.4.8}% 72
+\BOOKMARK [2][-]{subsection.4.8.2}{GPT2 Fact Sheet}{section.4.8}% 73
+\BOOKMARK [2][-]{subsection.4.8.3}{History Experiment}{section.4.8}% 74
+\BOOKMARK [2][-]{subsection.4.8.4}{Program Launching}{section.4.8}% 75
+\BOOKMARK [2][-]{subsection.4.8.5}{Summary}{section.4.8}% 76
+\BOOKMARK [2][-]{subsection.4.8.6}{Questions}{section.4.8}% 77
+\BOOKMARK [2][-]{subsection.4.8.7}{Checklist}{section.4.8}% 78
+\BOOKMARK [1][-]{section.4.9}{Smart Speaker - Generative Pre-Training 2 Model}{chapter.4}% 79
+\BOOKMARK [0][-]{chapter.5}{Further Installations}{}% 80
+\BOOKMARK [1][-]{section.5.1}{Generative Pre-Training 2 - XLarge Model}{chapter.5}% 81
+\BOOKMARK [2][-]{subsection.5.1.1}{Context Experiment}{section.5.1}% 82
+\BOOKMARK [2][-]{subsection.5.1.2}{History Experiment}{section.5.1}% 83
+\BOOKMARK [2][-]{subsection.5.1.3}{Artificial Intelligence Markup Language Experiment}{section.5.1}% 84
+\BOOKMARK [2][-]{subsection.5.1.4}{User Name Experiment}{section.5.1}% 85
+\BOOKMARK [2][-]{subsection.5.1.5}{Internet Search Experiment}{section.5.1}% 86
+\BOOKMARK [1][-]{section.5.2}{Generative Pre-Training 2 - Jetson Nano}{chapter.5}% 87
+\BOOKMARK [0][-]{chapter.6}{Observations and Conclusions}{}% 88
+\BOOKMARK [1][-]{section.6.1}{GRU vs. Transformer}{chapter.6}% 89
+\BOOKMARK [1][-]{section.6.2}{Turing Test}{chapter.6}% 90
+\BOOKMARK [1][-]{section.6.3}{Word and Sentence Comparisons}{chapter.6}% 91
+\BOOKMARK [2][-]{subsection.6.3.1}{Word Usage}{section.6.3}% 92
+\BOOKMARK [2][-]{subsection.6.3.2}{Sentence Usage}{section.6.3}% 93
+\BOOKMARK [1][-]{section.6.4}{Training and Lists}{chapter.6}% 94
+\BOOKMARK [0][-]{chapter.7}{Further Reading}{}% 95
+\BOOKMARK [1][-]{section.7.1}{Winograd Schema}{chapter.7}% 96
+\BOOKMARK [1][-]{section.7.2}{Generative Pre-Training 3}{chapter.7}% 97
+\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 98
