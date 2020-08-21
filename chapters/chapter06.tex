@@ -9,9 +9,10 @@ The respective value of each of the models changes slightly when you consider wh
 
 Time complexity is discussed on Youtube by Kaiser et al \cite{youtubeKaiser2017}. For the GRU Recurrent Neural Network it is $ n \cdot d^2 $, where $ n $ is the number of words in a sentence and $ d $ is the dimension of the hidden vector. Complexity for the Transformer's Scaled Dot Product Attention is $ n^2 \cdot  d $. Again, $n$ is the number of words and $d$ is the hidden vector's dimension. 
 
-The maximum allowable input from the GRU is short, and in our example is 10. The maximum allowable input from the Transformer models varies, but in the 117M GPT2 model it is 768. In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. This is the same as the hidden vector size for the Transformer in question.
+The maximum allowable input from the GRU is short, and in our example is 10. The maximum allowable input from the Transformer models varies, but in the 117M GPT2 model it is 1024. 
+%In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. This is the same as the hidden vector size for the Transformer in question.
 
-The hidden vector size for the GRU model is 500 in this example.
+The hidden vector size for the GRU model is 500 in this example. The size for the 117M GPT2 model is 768, and the hidden size for the Transformer is 512.
 
 \section{Turing Test}
 
@@ -27,7 +28,7 @@ Ultimately the large model was released, either because the developers decided t
 
 It is important to try to make sense of what is going on in the models during training and inference. In this section there are several graphs and a discussion of the GRU model and the Transformer model and their word and sentence usage.
 
-In these discussions the fully trained GRU and Transformer models are used. They are setup in inference mode and their output is observed when they are exposed to the first 2000 training question sentences from the Movie Subtitles corpus.
+In these discussions the fully trained GRU and Transformer models are used. They are setup in inference mode and their output is observed when they are exposed to the first 10,000 training question sentences from the Movie Subtitles corpus.
 
 \subsection{Word Usage}
 
@@ -46,7 +47,7 @@ In general the Transformer model uses only a small subset of words that it has a
 
 The green line at the top of the graph is the total words in the GRU vocabulary. The total words in the GPT2 vocabulary is not represented on the graph. Total responses in words are shown with the three remaining lines. The GPT2 responses are higher, and the GRU and Transformer responses look like horizontal lines at the bottom of the graph.
 
-If the Vocabulary Total and the GPT2 responses are removed from the diagram the GRU output and the Transformer output take the shape of a curve with a limit somewhere below 475 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
+If the Vocabulary Total and the GPT2 responses are removed from the diagram the GRU output and the Transformer output take the shape of a curve with a limit somewhere around 475 words. The Transformer model has a vocabulary size of 8170 tokens. The GRU model is close to that at 7826 tokens. Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
 
 
 \begin{figure}[H]
