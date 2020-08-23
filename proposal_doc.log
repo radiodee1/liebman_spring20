@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  22 AUG 2020 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  23 AUG 2020 09:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -865,37 +865,37 @@ Chapter 6.
  (./chapters/chapter06.tex [67
 
 ]
-<diagram-output-total-responses-01.png, id=1009, 607.26875pt x 341.275pt>
+<diagram-output-total-responses-01.png, id=1008, 607.26875pt x 341.275pt>
 File: diagram-output-total-responses-01.png Graphic file (type png)
 <use diagram-output-total-responses-01.png>
 Package pdftex.def Info: diagram-output-total-responses-01.png  used on input l
-ine 39.
+ine 40.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 39--40
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 40--41
  [] 
  []
 
 [68]
-<diagram-output-total-responses-02.png, id=1014, 607.26875pt x 341.275pt>
+<diagram-output-total-responses-02.png, id=1013, 607.26875pt x 341.275pt>
 File: diagram-output-total-responses-02.png Graphic file (type png)
 <use diagram-output-total-responses-02.png>
 Package pdftex.def Info: diagram-output-total-responses-02.png  used on input l
-ine 55.
+ine 56.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 55--56
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 56--57
  [] 
  []
 
 [69 <./diagram-output-total-responses-01.png>]
-<diagram-output-repeated.png, id=1021, 607.26875pt x 341.275pt>
+<diagram-output-repeated.png, id=1020, 607.26875pt x 341.275pt>
 File: diagram-output-repeated.png Graphic file (type png)
 <use diagram-output-repeated.png>
-Package pdftex.def Info: diagram-output-repeated.png  used on input line 76.
+Package pdftex.def Info: diagram-output-repeated.png  used on input line 77.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 76--77
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 77--78
  [] 
  []
 
@@ -918,7 +918,7 @@ Appendix A.
 ] (./proposal_doc.bbl [77
 
 ]
-Underfull \hbox (badness 6691) in paragraph at lines 80--85
+Underfull \hbox (badness 6691) in paragraph at lines 75--80
 []\T1/cmr/m/n/10 Wikipedia con-trib-u-tors, ``Wino-grad schema chal-lenge --- W
 ikipedia, the free en-
  []
@@ -938,10 +938,10 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 14831 strings out of 483183
- 270407 string characters out of 5966292
- 530658 words of memory out of 5000000
- 29273 multiletter control sequences out of 15000+600000
+ 14829 strings out of 483183
+ 270366 string characters out of 5966292
+ 530618 words of memory out of 5000000
+ 29272 multiletter control sequences out of 15000+600000
  559646 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,11n,44p,1003b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -972,10 +972,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (88 pages, 9162376 bytes).
+Output written on proposal_doc.pdf (88 pages, 9162099 bytes).
 PDF statistics:
- 1652 PDF objects out of 1728 (max. 8388607)
- 1048 compressed objects within 11 object streams
- 234 named destinations out of 1000 (max. 500000)
+ 1650 PDF objects out of 1728 (max. 8388607)
+ 1047 compressed objects within 11 object streams
+ 233 named destinations out of 1000 (max. 500000)
  905 words of extra memory for PDF output out of 10000 (max. 10000000)
 
