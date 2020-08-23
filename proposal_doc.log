@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  23 AUG 2020 09:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.26)  23 AUG 2020 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -869,53 +869,52 @@ Chapter 6.
 File: diagram-output-total-responses-01.png Graphic file (type png)
 <use diagram-output-total-responses-01.png>
 Package pdftex.def Info: diagram-output-total-responses-01.png  used on input l
-ine 40.
+ine 49.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 40--41
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 49--50
  [] 
  []
 
-[68]
-<diagram-output-total-responses-02.png, id=1013, 607.26875pt x 341.275pt>
+[68 <./diagram-output-total-responses-01.png>]
+<diagram-output-total-responses-02.png, id=1016, 607.26875pt x 341.275pt>
 File: diagram-output-total-responses-02.png Graphic file (type png)
 <use diagram-output-total-responses-02.png>
 Package pdftex.def Info: diagram-output-total-responses-02.png  used on input l
-ine 56.
+ine 66.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 56--57
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 66--67
  [] 
  []
 
-[69 <./diagram-output-total-responses-01.png>]
-<diagram-output-repeated.png, id=1020, 607.26875pt x 341.275pt>
+<diagram-output-repeated.png, id=1018, 607.26875pt x 341.275pt>
 File: diagram-output-repeated.png Graphic file (type png)
 <use diagram-output-repeated.png>
-Package pdftex.def Info: diagram-output-repeated.png  used on input line 77.
+Package pdftex.def Info: diagram-output-repeated.png  used on input line 89.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 77--78
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 89--90
  [] 
  []
 
-[70 <./diagram-output-total-responses-02.png>] [71 <./diagram-output-repeated.p
-ng>]) [72]
+[69 <./diagram-output-total-responses-02.png>] [70 <./diagram-output-repeated.p
+ng>]) [71]
 Chapter 7.
-[73
+[72
 
 
 ]
 \openout2 = `chapters/chapter07.aux'.
 
- (./chapters/chapter07.tex [74
+ (./chapters/chapter07.tex [73
 
-]) [75]
+]) [74]
 Appendix A.
-[76
+[75
 
 
-] (./proposal_doc.bbl [77
+] (./proposal_doc.bbl [76
 
 ]
 Underfull \hbox (badness 6691) in paragraph at lines 75--80
@@ -925,7 +924,7 @@ ikipedia, the free en-
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
- [78]
+ [77]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
@@ -938,10 +937,10 @@ Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 14829 strings out of 483183
- 270366 string characters out of 5966292
- 530618 words of memory out of 5000000
- 29272 multiletter control sequences out of 15000+600000
+ 14831 strings out of 483183
+ 270444 string characters out of 5966292
+ 530750 words of memory out of 5000000
+ 29275 multiletter control sequences out of 15000+600000
  559646 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,11n,44p,1003b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -972,10 +971,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (88 pages, 9162099 bytes).
+Output written on proposal_doc.pdf (87 pages, 9160160 bytes).
 PDF statistics:
- 1650 PDF objects out of 1728 (max. 8388607)
+ 1649 PDF objects out of 1728 (max. 8388607)
  1047 compressed objects within 11 object streams
- 233 named destinations out of 1000 (max. 500000)
+ 232 named destinations out of 1000 (max. 500000)
  905 words of extra memory for PDF output out of 10000 (max. 10000000)
 
