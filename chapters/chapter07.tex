@@ -1,18 +1,19 @@
 \section{Winograd Schema}
 
-Winograd schema are named after Terry Winograd. The idea is that there is a sentence presented that has two meanings. A computer finds these sentences challenging to understand, and that makes them interesting for the development of Artificial Intelligence.
+Winograd schema are named after Terry Winograd. His premise is that presented sentences have two meanings. A computer finds these sentences challenging to understand, and that makes them useful for the measuring of Artificial Intelligence.
 
 An example follows.
 
 \begin{center}
-	\textbf{He didn't put the trophy in the suitcase because it was too [big/small]}
+	\textbf{He didn't put the trophy in the suitcase because it was too [big/small].}
 \end{center}
 
-One can choose which bracketed term to use, and one must choose only one bracketed term. If `big' is chosen then `it' is referring to the trophy. If `small' is chosen then `it' is referring to the suitcase. Human beings can easily see the pronoun `it' refers to either the suitcase or the trophy. Computers have trouble with these determinations.
+The programmer can choose which bracketed term to use, and must choose only one term. If `big' is chosen, then `it' is referring to the trophy. If `small' is chosen, then `it' is referring to the suitcase. Humans can easily see the pronoun `it' refers to either the suitcase or the trophy, but computers have trouble with these determinations.
 
-The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema. Remember that the Attention scheme compares tokens to other tokens in the same sentence. 
+The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema, because the Attention scheme compares tokens to other tokens in the same sentence. 
 
-In the chatbot example, the Winograd schema is less interesting because it doesn't come up often. However, in the case of the Generative Pre-Training 2 transformer, and it's exhaustive training, it is interesting to consider the Winograd style sentences.
+In chatbot examples, the Winograd schema is less relevant. % interesting because it doesn't come up often. However, i
+However in the case of the Generative Pre-Training 2 transformer, and it's exhaustive training, it is appropriate to consider the Winograd-style sentences.
 
 There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
 
@@ -20,19 +21,17 @@ Though it is not a classic Winograd schema, when the x-large GPT2 model is teste
 
 \section{Generative Pre-Training 3}
 
-In 2020 OpenAI, the company responsible for training the GPT2 model, released a new paper and set of models called GPT3.
+In 2020, OpenAI, the company responsible for training the GPT2 model, has released a new paper and set of models called GPT3. It is accessed by the public through an on-line API and private OpenAI server.
 
-Brown et al \cite{brown2020language} present a new model that has 175 Billion parameters and 96 layers. This is the largest of the new GPT3 models. As in the past, the model has not been released entirely to the public. Users interested in the model must apply to the company and be vetted. If your application is accepted you can use the model in a client/server API that the company provides.
+Brown et al \cite{brown2020language} present a new model that has 175 Billion parameters and 96 layers. This is the largest of the new GPT3 models. As in the past, the model has not been released entirely to the public. Users interested in the model must apply to the company and be vetted. Accepted applications allow the user access to a client/server API that the company provides.
 
-Results from the model are impressive. The model is tested in three modes. The three modes are `zero-shot', `one-shot', and `few-shot'. 
+The model is tested in three modes, `zero-shot,' `one-shot,' and `few-shot.' 
 
-`Zero-shot' is when the model is not given any special information. It is simply given a question of some sort without any context. `One-shot' is when the text presented to the model contains a single example of a question and answer pair, along with the actual question. `Few-shot' is when the model is given several examples of the kind of question and answer pair that the actual question is similar to, along with the question.
+A question is formulated and submitted in every mode. In `zero-shot' the model is given no  context. In `one-shot' the context contains a single question and answer pair. In `few-shot' the model is given several question and answer pairs similar to the question.
 
-In all three modes the model is not fine-tuned. There is no additional training done on the model to prepare it for a question-answering task.
+Results from the model are impressive. 
 
-In our use of GPT2 the context created for our smaller model is closest to the `few-shot' paradigm above in GPT3. The major difference is by contrast to their model, in our experiments the text from previous queries is saved and added to the context for subsequent questioning.
+In all three modes, the model is not fine-tuned and no additional training done on the model to prepare it for a question-answering task.
 
-%Just as the GPT2 models larger than 117M parameters are too large for our installations, all the GPT3 models are also too large. 
-GPT3 is used by the public through an on-line API and private OpenAI server.
+The GPT2 context created for our smaller model is closest to the `few-shot' paradigm above in GPT3. In contrast to GPT3, in these experiments the text from previous queries is saved and added to the context for subsequent questioning.
 
-Applying to OpenAI for permission to access the GPT3 API, the GPT3 model could be accessed from one of our devices. This would be relatively simple. Each reply to the user would entail two calls to online resources. One call would go the the Google Text To Speech server and one call would go to the GPT3 API.
