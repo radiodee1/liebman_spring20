@@ -123,7 +123,7 @@ Word2Vec is short for \textquoteleft Word to Vector.\textquoteright{} (Mikolov e
 
 \subsection{Corpus}
 
-A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. Sentence length is observed and, for all sentences shorter than that length, a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
+A text must be prepared for training. A text corpus with source and target pairs is chosen. Sentences in the source corpus are paired with sentences with the same meaning in the target corpus. A sentence length restriction is observed and, for all sentences shorter than that length, a special `end-of-sequence' token is appended to all sequences. This restriction is applied in both languages.
 
 \subsection{Training and Evaluation}
 Our task is to train a Neural Network to translate a given input corpus. It is generally felt that the corpus should be divided into three parts. The largest part, possibly 80\% is held for training. Then 10\% should go to what is called `validation' and 10\% should go to `testing'.
