@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  25 AUG 2020 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  29 AUG 2020 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -675,45 +675,45 @@ Package pdftex.def Info: diagram-embedding.png  used on input line 108.
 <diagram-nmt03.png, id=666, 193.9245pt x 61.4295pt>
 File: diagram-nmt03.png Graphic file (type png)
 <use diagram-nmt03.png>
-Package pdftex.def Info: diagram-nmt03.png  used on input line 162.
+Package pdftex.def Info: diagram-nmt03.png  used on input line 163.
 (pdftex.def)             Requested size: 387.84802pt x 122.85867pt.
  [9 <./diagram-nmt03.png>]
 [10] [11]
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 231.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 229.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 231
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 229
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 238.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 236.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 238
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 236
 .
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 246.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 244.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 246
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 244
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 250.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 248.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 250
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 248
 .
 
 [12] [13]
 <Figure_1.png, id=705, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 304.
+Package pdftex.def Info: Figure_1.png  used on input line 302.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 ) [14 <./Figure_1.png>]
 Chapter 2.
@@ -933,17 +933,17 @@ apters/chapter02.aux) (./chapters/chapter03.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 1DFAAC37E50588A013553885F17F4BBC;7188.
+(rerunfilecheck)             Checksum: 62D4C33E93EDF52470C5C419640911DF;7188.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 14831 strings out of 483183
- 270444 string characters out of 5966292
- 530750 words of memory out of 5000000
- 29275 multiletter control sequences out of 15000+600000
+ 14829 strings out of 483183
+ 270417 string characters out of 5966292
+ 530671 words of memory out of 5000000
+ 29273 multiletter control sequences out of 15000+600000
  559646 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,11n,44p,1003b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,44p,940b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
 k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
 k> </home/dave/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600p
@@ -971,9 +971,9 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (87 pages, 9159344 bytes).
+Output written on proposal_doc.pdf (87 pages, 9159012 bytes).
 PDF statistics:
- 1648 PDF objects out of 1728 (max. 8388607)
+ 1649 PDF objects out of 1728 (max. 8388607)
  1047 compressed objects within 11 object streams
  232 named destinations out of 1000 (max. 500000)
  905 words of extra memory for PDF output out of 10000 (max. 10000000)

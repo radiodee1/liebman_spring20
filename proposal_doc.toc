@@ -5,19 +5,19 @@
 \contentsline {subsection}{\numberline {1.2.1}Hidden Values}{2}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Simple RNN}{3}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}Gated Recurrent Unit}{4}{subsection.1.2.3}%
-\contentsline {section}{\numberline {1.3}Sequence to Sequence and Translation}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Sequence-to-Sequence and Translation}{5}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Word Embeddings}{6}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Corpus}{7}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}Training and Evaluation}{7}{subsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.3.4}Input Tokens}{8}{subsection.1.3.4}%
 \contentsline {subsection}{\numberline {1.3.5}Encoder}{9}{subsection.1.3.5}%
 \contentsline {subsection}{\numberline {1.3.6}Decoder}{10}{subsection.1.3.6}%
-\contentsline {subsection}{\numberline {1.3.7}Output Tokens}{11}{subsection.1.3.7}%
+\contentsline {subsection}{\numberline {1.3.7}Output Tokens}{10}{subsection.1.3.7}%
 \contentsline {subsection}{\numberline {1.3.8}Loss and Accuracy During Training}{11}{subsection.1.3.8}%
 \contentsline {subsection}{\numberline {1.3.9}Attention Mechanism}{12}{subsection.1.3.9}%
-\contentsline {subsection}{\numberline {1.3.10}Batching Problems}{13}{subsection.1.3.10}%
+\contentsline {subsection}{\numberline {1.3.10}Batching Problems}{12}{subsection.1.3.10}%
 \contentsline {subsection}{\numberline {1.3.11}Exploding or Vanishing Gradients}{13}{subsection.1.3.11}%
-\contentsline {subsection}{\numberline {1.3.12}Sequence to Sequence Chatbot}{13}{subsection.1.3.12}%
+\contentsline {subsection}{\numberline {1.3.12}Sequence-to-Sequence Chatbot}{13}{subsection.1.3.12}%
 \contentsline {chapter}{\numberline {2}Transformers and the Generative Pre-Training 2 Transformer}{15}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Transformer and Attention}{16}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Byte Pair Encoding}{16}{subsection.2.1.1}%
