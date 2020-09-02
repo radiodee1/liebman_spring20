@@ -2,7 +2,7 @@
 
 \section{GRU vs. Transformer}
 %It is important here to compare 
-The GRU chatbot was compared with the larger Transformer based chatbot. Using subjective qualifications the GRU model answered with more variety than the Transformer model. An important observation was that the hyper-parameter set for the Transformer model could be expanded and enlarged as needed before training. The GRU model could not be trained successfully with an arbitrarily large hyper-parameter set. The larger Transformer could be trained to produce better responses.
+The GRU chatbot was compared with the larger Transformer based chatbot. Using subjective qualifications the GRU model answered accurately and with more variety than the Transformer model. An important observation was that the hyper-parameter set for the Transformer model could be expanded and enlarged as needed before training. The GRU model could not be trained successfully with an arbitrarily large hyper-parameter set. The larger Transformer could be trained to produce better responses.
 
 Additionally, the GRU model responded very quickly, while the Transformer model took longer. %This is not a problem for general applications, but one cannot ignore 
 The time spent by the Transformer model when installed on a small computer like a Raspberry Pi could not be ignored. 
@@ -15,13 +15,14 @@ For the GRU Recurrent Neural Network it is $ n \cdot d^2 $, where $ n $ is the n
 The maximum allowable input from the GRU is short, and in the example was 10. The maximum allowable input from the Transformer models varies but, in the 117M GPT2 model, it was 1024. 
 %In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. This is the same as the hidden vector size for the Transformer in question.
 
-In this example, the hidden vector size for the GRU model was 500. The size for the 117M GPT2 model was 768, and the Transformer's hidden size was 512.
+In this example, the hidden vector size for the GRU model was 500 and %. The size for the 117M GPT2 model was 768, and 
+the Transformer's hidden size was 512.
 
 \section{Turing Test}
 
 The Turing Test concerns itself with the question of whether a computer is intelligent. Turing says that intelligence is too hard to describe and that, if the computer can convince you that it is intelligent, then it is.
 
-Whether this is right is beyond the scope of this thesis. The developers of the Generative Pre-Training 2 transformer were apprehensive about their model's ability to generate human text and felt the model worked too well. 
+Whether this is right is beyond the scope of this thesis. The developers of the Generative Pre-Training 2 transformer were apprehensive about their model's ability to generate human-like text and felt the model worked too well. 
 At first they decided not to release the largest version to the public for several months. 
 %(Radford et al) \cite{radford2019language} but ultimately did release it. 
 %The model developers used it differently than our chatbot implementation. 
@@ -32,13 +33,13 @@ They felt that the model could be used to spam Facebook and other social network
 %If these models could, for better or worse, passing the Turing test, then it should not fall into the wrong hands. 
 %This was the concern of the coders at the time.
 
-Ultimately the large model was released, either because the developers decided the model was not as good as originally estimated. %, or because they didn't care. 
+Ultimately the large model was released, possibly because the developers decided the model was not as good as originally estimated. %, or because they didn't care. 
 
 \section{Word and Sentence Comparisons}
 
 It is important to understand the training and inference stages. Several graphs and a discussion of the GRU model and the Transformer model and their word and sentence usage follows.
 
-The fully trained GRU and Transformer models are setup in inference mode and their output is observed when they are exposed to the first 10,000 training question sentences from the Movie Subtitles corpus.
+The fully trained GRU and Transformer models are set up in inference mode and their output is observed when they are exposed to the first 10,000 training question sentences from the Movie Subtitles corpus.
 
 \subsection{Word Usage}
 
@@ -58,7 +59,7 @@ In general the Transformer model uses only a small subset of words that it has a
 The green line at the top of Figure \ref{diagram-words-with-voc-total} is the total words in the GRU vocabulary. %The total words in the GPT2 vocabulary is not represented on the graph. 
 Total responses in words are shown with the three remaining lines. The GPT2 responses are higher, and the GRU and Transformer responses look like horizontal lines at the bottom of the graph.
 
-In Figure \ref{diagram-words-no-voc-total}, if the Vocabulary Total and the GPT2 responses are removed, the outputs take the shapes of a curves with a maximum of around 475 words. The Transformer model has a vocabulary size of 8170 tokens, and the GRU model is close to that at 7826 tokens. %Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
+In Figure \ref{diagram-words-no-voc-total}, if the Vocabulary Total and the GPT2 responses are removed, the outputs take the shapes of curves with a maximum of around 475 words. The Transformer model has a vocabulary size of 8170 tokens, and the GRU model is close to that at 7826 tokens. %Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
 
 
 \begin{figure}[H]
