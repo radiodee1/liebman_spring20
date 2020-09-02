@@ -79,7 +79,7 @@
 \contentsline {subsection}{\numberline {4.8.7}Checklist}{57}{subsection.4.8.7}%
 \contentsline {section}{\numberline {4.9}Smart Speaker - Generative Pre-Training 2 Model}{58}{section.4.9}%
 \contentsline {chapter}{\numberline {5}Further Installations}{59}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Generative Pre-Training 2 - XLarge Model}{60}{section.5.1}%
+\contentsline {section}{\numberline {5.1}Generative Pre-Training 2 - X Large Model}{60}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Context Experiment}{60}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}History Experiment}{60}{subsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.1.3}Artificial Intelligence Markup Language Experiment}{61}{subsection.5.1.3}%
