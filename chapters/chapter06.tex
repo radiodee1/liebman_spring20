@@ -79,10 +79,8 @@ It is possible the GRU model operates more robustly than the Transformer model, 
 A goal for this work included answers to these questions.
 How many fully formed responses does the given model use? Additionally, when or how many of these responses are used repeatedly?
 
-While the GPT2 model is very large and very versatile, the Transformer and GRU models are smaller. %For these two, smaller models it would be good to tell how many repeated sentences occurred as output in some number of inputs. 
-In Figure \ref{diagram-words-limit-shown}, 10,000 inputs from the training set of the movie dialog corpus were used. % in contrast to the previous section where 2000 inputs are used.
+While the GPT2 model is very large and very versatile, the Transformer and GRU models are smaller. In Figure \ref{diagram-words-limit-shown}, 10,000 inputs from the training set of the movie dialog corpus were used. 
 
-%There are rough numbers for those two models. 
 These models use less than 350 sentences repeatedly. At the end of the study, 900 total sentences were used by the GRU. At some point the number of total GRU sentences that the model can produce will reach a limit below the vocabulary total.
 
 \begin{figure}[H]
@@ -97,25 +95,17 @@ These models use less than 350 sentences repeatedly. At the end of the study, 90
 \end{figure}
 
 While the Transformer and GRU models have similar `Repeated Sentence' graphs, they are different models and have different sizes. 
-%They are not similar in many ways but in this metric. 
 However as they share the same corpus, they may be learning the same task.
 
 \section{Training and Lists}
-%In this discussion the output of the GPT2 model is mostly ignored. %There is a short discussion of the Transformer and the GRU.
 
-%It is important to know what the Transformer or GRU was doing during training and later during inference. 
 Here the Transformer and GRU models are trained on the movie dialog corpus. The Transformer model has 6 layers, 8 heads, and a hidden size of 512 units, while the GRU model has a hidden size of 500.
 
-Initially the model learns a set of multi-purpose English answers. % in a form close to a list. 
-Then it acts as a classifier, where each input sentence is compared to the set of answers. 
-%A question is associated with a given answer from the set when possible. 
-There would be fewer answers than there are questions. 
-%There may be a list that contains many of the answers the model would use. 
-%For a given model this list can only be so long.
+Initially the model learns a set of multi-purpose English answers. Then it acts as a classifier, where each input sentence is compared to the set of answers. There would be fewer answers than there are questions. 
 
 At the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
 
-%This list making is a function of the model trying to optimize the answers that it gives, and can give, given a certain size memory capacity. 
+
 The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
 
 For the GPT2, full sentences may not be saved because the model may be more dynamic. For translation, for instance, it may be able to remember longer lists. In place of a list of complete responses, a list of phrases or partial responses could be combined to create translated output.
