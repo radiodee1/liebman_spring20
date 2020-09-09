@@ -1,17 +1,26 @@
-
 \section{Background}
+We use Transformer style models and also a Recurrent Neural Network model to allow for meaningful comparison. We explain RNN models below and Transformers in Chapter \ref{chapter-transformer}.
+
+It is worth noting that with the appearance of the Transformer architecture some traditional technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
+
+\subsection{Recurrent Neural Network and Transformer}
 
 In their paper Vinyals et al \cite{DBLP:journals/corr/VinyalsL15} discuss making a chatbot using a neural network configured for Sequence-to-Sequence Neural Machine Translation. An attempt to code our own Sequence-to-Sequence model was not very fruitful so instead we use code authored by Inkawhich et al \cite{2018Inkawhich}.
 
-In their paper Vaswani et al \cite{Vaswani2017AttentionIA} discuss using the Transformer architecture for solving machine learning tasks. We train a transformer model as a chatbot. 
+In their paper Vaswani et al \cite{Vaswani2017AttentionIA} discuss using the Transformer architecture for solving machine learning tasks. We train a transformer model as a chatbot.
 
+In both of these experiments a common factor is the Movie Dialog Corpus that the models train on. The corpus comes from Danescu-Niculescu-Mizil et al \cite{Danescu-Niculescu-Mizil+Lee:11a}.
+
+\subsection{Pre Trained Language Models}
 Radford et al \cite{radford2019language} discuss the `Generative Pre-training 2' (GPT2) neural network for Natural Language Processing (\ac{NLP}) tasks. The GPT2 model is based largely on the Transformer architecture. 
+
+This is essentially a Language Model. The model is given a large section of text during training and it is asked to generate a single word or token to finish the sample. It does this over and over to complete the passage. This kind of model shows up in GPT2 and we use that trained model and some traditional programming techniques to generate text that naturally answers questions. Among all the models tested, this is the model that was found to be most comprehensive in execution.
 
 We implement a chatbot with a GPT2 model. We use a program library from Wolf et al \cite{Wolf2019HuggingFacesTS} to run our model.
 
-We use Transformer style models and also a Recurrent Neural Network model to allow for meaningful comparison. We explain both types of models below.
+%We use Transformer style models and also a Recurrent Neural Network model to allow for meaningful comparison. We explain both types of models below.
 
-It is worth noting that with the appearance of the Transformer architecture some traditional technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
+%It is worth noting that with the appearance of the Transformer architecture some traditional technologies have become redundant or obsolete. This may be true of any model that uses Recurrent Neural Network components and also the traditional word vector embeddings.
 
 \section{Recurrent Neural Network Components}
 

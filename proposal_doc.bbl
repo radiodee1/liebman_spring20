@@ -14,6 +14,12 @@ A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
   L.~Kaiser, and I.~Polosukhin, ``Attention is all you need,'' in {\em NIPS},
   2017.
 
+\bibitem{Danescu-Niculescu-Mizil+Lee:11a}
+C.~Danescu-Niculescu-Mizil and L.~Lee, ``Chameleons in imagined conversations:
+  A new approach to understanding coordination of linguistic style in
+  dialogs.,'' in {\em Proceedings of the Workshop on Cognitive Modeling and
+  Computational Linguistics, ACL 2011}, 2011.
+
 \bibitem{radford2019language}
 A.~Radford, J.~Wu, R.~Child, D.~Luan, D.~Amodei, and I.~Sutskever, ``Language
   models are unsupervised multitask learners,'' 2019.
