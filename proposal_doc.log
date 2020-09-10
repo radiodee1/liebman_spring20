@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  10 SEP 2020 08:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  10 SEP 2020 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,7 +613,7 @@ ination with the same identifier (name{page.}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.120 \newpage
+l.123 \newpage
                [1]
 \openout2 = `chapters/abstract.aux'.
 
@@ -621,7 +621,7 @@ l.120 \newpage
 tifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.122 \include{chapters/abstract}
+l.125 \include{chapters/abstract}
                                   [2
 
 ] (./proposal_doc.toc [1
@@ -923,18 +923,18 @@ ikipedia, the free en-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
  [77]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
 (./chapters/chapter04.aux) (./chapters/chapter05.aux) (./chapters/chapter06.aux
 ) (./chapters/chapter07.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 8876AC3299E17F423948D6EC4ABA3746;7365.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
  14837 strings out of 483183
@@ -971,7 +971,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (87 pages, 9158643 bytes).
+Output written on proposal_doc.pdf (87 pages, 9158668 bytes).
 PDF statistics:
  1664 PDF objects out of 1728 (max. 8388607)
  1062 compressed objects within 11 object streams
