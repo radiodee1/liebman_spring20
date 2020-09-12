@@ -14,7 +14,7 @@ In both of these experiments a common factor is the Movie Dialog Corpus that the
 \subsection{Pre Trained Language Models}
 Radford et al \cite{radford2019language} discuss the `Generative Pre-Training 2' (GPT2) neural network for Natural Language Processing (\ac{NLP}) tasks. The GPT2 model is based largely on the Transformer architecture. 
 
-This is essentially a Language Model. The model is given a large section of text during training and it is asked to generate a single word or token to add to the sample. It does this over and over to complete the passage. This kind of model shows up in GPT2 and we use that trained model and some traditional programming techniques to generate text that naturally answers questions. Among all the models tested, this is the model that was found to be most comprehensive in execution.
+This is essentially a Language Model. The model is given a large section of text during training and it is asked to generate a single word or token to add to the end of the sample. During inference it does this over and over to complete a passage. This kind of model shows up in GPT2 and we use that trained model and some traditional programming techniques to generate text that naturally answers questions. Among all the models tested, this is the model that was found to be most comprehensive in execution.
 
 We implement a chatbot with a GPT2 model. We use a program library from Wolf et al \cite{Wolf2019HuggingFacesTS} to run the model.
 
