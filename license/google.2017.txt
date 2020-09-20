@@ -1,3 +1,5 @@
+This is the license for the Google Speech Recognition software.
+
 
 # Copyright 2017 Google Inc. All Rights Reserved.
 #

@@ -1,5 +1,6 @@
 
-Chatbot Tutorial
+This is the license for the Chatbot Tutorial Sequence to Sequence model.
+
 ================
 **Author:** `Matthew Inkawhich <https://github.com/MatthewInkawhich>`_
 

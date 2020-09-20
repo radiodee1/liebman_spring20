@@ -1,3 +1,5 @@
+This is the license for the GPT2 software.
+
 
     code by TaeHwan Jung(@graykode)
     Original Paper and repository here : https://github.com/openai/gpt-2
