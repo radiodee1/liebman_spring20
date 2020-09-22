@@ -24,14 +24,8 @@ The Turing Test concerns itself with the question of whether a computer is intel
 
 Whether this is right is beyond the scope of this thesis. The developers of the Generative Pre-Training 2 transformer were apprehensive about their model's ability to generate human-like text and felt the model worked too well. 
 At first they decided not to release the largest version to the public for several months. 
-%(Radford et al) \cite{radford2019language} but ultimately did release it. 
-%The model developers used it differently than our chatbot implementation. 
-%They generated paragraphs of text, and it was determined at first that the ability of the model to impersonate a human was too great. 
 They felt that the model could be used to spam Facebook and other social networking sites with content that was very convincing. 
-%If the model could be used to convince people to act badly, then it should not be released. 
-%Humans are susceptible to the sentiments of those they see as their peers. 
-%If these models could, for better or worse, passing the Turing test, then it should not fall into the wrong hands. 
-%This was the concern of the coders at the time.
+
 
 Ultimately the large model was released, possibly because the developers decided the model was not as good as originally estimated. %, or because they didn't care. 
 
@@ -56,8 +50,7 @@ In general the Transformer model uses only a small subset of words that it has a
 	
 \end{figure}
 
-The green line at the top of Figure \ref{diagram-words-with-voc-total} is the total words in the GRU vocabulary. %The total words in the GPT2 vocabulary is not represented on the graph. 
-Total responses in words are shown with the three remaining lines. The GPT2 responses are higher, and the GRU and Transformer responses look like horizontal lines at the bottom of the graph.
+The green line at the top of Figure \ref{diagram-words-with-voc-total} is the total words in the GRU vocabulary. Total responses in words are shown with the three remaining lines. The GPT2 responses are higher, and the GRU and Transformer responses look like horizontal lines at the bottom of the graph.
 
 In Figure \ref{diagram-words-no-voc-total}, if the Vocabulary Total and the GPT2 responses are removed, and 150,000 sentences are tested, the outputs take the shapes of curves with a maximum of around 1,100 words. The Transformer model has a vocabulary size of 8170 tokens, and the GRU model is close to that at 7826 tokens. %Both models use the same training corpus. The difference between the tokens available and the tokens used is large.
 
@@ -94,7 +87,7 @@ These models use less than 2,000 sentences repeatedly. At the end of the study, 
 	
 \end{figure}
 
-If the graphs of the repeated sentences changed vertically as they do horizontally, the lines would increase very slowly.
+If the graphs of the repeated sentences changed vertically as they do horizontally, the lines would be shown to increase very slowly.
 
 While the Transformer and GRU models have similar `Repeated Sentence' graphs, they are different models and have different sizes. 
 However as they share the same corpus, they may be learning the same task.
