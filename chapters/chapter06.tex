@@ -93,6 +93,12 @@ If the graphs of the repeated sentences changed vertically as they do horizontal
 While the Transformer and GRU models have similar `Repeated Sentence' graphs, they are different models and have different sizes. 
 However as they share the same corpus, they may be learning the same task.
 
+\subsection{Maximum Sentence Values}
+
+For each of the models there is only a certain number of tokens in the model's vocabulary. Additionally there are only so many tokens allowed in the output. For the GRU and the Transformer the output is limited to 10 tokens. For the GPT2 model there is a limit of 1024 tokens. There are only so many combinations that can be formed for a given model.
+
+We believe that the models cannot use all of the words or tokens in their vocabulary. They can identify a number of them that they use repeatedly. This would mean the possible combinations that a model could produce is smaller.
+
 \section{Training and Lists}
 
 Here the Transformer and GRU models are trained on the movie dialog corpus. The Transformer model has 6 layers, 8 heads, and a hidden size of 512 units, while the GRU model has a hidden size of 500.
