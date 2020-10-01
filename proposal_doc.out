@@ -82,21 +82,23 @@
 \BOOKMARK [1][-]{section.4.9}{Smart Speaker - Generative Pre-Training 2 Model}{chapter.4}% 82
 \BOOKMARK [0][-]{chapter.5}{Further Installations}{}% 83
 \BOOKMARK [1][-]{section.5.1}{Generative Pre-Training 2 - X Large Model}{chapter.5}% 84
-\BOOKMARK [2][-]{subsection.5.1.1}{Context Experiment}{section.5.1}% 85
-\BOOKMARK [2][-]{subsection.5.1.2}{History Experiment}{section.5.1}% 86
-\BOOKMARK [2][-]{subsection.5.1.3}{Artificial Intelligence Markup Language Experiment}{section.5.1}% 87
-\BOOKMARK [2][-]{subsection.5.1.4}{User Name Experiment}{section.5.1}% 88
-\BOOKMARK [2][-]{subsection.5.1.5}{Internet Search Experiment}{section.5.1}% 89
-\BOOKMARK [1][-]{section.5.2}{Generative Pre-Training 2 - Jetson Nano}{chapter.5}% 90
-\BOOKMARK [0][-]{chapter.6}{Observations and Conclusions}{}% 91
-\BOOKMARK [1][-]{section.6.1}{GRU vs. Transformer}{chapter.6}% 92
-\BOOKMARK [1][-]{section.6.2}{Turing Test}{chapter.6}% 93
-\BOOKMARK [1][-]{section.6.3}{Word and Sentence Comparisons}{chapter.6}% 94
-\BOOKMARK [2][-]{subsection.6.3.1}{Word Usage}{section.6.3}% 95
-\BOOKMARK [2][-]{subsection.6.3.2}{Sentence Usage}{section.6.3}% 96
-\BOOKMARK [2][-]{subsection.6.3.3}{Maximum Sentence Values}{section.6.3}% 97
-\BOOKMARK [1][-]{section.6.4}{Training and Lists}{chapter.6}% 98
-\BOOKMARK [0][-]{chapter.7}{Further Reading}{}% 99
-\BOOKMARK [1][-]{section.7.1}{Winograd Schema}{chapter.7}% 100
-\BOOKMARK [1][-]{section.7.2}{Generative Pre-Training 3}{chapter.7}% 101
-\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 102
+\BOOKMARK [2][-]{subsection.5.1.1}{Questions}{section.5.1}% 85
+\BOOKMARK [2][-]{subsection.5.1.2}{Checklist}{section.5.1}% 86
+\BOOKMARK [2][-]{subsection.5.1.3}{Context Experiment}{section.5.1}% 87
+\BOOKMARK [2][-]{subsection.5.1.4}{History Experiment}{section.5.1}% 88
+\BOOKMARK [2][-]{subsection.5.1.5}{Artificial Intelligence Markup Language Experiment}{section.5.1}% 89
+\BOOKMARK [2][-]{subsection.5.1.6}{User Name Experiment}{section.5.1}% 90
+\BOOKMARK [2][-]{subsection.5.1.7}{Internet Search Experiment}{section.5.1}% 91
+\BOOKMARK [1][-]{section.5.2}{Generative Pre-Training 2 - Jetson Nano}{chapter.5}% 92
+\BOOKMARK [0][-]{chapter.6}{Observations and Conclusions}{}% 93
+\BOOKMARK [1][-]{section.6.1}{GRU vs. Transformer}{chapter.6}% 94
+\BOOKMARK [1][-]{section.6.2}{Turing Test}{chapter.6}% 95
+\BOOKMARK [1][-]{section.6.3}{Word and Sentence Comparisons}{chapter.6}% 96
+\BOOKMARK [2][-]{subsection.6.3.1}{Word Usage}{section.6.3}% 97
+\BOOKMARK [2][-]{subsection.6.3.2}{Sentence Usage}{section.6.3}% 98
+\BOOKMARK [2][-]{subsection.6.3.3}{Maximum Sentence Values}{section.6.3}% 99
+\BOOKMARK [1][-]{section.6.4}{Training and Lists}{chapter.6}% 100
+\BOOKMARK [0][-]{chapter.7}{Further Reading}{}% 101
+\BOOKMARK [1][-]{section.7.1}{Winograd Schema}{chapter.7}% 102
+\BOOKMARK [1][-]{section.7.2}{Generative Pre-Training 3}{chapter.7}% 103
+\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 104

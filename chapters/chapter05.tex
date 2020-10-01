@@ -14,6 +14,59 @@ As with the smaller model and the Raspberry Pi installation, no attempt was made
 
 \label{chapter-gpt2-xl-intro}
 
+\subsection{Questions}
+
+This is the sample question list as it was answered by the model.
+
+\begin{verbatim}
+> Hello.
+Hello. 
+> What is your name? 
+My name is Jane.  
+> What time is it?
+It is 02:17 PM October 01, 2020. 
+> What do you do? 
+I am a student. 
+> What is your favorite color? 
+I like blue. 
+> Do you like red?
+Yes. 
+> Do you like blue? 
+yes. 
+> What is your favorite candy? 
+I like chocolate. 
+> Do you like ice cream?
+yes. 
+> Good bye.
+bye. 
+\end{verbatim}
+
+\subsection{Checklist}
+
+\begin{itemize}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
+	
+	\item []All the responses are in plain English. There is no gibberish.
+	
+	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
+	
+	\item []There is a variety of answers. 
+	
+	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy?' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
+	
+	\item []The `favorite candy' question is answered in more detail than other models.
+	
+	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know.' Does the model use these answers at all times?}
+	
+	\item []The model does not use `No' or `I don't know.'
+	
+	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye?'}
+	
+	\item []The model has an answer for `Hello' and `Good bye.'
+	
+\end{itemize}
+
+
 \subsection{Context Experiment}
 
 As before, the model was given details in sentence form that it could use as replies to questions when appropriate. The larger model worked better if all the sentences shown to it had the `Q:' and `A:' strings prepended to them. 
