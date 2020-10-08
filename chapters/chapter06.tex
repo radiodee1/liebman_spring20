@@ -35,7 +35,7 @@ It is important to understand the training and inference stages. Several graphs 
 
 The fully trained GRU and Transformer models are set up in inference mode and their output is observed when they are exposed to the first 150,000 training question sentences from the Movie Subtitles corpus.
 
-All the graphs start out with one of the network models and a group of 150,000 input sentences. With every change of x all the sentences up until that index are fed to the model. Then they are processed by whether or not they show up repeatedly in the output. Then the output is summed. The changes in y show this summed output.
+All the graphs start out with one of the network models and a group of 150,000 input sentences. With every change of x all the sentences up until that index are fed to the model. Then they are processed by whether or not they show up repeatedly in the output so far. Then the output is summed. The changes in y show this summed output.
 
 \subsection{Word Usage}
 
