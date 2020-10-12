@@ -35,13 +35,13 @@ It is important to understand the training and inference stages. Several graphs 
 
 The fully trained GRU and Transformer models are set up in inference mode and their output is observed when they are exposed to the first 150,000 training question sentences from the Movie Subtitles corpus.
 
-All the graphs start out with one of the network models and a group of 150,000 input sentences. With every change of x all the sentences up until that index are fed to the model. Then they are processed by whether or not they show up repeatedly in the output so far. Then the output is summed. The changes in y show this summed output.
+All the graphs start out with one of the network models and a group of 150,000 input sentences. With every change of $x$ all the sentences up until that index are fed to the model. Then they are processed by whether or not they show up repeatedly in the output so far. Then the output is summed. The changes in $y$ show this summed output.
 
 \subsection{Word Usage}
 
 In general the Transformer model uses only a small subset of words that it has available to it. In the example below, Figure \ref{diagram-words-with-voc-total}, 150,000 input lines were tested from the training set. A small percentage of the vocabulary words were used in the output. %These sentences came from the movie dialog corpus. Some percentage of words are used repeatedly.
 
-The graph in Figure \ref{diagram-words-with-voc-total} uses all three chatbot models. The graph uses 150,000 sentences from the Movie Dialog corpus, but from these question/answer pairs only the question is needed. Each question in turn is fed to each of the models. The output in terms of `Word Responses' is totaled at each x index for the GPT2, the Transformer, and the GRU. For each x, the y on the graph represents a running total for how many words the model uses in its output. Also pictured in this graph is the `Total Vocabulary' number for the GPT2 models and the `Total Vocabulary' for the GRU model.
+The graph in Figure \ref{diagram-words-with-voc-total} uses all three chatbot models. The graph uses 150,000 sentences from the Movie Dialog corpus, but from these question/answer pairs only the question is needed. Each question in turn is fed to each of the models. The output in terms of `Word Responses' is totaled at each $x$ index for the GPT2, the Transformer, and the GRU. For each $x$, the $y$ on the graph represents a running total shows how many words the model uses in its output. Pictured in this graph is the `Total Vocabulary' number for the GPT2 model and the `Total Vocabulary' for the GRU model.
 
 \begin{figure}[H]
 	\begin{center}
@@ -59,7 +59,7 @@ The green line is the total words in the GRU vocabulary. Total responses in word
 
 In Figure \ref{diagram-words-no-voc-total}, if the Vocabulary Total and the GPT2 responses are removed, and 150,000 sentences are tested, the outputs take the shapes of curves with a maximum of around 1,100 words. The Transformer model has a vocabulary size of 8170 tokens, and the GRU model is close to that at 7826 tokens. Both curves are slowly increasing at this time.
 
-The graph in Figure \ref{diagram-words-no-voc-total} uses the Transformer and the GRU model. The graph uses 150,000 sentences from the Movie Dialog corpus, but as in the previous diagram it only uses the `question' part of the text. For every x index there is a total for how many words were used by the models up until that point. This data represents a running total for `Total Word Responses.' This running total is graphed on the y axes. 
+The graph in Figure \ref{diagram-words-no-voc-total} uses the Transformer and the GRU models. It uses 150,000 sentences from the Movie Dialog corpus but, as in the previous diagram, it uses only the `question' part of the text. For every $x$ index there is a total of how many words are used by the models up until that point. This data represents a running total for `Total Word Responses.' This running total is graphed on the $y$ axes. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -80,7 +80,7 @@ How many fully formed responses does the given model use? Additionally, when or 
 
 While the GPT2 model is very large and very versatile, the Transformer and GRU models are smaller. In Figure \ref{diagram-words-limit-shown}, 150,000 inputs from the training set of the movie dialog corpus were used. 
 
-The graph in Figure \ref{diagram-words-limit-shown} shows a running total of how sentences are used by the Transformer and the GRU. For every index x, all sentences up to and including that index are fed to the Transformer and the GRU. At that point the graph shows a running total of how many sentences are used more than once by the models, and how many sentences are used in total by the model. These running totals are plotted on the graph.
+The graph in Figure \ref{diagram-words-limit-shown} shows a running total of sentences used by the Transformer and the GRU. For every point on the $x$ axis, all sentences up to and including that index are fed to the Transformer and the GRU. At that point the graph shows a running total of sentences used more than once by the models, and how many sentences are used in total. These running totals are plotted on the $y$ axis of the graph.
 
 These models use less than 2,000 sentences repeatedly. At the end of the study, 4,000 total sentences were used by the GRU. We feel that at some point the number of total GRU sentences that the model can produce will reach a limit below the vocabulary total.
 
