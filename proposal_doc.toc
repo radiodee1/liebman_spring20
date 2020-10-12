@@ -100,8 +100,8 @@
 \contentsline {subsection}{\numberline {6.3.1}Word Usage}{72}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Sentence Usage}{74}{subsection.6.3.2}%
 \contentsline {subsection}{\numberline {6.3.3}Maximum Sentence Values}{75}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Training and Lists}{75}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Further Reading}{76}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Winograd Schema}{77}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Generative Pre-Training 3}{77}{section.7.2}%
-\contentsline {chapter}{\numberline {A}Abbreviations}{79}{appendix.A}%
+\contentsline {section}{\numberline {6.4}Training and Lists}{76}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Further Reading}{77}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Winograd Schema}{78}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Generative Pre-Training 3}{78}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Abbreviations}{80}{appendix.A}%

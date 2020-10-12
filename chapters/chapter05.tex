@@ -117,6 +117,7 @@ Each question is answerable with a phrase like `Hello *.' The asterisk is still 
 
 Another question in this scenario is `What is my name?' In AIML there are very few ways to phrase this question. %With this question also there are very few ways to phrase the AIML. %Here we are referring to the name recorded in the previous AIML question as discussed above. 
 
+The part of the AIML code that processes different questions is called the kernel.
 During a typical chatbot run the AIML kernel is shown all user input.% to the AIML kernel. 
 
 When the kernel does not match anything there is no output. When there is a match, AIML output is shown to the chatbot as the context for that input. 
@@ -129,7 +130,7 @@ This history is retained.
 %what the user enters and the chatbot's answer are kept by the chatbot so that the chatbot can keep track of answers over time. 
 Sometimes, though, keeping sentences that refer to user names confuses the bot's answers.% In other cases the bot keeps track of answers that are generated in the AIML/chatbot hybrid process.
 
-Even when the answer is sensible the model's answer is not always correct, but without the AIML the model always answers all name questions with it's name. 
+Even when the answer is sensible the model's answer is not always correct, but without the AIML the model always answers all name questions with its name. 
 
 %We suspect if the model was much larger that it would have less trouble with this kind of example.
 
@@ -159,7 +160,7 @@ There could be other phrases that cause the same operation in the AIML code.
 
 When the AIML detects one of these signals, the program goes into a special mode of operation. The first, or `find' signal, causes operation of an Internet browser. The web search uses the text from the invocation of the `find' command. The browser yields results as they would be found using a Google search engine. The first 20 results are kept and the URL for the highest ranking Wikipedia page is retained. It is loaded and the `body' tag is scanned for `paragraph' type content. This information replaces the context input. 
 
-After that, the context is retained while the chatbot answers any questions that the user might have. The GPT2 model has some facility with this, while the larger GPT2 model is more adept.
+After that, the context is retained while the chatbot answers any questions that the user might have. The medium sized GPT2 model has some facility with this, while the larger GPT2 model is more adept.
 
 Later, when the AIML detects the second, `restore' signal, the program switches back from special operation to normal operation. Web page contents are removed and the context is restored. % as it was during regular chatbot use. 
 %There is a part that has the history of the last few questions and answers, and there is a part that has the bot name, occupation, and the current time.
@@ -183,7 +184,7 @@ The user asks `How many members were in the band?'
 
 The 774M chatbot answers, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' This is not the correct answer. This may be because, after clipping, that information does not exist in the context section. The user may ask other questions. %Some may be answered correctly.
 
-To this question, the x-large model answers `There were four members in the band.' This is correct.
+To this question, the x-large 1.5B model answers `There were four members in the band.' This is correct.
 
 When the user asks `How many members were in the band?' the model seems to be able to answer with the specific band. % that you are referring to.
 
