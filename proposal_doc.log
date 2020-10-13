@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  12 OCT 2020 13:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  13 OCT 2020 10:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -870,11 +870,10 @@ Chapter 6.
  (./chapters/chapter06.tex [71
 
 ]
-<diagram-output-total-responses-05.png, id=1060, 607.26875pt x 341.275pt>
-File: diagram-output-total-responses-05.png Graphic file (type png)
-<use diagram-output-total-responses-05.png>
-Package pdftex.def Info: diagram-output-total-responses-05.png  used on input l
-ine 48.
+<diagram-100000-vocab.png, id=1060, 607.26875pt x 341.275pt>
+File: diagram-100000-vocab.png Graphic file (type png)
+<use diagram-100000-vocab.png>
+Package pdftex.def Info: diagram-100000-vocab.png  used on input line 48.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
 Overfull \hbox (21.83044pt too wide) in paragraph at lines 48--49
@@ -882,31 +881,28 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 48--49
  []
 
 [72]
-<diagram-output-total-responses-04.png, id=1068, 607.26875pt x 341.275pt>
-File: diagram-output-total-responses-04.png Graphic file (type png)
-<use diagram-output-total-responses-04.png>
-Package pdftex.def Info: diagram-output-total-responses-04.png  used on input l
-ine 66.
+<diagram-100000-novocab.png, id=1068, 607.26875pt x 341.275pt>
+File: diagram-100000-novocab.png Graphic file (type png)
+<use diagram-100000-novocab.png>
+Package pdftex.def Info: diagram-100000-novocab.png  used on input line 66.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
 Overfull \hbox (21.83044pt too wide) in paragraph at lines 66--67
  [] 
  []
 
-[73 <./diagram-output-total-responses-05.png>] [74 <./diagram-output-total-resp
-onses-04.png>]
-<diagram-output-repeated-02.png, id=1081, 607.26875pt x 341.275pt>
-File: diagram-output-repeated-02.png Graphic file (type png)
-<use diagram-output-repeated-02.png>
-Package pdftex.def Info: diagram-output-repeated-02.png  used on input line 89.
-
+[73 <./diagram-100000-vocab.png>] [74 <./diagram-100000-novocab.png>]
+<diagram-100000-sent.png, id=1081, 607.26875pt x 341.275pt>
+File: diagram-100000-sent.png Graphic file (type png)
+<use diagram-100000-sent.png>
+Package pdftex.def Info: diagram-100000-sent.png  used on input line 89.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
 Overfull \hbox (21.83044pt too wide) in paragraph at lines 89--90
  [] 
  []
 
-[75 <./diagram-output-repeated-02.png>]) [76]
+[75 <./diagram-100000-sent.png>]) [76]
 Chapter 7.
 [77
 
@@ -945,7 +941,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
  14850 strings out of 483183
- 270886 string characters out of 5966292
+ 270669 string characters out of 5966292
  530888 words of memory out of 5000000
  29282 multiletter control sequences out of 15000+600000
  559646 words of font info for 98 fonts, out of 8000000 for 9000
@@ -978,9 +974,9 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on proposal_doc.pdf (92 pages, 9167141 bytes).
+Output written on proposal_doc.pdf (92 pages, 9180202 bytes).
 PDF statistics:
- 1711 PDF objects out of 1728 (max. 8388607)
+ 1712 PDF objects out of 1728 (max. 8388607)
  1102 compressed objects within 12 object streams
  244 named destinations out of 1000 (max. 500000)
  953 words of extra memory for PDF output out of 10000 (max. 10000000)
