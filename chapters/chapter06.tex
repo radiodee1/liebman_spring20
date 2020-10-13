@@ -41,7 +41,7 @@ All the graphs start out with one of the network models and a group of 100,000 i
 
 In general the Transformer model uses only a small subset of words that it has available to it. In the example below, Figure \ref{diagram-words-with-voc-total}, 100,000 input lines were tested from the training set. A small percentage of the vocabulary words were used in the output. %These sentences came from the movie dialog corpus. Some percentage of words are used repeatedly.
 
-The graph in Figure \ref{diagram-words-with-voc-total} uses all three chatbot models. The graph uses 100,000 sentences from the Movie Dialog corpus, but from these question/answer pairs only the question is needed. Each question in turn is fed to each of the models. The output in terms of `Word Responses' is totaled at each $x$ index for the GPT2, the Transformer, and the GRU. For each $x$, the $y$ on the graph represents a running total shows how many words the model uses in its output. Pictured in this graph is the `Total Vocabulary' number for the GPT2 model and the `Total Vocabulary' for the GRU model.
+The graph in Figure \ref{diagram-words-with-voc-total} uses all three chatbot models. The graph uses 100,000 sentences from the Movie Dialog corpus, but from these question/answer pairs only the question is needed. Each question in turn is fed to each of the models. The output in terms of `Word Responses' is totaled at each $x$ index for the GPT2, the Transformer, and the GRU. For each $x$, the $y$ on the graph represents a running total showing how many words the model uses in its output. Pictured in this graph is also the `Total Vocabulary' number for the GPT2 model and the `Total Vocabulary' for the GRU model.
 
 \begin{figure}[H]
 	\begin{center}
