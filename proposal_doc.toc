@@ -54,7 +54,7 @@
 \contentsline {subsection}{\numberline {3.3.8}Chatbot vs. Smart Speaker}{42}{subsection.3.3.8}%
 \contentsline {section}{\numberline {3.4}ARMv7 Build/Compile}{43}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Pytorch `torch' Library 1.1.0 For ARMv7}{43}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Pytorch `torch' Library 1.4.0 For ARMv7}{43}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.2}Pytorch `torch' Library 1.4.0 For ARMv7}{44}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Docker Container `tensorflow-model-server' For ARMv7}{44}{subsection.3.4.3}%
 \contentsline {chapter}{\numberline {4}Experimental Results - Raspberry Pi}{46}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Experiments - Installations}{47}{section.4.1}%

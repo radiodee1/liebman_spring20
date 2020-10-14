@@ -65,7 +65,7 @@ Figure \ref{diagram-mat-mult-01} shows a simple conversion of this type. In the 
 
 In the Transformer, this conversion operation is probably the reason for the model's name. The input is \textit{transformed} to a lower dimension. 
 
-The dimension of the starting vector must be preserved. The starting vector is a floating point number sized 512. After some processing the vector is converted to a smaller 64 sized floating point number. The final output of the attention mechanism must be 512. %Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
+The dimension of the starting vector must be preserved. The starting vector is of floating point numbers sized 512. After some processing the vector is converted to smaller 64 sized floating point numbers. The final output of the attention mechanism must be sized 512. %Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
 
 In this self-attention scheme three vectors are actually required. All three vectors are sized 64, and all three are converted by separate matrix multiplication operations. The weights to convert each of the three vectors are different. For this reason the new smaller vectors are all different.
 

@@ -153,7 +153,7 @@ The Google Text-To-Speech software takes negligible time to execute.
 
 The Speech Recognition software takes one or two seconds to execute, as each audio sample must be sent to a Google server for translation into text. Because performance relies on network speeds, execution time is uncertain.
 
-The actual model is responsible for taking text, and returning an appropriate answer in text form to the calling function. Each model is, in turn, connected to the same SR and gTTS software.
+The actual model is responsible for taking question text, and returning an appropriate answer in text form to the calling function. Each model is, in turn, connected to the same SR and gTTS software.
 
 On the development computer most of the models tested take little or no time to execute. On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models requires more.  %s some time to reply to a basic request.
 

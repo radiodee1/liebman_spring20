@@ -1,19 +1,15 @@
 
 
 \section{GRU vs. Transformer}
-%It is important here to compare 
 The GRU chatbot was compared with the larger Transformer based chatbot. Using subjective qualifications the GRU model answered accurately and with more variety than the Transformer model. An important observation was that the hyper-parameter set for the Transformer model could be expanded and enlarged as needed before training. The GRU model could not be trained successfully with an arbitrarily large hyper-parameter set. The larger Transformer could be trained to produce better responses.
 
-Additionally, the GRU model responded very quickly, while the Transformer model took longer. %This is not a problem for general applications, but one cannot ignore 
-The time spent by the Transformer model when installed on a small computer like a Raspberry Pi could not be ignored. 
-
-%The respective value of each of the models changed depending on the platform they were implemented on. %The GRU responds more quickly.% and so it retains some worth.
+Additionally, the GRU model responded very quickly, while the Transformer model took longer. The time spent by the Transformer model when installed on a small computer like a Raspberry Pi could not be ignored. 
 
 Furthermore, time complexity is discussed by Vaswani et al \cite{Vaswani2017AttentionIA}. 
 For the GRU Recurrent Neural Network it is $ n \cdot d^2 $, where $ n $ is the number of words in a sentence and $ d $ is the dimension of the hidden vector. Complexity for the Transformer's Scaled Dot Product Attention is $ n^2 \cdot  d $. Again, $n$ is the number of words and $d$ is the hidden vector's dimension. 
 
 The maximum allowable input from the GRU is short, and in the example was 10. The maximum allowable input from the Transformer models varies but, in the 117M GPT2 model, it was 1024. 
-%In the Transformer from Section \ref{transformer-movie-corpus} it might be 512. This is the same as the hidden vector size for the Transformer in question.
+
 
 In this example, the hidden vector size for the GRU model was 500 and %. The size for the 117M GPT2 model was 768, and 
 the Transformer's hidden size was 512.

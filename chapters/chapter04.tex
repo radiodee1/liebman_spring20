@@ -299,7 +299,7 @@ A set of LED lights is installed on the Raspberry Pi to show when the model is p
 \section{Chatbot - Generative Pre-Training 2 Model}
 
 \label{install-gpt2-chatbot}
-A pre-trained GPT2 model with the large English corpus, called `WebText,' was used to produce a chatbot.% to ascertain if the model works better than the sequence-to-sequence model. 
+A pre-trained GPT2 model with the large English corpus, called `WebText,' was used to produce a chatbot. % to ascertain if the model works better than the sequence-to-sequence model. 
 %In our tests this worked well and this model was considered superior. 
 This model was not trained in the typical sense after download. 
 
@@ -459,7 +459,7 @@ Code was added that uses text-to-speech and speech-to-text libraries, so that th
 
 The model was installed on two small computers, the Raspberry Pi and the Jetson Nano.% The Nano is discussed in Section \ref{chapter-nano}.
 
-The model was installed on the Raspberry Pi 4B with 4GB of RAM. The Pytorch Python library for ARMv7 was compiled for this model. 
-While execution on the production laptop was instantaneous, execution on the Raspberry Pi took 13 to 15 seconds for every response. (See the discussion of `Reply Time' in Section \ref{setup-reply-time}.)
+For the model installed on the Raspberry Pi 4B with 4GB of RAM, the Pytorch Python library for ARMv7 was compiled. Pytorch was already available for the Nano. % for this model. 
+While execution on the production laptop was instantaneous, execution on the Raspberry Pi took 13 to 15 seconds for every response. The Nano required 3 to 5 seconds (See the discussion of `Reply Time' in Section \ref{setup-reply-time}.)
 
-The program was modified to sound a tone during processing. Without this it would have been difficult to know when to speak. Also LED lights were installed to indicate when the model is processing input and when the model can take new input. %The lights are helpful.
+The program was modified to sound a tone during processing. Without this it would have been difficult to know when to speak. Also LED lights were installed to indicate when the model is processing input and when the model can take new input. Lights were not available for the Jetson Nano. 
