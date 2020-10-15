@@ -254,7 +254,7 @@ score = h_t^\intercal \bar{h}_s
 \unboldmath
 $$ 
 
-The output of the current decoder is transposed. It is multiplied by the hidden value from the entire set of encoder states. The score is multiplied by the Gated Recurrent Unit decoder output, and passed through a `tanh' activation layer. It becomes the decoder output.
+The output of the current decoder is transposed. It is multiplied by the hidden value from the entire set of encoder states. Later it is multiplied by the Gated Recurrent Unit decoder output, and passed through a `tanh' activation layer. It becomes the decoder output.
 
 \subsection{Batching Problems}
 
@@ -278,13 +278,11 @@ These sorts of bottlenecks are found in Neural Machine Translation based on recu
 
 There are some specific problems that affect gradients in Recurrent Neural Network components.
 
-Data that begins with a floating point value above 1.0, when multiplied with weights with  values above 1.0, will return values above 1.0. The same RNN component is used for every position in the encoder or decoder. The value will tend to infinity. This is called an exploding gradient. 
+Data that begins with a floating point value above 1.0, when multiplied with weights with  values above 1.0, will return values above 1.0. The same RNN component is used for every position in the encoder or decoder. Some values will tend to infinity. This is called an exploding gradient. 
 
-%This is similar to the situation where a number greater than 1.0 is multiplied by itself many times. It will tend to infinity.
 
 The reverse is true. When a number starts out as a floating point below 1.0, and is multiplied with RNN weights below 1.0, it will tend to a value of zero. This is called a vanishing gradient.
 
-%This is similar to a number less than 1.0 multiplied by itself many times. It will tend to zero.
 
 Gradients in an RNN can be unstable. RNN input and output lengths need to be limited to a small number. In our examples we use a limit of 10.
 

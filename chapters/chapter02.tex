@@ -37,7 +37,7 @@ Input to the Transformer is composed of strings of words from a desired input la
 		
 		\includegraphics[scale=1.5]{diagram-mat04}
 	\end{center}
-	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder. - $Nx$ shows number of layers. - Vaswani et al \cite{Vaswani2017AttentionIA}}
+	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder. - $Nx$ shows number of layers. Data travels from the bottom to the top. - Vaswani et al \cite{Vaswani2017AttentionIA}}
 	
 	
 \end{figure}
@@ -95,7 +95,7 @@ In the triangle in the Figure \ref{attantion-7} the multiplication and selection
 		
 		\includegraphics[scale=0.5]{diagram-mat04-64}
 	\end{center}
-	\caption[Attention Output]{Attention Output}
+	\caption[Attention Output]{Attention Output. (Data travels from the top to the bottom.)}
 	
 	\label{attantion-7}
 \end{figure}
@@ -113,7 +113,7 @@ This multi-headed approach allows different heads to learn different types of re
 	
 	\includegraphics[scale=0.5]{diagram-mat02}
 \end{center}
-	\caption[Matching Input and Output]{Matching Input and Output}
+	\caption[Matching Input and Output]{Matching Input and Output. (Data travels from the top to the bottom.)}
 	\label{attention-matching}
 
 \end{figure}
@@ -129,7 +129,7 @@ This describes the encoder section. There are two other attention segments. Toge
 		
 		\includegraphics[scale=1.0]{diagram-flow1}
 	\end{center}
-	\caption[Transformer Encoder and Decoder Flow]{Transformer Encoder and Decoder Flow. - Three layers and data flow.}
+	\caption[Transformer Encoder and Decoder Flow]{Transformer Encoder and Decoder Flow. - Three layers and data flow. (Data travels from the bottom to the top.)}
 	\label{diagram-flow1}
 	
 \end{figure}
@@ -145,7 +145,7 @@ The output of the encoder is a group of vectors the same size as the input seque
 		
 		\includegraphics[scale=0.75]{diagram-graph-encoder-flow-a}
 	\end{center}
-	\caption[Encoder Attention Detail]{Encoder Attention Detail}
+	\caption[Encoder Attention Detail]{Encoder Attention Detail. (Data travels from the bottom to the top.)}
 	
 	
 \end{figure}
@@ -163,7 +163,7 @@ In the flow diagram one layer of the decoder is illustrated.
 		
 		\includegraphics[scale=1.25]{diagram-flow-decoder02}
 	\end{center}
-	\caption[Decoder Flow]{Decoder Flow Details - `I' for encoder-decoder attention. `II' for masked decoder self-attention.}
+	\caption[Decoder Flow]{Decoder Flow Details - `I' for encoder-decoder attention. `II' for masked decoder self-attention. (Data travels from the bottom to the top.)}
 	
 	
 \end{figure}
@@ -180,7 +180,7 @@ These full sized vectors come from the last encoder layer's output. Typically th
 		
 		\includegraphics[scale=0.75]{diagram-graph-decoder-flow-a}
 	\end{center}
-	\caption[Decoder Attention Detail]{Decoder Attention Detail}
+	\caption[Decoder Attention Detail]{Decoder Attention Detail. (Data travels from the bottom to the top.)}
 	
 	
 \end{figure}
@@ -266,7 +266,7 @@ After acquiring a trained model, programmers go on to adjust the model to their 
 		
 		\includegraphics[scale=3.0]{diagram-mat05}
 	\end{center}
-	\caption[Generative Pre-Training 2 ]{GPT2 - Radford et al \cite{radford2018improving}}
+	\caption[Generative Pre-Training 2 ]{GPT2 - Radford et al \cite{radford2018improving}. (Data travels from the bottom to the top.)}
 	
 
 \end{figure}
