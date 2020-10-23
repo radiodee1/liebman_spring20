@@ -1,4 +1,18 @@
 
+\section{Goals For This Thesis}
+This work focuses on providing a number of solutions for a Generative Chatbot. Most of those solutions are installed on small headless computers.
+
+\begin{itemize}
+	\item Implement a generative chatbot using Recurrent Network components. This implementation uses GRU objects.
+	\item Implement a generative chatbot using a Transformer architecture. This implementation uses Scaled Dot Product attention.
+	\item Implement a chatbot using the Generative Pre-Trained 2 transformer. This is a pre-trained model.
+	\item Subjectively compare the GRU, Transformer, and GPT2 models and the kind of output that each one produces.
+	\item Successfully install Google Speech Recognition and Text To Speech on the Raspberry Pi computer platform, as well as other small computers like the NVIDIA Jetson Nano.
+	\item Install a GRU, Transformer, and GPT2 model on individual Raspberry Pi computers. Also install Google Speech Recognition and Speech To Text on these computers so that they can operate without keyboard or monitor. Allow the chatbot model to interact with a human's voice.
+	\item Install a GPT2 model on a Jetson Nano, along with Google Speech libraries and allow a human to interact with the chatbot. Compare execution time to the same model on the Raspberry Pi. 
+	\item Compare the GRU and the Transformer model. Try to compare the word usage and sentence usage of the GRU and Transformer.
+\end{itemize}
+
 
 \section{GRU vs. Transformer}
 The GRU chatbot was compared with the larger Transformer based chatbot. Using subjective qualifications the GRU model answered accurately and with more variety than the Transformer model. An important observation was that the hyper-parameter set for the Transformer model could be expanded and enlarged as needed before training. The GRU model could not be trained successfully with an arbitrarily large hyper-parameter set. The larger Transformer could be trained to produce better responses.

@@ -1,3 +1,14 @@
+\section{Questions and Further Research}
+
+In this paper generative chatbots were shown to work installed on small computers. An attempt is made to install the entire chatbot model on a single board computer. The smaller GPT2 model with 117M parameters specifically performs well. Some questions are raised for future research.
+
+First, how large a model could be installed on how small a computer. Are there small computers that can serve as a platform for larger GPT2 models, and can these computers work fast enough for conversation. A solution to these problems might be serving the larger models somewhere on the internet. This is exactly what is done with GPT3 and is described in Section \ref{discussion-gpt3}.
+
+Second, how can the larger models be modified to further control or interact with things like household appliances. It might be good to somehow inform the model the state of these appliances, and then when the model changes their state, the model would somehow be informed. This could be done the same way that the time of day is presented to the GPT2 model.
+
+Third, it would be good to try out GPT3 generally and specifically ascertain whether it handled the `History' experiment better than the GPT2. This is discussed partially in Section \ref{install-gpt2-history}. 
+
+
 \section{Winograd Schema}
 
 Winograd schema are named after Terry Winograd. His premise is that presented sentences, that follow the schema, have two meanings. A computer finds these sentences challenging to understand, and that makes them useful for the measuring of Artificial Intelligence.
@@ -20,6 +31,8 @@ There is a Winograd Schema Challenge and something of a formula for constructing
 Though it is not a classic Winograd schema, when the x-large GPT2 model is tested in chapter \ref{chapter-xlarge}, the model is asked how many members there are in the band `The Beatles' without specifying which band the question is talking about. The x-large model answers what could be an ambiguous question. Sometimes it answers this sort of question correctly.
 
 \section{Generative Pre-Training 3}
+
+\label{discussion-gpt3}
 
 In 2020, OpenAI, the company responsible for training the GPT2 model, has released a new paper and set of models called GPT3. It is accessed by the public through an on-line API and private OpenAI server.
 

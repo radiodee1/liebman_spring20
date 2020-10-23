@@ -90,15 +90,17 @@
 \BOOKMARK [2][-]{subsection.5.1.6}{User Name Experiment}{section.5.1}% 90
 \BOOKMARK [2][-]{subsection.5.1.7}{Internet Search Experiment}{section.5.1}% 91
 \BOOKMARK [1][-]{section.5.2}{Generative Pre-Training 2 - Jetson Nano}{chapter.5}% 92
-\BOOKMARK [0][-]{chapter.6}{Observations and Conclusions}{}% 93
-\BOOKMARK [1][-]{section.6.1}{GRU vs. Transformer}{chapter.6}% 94
-\BOOKMARK [1][-]{section.6.2}{Turing Test}{chapter.6}% 95
-\BOOKMARK [1][-]{section.6.3}{Word and Sentence Comparisons}{chapter.6}% 96
-\BOOKMARK [2][-]{subsection.6.3.1}{Word Usage}{section.6.3}% 97
-\BOOKMARK [2][-]{subsection.6.3.2}{Sentence Usage}{section.6.3}% 98
-\BOOKMARK [2][-]{subsection.6.3.3}{Maximum Sentence Values}{section.6.3}% 99
-\BOOKMARK [1][-]{section.6.4}{Training and Lists}{chapter.6}% 100
-\BOOKMARK [0][-]{chapter.7}{Further Reading}{}% 101
-\BOOKMARK [1][-]{section.7.1}{Winograd Schema}{chapter.7}% 102
-\BOOKMARK [1][-]{section.7.2}{Generative Pre-Training 3}{chapter.7}% 103
-\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 104
+\BOOKMARK [0][-]{chapter.6}{Results and Observations}{}% 93
+\BOOKMARK [1][-]{section.6.1}{Goals For This Thesis}{chapter.6}% 94
+\BOOKMARK [1][-]{section.6.2}{GRU vs. Transformer}{chapter.6}% 95
+\BOOKMARK [1][-]{section.6.3}{Turing Test}{chapter.6}% 96
+\BOOKMARK [1][-]{section.6.4}{Word and Sentence Comparisons}{chapter.6}% 97
+\BOOKMARK [2][-]{subsection.6.4.1}{Word Usage}{section.6.4}% 98
+\BOOKMARK [2][-]{subsection.6.4.2}{Sentence Usage}{section.6.4}% 99
+\BOOKMARK [2][-]{subsection.6.4.3}{Maximum Sentence Values}{section.6.4}% 100
+\BOOKMARK [1][-]{section.6.5}{Training and Lists}{chapter.6}% 101
+\BOOKMARK [0][-]{chapter.7}{Further Research and Readings}{}% 102
+\BOOKMARK [1][-]{section.7.1}{Questions and Further Research}{chapter.7}% 103
+\BOOKMARK [1][-]{section.7.2}{Winograd Schema}{chapter.7}% 104
+\BOOKMARK [1][-]{section.7.3}{Generative Pre-Training 3}{chapter.7}% 105
+\BOOKMARK [0][-]{appendix.A}{Abbreviations}{}% 106
