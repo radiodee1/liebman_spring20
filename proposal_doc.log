@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  27 OCT 2020 13:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  27 OCT 2020 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -873,10 +873,10 @@ Chapter 6.
 <diagram-100000-vocab.png, id=1087, 607.26875pt x 341.275pt>
 File: diagram-100000-vocab.png Graphic file (type png)
 <use diagram-100000-vocab.png>
-Package pdftex.def Info: diagram-100000-vocab.png  used on input line 63.
+Package pdftex.def Info: diagram-100000-vocab.png  used on input line 73.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 63--64
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 73--74
  [] 
  []
 
@@ -884,10 +884,10 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 63--64
 <diagram-100000-novocab.png, id=1095, 607.26875pt x 341.275pt>
 File: diagram-100000-novocab.png Graphic file (type png)
 <use diagram-100000-novocab.png>
-Package pdftex.def Info: diagram-100000-novocab.png  used on input line 81.
+Package pdftex.def Info: diagram-100000-novocab.png  used on input line 91.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 81--82
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 91--92
  [] 
  []
 
@@ -895,10 +895,10 @@ Overfull \hbox (21.83044pt too wide) in paragraph at lines 81--82
 <diagram-100000-sent.png, id=1109, 607.26875pt x 341.275pt>
 File: diagram-100000-sent.png Graphic file (type png)
 <use diagram-100000-sent.png>
-Package pdftex.def Info: diagram-100000-sent.png  used on input line 104.
+Package pdftex.def Info: diagram-100000-sent.png  used on input line 114.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 104--105
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 114--115
  [] 
  []
 
