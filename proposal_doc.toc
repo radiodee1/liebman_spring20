@@ -1,3 +1,4 @@
+\acswitchoff 
 \babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Background/History of the Study}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background}{2}{section.1.1}%
