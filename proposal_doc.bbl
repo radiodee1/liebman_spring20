@@ -6,8 +6,8 @@ O.~Vinyals and Q.~V. Le, ``A neural conversational model,'' {\em CoRR},
 
 \bibitem{2018Inkawhich}
 {Matthew Inkawhich}, ``pytorch-chatbot,'' 2018.
-\newblock https://github.com/pytorch/tutorials
-  /blob/master/beginner{\_}source/chatbot{\_}tutorial.py.
+\newblock
+  \url{https://github.com/pytorch/tutorials/blob/master/beginner\_source/chatbot\_tutorial.py}.
 
 \bibitem{Vaswani2017AttentionIA}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,

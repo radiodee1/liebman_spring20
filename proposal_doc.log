@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  28 OCT 2020 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.24)  29 OCT 2020 09:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -917,7 +917,13 @@ Appendix A.
 [81
 
 
-] (./proposal_doc.bbl [82
+] (./proposal_doc.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 8--11
+[]\T1/cmr/m/n/10 Matthew Inkawhich, ``pytorch-chatbot,'' 2018.  []$\T1/pcr/m/n/
+10 https : / / github . com / pytorch /
+ []
+
+[82
 
 ]
 Underfull \hbox (badness 6691) in paragraph at lines 81--86
@@ -975,10 +981,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (93 pages, 9200845 bytes).
+Output written on proposal_doc.pdf (93 pages, 9200998 bytes).
 PDF statistics:
- 1747 PDF objects out of 2073 (max. 8388607)
- 1132 compressed objects within 12 object streams
+ 1749 PDF objects out of 2073 (max. 8388607)
+ 1134 compressed objects within 12 object streams
  247 named destinations out of 1000 (max. 500000)
  969 words of extra memory for PDF output out of 10000 (max. 10000000)
 
