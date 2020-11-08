@@ -136,7 +136,7 @@ This describes the encoder section. There are two other attention segments. Toge
 
 In the flow diagram, Figure \ref{diagram-flow1}, most sub-segments of the entire transformer are not described. The focus is the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
 
-The output of the encoder is a group of vectors the same size as the input sequence. They become the `Key' and `Value' batches below.
+The output of the encoder is a group of vectors the same size as the input sequence. They become the `Key' and `Value' batches below. The encoder section iterates once for every input data sequence.
 
 
 \begin{figure}[H]
@@ -153,7 +153,7 @@ The output of the encoder is a group of vectors the same size as the input seque
 \subsection{Decoder Attention I - `Key' and `Value'}
 The decoder is composed of two attention mechanisms and a feed forward segment at each layer. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms in each decoder layer. In one attention mechanism of the decoder, the `Key' and `Value' matrices are imported from the encoder. 
 
-While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. 
+While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. The decoder section iterates once for every output word. Throughout this process the information from the encoder does not change.
 
 In the flow diagram one layer of the decoder is illustrated.
 
