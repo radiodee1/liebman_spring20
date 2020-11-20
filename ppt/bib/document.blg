@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: document.aux
+The style file: unsrt.bst
+Database file #1: proposal_doc.bib
+Warning--empty journal in radford2019language
+You've used 4 entries,
+            1791 wiz_defined-function locations,
+            468 strings with 4208 characters,
+and the built_in function-call counts, 753 in all, are:
+= -- 46
+> -- 58
+< -- 0
++ -- 21
+- -- 17
+* -- 42
+:= -- 139
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 33
+empty$ -- 72
+format.name$ -- 17
+if$ -- 158
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 3
+newline$ -- 23
+num.names$ -- 4
+pop$ -- 20
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 14
+stack$ -- 0
+substring$ -- 0
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 4
+width$ -- 5
+write$ -- 42
+(There was 1 warning)
