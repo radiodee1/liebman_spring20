@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.29)  8 NOV 2020 08:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.29)  9 DEC 2020 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -50,9 +50,6 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen142
 \Gm@dimlist=\toks16
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-)
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
@@ -74,19 +71,12 @@ File: babel.def 2020/07/13 3.47 Babel common definitions
 \bbl@readstream=\read2
 )
 \bbl@dirlevel=\count181
+Package babel Info: You haven't specified a language. I'll use 'nil'
+(babel)             as the main language. Reported on input line 1075.
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2017/06/06 v3.3r English support from the babel system
-Package babel Info: \l@british = using hyphenrules for english
-(babel)             (\language0) on input line 82.
-Package babel Info: \l@UKenglish = using hyphenrules for english
-(babel)             (\language0) on input line 83.
-Package babel Info: \l@canadian = using hyphenrules for english
-(babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for english
-(babel)             (\language0) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for english
-(babel)             (\language0) on input line 108.
+(/usr/share/texlive/texmf-dist/tex/generic/babel/nil.ldf
+Language: nil 2020/07/13 3.47 Nil language
+\l@nil=\language4
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -108,26 +98,6 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count185
 \calc@Cskip=\skip51
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 105.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen146
-\Gin@req@width=\dimen147
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -170,7 +140,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen148
+\@linkdim=\dimen146
 \Hy@linkcounter=\count186
 \Hy@pagecounter=\count187
 
@@ -200,7 +170,7 @@ Package hyperref Info: Bookmarks ON on input line 4717.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen149
+\XeTeXLinkMargin=\dimen147
 
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -210,8 +180,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count190
-\Field@Width=\dimen150
-\Fld@charsize=\dimen151
+\Field@Width=\dimen148
+\Fld@charsize=\dimen149
 Package hyperref Info: Hyper figures OFF on input line 6347.
 Package hyperref Info: Link nesting OFF on input line 6352.
 Package hyperref Info: Hyper index ON on input line 6355.
@@ -281,11 +251,11 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks22
-\ex@=\dimen152
+\ex@=\dimen150
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen153
+\pmbraise@=\dimen151
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
@@ -302,7 +272,7 @@ LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box47
 \strutbox@=\box48
-\big@size=\dimen154
+\big@size=\dimen152
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \macc@depth=\count267
@@ -315,12 +285,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \column@=\count272
 \maxfields@=\count273
 \andhelp@=\toks24
-\eqnshift@=\dimen155
-\alignsep@=\dimen156
-\tagshift@=\dimen157
-\tagwidth@=\dimen158
-\totwidth@=\dimen159
-\lineht@=\dimen160
+\eqnshift@=\dimen153
+\alignsep@=\dimen154
+\tagshift@=\dimen155
+\tagwidth@=\dimen156
+\totwidth@=\dimen157
+\lineht@=\dimen158
 \@envbody=\toks25
 \multlinegap=\skip54
 \multlinetaggap=\skip55
@@ -333,16 +303,16 @@ LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \g_MT_multlinerow_int=\count274
-\l_MT_multwidth_dim=\dimen161
+\l_MT_multwidth_dim=\dimen159
 \origjot=\skip56
-\l_MT_shortvdotswithinadjustabove_dim=\dimen162
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen163
-\l_MT_above_intertext_sep=\dimen164
-\l_MT_below_intertext_sep=\dimen165
-\l_MT_above_shortintertext_sep=\dimen166
-\l_MT_below_shortintertext_sep=\dimen167
+\l_MT_shortvdotswithinadjustabove_dim=\dimen160
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen161
+\l_MT_above_intertext_sep=\dimen162
+\l_MT_below_intertext_sep=\dimen163
+\l_MT_above_shortintertext_sep=\dimen164
+\l_MT_below_shortintertext_sep=\dimen165
 \xmathstrut@box=\box49
-\xmathstrut@dim=\dimen168
+\xmathstrut@dim=\dimen166
 )
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
@@ -361,37 +331,32 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
 )
-(/usr/share/texlive/texmf-dist/tex/latex/changepage/changepage.sty
-Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count275
-\cp@tempcnt=\count276
-)
 (/usr/share/texlive/texmf-dist/tex/latex/acro/acro.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-07-17 L3 programming layer (loader) 
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count277
+\l__kernel_color_stack_int=\count275
 \l__pdf_internal_box=\box50
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-05-15 L3 Experimental document command parser
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex
-\l__xparse_current_arg_int=\count278
-\g__xparse_grabber_int=\count279
-\l__xparse_m_args_int=\count280
-\l__xparse_v_nesting_int=\count281
+\l__xparse_current_arg_int=\count276
+\g__xparse_grabber_int=\count277
+\l__xparse_m_args_int=\count278
+\l__xparse_v_nesting_int=\count279
 )) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2020-05-15 LaTeX2e option processing using LaTeX3 keys
 )
 Package: acro 2020/05/10 v3.2 typeset acronyms and other abbreviations
-\g__acro_version_int=\count282
-\l__acro_tmpa_int=\count283
-\l__acro_tmpb_int=\count284
-\l__acro_tmpc_int=\count285
-\l__acro_tmpd_int=\count286
+\g__acro_version_int=\count280
+\l__acro_tmpa_int=\count281
+\l__acro_tmpb_int=\count282
+\l__acro_tmpc_int=\count283
+\l__acro_tmpd_int=\count284
 Loading module `base' ...
 Loading module `interface' ...
 Loading module `aux' ...
@@ -400,9 +365,9 @@ Loading module `acronyms' ...
 Loading module `formatting' ...
 Loading module `ppfixes' ...
 Loading module `tools' ...
-\l__acro_minimal_usage_int=\count287
-\g_acro_barrier_int=\count288
-\g_acro_barrier_total_int=\count289
+\l__acro_minimal_usage_int=\count285
+\g_acro_barrier_int=\count286
+\g_acro_barrier_total_int=\count287
 Loading module `commands' ...
 Loading module `templates' ...
 Loading module `list' ...
@@ -417,7 +382,7 @@ Package zref Info: New property list: main on input line 763.
 Package zref Info: New property: default on input line 764.
 Package zref Info: New property: page on input line 765.
 )
-\c@abspage=\count290
+\c@abspage=\count288
 Package zref Info: New property: abspage on input line 66.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/zref/zref-totpages.sty
@@ -427,7 +392,7 @@ Package: zref-totpages 2020-05-28 v2.31 Module totpages for zref (HO)
 Package: zref-lastpage 2020-05-28 v2.31 Module lastpage for zref (HO)
 Package zref Info: New property list: LastPage on input line 59.
 ))
-\l__acro_pages_seq_threshold_int=\count291
+\l__acro_pages_seq_threshold_int=\count289
 Loading module `locale' ...
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations.sty
@@ -439,7 +404,7 @@ Package: scrlfile 2020/07/22 v3.31 KOMA-Script package (loading files)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/07/15 v2.5i e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count292
+\etb@tempcnta=\count290
 ))
 Loading module `pdfsupport' ...
 Loading module `patch' ...
@@ -447,23 +412,23 @@ Loading module `definitions' ...
 Loading module `upgrade' ...
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count293
+\lst@mode=\count291
 \lst@gtempboxa=\box51
 \lst@token=\toks27
-\lst@length=\count294
-\lst@currlwidth=\dimen169
-\lst@column=\count295
-\lst@pos=\count296
-\lst@lostspace=\dimen170
-\lst@width=\dimen171
-\lst@newlines=\count297
-\lst@lineno=\count298
-\lst@maxwidth=\dimen172
+\lst@length=\count292
+\lst@currlwidth=\dimen167
+\lst@column=\count293
+\lst@pos=\count294
+\lst@lostspace=\dimen168
+\lst@width=\dimen169
+\lst@newlines=\count295
+\lst@lineno=\count296
+\lst@maxwidth=\dimen170
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count299
-\lst@skipnumbers=\count300
+\c@lstnumber=\count297
+\lst@skipnumbers=\count298
 \lst@framebox=\box52
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -474,96 +439,108 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip57
+\aftertitleunit=\skip58
+\ttl@plus=\dimen171
+\ttl@minus=\dimen172
+\ttl@toksa=\toks28
+\titlewidth=\dimen173
+\titlewidthlast=\dimen174
+\titlewidthfirst=\dimen175
+)
 \@input{proposal_acc.aux}
 \openout2 = `proposal_acc.aux'.
 
 (./proposal_acc.tex
-\g__acro_RNN_int=\count301
+\g__acro_RNN_int=\count299
 
 
 Package acro Warning: On line 5:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_GRU_int=\count302
+\g__acro_GRU_int=\count300
 
 Package acro Warning: On line 11:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_GPT2_int=\count303
+\g__acro_GPT2_int=\count301
 
 Package acro Warning: On line 17:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_AIML_int=\count304
+\g__acro_AIML_int=\count302
 
 Package acro Warning: On line 23:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_BERT_int=\count305
+\g__acro_BERT_int=\count303
 
 Package acro Warning: On line 29:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_BPE_int=\count306
+\g__acro_BPE_int=\count304
 
 Package acro Warning: On line 35:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_NMT_int=\count307
+\g__acro_NMT_int=\count305
 
 Package acro Warning: On line 41:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_SR_int=\count308
+\g__acro_SR_int=\count306
 
 Package acro Warning: On line 47:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_NLP_int=\count309
+\g__acro_NLP_int=\count307
 
 Package acro Warning: On line 53:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_GPU_int=\count310
+\g__acro_GPU_int=\count308
 
 Package acro Warning: On line 59:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_JSON_int=\count311
+\g__acro_JSON_int=\count309
 
 Package acro Warning: On line 65:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_LSTM_int=\count312
+\g__acro_LSTM_int=\count310
 
 Package acro Warning: On line 71:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_OOV_int=\count313
+\g__acro_OOV_int=\count311
 
 Package acro Warning: On line 77:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_gTTS_int=\count314
+\g__acro_gTTS_int=\count312
 
 Package acro Warning: On line 83:
 (acro)                The property `class' is deprecated. Use property `tag'
 (acro)                instead.
 
-\g__acro_EOL_int=\count315
+\g__acro_EOL_int=\count313
 
 Package acro Warning: On line 89:
 (acro)                The property `class' is deprecated. Use property `tag'
@@ -575,22 +552,22 @@ Package acro Warning: On line 89:
 (./chapters/chapter07.aux) (./proposal_doc.acr))
 \openout1 = `proposal_doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -626,31 +603,8 @@ LaTeX Font Info:    ... okay on input line 55.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count316
-\scratchdimen=\dimen173
-\scratchbox=\box53
-\nofMPsegments=\count317
-\nofMParguments=\count318
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count319
-\MPscratchDim=\dimen174
-\MPnumerator=\count320
-\makeMPintoPDFobject=\count321
-\everyMPtoPDFconversion=\toks29
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 \AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 55.
-
+Package hyperref Info: Link coloring OFF on input line 68.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -660,63 +614,103 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count322
+\c@section@level=\count314
 )
-LaTeX Info: Redefining \ref on input line 55.
-LaTeX Info: Redefining \pageref on input line 55.
-LaTeX Info: Redefining \nameref on input line 55.
+LaTeX Info: Redefining \ref on input line 68.
+LaTeX Info: Redefining \pageref on input line 68.
+LaTeX Info: Redefining \nameref on input line 68.
 
 (./proposal_doc.out) (./proposal_doc.out)
 \@outlinefile=\write3
 \openout3 = `proposal_doc.out'.
 
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count315
+\scratchdimen=\dimen176
+\scratchbox=\box55
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen177
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks30
+))) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\Gin@req@height=\dimen178
+\Gin@req@width=\dimen179
+)
 \l__acro_aux_file_iow=\write4
 \openout4 = `proposal_doc.acr'.
 
+\c@lstlisting=\count321
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
 
-(/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
-nary-english.trsl
-File: translations-basic-dictionary-english.trsl (english translation file `tra
-nslations-basic-dictionary')
-)
-Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 55.
-\c@lstlisting=\count323
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
 
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 75
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): dest
-ination with the same identifier (name{page.}) has been already used, duplicate
- ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.123 \newpage
-               [1]
+l.133 \newpage
+               [2]
 \openout2 = `chapters/abstract.aux'.
 
- (./chapters/abstract.tex)pdfTeX warning (ext4): destination with the same iden
-tifier (name{page.}) has been already used, duplicate ignored
+ (./chapters/abstract.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+[]\OT1/cmr/bx/n/14.4 Abstract|
+ []
+
+)pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.125 \include{chapters/abstract}
-                                  [2
+l.135 \include{chapters/abstract}
+                                  [3
 
 ] (./proposal_doc.toc [1
 
@@ -739,342 +733,386 @@ l.125 \include{chapters/abstract}
  [7
 
 ]
-Chapter 1.
-[1
-
-]
 \openout2 = `chapters/chapter01.aux'.
 
- (./chapters/chapter01.tex [2
+ (./chapters/chapter01.tex
+Chapter 1.
 
-]
-<diagram-hidden.png, id=663, 108.405pt x 84.315pt>
+Overfull \hbox (1.07516pt too wide) in paragraph at lines 16--17
+\OT1/cmr/m/n/10 Radford et al [[]] discuss the `Generative Pre-Training 2' (GPT
+2) neural network for Natural Language
+ []
+
+[1
+
+
+] [2]
+Overfull \hbox (19.17593pt too wide) in paragraph at lines 56--57
+\OT1/cmr/m/n/10 The goal behind Recurrent Neural Network (RNN) components is to
+ detect patterns. Since understanding
+ []
+
+<diagram-hidden.png, id=664, 108.405pt x 84.315pt>
 File: diagram-hidden.png Graphic file (type png)
 <use diagram-hidden.png>
-Package pdftex.def Info: diagram-hidden.png  used on input line 33.
+Package pdftex.def Info: diagram-hidden.png  used on input line 64.
 (pdftex.def)             Requested size: 216.80945pt x 168.62955pt.
- [3 <./diagram-hidden.png>]
+[3]
 <diagram-rnn01.png, id=672, 321.2pt x 361.35pt>
 File: diagram-rnn01.png Graphic file (type png)
 <use diagram-rnn01.png>
-Package pdftex.def Info: diagram-rnn01.png  used on input line 53.
+Package pdftex.def Info: diagram-rnn01.png  used on input line 84.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [4 <./diagram-rnn01.png>] [5]
-<diagram-embedding.png, id=691, 351.3125pt x 351.3125pt>
+ [4 <./diagram-hidden.png>] [5 <./diagram-rnn01.png>]
+Overfull \hbox (1.75461pt too wide) in paragraph at lines 122--123
+[]\OT1/cmr/m/n/10 Under most programming circumstances the GRU is not implement
+ed by the average programmer.
+ []
+
+
+Overfull \hbox (8.85307pt too wide) in paragraph at lines 122--123
+\OT1/cmr/m/n/10 The programmer employs a language like python and a programming
+ library like Pytorch or Tensorflow.
+ []
+
+
+Overfull \hbox (13.36578pt too wide) in paragraph at lines 122--123
+\OT1/cmr/m/n/10 The library then implements the GRU and makes it easy for the p
+rogrammer to use that implementation. 
+ []
+
+[6]
+<diagram-embedding.png, id=695, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
-Package pdftex.def Info: diagram-embedding.png  used on input line 114.
+Package pdftex.def Info: diagram-embedding.png  used on input line 145.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
- [6] [7 <./diagram-embedding.png>] [8]
-<diagram-nmt03.png, id=709, 193.9245pt x 61.4295pt>
+ [7] [8 <./diagram-embedding.png>] [9]
+<diagram-nmt03.png, id=714, 193.9245pt x 61.4295pt>
 File: diagram-nmt03.png Graphic file (type png)
 <use diagram-nmt03.png>
-Package pdftex.def Info: diagram-nmt03.png  used on input line 169.
+Package pdftex.def Info: diagram-nmt03.png  used on input line 200.
 (pdftex.def)             Requested size: 387.84802pt x 122.85867pt.
- [9 <./diagram-nmt03.png>]
-[10] [11]
+ [10 <./diagram-nmt03.png>]
+Overfull \hbox (5.18631pt too wide) in paragraph at lines 225--226
+[]\OT1/cmr/m/n/10 Making this vector larger by increasing the size of the hidde
+n dimension allows for more information
+ []
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 235.
+[11] [12]
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 266.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 235
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 266
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 242.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 273.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 242
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 273
 .
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 250.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 281.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 250
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 281
 .
 
 
-LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 254.
+LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 285.
 
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 254
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 285
 .
 
-[12] [13]
+[13] [14]
 <Figure_1.png, id=748, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
-Package pdftex.def Info: Figure_1.png  used on input line 306.
+Package pdftex.def Info: Figure_1.png  used on input line 337.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-) [14 <./Figure_1.png>]
-Chapter 2.
-[15
-
-
-]
+) [15 <./Figure_1.png>]
 \openout2 = `chapters/chapter02.aux'.
 
- (./chapters/chapter02.tex [16
+ (./chapters/chapter02.tex
+Chapter 2.
+[16
+
+
 
 ]
-<diagram-mat04.png, id=765, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=761, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 38.
 (pdftex.def)             Requested size: 242.8266pt x 330.99577pt.
- [17 <./diagram-mat04.png>]
-<diagram-mat01.png, id=774, 321.2pt x 361.35pt>
+ [17]
+<diagram-mat01.png, id=769, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 59.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [18 <./diagram-mat01.png>]
+ [18 <./diagram-mat04.png>] [19 <./diagram-mat01.png>]
 <diagram-mat04-64.png, id=783, 321.2pt x 361.35pt>
 File: diagram-mat04-64.png Graphic file (type png)
 <use diagram-mat04-64.png>
 Package pdftex.def Info: diagram-mat04-64.png  used on input line 96.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [19 <./diagram-mat04-64.png>]
-<diagram-mat02.png, id=791, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=784, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 114.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
+ [20 <./diagram-mat04-64.png>]
 <diagram-flow1.png, id=792, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
 Package pdftex.def Info: diagram-flow1.png  used on input line 130.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
- [20 <./diagram-mat02.png>]
-<diagram-graph-encoder-flow-b.png, id=799, 221.1462pt x 215.8464pt>
+ [21 <./diagram-mat02.png>]
+<diagram-graph-encoder-flow-b.png, id=800, 221.1462pt x 215.8464pt>
 File: diagram-graph-encoder-flow-b.png Graphic file (type png)
 <use diagram-graph-encoder-flow-b.png>
 Package pdftex.def Info: diagram-graph-encoder-flow-b.png  used on input line 1
 46.
 (pdftex.def)             Requested size: 165.85922pt x 161.8844pt.
- [21 <./diagram-flow1.png>]
-<diagram-flow-decoder02.png, id=807, 229.3368pt x 258.7266pt>
+ [22 <./diagram-flow1.png>]
+<diagram-flow-decoder02.png, id=806, 229.3368pt x 258.7266pt>
 File: diagram-flow-decoder02.png Graphic file (type png)
 <use diagram-flow-decoder02.png>
 Package pdftex.def Info: diagram-flow-decoder02.png  used on input line 164.
 (pdftex.def)             Requested size: 286.6703pt x 323.40741pt.
- [22 <./diagram-graph-encoder-flow-b.png>]
-<diagram-graph-decoder-flow-c.png, id=813, 409.53pt x 385.44pt>
+ [23 <./diagram-graph-encoder-flow-b.png>]
+<diagram-graph-decoder-flow-c.png, id=812, 409.53pt x 385.44pt>
 File: diagram-graph-decoder-flow-c.png Graphic file (type png)
 <use diagram-graph-decoder-flow-c.png>
 Package pdftex.def Info: diagram-graph-decoder-flow-c.png  used on input line 1
 81.
 (pdftex.def)             Requested size: 307.14674pt x 289.07928pt.
- [23 <./diagram-flow-decoder02.png>] [24 <./diagram-graph-decoder-flow-c.png>]
-<diagram-mask01.png, id=825, 154.176pt x 204.765pt>
+ [24 <./diagram-flow-decoder02.png>] [25 <./diagram-graph-decoder-flow-c.png>]
+<diagram-mask01.png, id=824, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
 Package pdftex.def Info: diagram-mask01.png  used on input line 210.
 (pdftex.def)             Requested size: 192.7195pt x 255.9556pt.
- [25 <./diagram-mask01.png>]
-<Figure_3.png, id=831, 98.769pt x 63.3567pt>
+ [26 <./diagram-mask01.png>]
+<Figure_3.png, id=830, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 235.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
- [26 <./Figure_3.png>]
+ [27 <./Figure_3.png>]
 <diagram-mat05.png, id=840, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 271.
 (pdftex.def)             Requested size: 138.03534pt x 267.3983pt.
- [27] [28 <./diagram-mat05.png (PNG copy)>] [29]
-<diagram-inference-02.png, id=858, 145.0218pt x 103.587pt>
+ [28] [29 <./diagram-mat05.png (PNG copy)>] [30]
+Overfull \hbox (10.48262pt too wide) in paragraph at lines 315--316
+\OT1/cmr/m/n/10 the output is recombined with the input. There are also compone
+nts in each layer that do normalization. 
+ []
+
+<diagram-inference-02.png, id=857, 145.0218pt x 103.587pt>
 File: diagram-inference-02.png Graphic file (type png)
 <use diagram-inference-02.png>
 Package pdftex.def Info: diagram-inference-02.png  used on input line 330.
 (pdftex.def)             Requested size: 290.04288pt x 207.1735pt.
-
-[30 <./diagram-inference-02.png>] [31]
-<Figure_4.png, id=872, 84.7968pt x 46.2528pt>
+[31 <./diagram-inference-02.png>] [32]
+<Figure_4.png, id=871, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 390.
 (pdftex.def)             Requested size: 169.59314pt x 92.50537pt.
-) [32 <./Figure_4.png>] [33]
-Chapter 3.
-[34
-
-
-]
+) [33 <./Figure_4.png>] [34]
 \openout2 = `chapters/chapter03.aux'.
 
- (./chapters/chapter03.tex [35
+
+(./chapters/chapter03.tex
+Chapter 3.
+[35
+
+
 
 ] [36] [37]
-<diagram-pic01.png, id=903, 2581.645pt x 2477.255pt>
+<diagram-pic01.png, id=898, 2581.645pt x 2477.255pt>
 File: diagram-pic01.png Graphic file (type png)
 <use diagram-pic01.png>
-Package pdftex.def Info: diagram-pic01.png  used on input line 115.
+Package pdftex.def Info: diagram-pic01.png  used on input line 117.
 (pdftex.def)             Requested size: 258.17963pt x 247.74pt.
- [38 <./diagram-pic01.png>]
-<diagram-jetson-nano-02.png, id=909, 401.5pt x 358.33875pt>
+ [38]
+<diagram-jetson-nano-02.png, id=904, 401.5pt x 358.33875pt>
 File: diagram-jetson-nano-02.png Graphic file (type png)
 <use diagram-jetson-nano-02.png>
-Package pdftex.def Info: diagram-jetson-nano-02.png  used on input line 141.
+Package pdftex.def Info: diagram-jetson-nano-02.png  used on input line 143.
 (pdftex.def)             Requested size: 361.34665pt x 322.50189pt.
+ [39 <./diagram-pic01.png>] [40 <./diagram-jetson-nano-02.png>] [41]
+Overfull \hbox (2.27414pt too wide) in paragraph at lines 216--217
+[]\OT1/cmr/m/n/10 Furthermore, an environment variable, called `GOOGLE[]APPLICA
+TION[]CREDENTIALS' must
+ []
 
-[39] [40 <./diagram-jetson-nano-02.png>] [41] [42] [43] [44]) [45]
+[42] [43]
+Overfull \hbox (1.53816pt too wide) in paragraph at lines 262--263
+[]\OT1/cmr/m/n/10 There were several small hurdles to completing the compilatio
+n. First, the `debootstrap' command
+ []
+
+[44]) [45]
+\openout2 = `chapters/chapter04.aux'.
+
+ (./chapters/chapter04.tex
 Chapter 4.
 [46
 
 
-]
-\openout2 = `chapters/chapter04.aux'.
 
- (./chapters/chapter04.tex [47
+] [47] [48] [49] [50] [51]
+Overfull \hbox (3.07458pt too wide) in paragraph at lines 197--197
+|[]\OT1/cmr/bx/n/14.4 Smart Speaker - Transformer Model with Persona Corpus| 
+ []
 
-] [48] [49] [50] [51] [52]
-<diagram-chart-loss-00.png, id=980, 128.1588pt x 69.861pt>
+[52]
+<diagram-chart-loss-00.png, id=975, 128.1588pt x 69.861pt>
 File: diagram-chart-loss-00.png Graphic file (type png)
 <use diagram-chart-loss-00.png>
-Package pdftex.def Info: diagram-chart-loss-00.png  used on input line 221.
+Package pdftex.def Info: diagram-chart-loss-00.png  used on input line 223.
 (pdftex.def)             Requested size: 448.55467pt x 244.51283pt.
 
-Overfull \hbox (14.93466pt too wide) in paragraph at lines 221--222
+Overfull \hbox (14.93466pt too wide) in paragraph at lines 223--224
  [] 
  []
 
-[53] [54 <./diagram-chart-loss-00.png>] [55] [56] [57] [58] [59]) [60] [61]
-Chapter 5.
-[62
+[53 <./diagram-chart-loss-00.png>] [54] [55] [56]
+Overfull \hbox (0.74185pt too wide) in paragraph at lines 382--383
+\OT1/cmr/m/n/10 Programming that allowed the model to launch programs when dire
+cted by the user was implemented.
+ []
 
-
-]
+[57] [58] [59]) [60]
 \openout2 = `chapters/chapter05.aux'.
 
- (./chapters/chapter05.tex [63
-
-] [64] [65] [66] [67] [68]) [69]
-Chapter 6.
-[70
+ (./chapters/chapter05.tex
+Chapter 5.
+[61
 
 
-]
+
+] [62] [63] [64] [65] [66]) [67]
 \openout2 = `chapters/chapter06.aux'.
 
- (./chapters/chapter06.tex [71
+ (./chapters/chapter06.tex
+Chapter 6.
+[68
 
-] [72]
-<diagram-100000-vocab.png, id=1086, 607.26875pt x 341.275pt>
+
+
+] [69]
+<diagram-100000-vocab.png, id=1057, 607.26875pt x 341.275pt>
 File: diagram-100000-vocab.png Graphic file (type png)
 <use diagram-100000-vocab.png>
-Package pdftex.def Info: diagram-100000-vocab.png  used on input line 74.
+Package pdftex.def Info: diagram-100000-vocab.png  used on input line 77.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 74--75
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 77--78
  [] 
  []
 
-[73]
-<diagram-100000-novocab.png, id=1094, 607.26875pt x 341.275pt>
+[70 <./diagram-100000-vocab.png>]
+<diagram-100000-novocab.png, id=1066, 607.26875pt x 341.275pt>
 File: diagram-100000-novocab.png Graphic file (type png)
 <use diagram-100000-novocab.png>
-Package pdftex.def Info: diagram-100000-novocab.png  used on input line 92.
+Package pdftex.def Info: diagram-100000-novocab.png  used on input line 95.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 92--93
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 95--96
  [] 
  []
 
-[74 <./diagram-100000-vocab.png>] [75 <./diagram-100000-novocab.png>]
-<diagram-100000-sent.png, id=1108, 607.26875pt x 341.275pt>
+[71 <./diagram-100000-novocab.png>]
+<diagram-100000-sent.png, id=1074, 607.26875pt x 341.275pt>
 File: diagram-100000-sent.png Graphic file (type png)
 <use diagram-100000-sent.png>
-Package pdftex.def Info: diagram-100000-sent.png  used on input line 115.
+Package pdftex.def Info: diagram-100000-sent.png  used on input line 118.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
 
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 115--116
+Overfull \hbox (21.83044pt too wide) in paragraph at lines 118--119
  [] 
  []
 
-[76 <./diagram-100000-sent.png>]) [77]
-Chapter 7.
-[78
 
-
-]
-\openout2 = `chapters/chapter07.aux'.
-
- (./chapters/chapter07.tex [79
-
-]) [80]
-Appendix A.
-
-! LaTeX3 Error: The key 'acro/list/include-classes' is unknown and is being
-(LaTeX3)        ignored.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.184 \printacronyms[include-classes=abbrev,name=]
-                                                  
-
-The module 'acro/list' does not have a key called 'acro/list/include-classes'.
-Check that you have spelled the key name correctly.
-
-
-[81
-
-
-] [82
-
-] (./proposal_doc.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
-[]\T1/cmr/m/n/10 Matthew Inkawhich, ``pytorch-chatbot,'' 2018.  []$\T1/pcr/m/n/
-10 https : / / github . com / pytorch /
+Overfull \hbox (3.17711pt too wide) in paragraph at lines 134--135
+\OT1/cmr/m/n/10 For each of the models there is only a certain number of tokens
+ in the model's vocabulary. Additionally
  []
 
-[83
+[72 <./diagram-100000-sent.png>]) [73]
+\openout2 = `chapters/chapter07.aux'.
+
+ (./chapters/chapter07.tex
+Chapter 7.
+[74
+
+
+
+] [75]) [76] [77
+
+
+] (./proposal_doc.bbl
+Underfull \hbox (badness 7468) in paragraph at lines 8--11
+[]\OT1/cmr/m/n/10 Matthew Inkawhich, ``pytorch-chatbot,'' 2018.  []$\OT1/pcr/m/
+n/10 https : / / github . com / pytorch /
+ []
+
+[78
 
 ]
-Underfull \hbox (badness 6691) in paragraph at lines 81--86
-[]\T1/cmr/m/n/10 Wikipedia con-trib-u-tors, ``Wino-grad schema chal-lenge --- W
-ikipedia, the free en-
+Underfull \hbox (badness 3240) in paragraph at lines 55--59
+[]\OT1/cmr/m/n/10 A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever, ``I
+mproving language
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
+[]\OT1/cmr/m/n/10 Wikipedia contributors, ``Winograd schema challenge --- Wikip
+edia, the free
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
+\OT1/cmr/m/n/10 encyclopedia.'' []$\OT1/pcr/m/n/10 https : / / en . wikipedia .
+ org / w / index . php ? title = Winograd _
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [84]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
+ [79]
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 183.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
 (./chapters/chapter04.aux) (./chapters/chapter05.aux) (./chapters/chapter06.aux
 ) (./chapters/chapter07.aux) (./proposal_doc.acr))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 6A1003259F3D6B67BE87039581AF3995;7808.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+(rerunfilecheck)             Checksum: 8C28AA5A996E1E8E8BAFDABEF7411C63;7757.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
- 16600 strings out of 482854
- 335906 string characters out of 5956880
- 600760 words of memory out of 5000000
- 31352 multiletter control sequences out of 15000+600000
- 568018 words of font info for 121 fonts, out of 8000000 for 9000
+ 16315 strings out of 482854
+ 322870 string characters out of 5956880
+ 599118 words of memory out of 5000000
+ 31096 multiletter control sequences out of 15000+600000
+ 558744 words of font info for 112 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,11n,57p,958b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,11n,57p,958b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600p
-k> </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600p
-k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/dave/.texl
-ive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dave/.texl
-ive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texliv
+k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
@@ -1087,14 +1125,15 @@ mextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (94 pages, 9200910 bytes).
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/zapfding/uzdr.pfb>
+Output written on proposal_doc.pdf (89 pages, 9126622 bytes).
 PDF statistics:
- 1751 PDF objects out of 2073 (max. 8388607)
- 1136 compressed objects within 12 object streams
- 248 named destinations out of 1000 (max. 500000)
- 969 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1243 PDF objects out of 1440 (max. 8388607)
+ 1073 compressed objects within 11 object streams
+ 239 named destinations out of 1000 (max. 500000)
+ 961 words of extra memory for PDF output out of 10000 (max. 10000000)
 

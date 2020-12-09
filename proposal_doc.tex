@@ -1,18 +1,20 @@
 
 
-\documentclass[english]{report}
+%\documentclass[english]{report}
+\documentclass[notitlepage]{report}
 %book
 %article
 %report
 \usepackage[margin=1.25in]{geometry}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 \usepackage{float}
 \usepackage{calc}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{setspace}
+
 %\usepackage[unicode=true]
 % {hyperref}
 
@@ -26,13 +28,24 @@
 %\usepackage{multicol}
 %\setlength{\columnsep}{1cm}
 \usepackage{courier}
-\usepackage{changepage}
+
+%\usepackage{changepage}
+
 %\usepackage{table}
 \usepackage{acro}
 %\usepackage[nottoc]{tocbibind}
 \usepackage{listings}
 \usepackage{relsize}
+\usepackage{titlesec}
 
+%\titleformat{name=\chapter,numberless}[display]
+%{\filcenter}
+%{{%
+%	}%
+%}
+%{5pt}
+%{\Huge\usefont{T1}{phv}{b}{n}%
+%}
 
 
 \acsetup{first-style=short}
@@ -56,22 +69,24 @@
 
 \pagenumbering{gobble}
 
-\title{A Generative Chatbot with Natural Language Processing }
+\title{\textbf{A Generative Chatbot with Natural Language Processing }}
 
-\author{ David Liebman \\ \texttt{david.c.liebman@gmail.com} }
-
-
-
-\date{\parbox{\linewidth}{\centering%
-		\today\endgraf\bigskip
-		%Coordinator 1 \hspace*{3cm} Coordinator 2\endgraf\medskip
-		Department of Computer Science \endgraf
-		State University of New York \\ 
-		New Paltz, New York, 12561}}
+\author{By \\ \textbf{David Liebman } \\
+In Partial Fulfillment of the Requirement for the Degree of \\
+\textbf{MASTER OF SCIENCE } \\ \\}
 
 
 
-\maketitle
+\date{
+Department of Computer Science \\
+State University of New York \\ 
+New Paltz, New York, 12561 \\ 
+December 2020
+}
+\maketitle		
+		
+
+
 
 \newpage
 
@@ -104,11 +119,6 @@
 \end{center}
 
 %%% remove as approval date is found on SOAR form...
-\iffalse
-\begin{flushright}
-	Approved on \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\end{flushright}
-\fi
 
 \vspace{1cm}
 
@@ -124,7 +134,8 @@
 
 \include{chapters/abstract}
 
-\vspace{5mm}
+
+%\vspace{5mm}
 
 
 \newpage
@@ -137,51 +148,27 @@
 \listoffigures
 \listoftables
 
-
-
 \newpage
 \pagenumbering{arabic}
 
-	
-
-
-\chapter{Background/History of the Study}
 
 \include{chapters/chapter01}
 
-\chapter{Transformers and the Generative Pre-Training 2 Transformer}
-
 \include{chapters/chapter02}
-
-\chapter{Experimental Design and Setup}
 
 \include{chapters/chapter03}
 
-\chapter{Experimental Results - Raspberry Pi}
-
 \include{chapters/chapter04}
-
-\chapter{Further Installations}
 
 \include{chapters/chapter05}
 
-\chapter{Results and Observations}
-
 \include{chapters/chapter06}
-
-\chapter{Further Research and Readings}
 
 \include{chapters/chapter07}
 
 \appendix
 
-%\include{chapters/appendixa}
-
-%\newpage
-
-\chapter{Abbreviations}
-
-\printacronyms[include-classes=abbrev,name=]
+\printacronyms[include=abbrev,name=Abbreviations]
 
 %\end{thebibliography}
 \newpage
