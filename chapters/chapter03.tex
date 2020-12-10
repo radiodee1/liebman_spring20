@@ -1,288 +1,400 @@
-\chapter{Experimental Design and Setup}
+\chapter{Transformers and the Generative Pre-Training 2 Transformer}
+\label{chapter-transformer}
 
-\label{chapter-approach-to-study}
+\section{Transformer and Attention}
 
-\section{Approach to the Study}
+\label{transformer-intro}
 
-Several neural network models are used in the project. One is the GRU sequence-to-sequence model, another the Transformer model for a generative chatbot and finally, the Generative Pre-Training 2 model.
+The Transformer is a mechanism that is based entirely on attention. Strictly speaking, this is not the attention explored in the sequence-to-sequence model in Section \ref{section-gru-attention}, though there are some similarities. It is a model that uses no recurrent components.
 
-A rewrite for the Transformer or GPT2 model is not attempted.
-
-In this project the chatbot code is loaded onto small single board computers as much as possible. The Raspberry Pi and the Jetson Nano are considered to be small single board computers.
-
-Models are trained using the Pytorch and Tensorflow libraries. These models are responsible for taking in English sentences and producing English output. Another part of the typical Raspberry Pi setup includes another neural network component. Speech to text models, which this application requires, rely on large neural network resources. Speech to text resources, supplied by Google on the Google Cloud are used. To include speech to text libraries locally on the Raspberry Pi would be too costly in computation time and resources like RAM. It would also be complicated to implement technically. It could easily comprise an entire project on its own.
-
-%The speech to text resources supplied by Google cost money. To use the service you need to have a billing account with Google.
-
-The speech to text service used here and the Raspberry Pi memory limitations are problematic. The chatbot function could be served from some faster machine located somewhere on the Internet. It would entail two calls from the Raspberry Pi for every sentence.% complicates things. % and also has a time overhead. 
-
-%There are several models to test. 
-%To test them all would require several servers. In addition they 
-Another problem is the models use both Pytorch and Tensorflow. Tensorflow has ``tensorflow-model-server'' for serving models, but Pytorch has no equivalent. %Testing them all requires several servers.
-
-It is important to note that the large GPT2 model specifically could be served from a remote computer and would operate faster. Currently on the Raspberry Pi, decoding a single sentence with the 117M parameter GPT2 takes approximately 13 seconds. However, it is preferred to install these trained models on the Raspberry Pi directly.
-
-The 117M parameter GPT2 model fits on a Jetson Nano and can produce the response to a question in two or three seconds. The Nano is not much bigger than a Raspberry Pi.
-
-If every Raspberry Pi computer in this project was replaced with Jetson Nano computers, all of them would respond quickly and with only a natural pause before each reply.
-
-\section{Hardware Installation Overview}
+Recurrent components have some negative qualities. They are hard to run with batch input data. In addition they do not work with very long data strings. 
 
 
+Transformers use no Recurrent Neural Network components. Their operations can be parallelized so that large batches of data can be processed at once during the same time step. 
 
-\begin{table}[H]
-	
-	\begin{center}
-		
-		
-		\begin{tabular}{llllll}
-			
-			Model Name    & File  & RAM  & RAM    & Hand & Board \\
-			&  Size & Train   & Inference    & Trained &   Type \\
-			\hline
-			\hline
-			Seq-2-Seq/Tutorial & 230 M     & 1.1 G & 324 M             & YES  &  Pi 3B \\
-			Transformer/Persona   & 25 M      & 556 M & 360 M          & YES  & NONE \\
-			Transformer/Movie \dag \dag  & 550 M      & 6.5 G & 500 M  & YES    & Pi 4B  \\
-			GPT2 small - 117M \dag   & 523 M  & -   & 2.0 G         & NO     &  Pi 4B/Nano \\
-			\hline
-		\end{tabular}
-		
-		\bigskip
-	\end{center}
-		\dag \ a large GPT2 model exists, but it is not small enough to fit on a Raspberry Pi or Jetson Nano.
-		
-		\dag \dag \ This is referred to as the ``larger'' Transformer model, though it is smaller than the smallest GPT2 model.
-		
-	%\end{center}
-	
-	\label{fig:modeloverview}
-	\addcontentsline{lot}{section}{Hardware Overview}
-\end{table}
+Longer sequences can be considered as well, so Transformer input can contain longer English language sentences and even paragraphs. 
 
+Transformers are usually constructed on eight or more of these layers in the decoder and the encoder. One layer is discussed below.
 
-A short description for each row is provided below.
+\subsection{Byte Pair Encoding}
 
-\begin{itemize}
-	\item \textbf{Sequence-to-Sequence - Tutorial} This model uses the sequence-to-sequence architecture and the Gated Recurrent Unit component. Here the slightly modified version of the sequence-to-sequence model is based on the tutorial from Inkawhich et al \cite{2018Inkawhich}, using the Movie Dialog corpus with a hidden size of 500 units. This model was used in one Raspberry Pi installation.
-	
-	\item \textbf{Transformer - Persona} This model uses a Tensorflow Transformer architecture. Coding is used to interface with the text-to-speech and speech-to-text libraries. Additional coding loads project corpus data during this training. The model parameters describe a rather small model and uses the Persona Dialog corpus. It uses 2 layers, 4  heads, and a hidden size of 128. This model was not permanently installed. It is not on a Raspberry Pi board.
-	
-	\item \textbf{Transformer - Movie} This model is based on the Transformer model above but uses the Movie Dialog corpus and a larger parameter set. In many ways this model is bigger than the one that uses the Transformer and the Persona corpus. It uses 6 layers, 8 heads, and a hidden size of 512. This was used in one Raspberry Pi installation.
-	
-	\item \textbf{GPT2 small} This model was downloaded from the internet, and fits on a Raspberry Pi 4B with the 4GB RAM option. It also fits on a Jetson Nano. Some modification was made so that model output was suitable. It uses 117M parameters, with 12 layers and a hidden size of 768. This model was used in one Raspberry Pi installation and one Jetson Nano installation.
-\end{itemize}
+\ac{BPE} stands for ``Byte Pair Encoding.'' WordPiece is a particular implementation of BPE.
 
-\section{Setup}
+WordPiece is used by some Transformer systems to encode words much the way that Word2Vec does. Like Word2Vec, WordPiece  has a vocabulary list and a table of embeddings that maps one word, or token, to a vector of a given size.
 
-Linux computers are used, sometimes with \ac{GPU} hardware for parallel processing. The Python programming language is used. Code from this project can be run with the 3.6 or 3.7 version of Python.
+WordPiece, though, handles Out Of Vocabulary (\ac{OOV}) words gracefully. It breaks large words into smaller pieces that are in the vocabulary, and has a special notation so that these parts can easily be recombined in order to create the input word again. Byte Pair Encoding doesn't use pre-trained word embeddings as do Word2Vec and GloVe.
 
-When the project was started, some programming with Keras was done using Tensorflow as a backend. Keras was later discarded in favor of Pytorch and Tensorflow, although Tensorflow and Pytorch do not work together. Pytorch as a library is still under development at the time of this writing.
+For the Generative Pre-Training 2 transformer, a version of BPE is used instead of a vocabulary system like Word2Vec or GloVe. Some form of BPE is included in almost every Transformer type Neural Network model, so no decision needs to be made about what type of word embeddings to use.
 
-Some of the Generative Pre-Training 2 code uses Pytorch, and some uses Tensorflow. A repository on Github uses the GPT2 trained model with Pytorch instead of Tensorflow.
+\subsection{Attention}
+Attention mechanisms are used in a similar way in three places in the Transformer model. The first implementation of Self Attention is discussed below. Each of these attention mechanisms is contained in a layer. There are typically the same number of layers in the encoder as in the decoder.
 
-Github is used as a code repository. Code corresponding with this paper can be found at: \href{https://github.com/radiodee1/awesome-chatbot}{https://github.com/radiodee1/awesome-chatbot} . 
-
-As an experiment, a rewrite for the sequence-to-sequence GRU was coded with little success. There is no rewrite for the GPT2 code from the Tensorflow or Pytorch repository.
-
-\subsection{Graphical Processing Unit vs. Central Processing Unit}
-
-A CPU has a number of cores, usually between 2 and 16. A CPU is designed to execute one command at a time, and has limitations when it comes to executing matrix multiplication. %Matrix multiplication using a CPU can take a long time.
-
-GPUs, Graphical Processing Units, have the ability to address tasks like matrix multiplication with many more processing units at once. They speed up parallel processing and are a benefit to neural networking training.% tasks that the CPU doesn't have.
-
-Unfortunately, state of the art neural network models are larger than the capacity of a single GPU. Some models are trained on many GPUs simultaneously. It is not uncommon for a model to train on a computer with eight GPU cards for many days. It is possible to rent time on Amazon Web Services or Google cloud to do this training, but it can be costly.
-
-This is addressed partially by the Transfer Learning scheme, where an already trained version is accessible to the public. The programmer downloads the model and fine tunes it to suit the task.
-
-Here, the GRU based sequence-to-sequence model and the Tensorflow based Transformer model were trained from scratch on a CPU laptop. In the case of the Transformer, several days were required for training. In the GRU example the model trained in less than an hour.
-
-\subsection{Raspberry Pi}
-
-A Raspberry Pi is a small single board computer with an ``arm'' processor. There are several versions on the market, the most recent of which has built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer has 4Gig of RAM.
-
-It is the intention of this project to install several chatbot models on Raspberry Pi computers. All chosen models must be small enough in file size to fit on the Pi.
-
-%Several resources must be made available. 
-Pytorch needs to be compiled for the Pi. Speech Recognition and Text To Speech must be available. Early tests using Google\textquoteright s \ac{SR} and TTS services show that the Pi can support them. 
-
-
-%Google's SR service is expensive. 
-Details for setting up Google's SR and TTS functions are found in the README file of this project\textquoteright s Github repository.
-
-The chosen model is trained on the desktop computer and then the saved weights and biases are transferred to the Raspberry Pi platform. The Pi is not required to do any training, only inference. 
+Input to the Transformer is composed of strings of words from a desired input language. Output is composed of words in a given language. Input words are treated very much the way that they are in sequence-to-sequence models. A word is translated to a number and that number indexes an entry in a word-to-vector table. From that time forward, a word is represented by a vector of floating point numbers. In a Transformer this word vector can be large. In the original paper, Vaswani et al \cite{Vaswani2017AttentionIA} use a vector size of 512. The discussion of Generative Pre-Training 2 will see vector sizes of 768 and 1280.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.1]{diagram-pic01}
 		
 		
+		\includegraphics[scale=1.5]{diagram-mat04}
 	\end{center}
-	\caption[Raspberry Pi]{Raspberry Pi 4B - Modified with push button and indicator lights.}
+	\caption[Transformer Encoder and Decoder]{Transformer Encoder and Decoder. - $Nx$ shows number of layers. (Data travels from the bottom to the top.) - Vaswani et al \cite{Vaswani2017AttentionIA}}
 	
 	
 \end{figure}
 
-\subsection{Jetson Nano}
+\subsection{Encoder - Scaled Dot-Product Attention}
 
-The Jetson Nano is another small single board computer. Though it has no WiFi, it is outfitted with an NVIDIA Graphical Processing Unit. 
+Each layer of the Transformer's encoder has a signature self-attention mechanism. This is possibly one third of the entire Transformer mechanism, but a variety shows up in the other two-thirds. 
 
-While the development computer uses x86\_64 and the Raspberry Pi uses ARMv7, the Nano uses aarch64. It is based on the ARM architecture with 64 bit memory units. ARMv7 uses 32 bit memory units.
+Initially the input word vectors are converted to three other values. These vectors are similar to the input vector but they have a smaller dimensionality. Converting the word vectors in this way is accomplished by three simple matrix multiplication operations.
 
-It is not much bigger than a Raspberry Pi, has four Gigabytes of memory, and an Ubuntu based operating system. The operating system has Python 3.6 and special NVIDIA GPU libraries pre-installed. Pytorch can be installed.
+Figure \ref{diagram-mat-mult-01} shows a simple conversion of this type. In the diagram a conversion of a vector with dimension of 1x3 to a dimension of 1x2 is shown. In a real world example matrices are converted from a vector of 1x512 to 1x64, a division of 8.
 
-In normal mode the board has an HDMI connector providing both video and audio output. For the project, the board was outfitted in headless mode, % In headless mode the 
-requiring USB connectors to provide audio input and output.
 
-Because it does not have on-board WiFi, a WiFi board must be installed, or a WiFi USB dongle used.
-
-Google's Speech Recognition and Text-To-Speech software works on this platform. The Nano did not need to be employed for any training. It was used solely for inference.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.9]{diagram-jetson-nano-02}
+		
+	
+	\includegraphics[scale=0.5]{diagram-mat01}
+\end{center}
+	\caption[Lowering Dimensionality]{Lowering Dimensionality}
+	
+	\label{diagram-mat-mult-01}
+\end{figure}
+
+In the Transformer, this conversion operation is probably the reason for the model's name. The input is \textit{transformed} to a lower dimension. 
+
+The dimension of the starting vector must be preserved. The starting vector is of floating point numbers sized 512. After some processing the vector is converted to smaller 64 sized floating point numbers. The final output of the attention mechanism must be sized 512. %Before that is done the vector is processed at the smaller size of 64 floating point numbers. 
+
+In this self-attention scheme three vectors are actually required. All three vectors are sized 64, and all three are converted by separate matrix multiplication operations. The weights to convert each of the three vectors are different. For this reason the new smaller vectors are all different.
+
+The smaller vectors individually are called q, k, and v. They can also be referred to as larger matrices. The new vector matrices are denoted as Q, K, and V. Q stands for ``Query.'' K stands for ``Key.'' V stands for ``Value.'' The lower-case names refer to single vectors and the upper-case refer to matrices. These are essentially batches of input.
+
+The Query value is multiplied by the Key values from all vectors in the input. This multiplication is ``dot-product'' multiplication. When it is done, all keys will have low output values, except those that are closest to the Query. Then the results are passed through a softmax function. When this is complete, there will be a single vector that is close to 1 and another group of vectors that are all close to 0.
+
+The vector produced by multiplying the softmax with the V values of every word produces a single word vector that is close to its original value, and many others that are near zero.
+
+This formula from Vaswani et al \cite{Vaswani2017AttentionIA} shows the process.
+
+$$
+\mathlarger{ \mathlarger{
+Attention(Q,K,V)=softmax(\dfrac{QK^T}{\sqrt{d_k}})V
+} }
+$$
+
+The value of $\sqrt{d_k}$ is used to limit the size of the $QK^T$ output. The $d_k$ is the dimension 512. Without this, the softmax function has to deal with much larger numbers. Smaller numbers for the softmax are preferred. $K^T$ is notation for the $K$ vector transposed.
+
+The function can actually perform this on large matrices with high dimensionality, in parallel. This parallel matrix operation increases the speed of training.
+
+In the triangle in the Figure \ref{attantion-7} the multiplication and selection that was just described is performed.
+
+\begin{figure}[H]
+	\begin{center}
 		
 		
+		\includegraphics[scale=0.5]{diagram-mat04-64}
 	\end{center}
-	\caption[Jetson Nano]{Jetson Nano without case.}
+	\caption[Attention Output]{Attention Output. (Data travels from the top to the bottom.)}
+	
+	\label{attantion-7}
+\end{figure}
+
+
+
+
+Finally the output calculated above must be returned somehow to the input dimensionality. This is accomplished by duplicating the procedure described eight times with eight separate weights. When this is done the output of the eight separate attention mechanisms is concatenated together, returning the output to the proper size.
+
+This multi-headed approach allows different heads to learn different types of relationships and, then when they are grouped together, the learned relations are recovered and contribute to the output.
+
+\begin{figure}[H]
+	\begin{center}
+		
+	
+	\includegraphics[scale=0.5]{diagram-mat02}
+\end{center}
+	\caption[Matching Input and Output]{Matching Input and Output. (Data travels from the top to the bottom.)}
+	\label{attention-matching}
+
+\end{figure}
+
+
+Later the output is passed through a feed forward network. It is also combined with the original input again through addition. Then the output is normalized. This ensures that the values are all within reasonable ranges. This recombination of the attention output with the original output is done throughout each Transformer layer.
+
+This describes the encoder section. There are two other attention segments. Together these two sections combine to form the decoder section. This is repeated for each layer.
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=1.0]{diagram-flow1}
+	\end{center}
+	\caption[Transformer Encoder and Decoder Flow]{Transformer Encoder and Decoder Flow. - Three layers and data flow. (Data travels from the bottom to the top.)}
+	\label{diagram-flow1}
+	
+\end{figure}
+
+In the flow diagram, Figure \ref{diagram-flow1}, most sub-segments of the entire transformer are not described. The focus is the flow of data through the three encoder segments and the different flow of data through the decoder segments. The encoder is largely serial, while the decoder is serial and parallel. In fact each decoder segment includes a feed forward part, and all decoder and encoder parts include a residual connection where the input is added back to the output of the attention and feed forward segments.
+
+The output of the encoder is a group of vectors the same size as the input sequence. They become the ``Key'' and ``Value'' batches below. The encoder section iterates once for every input data sequence.
+
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=0.75]{diagram-graph-encoder-flow-b}
+	\end{center}
+	\caption[Encoder Attention Detail]{Encoder Attention Detail. (Data travels from the bottom to the top.)}
 	
 	
 \end{figure}
 
-\subsection{Reply Time}
+\subsection{Decoder Attention I - ``Key'' and ``Value''}
+The decoder is composed of two attention mechanisms and a feed forward segment at each layer. The result of the encoder's work is passed to the decoder and remains applied to one of the decoder's attention mechanisms in each decoder layer. In one attention mechanism of the decoder, the ``Key'' and ``Value'' matrices are imported from the encoder. 
 
-The Google Text-To-Speech software takes negligible time to execute.
+While the encoder takes in the entire input and attends to whatever portion of that input it finds to be important, the decoder is interested in producing one output token at a time. The decoder section iterates once for every output word. Throughout this process the information from the encoder does not change.
 
-The Speech Recognition software takes one or two seconds to execute, as each audio sample must be sent to a Google server for translation into text. Because performance relies on network speeds, execution time is uncertain.
+In the flow diagram one layer of the decoder is illustrated.
 
-The actual model is responsible for taking question text, and returning an appropriate answer in text form to the calling function. Each model is, in turn, connected to the same SR and gTTS software.
-
-On the development computer most of the models tested take little or no time to execute. On the Raspberry Pi only the GRU model executes instantaneously. Each of the other models requires more.  %s some time to reply to a basic request.
-
-On the Jetson Nano, the largest installed model, the 117M GPT2 model requires a few seconds to execute. %The other models require less. %are smaller than the GPT2 model, and so all would take less than two seconds.
-
-Reply time is determined by inference time and time for general SR server calls.
-
-All models' first reply is longer. This is normal and is explained by the program's need to load a large set of matrices for the first reply. This loading overhead is not needed in the subsequent program replies. % The matrices only need to load once.
-
-\label{setup-reply-time}
-
-\begin{table}[H]
-	
+\begin{figure}[H]
 	\begin{center}
 		
 		
-		\begin{tabular}{lllll}
-			
-			Model Name    & Board  & SR  & Reply    & Total  \\
-			&  Type & Time  & Time    & Time  \\
-			\hline
-			\hline
-			Seq-2-Seq/GRU Tutorial & Pi 3B     & 2s & 0s             & 2s   \\
-			Transformer/Movie Corpus & Pi 4B      & 2s & 5s  & 7s      \\
-			GPT2 small - 117M   & Pi 4B     & 2s   & 13s         & 15s      \\
-			GPT2 small - 117M   & Jetson Nano & 2s   & 3s         & 5s      \\
-			\hline
-		\end{tabular}
-		
-		\bigskip
+		\includegraphics[scale=1.25]{diagram-flow-decoder02}
 	\end{center}
+	\caption[Decoder Flow]{Decoder Flow Details - ``I'' for encoder-decoder attention. ``II'' for masked decoder self-attention. (Data travels from the bottom to the top.)}
 	
 	
-	\label{fig:time-compare}
-	\addcontentsline{lot}{section}{Time Comparison}
-\end{table}
+\end{figure}
 
 
-\subsection{Tensorflow vs. Pytorch}
+Illustrated in the sequence-to-sequence discussion was the importance of the single ``thought vector.'' The Transformer can be seen as having a thought vector also. There is a corridor of data from encoder to decoder. It is composed of a sequence of vectors the size of the input sequence or sentence. It is larger, strictly speaking, than a single vector.
 
-Tensorflow is a Google library. Pytorch has it's roots with Facebook. Both run in a Python environment. While Pytorch offers Python objects that can be combined to create a neural network, Tensorflow has different pieces, but they cannot be examined as easily at run time.
+Two important smaller vector-sized inputs from the encoder are ultimately required in all layers of the decoder. They represent the ``Key'' and ``Value'' matrices from the thought vector. The matrices required are the size of the smaller reduced vector. The full sized vectors are transported from the encoder and are reduced dimensionally in the decoder layers to a sequence of two smaller matrices. 
 
-Tensorflow has a placeholder concept for inputting data and their results. Placeholders are set up at design time and are used to access data at run time.
-
-Pytorch objects interact with Python more easily, allowing print statements in the code to show data transferred from one object to another. This is possible at run time.
-
-Tensorflow has a tool, called Tensorboard, good for visualization which can print out graphs of data while the model trains. 
-
-\subsection{Speech and Speech To Text}
-\label{speech-and-speech-to-text}
-
-Google has Python packages that translate text to speech and speech to text. In the case of text to speech the library is called ``\ac{gTTS}.'' In the case of speech to text the library is called ``google-cloud-speech.'' 
-
-The gTTS package is simple to use and can be run locally without connection to the Internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an Internet connection and an account with Google that enables Google Cloud API use. %Google charges the user a small amount for every word that they translate into text. 
-
-Both of these resources work well on the Raspberry Pi, but configuring STT for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration, the user is able to download a JSON authentication file that must be copied to the Raspberry Pi. 
-
-Furthermore, an environment variable, called ``GOOGLE\_APPLICATION\_CREDENTIALS'' must be set that points to the authentication file. It must be set along with the launching of the neural network model.
-
-The operating system on the Raspberry Pi is based on Debian Linux. In this system a file is run immediately after the basic system starts up, called ``\textbf{/etc/rc.local}.'' It is sufficient to put the environment variable there and follow it with the launching of the model. The setting of the environment variable is combined with the launching of the program in a single line of code.
+These full sized vectors come from the last encoder layer's output. Typically there will be as many decoder layers as there are encoder layers. The output from the last encoder layer is applied to the ``Key'' and ``Value'' inputs of one of the attention mechanisms in all the decoder layers.
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=0.75]{diagram-graph-decoder-flow-c}
+	\end{center}
+	\caption[Decoder Attention Detail]{Decoder Attention Detail. (Data travels from the bottom to the top.)}
+	
+	
+\end{figure}
 
 
-\subsection{Corpus Considerations}
+\subsection{Decoder Attention II - ``Query''}
+There is another attention mechanism in each decoder layer. It works solely on data from the decoder itself. It works very much like the attention mechanism from the encoder, but it attends to every word of output as opposed to the entire input sequence. It passes its output to the attention mechanism described above. This data is lowered in dimensionality and becomes the ``Query'' matrix for that mechanism. 
 
-Several data sets have been collected for the training of a chatbot model. First is a corpus of movie subtitles, then the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is specifically designed to train the chatbot task. This is referred to as the Persona corpus.
+The ``Key'' and ``Value'' sequences from the encoder are a group of vectors the size of the input sequence. The ``Query'' matrix is the size of a single vector. This is because the decoder is interested in predicting one word at a time. This section produces a single vector as well.
 
-For the Persona corpus, the text is organized into ``JSON'' objects with several different repeated labels. Some of the text is meant to be used in question and answer pairs. Sentences labeled as ``history'' are most suited to this task. %These values are recorded only and discard other labels.
 
-The WebText corpus, culled from Reddit, is used for the training the GPT2 model. This material is not used in this paper directly, but it is a part of the success of the GPT2. This corpus is 40Gig of data.
+\subsection{Decoder Attention II - Masking}
+Input for the second decoder attention section is a group of vectors from the output generated thus far. During inference this output grows by one token with every pass through the decoder. This is how text is generated.
 
-\subsection{Chatbot vs. Smart Speaker}
+During training the second decoder section is masked. The mask prohibits the decoder from seeing parts of the target. This mimics the inference setup. In inference the decoder can only see up to the most recent word it has produced.
 
-A chatbot is a computer program that takes input from the user and replies as if it were a human. A chatbot is most often encountered on web sites and html pages. Input is usually in the form of typed text. Output is usually in the form of text on the screen.
+During inference the decoder produces a sentence one token at a time. Then it adds to that sentence, one token at a time, until the decoding is finished and something like English is produced. It can attend to any part of the output it has already produced. It is concerned with producing a single token at a time.
 
-A smart speaker is a term referring to a physical object that has a speaker and a microphone and some kind of computer that takes spoken input. Often the smart speaker controls lights or other appliances in a home. It will, on occasion, reply with a human voice. 
+These tokens strung together are the output of the Transformer. This output should be readable. % English if the model output is set up for the English language.
 
-For this paper the term smart speaker is used for a small computer that speaks and can be spoken to. The smart speakers in this paper do not control household appliances.
+More information about how this part of the decoder works can be found in Section  \ref{pre-trining-2-model}. Attention in this part of the Transformer is very similar to the GPT2.
 
-\section{ARMv7 Build/Compile}
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=1.25]{diagram-mask01}
+	\end{center}
+	\caption[Decoder Mask]{Mask. - Decoder uses masked input during training.}
+	
+	\label{diagram-mask-01}
+\end{figure}
 
-\subsection{Pytorch ``torch'' Library 1.1.0 For ARMv7}
-The Pytorch library is compiled for the Raspberry Pi. Several virtualization techniques are used to do this compilation. The result of those efforts is a Pytorch Python 3.7 library. % for the Raspberry Pi.
 
-On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used to compile the Pytorch library. % for the 1.1.0 version.
 
-The production laptop used for development ran Ubuntu Linux. For this reason a Virtualbox emulation was set up with Fedora Core 30, and the change-root environment.% The library was compiled there successfully. 
+%\subsection{Transformer - General}
+\subsection{Input - Positional Encoding}
+The input of the Transformer encoder and decoder layers employ not only a word vector table, but also a positional encoding scheme. The model adds sine and cosine patterns to the input vector that it can then use to learn the position of words in a sentence. 
 
-There are two problems with the resulting Python package. First there is a Python error when importing the torch library, that reads ``ImportError: No module named \_C.'' 
+Words that are early in the sentence have a certain appearance and words later on appear differently. The encoder and decoder use the sine and cosine waves to impart this information onto the sentence sequence. 
 
-The build process for ARMv7 creates misnamed shared object files. To correct this, the misnamed files must be found, copied, and suitably renamed. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
+\subsection{Output - Feed Forward Network}
+At the output of the last layer of the decoder, the output vectors are processed through a linear matrix which increases the vector's dimensionality, so that the output vector is the size as the output vocabulary dimensionality. After the linear matrix the vector is processed by a softmax function. Then the highest floating point value in the new larger vector is the index of the chosen output word.
 
-Three misnamed files can be found at ``\textbf{/usr/lib/python3.7/site-packages/torch/}.'' Named with the same convention, all have the ending ``.cpython-37m-arm7hf-linux-gnu.so.'' They must be renamed with the shorter ``.so.'' The files should be named ``\textbf{\_C.so},'' ``\textbf{\_dl.so},'' and ``\textbf{\_thnn.so}.''
 
-%This takes care of the `ImportError'. 
-The second problem occurs because, the GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: ``\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version ``GLIBCXX\_3.4.26'' not found}.'' This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
- 
-\subsection{Pytorch ``torch'' Library 1.4.0 For ARMv7}
-The Pytorch library is recompiled for the Raspberry Pi using Debian virtualization techniques. Because Ubuntu is a Debian derivative it is not necessary to run the process in a Virtualbox container. 
+\subsection{Visualization - Transformer}
 
-In addition, the files are properly named and there is no need to change anything in the directory ``\textbf{/usr/lib/python3.7/site-packages/torch/}''. 
+A colorful chart is used to visualize what is happening during inference. This chart illustrates how each word attends to all the other words in the input text.
 
-Compiling took five hours. Time spent with the Virtualbox container was more than twice that. The time spent on the Raspberry Pi executing a single Generative Pre-Training 2 question and answer remained 13 seconds. There was no gain in that respect.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=2]{Figure_3}
+		
+		
+	\end{center}
+	\caption[Visualized Attention Transformer]{Visualized Attention -- ``favorite'' shows attention to some but not all words in the sentence.}
+	
+	
+\end{figure}
 
-There were several small hurdles to completing the compilation. First, the ``debootstrap'' command needed to be employed. Because Debian Stretch was used as the host operating system, the GLIBC compatibility problem was not faced. 
+It is significant that words like ``what'' and ``your'' do not have strong attention to other words in the text. In a chart like this one they would show no colors on the left and light colored lines connecting the right to the left.
 
-Second, some dependencies needed to be installed on the ``chroot'' environment for Pytorch to compile. One was ``libblas3.''
+This diagram is from the Transformer with the larger hyper-parameter set that is described in Chapter \ref{chapter-approach-to-study}, trained on the movie dialog corpus.
 
-Third, Python 3.7 needed to be built on Stretch because program repositories used Python 2.7 and 3.5. Furthermore, the Raspbian operating system on the Raspberry Pi 4B is based on Debian Buster and used Python 3.7. After that the Git program needed to be compiled. Although Git on Stretch had an issue that was fixed upstream, it was important to use Stretch because of the GLIBC issue. Instead of using the upstream fix, Git was compiled from source. 
 
-Finally, for Pytorch, CUDA and distributed computing was disabled as neither exists on the Raspberry Pi.
+\section{The Generative Pre-Training 2 Model}
 
-\subsection{Docker Container ``tensorflow-model-server'' For ARMv7}
-The Google machine learning library for Python uses a standalone program called ``tensorflow-model-server'' for serving all Tensorflow models in a standard way. The program has not officially been compiled for ARMv7. A Docker image does exist that will run on ARMv7 (Maciejewski et al \cite{2020Maciejewski}).
+\label{pre-trining-2-model}
 
-Docker was run on the Raspberry Pi in the ARM environment. This terminal excerpt shows this. These commands were executed on the Pi.
+``Generative Pre-Training 2'' is a large model. It is based on the Transformer from Vaswani et al \cite{Vaswani2017AttentionIA} but there are some major changes. The model uses the decoder portion of the Transformer without the encoder. There are other changes to the output layers. Furthermore it is pre-trained and downloadable.
 
-\begin{verbatim}
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ curl -fsSL test.docker.com -o get-docker.sh 
-$ sh get-docker.sh
-$ sudo usermod -aG docker $USER
-\end{verbatim}
+We use the GPT2 model to create some of our chatbots.
 
-To take advantage of Docker one needs to log out and then log in again.
 
-A version of the Docker Container for the model server was run on the Raspberry Pi. A script was written that interacted with the existing ARMv7 container. % The author of the original container is Erik Maciejewski \cite{2020Maciejewski}.
+\subsection{Pre-Training}
+In Pre-Training the authors of a model train an instance and then make the model available to the user on-line. This is helpful for the average programmer interested in Neural Networks. Training an instance of the Transformer model can use computational resources for days, and require hardware that is costly. Usually the cost of producing a trained model is prohibitively expensive.
 
-``Tensorflow-model-server'' was used on the localhost Internet address, 127.0.0.1, with a port of 8500. While tensorflow-model-server is meant for serving neural network resources on the Internet, it was used on the Raspberry Pi.
+After acquiring a trained model, programmers go on to adjust the model to their task. Adjusting a pre-trained model to a given task is called ``Transfer Learning.'' Many tasks lend themselves to Transfer Learning. Conceptually a model can be fine-tuned to many problems. % and many problems can be addressed with good results after only modest fine-tuning.
+
+
+\subsection{General}
+\ac{GPT2} still uses Scaled Dot-Product Attention. A model diagram is taken from Radford et al \cite{radford2018improving}. 
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=3.0]{diagram-mat05}
+	\end{center}
+	\caption[Generative Pre-Training 2 ]{GPT2 - Radford et al \cite{radford2018improving}. (Data travels from the bottom to the top.)}
+	
+
+\end{figure}
+
+There are several sizes of pre-trained GPT2 models, all rather large. The smallest model has 12 layers, while the Transformer model in the example from Vaswani et al \cite{Vaswani2017AttentionIA} uses 8 layers. This model also has a hidden dimension of 768, not 512. With 8 heads this leaves a smaller dimensionality of 96 at each attention head. 
+
+%The GPT2 models input and output text sequences.
+
+
+\subsection{Training}
+
+The GPT2 model is trained on text from the web, specifically Reddit. The goal for training is to show the model part of a large piece of text and then to have the model predict the next word. A mask is used in the Self Attention segment of the model during training.
+
+%For this task the mask is important. Training could consist of incrementally showing a model text at different states of completion and then asking it to predict the next token. In this kind of arrangement the batch sizes would be shorter and focus on each word. 
+
+Training could present the model with the text in complete form and have the model look at it through a mask. A mask is visualized in Diagram \ref{diagram-mask-01}.
+
+Each word would have an opportunity to be focused on as the ``next'' word. A boundary is formed between the last word and the masked area to its right. The boundary between each word and the one that follows it is examined. The model can still be trained on large batches in parallel. Words to the right of the last word and the particular boundary being examined are not available to the model.
+
+Training is done by the developers of the model and the authors of the paper. The model is too big for individuals to train from scratch. 
+
+\subsection{Inference}
+
+In this example creating ``conditional samples'' are discussed, in contrast to creating ``unconditional samples.'' Conditional samples rely on an input sequence for generating output. Unconditional samples have no input specified. %A mask is not used during inference.
+
+First a series of input tokens must be selected for the example. This series of tokens is generated from an English sentence. The sequence used will be ``Good day'' for this example. The words in the sequence translate into single tokens in the corpus. An input word may be made up of several tokens, but that should not be the case in this simple example.
+
+The input context for GPT2 models is 1024 tokens. Here the input tokens, ``good'' and ``day,''  take up two spots in the input area. They are followed by an end-of-sequence token. Together they take up three spots. At that time there are 1021 spots left in the input area.
+
+The first words are converted to tokens and are passed through the embedding matrix where they are converted to vectors. Positional encoding patterns are generated for each of the three vectors. These positional encoding patterns are created from sine and cosine waves that are concatenated together. They are added to the input tokens.
+
+The model starts at the fourth location and attempts to generate the next token. The entire model is at this moment addressing the task of generating the next token.
+
+One of the important processes that the input goes through is the Scaled Dot-Product Attention. This is performed at each layer. There are 12 layers in the 117M model.
+
+All three tokens are converted to smaller vectors for each layer. Then the third vector, for the end-of-sequence token, is treated as the ``Query.'' The matrices for the ``Key'' and ``Value'' are assembled from the words in the input. This is done for all of the heads of each individual layer.
+
+At this time, the model is making the transition from the third spot to the fourth spot.
+
+The third word ``Query'' vector, the end-of-sequence, is compared to each other previous word ``Key'' vectors using dot-product multiplication. Then the result is Softmaxed, producing a single vector that is close to 1 and a group of all other vectors that are closer to 0. The result of that is multiplied by all of the three ``Value'' vectors. A single result is found in this way.
+
+The output is concatenated together at each layer across all the heads at that layer. Ultimately the output is recombined with the input. There are also components in each layer that do normalization.
+
+Ultimately an output vector is produced that represents what the next token should be. %This vector is converted into a size equivalent to the size of the vocabulary. Then the model can use a method to choose a word from the vocabulary. 
+
+%Frequently, the model looks to the largest floating point number and its association with a word in the vocabulary.
+
+The new token is placed in position four. The first three tokens are left as they are and GPT2 goes back to the start and now looks at the first four tokens as input. It will try to generate the fifth token.
+
+The model will continue to try to generate tokens until the input area is filled and there are 1024 tokens, or a special ``end-of-sequence'' token is generated. The output could be anywhere from 1 to 1021 tokens. This is because the input area starts with a dimension of 1024, and there are three tokens in the original input sentence.
+
+
+\begin{figure}[H]
+	\begin{center}
+		
+		
+		\includegraphics[scale=2.0]{diagram-inference-02}
+	\end{center}
+	\caption[Generative Pre-Training 2 Inference]{GPT2 - Inference Progress}
+	
+	
+\end{figure}
+
+\subsection{Corpus}
+The GPT2 models are trained on a corpus called WebText, a 40GB corpus taken from the Reddit web site. All the material comes from before 2017 and all has a ``karma'' rating of three or better. ``Karma'' is a rating system used internally on Reddit. 
+
+%As with the decoder layer of the Transformer model, the GPT2 model concerns itself with generating words that are later strung together to make sentences or paragraphs. During training the model uses a masking scheme so that input can be parallel-ized. During inference output cannot be parallel-ized, so during inference output must focus on one example at a time.
+
+\subsection{Releases}
+In their paper, Radford et al \cite{radford2019language} showed that their model could generate text from a seed sentence or paragraph. At that time the case was made that the largest ``Generative Pre-Training 2'' model should not be released because of its ability to generate text that might fool humans into believing that another person was responsible for the text. Later the larger model was released to the public.
+
+\begin{center}
+
+\begin{tabular}{lrll}
+	Size & Parameters & Layers & $d_{model}$ \\
+	\hline
+	small & 117M       & 12     & 768          \\
+	medium & 355M       & 24     & 1024         \\
+	large & 774M       & 36     & 1280         \\
+	x-large & 1.5B     & 48     & 1600 \\
+	xx-large & 8.3B   &  72 &   3072 
+\end{tabular}
+
+	
+\end{center}
+\addcontentsline{lot}{section}{GPT2 Size Overview}
+
+When the first ``Generative Pre-Training 2'' models were released there were three of them. Later two more were trained. The final xx-large model was trained by NVIDIA Applied Deep Learning Research \cite{2019NVIDIAadlr} and was not released to the public.
+
+The ``Generative Pre-Training 2'' models also work in many circumstances in ``zero-shot'' mode, with no extra training to make the model suit the task. It is used ``as is.''
+
+For the chatbot the model using 117 million parameters was successful. Some programming was required to make the model output look like chatbot output, but the model itself was not modified.
+
+Tests were done on both the small and large models. When the larger 774M model was released it was used as a substitution for the 117M model. The test worked, and returned answers that were more well formed than the small model. The larger model does not fit on a Raspberry Pi and so it was not employed here on a permanent basis. %Using the extra large 1.5B parameter model in a chatbot was not attempted at first.
+
+\subsection{Application Details}
+The 774M model is described in Radford et al \cite{radford2019language} and the accompanying blog post. The model is trained on English without a stated problem, however large neural network models are usually trained for a stated problem. Rather famously this model is used after training to generate English language text. The model takes input from the user, a premise or summary of what is to be generated. The model also takes as input a number called the ``temperature.'' Then the model generates output. As the ``temperature'' is set higher, the output is more fanciful. There is also a tune-able parameter for the output length. 
+
+%Given the ability of the model to invent content, it was determined by the authors that the `large' model should not be released to the public at first. Months later the `large' model was released. 
+
+For the chatbot the temperature is set to a low number. The length of the output is set to a sentence-length number of tokens. Then as input the output from the speech-to-text translator is used.
+
+The output is not immediately useful. Traditional programming and string manipulation are employed to clean the output and render a short single sentence. %This is the output.
+
+Because the input is meant to be a number of sentences and, because the architecture is Transformer-based, more information can be added to the input string. In this respect the model acts to summarize the input. 
+
+A set of three or four sentences is included with every input string. They suggest the time, the bot's name, and the bot location and occupation. The chatbot summarizes the input. If the information is relevant then it is used by the model as output. %Making this possible is the fact that a Transformer can accept much longer input strings than a Gated Recurrent Unit, and generate much longer output strings.
+
+Surprisingly the chatbot answers most of the questions in the first person. It is felt that WebText, the Reddit corpus, has many examples of sentences in the first person.
+
+\subsection{Visualization - GPT2}
+
+During inference the Scaled Dot Product Attention in the GPT2 focuses on certain words as it processes input text. Here, the word ``favorite'' shows a relationship to many of the other words in the text.  
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=2]{Figure_4}
+		
+		
+	\end{center}
+	\caption[Visualized Attention GPT2]{Visualized Attention GPT2 -- ``favorite'' shows attention to some but not all words in the sentence.}
+	\label{diagram-vis04}
+	
+\end{figure}
+
+The phrase ``What is your favorite color?'' is often answered with ``I love the colors of the rainbow.'' This answer does not mention a specific color, as one might expect it should. Figure \ref{diagram-vis04} might support this observation because ``color'' on the left is not heavily highlighted. Words like ``what'' and ``your'' are barely considered at this head at all. 
 

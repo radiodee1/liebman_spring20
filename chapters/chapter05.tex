@@ -1,47 +1,172 @@
-\chapter{Further Installations}
-%\chapter{Further Installations}
+\chapter{Experimental Results - Raspberry Pi}
 
-\section{Generative Pre-Training 2 - X Large Model}
+\label{experiments-installations}
 
-The ``large'' 774M model of GPT2 was ultimately released to the public. In addition, two other models were created: ``x-large'' had 1.5B parameters, and ``xx-large,'' had 8.3B parameters. The ``x-large'' was downloaded for testing.
+\section{Experiments - Installations}
+The workings of a Transformer and the workings of Generative Pre-Training 2 Transformer are described in Section \ref{transformer-intro}. While it is proposed there that they are similar, in the experiments they are totally separate.
 
-Though tests from the previous sections worked on the ``large'' 774M model, subjectively the answers provided by the 1.5B model were better. The answers were stronger grammatically.
+There are several basic neural network models. One is the basic sequence-to-sequence GRU model typically used for neural machine translation. There are also two Transformers and the Generative Pre-Training 2.  
 
-The 1.5B model was too large for a Raspberry Pi, using 12.3 Gig of RAM while it was running with inference. %The 1.5B model is experimented with on the development laptop computer.
+There are only three Raspberry Pi boards and a Jetson Nano board used here. Three Raspberry Pi installations were successful. The Nano is used for an additional GPT2 installation, serving as a speed comparison with the Raspberry Pi. 
 
-As with the smaller model and the Raspberry Pi installation, no attempt was made to do transfer learning on the model. Instead the model was shown specific information during inference with which it was free to reply if it found the information appropriate.
-
-%Additionally the model should be able to summarize articles from the internet and reply with that information when asked to do so. 
-
-\label{chapter-gpt2-xl-intro}
 
 \subsection{Questions}
+This list of questions was asked of all models. 
+
+\begin{verbatim}
+Hello.
+What is your name? 
+What time is it?
+What do you do?
+What is your favorite color?
+Do you like red?
+Do you like blue?
+What is your favorite candy?
+Do you like ice cream?
+Good bye.
+\end{verbatim}
+
+Without considering reply time, the GPT2 model worked best. 
+
+Subjectively, the first Transformer model with the Persona corpus did not perform as well as the Generative Pre-Training 2 model. It did not perform better than the Gated Recurrent Unit model either. 
+
+The model from the GRU tutorial performed well. It was better than the initial Transformer model and on par with the larger Transformer model. It was not better than the GPT2.
+
+\subsection{Checklist} 
+
+This checklist is visited repeatedly to subjectively rate the chatbots.
+
+\begin{itemize}
+	
+	\item [1.] Are all the responses in plain English? Are any of the answers gibberish?
+	
+	\item [2.] Is there a  variety of answers? Are all answers the same?
+	
+	\item [3.] Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
+	
+	\item [4.] ``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answers at all times?
+	
+	\item [5.] Does the model answer well to ``Hello'' and ``Good bye?''
+	
+\end{itemize}
+
+The reasons for questions 1, 2 and 5 are straight forward. The reason for question 3 is to determine how well the model understands English. If the answers to ``favorite candy'' and ``favorite color'' are the same, then the model is simple. If the answers are different, then the answer set the model uses is larger. The model might or might not know there is a difference between candy and color. 
+
+A simpler model will answer ``I don't know'' for the ``favorite candy'' and ``favorite color'' questions. It can even answer questions like ``do you like red'' and ``do you like ice cream'' with ``I don't know.'' 
+
+For question 4, simple ``No'' answers are used frequently to answer questions that would otherwise need complex sentence structure. A simpler model learns during training that ``No'' answers are easier to remember and could be applied in many places.
+
+\section{Chatbot - Gated Recurrent Unit Model}
+There is a model based on the sequence-to-sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}.
+%This first model, largely written by hand, does not work very well. 
+It is from an online tutorial by  Inkawhich et al \cite{2018Inkawhich} trained on a large English corpus. 
+
+This model does not use a Transformer architecture. It answered a number of subjective questions appropriately. 
+
+\label{chatbot-gru-tutorial-used}
+
+\subsection{Questions}
+This screen shot is the sample question list as it was answered by the GRU model.
+
+%\begin{minipage}{2in}
+\begin{verbatim}
+> hello .
+you re a good man .
+> what is your name ?
+smith .
+> what time is it ?
+i don t know .
+> what do you do ?
+i m a comedian .
+> what is your favorite color ?
+i don t know .
+> do you like red ?
+no .
+> do you like blue ?
+no .
+> what is your favorite candy ?
+it s a big one .
+> do you like ice cream ?
+no .
+> good bye .
+good bye .
+\end{verbatim}
+%\end{minipage}
+%\bigskip
+
+
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
+
+\begin{itemize}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
+	
+	\item [] All the responses are in plain English. There is no gibberish.
+	
+	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
+	
+	\item [] Not all answers are the same.
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
+	
+	\item[] It is debatable whether the answers to the questions about ``favorite color'' and ``favorite candy'' are good. It is good that the two types of questions don't have the same answers.
+	
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answers at all times?}
+	
+	\item[] This model uses that answer at times. It does not use ``no'' always.
+	
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
+	
+	\item []The model answers well to ``Hello'' and ``Good bye.''
+\end{itemize}
+
+This is a reasonably good and light weight model. The memory it uses is small and it replies quickly.
+
+\section{Smart Speaker - Gated Recurrent Unit Model}
+
+The GRU model was installed on a Raspberry Pi 3B, allowing tests of speech-to-text and text-to-speech libraries. The RAM requirements were less than 500MB and the trained model answered questions almost instantaneously. It was outfitted with a microphone and a speaker. It was also configured to run automatically on startup. For this experiment, the Pytorch library was compiled.
+
+The model requires access to the Internet for the exchange that the speech-to-text software has to make with the Google servers.
+
+As there was no monitor and it took some time for the model to launch, the program was coded to beep when the model was ready to accept input for the first time.
+
+\section{Chatbot - Transformer Model with Persona Corpus}
+\label{transformer-persona-corpus}
+Using the Persona Corpus a Transformer model was trained, but not pre-trained. It did not use transfer learning. %The Persona Corpus comes from Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}.
+
+This Transformer model uses the Tensorflow library, not Pytorch. Small, it uses 2 layers, 4 heads, a hidden size of 128, and has encoder and decoder sections.
+
+The memory footprint, running below one Gigabyte, could be installed on a Raspberry Pi board. %That requires a python package called `tensorflow-model-server' and this package had to be provided for ARMv7 for the Raspberry Pi. 
+
+
+\subsection{Questions}
+Subjectively this Transformer model is not better than the original GRU from the sequence-to-sequence tutorial. It can respond to four or five sentences. The default reply sentence for unknown prompts is ``Hi, how are you today?'' It has answers to prompts like ``hi,'' ``How are you?'' and ``What do you do?'' It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?' It can not tell you the time. 
 
 This is the sample question list as it was answered by the model.
 
 \begin{verbatim}
-> Hello.
-Hello. 
-> What is your name? 
-My name is Jane.  
-> What time is it?
-It is 02:17 PM October 01, 2020. 
-> What do you do? 
-I am a student. 
-> What is your favorite color? 
-I like blue. 
-> Do you like red?
-Yes. 
-> Do you like blue? 
-yes. 
-> What is your favorite candy? 
-I like chocolate. 
-> Do you like ice cream?
-yes. 
-> Good bye.
-bye. 
+> hello
+hi , how are you today ?
+> what is your name?
+hi , how are you today ?
+> what time is it ?
+I like to read a lot
+> what do you do ?
+i'm a student
+> what is your favorite color ?
+hi , how are you today ?
+> do you like red ?
+hi , how are you today ?
+> do you like blue ?
+hi , how are you today ?
+> what is your favorite candy ?
+hi , how are you today ?
+> do you like ice cream ?
+yes , i do 
+> good bye
+hi , how are you today ?
 \end{verbatim}
 
+%\noindent \textbf{Checklist:} 
 \subsection{Checklist}
 
 \begin{itemize}
@@ -51,11 +176,11 @@ bye.
 	
 	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
 	
-	\item []There is a variety of answers. 
+	\item []There is a variety of answers. There is not a great variety though, and this is a problem for this model.
 	
 	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
 	
-	\item []The ``favorite candy'' question is answered in more detail than other models.
+	\item []Some of the answers are re-used and do not follow logically from the questions. The ``favorite color'' and ``favorite candy'' questions prompt the model's default answer ``Hi, how are you today?'' 
 	
 	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answers at all times?}
 	
@@ -63,149 +188,280 @@ bye.
 	
 	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
 	
-	\item []The model has an answer for ``Hello'' and ``Good bye.''
+	\item []The model has an answer for ``Hello'' but not for ``Good bye.''
 	
 \end{itemize}
 
+This is a poor model. It does use English language answers, but does not perform well in many other respects.
+
+\section{Smart Speaker - Transformer Model with Persona Corpus}
+
+This Transformer model was tested on the Raspberry Pi 4B. 
+
+The Transformer model takes two minutes to boot on the Raspberry Pi, the response time is slow, and the time between the first two or three responses is uncomfortably slow. After those first responses the time between answers gets to be more natural.
+
+Though smart speaker installation was attempted and ultimately successful, the Raspberry Pi that was used was required for another model that worked better. % and was retained for the thesis.
+
+\section{Chatbot - Transformer Model with Movie Corpus}
+
+\label{transformer-movie-corpus}
+A Transformer model was trained to use as a chatbot using the Movie Corpus. It was not pre-trained with any large corpus, and did not use transfer learning. 
+
+This is the model referred to as the larger Transformer model. It is larger than the Transformer model with the Persona Corpus but it is smaller than the smallest GPT2 model.
+
+This model uses the Tensorflow library, not Pytorch. 
+
+The Persona corpus model uses 2 layers, 4 heads, and a hidden size of 128. In contrast, the Movie corpus model uses 6 layers, 8 heads, and a hidden size of 512, and has both encoder and decoder sections.
+
+While running, the memory footprint of the Movie Corpus model was above 1.5 Gigabytes. The model was installed on a Raspberry Pi 4B board, requiring a Python package called ``Tensorflow-model-server'' which had to be built from source or otherwise provided for the Raspberry Pi. 
+
+The model took seven days to train on the development computer in a x86\_64 environment with a CPU based processor. The goal for training was 50,000 lines of text. After training the loss graph was consulted and the installed version was culled from the saved checkpoint at the 45,000 line point.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=3.5]{diagram-chart-loss-00}
+		
+		
+	\end{center}
+	\caption[Loss - Larger Transformer Model]{Loss - Orange is training loss and blue is evaluation loss.}
+	
+	%\addcontentsline{lof}{section}{Word Embeddings}
+\end{figure}
+
+Subjectively this Transformer model is better than the one based on the smaller hyper-parameter set and the Persona Corpus.
+
+
+%\begin{lstlisting}[language=bash]
+\subsection{Questions}
+This is the sample question list as it was answered by the model.
+
+\begin{verbatim}
+> Hello.
+hello 
+> What is your name?
+i don't know 
+> What time is it?
+i don't know 
+> What do you do?
+what do you mean ?
+> What is your favorite color?
+i don't know 
+> Do you like red?
+no 
+> Do you like blue?
+yeah 
+> What is your favorite candy?
+i don't know 
+> Do you like ice cream?
+yeah 
+> Good bye.
+bye 
+\end{verbatim}
+
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
+
+\begin{itemize}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
+	
+	\item []All the responses are in plain English. 
+	
+	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
+	
+	\item []There is a variety of answers. 
+	
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. }
+	
+	\item []The ``favorite color'' and ``favorite candy'' questions are sometimes ignored. The model does not always have original answers for these questions. It will reply with ``I don't know.'' much of the time. This model does answer better than the model in Section \ref{transformer-persona-corpus}.
+	
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answer at all times?}
+	
+	\item []The model does in fact use ``No'' or ``I don't know.'' It does not use these exclusively.
+	
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
+	
+	\item []The model does have an answer for ``Hello'' and ``Good bye.''
+\end{itemize}
+
+This is a reasonably good model and it is preferable to the model that uses the Persona Corpus.
+
+\section{Smart Speaker - Transformer Model with Movie Corpus}
+
+The Transformer model is installed on the Raspberry Pi. It takes two minutes to boot and 6 seconds to answer any question. 
+
+The Raspberry Pi gives a tone at the end of loading the model to signal the model is finished. % processing input. % during long response times. 
+%This tone notifies the user that the model is loaded and ready to respond to questions. 
+%The model is also configured to beep intermittently during operation to signal that it is processing an input. 
+This is helpful for a configuration where there is no monitor.
+
+A set of LED lights is installed on the Raspberry Pi to show when the model is processing input and when the model can take new input. %The lights are helpful.
+
+
+\section{Chatbot - Generative Pre-Training 2 Model}
+
+\label{install-gpt2-chatbot}
+A pre-trained GPT2 model with the large English corpus, called ``WebText,'' was used to produce a chatbot. % to ascertain if the model works better than the sequence-to-sequence model. 
+%In our tests this worked well and this model was considered superior. 
+This model was not trained in the typical sense after download. 
+
+Though the large 774M model was available, the smaller 117M model was used in this test on the Raspberry Pi. It was later tested on the Jetson Nano.
+
+For these experiments, the GPT2 was used in ``zero-shot'' mode. This means there was no special fine-tuning of the model in the application.
+
+Special coding for the input and output was required to operate it as a chatbot. 
+
+Output was limited to about 25 tokens. Input to the model was prepended with the character string ``Q:'' by our code. Output was observed to have the character string ``A:'' prepended to it. It is assumed therefore that the model was at some point exposed to the ``Question/Answer'' paradigm in written passages during its training. %This was helpful.
+
+Output from the model was usually larger in size than needed. Also, output had the character of having some sensible utterance followed by some output that was only a partial sentence.
+
+It was necessary to process the output. 
+%First, it was checked for the "A:" character string at the beginning. If it was there it was removed. 
+If the ``A:'' character string was found at the beginning it was removed.
+Then the first complete sentence was used as output, while words and phrases after that were discarded.
 
 \subsection{Context Experiment}
+The model was given details that it could draw on during normal execution. 
+There were two choices. One choice, train the model using fine-tuning and transfer-learning to recognize certain questions and to supply answers. The other choice showed the model a list of relevant facts before every input sequence. This information would be summarized with each reply.
 
-As before, the model was given details in sentence form that it could use as replies to questions when appropriate. The larger model worked better if all the sentences shown to it had the ``Q:'' and ``A:'' strings prepended to them. 
+The second choice was preferred. The text that the model was shown always included the name of the model (picked arbitrarily) along with information about the location, occupation, and time. When the model is shown the time, it is always the latest system time.
 
-In each example, the information the model chose from was presented in sentence pairs. Though these sentences looked much like source/target pairs from our movie corpus, they were totally unrelated.
+Occasionally the model would report the wrong time. %This sort of activity is mysterious.
 
-An example might be the presentation of its own name to the model. In the smaller GPT2 model, the model was shown the single sentence ``My name is Jane.'' In the larger GPT2 model's code, the model was shown two sentences. One was ``Q: What is your name?'' and the other, following it directly, was ``A: My name is Jane.'' These conventions were followed for time of day, the model's location, and the model's occupation.
+\subsection{GPT2 Fact Sheet}
 
-These questions can be answered without any memory of the last question.
+The GPT2 chatbot is shown a paragraph or table with each question. The table below shows the contents of the paragraph. 
+
+%There is not enough room with the other models, like the Transformer or the GRU model, to include this kind of a fact sheet or fact paragraph. 
+
+Subject matter like that found in the ``favorite color'' question and the ``favorite candy'' question are not found in the table.
+
+\begin{table}[h]
+	\begin{center}	
+		
+		\begin{tabular}{lll}
+			Num & Question             & Answer                        \\
+			\hline \hline
+			1   & What is your name?   & My name is Jane.              \\
+			2   & What time is it?     & It is 12:00, January 1, 2020. \\
+			3   & What do you do?      & I am a student.               \\
+			4   & Where are you?       & I am in New York.             \\
+			5   & How are you feeling? & I am happy.                  \\
+			\hline     
+		\end{tabular}
+	\end{center}
+	\label{fig-fact-sheet}
+	\addcontentsline{lot}{section}{GPT2 Fact Overview}
+	
+\end{table}
+
 
 \subsection{History Experiment}
+From each question all input and output was concatenated and included with the next question. The goal was for the model to treat the ``Q'' and ``A'' as historical input and then refer to that information as it answered new questions. This didn't always work as expected. At times the model was confused by the extra input and at others there was no effect. 
 
-All input and output was concatenated and included with each question. This had little effect in the smaller GPT2 experiment, but the history questions were helpful with the larger models. Consider the questions below.
+Without this mechanism the model has no notion of temporal context. The answers to questions could not depend on the answers to past questions. %Though this historical input did not always work, the code is retained in the hopes that at some point it is useful.
+
+Consider the questions below.
 \begin{verbatim}
 > Do you like the color red?
 I like the color red.
 > What is your favorite color?
 Red.
 \end{verbatim}
-This was the same text excerpt as from the small GPT2 model in Section \ref{install-gpt2-history}. The ``favorite color'' example continued to work on the larger GPT2 model. Again, as in the small model, the chatbot was using the history in the conversation. 
 
-Even though the history was consulted before answers are formulated, the output of the model was not always predictable. %This has something to do with the `temperature' setting of the model. The output is sometimes more fanciful.
+\label{install-gpt2-history}
+
+%We like this output. 
+The model is asked about the color ``red.'' Doing so the model is encouraged to pick ``red'' as the answer to the next question about color. When ``favorite color'' is requested, ``red'' is the answer. Without any history the model will answer the ``favorite color'' question with another answer. It may answer ``pink'' or it may answer ``the colors of the rainbow.'' 
+
+From one sentence to the next the model is keeping track of the context of the conversation. History is considered. However it is not always the case that the model chooses the color recently discussed as the ``favorite'' color.
 
 
-\subsection{Artificial Intelligence Markup Language Experiment}
+\subsection{Program Launching}
 
-%We want to be able to tell the model exactly how to answer a given question if we have a particular need. 
-The GPT2 models remembered the user's name very badly. %We would like to dictate how the model handles that situation. 
-Artificial Intelligence Markup Language was used to improve this. 
+Programming that allowed the model to launch programs when directed by the user was implemented. In this way the project moved closer to commercially produced smart-speakers. The code used string manipulation and simple keyword recognition rather than the model's neural-network. This code can be enabled when the model is run from the command line, but not for the Raspberry Pi as it runs headless.
 
-AIML is actually poorly suited for handling this task. In AIML every question and response must be coded as a separate rule. For the question ``How are you?'' and answer ``I am fine,'' the AIML kernel will only answer with the programmed response if the input is an exact match. If the questions are ``How are you doing?'' or ``How do you feel?'' the kernel does not have any answers. %The two or three questions are phrased differently but can be answered with the same text.
+There is no memory prohibition for using the program launching code on the Raspberry Pi. %Future work may use Chromecast to connect the Raspberry Pi with the user's home TV or monitor. 
 
-The GPT2 chatbot is different. Groups of questions have the same answer. Sometimes the answer could even be ``I don't know.'' The chatbot could answer ``I don't know'' or ``I am fine'' to  ``How are you,''  ``How are you doing?'' and ``How do you feel?'' These questions can be phrased differently with the same answer.
+\subsection{Summary}
 
-To use AIML for this task questions and answers were coded in pairs for all possible phrasings of a question.
+Subjectively this model was the best of those tested. Usually the model would answer questions about it's location, it's name, and the time, correctly. %Interestingly there where times when it did not do so. 
+Incorrect answers did address the particular question asked. Sometimes it used alternative answers. For example, it would answer with a time but not the correct time or a city but not the correct city.  %This was odd.
 
-%We have to count the number of AIML rules that we are coding and compare it to the number of English sentences that the GPT2 chatbot can answer. We have to make sure that the number of chatbot answers is much higher. As it stands the number of GPT2 chatbot answers dwarf the AIML rules.
+The output was always sensible English. 
+ 
+Any subject matter could be chosen and the model would answer. The prompts did not need to be the same as the simple introductory conversation of the Transformer model. 
 
-%We prefer the answers provided by the generative chatbot over those provided by an AIML file. We want to maximize the amount of time that the overall model answers using the Transformer that is internal to the chatbot, and minimize the use of AIML and the AIML kernel. We set a criteria for ourselves. If the generative chatbot is handling most of the questions and answers then we can proceed. If the AIML question/answering set is larger than the number of questions that the chatbot can answer, then the AIML should be avoided. 
+\subsection{Questions}
+This is the sample question list as it was answered by the model. Note that the information mentioned in the answer about the time was accurate when the test was run.
 
-Two situations with AIML files are below.
+%\begin{table}[h]
+\begin{verbatim}
+> hello
+Hello.
+> what is your name ?
+My name is Jane.
+> what time is it ?
+02:59 PM January 28, 2020.
+> what do you do ?
+I am a student.
+> what is your favorite color ?
+I love the color of the rainbow.
+> do you like red ?
+Yes.
+> do you like blue ?
+I do.
+> what is your favorite candy ?
+I love candy.
+> do you like ice cream ?
+I do. 
+> good bye
+Good bye.
+\end{verbatim}
 
-\subsection{User Name Experiment}
-%The name of the user is our first example of AIML coding. This example is easy. 
-User name is the first example. Using ``*'' as a wildcard, there are a few ways to say ones name. One way is ``My name is *.'' Another variant is ``* is my name''. %That's as many ways to say it as there are.
+	%\addcontentsline{lot}{section}{Question/Answer GPT2 117M}
+%\end{table}
 
-Each question is answerable with a phrase like ``Hello *.'' The asterisk is still a wildcard for the memorized name. An AIML file can handle this sort of question very easily. %We write an AIML file with these questions. We depend on the AIML to remember the name from the wildcard. 
+%\noindent \textbf{Checklist:} 
+\subsection{Checklist}
 
-Another question in this scenario is ``What is my name?'' In AIML there are very few ways to phrase this question. %With this question also there are very few ways to phrase the AIML. %Here we are referring to the name recorded in the previous AIML question as discussed above. 
+\begin{itemize}
+	\item [1.] \textbf{Are all the responses in plain English? Are any of the answers gibberish?}
+	
+	\item []All the responses are in plain English. 
+	
+	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
+	
+	\item []There is a variety of answers. 
+	
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. }
+	
+	\item []The answers to the questions about ``favorite color'' and ``favorite candy'' are good and better than many other models. However, the model could have a set of answers that it can use for this kind of question. The model seems to know what candy is and that a color is something different. The answers are good but not perfect.
+	
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answer at all times?}
+	
+	\item []The model does not use ``I don't know'' often. 
+	
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
+	
+	\item []The model does have an answer for ``Hello'' and ``Good bye.''
+	
+\end{itemize}
 
-The part of the AIML code that processes different questions is called the kernel.
-During a typical chatbot run the AIML kernel is shown all user input.% to the AIML kernel. 
+The model will answer with it's name and you can tell it your name, but it is confused by the latter. It will on occasion tell you that it's name and your name are the same. This is in part because it cannot remember what it most recently said to you or what you most recently said to it. 
 
-When the kernel does not match anything there is no output. When there is a match, AIML output is shown to the chatbot as the context for that input. 
-%Input from the user is concatenated with the context text, the answer from the AIML kernel. 
-The chatbot is then left to choose what to answer from the question and the context. 
-%Usually the answer makes sense.
+It's also in part because it cannot always distinguish between the ``Q:'' and ``A:'' prompts.
 
-The question and the chatbot answer are both added to the history. 
-This history is retained. 
-%what the user enters and the chatbot's answer are kept by the chatbot so that the chatbot can keep track of answers over time. 
-Sometimes, though, keeping sentences that refer to user names confuses the bot's answers.% In other cases the bot keeps track of answers that are generated in the AIML/chatbot hybrid process.
+This is the best model tested, but it is relatively large and that aspect makes it difficult to apply in some cases.
 
-Even when the answer is sensible the model's answer is not always correct, but without the AIML the model always answers all name questions with its name. 
+\section{Smart Speaker - Generative Pre-Training 2 Model}
 
-%We suspect if the model was much larger that it would have less trouble with this kind of example.
+\label{install-gpt2-smart}
+Code was added that uses text-to-speech and speech-to-text libraries, so that the model could respond to auditory cues and commands.
 
-\subsubsection{Usage Example}
+The model was installed on two small computers, the Raspberry Pi and the Jetson Nano.% The Nano is discussed in Section \ref{chapter-nano}.
 
-The user might say ``Hello, my name is John.'' The bot might reply ``Hello.'' The user might then say ``What is your name?'' The bot should reply ``My name is Jane.''
+For the model installed on the Raspberry Pi 4B with 4GB of RAM, the Pytorch Python library for ARMv7 was compiled. Pytorch was already available for the Nano. % for this model. 
+While execution on the production laptop was instantaneous, execution on the Raspberry Pi took 13 to 15 seconds for every response. The Nano required 3 to 5 seconds (See the discussion of ``Reply Time'' in Section \ref{setup-reply-time}.)
 
-Then the user might say ``What is my name?'' The bot should reply ``John.''
-
-%In practice the bot will reply with `Jane' most of the time. % without the AIML augmentation. 
-With the smaller GPT2 model the reply to this is often ``Jane.'' %even with the AIML kernel. 
-With the larger GPT2 model the bot tends to answer what the AIML suggests. In this case the answer would be ``John.''
-
-\subsection{Internet Search Experiment}
-The model is asked a question and an article is downloaded from the Internet, and summarized. % to answer the question.
-%We want to be able to search the internet for an article, download that article, and summarize parts of the article as answers to questions asked of the model. 
-
-This is leveraging of the token size of the input to the model. It's usually very large. It can be 1024 tokens.
-
-The AIML required is minimal but larger than the AIML for the ``user name'' problem. The goal is to detect, first, when the user wants to talk about an Internet page, and second, detect when they are done.
-
-The first case, when the user wants to talk about an Internet page, is associated with utterances like ``Tell me about *'' and ``I want to talk about *.'' The asterisk is a wildcard for what the user is interested in. There can be other phrases that imply the user's intention. In these cases, the text from the wildcard in the invocation is saved.
-
-The second case, when the user is done with the Internet page and wants to return to normal operation, is associated with utterances like ``Ok thanks'' and ``That's enough.'' 
-%These two phrases can be checked for when the bot is in `Internet-Search' mode. 
-There could be other phrases that cause the same operation in the AIML code.
-
-When the AIML detects one of these signals, the program goes into a special mode of operation. The first, or ``find'' signal, causes operation of an Internet browser. The web search uses the text from the invocation of the ``find'' command. The browser yields results as they would be found using a Google search engine. The first 20 results are kept and the URL for the highest ranking Wikipedia page is retained. It is loaded and the ``body'' tag is scanned for ``paragraph'' type content. This information replaces the context input. 
-
-After that, the context is retained while the chatbot answers any questions that the user might have. The medium sized GPT2 model has some facility with this, while the larger GPT2 model is more adept.
-
-Later, when the AIML detects the second, ``restore'' signal, the program switches back from special operation to normal operation. Web page contents are removed and the context is restored. % as it was during regular chatbot use. 
-%There is a part that has the history of the last few questions and answers, and there is a part that has the bot name, occupation, and the current time.
-
-As the chatbot answers questions, the content of the conversation is stored as ``history.'' % of the context text, as it is used in the regular chatbot mode. 
-This is a record of the chatbot operation even when it is answering questions about a web page. %that it has searched for. 
-Because of size limitations, the history is not included in the chatbot input when it is answering questions about a web page. %, but a record is kept of `q' and `a' and the bot can refer to them later.
-
-%Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. 
-
-After the ``restore'' signal, the chatbot sees only the regular context and none of the web page material. The regular input size for all models is 1024 tokens. %and it is more than 1000 for the larger models. 
-Though this would appear to be a large space for text, it is common for Wikipedia articles to be clipped so that the user's question can be inserted at the end.
-
-\subsubsection{Usage Example}
-
-This example uses the musical group ``The Beatles.'' The user's question is ``Tell me about the Beatles.''
-
-The chatbot takes seconds to download an article from Wikipedia. Ultimately it answers ``The Beatles were an English rock band formed in Liverpool in 1960.''
-
-The user asks ``How many members were in the band?''
-
-The 774M chatbot answers, ``The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.'' This is not the correct answer. This may be because, after clipping, that information does not exist in the context section. The user may ask other questions. %Some may be answered correctly.
-
-To this question, the x-large 1.5B model answers ``There were four members in the band.'' This is correct.
-
-When the user asks ``How many members were in the band?'' the model seems to be able to answer with the specific band. % that you are referring to.
-
-To end the Q/A session the user says ``OK'' or ``OK thanks.'' Though the web page for the ``Beatles'' would no longer be available to the chatbot, it could still answer ``Beatles''  questions. The user could ask ``What are the Beatles?'' The answer might be, ``The Beatles were an English rock band formed in Liverpool in 1960,'' even though the Wikipedia page is not available to the bot.
-
-\label{chapter-xlarge}
-
-\section{Generative Pre-Training 2 - Jetson Nano}
-
-\label{chapter-nano}
-The Jetson Nano is a small single board computer that has a NVIDIA GPU. %It has 4 Gigabytes of ram and runs on the aarch64 platform.
-
- %The Nano uses an NVIDIA GPU.
-Initial tests showed a 117M GPT2 model could answer a basic question in two to three seconds. Previously a Raspberry Pi computer took thirteen or fourteen seconds. On the host laptop, where development was done, the 117M model still outperformed the Nano, responding to a general question in one second.
-%It was used as a platform for the GPT2 117M parameter model.
-
-The smaller 117M parameter model was not used for the Wikipedia searches that were attempted in Section \ref{chapter-gpt2-xl-intro}. It was used for the same basic chatbot task tested on the Raspberry Pi platforms.
-
-%Some details from this experiment are identical to Section \ref{install-gpt2-chatbot} or Section \ref{install-gpt2-smart} where the 117M model is installed on a Raspberry Pi.
-
-The Nano that the GPT2 model was installed on was outfitted with a speaker, a microphone, and a WiFi dongle. Pytorch for the Nano was installed from a community web site where version 1.5 or 1.6 was already cross-compiled for the aarch64 environment. 
-
-Response time with the Nano was five seconds. Response time on the Raspberry Pi for the 117M model was 14 seconds. (See the discussion of `Reply Time' in Section \ref{setup-reply-time}.)
+The program was modified to sound a tone during processing. Without this it would have been difficult to know when to speak. Also LED lights were installed to indicate when the model is processing input and when the model can take new input. Lights were not available for the Jetson Nano. 
