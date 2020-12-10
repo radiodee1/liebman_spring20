@@ -2,33 +2,33 @@
 \babel@toc {nil}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Hidden Input}}{5}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Recurrent Neural Network}}{6}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Word Embeddings}}{9}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Sequence-to-Sequence Architecture}}{11}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Loss and Accuracy}}{16}{figure.2.5}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Hidden Input}}{4}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Recurrent Neural Network}}{5}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Word Embeddings}}{8}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Sequence-to-Sequence Architecture}}{10}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Loss and Accuracy}}{14}{figure.2.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Transformer Encoder and Decoder}}{19}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Lowering Dimensionality}}{20}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Attention Output}}{21}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Matching Input and Output}}{22}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Transformer Encoder and Decoder Flow}}{23}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Encoder Attention Detail}}{24}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Decoder Flow}}{25}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Decoder Attention Detail}}{26}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Decoder Mask}}{27}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Visualized Attention Transformer}}{28}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Generative Pre-Training 2 }}{30}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Generative Pre-Training 2 Inference}}{32}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Visualized Attention GPT2}}{34}{figure.3.13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Transformer Encoder and Decoder}}{17}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Lowering Dimensionality}}{18}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Attention Output}}{19}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Matching Input and Output}}{20}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Transformer Encoder and Decoder Flow}}{21}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Encoder Attention Detail}}{22}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Decoder Flow}}{23}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Decoder Attention Detail}}{24}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Decoder Mask}}{25}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Visualized Attention Transformer}}{26}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Generative Pre-Training 2 }}{27}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Generative Pre-Training 2 Inference}}{29}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Visualized Attention GPT2}}{31}{figure.3.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Raspberry Pi}}{40}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Jetson Nano}}{41}{figure.4.2}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Raspberry Pi}}{35}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Jetson Nano}}{37}{figure.4.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Loss - Larger Transformer Model}}{54}{figure.5.1}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Loss - Larger Transformer Model}}{48}{figure.5.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Word Usage}}{71}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Total Word Responses}}{72}{figure.7.2}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Simple Sentence Usage}}{73}{figure.7.3}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Word Usage}}{64}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Total Word Responses}}{65}{figure.7.2}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Simple Sentence Usage}}{66}{figure.7.3}%
 \addvspace {10\p@ }

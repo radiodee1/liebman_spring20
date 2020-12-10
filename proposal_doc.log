@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.29)  10 DEC 2020 09:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.29)  10 DEC 2020 12:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -577,15 +577,15 @@ LaTeX Font Info:    ... okay on input line 68.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(90.3375pt, 433.62001pt, 90.3375pt)
-* v-part:(T,H,B)=(90.3375pt, 614.295pt, 90.3375pt)
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=433.62001pt
-* \textheight=614.295pt
-* \oddsidemargin=18.0675pt
-* \evensidemargin=18.0675pt
-* \topmargin=-18.9325pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -671,13 +671,13 @@ e
 \openout4 = `proposal_doc.acr'.
 
 \c@lstlisting=\count321
-LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -687,8 +687,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 9
-6.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+04.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -696,7 +696,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.133 \newpage
+l.144 \newpage
                [2]
 \openout2 = `chapters/abstract.aux'.
 
@@ -709,7 +709,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--4
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.135 \include{chapters/abstract}
+l.146 \include{chapters/abstract}
                                   [3
 
 ] (./proposal_doc.toc [1
@@ -720,13 +720,13 @@ l.135 \include{chapters/abstract}
 \openout5 = `proposal_doc.toc'.
 
  [4]
-(./proposal_doc.lof [5
-
-])
+(./proposal_doc.lof)
 \tf@lof=\write6
 \openout6 = `proposal_doc.lof'.
 
- [6] (./proposal_doc.lot)
+ [5
+
+] [6] (./proposal_doc.lot)
 \tf@lot=\write7
 \openout7 = `proposal_doc.lot'.
 
@@ -737,29 +737,11 @@ l.135 \include{chapters/abstract}
 
  (./chapters/chapter01.tex
 Chapter 1.
-
-Overfull \hbox (1.21404pt too wide) in paragraph at lines 3--4
-\OT1/cmr/m/n/10 Transformer style models and also a Recurrent Neural Network mo
-del are used to allow for meaningful
- []
-
-
-Overfull \hbox (1.80092pt too wide) in paragraph at lines 16--17
-\OT1/cmr/m/n/10 Language Processing (NLP) tasks. The GPT2 model is based largel
-y on the Transformer architecture. 
- []
-
 [1
 
 
 ] [2] [3]
 Chapter 2.
-
-Overfull \hbox (19.17593pt too wide) in paragraph at lines 59--60
-\OT1/cmr/m/n/10 The goal behind Recurrent Neural Network (RNN) components is to
- detect patterns. Since understanding
- []
-
 <diagram-hidden.png, id=676, 108.405pt x 84.315pt>
 File: diagram-hidden.png Graphic file (type png)
 <use diagram-hidden.png>
@@ -767,49 +749,25 @@ Package pdftex.def Info: diagram-hidden.png  used on input line 67.
 (pdftex.def)             Requested size: 216.80945pt x 168.62955pt.
 [4
 
-]
-<diagram-rnn01.png, id=682, 321.2pt x 361.35pt>
+ <./diagram-hidden.png>]
+<diagram-rnn01.png, id=683, 321.2pt x 361.35pt>
 File: diagram-rnn01.png Graphic file (type png)
 <use diagram-rnn01.png>
 Package pdftex.def Info: diagram-rnn01.png  used on input line 87.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [5 <./diagram-hidden.png>] [6 <./diagram-rnn01.png>]
-Overfull \hbox (1.75461pt too wide) in paragraph at lines 125--126
-[]\OT1/cmr/m/n/10 Under most programming circumstances the GRU is not implement
-ed by the average programmer.
- []
-
-
-Overfull \hbox (8.85307pt too wide) in paragraph at lines 125--126
-\OT1/cmr/m/n/10 The programmer employs a language like python and a programming
- library like Pytorch or Tensorflow.
- []
-
-
-Overfull \hbox (13.36578pt too wide) in paragraph at lines 125--126
-\OT1/cmr/m/n/10 The library then implements the GRU and makes it easy for the p
-rogrammer to use that implementation. 
- []
-
-[7]
-<diagram-embedding.png, id=705, 351.3125pt x 351.3125pt>
+ [5 <./diagram-rnn01.png>] [6]
+<diagram-embedding.png, id=701, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 148.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
- [8] [9 <./diagram-embedding.png>] [10]
-<diagram-nmt03.png, id=724, 193.9245pt x 61.4295pt>
+ [7] [8 <./diagram-embedding.png>] [9]
+<diagram-nmt03.png, id=720, 193.9245pt x 61.4295pt>
 File: diagram-nmt03.png Graphic file (type png)
 <use diagram-nmt03.png>
 Package pdftex.def Info: diagram-nmt03.png  used on input line 203.
 (pdftex.def)             Requested size: 387.84802pt x 122.85867pt.
- [11 <./diagram-nmt03.png>]
-Overfull \hbox (5.18631pt too wide) in paragraph at lines 228--229
-[]\OT1/cmr/m/n/10 Making this vector larger by increasing the size of the hidde
-n dimension allows for more information
- []
-
-[12] [13]
+ [10 <./diagram-nmt03.png>] [11]
 
 LaTeX Font Warning: Command \boldmath invalid in math mode on input line 269.
 
@@ -825,6 +783,7 @@ LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 276.
 LaTeX Font Warning: Command \mathversion invalid in math mode on input line 276
 .
 
+[12]
 
 LaTeX Font Warning: Command \boldmath invalid in math mode on input line 284.
 
@@ -840,279 +799,251 @@ LaTeX Font Warning: Command \unboldmath invalid in math mode on input line 288.
 LaTeX Font Warning: Command \mathversion invalid in math mode on input line 288
 .
 
-[14] [15]
-<Figure_1.png, id=759, 462.528pt x 346.896pt>
+[13]
+<Figure_1.png, id=750, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 340.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-) [16 <./Figure_1.png>]
+) [14 <./Figure_1.png>]
 \openout2 = `chapters/chapter02.aux'.
 
  (./chapters/chapter02.tex
 Chapter 3.
-[17
+[15
 
 
 
 ]
-<diagram-mat04.png, id=771, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=763, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 38.
 (pdftex.def)             Requested size: 242.8266pt x 330.99577pt.
- [18]
-<diagram-mat01.png, id=779, 321.2pt x 361.35pt>
+ [16]
+<diagram-mat01.png, id=771, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 59.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [19 <./diagram-mat04.png>] [20 <./diagram-mat01.png>]
-<diagram-mat04-64.png, id=794, 321.2pt x 361.35pt>
+ [17 <./diagram-mat04.png>] [18 <./diagram-mat01.png>]
+<diagram-mat04-64.png, id=786, 321.2pt x 361.35pt>
 File: diagram-mat04-64.png Graphic file (type png)
 <use diagram-mat04-64.png>
 Package pdftex.def Info: diagram-mat04-64.png  used on input line 96.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-mat02.png, id=795, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=787, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 114.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
- [21 <./diagram-mat04-64.png>]
-<diagram-flow1.png, id=803, 284.262pt x 260.172pt>
+ [19 <./diagram-mat04-64.png>]
+<diagram-flow1.png, id=794, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
 Package pdftex.def Info: diagram-flow1.png  used on input line 130.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
- [22 <./diagram-mat02.png>]
-<diagram-graph-encoder-flow-b.png, id=810, 221.1462pt x 215.8464pt>
+ [20 <./diagram-mat02.png>]
+<diagram-graph-encoder-flow-b.png, id=801, 221.1462pt x 215.8464pt>
 File: diagram-graph-encoder-flow-b.png Graphic file (type png)
 <use diagram-graph-encoder-flow-b.png>
 Package pdftex.def Info: diagram-graph-encoder-flow-b.png  used on input line 1
 46.
 (pdftex.def)             Requested size: 165.85922pt x 161.8844pt.
- [23 <./diagram-flow1.png>]
-<diagram-flow-decoder02.png, id=816, 229.3368pt x 258.7266pt>
+ [21 <./diagram-flow1.png>]
+<diagram-flow-decoder02.png, id=808, 229.3368pt x 258.7266pt>
 File: diagram-flow-decoder02.png Graphic file (type png)
 <use diagram-flow-decoder02.png>
 Package pdftex.def Info: diagram-flow-decoder02.png  used on input line 164.
 (pdftex.def)             Requested size: 286.6703pt x 323.40741pt.
- [24 <./diagram-graph-encoder-flow-b.png>]
-<diagram-graph-decoder-flow-c.png, id=822, 409.53pt x 385.44pt>
+ [22 <./diagram-graph-encoder-flow-b.png>]
+<diagram-graph-decoder-flow-c.png, id=814, 409.53pt x 385.44pt>
 File: diagram-graph-decoder-flow-c.png Graphic file (type png)
 <use diagram-graph-decoder-flow-c.png>
 Package pdftex.def Info: diagram-graph-decoder-flow-c.png  used on input line 1
 81.
 (pdftex.def)             Requested size: 307.14674pt x 289.07928pt.
- [25 <./diagram-flow-decoder02.png>] [26 <./diagram-graph-decoder-flow-c.png>]
-<diagram-mask01.png, id=834, 154.176pt x 204.765pt>
+ [23 <./diagram-flow-decoder02.png>] [24 <./diagram-graph-decoder-flow-c.png>]
+<diagram-mask01.png, id=826, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
 Package pdftex.def Info: diagram-mask01.png  used on input line 210.
 (pdftex.def)             Requested size: 192.7195pt x 255.9556pt.
- [27 <./diagram-mask01.png>]
-<Figure_3.png, id=841, 98.769pt x 63.3567pt>
+ [25 <./diagram-mask01.png>]
+<Figure_3.png, id=832, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 235.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
- [28 <./Figure_3.png>]
-<diagram-mat05.png, id=850, 46.0119pt x 89.133pt>
+ [26 <./Figure_3.png>]
+<diagram-mat05.png, id=841, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 271.
 (pdftex.def)             Requested size: 138.03534pt x 267.3983pt.
- [29] [30 <./diagram-mat05.png (PNG copy)>] [31]
-Overfull \hbox (10.48262pt too wide) in paragraph at lines 315--316
-\OT1/cmr/m/n/10 the output is recombined with the input. There are also compone
-nts in each layer that do normalization. 
- []
-
-<diagram-inference-02.png, id=867, 145.0218pt x 103.587pt>
+ [27 <./diagram-mat05.png (PNG copy)>] [28]
+<diagram-inference-02.png, id=855, 145.0218pt x 103.587pt>
 File: diagram-inference-02.png Graphic file (type png)
 <use diagram-inference-02.png>
 Package pdftex.def Info: diagram-inference-02.png  used on input line 330.
 (pdftex.def)             Requested size: 290.04288pt x 207.1735pt.
-[32 <./diagram-inference-02.png>] [33]
-<Figure_4.png, id=882, 84.7968pt x 46.2528pt>
+ [29 <./diagram-inference-02.png>]
+[30]
+<Figure_4.png, id=869, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 390.
 (pdftex.def)             Requested size: 169.59314pt x 92.50537pt.
-) [34 <./Figure_4.png>] [35]
+) [31 <./Figure_4.png>]
 \openout2 = `chapters/chapter03.aux'.
 
-
-(./chapters/chapter03.tex
+ (./chapters/chapter03.tex
 Chapter 4.
-[36
+[32
 
 
 
-] [37] [38]
-<diagram-pic01.png, id=909, 2581.645pt x 2477.255pt>
+] [33]
+Overfull \hbox (103.61176pt too wide) in paragraph at lines 84--85
+[]\OT1/cmr/m/n/10 Github is used as a code repository. Code corresponding with 
+this paper can be found at: []https://github.com/radiodee1/awesome-
+ []
+
+[34]
+<diagram-pic01.png, id=893, 2581.645pt x 2477.255pt>
 File: diagram-pic01.png Graphic file (type png)
 <use diagram-pic01.png>
 Package pdftex.def Info: diagram-pic01.png  used on input line 117.
 (pdftex.def)             Requested size: 258.17963pt x 247.74pt.
- [39]
-<diagram-jetson-nano-02.png, id=915, 401.5pt x 358.33875pt>
+ [35 <./diagram-pic01.png>]
+<diagram-jetson-nano-02.png, id=900, 401.5pt x 358.33875pt>
 File: diagram-jetson-nano-02.png Graphic file (type png)
 <use diagram-jetson-nano-02.png>
 Package pdftex.def Info: diagram-jetson-nano-02.png  used on input line 143.
 (pdftex.def)             Requested size: 361.34665pt x 322.50189pt.
- [40 <./diagram-pic01.png>] [41 <./diagram-jetson-nano-02.png>] [42]
-Overfull \hbox (6.7186pt too wide) in paragraph at lines 216--217
-[]\OT1/cmr/m/n/10 Furthermore, an environment variable, called ``GOOGLE[]APPLIC
-ATION[]CREDENTIALS'' must
+ [36] [37 <./diagram-jetson-nano-02.png>]
+[38] [39]
+Overfull \hbox (1.9295pt too wide) in paragraph at lines 253--254
+\OT1/cmr/m/n/10 GLIBC library in the Raspberry Pi Raspbian distribution. This p
+roduces the following error: ``\OT1/cmr/bx/n/10 ImportError:
  []
 
-[43] [44] [45]) [46]
+[40]) [41]
 \openout2 = `chapters/chapter04.aux'.
 
  (./chapters/chapter04.tex
 Chapter 5.
-[47
+[42
 
 
 
-] [48] [49] [50] [51] [52]
-Overfull \hbox (3.07458pt too wide) in paragraph at lines 197--197
-|[]\OT1/cmr/bx/n/14.4 Smart Speaker - Transformer Model with Persona Corpus| 
+] [43] [44]
+Overfull \hbox (0.78291pt too wide) in paragraph at lines 126--127
+\OT1/cmr/m/n/10 instantaneously. It was outfitted with a microphone and a speak
+er. It was also configured to run automatically
  []
 
-[53]
-<diagram-chart-loss-00.png, id=985, 128.1588pt x 69.861pt>
+[45] [46] [47]
+<diagram-chart-loss-00.png, id=961, 128.1588pt x 69.861pt>
 File: diagram-chart-loss-00.png Graphic file (type png)
 <use diagram-chart-loss-00.png>
 Package pdftex.def Info: diagram-chart-loss-00.png  used on input line 223.
 (pdftex.def)             Requested size: 448.55467pt x 244.51283pt.
-
-Overfull \hbox (14.93466pt too wide) in paragraph at lines 223--224
- [] 
- []
-
-[54 <./diagram-chart-loss-00.png>] [55] [56] [57]
-Overfull \hbox (0.74185pt too wide) in paragraph at lines 382--383
-\OT1/cmr/m/n/10 Programming that allowed the model to launch programs when dire
-cted by the user was implemented.
- []
-
-[58] [59] [60]) [61]
+ [48 <./diagram-chart-loss-00.png>] [49] [50] [51] [52] [53]
+[54]) [55]
 \openout2 = `chapters/chapter05.aux'.
 
  (./chapters/chapter05.tex
 Chapter 6.
-[62
+[56
 
 
 
-] [63] [64] [65] [66] [67]) [68]
+] [57] [58] [59] [60]) [61]
 \openout2 = `chapters/chapter06.aux'.
 
  (./chapters/chapter06.tex
 Chapter 7.
-[69
+[62
 
 
 
-] [70]
-<diagram-100000-vocab.png, id=1067, 607.26875pt x 341.275pt>
+]
+<diagram-100000-vocab.png, id=1034, 607.26875pt x 341.275pt>
 File: diagram-100000-vocab.png Graphic file (type png)
 <use diagram-100000-vocab.png>
 Package pdftex.def Info: diagram-100000-vocab.png  used on input line 77.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
-
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 77--78
- [] 
- []
-
-[71 <./diagram-100000-vocab.png>]
-<diagram-100000-novocab.png, id=1076, 607.26875pt x 341.275pt>
+ [63]
+<diagram-100000-novocab.png, id=1043, 607.26875pt x 341.275pt>
 File: diagram-100000-novocab.png Graphic file (type png)
 <use diagram-100000-novocab.png>
 Package pdftex.def Info: diagram-100000-novocab.png  used on input line 95.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
-
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 95--96
- [] 
- []
-
-[72 <./diagram-100000-novocab.png>]
-<diagram-100000-sent.png, id=1084, 607.26875pt x 341.275pt>
+ [64 <./diagram-100000-vocab.png>]
+<diagram-100000-sent.png, id=1051, 607.26875pt x 341.275pt>
 File: diagram-100000-sent.png Graphic file (type png)
 <use diagram-100000-sent.png>
 Package pdftex.def Info: diagram-100000-sent.png  used on input line 118.
 (pdftex.def)             Requested size: 455.45045pt x 255.95561pt.
-
-Overfull \hbox (21.83044pt too wide) in paragraph at lines 118--119
- [] 
- []
-
-
-Overfull \hbox (3.17711pt too wide) in paragraph at lines 134--135
-\OT1/cmr/m/n/10 For each of the models there is only a certain number of tokens
- in the model's vocabulary. Additionally
- []
-
-[73 <./diagram-100000-sent.png>]) [74]
+ [65 <./diagram-100000-novocab.png>] [66 <./diagram-100000-sent.png>]) [67]
 \openout2 = `chapters/chapter07.aux'.
 
  (./chapters/chapter07.tex
 Chapter 8.
-[75
+[68
 
 
 
-] [76]) [77] [78
+] [69]) [70] [71
 
 
-] (./proposal_doc.bbl
-Underfull \hbox (badness 7468) in paragraph at lines 8--11
-[]\OT1/cmr/m/n/10 Matthew Inkawhich, ``pytorch-chatbot,'' 2018.  []$\OT1/pcr/m/
-n/10 https : / / github . com / pytorch /
- []
-
-[79
+] (./proposal_doc.bbl [72
 
 ]
-Underfull \hbox (badness 3240) in paragraph at lines 55--59
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
 []\OT1/cmr/m/n/10 A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever, ``I
 mproving language
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--86
+Underfull \hbox (badness 1783) in paragraph at lines 55--59
+\OT1/cmr/m/n/10 understanding by generative pre-training,'' \OT1/cmr/m/it/10 UR
+L https://s3-us-west-2. amazonaws. com/openai-
+ []
+
+
+Underfull \hbox (badness 2903) in paragraph at lines 81--86
 []\OT1/cmr/m/n/10 Wikipedia contributors, ``Winograd schema challenge --- Wikip
-edia, the free
+edia, the free encyclopedia.''
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 81--86
-\OT1/cmr/m/n/10 encyclopedia.'' []$\OT1/pcr/m/n/10 https : / / en . wikipedia .
- org / w / index . php ? title = Winograd _
+[]$\OT1/pcr/m/n/10 https : / / en . wikipedia . org / w / index . php ? title =
+ Winograd _ Schema _ Challenge &
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
- [80]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 183.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
+ [73]
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 194.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
 (./chapters/chapter04.aux) (./chapters/chapter05.aux) (./chapters/chapter06.aux
 ) (./chapters/chapter07.aux) (./proposal_doc.acr))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 9250365A3A96B0F432BCADDDC68D1E93;7830.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 194.
  ) 
 Here is how much of TeX's memory you used:
- 16319 strings out of 482854
- 322916 string characters out of 5956880
- 599168 words of memory out of 5000000
+ 16312 strings out of 482854
+ 322867 string characters out of 5956880
+ 600145 words of memory out of 5000000
  31098 multiletter control sequences out of 15000+600000
- 558745 words of font info for 112 fonts, out of 8000000 for 9000
+ 558738 words of font info for 112 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  43i,11n,57p,958b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
@@ -1134,10 +1065,10 @@ mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (90 pages, 9128060 bytes).
+Output written on proposal_doc.pdf (83 pages, 9124142 bytes).
 PDF statistics:
- 1254 PDF objects out of 1440 (max. 8388607)
- 1083 compressed objects within 11 object streams
- 241 named destinations out of 1000 (max. 500000)
+ 1224 PDF objects out of 1440 (max. 8388607)
+ 1060 compressed objects within 11 object streams
+ 234 named destinations out of 1000 (max. 500000)
  969 words of extra memory for PDF output out of 10000 (max. 10000000)
 
