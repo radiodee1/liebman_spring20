@@ -3,9 +3,9 @@
 
 \section{Generative Pre-Training 2 - X Large Model}
 
-The `large' 774M model of GPT2 was ultimately released to the public. In addition, two other models were created: `x-large' had 1.5B parameters, and `xx-large,' had 8.3B parameters. The `x-large' was downloaded for testing.
+The ``large'' 774M model of GPT2 was ultimately released to the public. In addition, two other models were created: ``x-large'' had 1.5B parameters, and ``xx-large,'' had 8.3B parameters. The ``x-large'' was downloaded for testing.
 
-Though tests from the previous sections worked on the `large' 774M model, subjectively the answers provided by the 1.5B model were better. The answers were stronger grammatically.
+Though tests from the previous sections worked on the ``large'' 774M model, subjectively the answers provided by the 1.5B model were better. The answers were stronger grammatically.
 
 The 1.5B model was too large for a Raspberry Pi, using 12.3 Gig of RAM while it was running with inference. %The 1.5B model is experimented with on the development laptop computer.
 
@@ -53,28 +53,28 @@ bye.
 	
 	\item []There is a variety of answers. 
 	
-	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy?' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
 	
-	\item []The `favorite candy' question is answered in more detail than other models.
+	\item []The ``favorite candy'' question is answered in more detail than other models.
 	
-	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know.' Does the model use these answers at all times?}
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answers at all times?}
 	
-	\item []The model does not use `No' or `I don't know.'
+	\item []The model does not use ``No'' or ``I don't know.''
 	
-	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye?'}
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
 	
-	\item []The model has an answer for `Hello' and `Good bye.'
+	\item []The model has an answer for ``Hello'' and ``Good bye.''
 	
 \end{itemize}
 
 
 \subsection{Context Experiment}
 
-As before, the model was given details in sentence form that it could use as replies to questions when appropriate. The larger model worked better if all the sentences shown to it had the `Q:' and `A:' strings prepended to them. 
+As before, the model was given details in sentence form that it could use as replies to questions when appropriate. The larger model worked better if all the sentences shown to it had the ``Q:'' and ``A:'' strings prepended to them. 
 
 In each example, the information the model chose from was presented in sentence pairs. Though these sentences looked much like source/target pairs from our movie corpus, they were totally unrelated.
 
-An example might be the presentation of its own name to the model. In the smaller GPT2 model, the model was shown the single sentence `My name is Jane.' In the larger GPT2 model's code, the model was shown two sentences. One was `Q: What is your name?' and the other, following it directly, was `A: My name is Jane.' These conventions were followed for time of day, the model's location, and the model's occupation.
+An example might be the presentation of its own name to the model. In the smaller GPT2 model, the model was shown the single sentence ``My name is Jane.'' In the larger GPT2 model's code, the model was shown two sentences. One was ``Q: What is your name?'' and the other, following it directly, was ``A: My name is Jane.'' These conventions were followed for time of day, the model's location, and the model's occupation.
 
 These questions can be answered without any memory of the last question.
 
@@ -87,7 +87,7 @@ I like the color red.
 > What is your favorite color?
 Red.
 \end{verbatim}
-This was the same text excerpt as from the small GPT2 model in Section \ref{install-gpt2-history}. The `favorite color' example continued to work on the larger GPT2 model. Again, as in the small model, the chatbot was using the history in the conversation. 
+This was the same text excerpt as from the small GPT2 model in Section \ref{install-gpt2-history}. The ``favorite color'' example continued to work on the larger GPT2 model. Again, as in the small model, the chatbot was using the history in the conversation. 
 
 Even though the history was consulted before answers are formulated, the output of the model was not always predictable. %This has something to do with the `temperature' setting of the model. The output is sometimes more fanciful.
 
@@ -98,9 +98,9 @@ Even though the history was consulted before answers are formulated, the output 
 The GPT2 models remembered the user's name very badly. %We would like to dictate how the model handles that situation. 
 Artificial Intelligence Markup Language was used to improve this. 
 
-AIML is actually poorly suited for handling this task. In AIML every question and response must be coded as a separate rule. For the question `How are you?' and answer `I am fine,' the AIML kernel will only answer with the programmed response if the input is an exact match. If the questions are `How are you doing?' or `How do you feel?' the kernel does not have any answers. %The two or three questions are phrased differently but can be answered with the same text.
+AIML is actually poorly suited for handling this task. In AIML every question and response must be coded as a separate rule. For the question ``How are you?'' and answer ``I am fine,'' the AIML kernel will only answer with the programmed response if the input is an exact match. If the questions are ``How are you doing?'' or ``How do you feel?'' the kernel does not have any answers. %The two or three questions are phrased differently but can be answered with the same text.
 
-The GPT2 chatbot is different. Groups of questions have the same answer. Sometimes the answer could even be `I don't know.' The chatbot could answer `I don't know' or `I am fine' to  `How are you,'  `How are you doing?' and `How do you feel?' These questions can be phrased differently with the same answer.
+The GPT2 chatbot is different. Groups of questions have the same answer. Sometimes the answer could even be ``I don't know.'' The chatbot could answer ``I don't know'' or ``I am fine'' to  ``How are you,''  ``How are you doing?'' and ``How do you feel?'' These questions can be phrased differently with the same answer.
 
 To use AIML for this task questions and answers were coded in pairs for all possible phrasings of a question.
 
@@ -112,11 +112,11 @@ Two situations with AIML files are below.
 
 \subsection{User Name Experiment}
 %The name of the user is our first example of AIML coding. This example is easy. 
-User name is the first example. Using `*' as a wildcard, there are a few ways to say ones name. One way is `My name is *.' Another variant is `* is my name'. %That's as many ways to say it as there are.
+User name is the first example. Using ``*'' as a wildcard, there are a few ways to say ones name. One way is ``My name is *.'' Another variant is ``* is my name''. %That's as many ways to say it as there are.
 
-Each question is answerable with a phrase like `Hello *.' The asterisk is still a wildcard for the memorized name. An AIML file can handle this sort of question very easily. %We write an AIML file with these questions. We depend on the AIML to remember the name from the wildcard. 
+Each question is answerable with a phrase like ``Hello *.'' The asterisk is still a wildcard for the memorized name. An AIML file can handle this sort of question very easily. %We write an AIML file with these questions. We depend on the AIML to remember the name from the wildcard. 
 
-Another question in this scenario is `What is my name?' In AIML there are very few ways to phrase this question. %With this question also there are very few ways to phrase the AIML. %Here we are referring to the name recorded in the previous AIML question as discussed above. 
+Another question in this scenario is ``What is my name?'' In AIML there are very few ways to phrase this question. %With this question also there are very few ways to phrase the AIML. %Here we are referring to the name recorded in the previous AIML question as discussed above. 
 
 The part of the AIML code that processes different questions is called the kernel.
 During a typical chatbot run the AIML kernel is shown all user input.% to the AIML kernel. 
@@ -137,13 +137,13 @@ Even when the answer is sensible the model's answer is not always correct, but w
 
 \subsubsection{Usage Example}
 
-The user might say `Hello, my name is John.' The bot might reply `Hello.' The user might then say `What is your name?' The bot should reply `My name is Jane.'
+The user might say ``Hello, my name is John.'' The bot might reply ``Hello.'' The user might then say ``What is your name?'' The bot should reply ``My name is Jane.''
 
-Then the user might say `What is my name?' The bot should reply `John.'
+Then the user might say ``What is my name?'' The bot should reply ``John.''
 
 %In practice the bot will reply with `Jane' most of the time. % without the AIML augmentation. 
-With the smaller GPT2 model the reply to this is often `Jane.' %even with the AIML kernel. 
-With the larger GPT2 model the bot tends to answer what the AIML suggests. In this case the answer would be `John.'
+With the smaller GPT2 model the reply to this is often ``Jane.'' %even with the AIML kernel. 
+With the larger GPT2 model the bot tends to answer what the AIML suggests. In this case the answer would be ``John.''
 
 \subsection{Internet Search Experiment}
 The model is asked a question and an article is downloaded from the Internet, and summarized. % to answer the question.
@@ -151,45 +151,45 @@ The model is asked a question and an article is downloaded from the Internet, an
 
 This is leveraging of the token size of the input to the model. It's usually very large. It can be 1024 tokens.
 
-The AIML required is minimal but larger than the AIML for the `user name' problem. The goal is to detect, first, when the user wants to talk about an Internet page, and second, detect when they are done.
+The AIML required is minimal but larger than the AIML for the ``user name'' problem. The goal is to detect, first, when the user wants to talk about an Internet page, and second, detect when they are done.
 
-The first case, when the user wants to talk about an Internet page, is associated with utterances like `Tell me about *' and `I want to talk about *.' The asterisk is a wildcard for what the user is interested in. There can be other phrases that imply the user's intention. In these cases, the text from the wildcard in the invocation is saved.
+The first case, when the user wants to talk about an Internet page, is associated with utterances like ``Tell me about *'' and ``I want to talk about *.'' The asterisk is a wildcard for what the user is interested in. There can be other phrases that imply the user's intention. In these cases, the text from the wildcard in the invocation is saved.
 
-The second case, when the user is done with the Internet page and wants to return to normal operation, is associated with utterances like `Ok thanks' and `That's enough.' 
+The second case, when the user is done with the Internet page and wants to return to normal operation, is associated with utterances like ``Ok thanks'' and ``That's enough.'' 
 %These two phrases can be checked for when the bot is in `Internet-Search' mode. 
 There could be other phrases that cause the same operation in the AIML code.
 
-When the AIML detects one of these signals, the program goes into a special mode of operation. The first, or `find' signal, causes operation of an Internet browser. The web search uses the text from the invocation of the `find' command. The browser yields results as they would be found using a Google search engine. The first 20 results are kept and the URL for the highest ranking Wikipedia page is retained. It is loaded and the `body' tag is scanned for `paragraph' type content. This information replaces the context input. 
+When the AIML detects one of these signals, the program goes into a special mode of operation. The first, or ``find'' signal, causes operation of an Internet browser. The web search uses the text from the invocation of the ``find'' command. The browser yields results as they would be found using a Google search engine. The first 20 results are kept and the URL for the highest ranking Wikipedia page is retained. It is loaded and the ``body'' tag is scanned for ``paragraph'' type content. This information replaces the context input. 
 
 After that, the context is retained while the chatbot answers any questions that the user might have. The medium sized GPT2 model has some facility with this, while the larger GPT2 model is more adept.
 
-Later, when the AIML detects the second, `restore' signal, the program switches back from special operation to normal operation. Web page contents are removed and the context is restored. % as it was during regular chatbot use. 
+Later, when the AIML detects the second, ``restore'' signal, the program switches back from special operation to normal operation. Web page contents are removed and the context is restored. % as it was during regular chatbot use. 
 %There is a part that has the history of the last few questions and answers, and there is a part that has the bot name, occupation, and the current time.
 
-As the chatbot answers questions, the content of the conversation is stored as `history.' % of the context text, as it is used in the regular chatbot mode. 
+As the chatbot answers questions, the content of the conversation is stored as ``history.'' % of the context text, as it is used in the regular chatbot mode. 
 This is a record of the chatbot operation even when it is answering questions about a web page. %that it has searched for. 
 Because of size limitations, the history is not included in the chatbot input when it is answering questions about a web page. %, but a record is kept of `q' and `a' and the bot can refer to them later.
 
 %Again, because of size restrictions there is no regular context information shown to the chatbot while it is answering questions about a web page. 
 
-After the `restore' signal, the chatbot sees only the regular context and none of the web page material. The regular input size for all models is 1024 tokens. %and it is more than 1000 for the larger models. 
+After the ``restore'' signal, the chatbot sees only the regular context and none of the web page material. The regular input size for all models is 1024 tokens. %and it is more than 1000 for the larger models. 
 Though this would appear to be a large space for text, it is common for Wikipedia articles to be clipped so that the user's question can be inserted at the end.
 
 \subsubsection{Usage Example}
 
-This example uses the musical group `The Beatles.' The user's question is `Tell me about the Beatles.'
+This example uses the musical group ``The Beatles.'' The user's question is ``Tell me about the Beatles.''
 
-The chatbot takes seconds to download an article from Wikipedia. Ultimately it answers `The Beatles were an English rock band formed in Liverpool in 1960.'
+The chatbot takes seconds to download an article from Wikipedia. Ultimately it answers ``The Beatles were an English rock band formed in Liverpool in 1960.''
 
-The user asks `How many members were in the band?'
+The user asks ``How many members were in the band?''
 
-The 774M chatbot answers, `The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.' This is not the correct answer. This may be because, after clipping, that information does not exist in the context section. The user may ask other questions. %Some may be answered correctly.
+The 774M chatbot answers, ``The Beatles were originally formed by John Lennon and Paul McCartney in Liverpool.'' This is not the correct answer. This may be because, after clipping, that information does not exist in the context section. The user may ask other questions. %Some may be answered correctly.
 
-To this question, the x-large 1.5B model answers `There were four members in the band.' This is correct.
+To this question, the x-large 1.5B model answers ``There were four members in the band.'' This is correct.
 
-When the user asks `How many members were in the band?' the model seems to be able to answer with the specific band. % that you are referring to.
+When the user asks ``How many members were in the band?'' the model seems to be able to answer with the specific band. % that you are referring to.
 
-To end the Q/A session the user says `OK' or `OK thanks.' Though the web page for the `Beatles' would no longer be available to the chatbot, it could still answer `Beatles'  questions. The user could ask `What are the Beatles?' The answer might be, `The Beatles were an English rock band formed in Liverpool in 1960,' even though the Wikipedia page is not available to the bot.
+To end the Q/A session the user says ``OK'' or ``OK thanks.'' Though the web page for the ``Beatles'' would no longer be available to the chatbot, it could still answer ``Beatles''  questions. The user could ask ``What are the Beatles?'' The answer might be, ``The Beatles were an English rock band formed in Liverpool in 1960,'' even though the Wikipedia page is not available to the bot.
 
 \label{chapter-xlarge}
 

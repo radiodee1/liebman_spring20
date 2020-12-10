@@ -8,7 +8,7 @@ First, how large a model could be installed on how small a computer. Are there s
 
 Second, how can the larger models be modified to further control or interact with things like household appliances. It might be good to somehow inform the model the state of these appliances, and then when the state is changed, the model would somehow be informed again. This could be done the same way that the time of day is presented to the GPT2 model.
 
-Third, it would be good to try out GPT3 generally and specifically ascertain whether it handled the `History' experiment better than the GPT2. This is discussed partially in Section \ref{install-gpt2-history}. 
+Third, it would be good to try out GPT3 generally and specifically ascertain whether it handled the ``History'' experiment better than the GPT2. This is discussed partially in Section \ref{install-gpt2-history}. 
 
 
 \section{Winograd Schema}
@@ -21,7 +21,7 @@ An example follows.
 	\textbf{He didn't put the trophy in the suitcase because it was too [big/small].}
 \end{center}
 
-The programmer can choose which bracketed term to use, and must choose only one term. If `big' is chosen, then `it' is referring to the trophy. If `small' is chosen, then `it' is referring to the suitcase. Humans can easily see the pronoun `it' refers to either the suitcase or the trophy, but computers have trouble with these determinations.
+The programmer can choose which bracketed term to use, and must choose only one term. If ``big'' is chosen, then ``it'' is referring to the trophy. If ``small'' is chosen, then ``it'' is referring to the suitcase. Humans can easily see the pronoun ``it'' refers to either the suitcase or the trophy, but computers have trouble with these determinations.
 
 The Transformer, and the Scaled Dot-product Attention that it uses, lends itself to discussion of Winograd schema, because the Attention scheme compares tokens to other tokens in the same sentence. 
 
@@ -30,7 +30,7 @@ However in the case of the Generative Pre-Training 2 transformer, and it's exhau
 
 There is a Winograd Schema Challenge and something of a formula for constructing your own Winograd schema (Wikapedia contributors). \cite{wiki:xxx}
 
-Though it is not a classic Winograd schema, when the x-large GPT2 model is tested in chapter \ref{chapter-xlarge}, the model is asked how many members there are in the band `The Beatles' without specifying which band the question is talking about. The x-large model answers what could be an ambiguous question. Sometimes it answers this sort of question correctly.
+Though it is not a classic Winograd schema, when the x-large GPT2 model is tested in chapter \ref{chapter-xlarge}, the model is asked how many members there are in the band ``The Beatles'' without specifying which band the question is talking about. The x-large model answers what could be an ambiguous question. Sometimes it answers this sort of question correctly.
 
 \section{Generative Pre-Training 3}
 
@@ -40,13 +40,13 @@ In 2020, OpenAI, the company responsible for training the GPT2 model, has releas
 
 Brown et al \cite{brown2020language} present a new model that has 175 Billion parameters and 96 layers. This is the largest of the new GPT3 models. As in the past, the model has not been released entirely to the public. Users interested in the model must apply to the company and be vetted. Accepted applications allow the user access to a client/server API that the company provides.
 
-The model is tested in three modes, `zero-shot,' `one-shot,' and `few-shot.' 
+The model is tested in three modes, ``zero-shot,'' ``one-shot,'' and ``few-shot.'' 
 
-A question is formulated and submitted in every mode. In `zero-shot' the model is given no  context. In `one-shot' the context contains a single question and answer pair. In `few-shot' the model is given several question and answer pairs similar to the question.
+A question is formulated and submitted in every mode. In `zero-shot' the model is given no  context. In ``one-shot'' the context contains a single question and answer pair. In ``few-shot'' the model is given several question and answer pairs similar to the question.
 
 Results from the model are impressive. 
 
 In all three modes, the model is not fine-tuned and no additional training done on the model to prepare it for a question-answering task.
 
-The GPT2 context created for our smaller model is closest to the `few-shot' paradigm in GPT3. In contrast to GPT3, in these experiments the text from previous queries is saved and added to the context for subsequent questioning.
+The GPT2 context created for our smaller model is closest to the ``few-shot'' paradigm in GPT3. In contrast to GPT3, in these experiments the text from previous queries is saved and added to the context for subsequent questioning.
 

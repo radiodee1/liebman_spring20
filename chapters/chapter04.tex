@@ -42,19 +42,19 @@ This checklist is visited repeatedly to subjectively rate the chatbots.
 	
 	\item [2.] Is there a  variety of answers? Are all answers the same?
 	
-	\item [3.] Does the model give good answers to the questions about `favorite color' and `favorite candy?' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
+	\item [3.] Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. 
 	
-	\item [4.] `No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know.' Does the model use these answers at all times?
+	\item [4.] ``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answers at all times?
 	
-	\item [5.] Does the model answer well to `Hello' and `Good bye?'
+	\item [5.] Does the model answer well to ``Hello'' and ``Good bye?''
 	
 \end{itemize}
 
-The reasons for questions 1, 2 and 5 are straight forward. The reason for question 3 is to determine how well the model understands English. If the answers to `favorite candy' and `favorite color' are the same, then the model is simple. If the answers are different, then the answer set the model uses is larger. The model might or might not know there is a difference between candy and color. 
+The reasons for questions 1, 2 and 5 are straight forward. The reason for question 3 is to determine how well the model understands English. If the answers to ``favorite candy'' and ``favorite color'' are the same, then the model is simple. If the answers are different, then the answer set the model uses is larger. The model might or might not know there is a difference between candy and color. 
 
-A simpler model will answer `I don't know' for the `favorite candy' and `favorite color' questions. It can even answer questions like `do you like red' and `do you like ice cream' with `I don't know.' 
+A simpler model will answer ``I don't know'' for the ``favorite candy'' and ``favorite color'' questions. It can even answer questions like ``do you like red'' and ``do you like ice cream'' with ``I don't know.'' 
 
-For question 4, simple `No' answers are used frequently to answer questions that would otherwise need complex sentence structure. A simpler model learns during training that `No' answers are easier to remember and could be applied in many places.
+For question 4, simple ``No'' answers are used frequently to answer questions that would otherwise need complex sentence structure. A simpler model learns during training that ``No'' answers are easier to remember and could be applied in many places.
 
 \section{Chatbot - Gated Recurrent Unit Model}
 There is a model based on the sequence-to-sequence architecture proposed by Vinyals et al \cite{DBLP:journals/corr/VinyalsL15}.
@@ -106,17 +106,17 @@ good bye .
 	\item [2.] \textbf{Is there a  variety of answers? Are all answers the same?}
 	
 	\item [] Not all answers are the same.
-	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy?' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
 	
-	\item[] It is debatable whether the answers to the questions about `favorite color' and `favorite candy' are good. It is good that the two types of questions don't have the same answers.
+	\item[] It is debatable whether the answers to the questions about ``favorite color'' and ``favorite candy'' are good. It is good that the two types of questions don't have the same answers.
 	
-	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know.' Does the model use these answers at all times?}
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answers at all times?}
 	
-	\item[] This model uses that answer at times. It does not use `no' always.
+	\item[] This model uses that answer at times. It does not use ``no'' always.
 	
-	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye?'}
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
 	
-	\item []The model answers well to `Hello' and `Good bye.'
+	\item []The model answers well to ``Hello'' and ``Good bye.''
 \end{itemize}
 
 This is a reasonably good and light weight model. The memory it uses is small and it replies quickly.
@@ -139,7 +139,7 @@ The memory footprint, running below one Gigabyte, could be installed on a Raspbe
 
 
 \subsection{Questions}
-Subjectively this Transformer model is not better than the original GRU from the sequence-to-sequence tutorial. It can respond to four or five sentences. The default reply sentence for unknown prompts is `Hi, how are you today?' It has answers to prompts like `hi,' `How are you?' and `What do you do?' It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?' It can not tell you the time. 
+Subjectively this Transformer model is not better than the original GRU from the sequence-to-sequence tutorial. It can respond to four or five sentences. The default reply sentence for unknown prompts is ``Hi, how are you today?'' It has answers to prompts like ``hi,'' ``How are you?'' and ``What do you do?'' It doesn't answer arbitrary questions. It cannot answer 'What is your favorite color?' It can not tell you the time. 
 
 This is the sample question list as it was answered by the model.
 
@@ -178,17 +178,17 @@ hi , how are you today ?
 	
 	\item []There is a variety of answers. There is not a great variety though, and this is a problem for this model.
 	
-	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy?' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately.} 
 	
-	\item []Some of the answers are re-used and do not follow logically from the questions. The `favorite color' and `favorite candy' questions prompt the model's default answer `Hi, how are you today?' 
+	\item []Some of the answers are re-used and do not follow logically from the questions. The ``favorite color'' and ``favorite candy'' questions prompt the model's default answer ``Hi, how are you today?'' 
 	
-	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know.' Does the model use these answers at all times?}
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answers at all times?}
 	
-	\item []The model does not use `No' or `I don't know.'
+	\item []The model does not use ``No'' or ``I don't know.''
 	
-	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye?'}
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
 	
-	\item []The model has an answer for `Hello' but not for `Good bye.'
+	\item []The model has an answer for ``Hello'' but not for ``Good bye.''
 	
 \end{itemize}
 
@@ -213,7 +213,7 @@ This model uses the Tensorflow library, not Pytorch.
 
 The Persona corpus model uses 2 layers, 4 heads, and a hidden size of 128. In contrast, the Movie corpus model uses 6 layers, 8 heads, and a hidden size of 512, and has both encoder and decoder sections.
 
-While running, the memory footprint of the Movie Corpus model was above 1.5 Gigabytes. The model was installed on a Raspberry Pi 4B board, requiring a Python package called `Tensorflow-model-server' which had to be built from source or otherwise provided for the Raspberry Pi. 
+While running, the memory footprint of the Movie Corpus model was above 1.5 Gigabytes. The model was installed on a Raspberry Pi 4B board, requiring a Python package called ``Tensorflow-model-server'' which had to be built from source or otherwise provided for the Raspberry Pi. 
 
 The model took seven days to train on the development computer in a x86\_64 environment with a CPU based processor. The goal for training was 50,000 lines of text. After training the loss graph was consulted and the installed version was culled from the saved checkpoint at the 45,000 line point.
 
@@ -271,17 +271,17 @@ bye
 	
 	\item []There is a variety of answers. 
 	
-	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy?' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. }
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. }
 	
-	\item []The `favorite color' and `favorite candy' questions are sometimes ignored. The model does not always have original answers for these questions. It will reply with `I don't know.' much of the time. This model does answer better than the model in Section \ref{transformer-persona-corpus}.
+	\item []The ``favorite color'' and ``favorite candy'' questions are sometimes ignored. The model does not always have original answers for these questions. It will reply with ``I don't know.'' much of the time. This model does answer better than the model in Section \ref{transformer-persona-corpus}.
 	
-	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know.' Does the model use these answer at all times?}
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answer at all times?}
 	
-	\item []The model does in fact use `No' or `I don't know.' It does not use these exclusively.
+	\item []The model does in fact use ``No'' or ``I don't know.'' It does not use these exclusively.
 	
-	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye?'}
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
 	
-	\item []The model does have an answer for `Hello' and `Good bye.'
+	\item []The model does have an answer for ``Hello'' and ``Good bye.''
 \end{itemize}
 
 This is a reasonably good model and it is preferable to the model that uses the Persona Corpus.
@@ -301,23 +301,23 @@ A set of LED lights is installed on the Raspberry Pi to show when the model is p
 \section{Chatbot - Generative Pre-Training 2 Model}
 
 \label{install-gpt2-chatbot}
-A pre-trained GPT2 model with the large English corpus, called `WebText,' was used to produce a chatbot. % to ascertain if the model works better than the sequence-to-sequence model. 
+A pre-trained GPT2 model with the large English corpus, called ``WebText,'' was used to produce a chatbot. % to ascertain if the model works better than the sequence-to-sequence model. 
 %In our tests this worked well and this model was considered superior. 
 This model was not trained in the typical sense after download. 
 
 Though the large 774M model was available, the smaller 117M model was used in this test on the Raspberry Pi. It was later tested on the Jetson Nano.
 
-For these experiments, the GPT2 was used in `zero-shot' mode. This means there was no special fine-tuning of the model in the application.
+For these experiments, the GPT2 was used in ``zero-shot'' mode. This means there was no special fine-tuning of the model in the application.
 
 Special coding for the input and output was required to operate it as a chatbot. 
 
-Output was limited to about 25 tokens. Input to the model was prepended with the character string `Q:' by our code. Output was observed to have the character string `A:' prepended to it. It is assumed therefore that the model was at some point exposed to the `Question/Answer' paradigm in written passages during its training. %This was helpful.
+Output was limited to about 25 tokens. Input to the model was prepended with the character string ``Q:'' by our code. Output was observed to have the character string ``A:'' prepended to it. It is assumed therefore that the model was at some point exposed to the ``Question/Answer'' paradigm in written passages during its training. %This was helpful.
 
 Output from the model was usually larger in size than needed. Also, output had the character of having some sensible utterance followed by some output that was only a partial sentence.
 
 It was necessary to process the output. 
 %First, it was checked for the "A:" character string at the beginning. If it was there it was removed. 
-If the `A:' character string was found at the beginning it was removed.
+If the ``A:'' character string was found at the beginning it was removed.
 Then the first complete sentence was used as output, while words and phrases after that were discarded.
 
 \subsection{Context Experiment}
@@ -334,7 +334,7 @@ The GPT2 chatbot is shown a paragraph or table with each question. The table bel
 
 %There is not enough room with the other models, like the Transformer or the GRU model, to include this kind of a fact sheet or fact paragraph. 
 
-Subject matter like that found in the `favorite color' question and the `favorite candy' question are not found in the table.
+Subject matter like that found in the ``favorite color'' question and the ``favorite candy'' question are not found in the table.
 
 \begin{table}[h]
 	\begin{center}	
@@ -357,7 +357,7 @@ Subject matter like that found in the `favorite color' question and the `favorit
 
 
 \subsection{History Experiment}
-From each question all input and output was concatenated and included with the next question. The goal was for the model to treat the `Q' and `A' as historical input and then refer to that information as it answered new questions. This didn't always work as expected. At times the model was confused by the extra input and at others there was no effect. 
+From each question all input and output was concatenated and included with the next question. The goal was for the model to treat the ``Q'' and ``A'' as historical input and then refer to that information as it answered new questions. This didn't always work as expected. At times the model was confused by the extra input and at others there was no effect. 
 
 Without this mechanism the model has no notion of temporal context. The answers to questions could not depend on the answers to past questions. %Though this historical input did not always work, the code is retained in the hopes that at some point it is useful.
 
@@ -372,9 +372,9 @@ Red.
 \label{install-gpt2-history}
 
 %We like this output. 
-The model is asked about the color `red.' Doing so the model is encouraged to pick `red' as the answer to the next question about color. When `favorite color' is requested, `red' is the answer. Without any history the model will answer the `favorite color' question with another answer. It may answer `pink' or it may answer `the colors of the rainbow.' 
+The model is asked about the color ``red.'' Doing so the model is encouraged to pick ``red'' as the answer to the next question about color. When ``favorite color'' is requested, ``red'' is the answer. Without any history the model will answer the ``favorite color'' question with another answer. It may answer ``pink'' or it may answer ``the colors of the rainbow.'' 
 
-From one sentence to the next the model is keeping track of the context of the conversation. History is considered. However it is not always the case that the model chooses the color recently discussed as the `favorite' color.
+From one sentence to the next the model is keeping track of the context of the conversation. History is considered. However it is not always the case that the model chooses the color recently discussed as the ``favorite'' color.
 
 
 \subsection{Program Launching}
@@ -434,23 +434,23 @@ Good bye.
 	
 	\item []There is a variety of answers. 
 	
-	\item [3.] \textbf{Does the model give good answers to the questions about `favorite color' and `favorite candy?' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. }
+	\item [3.] \textbf{Does the model give good answers to the questions about ``favorite color'' and ``favorite candy?'' The model could have a set of easy answers that it can use for this kind of question or it considers the question separately. }
 	
-	\item []The answers to the questions about `favorite color' and `favorite candy' are good and better than many other models. However, the model could have a set of answers that it can use for this kind of question. The model seems to know what candy is and that a color is something different. The answers are good but not perfect.
+	\item []The answers to the questions about ``favorite color'' and ``favorite candy'' are good and better than many other models. However, the model could have a set of answers that it can use for this kind of question. The model seems to know what candy is and that a color is something different. The answers are good but not perfect.
 	
-	\item [4.] \textbf{`No' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is `I don't know.' Does the model use these answer at all times?}
+	\item [4.] \textbf{``No'' is a safe answer for many types of question as it is clearly English, it follows logically, and it is short and easy to remember. Another safe answer is ``I don't know.'' Does the model use these answer at all times?}
 	
-	\item []The model does not use `I don't know' often. 
+	\item []The model does not use ``I don't know'' often. 
 	
-	\item [5.] \textbf{Does the model answer well to `Hello' and `Good bye?'}
+	\item [5.] \textbf{Does the model answer well to ``Hello'' and ``Good bye?''}
 	
-	\item []The model does have an answer for `Hello' and `Good bye.'
+	\item []The model does have an answer for ``Hello'' and ``Good bye.''
 	
 \end{itemize}
 
 The model will answer with it's name and you can tell it your name, but it is confused by the latter. It will on occasion tell you that it's name and your name are the same. This is in part because it cannot remember what it most recently said to you or what you most recently said to it. 
 
-It's also in part because it cannot always distinguish between the `Q:' and `A:' prompts.
+It's also in part because it cannot always distinguish between the ``Q:'' and ``A:'' prompts.
 
 This is the best model tested, but it is relatively large and that aspect makes it difficult to apply in some cases.
 
@@ -462,6 +462,6 @@ Code was added that uses text-to-speech and speech-to-text libraries, so that th
 The model was installed on two small computers, the Raspberry Pi and the Jetson Nano.% The Nano is discussed in Section \ref{chapter-nano}.
 
 For the model installed on the Raspberry Pi 4B with 4GB of RAM, the Pytorch Python library for ARMv7 was compiled. Pytorch was already available for the Nano. % for this model. 
-While execution on the production laptop was instantaneous, execution on the Raspberry Pi took 13 to 15 seconds for every response. The Nano required 3 to 5 seconds (See the discussion of `Reply Time' in Section \ref{setup-reply-time}.)
+While execution on the production laptop was instantaneous, execution on the Raspberry Pi took 13 to 15 seconds for every response. The Nano required 3 to 5 seconds (See the discussion of ``Reply Time'' in Section \ref{setup-reply-time}.)
 
 The program was modified to sound a tone during processing. Without this it would have been difficult to know when to speak. Also LED lights were installed to indicate when the model is processing input and when the model can take new input. Lights were not available for the Jetson Nano. 

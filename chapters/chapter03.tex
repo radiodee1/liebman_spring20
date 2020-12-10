@@ -18,7 +18,7 @@ The speech to text service used here and the Raspberry Pi memory limitations are
 
 %There are several models to test. 
 %To test them all would require several servers. In addition they 
-Another problem is the models use both Pytorch and Tensorflow. Tensorflow has `tensorflow-model-server' for serving models, but Pytorch has no equivalent. %Testing them all requires several servers.
+Another problem is the models use both Pytorch and Tensorflow. Tensorflow has ``tensorflow-model-server'' for serving models, but Pytorch has no equivalent. %Testing them all requires several servers.
 
 It is important to note that the large GPT2 model specifically could be served from a remote computer and would operate faster. Currently on the Raspberry Pi, decoding a single sentence with the 117M parameter GPT2 takes approximately 13 seconds. However, it is preferred to install these trained models on the Raspberry Pi directly.
 
@@ -52,7 +52,7 @@ If every Raspberry Pi computer in this project was replaced with Jetson Nano com
 	\end{center}
 		\dag \ a large GPT2 model exists, but it is not small enough to fit on a Raspberry Pi or Jetson Nano.
 		
-		\dag \dag \ This is referred to as the `larger' Transformer model, though it is smaller than the smallest GPT2 model.
+		\dag \dag \ This is referred to as the ``larger'' Transformer model, though it is smaller than the smallest GPT2 model.
 		
 	%\end{center}
 	
@@ -99,7 +99,7 @@ Here, the GRU based sequence-to-sequence model and the Tensorflow based Transfor
 
 \subsection{Raspberry Pi}
 
-A Raspberry Pi is a small single board computer with an `arm' processor. There are several versions on the market, the most recent of which has built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer has 4Gig of RAM.
+A Raspberry Pi is a small single board computer with an ``arm'' processor. There are several versions on the market, the most recent of which has built-in wifi and on-board graphics and sound. The memory for a Raspberry Pi 3B computer is 1Gig of RAM. Recently available, the Raspberry Pi 4B computer has 4Gig of RAM.
 
 It is the intention of this project to install several chatbot models on Raspberry Pi computers. All chosen models must be small enough in file size to fit on the Pi.
 
@@ -207,22 +207,22 @@ Tensorflow has a tool, called Tensorboard, good for visualization which can prin
 \subsection{Speech and Speech To Text}
 \label{speech-and-speech-to-text}
 
-Google has Python packages that translate text to speech and speech to text. In the case of text to speech the library is called `\ac{gTTS}.' In the case of speech to text the library is called `google-cloud-speech'. 
+Google has Python packages that translate text to speech and speech to text. In the case of text to speech the library is called ``\ac{gTTS}.'' In the case of speech to text the library is called ``google-cloud-speech.'' 
 
 The gTTS package is simple to use and can be run locally without connection to the Internet. The google-cloud-speech package uses a google cloud server to take input from the microphone and return text. For this reason it requires an Internet connection and an account with Google that enables Google Cloud API use. %Google charges the user a small amount for every word that they translate into text. 
 
 Both of these resources work well on the Raspberry Pi, but configuring STT for the Pi is not trivial. The user must register a billing account with Google cloud services. In return for this registration, the user is able to download a JSON authentication file that must be copied to the Raspberry Pi. 
 
-Furthermore, an environment variable, called `GOOGLE\_APPLICATION\_CREDENTIALS' must be set that points to the authentication file. It must be set along with the launching of the neural network model.
+Furthermore, an environment variable, called ``GOOGLE\_APPLICATION\_CREDENTIALS'' must be set that points to the authentication file. It must be set along with the launching of the neural network model.
 
-The operating system on the Raspberry Pi is based on Debian Linux. In this system a file is run immediately after the basic system starts up, called `\textbf{/etc/rc.local}'. It is sufficient to put the environment variable there and follow it with the launching of the model. The setting of the environment variable is combined with the launching of the program in a single line of code.
+The operating system on the Raspberry Pi is based on Debian Linux. In this system a file is run immediately after the basic system starts up, called ``\textbf{/etc/rc.local}.'' It is sufficient to put the environment variable there and follow it with the launching of the model. The setting of the environment variable is combined with the launching of the program in a single line of code.
 
 
 \subsection{Corpus Considerations}
 
 Several data sets have been collected for the training of a chatbot model. First is a corpus of movie subtitles, then the corpus described by Mazar{\'{e}} et al \cite{DBLP:journals/corr/abs-1809-01984}. This corpus is specifically designed to train the chatbot task. This is referred to as the Persona corpus.
 
-For the Persona corpus, the text is organized into `JSON' objects with several different repeated labels. Some of the text is meant to be used in question and answer pairs. Sentences labeled as `history' are most suited to this task. %These values are recorded only and discard other labels.
+For the Persona corpus, the text is organized into ``JSON'' objects with several different repeated labels. Some of the text is meant to be used in question and answer pairs. Sentences labeled as ``history'' are most suited to this task. %These values are recorded only and discard other labels.
 
 The WebText corpus, culled from Reddit, is used for the training the GPT2 model. This material is not used in this paper directly, but it is a part of the success of the GPT2. This corpus is 40Gig of data.
 
@@ -236,39 +236,39 @@ For this paper the term smart speaker is used for a small computer that speaks a
 
 \section{ARMv7 Build/Compile}
 
-\subsection{Pytorch `torch' Library 1.1.0 For ARMv7}
+\subsection{Pytorch ``torch'' Library 1.1.0 For ARMv7}
 The Pytorch library is compiled for the Raspberry Pi. Several virtualization techniques are used to do this compilation. The result of those efforts is a Pytorch Python 3.7 library. % for the Raspberry Pi.
 
 On their web site Milosevic et al \cite{2018Milosevic} compile Pytorch 1.1.0 for the Raspberry Pi. The instructions called for constructing a change-root environment where a Fedora Core 30 linux system was set up. Then the ARMv7 system was used to compile the Pytorch library. % for the 1.1.0 version.
 
 The production laptop used for development ran Ubuntu Linux. For this reason a Virtualbox emulation was set up with Fedora Core 30, and the change-root environment.% The library was compiled there successfully. 
 
-There are two problems with the resulting Python package. First there is a Python error when importing the torch library, that reads `ImportError: No module named \_C.' 
+There are two problems with the resulting Python package. First there is a Python error when importing the torch library, that reads ``ImportError: No module named \_C.'' 
 
 The build process for ARMv7 creates misnamed shared object files. To correct this, the misnamed files must be found, copied, and suitably renamed. The same outcome could be assured by making symbolic links to the misnamed files with proper names.
 
-Three misnamed files can be found at `\textbf{/usr/lib/python3.7/site-packages/torch/}.' Named with the same convention, all have the ending `.cpython-37m-arm7hf-linux-gnu.so.' They must be renamed with the shorter `.so.' The files should be named `\textbf{\_C.so},' `\textbf{\_dl.so},' and `\textbf{\_thnn.so}.'
+Three misnamed files can be found at ``\textbf{/usr/lib/python3.7/site-packages/torch/}.'' Named with the same convention, all have the ending ``.cpython-37m-arm7hf-linux-gnu.so.'' They must be renamed with the shorter ``.so.'' The files should be named ``\textbf{\_C.so},'' ``\textbf{\_dl.so},'' and ``\textbf{\_thnn.so}.''
 
 %This takes care of the `ImportError'. 
-The second problem occurs because, the GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: `\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version `GLIBCXX\_3.4.26' not found}.' This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
+The second problem occurs because, the GLIBC in the change-root environment does not match the GLIBC library in the Raspberry Pi Raspbian distribution. This produces the following error: ``\textbf{ImportError: /usr/lib/x86\_64-linux-gnu/libstdc++.so.6: version ``GLIBCXX\_3.4.26'' not found}.'' This is solved by rebuilding the package with Fedora Core 29 instead of 30. 
  
-\subsection{Pytorch `torch' Library 1.4.0 For ARMv7}
+\subsection{Pytorch ``torch'' Library 1.4.0 For ARMv7}
 The Pytorch library is recompiled for the Raspberry Pi using Debian virtualization techniques. Because Ubuntu is a Debian derivative it is not necessary to run the process in a Virtualbox container. 
 
-In addition, the files are properly named and there is no need to change anything in the directory `\textbf{/usr/lib/python3.7/site-packages/torch/}'. 
+In addition, the files are properly named and there is no need to change anything in the directory ``\textbf{/usr/lib/python3.7/site-packages/torch/}''. 
 
 Compiling took five hours. Time spent with the Virtualbox container was more than twice that. The time spent on the Raspberry Pi executing a single Generative Pre-Training 2 question and answer remained 13 seconds. There was no gain in that respect.
 
-There were several small hurdles to completing the compilation. First, the `debootstrap' command needed to be employed. Because Debian Stretch was used as the host operating system, the GLIBC compatibility problem was not faced. 
+There were several small hurdles to completing the compilation. First, the ``debootstrap'' command needed to be employed. Because Debian Stretch was used as the host operating system, the GLIBC compatibility problem was not faced. 
 
-Second, some dependencies needed to be installed on the `chroot' environment for Pytorch to compile. One was `libblas3.'
+Second, some dependencies needed to be installed on the ``chroot'' environment for Pytorch to compile. One was ``libblas3.''
 
 Third, Python 3.7 needed to be built on Stretch because program repositories used Python 2.7 and 3.5. Furthermore, the Raspbian operating system on the Raspberry Pi 4B is based on Debian Buster and used Python 3.7. After that the Git program needed to be compiled. Although Git on Stretch had an issue that was fixed upstream, it was important to use Stretch because of the GLIBC issue. Instead of using the upstream fix, Git was compiled from source. 
 
 Finally, for Pytorch, CUDA and distributed computing was disabled as neither exists on the Raspberry Pi.
 
-\subsection{Docker Container `tensorflow-model-server' For ARMv7}
-The Google machine learning library for Python uses a standalone program called `tensorflow-model-server' for serving all Tensorflow models in a standard way. The program has not officially been compiled for ARMv7. A Docker image does exist that will run on ARMv7 (Maciejewski et al \cite{2020Maciejewski}).
+\subsection{Docker Container ``tensorflow-model-server'' For ARMv7}
+The Google machine learning library for Python uses a standalone program called ``tensorflow-model-server'' for serving all Tensorflow models in a standard way. The program has not officially been compiled for ARMv7. A Docker image does exist that will run on ARMv7 (Maciejewski et al \cite{2020Maciejewski}).
 
 Docker was run on the Raspberry Pi in the ARM environment. This terminal excerpt shows this. These commands were executed on the Pi.
 
@@ -284,5 +284,5 @@ To take advantage of Docker one needs to log out and then log in again.
 
 A version of the Docker Container for the model server was run on the Raspberry Pi. A script was written that interacted with the existing ARMv7 container. % The author of the original container is Erik Maciejewski \cite{2020Maciejewski}.
 
-`Tensorflow-model-server' was used on the localhost Internet address, 127.0.0.1, with a port of 8500. While tensorflow-model-server is meant for serving neural network resources on the Internet, it was used on the Raspberry Pi.
+``Tensorflow-model-server'' was used on the localhost Internet address, 127.0.0.1, with a port of 8500. While tensorflow-model-server is meant for serving neural network resources on the Internet, it was used on the Raspberry Pi.
 
