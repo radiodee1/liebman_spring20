@@ -4,7 +4,8 @@
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Recurrent Neural Network and Transformer}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Pre Trained Language Models}{1}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Goals For This Thesis}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Outline}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Goals For This Thesis}{2}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Recurrent Neural Network}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Recurrent Neural Network Components}{4}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Hidden Values}{4}{subsection.2.1.1}%
