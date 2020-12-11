@@ -68,7 +68,7 @@
 \contentsline {subsection}{\numberline {5.2.1}Questions}{44}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Checklist}{44}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Smart Speaker - Gated Recurrent Unit Model}{45}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Chatbot - Transformer Model with Persona Corpus}{46}{section.5.4}%
+\contentsline {section}{\numberline {5.4}Chatbot - Transformer Model with Persona Corpus}{45}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Questions}{46}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Checklist}{47}{subsection.5.4.2}%
 \contentsline {section}{\numberline {5.5}Smart Speaker - Transformer Model with Persona Corpus}{47}{section.5.5}%
@@ -79,7 +79,7 @@
 \contentsline {section}{\numberline {5.8}Chatbot - Generative Pre-Training 2 Model}{50}{section.5.8}%
 \contentsline {subsection}{\numberline {5.8.1}Context Experiment}{51}{subsection.5.8.1}%
 \contentsline {subsection}{\numberline {5.8.2}GPT2 Fact Sheet}{51}{subsection.5.8.2}%
-\contentsline {subsection}{\numberline {5.8.3}History Experiment}{52}{subsection.5.8.3}%
+\contentsline {subsection}{\numberline {5.8.3}History Experiment}{51}{subsection.5.8.3}%
 \contentsline {subsection}{\numberline {5.8.4}Program Launching}{52}{subsection.5.8.4}%
 \contentsline {subsection}{\numberline {5.8.5}Summary}{52}{subsection.5.8.5}%
 \contentsline {subsection}{\numberline {5.8.6}Questions}{53}{subsection.5.8.6}%
@@ -95,11 +95,11 @@
 \contentsline {subsection}{\numberline {6.1.6}User Name Experiment}{59}{subsection.6.1.6}%
 \contentsline {subsubsection}{Usage Example}{59}{subsection.6.1.6}%
 \contentsline {subsection}{\numberline {6.1.7}Internet Search Experiment}{60}{subsection.6.1.7}%
-\contentsline {subsubsection}{Usage Example}{61}{subsection.6.1.7}%
+\contentsline {subsubsection}{Usage Example}{60}{subsection.6.1.7}%
 \contentsline {section}{\numberline {6.2}Generative Pre-Training 2 - Jetson Nano}{61}{section.6.2}%
 \contentsline {chapter}{\numberline {7}Results and Observations}{62}{chapter.7}%
 \contentsline {section}{\numberline {7.1}GRU vs. Transformer}{62}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Turing Test}{63}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Turing Test}{62}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Word and Sentence Comparisons}{63}{section.7.3}%
 \contentsline {subsection}{\numberline {7.3.1}Word Usage}{63}{subsection.7.3.1}%
 \contentsline {subsection}{\numberline {7.3.2}Sentence Usage}{65}{subsection.7.3.2}%

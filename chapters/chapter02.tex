@@ -65,13 +65,13 @@ $$ s_t = (1 - z) \circ h + z \circ s_{t-1} $$
 
 The GRU has two inputs and two outputs. It also has two internal gates. One internal gate is the ``reset'' gate. This one determines how much of the previous input is combined with the new value calculated by the mechanism of the GRU. It is denoted as ``$r$'' above. Another internal gate is the ``update'' gate. The update gate decides how much new information is to be included in gate computation. It is denoted as ``$z$''.
 
-Here ``$ s_t $'' is the symbol for the combined output. The two inputs are ``$ x_t $'' and ``$ s_{t-1} $'' . ``$ x_t $'' is hidden state input. ``$ s_{t-1} $'' is the regular input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, using the symbol ``$ \sigma(...) $'' , while tanh activation is used to compute the hidden output. 
+Here ``$ s_t $'' is the symbol for the combined output. The two inputs are ``$ x_t $'' and ``$ s_{t-1} $.''  ``$ x_t $'' is hidden state input. ``$ s_{t-1} $'' is the regular input for the Recurrent Neural Network or Gated Recurrent Unit. Sigmoid activation is used on the two gates, using the symbol ``$ \sigma(...) $'' , while tanh activation is used to compute the hidden output. 
 
 The dimension of the $U^z$, $U^r$ and $U^h$ matrices is the hidden unit size by the hidden unit size. $ x_t $ is a vector the size of the hidden unit. The $U$ values, along with $ W^z $, $ W^r $ and $ W^h $  are all simple matrices that allow the GRU to operate.
 
 In the last line, the regular output is determined using the ``dot'' product which is denoted with a circle, along with an addition operation. In the two gate formulas (the first and second) the output is determined as the sum of two matrix multiplication operations passed through sigmoid activation. This produces values in the range of 0 to 1.
 
-Under most programming circumstances the GRU is not implemented by the average programmer. The programmer employs a language like python and a programming library like Pytorch or Tensorflow. The library then implements the GRU and makes it easy for the programmer to use that implementation.
+Under most programming circumstances the GRU is not implemented by the average programmer. The programmer employs a language like Python and a programming library like Pytorch or Tensorflow. The library then implements the GRU and makes it easy for the programmer to use that implementation.
 
 \section{Sequence-to-Sequence and Translation}
 
@@ -129,10 +129,7 @@ When done one uses the final holdout set, the ``test'' set, to determine weather
 
 At this point, the model takes a word, translates it to an integer, and finds the vector in the word embedding table that represents that word. It does this for the first word and all subsequent words one by one. Then it gives the entire vector for a word to the GRU, one at a time. The GRU takes the word and passes it to inner components. It decides whether to return as output only the input or the input modified. This is what the Gated Recurrent Unit does internally.
 
-The Gated Recurrent Unit takes as input two vectors. It processes the ``input'' vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the ``hidden size'' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The GRU also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output.
-
-
-The input components, using the source language, are the encoder and the output components, using the target language, are the decoder.
+The Gated Recurrent Unit takes as input two vectors. It processes the ``input'' vector and returns another vector. This could be exactly the same as the input but is usually somehow changed. The input vector and the output vector have the dimension of the ``hidden size'' mentioned above. Throughout the discussion of this model the hidden size will remain the same. The GRU also operates on two hidden states. One hidden state, a vector, is taken in and another hidden state, also a vector, is produced for output. The input components, using the source language, are the encoder and the output components, using the target language, are the decoder.
 
 
 
@@ -174,9 +171,7 @@ The second Gated Recurrent Unit generates the second word and also its own hidde
 All of the information that the decoder uses for its output is present in the thought vector and is passed along the corridor from the encoder. 
 Aside from Attention Mechanisms, there are no other places where information is passed from the encoder to the decoder.
 
-Making this vector larger by increasing the size of the hidden dimension allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download, if one of those is used. 
-
-Ultimately an exceedingly large hidden dimension does not improve the sequence-to-sequence model.
+Making this vector larger by increasing the size of the hidden dimension allows for more information in the thought vector. Size also increases the time to train the network. The size must also match the dimension of the vectors in the GloVe or Word2Vec download, if one of those is used. Ultimately an exceedingly large hidden dimension does not improve the sequence-to-sequence model.
 
 Again, in the Decoder, many GRU units are called for but they all share the same weights and biases. For this reason, a single GRU is employed for the entire decoder. The encoder and decoder are never the same unit.
 
@@ -241,25 +236,17 @@ The output of the current decoder is transposed. It is multiplied by the hidden 
 
 \label{section-gru-batching-problems}
 
-There are some general batching problems with using Recurrent Neural Network components.
-
-If a batch of data is to be cycled through a recurrent component, it should go through all the components at once.  
+There are some general batching problems with using Recurrent Neural Network components. If a batch of data is to be cycled through a recurrent component, it should go through all the components at once.  
 
 
 
-In Neural Machine Translation the data has to be processed one batch at a time. The data is passed to the first RNN. Only then it can be passed to the next RNN. A single GRU is used in this example for all words in the encoder, while another GRU is used in the decoder. These GRUs can not process the subsequent batches all at once. It must be done sequentially creating a bottleneck. 
-
-%They have to wait for the previous batch to be done. This bottleneck has to do with how the RNN is used. 
-
-These sorts of bottlenecks are found in Neural Machine Translation based on recurrent elements.
+In Neural Machine Translation the data has to be processed one batch at a time. The data is passed to the first RNN. Only then it can be passed to the next RNN. A single GRU is used in this example for all words in the encoder, while another GRU is used in the decoder. These GRUs can not process the subsequent batches all at once. It must be done sequentially creating a bottleneck. These sorts of bottlenecks are found in Neural Machine Translation based on recurrent elements.
 
 \subsection{Exploding or Vanishing Gradients}
 
 \label{section-gru-gradient-problems}
 
-There are some specific problems that affect gradients in Recurrent Neural Network components.
-
-Data that begins with a floating point value above 1.0, when multiplied with weights with  values above 1.0, will return values above 1.0. The same RNN component is used for every position in the encoder or decoder. Some values will tend to infinity. This is called an exploding gradient. 
+There are some specific problems that affect gradients in Recurrent Neural Network components. Data that begins with a floating point value above 1.0, when multiplied with weights with  values above 1.0, will return values above 1.0. The same RNN component is used for every position in the encoder or decoder. Some values will tend to infinity. This is called an exploding gradient. 
 
 
 The reverse is true. When a number starts out as a floating point below 1.0, and is multiplied with RNN weights below 1.0, it will tend to a value of zero. This is called a vanishing gradient.

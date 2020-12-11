@@ -1,35 +1,6 @@
 \chapter{Results and Observations}
 
-\iffalse
 
-\section{Goals For This Thesis}
-This work focuses on providing a number of implementations of a Generative Chatbot, installed on small headless computers. Some overall goals are listed below. Checks in the check-boxes indicates the goal was achieved.
-
-\begin{itemize}
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Implement a generative chatbot using Recurrent Network components. This implementation uses GRU objects and the Tutorial found at Inkawhich et al \cite{2018Inkawhich}.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Implement a generative chatbot using a Transformer architecture and the Movie Dialog Corpus. This is discussed in Section \ref{transformer-movie-corpus}. %This implementation uses Scaled Dot Product attention.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Implement a chatbot using the Generative Pre-Trained 2 transformer. This is a pre-trained model. This is discussed in Section \ref{install-gpt2-chatbot}.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Subjectively compare the GRU, Transformer, and GPT2 models and the kind of output that each one produces. This is discussed throughout Section \ref{experiments-installations}.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Successfully install Google Speech Recognition and Text To Speech on the Raspberry Pi computer platform, as well as other small computers like the NVIDIA Jetson Nano. This is discussed in Section \ref{speech-and-speech-to-text}.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Install a GRU, Transformer, and GPT2 model on individual Raspberry Pi computers. Also install Google Speech Recognition and Speech To Text on these computers so that they can operate without keyboard or monitor. Allow the chatbot model to interact with a human's voice. This is discussed throughout Section \ref{experiments-installations}.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Install a GPT2 model on a Jetson Nano, along with Google Speech libraries and allow a human to interact with the chatbot. Compare execution time to the same model on the Raspberry Pi. This is discussed in Section \ref{chapter-nano}.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$] Compare the GRU and the Transformer model. Try to compare the word usage and sentence usage of the GRU and Transformer. This is discussed in Section \ref{gru-vs-transformer}.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] Implement a generative chatbot using Recurrent Network components and an independent code base. This was not accomplished as the task was beyond the scope of this work.
-	
-	\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$] Implement a generative chatbot using a Transformer architecture and the Persona chatbot corpus. This implementation did not work well. This is discussed in Section \ref{transformer-persona-corpus}. %uses Scaled Dot Product attention.
-	
-
-\end{itemize}
-\fi
 
 \section{GRU vs. Transformer}
 \label{gru-vs-transformer}
@@ -41,11 +12,7 @@ Additionally, the GRU model responded very quickly, while the Transformer model 
 Furthermore, time complexity is discussed by Vaswani et al \cite{Vaswani2017AttentionIA}. 
 For the GRU Recurrent Neural Network it is $ n \cdot d^2 $, where $ n $ is the number of words in a sentence and $ d $ is the dimension of the hidden vector. Complexity for the Transformer's Scaled Dot Product Attention is $ n^2 \cdot  d $. Again, $n$ is the number of words and $d$ is the hidden vector's dimension. 
 
-The maximum allowable input from the GRU is short, and in the example was 10. The maximum allowable input from the Transformer models varies but, in the 117M GPT2 model, it was 1024. 
-
-
-In this example, the hidden vector size for the GRU model was 500 and %. The size for the 117M GPT2 model was 768, and 
-the Transformer's hidden size was 512.
+The maximum allowable input from the GRU is short, and in the example was 10. The maximum allowable input from the Transformer models varies but, in the 117M GPT2 model, it was 1024. In this example, the hidden vector size for the GRU model was 500 and the Transformer's hidden size was 512.
 
 \section{Turing Test}
 
@@ -141,9 +108,7 @@ Here the Transformer and GRU models are trained on the movie dialog corpus. The 
 
 Initially the model learns a set of multi-purpose English answers. Then it acts as a classifier, where each input sentence is compared to the set of answers. There would be fewer answers than there are questions. 
 
-At the start the multi-purpose answers are constructed at the same time that the classification task is taking place. 
-
-The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
+At the start the multi-purpose answers are constructed at the same time that the classification task is taking place. The model has a certain capacity and it starts to develop lists of usable answers in order to use that capacity best.
 
 For the GPT2, full sentences may not be saved because the model may be more dynamic. For translation, for instance, it may be able to remember longer lists. In place of a list of complete responses, a list of phrases or partial responses could be combined to create translated output.
 
