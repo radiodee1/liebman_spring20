@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.29)  11 DEC 2020 08:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2020.10.29)  11 DEC 2020 10:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -671,32 +671,17 @@ e
 \openout4 = `proposal_doc.acr'.
 
 \c@lstlisting=\count321
-LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+[1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-04.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
-been already used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): dest
+ination with the same identifier (name{page.}) has been already used, duplicate
+ ignored
 <to be read again> 
                    \relax 
-l.144 \newpage
+l.151 \newpage
                [2]
 \openout2 = `chapters/abstract.aux'.
 
@@ -709,18 +694,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--4
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.146 \include{chapters/abstract}
+l.153 \include{chapters/abstract}
                                   [3
 
-] (./proposal_doc.toc [1
+] (./proposal_doc.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 
 ] [2] [3])
 \tf@toc=\write5
 \openout5 = `proposal_doc.toc'.
 
- [4]
-(./proposal_doc.lof)
+
+[4] (./proposal_doc.lof)
 \tf@lof=\write6
 \openout6 = `proposal_doc.lof'.
 
@@ -735,7 +730,8 @@ l.146 \include{chapters/abstract}
 ]
 \openout2 = `chapters/chapter01.aux'.
 
- (./chapters/chapter01.tex
+
+(./chapters/chapter01.tex
 Chapter 1.
 [1
 
@@ -745,7 +741,7 @@ Chapter 1.
 
  (./chapters/chapter02.tex
 Chapter 2.
-<diagram-hidden.png, id=681, 108.405pt x 84.315pt>
+<diagram-hidden.png, id=680, 108.405pt x 84.315pt>
 File: diagram-hidden.png Graphic file (type png)
 <use diagram-hidden.png>
 Package pdftex.def Info: diagram-hidden.png  used on input line 16.
@@ -755,19 +751,19 @@ Package pdftex.def Info: diagram-hidden.png  used on input line 16.
 
 
  <./diagram-hidden.png>]
-<diagram-rnn01.png, id=688, 321.2pt x 361.35pt>
+<diagram-rnn01.png, id=687, 321.2pt x 361.35pt>
 File: diagram-rnn01.png Graphic file (type png)
 <use diagram-rnn01.png>
 Package pdftex.def Info: diagram-rnn01.png  used on input line 36.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [5 <./diagram-rnn01.png>] [6]
-<diagram-embedding.png, id=706, 351.3125pt x 351.3125pt>
+<diagram-embedding.png, id=705, 351.3125pt x 351.3125pt>
 File: diagram-embedding.png Graphic file (type png)
 <use diagram-embedding.png>
 Package pdftex.def Info: diagram-embedding.png  used on input line 97.
 (pdftex.def)             Requested size: 175.6558pt x 175.6558pt.
  [7] [8 <./diagram-embedding.png>] [9]
-<diagram-nmt03.png, id=725, 193.9245pt x 61.4295pt>
+<diagram-nmt03.png, id=724, 193.9245pt x 61.4295pt>
 File: diagram-nmt03.png Graphic file (type png)
 <use diagram-nmt03.png>
 Package pdftex.def Info: diagram-nmt03.png  used on input line 152.
@@ -805,7 +801,7 @@ LaTeX Font Warning: Command \mathversion invalid in math mode on input line 235
 .
 
 [13]
-<Figure_1.png, id=755, 462.528pt x 346.896pt>
+<Figure_1.png, id=754, 462.528pt x 346.896pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 287.
@@ -820,81 +816,81 @@ Chapter 3.
 
 
 ]
-<diagram-mat04.png, id=768, 161.8848pt x 220.6644pt>
+<diagram-mat04.png, id=767, 161.8848pt x 220.6644pt>
 File: diagram-mat04.png Graphic file (type png)
 <use diagram-mat04.png>
 Package pdftex.def Info: diagram-mat04.png  used on input line 38.
 (pdftex.def)             Requested size: 242.8266pt x 330.99577pt.
  [16]
-<diagram-mat01.png, id=776, 321.2pt x 361.35pt>
+<diagram-mat01.png, id=775, 321.2pt x 361.35pt>
 File: diagram-mat01.png Graphic file (type png)
 <use diagram-mat01.png>
 Package pdftex.def Info: diagram-mat01.png  used on input line 59.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [17 <./diagram-mat04.png>] [18 <./diagram-mat01.png>]
-<diagram-mat04-64.png, id=791, 321.2pt x 361.35pt>
+<diagram-mat04-64.png, id=790, 321.2pt x 361.35pt>
 File: diagram-mat04-64.png Graphic file (type png)
 <use diagram-mat04-64.png>
 Package pdftex.def Info: diagram-mat04-64.png  used on input line 96.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
-<diagram-mat02.png, id=792, 321.2pt x 361.35pt>
+<diagram-mat02.png, id=791, 321.2pt x 361.35pt>
 File: diagram-mat02.png Graphic file (type png)
 <use diagram-mat02.png>
 Package pdftex.def Info: diagram-mat02.png  used on input line 114.
 (pdftex.def)             Requested size: 160.59961pt x 180.67456pt.
  [19 <./diagram-mat04-64.png>]
-<diagram-flow1.png, id=799, 284.262pt x 260.172pt>
+<diagram-flow1.png, id=798, 284.262pt x 260.172pt>
 File: diagram-flow1.png Graphic file (type png)
 <use diagram-flow1.png>
 Package pdftex.def Info: diagram-flow1.png  used on input line 130.
 (pdftex.def)             Requested size: 284.26129pt x 260.17134pt.
  [20 <./diagram-mat02.png>]
-<diagram-graph-encoder-flow-b.png, id=806, 221.1462pt x 215.8464pt>
+<diagram-graph-encoder-flow-b.png, id=805, 221.1462pt x 215.8464pt>
 File: diagram-graph-encoder-flow-b.png Graphic file (type png)
 <use diagram-graph-encoder-flow-b.png>
 Package pdftex.def Info: diagram-graph-encoder-flow-b.png  used on input line 1
 46.
 (pdftex.def)             Requested size: 165.85922pt x 161.8844pt.
  [21 <./diagram-flow1.png>]
-<diagram-flow-decoder02.png, id=813, 229.3368pt x 258.7266pt>
+<diagram-flow-decoder02.png, id=812, 229.3368pt x 258.7266pt>
 File: diagram-flow-decoder02.png Graphic file (type png)
 <use diagram-flow-decoder02.png>
 Package pdftex.def Info: diagram-flow-decoder02.png  used on input line 164.
 (pdftex.def)             Requested size: 286.6703pt x 323.40741pt.
  [22 <./diagram-graph-encoder-flow-b.png>]
-<diagram-graph-decoder-flow-c.png, id=819, 409.53pt x 385.44pt>
+<diagram-graph-decoder-flow-c.png, id=818, 409.53pt x 385.44pt>
 File: diagram-graph-decoder-flow-c.png Graphic file (type png)
 <use diagram-graph-decoder-flow-c.png>
 Package pdftex.def Info: diagram-graph-decoder-flow-c.png  used on input line 1
 81.
 (pdftex.def)             Requested size: 307.14674pt x 289.07928pt.
  [23 <./diagram-flow-decoder02.png>] [24 <./diagram-graph-decoder-flow-c.png>]
-<diagram-mask01.png, id=831, 154.176pt x 204.765pt>
+<diagram-mask01.png, id=830, 154.176pt x 204.765pt>
 File: diagram-mask01.png Graphic file (type png)
 <use diagram-mask01.png>
 Package pdftex.def Info: diagram-mask01.png  used on input line 210.
 (pdftex.def)             Requested size: 192.7195pt x 255.9556pt.
  [25 <./diagram-mask01.png>]
-<Figure_3.png, id=837, 98.769pt x 63.3567pt>
+<Figure_3.png, id=836, 98.769pt x 63.3567pt>
 File: Figure_3.png Graphic file (type png)
 <use Figure_3.png>
 Package pdftex.def Info: Figure_3.png  used on input line 235.
 (pdftex.def)             Requested size: 197.53748pt x 126.71307pt.
  [26 <./Figure_3.png>]
-<diagram-mat05.png, id=846, 46.0119pt x 89.133pt>
+<diagram-mat05.png, id=845, 46.0119pt x 89.133pt>
 File: diagram-mat05.png Graphic file (type png)
 <use diagram-mat05.png>
 Package pdftex.def Info: diagram-mat05.png  used on input line 271.
 (pdftex.def)             Requested size: 138.03534pt x 267.3983pt.
  [27 <./diagram-mat05.png (PNG copy)>] [28]
-<diagram-inference-02.png, id=860, 145.0218pt x 103.587pt>
+<diagram-inference-02.png, id=859, 145.0218pt x 103.587pt>
 File: diagram-inference-02.png Graphic file (type png)
 <use diagram-inference-02.png>
 Package pdftex.def Info: diagram-inference-02.png  used on input line 330.
 (pdftex.def)             Requested size: 290.04288pt x 207.1735pt.
  [29 <./diagram-inference-02.png>]
 [30]
-<Figure_4.png, id=874, 84.7968pt x 46.2528pt>
+<Figure_4.png, id=873, 84.7968pt x 46.2528pt>
 File: Figure_4.png Graphic file (type png)
 <use Figure_4.png>
 Package pdftex.def Info: Figure_4.png  used on input line 390.
@@ -909,13 +905,13 @@ Chapter 4.
 
 
 ] [33] [34]
-<diagram-pic01.png, id=897, 2581.645pt x 2477.255pt>
+<diagram-pic01.png, id=896, 2581.645pt x 2477.255pt>
 File: diagram-pic01.png Graphic file (type png)
 <use diagram-pic01.png>
 Package pdftex.def Info: diagram-pic01.png  used on input line 119.
 (pdftex.def)             Requested size: 258.17963pt x 247.74pt.
  [35 <./diagram-pic01.png>]
-<diagram-jetson-nano-02.png, id=904, 401.5pt x 358.33875pt>
+<diagram-jetson-nano-02.png, id=903, 401.5pt x 358.33875pt>
 File: diagram-jetson-nano-02.png Graphic file (type png)
 <use diagram-jetson-nano-02.png>
 Package pdftex.def Info: diagram-jetson-nano-02.png  used on input line 145.
@@ -926,10 +922,16 @@ Overfull \hbox (1.9295pt too wide) in paragraph at lines 255--256
 roduces the following error: ``\OT1/cmr/bx/n/10 ImportError:
  []
 
-[40]) [41]
+[40]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
+77.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)) [41]
 \openout2 = `chapters/chapter05.aux'.
 
- (./chapters/chapter05.tex
+
+(./chapters/chapter05.tex
 Chapter 5.
 [42
 
@@ -1023,29 +1025,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--86
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
  [73]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 196.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 203.
  (./proposal_doc.aux (./chapters/abstract.aux) (./chapters/chapter01.aux) (./ch
 apters/chapter02.aux) (./chapters/chapter03.aux)
 (./chapters/chapter04.aux) (./chapters/chapter05.aux) (./chapters/chapter06.aux
 ) (./chapters/chapter07.aux) (./chapters/chapter08.aux) (./proposal_doc.acr))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 203.
 Package rerunfilecheck Info: File `proposal_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 919771CD1CF86877C700F8F78A3CC74E;7885.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
  ) 
 Here is how much of TeX's memory you used:
- 16326 strings out of 482854
- 323151 string characters out of 5956880
+ 16324 strings out of 482854
+ 323116 string characters out of 5956880
  600538 words of memory out of 5000000
- 31104 multiletter control sequences out of 15000+600000
- 558738 words of font info for 112 fonts, out of 8000000 for 9000
+ 31102 multiletter control sequences out of 15000+600000
+ 558132 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  43i,11n,57p,958b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/dave/.texlive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
-k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/dave/.texl
+ive2020/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
@@ -1063,7 +1065,7 @@ mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/zapfding/uzdr.pfb>
-Output written on proposal_doc.pdf (83 pages, 9124707 bytes).
+Output written on proposal_doc.pdf (83 pages, 9123000 bytes).
 PDF statistics:
  1229 PDF objects out of 1440 (max. 8388607)
  1065 compressed objects within 11 object streams
