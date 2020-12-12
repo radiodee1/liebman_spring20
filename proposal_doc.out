@@ -22,7 +22,7 @@
 \BOOKMARK [2][-]{subsection.2.2.10}{Batching Problems}{section.2.2}% 22
 \BOOKMARK [2][-]{subsection.2.2.11}{Exploding or Vanishing Gradients}{section.2.2}% 23
 \BOOKMARK [2][-]{subsection.2.2.12}{Sequence-to-Sequence Chatbot}{section.2.2}% 24
-\BOOKMARK [0][-]{chapter.3}{Transformers and the Generative Pre-Training 2 \040Transformer}{}% 25
+\BOOKMARK [0][-]{chapter.3}{Transformers and the Generative Pre-Training 2}{}% 25
 \BOOKMARK [1][-]{section.3.1}{Transformer and Attention}{chapter.3}% 26
 \BOOKMARK [2][-]{subsection.3.1.1}{Byte Pair Encoding}{section.3.1}% 27
 \BOOKMARK [2][-]{subsection.3.1.2}{Attention}{section.3.1}% 28
