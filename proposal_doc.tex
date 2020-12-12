@@ -38,6 +38,11 @@
 \usepackage{relsize}
 \usepackage{titlesec}
 
+%\usepackage{etoolbox}
+
+%\titlespacing{\chapter}{0pt}{0cm}{0cm}
+%\titlespacing*{\subsection}
+%{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
 
 
 
@@ -53,6 +58,10 @@
 
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
+
+
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+
 
 \makeatother
 
@@ -156,7 +165,7 @@ New Paltz, New York, 12561   }
 
 \newpage
 
-\listoffigures
+{\small \listoffigures }
 \listoftables
 
 \newpage
